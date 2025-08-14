@@ -12,6 +12,7 @@ export default function Home() {
               <a href="#services" className="hover:text-foreground/80 transition-colors">Services</a>
               <a href="#process" className="hover:text-foreground/80 transition-colors">Process</a>
               <a href="#testimonials" className="hover:text-foreground/80 transition-colors">Reviews</a>
+              <a href="/services" className="hover:text-foreground/80 transition-colors">Insights</a>
               <button className="bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors">
                 Get Free Consultation
               </button>
