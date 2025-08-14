@@ -12,7 +12,7 @@ export default function Home() {
               <a href="#services" className="hover:text-foreground/80 transition-colors">Services</a>
               <a href="#process" className="hover:text-foreground/80 transition-colors">Process</a>
               <a href="#testimonials" className="hover:text-foreground/80 transition-colors">Reviews</a>
-              <button className="bg-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors">
+              <button className="bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors">
                 Get Free Consultation
               </button>
             </div>
@@ -25,14 +25,14 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             Grow Your Business with 
-            <span className="text-blue-600"> Proven Marketing</span>
+            <span className="text-orange-600"> Proven Marketing</span>
           </h1>
           <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-3xl mx-auto leading-relaxed">
             I help businesses increase revenue through data-driven advertising strategies. 
             <strong className="text-foreground"> No results, no payment.</strong>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-700 transition-colors shadow-lg">
+            <button className="bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-700 transition-colors shadow-lg">
               Get Free Marketing Audit
             </button>
             <button className="border-2 border-foreground/20 px-8 py-4 rounded-full font-semibold text-lg hover:bg-foreground/5 transition-colors">
@@ -43,15 +43,15 @@ export default function Home() {
           {/* Trust Indicators */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-foreground/60">
             <div className="flex items-center gap-2">
-              <span className="text-green-500">✓</span>
+              <span className="text-orange-500">✓</span>
               <span>$2M+ Generated for Clients</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-green-500">✓</span>
+              <span className="text-orange-500">✓</span>
               <span>200+ Successful Campaigns</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-green-500">✓</span>
+              <span className="text-orange-500">✓</span>
               <span>Average 300% ROI</span>
             </div>
           </div>
@@ -157,7 +157,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-700 transition-colors">
+            <button className="bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-700 transition-colors">
               Start Your Marketing Campaign
             </button>
           </div>
@@ -178,8 +178,8 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             <div className="text-center">
-              <div className="bg-blue-100 dark:bg-blue-900/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-blue-600">1</span>
+              <div className="bg-orange-100 dark:bg-orange-900/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-orange-600">1</span>
               </div>
               <h3 className="text-xl font-bold mb-4">Audit & Analysis</h3>
               <p className="text-foreground/80">
@@ -189,8 +189,8 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="bg-blue-100 dark:bg-blue-900/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-blue-600">2</span>
+              <div className="bg-orange-100 dark:bg-orange-900/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-orange-600">2</span>
               </div>
               <h3 className="text-xl font-bold mb-4">Strategy Development</h3>
               <p className="text-foreground/80">
@@ -200,8 +200,8 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="bg-blue-100 dark:bg-blue-900/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-blue-600">3</span>
+              <div className="bg-orange-100 dark:bg-orange-900/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-orange-600">3</span>
               </div>
               <h3 className="text-xl font-bold mb-4">Campaign Launch</h3>
               <p className="text-foreground/80">
@@ -211,8 +211,8 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="bg-blue-100 dark:bg-blue-900/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-blue-600">4</span>
+              <div className="bg-orange-100 dark:bg-orange-900/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-orange-600">4</span>
               </div>
               <h3 className="text-xl font-bold mb-4">Optimize & Scale</h3>
               <p className="text-foreground/80">
@@ -249,7 +249,7 @@ export default function Home() {
                 "Amir increased our lead generation by 340% in just 3 months. 
                 His strategic approach and attention to detail are exceptional."
               </p>
-              <div className="text-yellow-500">★★★★★</div>
+              <div className="text-orange-400">★★★★★</div>
             </div>
 
             <div className="bg-background rounded-xl p-8 shadow-sm">
@@ -264,7 +264,7 @@ export default function Home() {
                 "ROI went from break-even to 450% within 6 months. 
                 The systematic approach and clear reporting made all the difference."
               </p>
-              <div className="text-yellow-500">★★★★★</div>
+              <div className="text-orange-400">★★★★★</div>
             </div>
 
             <div className="bg-background rounded-xl p-8 shadow-sm">
@@ -279,7 +279,7 @@ export default function Home() {
                 "Finally found someone who understands both the technical and strategic 
                 sides of digital marketing. Highly recommended!"
               </p>
-              <div className="text-yellow-500">★★★★★</div>
+              <div className="text-orange-400">★★★★★</div>
             </div>
           </div>
         </div>
