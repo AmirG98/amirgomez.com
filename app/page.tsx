@@ -1,3 +1,6 @@
+import Link from 'next/link';
+import { getFeaturedPosts } from '@/data/blog-posts';
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -5,17 +8,17 @@ export default function Home() {
       <nav className="sticky top-0 bg-background/95 backdrop-blur-sm border-b border-foreground/10 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <div className="text-xl font-bold">
+            <Link href="/" className="text-xl font-bold">
               Amir Gomez
-            </div>
+            </Link>
             <div className="flex items-center space-x-6">
-              <a href="#services" className="hover:text-foreground/80 transition-colors">Services</a>
-              <a href="#process" className="hover:text-foreground/80 transition-colors">Process</a>
-              <a href="#testimonials" className="hover:text-foreground/80 transition-colors">Reviews</a>
-              <a href="/services" className="hover:text-foreground/80 transition-colors">Insights</a>
-              <button className="bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors">
+              <Link href="/about" className="hover:text-foreground/80 transition-colors">About</Link>
+              <Link href="/services" className="hover:text-foreground/80 transition-colors">Services</Link>
+              <Link href="/case-studies" className="hover:text-foreground/80 transition-colors">Case Studies</Link>
+              <Link href="/blog" className="hover:text-foreground/80 transition-colors">Blog</Link>
+              <Link href="/contact" className="bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors">
                 Get Free Consultation
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -308,6 +311,73 @@ export default function Home() {
             <p className="text-sm text-foreground/60">
               Free consultation • No commitment • Results guaranteed
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Highlights Section */}
+      <section className="bg-foreground/5 py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Latest Marketing Insights
+            </h2>
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+              Proven strategies and real case studies from managing $2M+ in ad spend
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {getFeaturedPosts().slice(0, 3).map((post) => (
+              <article key={post.id} className="group">
+                <Link href={`/blog/${post.slug}`}>
+                  <div className="bg-background rounded-xl border border-foreground/10 overflow-hidden hover:shadow-lg transition-all duration-300 hover:border-orange-500/20">
+                    <div className="p-6">
+                      <div className="flex items-center gap-4 mb-4">
+                        <span className="bg-orange-100 dark:bg-orange-900/30 text-orange-600 px-3 py-1 rounded-full text-sm font-medium">
+                          {post.category}
+                        </span>
+                        <span className="text-sm text-foreground/60">
+                          {post.readingTime} min read
+                        </span>
+                      </div>
+
+                      <h3 className="text-xl font-bold mb-3 group-hover:text-orange-600 transition-colors">
+                        {post.title}
+                      </h3>
+
+                      <p className="text-foreground/80 mb-4 leading-relaxed">
+                        {post.excerpt}
+                      </p>
+
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
+                        <div>
+                          <div className="font-semibold text-sm">{post.author.name}</div>
+                          <div className="text-sm text-foreground/60">
+                            {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                              month: 'long',
+                              day: 'numeric',
+                              year: 'numeric'
+                            })}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </article>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link 
+              href="/blog"
+              className="bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-700 transition-colors inline-flex items-center gap-2"
+            >
+              Read All Articles
+              <span>→</span>
+            </Link>
           </div>
         </div>
       </section>
