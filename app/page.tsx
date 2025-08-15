@@ -413,7 +413,6 @@ export default function Home() {
             </div>
             <div className="flex space-x-6">
               <a href="https://linkedin.com/in/amirgomez" className="text-foreground/60 hover:text-foreground transition-colors">LinkedIn</a>
-              <a href="https://twitter.com/amirgomez" className="text-foreground/60 hover:text-foreground transition-colors">Twitter</a>
               <a href="mailto:amir@amirgomez.com" className="text-foreground/60 hover:text-foreground transition-colors">Email</a>
             </div>
           </div>

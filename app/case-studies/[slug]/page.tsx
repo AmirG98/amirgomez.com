@@ -356,7 +356,6 @@ export default async function CaseStudyPage({ params }: PageProps) {
             </div>
             <div className="flex space-x-6">
               <Link href="https://linkedin.com/in/amirgomez" className="text-foreground/60 hover:text-foreground transition-colors">LinkedIn</Link>
-              <Link href="https://twitter.com/amirgomez" className="text-foreground/60 hover:text-foreground transition-colors">Twitter</Link>
               <Link href="mailto:amir@amirgomez.com" className="text-foreground/60 hover:text-foreground transition-colors">Email</Link>
             </div>
           </div>
