@@ -34,10 +34,11 @@ export default function AboutPage() {
               <Link href="/" className="hover:text-foreground/80 transition-colors">Home</Link>
               <Link href="/about" className="text-orange-600 font-semibold">About</Link>
               <Link href="/services" className="hover:text-foreground/80 transition-colors">Services</Link>
+              <Link href="/case-studies" className="hover:text-foreground/80 transition-colors">Case Studies</Link>
               <Link href="/blog" className="hover:text-foreground/80 transition-colors">Blog</Link>
-              <button className="bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors">
+              <Link href="/contact" className="bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors">
                 Get Consultation
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -79,7 +80,7 @@ export default function AboutPage() {
             </div>
             <div className="relative">
               {/* Placeholder for professional photo */}
-              <div className="w-full h-96 bg-gray-200 rounded-xl flex items-center justify-center">
+              <div className="w-full h-96 bg-gray-200 rounded-xl flex items-center justify-center" role="img" aria-label="Professional headshot placeholder for Amir Gomez">
                 <div className="text-center">
                   <div className="text-4xl mb-2">📸</div>
                   <p className="text-gray-600">Professional Photo</p>
@@ -275,7 +276,7 @@ export default function AboutPage() {
                   made all the difference."
                 </p>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
+                  <div className="w-12 h-12 bg-gray-300 rounded-full" role="img" aria-label="Client avatar"></div>
                   <div className="text-left">
                     <div className="font-semibold">Sarah Johnson</div>
                     <div className="text-sm text-foreground/60">CEO, TechStart Solutions</div>
@@ -290,7 +291,7 @@ export default function AboutPage() {
                   Amir's email automation sequences alone generated an additional $200k in revenue this year."
                 </p>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
+                  <div className="w-12 h-12 bg-gray-300 rounded-full" role="img" aria-label="Client avatar"></div>
                   <div className="text-left">
                     <div className="font-semibold">Mike Chen</div>
                     <div className="text-sm text-foreground/60">Founder, E-commerce Plus</div>
@@ -352,9 +353,9 @@ export default function AboutPage() {
               <p className="text-foreground/60">Digital Marketing Specialist</p>
             </div>
             <div className="flex space-x-6">
-              <Link href="#" className="text-foreground/60 hover:text-foreground transition-colors">LinkedIn</Link>
-              <Link href="#" className="text-foreground/60 hover:text-foreground transition-colors">Twitter</Link>
-              <Link href="#" className="text-foreground/60 hover:text-foreground transition-colors">Email</Link>
+              <Link href="https://linkedin.com/in/amirgomez" className="text-foreground/60 hover:text-foreground transition-colors">LinkedIn</Link>
+              <Link href="https://twitter.com/amirgomez" className="text-foreground/60 hover:text-foreground transition-colors">Twitter</Link>
+              <Link href="mailto:amir@amirgomez.com" className="text-foreground/60 hover:text-foreground transition-colors">Email</Link>
             </div>
           </div>
           <div className="border-t border-foreground/10 mt-8 pt-8 text-center text-foreground/60">

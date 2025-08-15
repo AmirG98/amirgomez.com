@@ -208,13 +208,12 @@ export default async function BlogPostPage({ params }: PageProps) {
             <h3 className="text-lg font-semibold mb-4">Tags</h3>
             <div className="flex flex-wrap gap-3">
               {post.tags.map((tag) => (
-                <Link
+                <span
                   key={tag}
-                  href={`/blog/tag/${tag.toLowerCase().replace(' ', '-')}`}
-                  className="bg-foreground/5 hover:bg-orange-100 dark:hover:bg-orange-900/30 px-3 py-2 rounded-lg text-sm font-medium transition-colors hover:text-orange-600"
+                  className="bg-foreground/5 px-3 py-2 rounded-lg text-sm font-medium text-orange-600"
                 >
                   #{tag}
-                </Link>
+                </span>
               ))}
             </div>
           </div>
@@ -323,9 +322,9 @@ export default async function BlogPostPage({ params }: PageProps) {
               <p className="text-foreground/60">Digital Marketing Specialist</p>
             </div>
             <div className="flex space-x-6">
-              <Link href="#" className="text-foreground/60 hover:text-foreground transition-colors">LinkedIn</Link>
-              <Link href="#" className="text-foreground/60 hover:text-foreground transition-colors">Twitter</Link>
-              <Link href="#" className="text-foreground/60 hover:text-foreground transition-colors">Email</Link>
+              <Link href="https://linkedin.com/in/amirgomez" className="text-foreground/60 hover:text-foreground transition-colors">LinkedIn</Link>
+              <Link href="https://twitter.com/amirgomez" className="text-foreground/60 hover:text-foreground transition-colors">Twitter</Link>
+              <Link href="mailto:amir@amirgomez.com" className="text-foreground/60 hover:text-foreground transition-colors">Email</Link>
             </div>
           </div>
           <div className="border-t border-foreground/10 mt-8 pt-8 text-center text-foreground/60">

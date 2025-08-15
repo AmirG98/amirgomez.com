@@ -161,13 +161,9 @@ export default function BlogPage() {
       <section className="container mx-auto px-4 mb-16">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-3xl font-bold">Latest Articles</h2>
-          <Link 
-            href="/blog/all" 
-            className="text-orange-600 hover:text-orange-700 font-semibold flex items-center gap-2"
-          >
-            View All Posts
-            <span>→</span>
-          </Link>
+          <div className="text-foreground/60 text-sm">
+            Showing {blogPosts.length} articles
+          </div>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -213,18 +209,17 @@ export default function BlogPage() {
           {blogCategories.map((category) => {
             const categoryPosts = blogPosts.filter(post => post.category === category);
             return (
-              <Link 
+              <div 
                 key={category}
-                href={`/blog/category/${category.toLowerCase().replace(' ', '-')}`}
-                className="group bg-background border border-foreground/10 rounded-lg p-6 hover:shadow-md transition-all hover:border-orange-500/20"
+                className="bg-background border border-foreground/10 rounded-lg p-6"
               >
-                <h3 className="font-semibold mb-2 group-hover:text-orange-600 transition-colors">
+                <h3 className="font-semibold mb-2 text-orange-600">
                   {category}
                 </h3>
                 <p className="text-sm text-foreground/60">
                   {categoryPosts.length} article{categoryPosts.length !== 1 ? 's' : ''}
                 </p>
-              </Link>
+              </div>
             );
           })}
         </div>
@@ -239,9 +234,9 @@ export default function BlogPage() {
               <p className="text-foreground/60">Digital Marketing Specialist</p>
             </div>
             <div className="flex space-x-6">
-              <Link href="#" className="text-foreground/60 hover:text-foreground transition-colors">LinkedIn</Link>
-              <Link href="#" className="text-foreground/60 hover:text-foreground transition-colors">Twitter</Link>
-              <Link href="#" className="text-foreground/60 hover:text-foreground transition-colors">Email</Link>
+              <Link href="https://linkedin.com/in/amirgomez" className="text-foreground/60 hover:text-foreground transition-colors">LinkedIn</Link>
+              <Link href="https://twitter.com/amirgomez" className="text-foreground/60 hover:text-foreground transition-colors">Twitter</Link>
+              <Link href="mailto:amir@amirgomez.com" className="text-foreground/60 hover:text-foreground transition-colors">Email</Link>
             </div>
           </div>
           <div className="border-t border-foreground/10 mt-8 pt-8 text-center text-foreground/60">

@@ -33,6 +33,7 @@ export default function ContactPage() {
               <Link href="/" className="hover:text-foreground/80 transition-colors">Home</Link>
               <Link href="/about" className="hover:text-foreground/80 transition-colors">About</Link>
               <Link href="/services" className="hover:text-foreground/80 transition-colors">Services</Link>
+              <Link href="/case-studies" className="hover:text-foreground/80 transition-colors">Case Studies</Link>
               <Link href="/blog" className="hover:text-foreground/80 transition-colors">Blog</Link>
               <Link href="/contact" className="text-orange-600 font-semibold">Contact</Link>
             </div>
@@ -233,16 +234,16 @@ export default function ContactPage() {
                   Prefer to book directly? Choose a time that works for you from my calendar below.
                 </p>
                 
-                {/* Calendar placeholder */}
-                <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-8 text-center">
-                  <div className="text-3xl mb-4">📅</div>
-                  <h4 className="font-semibold mb-2">Calendar Integration</h4>
-                  <p className="text-sm text-foreground/60 mb-4">
-                    Connect your Calendly, Acuity, or similar booking system here
-                  </p>
-                  <button className="bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-orange-700 transition-colors">
-                    Integrate Calendar
-                  </button>
+                {/* Calendly Integration */}
+                <div className="rounded-lg overflow-hidden" style={{ height: '600px' }}>
+                  <iframe
+                    src="https://calendly.com/amir-amirgomez/30min?embed_domain=amirgomez-com.vercel.app&embed_type=Inline"
+                    width="100%"
+                    height="100%"
+                    frameBorder="0"
+                    title="Schedule a meeting with Amir Gomez"
+                    style={{ border: 'none' }}
+                  ></iframe>
                 </div>
               </div>
 
@@ -351,9 +352,9 @@ export default function ContactPage() {
               <p className="text-foreground/60">Digital Marketing Specialist</p>
             </div>
             <div className="flex space-x-6">
-              <Link href="#" className="text-foreground/60 hover:text-foreground transition-colors">LinkedIn</Link>
-              <Link href="#" className="text-foreground/60 hover:text-foreground transition-colors">Twitter</Link>
-              <Link href="#" className="text-foreground/60 hover:text-foreground transition-colors">Email</Link>
+              <Link href="https://linkedin.com/in/amirgomez" className="text-foreground/60 hover:text-foreground transition-colors">LinkedIn</Link>
+              <Link href="https://twitter.com/amirgomez" className="text-foreground/60 hover:text-foreground transition-colors">Twitter</Link>
+              <Link href="mailto:amir@amirgomez.com" className="text-foreground/60 hover:text-foreground transition-colors">Email</Link>
             </div>
           </div>
           <div className="border-t border-foreground/10 mt-8 pt-8 text-center text-foreground/60">

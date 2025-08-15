@@ -1,7 +1,13 @@
+'use client';
+
 import Link from 'next/link';
 import { getFeaturedPosts } from '@/data/blog-posts';
+import MultiStepForm from '@/components/MultiStepForm';
+import { useFormModal } from '@/components/useFormModal';
 
 export default function Home() {
+  const { isOpen, currentVariant, openForm, closeForm, handleSubmit } = useFormModal();
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
@@ -16,9 +22,12 @@ export default function Home() {
               <Link href="/services" className="hover:text-foreground/80 transition-colors">Services</Link>
               <Link href="/case-studies" className="hover:text-foreground/80 transition-colors">Case Studies</Link>
               <Link href="/blog" className="hover:text-foreground/80 transition-colors">Blog</Link>
-              <Link href="/contact" className="bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors">
+              <button 
+                onClick={() => openForm('consultation')}
+                className="bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors"
+              >
                 Get Free Consultation
-              </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -36,12 +45,15 @@ export default function Home() {
             <strong className="text-foreground"> No results, no payment.</strong>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <button className="bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-700 transition-colors shadow-lg">
+            <button 
+              onClick={() => openForm('audit')}
+              className="bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-700 transition-colors shadow-lg"
+            >
               Get Free Marketing Audit
             </button>
-            <button className="border-2 border-foreground/20 px-8 py-4 rounded-full font-semibold text-lg hover:bg-foreground/5 transition-colors">
+            <Link href="/case-studies" className="border-2 border-foreground/20 px-8 py-4 rounded-full font-semibold text-lg hover:bg-foreground/5 transition-colors inline-block text-center">
               View Case Studies
-            </button>
+            </Link>
           </div>
           
           {/* Trust Indicators */}
@@ -161,7 +173,10 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <button className="bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-700 transition-colors">
+            <button 
+              onClick={() => openForm('campaign')}
+              className="bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-700 transition-colors"
+            >
               Start Your Marketing Campaign
             </button>
           </div>
@@ -301,10 +316,16 @@ export default function Home() {
               <strong>No payment required until you see results.</strong>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <button className="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-700 transition-colors shadow-lg">
+              <button 
+                onClick={() => openForm('consultation')}
+                className="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-700 transition-colors shadow-lg"
+              >
                 Get Free Consultation
               </button>
-              <button className="border-2 border-foreground/20 px-8 py-4 rounded-full font-semibold text-lg hover:bg-foreground/5 transition-colors">
+              <button 
+                onClick={() => openForm('caseStudies')}
+                className="border-2 border-foreground/20 px-8 py-4 rounded-full font-semibold text-lg hover:bg-foreground/5 transition-colors"
+              >
                 Download Case Studies
               </button>
             </div>
@@ -391,9 +412,9 @@ export default function Home() {
               <p className="text-foreground/60">Digital Marketing Specialist</p>
             </div>
             <div className="flex space-x-6">
-              <a href="#" className="text-foreground/60 hover:text-foreground transition-colors">LinkedIn</a>
-              <a href="#" className="text-foreground/60 hover:text-foreground transition-colors">Twitter</a>
-              <a href="#" className="text-foreground/60 hover:text-foreground transition-colors">Email</a>
+              <a href="https://linkedin.com/in/amirgomez" className="text-foreground/60 hover:text-foreground transition-colors">LinkedIn</a>
+              <a href="https://twitter.com/amirgomez" className="text-foreground/60 hover:text-foreground transition-colors">Twitter</a>
+              <a href="mailto:amir@amirgomez.com" className="text-foreground/60 hover:text-foreground transition-colors">Email</a>
             </div>
           </div>
           <div className="border-t border-foreground/10 mt-8 pt-8 text-center text-foreground/60">
@@ -401,6 +422,16 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      
+      {/* Multi-Step Form Modal */}
+      {currentVariant && (
+        <MultiStepForm
+          variant={currentVariant}
+          isOpen={isOpen}
+          onClose={closeForm}
+          onSubmit={handleSubmit}
+        />
+      )}
     </div>
   );
 }
