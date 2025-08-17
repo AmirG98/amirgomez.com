@@ -1,5 +1,7 @@
 'use client';
 
+import React from 'react';
+
 interface BlogContentProps {
   content: string;
 }
@@ -18,7 +20,7 @@ export default function BlogContent({ content }: BlogContentProps) {
   // Parse markdown content and render with proper IDs for headings
   const renderContent = (content: string) => {
     const lines = content.split('\n');
-    const elements: JSX.Element[] = [];
+    const elements: React.ReactElement[] = [];
     let currentIndex = 0;
 
     for (let i = 0; i < lines.length; i++) {
