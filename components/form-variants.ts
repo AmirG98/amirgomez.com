@@ -218,10 +218,10 @@ export const formVariants: Record<string, FormVariant> = {
 
   caseStudies: {
     id: 'caseStudies',
-    title: 'Download Free Case Studies',
-    subtitle: 'See exactly how I\'ve helped businesses like yours',
-    step1Title: 'Get Instant Access to Success Stories',
-    step1Subtitle: 'Download detailed case studies showing exactly how I\'ve helped businesses achieve 300-450% ROI increases. See the strategies, tactics, and results.',
+    title: 'Grab My Free Growth Playbook',
+    subtitle: 'Proven strategies to scale your business',
+    step1Title: 'Get Your Free Growth Playbook',
+    step1Subtitle: 'Download my comprehensive playbook with proven strategies, frameworks, and tactics I\'ve used to help 380+ businesses scale their revenue.',
     step2Fields: [
       {
         name: 'firstName',
@@ -278,7 +278,7 @@ export const formVariants: Record<string, FormVariant> = {
         ]
       }
     ],
-    submitText: 'Download Case Studies',
-    successMessage: 'Thank you! Check your email - I\'ve sent you exclusive case studies with detailed breakdowns of successful campaigns. Enjoy!'
+    submitText: 'Get My Growth Playbook',
+    successMessage: 'Thank you! Check your email - I\'ve sent you my comprehensive growth playbook with proven strategies and frameworks. Start implementing today!'
   }
 };

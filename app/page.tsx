@@ -41,8 +41,7 @@ export default function Home() {
             <span className="text-orange-600"> Proven Marketing</span>
           </h1>
           <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-            I help businesses increase revenue through data-driven advertising strategies. 
-            <strong className="text-foreground"> No results, no payment.</strong>
+            I help businesses increase revenue through data-driven advertising strategies.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <button 
@@ -316,13 +315,12 @@ export default function Home() {
               Ready to Grow Your Business?
             </h2>
             <p className="text-xl text-foreground/80 mb-8">
-              Get a free marketing audit and custom growth strategy. 
-              <strong>No payment required until you see results.</strong>
+              Get a free marketing audit and custom growth strategy.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <button 
                 onClick={() => openForm('consultation')}
-                className="bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-700 transition-colors shadow-lg"
+                className="bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-700 transition-colors shadow-lg"
               >
                 Get Free Consultation
               </button>
@@ -330,11 +328,11 @@ export default function Home() {
                 onClick={() => openForm('caseStudies')}
                 className="border-2 border-foreground/20 px-8 py-4 rounded-full font-semibold text-lg hover:bg-foreground/5 transition-colors"
               >
-                Download Case Studies
+                Grab My Free Growth Playbook
               </button>
             </div>
             <p className="text-sm text-foreground/60">
-              Free consultation • No commitment • Results guaranteed
+              Free consultation • No commitment
             </p>
           </div>
         </div>
