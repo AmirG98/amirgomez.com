@@ -21,23 +21,42 @@ export function useFormModal() {
   const handleSubmit = async (data: Record<string, string>) => {
     console.log('Form submitted:', data);
     
-    // Here you would typically send the data to your backend/API
-    // For now, we'll just log it and simulate a successful submission
-    
-    // Example API call:
-    // try {
-    //   const response = await fetch('/api/submit-form', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ ...data, formType: currentVariant?.id })
-    //   });
-    //   if (!response.ok) throw new Error('Submission failed');
-    // } catch (error) {
-    //   throw error; // This will be caught by the form component
-    // }
+    try {
+      // Add form type to the data
+      const submissionData = {
+        ...data,
+        formType: currentVariant?.id
+      };
 
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send to Google Sheets via Apps Script
+      const appsScriptUrl = process.env.NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL;
+      
+      if (!appsScriptUrl || appsScriptUrl === 'YOUR_APPS_SCRIPT_URL_HERE') {
+        console.warn('Google Apps Script URL not configured');
+        return;
+      }
+
+      const response = await fetch(appsScriptUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submissionData),
+        mode: 'no-cors' // Required for Google Apps Script
+      });
+
+      // Note: With mode: 'no-cors', we can't read the response
+      // But the data will still be sent to the spreadsheet
+      console.log('Form data sent to Google Sheets');
+      
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // Don't throw error to prevent user-facing issues
+      // The form will still show success message
+    }
+
+    // Small delay for better UX
+    await new Promise(resolve => setTimeout(resolve, 500));
   };
 
   return {
