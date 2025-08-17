@@ -112,7 +112,6 @@ export default function BlogPage() {
               <Link href="/" className="hover:text-foreground/80 transition-colors">Home</Link>
               <Link href="/about" className="hover:text-foreground/80 transition-colors">About</Link>
               <Link href="/services" className="hover:text-foreground/80 transition-colors">Services</Link>
-              <Link href="/case-studies" className="hover:text-foreground/80 transition-colors">Case Studies</Link>
               <Link href="/blog" className="text-orange-600 font-semibold">Blog</Link>
               <Link href="/contact" className="bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors">
                 Get Consultation
@@ -130,7 +129,7 @@ export default function BlogPage() {
             <span className="text-orange-600"> Drive Results</span>
           </h1>
           <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Proven strategies, real case studies, and actionable tactics from managing $2M+ in ad spend across 200+ campaigns.
+            Proven strategies and actionable tactics from managing $35M+ in campaigns across 380+ successful funnels with 10 years in business.
           </p>
           
           {/* Categories */}

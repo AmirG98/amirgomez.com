@@ -169,7 +169,6 @@ export default function ServicesPage() {
               <Link href="/" className="hover:text-foreground/80 transition-colors">Home</Link>
               <Link href="/about" className="hover:text-foreground/80 transition-colors">About</Link>
               <Link href="/services" className="text-orange-600 font-semibold">Services</Link>
-              <Link href="/case-studies" className="hover:text-foreground/80 transition-colors">Case Studies</Link>
               <Link href="/blog" className="hover:text-foreground/80 transition-colors">Blog</Link>
               <Link href="/contact" className="bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors">
                 Get Free Consultation
@@ -395,10 +394,10 @@ export default function ServicesPage() {
                 Schedule Free Consultation
               </Link>
               <Link 
-                href="/case-studies"
+                href="/blog"
                 className="border border-orange-600 text-orange-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-50 dark:hover:bg-orange-900/20 transition-colors"
               >
-                View Success Stories
+                Read Marketing Insights
               </Link>
             </div>
             <p className="text-sm text-foreground/60 mt-6">

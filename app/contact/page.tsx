@@ -33,7 +33,6 @@ export default function ContactPage() {
               <Link href="/" className="hover:text-foreground/80 transition-colors">Home</Link>
               <Link href="/about" className="hover:text-foreground/80 transition-colors">About</Link>
               <Link href="/services" className="hover:text-foreground/80 transition-colors">Services</Link>
-              <Link href="/case-studies" className="hover:text-foreground/80 transition-colors">Case Studies</Link>
               <Link href="/blog" className="hover:text-foreground/80 transition-colors">Blog</Link>
               <Link href="/contact" className="text-orange-600 font-semibold">Contact</Link>
             </div>

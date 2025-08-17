@@ -20,7 +20,6 @@ export default function Home() {
             <div className="flex items-center space-x-6">
               <Link href="/about" className="hover:text-foreground/80 transition-colors">About</Link>
               <Link href="/services" className="hover:text-foreground/80 transition-colors">Services</Link>
-              <Link href="/case-studies" className="hover:text-foreground/80 transition-colors">Case Studies</Link>
               <Link href="/blog" className="hover:text-foreground/80 transition-colors">Blog</Link>
               <button 
                 onClick={() => openForm('consultation')}

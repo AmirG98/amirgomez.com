@@ -34,7 +34,6 @@ export default function AboutPage() {
               <Link href="/" className="hover:text-foreground/80 transition-colors">Home</Link>
               <Link href="/about" className="text-orange-600 font-semibold">About</Link>
               <Link href="/services" className="hover:text-foreground/80 transition-colors">Services</Link>
-              <Link href="/case-studies" className="hover:text-foreground/80 transition-colors">Case Studies</Link>
               <Link href="/blog" className="hover:text-foreground/80 transition-colors">Blog</Link>
               <Link href="/contact" className="bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors">
                 Get Consultation
@@ -54,20 +53,20 @@ export default function AboutPage() {
                 <span className="text-orange-600"> Profitable Growth</span>
               </h1>
               <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
-                I'm Amir Gomez, and for the past 8 years, I've helped 200+ businesses transform their marketing from cost centers into profit drivers. My approach is simple: data-driven strategies, proven frameworks, and results that speak for themselves.
+                I'm Amir Gomez, and for the past 10 years, I've helped 380+ businesses transform their marketing from cost centers into profit drivers. My approach is simple: data-driven strategies, proven frameworks, and results that speak for themselves.
               </p>
               <div className="flex items-center gap-6 mb-8">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-600">$2M+</div>
-                  <div className="text-sm text-foreground/60">Ad Spend Managed</div>
+                  <div className="text-2xl font-bold text-orange-600">$35M+</div>
+                  <div className="text-sm text-foreground/60">Generated with Campaigns</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-600">200+</div>
-                  <div className="text-sm text-foreground/60">Campaigns Launched</div>
+                  <div className="text-2xl font-bold text-orange-600">380+</div>
+                  <div className="text-sm text-foreground/60">Successful Funnels</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-600">340%</div>
-                  <div className="text-sm text-foreground/60">Average ROI Increase</div>
+                  <div className="text-2xl font-bold text-orange-600">450%</div>
+                  <div className="text-sm text-foreground/60">Average ROI</div>
                 </div>
               </div>
               <Link 
@@ -79,13 +78,13 @@ export default function AboutPage() {
               </Link>
             </div>
             <div className="relative">
-              {/* Placeholder for professional photo */}
-              <div className="w-full h-96 bg-gray-200 rounded-xl flex items-center justify-center" role="img" aria-label="Professional headshot placeholder for Amir Gomez">
-                <div className="text-center">
-                  <div className="text-4xl mb-2">📸</div>
-                  <p className="text-gray-600">Professional Photo</p>
-                  <p className="text-sm text-gray-500">(Upload your headshot here)</p>
-                </div>
+              {/* Professional photo */}
+              <div className="w-full h-96 rounded-xl overflow-hidden border-4 border-orange-100 dark:border-orange-900/30">
+                <img 
+                  src="/amir-profile.jpg" 
+                  alt="Amir Gomez - Digital Marketing Specialist"
+                  className="w-full h-full object-cover"
+                />
               </div>
               {/* Floating stats card */}
               <div className="absolute -bottom-6 -left-6 bg-background border border-foreground/10 rounded-lg p-6 shadow-lg">
@@ -120,7 +119,7 @@ export default function AboutPage() {
                 </p>
                 
                 <p>
-                  Over the past 8 years, I've had the privilege of working with businesses ranging from local service 
+                  Over the past 10 years, I've had the privilege of working with businesses ranging from local service 
                   providers to 8-figure e-commerce brands. Each campaign taught me something new, and each success built 
                   on the framework that I now use with every client.
                 </p>
@@ -177,7 +176,7 @@ export default function AboutPage() {
               
               <div className="bg-background border border-foreground/10 rounded-xl p-6">
                 <div className="text-3xl mb-4">💼</div>
-                <h3 className="text-xl font-bold mb-3">8+ Years Experience</h3>
+                <h3 className="text-xl font-bold mb-3">10+ Years Experience</h3>
                 <p className="text-foreground/80">
                   Hands-on experience managing campaigns across every major advertising platform and industry vertical.
                 </p>
@@ -187,7 +186,7 @@ export default function AboutPage() {
                 <div className="text-3xl mb-4">🏆</div>
                 <h3 className="text-xl font-bold mb-3">Proven Results</h3>
                 <p className="text-foreground/80">
-                  Track record of increasing client ROI by an average of 340% within the first 6 months of engagement.
+                  Track record of increasing client ROI by an average of 450% within the first 6 months of engagement.
                 </p>
               </div>
             </div>
@@ -302,10 +301,10 @@ export default function AboutPage() {
             
             <div className="mt-12">
               <Link 
-                href="/case-studies"
+                href="/blog"
                 className="text-orange-600 hover:text-orange-700 font-semibold flex items-center gap-2 justify-center"
               >
-                Read More Success Stories
+                Read Marketing Insights & Strategies
                 <span>→</span>
               </Link>
             </div>

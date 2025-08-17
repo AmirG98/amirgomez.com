@@ -81,7 +81,6 @@ export default async function BlogPostPage({ params }: PageProps) {
               <Link href="/" className="hover:text-foreground/80 transition-colors">Home</Link>
               <Link href="/about" className="hover:text-foreground/80 transition-colors">About</Link>
               <Link href="/services" className="hover:text-foreground/80 transition-colors">Services</Link>
-              <Link href="/case-studies" className="hover:text-foreground/80 transition-colors">Case Studies</Link>
               <Link href="/blog" className="hover:text-foreground/80 transition-colors">Blog</Link>
               <Link href="/contact" className="bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors">
                 Get Consultation
