@@ -57,18 +57,28 @@ export default function Home() {
           </div>
           
           {/* Trust Indicators */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-foreground/60">
-            <div className="flex items-center gap-2">
-              <span className="text-orange-500">✓</span>
-              <span>$2M+ Generated for Clients</span>
+          <div className="space-y-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-foreground/60">
+              <div className="flex items-center gap-2">
+                <span className="text-orange-500">✓</span>
+                <span>$35M+ Generated with Campaigns</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-orange-500">✓</span>
+                <span>380+ Successful Funnels</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-orange-500">✓</span>
+                <span>Average 450% ROI</span>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-orange-500">✓</span>
-              <span>200+ Successful Campaigns</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-orange-500">✓</span>
-              <span>Average 300% ROI</span>
+            
+            {/* Years in Business Tagline */}
+            <div className="text-center">
+              <div className="inline-flex items-center gap-2 bg-orange-50 dark:bg-orange-900/20 px-4 py-2 rounded-full text-orange-600 font-semibold text-sm">
+                <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                10 years in business
+              </div>
             </div>
           </div>
         </div>
