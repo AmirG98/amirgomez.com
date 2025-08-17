@@ -266,49 +266,43 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="bg-background rounded-xl p-8 shadow-sm">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
-                <div>
-                  <div className="font-semibold">Sarah Johnson</div>
-                  <div className="text-sm text-foreground/60">CEO, TechStart Inc</div>
-                </div>
+            <div className="bg-background rounded-xl p-8 shadow-sm border border-foreground/10 hover:shadow-lg transition-shadow">
+              <div className="mb-6">
+                <div className="text-orange-400 text-xl mb-4">★★★★★</div>
+                <p className="text-foreground/80 mb-6 text-lg leading-relaxed italic">
+                  "Amir is one of the most talented marketers I've had the opportunity to work with. I strongly recommend him."
+                </p>
               </div>
-              <p className="text-foreground/80 mb-4">
-                "Amir increased our lead generation by 340% in just 3 months. 
-                His strategic approach and attention to detail are exceptional."
-              </p>
-              <div className="text-orange-400">★★★★★</div>
+              <div className="border-t border-foreground/10 pt-6">
+                <div className="font-semibold text-foreground">Steven Page</div>
+                <div className="text-sm text-orange-600 font-medium">VP of Marketing at Giant Partners</div>
+              </div>
             </div>
 
-            <div className="bg-background rounded-xl p-8 shadow-sm">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
-                <div>
-                  <div className="font-semibold">Mike Chen</div>
-                  <div className="text-sm text-foreground/60">Founder, E-commerce Plus</div>
-                </div>
+            <div className="bg-background rounded-xl p-8 shadow-sm border border-foreground/10 hover:shadow-lg transition-shadow">
+              <div className="mb-6">
+                <div className="text-orange-400 text-xl mb-4">★★★★★</div>
+                <p className="text-foreground/80 mb-6 text-lg leading-relaxed italic">
+                  "Amir possesses a deep understanding of market trends and customer behavior, and has a remarkable talent for creating innovative strategies that drive business growth and increase revenue."
+                </p>
               </div>
-              <p className="text-foreground/80 mb-4">
-                "ROI went from break-even to 450% within 6 months. 
-                The systematic approach and clear reporting made all the difference."
-              </p>
-              <div className="text-orange-400">★★★★★</div>
+              <div className="border-t border-foreground/10 pt-6">
+                <div className="font-semibold text-foreground">Nick Koriakos</div>
+                <div className="text-sm text-orange-600 font-medium">Founder of Stack Force</div>
+              </div>
             </div>
 
-            <div className="bg-background rounded-xl p-8 shadow-sm">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-gray-300 rounded-full mr-4"></div>
-                <div>
-                  <div className="font-semibold">Lisa Martinez</div>
-                  <div className="text-sm text-foreground/60">Marketing Director, HealthCare Pro</div>
-                </div>
+            <div className="bg-background rounded-xl p-8 shadow-sm border border-foreground/10 hover:shadow-lg transition-shadow">
+              <div className="mb-6">
+                <div className="text-orange-400 text-xl mb-4">★★★★★</div>
+                <p className="text-foreground/80 mb-6 text-lg leading-relaxed italic">
+                  "I deeply trust Amir's ability to drive business growth, simplifying complex scenarios into actionable strategies."
+                </p>
               </div>
-              <p className="text-foreground/80 mb-4">
-                "Finally found someone who understands both the technical and strategic 
-                sides of digital marketing. Highly recommended!"
-              </p>
-              <div className="text-orange-400">★★★★★</div>
+              <div className="border-t border-foreground/10 pt-6">
+                <div className="font-semibold text-foreground">Agustin Oliva</div>
+                <div className="text-sm text-orange-600 font-medium">General Manager of RollerShow</div>
+              </div>
             </div>
           </div>
         </div>
