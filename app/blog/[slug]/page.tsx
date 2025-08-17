@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { blogPosts, getPostBySlug, getRelatedPosts } from '@/data/blog-posts';
+import TableOfContents from '@/components/TableOfContents';
+import BlogContent from '@/components/BlogContent';
 
 interface PageParams {
   slug: string;
@@ -55,46 +57,6 @@ function formatDate(dateString: string) {
   });
 }
 
-function BlogContent({ content }: { content: string }) {
-  const sections = content.split('\n\n');
-  
-  return (
-    <div className="prose prose-lg max-w-none prose-headings:font-bold prose-h1:text-4xl prose-h2:text-2xl prose-h3:text-xl prose-p:text-foreground/80 prose-p:leading-relaxed prose-strong:text-foreground prose-code:bg-foreground/10 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-pre:bg-foreground/5 prose-pre:border prose-pre:border-foreground/10">
-      {sections.map((section, index) => {
-        if (section.startsWith('# ')) {
-          return <h1 key={index} className="text-4xl font-bold mb-6 mt-8 first:mt-0">{section.replace('# ', '')}</h1>;
-        } else if (section.startsWith('## ')) {
-          return <h2 key={index} className="text-2xl font-bold mb-4 mt-8">{section.replace('## ', '')}</h2>;
-        } else if (section.startsWith('### ')) {
-          return <h3 key={index} className="text-xl font-bold mb-3 mt-6">{section.replace('### ', '')}</h3>;
-        } else if (section.startsWith('**') && section.endsWith('**')) {
-          return <p key={index} className="font-bold text-lg mb-4">{section.replace(/\*\*/g, '')}</p>;
-        } else if (section.includes('```')) {
-          const codeMatch = section.match(/```(\w+)?\n([\s\S]*?)\n```/);
-          if (codeMatch) {
-            return (
-              <pre key={index} className="bg-foreground/5 border border-foreground/10 rounded-lg p-4 overflow-x-auto my-6">
-                <code className="text-sm">{codeMatch[2]}</code>
-              </pre>
-            );
-          }
-        } else if (section.startsWith('- ')) {
-          const items = section.split('\n').filter(item => item.startsWith('- '));
-          return (
-            <ul key={index} className="list-disc list-inside space-y-2 mb-6">
-              {items.map((item, itemIndex) => (
-                <li key={itemIndex} className="text-foreground/80">{item.replace('- ', '')}</li>
-              ))}
-            </ul>
-          );
-        } else if (section.trim()) {
-          return <p key={index} className="text-foreground/80 leading-relaxed mb-6">{section}</p>;
-        }
-        return null;
-      })}
-    </div>
-  );
-}
 
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
@@ -167,9 +129,15 @@ export default async function BlogPostPage({ params }: PageProps) {
             </p>
 
             {/* Author and Meta */}
-            <div className="flex items-center justify-between border-b border-foreground/10 pb-8">
+            <div className="flex items-center border-b border-foreground/10 pb-8">
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-gray-300 rounded-full"></div>
+                <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-orange-100 dark:border-orange-900/30">
+                  <img 
+                    src="/amir-profile.jpg" 
+                    alt={post.author.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <div>
                   <div className="font-semibold text-lg">{post.author.name}</div>
                   <div className="text-foreground/60 mb-1">{post.author.bio}</div>
@@ -182,18 +150,11 @@ export default async function BlogPostPage({ params }: PageProps) {
                 </div>
               </div>
 
-              {/* Social Share */}
-              <div className="flex items-center gap-3">
-                <span className="text-sm text-foreground/60">Share:</span>
-                <button className="text-foreground/60 hover:text-blue-800 transition-colors">
-                  LinkedIn
-                </button>
-                <button className="text-foreground/60 hover:text-foreground transition-colors">
-                  Copy Link
-                </button>
-              </div>
             </div>
           </header>
+
+          {/* Table of Contents */}
+          <TableOfContents content={post.content} />
 
           {/* Article Content */}
           <div className="mb-12">
@@ -265,7 +226,13 @@ export default async function BlogPostPage({ params }: PageProps) {
                         </p>
 
                         <div className="flex items-center gap-2">
-                          <div className="w-8 h-8 bg-gray-300 rounded-full"></div>
+                          <div className="w-8 h-8 rounded-full overflow-hidden border border-orange-100 dark:border-orange-900/30">
+                            <img 
+                              src="/amir-profile.jpg" 
+                              alt={relatedPost.author.name}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
                           <div>
                             <div className="font-medium text-sm">{relatedPost.author.name}</div>
                             <div className="text-xs text-foreground/60">{formatDate(relatedPost.publishedAt)}</div>

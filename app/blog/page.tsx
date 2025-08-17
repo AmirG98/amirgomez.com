@@ -66,10 +66,16 @@ function BlogPostCard({ post, featured = false }: { post: typeof blogPosts[0], f
             {/* Author and date */}
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
+                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-orange-100 dark:border-orange-900/30">
+                  <img 
+                    src="/amir-profile.jpg" 
+                    alt={post.author.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 <div>
                   <div className="font-semibold text-sm">{post.author.name}</div>
-                  <div className="text-sm text-foreground/60">{formatDate(post.publishedAt)}</div>
+                  <div className="text-sm text-foreground/60">{formatDate(post.publishedAt)} • {post.readingTime} min read</div>
                 </div>
               </div>
               
