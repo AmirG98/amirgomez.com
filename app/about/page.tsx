@@ -53,7 +53,7 @@ export default function AboutPage() {
                 <span className="text-orange-600"> Profitable Growth</span>
               </h1>
               <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
-                I'm Amir Gomez, and for the past 10 years, I've helped 380+ businesses transform their marketing from cost centers into profit drivers. My approach is simple: data-driven strategies, proven frameworks, and results that speak for themselves.
+                I'm Amir Gomez, and for the past 10 years, I've helped 100+ businesses transform their marketing from cost centers into profit drivers. My approach is simple: data-driven strategies, proven frameworks, and results that speak for themselves.
               </p>
               <div className="flex items-center gap-6 mb-8">
                 <div className="text-center">
@@ -61,7 +61,7 @@ export default function AboutPage() {
                   <div className="text-sm text-foreground/60">Generated with Campaigns</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-600">380+</div>
+                  <div className="text-2xl font-bold text-orange-600">100+</div>
                   <div className="text-sm text-foreground/60">Successful Funnels</div>
                 </div>
                 <div className="text-center">

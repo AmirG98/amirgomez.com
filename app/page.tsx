@@ -71,7 +71,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-orange-500">✓</span>
-                    <span>380+ Successful Funnels</span>
+                    <span>100+ Successful Funnels</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-orange-500">✓</span>

@@ -129,7 +129,7 @@ export default function BlogPage() {
             <span className="text-orange-600"> Drive Results</span>
           </h1>
           <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Proven strategies and actionable tactics from managing $35M+ in campaigns across 380+ successful funnels with 10 years in business.
+            Proven strategies and actionable tactics from managing $35M+ in campaigns across 100+ successful funnels with 10 years in business.
           </p>
           
           {/* Categories */}
