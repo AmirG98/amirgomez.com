@@ -34,51 +34,86 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Grow Your Business with 
-            <span className="text-orange-600"> Proven Marketing</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-            I help businesses increase revenue through data-driven advertising strategies.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <button 
-              onClick={() => openForm('audit')}
-              className="bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-700 transition-colors shadow-lg"
-            >
-              Get Free Marketing Audit
-            </button>
-            <Link href="/case-studies" className="border-2 border-foreground/20 px-8 py-4 rounded-full font-semibold text-lg hover:bg-foreground/5 transition-colors inline-block text-center">
-              View Case Studies
-            </Link>
-          </div>
-          
-          {/* Trust Indicators */}
-          <div className="space-y-6">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-foreground/60">
-              <div className="flex items-center gap-2">
-                <span className="text-orange-500">✓</span>
-                <span>$35M+ Generated with Campaigns</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-orange-500">✓</span>
-                <span>380+ Successful Funnels</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-orange-500">✓</span>
-                <span>Average 450% ROI</span>
-              </div>
-            </div>
+      <section className="container mx-auto px-4 py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             
-            {/* Years in Business Tagline */}
-            <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-orange-50 dark:bg-orange-900/20 px-4 py-2 rounded-full text-orange-600 font-semibold text-sm">
-                <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
-                10 years in business
+            {/* Left Column - Text Content */}
+            <div className="text-center lg:text-left">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                Grow Your Business with 
+                <span className="text-orange-600"> Proven Marketing</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-foreground/80 mb-8 leading-relaxed">
+                I help businesses increase revenue through data-driven advertising strategies.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+                <button 
+                  onClick={() => openForm('audit')}
+                  className="bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-700 transition-colors shadow-lg"
+                >
+                  Get Free Marketing Audit
+                </button>
+                <Link href="/case-studies" className="border-2 border-foreground/20 px-8 py-4 rounded-full font-semibold text-lg hover:bg-foreground/5 transition-colors inline-block text-center">
+                  View Case Studies
+                </Link>
+              </div>
+              
+              {/* Trust Indicators */}
+              <div className="space-y-6">
+                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 text-sm text-foreground/60">
+                  <div className="flex items-center gap-2">
+                    <span className="text-orange-500">✓</span>
+                    <span>$35M+ Generated with Campaigns</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-orange-500">✓</span>
+                    <span>380+ Successful Funnels</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-orange-500">✓</span>
+                    <span>Average 450% ROI</span>
+                  </div>
+                </div>
+                
+                {/* Years in Business Tagline */}
+                <div className="text-center lg:text-left">
+                  <div className="inline-flex items-center gap-2 bg-orange-50 dark:bg-orange-900/20 px-4 py-2 rounded-full text-orange-600 font-semibold text-sm">
+                    <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                    10 years in business
+                  </div>
+                </div>
               </div>
             </div>
+
+            {/* Right Column - Profile Image */}
+            <div className="relative flex justify-center lg:justify-end">
+              <div className="relative">
+                {/* Main Profile Image */}
+                <div className="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-orange-100 dark:border-orange-900/30">
+                  <img 
+                    src="/amir-profile.jpg" 
+                    alt="Amir Gomez - Digital Marketing Specialist"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                {/* Floating Success Badge */}
+                <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg transform rotate-12">
+                  450% ROI Expert
+                </div>
+                
+                {/* Floating Client Count */}
+                <div className="absolute -bottom-6 -left-6 bg-background border border-foreground/10 rounded-xl p-4 shadow-lg">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-orange-600">380+</div>
+                    <div className="text-xs text-foreground/60">Success Stories</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
