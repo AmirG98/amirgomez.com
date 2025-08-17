@@ -55,9 +55,12 @@ export default function Home() {
                 >
                   Get Free Marketing Audit
                 </button>
-                <Link href="/case-studies" className="border-2 border-foreground/20 px-8 py-4 rounded-full font-semibold text-lg hover:bg-foreground/5 transition-colors inline-block text-center">
-                  View Case Studies
-                </Link>
+                <button 
+                  onClick={() => openForm('caseStudies')}
+                  className="border-2 border-foreground/20 px-8 py-4 rounded-full font-semibold text-lg hover:bg-foreground/5 transition-colors"
+                >
+                  Grab Growth Playbook
+                </button>
               </div>
               
               {/* Trust Indicators */}
@@ -88,29 +91,13 @@ export default function Home() {
             </div>
 
             {/* Right Column - Profile Image */}
-            <div className="relative flex justify-center lg:justify-end">
-              <div className="relative">
-                {/* Main Profile Image */}
-                <div className="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-orange-100 dark:border-orange-900/30">
-                  <img 
-                    src="/amir-profile.jpg" 
-                    alt="Amir Gomez - Digital Marketing Specialist"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                
-                {/* Floating Success Badge */}
-                <div className="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg transform rotate-12">
-                  450% ROI Expert
-                </div>
-                
-                {/* Floating Client Count */}
-                <div className="absolute -bottom-6 -left-6 bg-background border border-foreground/10 rounded-xl p-4 shadow-lg">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-orange-600">380+</div>
-                    <div className="text-xs text-foreground/60">Success Stories</div>
-                  </div>
-                </div>
+            <div className="flex justify-center lg:justify-end">
+              <div className="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-orange-100 dark:border-orange-900/30">
+                <img 
+                  src="/amir-profile.jpg" 
+                  alt="Amir Gomez - Digital Marketing Specialist"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 
