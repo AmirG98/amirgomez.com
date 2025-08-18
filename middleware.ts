@@ -26,9 +26,13 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // For root paths without locale, let them go to the root pages (English)
-  // This allows /contact to work properly for the /app/contact/page.tsx
-  const rootPaths = ['/', '/about', '/services', '/blog', '/contact']
+  // Special handling for /contact - redirect to /en/contact
+  if (pathname === '/contact') {
+    return NextResponse.redirect(new URL('/en/contact', request.url))
+  }
+
+  // For other root paths without locale, let them go to the root pages (English)
+  const rootPaths = ['/', '/about', '/services', '/blog']
   const isRootPath = rootPaths.includes(pathname) || pathname.startsWith('/blog/')
   
   if (isRootPath) {
