@@ -26,13 +26,8 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // Special handling for /contact - redirect to /en/contact
-  if (pathname === '/contact') {
-    return NextResponse.redirect(new URL('/en/contact', request.url))
-  }
-
-  // For other root paths without locale, let them go to the root pages (English)
-  const rootPaths = ['/', '/about', '/services', '/blog']
+  // For root paths without locale, let them go to the root pages (English)
+  const rootPaths = ['/', '/about', '/services', '/blog', '/contact']
   const isRootPath = rootPaths.includes(pathname) || pathname.startsWith('/blog/')
   
   if (isRootPath) {
