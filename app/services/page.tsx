@@ -1,29 +1,11 @@
+'use client';
+
 import Link from 'next/link';
-import type { Metadata } from 'next';
 import { useState } from 'react';
 import { getTranslations } from '@/lib/i18n';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { useFormModal } from '@/components/useFormModal';
 import MultiStepForm from '@/components/MultiStepForm';
-
-export const metadata: Metadata = {
-  title: 'Digital Marketing Services & Packages - ROI-Focused Solutions | Amir Gomez',
-  description: 'Professional digital marketing services including Google Ads management, Facebook advertising, email marketing, and conversion optimization with proven ROI.',
-  keywords: [
-    'digital marketing services',
-    'Google Ads management',
-    'Facebook advertising',
-    'email marketing',
-    'conversion optimization',
-    'marketing packages',
-    'ROI marketing'
-  ],
-  openGraph: {
-    title: 'Digital Marketing Services & Packages - ROI-Focused Solutions',
-    description: 'Professional marketing services with proven track record of 340% average ROI increase.',
-    type: 'website',
-  }
-};
 
 const services = [
   {
@@ -159,8 +141,6 @@ const packages = [
     popular: false
   }
 ];
-
-'use client';
 
 export default function ServicesPage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
