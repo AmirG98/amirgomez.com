@@ -26,8 +26,16 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // Always default to English - no browser detection
-  // Users must manually switch to Spanish if desired
+  // For root paths without locale, let them go to the root pages (English)
+  // This allows /contact to work properly for the /app/contact/page.tsx
+  const rootPaths = ['/', '/about', '/services', '/blog', '/contact']
+  const isRootPath = rootPaths.includes(pathname) || pathname.startsWith('/blog/')
+  
+  if (isRootPath) {
+    return NextResponse.next()
+  }
+
+  // For any other paths, continue normally
   return NextResponse.next()
 }
 
