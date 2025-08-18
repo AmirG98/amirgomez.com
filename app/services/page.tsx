@@ -19,7 +19,6 @@ const services = [
       'Landing page optimization recommendations',
       'Conversion tracking implementation'
     ],
-    pricing: 'From $2,500/month + ad spend',
     icon: '🎯',
     results: '+450% average ROI increase'
   },
@@ -34,7 +33,6 @@ const services = [
       'Retargeting campaign setup',
       'Cross-platform attribution tracking'
     ],
-    pricing: 'From $2,000/month + ad spend',
     icon: '📱',
     results: '+300% lead quality improvement'
   },
@@ -49,7 +47,6 @@ const services = [
       'Customer journey mapping',
       'Revenue attribution tracking'
     ],
-    pricing: 'From $1,500/month',
     icon: '📧',
     results: '+587% email revenue increase'
   },
@@ -64,7 +61,6 @@ const services = [
       'Conversion funnel analysis',
       'Performance monitoring & reporting'
     ],
-    pricing: 'From $3,000/month',
     icon: '📊',
     results: '+187% conversion improvement'
   },
@@ -79,7 +75,6 @@ const services = [
       'Data-driven recommendations',
       'Attribution modeling setup'
     ],
-    pricing: 'From $1,000/month',
     icon: '🔍',
     results: '+340% data accuracy improvement'
   },
@@ -94,7 +89,6 @@ const services = [
       'Team training & implementation',
       'Ongoing strategic guidance'
     ],
-    pricing: 'From $5,000/project',
     icon: '🚀',
     results: '+250% strategic clarity'
   }
@@ -103,7 +97,6 @@ const services = [
 const packages = [
   {
     name: 'Growth Starter',
-    price: '$3,500/month',
     description: 'Perfect for small businesses ready to scale their marketing',
     features: [
       'Google Ads or Facebook Ads management',
@@ -116,7 +109,6 @@ const packages = [
   },
   {
     name: 'Growth Accelerator',
-    price: '$7,500/month',
     description: 'Comprehensive marketing for growing businesses',
     features: [
       'Multi-platform advertising (Google + Facebook)',
@@ -129,7 +121,6 @@ const packages = [
   },
   {
     name: 'Enterprise Growth',
-    price: 'Custom pricing',
     description: 'Full-service marketing for established businesses',
     features: [
       'Complete marketing strategy & execution',
@@ -270,8 +261,7 @@ export default function ServicesPage() {
                 </ul>
                 
                 <div className="border-t border-foreground/10 pt-6">
-                  <div className="flex justify-between items-center mb-4">
-                    <div className="text-lg font-semibold">{service.pricing}</div>
+                  <div className="flex justify-center items-center mb-4">
                     <div className="text-sm text-green-600 font-medium">{service.results}</div>
                   </div>
                   <button 
