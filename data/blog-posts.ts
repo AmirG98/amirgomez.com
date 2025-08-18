@@ -29,7 +29,7 @@ export const blogPosts: BlogPost[] = [
     title: "The Complete Guide to Google Ads ROI Optimization in 2024",
     slug: "google-ads-roi-optimization-guide-2024",
     excerpt: "Learn proven strategies to maximize your Google Ads return on investment with advanced bidding techniques, audience targeting, and conversion optimization.",
-    featuredImage: "/blog/google-ads-roi-optimization.jpg",
+    featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     content: `# The Complete Guide to Google Ads ROI Optimization in 2024
 
 Google Ads can be one of the most profitable marketing channels for your business, but only if you optimize for ROI consistently. After managing over $2M in ad spend across 200+ campaigns, I've identified the key strategies that separate profitable campaigns from money-draining ones.
@@ -103,7 +103,7 @@ Ready to implement these strategies for your business? Let's discuss your specif
     title: "Facebook Ads vs Google Ads: Which Platform Drives Better Results?",
     slug: "facebook-ads-vs-google-ads-comparison",
     excerpt: "A comprehensive comparison of Facebook Ads and Google Ads based on real campaign data, helping you choose the right platform for your business goals.",
-    featuredImage: "/blog/facebook-vs-google-ads.jpg",
+    featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     content: `# Facebook Ads vs Google Ads: Which Platform Drives Better Results?
 
 The eternal debate in digital marketing: Facebook Ads or Google Ads? After managing campaigns on both platforms for hundreds of clients, I can tell you the answer isn't as simple as picking one over the other.
@@ -186,7 +186,7 @@ Ready to build an integrated advertising strategy? Let's discuss which platform 
     title: "Email Marketing Automation: 7 Sequences That Convert Like Crazy",
     slug: "email-marketing-automation-sequences-that-convert",
     excerpt: "Discover the highest-performing email automation sequences that have generated millions in revenue for my clients, complete with templates and examples.",
-    featuredImage: "/blog/email-marketing-automation.jpg",
+    featuredImage: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=450&fit=crop&auto=format",
     content: `# Email Marketing Automation: 7 Sequences That Convert Like Crazy
 
 Email marketing automation isn't just about sending scheduled emails – it's about creating intelligent conversation flows that nurture prospects into customers and customers into advocates. These 7 sequences have generated over $3M in revenue for my clients.
@@ -266,7 +266,7 @@ Ready to implement email automation that drives real revenue? Let's discuss whic
     title: "Landing Page Conversion Rate Optimization: A Data-Driven Approach",
     slug: "landing-page-conversion-rate-optimization-guide",
     excerpt: "Learn the systematic approach to CRO that increased conversion rates by 340% across 50+ landing pages, with real examples and testing frameworks.",
-    featuredImage: "/blog/landing-page-optimization.jpg",
+    featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     content: `# Landing Page Conversion Rate Optimization: A Data-Driven Approach
 
 Conversion Rate Optimization (CRO) isn't about lucky guesses or copying competitors. It's about systematic testing based on user behavior data. This framework has improved conversion rates by an average of 127% across 50+ landing pages.
@@ -355,7 +355,7 @@ Ready to implement a systematic CRO process for your landing pages? Let's analyz
     title: "Marketing Analytics That Actually Drive Business Decisions",
     slug: "marketing-analytics-business-decisions-guide",
     excerpt: "Stop drowning in vanity metrics. Learn which analytics actually matter for business growth and how to set up dashboards that drive profitable decisions.",
-    featuredImage: "/blog/marketing-analytics.jpg",
+    featuredImage: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=450&fit=crop&auto=format",
     content: `# Marketing Analytics That Actually Drive Business Decisions
 
 Most businesses are drowning in data but starving for insights. After setting up analytics for 200+ companies, I've learned that having the right metrics is infinitely more valuable than having all the metrics.
