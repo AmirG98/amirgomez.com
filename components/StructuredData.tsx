@@ -4,15 +4,15 @@ export default function StructuredData() {
     "@type": "ProfessionalService",
     "name": "Amir Gomez - Digital Marketing Specialist",
     "description": "Digital marketing specialist helping businesses grow through Google Ads, Facebook advertising, email marketing, and conversion optimization.",
-    "url": "https://amirgomez-com.vercel.app",
-    "logo": "https://amirgomez-com.vercel.app/amir-profile.jpg",
-    "image": "https://amirgomez-com.vercel.app/amir-profile.jpg",
+    "url": "https://www.amirgomez.com",
+    "logo": "https://www.amirgomez.com/amir-profile.jpg",
+    "image": "https://www.amirgomez.com/amir-profile.jpg",
     "founder": {
       "@type": "Person",
       "name": "Amir Gomez",
       "jobTitle": "Digital Marketing Specialist",
-      "image": "https://amirgomez-com.vercel.app/amir-profile.jpg",
-      "url": "https://amirgomez-com.vercel.app/about"
+      "image": "https://www.amirgomez.com/amir-profile.jpg",
+      "url": "https://www.amirgomez.com/about"
     },
     "serviceType": [
       "Google Ads Management",

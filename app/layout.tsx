@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://amirgomez-com.vercel.app'),
+  metadataBase: new URL('https://www.amirgomez.com'),
   title: "AG - Digital Marketing Specialist | $35M+ Generated with Campaigns",
   description: "Digital marketing specialist helping businesses grow through Google Ads, Facebook advertising, email marketing, and conversion optimization. 10 years experience, 100+ successful funnels, 450% average ROI.",
   keywords: ["digital marketing", "google ads", "facebook advertising", "email marketing", "conversion optimization", "marketing consultant", "ROI optimization", "PPC management"],
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://amirgomez-com.vercel.app",
+    url: "https://www.amirgomez.com",
     siteName: "AG - Digital Marketing Specialist",
     title: "AG - Digital Marketing Specialist | $35M+ Generated with Campaigns",
     description: "Digital marketing specialist helping businesses grow through Google Ads, Facebook advertising, email marketing, and conversion optimization. 10 years experience, 100+ successful funnels, 450% average ROI.",

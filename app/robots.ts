@@ -13,6 +13,6 @@ export default function robots(): MetadataRoute.Robots {
         '/admin/',
       ],
     },
-    sitemap: 'https://amirgomez-com.vercel.app/sitemap.xml',
+    sitemap: 'https://www.amirgomez.com/sitemap.xml',
   }
 }
