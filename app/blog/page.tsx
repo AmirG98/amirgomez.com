@@ -22,12 +22,20 @@ function BlogPostCard({ post, featured = false }: { post: typeof blogPosts[0], f
     <article className={`group ${featured ? 'md:col-span-2' : ''}`}>
       <Link href={`/blog/${post.slug}`}>
         <div className="bg-background rounded-xl border border-foreground/10 overflow-hidden hover:shadow-lg transition-all duration-300 hover:border-orange-500/20">
-          {/* Featured badge */}
-          {featured && (
-            <div className="bg-orange-600 text-white px-4 py-2 text-sm font-semibold">
-              Featured Article
-            </div>
-          )}
+          {/* Featured Image */}
+          <div className="relative overflow-hidden aspect-[16/9] bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900/30 dark:to-orange-800/30">
+            <img 
+              src={post.featuredImage || '/blog/default-blog-image.jpg'} 
+              alt={post.title}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            {/* Featured badge */}
+            {featured && (
+              <div className="absolute top-4 left-4 bg-orange-600 text-white px-4 py-2 text-sm font-semibold rounded-lg">
+                Featured Article
+              </div>
+            )}
+          </div>
           
           <div className="p-6">
             {/* Category and reading time */}

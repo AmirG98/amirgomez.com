@@ -444,6 +444,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <article key={post.id} className="group">
                 <Link href={`/blog/${post.slug}`}>
                   <div className="bg-background rounded-xl border border-foreground/10 overflow-hidden hover:shadow-lg transition-all duration-300 hover:border-orange-500/20">
+                    {/* Featured Image */}
+                    <div className="relative overflow-hidden aspect-[16/9] bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900/30 dark:to-orange-800/30">
+                      <img 
+                        src={post.featuredImage || '/blog/default-blog-image.jpg'} 
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    
                     <div className="p-6">
                       <div className="flex items-center gap-4 mb-4">
                         <span className="bg-orange-100 dark:bg-orange-900/30 text-orange-600 px-3 py-1 rounded-full text-sm font-medium">
@@ -463,7 +472,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       </p>
 
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-gray-300 rounded-full"></div>
+                        <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-orange-100 dark:border-orange-900/30">
+                          <img 
+                            src={post.author.avatar} 
+                            alt={post.author.name}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
                         <div>
                           <div className="font-semibold text-sm">{post.author.name}</div>
                           <div className="text-sm text-foreground/60">
