@@ -4,7 +4,7 @@ export interface BlogPost {
   slug: string;
   excerpt: string;
   content: string;
-  featuredImage: string;
+  featuredImage?: string;
   author: {
     name: string;
     bio: string;
