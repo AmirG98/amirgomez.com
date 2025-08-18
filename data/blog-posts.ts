@@ -453,6 +453,7 @@ Ready to transform your marketing analytics from vanity metrics to business-driv
     title: "Google Ads Keyword Research: How to Find Profitable Keywords That Convert in 2024",
     slug: "google-ads-keyword-research-profitable-keywords-2024",
     excerpt: "Master Google Ads keyword research with advanced techniques to discover high-converting, low-competition keywords that drive profitable traffic to your business.",
+    featuredImage: "https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&h=450&fit=crop&auto=format",
     content: `# Google Ads Keyword Research: How to Find Profitable Keywords That Convert in 2024
 
 Keyword research is the foundation of every successful Google Ads campaign. Yet 78% of advertisers still rely on basic keyword tools without understanding search intent, competition analysis, and profitability calculations. This comprehensive guide reveals the advanced keyword research methodology I use to find profitable keywords for clients spending $50k-$500k monthly.
@@ -705,6 +706,7 @@ Ready to implement advanced keyword research that drives profitable traffic? I'l
     title: "Facebook Ads Targeting Strategy: Advanced Audience Targeting for Higher ROAS in 2024",
     slug: "facebook-ads-targeting-strategy-advanced-audience-2024",
     excerpt: "Discover advanced Facebook Ads targeting strategies that increased ROAS by 312% for my clients. Learn interest targeting, lookalike audiences, and custom audience optimization.",
+    featuredImage: "https://images.unsplash.com/photo-1607703703674-df96af81dffa?w=800&h=450&fit=crop&auto=format",
     content: `# Facebook Ads Targeting Strategy: Advanced Audience Targeting for Higher ROAS in 2024
 
 Facebook's targeting capabilities are simultaneously its greatest strength and biggest trap for advertisers. While the platform offers unprecedented audience precision, 89% of advertisers over-complicate their targeting, leading to restricted reach and inflated costs. This guide reveals the advanced targeting strategies that have increased ROAS by an average of 247% across 150+ campaigns.
@@ -1064,6 +1066,7 @@ Ready to implement advanced Facebook targeting that drives real business results
     title: "Facebook Ads Creative Strategy: High-Converting Ad Creative That Stops the Scroll in 2024",
     slug: "facebook-ads-creative-strategy-high-converting-ad-creative-2024",
     excerpt: "Learn the creative testing framework that improved click-through rates by 340% and conversion rates by 156%. Includes ad copy formulas, design principles, and video strategies.",
+    featuredImage: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=450&fit=crop&auto=format",
     content: `# Facebook Ads Creative Strategy: High-Converting Ad Creative That Stops the Scroll in 2024
 
 Creative is the determining factor between profitable Facebook campaigns and budget-draining failures. After analyzing 50,000+ ad variations across $12M in ad spend, I've identified the creative patterns that consistently outperform – and the common mistakes that kill campaign performance. This comprehensive guide reveals the creative testing framework that improved CTRs by 340% and conversion rates by 156%.
