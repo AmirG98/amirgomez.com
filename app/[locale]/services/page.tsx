@@ -1,29 +1,15 @@
+'use client';
+
 import Link from 'next/link';
-import type { Metadata } from 'next';
-import { useState } from 'react';
-import { getTranslations } from '@/lib/i18n';
+import { useEffect, useState } from 'react';
+import { getTranslations, type Locale } from '@/lib/i18n';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { useFormModal } from '@/components/useFormModal';
 import MultiStepForm from '@/components/MultiStepForm';
 
-export const metadata: Metadata = {
-  title: 'Digital Marketing Services & Packages - ROI-Focused Solutions | Amir Gomez',
-  description: 'Professional digital marketing services including Google Ads management, Facebook advertising, email marketing, and conversion optimization with proven ROI.',
-  keywords: [
-    'digital marketing services',
-    'Google Ads management',
-    'Facebook advertising',
-    'email marketing',
-    'conversion optimization',
-    'marketing packages',
-    'ROI marketing'
-  ],
-  openGraph: {
-    title: 'Digital Marketing Services & Packages - ROI-Focused Solutions',
-    description: 'Professional marketing services with proven track record of 340% average ROI increase.',
-    type: 'website',
-  }
-};
+interface ServicesPageProps {
+  params: Promise<{ locale: Locale }>
+}
 
 const services = [
   {
@@ -160,31 +146,46 @@ const packages = [
   }
 ];
 
-'use client';
-
-export default function ServicesPage() {
+export default function ServicesPage({ params }: ServicesPageProps) {
+  const [translations, setTranslations] = useState<any>(null);
+  const [locale, setLocale] = useState<Locale | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { isOpen, currentVariant, openForm, closeForm, handleSubmit } = useFormModal();
-  const t = getTranslations('en');
-  
+
+  useEffect(() => {
+    const loadParams = async () => {
+      const { locale: paramLocale } = await params;
+      setLocale(paramLocale);
+      const t = getTranslations(paramLocale);
+      setTranslations(t);
+    };
+    loadParams();
+  }, [params]);
+
+  if (!translations || !locale) {
+    return <div>Loading...</div>;
+  }
+
+  const t = translations;
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Navigation */}
       <nav className="sticky top-0 bg-background/95 backdrop-blur-sm border-b border-foreground/10 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-xl font-bold">
+            <Link href={locale === 'en' ? '/' : `/${locale}`} className="text-xl font-bold">
               AG
             </Link>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-6">
-              <Link href="/" className="hover:text-foreground/80 transition-colors">{t.nav.home}</Link>
-              <Link href="/about" className="hover:text-foreground/80 transition-colors">{t.nav.about}</Link>
-              <Link href="/services" className="text-orange-600 font-semibold">{t.nav.services}</Link>
-              <Link href="/blog" className="hover:text-foreground/80 transition-colors">{t.nav.blog}</Link>
-              <Link href="/contact" className="hover:text-foreground/80 transition-colors">{t.nav.contact}</Link>
-              <LanguageSwitcher currentLocale="en" />
+              <Link href={locale === 'en' ? '/' : `/${locale}`} className="hover:text-foreground/80 transition-colors">{t.nav.home}</Link>
+              <Link href={locale === 'en' ? '/about' : `/${locale}/about`} className="hover:text-foreground/80 transition-colors">{t.nav.about}</Link>
+              <Link href={locale === 'en' ? '/services' : `/${locale}/services`} className="text-orange-600 font-semibold">{t.nav.services}</Link>
+              <Link href={locale === 'en' ? '/blog' : `/${locale}/blog`} className="hover:text-foreground/80 transition-colors">{t.nav.blog}</Link>
+              <Link href={locale === 'en' ? '/contact' : `/${locale}/contact`} className="hover:text-foreground/80 transition-colors">{t.nav.contact}</Link>
+              <LanguageSwitcher currentLocale={locale} />
               <button 
                 onClick={() => openForm('consultation')}
                 className="bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors"
@@ -195,7 +196,7 @@ export default function ServicesPage() {
 
             {/* Mobile Navigation */}
             <div className="md:hidden flex items-center space-x-4">
-              <LanguageSwitcher currentLocale="en" />
+              <LanguageSwitcher currentLocale={locale} />
               <button 
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="text-foreground hover:text-foreground/80 p-2"
@@ -212,11 +213,11 @@ export default function ServicesPage() {
           {isMobileMenuOpen && (
             <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-foreground/10 shadow-lg">
               <div className="container mx-auto px-4 py-4 space-y-4">
-                <Link href="/" className="block py-2 hover:text-orange-600 transition-colors">{t.nav.home}</Link>
-                <Link href="/about" className="block py-2 hover:text-orange-600 transition-colors">{t.nav.about}</Link>
-                <Link href="/services" className="block py-2 text-orange-600 font-semibold">{t.nav.services}</Link>
-                <Link href="/blog" className="block py-2 hover:text-orange-600 transition-colors">{t.nav.blog}</Link>
-                <Link href="/contact" className="block py-2 hover:text-orange-600 transition-colors">{t.nav.contact}</Link>
+                <Link href={locale === 'en' ? '/' : `/${locale}`} className="block py-2 hover:text-orange-600 transition-colors">{t.nav.home}</Link>
+                <Link href={locale === 'en' ? '/about' : `/${locale}/about`} className="block py-2 hover:text-orange-600 transition-colors">{t.nav.about}</Link>
+                <Link href={locale === 'en' ? '/services' : `/${locale}/services`} className="block py-2 text-orange-600 font-semibold">{t.nav.services}</Link>
+                <Link href={locale === 'en' ? '/blog' : `/${locale}/blog`} className="block py-2 hover:text-orange-600 transition-colors">{t.nav.blog}</Link>
+                <Link href={locale === 'en' ? '/contact' : `/${locale}/contact`} className="block py-2 hover:text-orange-600 transition-colors">{t.nav.contact}</Link>
                 <div className="pt-4 border-t border-foreground/10">
                   <button 
                     onClick={() => {
@@ -238,27 +239,26 @@ export default function ServicesPage() {
       <section className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Marketing Services That 
-            <span className="text-orange-600"> Drive Results</span>
+            {t.services.hero.title}
+            <span className="text-orange-600"> {t.services.hero.titleHighlight}</span>
           </h1>
           <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Proven digital marketing solutions that turn ad spend into profitable growth. 
-            No contracts, no fluff – just results-driven strategies with guaranteed ROI.
+            {t.services.hero.subtitle}
           </p>
           
           {/* Trust Indicators */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             <div className="bg-orange-50 dark:bg-orange-900/20 rounded-lg p-6">
               <div className="text-2xl font-bold text-orange-600 mb-2">$35M+</div>
-              <div className="text-sm text-foreground/70">Generated with Campaigns</div>
+              <div className="text-sm text-foreground/70">{t.services.trustIndicators.adSpend}</div>
             </div>
             <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6">
               <div className="text-2xl font-bold text-blue-600 mb-2">100+</div>
-              <div className="text-sm text-foreground/70">Successful Funnels</div>
+              <div className="text-sm text-foreground/70">{t.services.trustIndicators.campaigns}</div>
             </div>
             <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-6">
               <div className="text-2xl font-bold text-green-600 mb-2">450%</div>
-              <div className="text-sm text-foreground/70">Average ROI</div>
+              <div className="text-sm text-foreground/70">{t.services.trustIndicators.roiIncrease}</div>
             </div>
           </div>
         </div>
@@ -268,7 +268,7 @@ export default function ServicesPage() {
       <section className="container mx-auto px-4 mb-20">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-            Comprehensive Marketing Solutions
+            {t.services.solutionsTitle}
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -298,7 +298,7 @@ export default function ServicesPage() {
                     onClick={() => openForm('consultation')}
                     className="w-full bg-orange-600 text-white py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors text-center block"
                   >
-                    Learn More
+                    {t.common.learnMore}
                   </button>
                 </div>
               </div>
@@ -313,10 +313,10 @@ export default function ServicesPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Plans adapted to your needs
+                {t.services.packagesTitle}
               </h2>
               <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-                Flexible packages designed to scale with your business growth and marketing needs
+                {t.services.packagesSubtitle}
               </p>
             </div>
             
@@ -326,7 +326,7 @@ export default function ServicesPage() {
                   {pkg.popular && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                       <span className="bg-orange-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                        Most Popular
+                        {t.services.packages.mostPopular}
                       </span>
                     </div>
                   )}
@@ -361,13 +361,13 @@ export default function ServicesPage() {
             
             <div className="text-center mt-12">
               <p className="text-foreground/60 mb-4">
-                Need a custom solution? Let's discuss your specific requirements.
+                {t.services.packages.customSolution}
               </p>
               <button 
                 onClick={() => openForm('consultation')}
                 className="text-orange-600 hover:text-orange-700 font-semibold"
               >
-                Schedule Custom Consultation →
+                {t.services.packages.customConsultation} →
               </button>
             </div>
           </div>
@@ -379,7 +379,7 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-12">
-              How We Work Together
+              {t.services.processTitle}
             </h2>
             
             <div className="grid md:grid-cols-4 gap-8">
@@ -387,9 +387,9 @@ export default function ServicesPage() {
                 <div className="bg-orange-100 dark:bg-orange-900/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-2xl font-bold text-orange-600">1</span>
                 </div>
-                <h3 className="text-xl font-bold mb-4">Strategy Session</h3>
+                <h3 className="text-xl font-bold mb-4">{t.services.process.step1.title}</h3>
                 <p className="text-foreground/80">
-                  Free consultation to understand your goals, challenges, and opportunities for growth.
+                  {t.services.process.step1.description}
                 </p>
               </div>
 
@@ -397,9 +397,9 @@ export default function ServicesPage() {
                 <div className="bg-orange-100 dark:bg-orange-900/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-2xl font-bold text-orange-600">2</span>
                 </div>
-                <h3 className="text-xl font-bold mb-4">Custom Plan</h3>
+                <h3 className="text-xl font-bold mb-4">{t.services.process.step2.title}</h3>
                 <p className="text-foreground/80">
-                  Detailed marketing strategy tailored to your business, budget, and growth objectives.
+                  {t.services.process.step2.description}
                 </p>
               </div>
 
@@ -407,9 +407,9 @@ export default function ServicesPage() {
                 <div className="bg-orange-100 dark:bg-orange-900/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-2xl font-bold text-orange-600">3</span>
                 </div>
-                <h3 className="text-xl font-bold mb-4">Implementation</h3>
+                <h3 className="text-xl font-bold mb-4">{t.services.process.step3.title}</h3>
                 <p className="text-foreground/80">
-                  Launch campaigns with proper tracking, optimization systems, and performance monitoring.
+                  {t.services.process.step3.description}
                 </p>
               </div>
 
@@ -417,9 +417,9 @@ export default function ServicesPage() {
                 <div className="bg-orange-100 dark:bg-orange-900/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-2xl font-bold text-orange-600">4</span>
                 </div>
-                <h3 className="text-xl font-bold mb-4">Scale & Optimize</h3>
+                <h3 className="text-xl font-bold mb-4">{t.services.process.step4.title}</h3>
                 <p className="text-foreground/80">
-                  Continuous optimization and scaling based on performance data to maximize ROI.
+                  {t.services.process.step4.description}
                 </p>
               </div>
             </div>
@@ -432,27 +432,27 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Scale Your Marketing?
+              {t.services.cta.title}
             </h2>
             <p className="text-xl text-foreground/80 mb-8">
-              Get a free marketing audit and custom growth strategy. No payment required until you see results.
+              {t.services.cta.subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 onClick={() => openForm('consultation')}
                 className="bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-700 transition-colors"
               >
-                Schedule Free Consultation
+                {t.services.cta.ctaPrimary}
               </button>
               <Link 
-                href="/blog"
+                href={locale === 'en' ? '/blog' : `/${locale}/blog`}
                 className="border border-orange-600 text-orange-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-50 dark:hover:bg-orange-900/20 transition-colors"
               >
-                Read Marketing Insights
+                {t.services.cta.ctaSecondary}
               </Link>
             </div>
             <p className="text-sm text-foreground/60 mt-6">
-              Free consultation • No commitment • Results guaranteed
+              {t.services.cta.features}
             </p>
           </div>
         </div>

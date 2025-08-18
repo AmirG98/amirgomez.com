@@ -1,0 +1,259 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "services": "Servicios",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "getConsultation": "Consulta Gratuita"
+  },
+  "home": {
+    "hero": {
+      "title": "Haz Crecer Tu Negocio con",
+      "titleHighlight": "Marketing Comprobado",
+      "subtitle": "Ayudo a empresas a aumentar sus ingresos a través de estrategias publicitarias basadas en datos.",
+      "ctaPrimary": "Auditoría Gratuita de Marketing",
+      "ctaSecondary": "Obtener Guía de Crecimiento",
+      "metrics": {
+        "campaigns": "$35M+ Generados con Campañas",
+        "funnels": "100+ Embudos Exitosos",
+        "roi": "Promedio 450% ROI"
+      },
+      "yearsInBusiness": "10 años en el negocio"
+    },
+    "testimonials": {
+      "title": "Lo Que Dicen los Clientes",
+      "subtitle": "Resultados reales de empresas reales",
+      "testimonial1": {
+        "text": "Amir es uno de los especialistas en marketing más talentosos con los que he tenido la oportunidad de trabajar. Lo recomiendo encarecidamente.",
+        "author": "Steven Page",
+        "company": "VP de Marketing en Giant Partners"
+      },
+      "testimonial2": {
+        "text": "Amir posee un profundo entendimiento de las tendencias del mercado y el comportamiento del consumidor, y tiene un talento extraordinario para crear estrategias innovadoras que impulsan el crecimiento empresarial y aumentan los ingresos.",
+        "author": "Nick Koriakos",
+        "company": "Fundador de Stack Force"
+      },
+      "testimonial3": {
+        "text": "Confío profundamente en la habilidad de Amir para impulsar el crecimiento empresarial, simplificando escenarios complejos en estrategias accionables.",
+        "author": "Agustin Oliva",
+        "company": "Gerente General de RollerShow"
+      }
+    },
+    "cta": {
+      "title": "¿Listo para Escalar Tu Marketing?",
+      "subtitle": "Obtén una sesión estratégica gratuita para discutir tus objetivos empresariales y descubrir oportunidades de crecimiento.",
+      "button": "Programar Consulta Gratuita",
+      "features": "Consulta gratuita • Sin compromiso • Enfoque en resultados"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Convirtiendo la Inversión en Marketing en",
+      "titleHighlight": "Crecimiento Rentable",
+      "subtitle": "Soy Amir Gomez, y durante los últimos 10 años, he ayudado a más de 100 empresas a transformar su marketing de centros de costo a generadores de ganancias. Mi enfoque es simple: estrategias basadas en datos, marcos probados y resultados que hablan por sí mismos.",
+      "metrics": {
+        "generated": "$35M+ Generados con Campañas",
+        "funnels": "100+ Embudos Exitosos",
+        "roi": "450% ROI Promedio"
+      },
+      "cta": "Hablemos de Estrategia"
+    },
+    "story": {
+      "title": "Mi Historia",
+      "content": [
+        "Mi camino en el marketing digital comenzó como muchos otros: con una campaña fallida y un presupuesto que se reducía. En 2016, estaba ayudando a un negocio local con su primera campaña de Google Ads. Después de quemar $5,000 en dos semanas sin conversiones, me di cuenta de que necesitaba entender seriamente qué funciona realmente.",
+        "Ese fracaso se convirtió en mi educación. Pasé el siguiente año estudiando cada campaña exitosa que pude encontrar, analizando páginas de destino, estudiando textos publicitarios y probando todo. El gran avance llegó cuando cambié el enfoque de métricas de vanidad a atribución de ingresos. De repente, las campañas que parecían \"no exitosas\" en la superficie estaban realmente generando adquisición rentable de clientes.",
+        "Durante los últimos 10 años, he tenido el privilegio de trabajar con empresas que van desde proveedores de servicios locales hasta marcas de comercio electrónico de 8 cifras. Cada campaña me enseñó algo nuevo, y cada éxito se basó en el marco que ahora uso con cada cliente.",
+        "Hoy, mi enfoque combina análisis riguroso de datos con estrategia creativa. No solo manejo anuncios: construyo sistemas que escalan, optimizo para el valor de por vida del cliente a largo plazo, y convierto la inversión en marketing en crecimiento empresarial predecible."
+      ]
+    },
+    "approach": {
+      "title": "Mi Enfoque",
+      "beliefs": {
+        "title": "En Lo Que Creo",
+        "items": [
+          "El marketing debe ser medible y responsable ante los ingresos",
+          "Los datos vencen a las opiniones siempre",
+          "El valor de por vida del cliente es más importante que el costo de adquisición",
+          "La transparencia construye confianza y mejores resultados",
+          "Las pruebas continuas llevan a la mejora continua"
+        ]
+      },
+      "process": {
+        "title": "Cómo Trabajo",
+        "items": [
+          "Comenzar con auditoría integral y planificación estratégica",
+          "Implementar sistemas de seguimiento y medición primero",
+          "Lanzar campañas con métricas de éxito claras",
+          "Optimizar basado en datos de rendimiento, no suposiciones",
+          "Escalar lo que funciona, eliminar lo que no"
+        ]
+      }
+    }
+  },
+  "blog": {
+    "hero": {
+      "title": "Perspectivas de Marketing Que",
+      "titleHighlight": "Generan Resultados",
+      "subtitle": "Estrategias probadas y tácticas accionables de manejar $35M+ en campañas a través de 100+ embudos exitosos con 10 años en el negocio."
+    },
+    "categories": {
+      "title": "Explorar por Categoría",
+      "showing": "Mostrando {count} artículos"
+    },
+    "newsletter": {
+      "title": "Recibe Perspectivas Semanales de Marketing",
+      "subtitle": "Únete a 5,000+ especialistas en marketing que reciben estrategias accionables, casos de estudio y perspectivas de la industria cada martes.",
+      "placeholder": "Ingresa tu email",
+      "button": "Suscribirse",
+      "privacy": "Sin spam. Cancela en cualquier momento. 📧 ✨"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Discutamos Tu",
+      "titleHighlight": "Estrategia de Crecimiento",
+      "subtitle": "¿Listo para convertir tu gasto en marketing en crecimiento rentable? Agenda una sesión estratégica gratuita de 30 minutos para discutir tus desafíos y explorar oportunidades."
+    },
+    "benefits": {
+      "strategy": {
+        "title": "Estrategia Personalizada",
+        "description": "Enfoque adaptado basado en tus objetivos específicos de negocio y desafíos"
+      },
+      "audit": {
+        "title": "Auditoría de Rendimiento",
+        "description": "Análisis gratuito de tu rendimiento actual de marketing y oportunidades"
+      },
+      "plan": {
+        "title": "Plan Accionable",
+        "description": "Sal con pasos específicos para mejorar tu ROI de marketing"
+      }
+    },
+    "form": {
+      "title": "Agenda Tu Consulta Gratuita",
+      "firstName": "Nombre",
+      "lastName": "Apellido", 
+      "email": "Dirección de Email",
+      "company": "Nombre de la Empresa",
+      "website": "URL del Sitio Web",
+      "budget": "Presupuesto Mensual de Marketing",
+      "budgetOptions": {
+        "select": "Selecciona rango de presupuesto",
+        "under1k": "Menos de $1,000",
+        "1k5k": "$1,000 - $5,000",
+        "5k10k": "$5,000 - $10,000",
+        "10k25k": "$10,000 - $25,000",
+        "25k50k": "$25,000 - $50,000",
+        "50kplus": "$50,000+"
+      },
+      "challenges": "¿Cuál es tu mayor desafío de marketing?",
+      "challengesPlaceholder": "Cuéntame sobre tu situación actual de marketing, qué has probado y qué no está funcionando...",
+      "goals": "¿Cómo se vería el éxito para ti?",
+      "goalsPlaceholder": "Objetivos específicos de ingresos, metas de leads u otras métricas de éxito...",
+      "newsletter": "Sí, me gustaría recibir insights semanales de marketing y casos de estudio",
+      "submit": "Agendar Mi Consulta Gratuita",
+      "privacy": "Al enviar este formulario, aceptas recibir comunicación de Amir Gomez. Puedes darte de baja en cualquier momento."
+    },
+    "calendar": {
+      "title": "Reserva Directamente en Mi Calendario",
+      "description": "¿Prefieres reservar directamente? Elige un horario que te funcione de mi calendario abajo."
+    },
+    "other": {
+      "title": "Otras Formas de Contactarme",
+      "email": "Email",
+      "linkedin": "LinkedIn", 
+      "responseTime": "Tiempo de Respuesta",
+      "within24": "Dentro de 24 horas"
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "q1": {
+        "question": "¿Qué pasa durante la consulta?",
+        "answer": "Revisaremos tu rendimiento actual de marketing, discutiremos tus objetivos, y te proporcionaré recomendaciones específicas para mejorar. Saldrás con pasos accionables."
+      },
+      "q2": {
+        "question": "¿Realmente no hay costo?",
+        "answer": "Sí, la consulta inicial es completamente gratuita. Mi objetivo es proporcionar valor por adelantado y ayudarte a entender cómo puedo ayudar a tu negocio a crecer."
+      },
+      "q3": {
+        "question": "¿Qué pasa si no estoy listo para contratar a nadie?",
+        "answer": "¡No hay problema! Aún así proporcionaré insights valiosos que puedes implementar tú mismo. No hay presión para trabajar juntos más allá de la consulta inicial."
+      }
+    },
+    "social": {
+      "title": "Únete a 100+ Empresas Que Confían en Mi Experiencia",
+      "satisfaction": "Tasa de Satisfacción del Cliente",
+      "roiIncrease": "Incremento Promedio de ROI",
+      "adSpend": "Gasto Publicitario Gestionado"
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Servicios de Marketing Digital Que",
+      "titleHighlight": "Generan Resultados Reales",
+      "subtitle": "Soluciones de marketing digital comprobadas que convierten el gasto publicitario en crecimiento rentable. Sin contratos, sin relleno: solo estrategias enfocadas en resultados con ROI garantizado."
+    },
+    "trustIndicators": {
+      "roiIncrease": "Incremento Promedio de ROI",
+      "adSpend": "Gasto Publicitario Gestionado",
+      "campaigns": "Campañas Exitosas",
+      "satisfaction": "Satisfacción del Cliente"
+    },
+    "solutionsTitle": "Soluciones Integrales de Marketing",
+    "packagesTitle": "Elige Tu Paquete de Crecimiento",
+    "packagesSubtitle": "Paquetes flexibles diseñados para escalar con el crecimiento de tu negocio y necesidades de marketing",
+    "processTitle": "Cómo Trabajamos Juntos",
+    "process": {
+      "step1": {
+        "title": "Sesión de Estrategia",
+        "description": "Consulta gratuita para entender tus objetivos, desafíos y oportunidades de crecimiento."
+      },
+      "step2": {
+        "title": "Plan Personalizado",
+        "description": "Estrategia de marketing detallada adaptada a tu negocio, presupuesto y objetivos de crecimiento."
+      },
+      "step3": {
+        "title": "Implementación",
+        "description": "Lanzar campañas con seguimiento adecuado, sistemas de optimización y monitoreo de rendimiento."
+      },
+      "step4": {
+        "title": "Escalar y Optimizar",
+        "description": "Optimización y escalamiento continuo basado en datos de rendimiento para maximizar el ROI."
+      }
+    },
+    "cta": {
+      "title": "¿Listo para Escalar Tu Marketing?",
+      "subtitle": "Obtén una auditoría gratuita de marketing y estrategia de crecimiento personalizada. No se requiere pago hasta que veas resultados.",
+      "ctaPrimary": "Agendar Consulta Gratuita",
+      "ctaSecondary": "Leer Insights de Marketing",
+      "features": "Consulta gratuita • Sin compromiso • Resultados garantizados"
+    },
+    "packages": {
+      "mostPopular": "Más Popular",
+      "getStarted": "Comenzar",
+      "customSolution": "¿Necesitas una solución personalizada? Hablemos de tus requisitos específicos.",
+      "customConsultation": "Agendar Consulta Personalizada"
+    }
+  },
+  "footer": {
+    "tagline": "Especialista en Marketing Digital",
+    "copyright": "© 2024 Amir Gomez. Todos los derechos reservados.",
+    "links": {
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
+  },
+  "common": {
+    "readMore": "Leer Más",
+    "learnMore": "Saber Más",
+    "getStarted": "Comenzar",
+    "viewAll": "Ver Todo",
+    "loading": "Cargando...",
+    "error": "Algo salió mal",
+    "minRead": "min de lectura",
+    "featuredArticle": "Artículo Destacado",
+    "latestArticles": "Últimos Artículos",
+    "relatedArticles": "Artículos Relacionados"
+  }
+}

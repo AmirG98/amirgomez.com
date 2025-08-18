@@ -1,16 +1,37 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
-import { getTranslations } from '@/lib/i18n';
+import { useEffect, useState } from 'react';
+import { getTranslations, type Locale } from '@/lib/i18n';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { useFormModal } from '@/components/useFormModal';
 import MultiStepForm from '@/components/MultiStepForm';
 
-export default function ContactPage() {
+interface ContactPageProps {
+  params: Promise<{ locale: Locale }>
+}
+
+export default function ContactPage({ params }: ContactPageProps) {
+  const [translations, setTranslations] = useState<any>(null);
+  const [locale, setLocale] = useState<Locale | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { isOpen, currentVariant, openForm, closeForm, handleSubmit } = useFormModal();
-  const t = getTranslations('en');
+
+  useEffect(() => {
+    const loadParams = async () => {
+      const { locale: paramLocale } = await params;
+      setLocale(paramLocale);
+      const t = getTranslations(paramLocale);
+      setTranslations(t);
+    };
+    loadParams();
+  }, [params]);
+
+  if (!translations || !locale) {
+    return <div>Loading...</div>;
+  }
+
+  const t = translations;
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -18,29 +39,23 @@ export default function ContactPage() {
       <nav className="sticky top-0 bg-background/95 backdrop-blur-sm border-b border-foreground/10 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-xl font-bold">
+            <Link href={locale === 'en' ? '/' : `/${locale}`} className="text-xl font-bold">
               AG
             </Link>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-6">
-              <Link href="/" className="hover:text-foreground/80 transition-colors">{t.nav.home}</Link>
-              <Link href="/about" className="hover:text-foreground/80 transition-colors">{t.nav.about}</Link>
-              <Link href="/services" className="hover:text-foreground/80 transition-colors">{t.nav.services}</Link>
-              <Link href="/blog" className="hover:text-foreground/80 transition-colors">{t.nav.blog}</Link>
-              <Link href="/contact" className="text-orange-600 font-semibold">{t.nav.contact}</Link>
-              <LanguageSwitcher currentLocale="en" />
-              <button 
-                onClick={() => openForm('consultation')}
-                className="bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors"
-              >
-                {t.nav.getConsultation}
-              </button>
+              <Link href={locale === 'en' ? '/' : `/${locale}`} className="hover:text-foreground/80 transition-colors">{t.nav.home}</Link>
+              <Link href={locale === 'en' ? '/about' : `/${locale}/about`} className="hover:text-foreground/80 transition-colors">{t.nav.about}</Link>
+              <Link href={locale === 'en' ? '/services' : `/${locale}/services`} className="hover:text-foreground/80 transition-colors">{t.nav.services}</Link>
+              <Link href={locale === 'en' ? '/blog' : `/${locale}/blog`} className="hover:text-foreground/80 transition-colors">{t.nav.blog}</Link>
+              <Link href={locale === 'en' ? '/contact' : `/${locale}/contact`} className="text-orange-600 font-semibold">{t.nav.contact}</Link>
+              <LanguageSwitcher currentLocale={locale} />
             </div>
 
             {/* Mobile Navigation */}
             <div className="md:hidden flex items-center space-x-4">
-              <LanguageSwitcher currentLocale="en" />
+              <LanguageSwitcher currentLocale={locale} />
               <button 
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="text-foreground hover:text-foreground/80 p-2"
@@ -57,22 +72,11 @@ export default function ContactPage() {
           {isMobileMenuOpen && (
             <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-foreground/10 shadow-lg">
               <div className="container mx-auto px-4 py-4 space-y-4">
-                <Link href="/" className="block py-2 hover:text-orange-600 transition-colors">{t.nav.home}</Link>
-                <Link href="/about" className="block py-2 hover:text-orange-600 transition-colors">{t.nav.about}</Link>
-                <Link href="/services" className="block py-2 hover:text-orange-600 transition-colors">{t.nav.services}</Link>
-                <Link href="/blog" className="block py-2 hover:text-orange-600 transition-colors">{t.nav.blog}</Link>
-                <Link href="/contact" className="block py-2 text-orange-600 font-semibold">{t.nav.contact}</Link>
-                <div className="pt-4 border-t border-foreground/10">
-                  <button 
-                    onClick={() => {
-                      openForm('consultation');
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="w-full bg-orange-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-700 transition-colors"
-                  >
-                    {t.nav.getConsultation}
-                  </button>
-                </div>
+                <Link href={locale === 'en' ? '/' : `/${locale}`} className="block py-2 hover:text-orange-600 transition-colors">{t.nav.home}</Link>
+                <Link href={locale === 'en' ? '/about' : `/${locale}/about`} className="block py-2 hover:text-orange-600 transition-colors">{t.nav.about}</Link>
+                <Link href={locale === 'en' ? '/services' : `/${locale}/services`} className="block py-2 hover:text-orange-600 transition-colors">{t.nav.services}</Link>
+                <Link href={locale === 'en' ? '/blog' : `/${locale}/blog`} className="block py-2 hover:text-orange-600 transition-colors">{t.nav.blog}</Link>
+                <Link href={locale === 'en' ? '/contact' : `/${locale}/contact`} className="block py-2 text-orange-600 font-semibold">{t.nav.contact}</Link>
               </div>
             </div>
           )}

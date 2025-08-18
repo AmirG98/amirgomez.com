@@ -4,9 +4,12 @@ import Link from 'next/link';
 import { getFeaturedPosts } from '@/data/blog-posts';
 import MultiStepForm from '@/components/MultiStepForm';
 import { useFormModal } from '@/components/useFormModal';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { useState } from 'react';
 
 export default function Home() {
   const { isOpen, currentVariant, openForm, closeForm, handleSubmit } = useFormModal();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -17,10 +20,14 @@ export default function Home() {
             <Link href="/" className="text-xl font-bold">
               AG
             </Link>
-            <div className="flex items-center space-x-6">
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-6">
               <Link href="/about" className="hover:text-foreground/80 transition-colors">About</Link>
               <Link href="/services" className="hover:text-foreground/80 transition-colors">Services</Link>
               <Link href="/blog" className="hover:text-foreground/80 transition-colors">Blog</Link>
+              <Link href="/contact" className="hover:text-foreground/80 transition-colors">Contact</Link>
+              <LanguageSwitcher currentLocale="en" />
               <button 
                 onClick={() => openForm('consultation')}
                 className="bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors"
@@ -28,7 +35,44 @@ export default function Home() {
                 Get Free Consultation
               </button>
             </div>
+
+            {/* Mobile Navigation */}
+            <div className="md:hidden flex items-center space-x-4">
+              <LanguageSwitcher currentLocale="en" />
+              <button 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="text-foreground hover:text-foreground/80 p-2"
+                aria-label="Toggle mobile menu"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
           </div>
+
+          {/* Mobile Menu */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-foreground/10 shadow-lg">
+              <div className="container mx-auto px-4 py-4 space-y-4">
+                <Link href="/about" className="block py-2 hover:text-orange-600 transition-colors">About</Link>
+                <Link href="/services" className="block py-2 hover:text-orange-600 transition-colors">Services</Link>
+                <Link href="/blog" className="block py-2 hover:text-orange-600 transition-colors">Blog</Link>
+                <Link href="/contact" className="block py-2 hover:text-orange-600 transition-colors">Contact</Link>
+                <div className="pt-4 border-t border-foreground/10">
+                  <button 
+                    onClick={() => {
+                      openForm('consultation');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="w-full bg-orange-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-700 transition-colors"
+                  >
+                    Get Free Consultation
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
@@ -39,24 +83,24 @@ export default function Home() {
             
             {/* Left Column - Text Content */}
             <div className="text-center lg:text-left">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
                 Grow Your Business with 
                 <span className="text-orange-600"> Proven Marketing</span>
               </h1>
-              <p className="text-xl md:text-2xl text-foreground/80 mb-8 leading-relaxed">
+              <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 mb-8 leading-relaxed">
                 I help businesses increase revenue through data-driven advertising strategies.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
                 <button 
                   onClick={() => openForm('audit')}
-                  className="bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-700 transition-colors shadow-lg"
+                  className="bg-orange-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-orange-700 transition-colors shadow-lg"
                 >
                   Get Free Marketing Audit
                 </button>
                 <button 
                   onClick={() => openForm('caseStudies')}
-                  className="border-2 border-foreground/20 px-8 py-4 rounded-full font-semibold text-lg hover:bg-foreground/5 transition-colors"
+                  className="border-2 border-foreground/20 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-foreground/5 transition-colors"
                 >
                   Grab Growth Playbook
                 </button>
@@ -64,7 +108,7 @@ export default function Home() {
               
               {/* Trust Indicators */}
               <div className="space-y-6">
-                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 text-sm text-foreground/60">
+                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 text-sm text-foreground/60">
                   <div className="flex items-center gap-2">
                     <span className="text-orange-500">✓</span>
                     <span>$35M+ Generated with Campaigns</span>
@@ -91,7 +135,7 @@ export default function Home() {
 
             {/* Right Column - Profile Image */}
             <div className="flex justify-center lg:justify-end">
-              <div className="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-orange-100 dark:border-orange-900/30">
+              <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-orange-100 dark:border-orange-900/30">
                 <img 
                   src="/amir-profile.jpg" 
                   alt="Amir Gomez - Digital Marketing Specialist"

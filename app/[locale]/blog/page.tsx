@@ -1,74 +1,60 @@
+'use client';
+
 import Link from 'next/link';
-import type { Metadata } from 'next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { blogPosts, blogCategories, getFeaturedPosts } from '@/data/blog-posts';
-import { getTranslations } from '@/lib/i18n';
+import { getTranslations, type Locale } from '@/lib/i18n';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { useFormModal } from '@/components/useFormModal';
 import MultiStepForm from '@/components/MultiStepForm';
 
-export const metadata: Metadata = {
-  title: 'Marketing Blog - Digital Marketing Insights & Strategies | Amir Gomez',
-  description: 'Expert digital marketing insights, strategies, and case studies. Learn Google Ads, Facebook advertising, email marketing, and conversion optimization.',
-  keywords: [
-    'digital marketing blog',
-    'marketing strategies',
-    'google ads',
-    'facebook advertising',
-    'email marketing',
-    'conversion optimization',
-    'marketing insights'
-  ],
-  openGraph: {
-    title: 'Marketing Blog - Digital Marketing Insights & Strategies',
-    description: 'Expert digital marketing insights, strategies, and case studies from Amir Gomez.',
-    type: 'website',
-  }
-};
+interface BlogPageProps {
+  params: Promise<{ locale: Locale }>
+}
 
-function formatDate(dateString: string) {
+function formatDate(dateString: string, locale: string) {
   const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', {
+  return date.toLocaleDateString(locale === 'es' ? 'es-ES' : 'en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
   });
 }
 
-function BlogPostCard({ post, featured = false }: { post: typeof blogPosts[0], featured?: boolean }) {
+function BlogPostCard({ post, featured = false, locale, t }: { 
+  post: typeof blogPosts[0], 
+  featured?: boolean, 
+  locale: Locale,
+  t: any 
+}) {
   return (
     <article className={`group ${featured ? 'md:col-span-2' : ''}`}>
-      <Link href={`/blog/${post.slug}`}>
+      <Link href={locale === 'en' ? `/blog/${post.slug}` : `/${locale}/blog/${post.slug}`}>
         <div className="bg-background rounded-xl border border-foreground/10 overflow-hidden hover:shadow-lg transition-all duration-300 hover:border-orange-500/20">
-          {/* Featured badge */}
           {featured && (
             <div className="bg-orange-600 text-white px-4 py-2 text-sm font-semibold">
-              Featured Article
+              {t.common.featuredArticle}
             </div>
           )}
           
           <div className="p-6">
-            {/* Category and reading time */}
             <div className="flex items-center gap-4 mb-4">
               <span className="bg-orange-100 dark:bg-orange-900/30 text-orange-600 px-3 py-1 rounded-full text-sm font-medium">
                 {post.category}
               </span>
               <span className="text-sm text-foreground/60">
-                {post.readingTime} min read
+                {post.readingTime} {t.common.minRead}
               </span>
             </div>
 
-            {/* Title */}
             <h2 className={`font-bold mb-3 group-hover:text-orange-600 transition-colors ${featured ? 'text-2xl md:text-3xl' : 'text-xl'}`}>
               {post.title}
             </h2>
 
-            {/* Excerpt */}
             <p className="text-foreground/80 mb-4 leading-relaxed">
               {post.excerpt}
             </p>
 
-            {/* Author and date */}
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-orange-100 dark:border-orange-900/30">
@@ -80,11 +66,12 @@ function BlogPostCard({ post, featured = false }: { post: typeof blogPosts[0], f
                 </div>
                 <div>
                   <div className="font-semibold text-sm">{post.author.name}</div>
-                  <div className="text-sm text-foreground/60">{formatDate(post.publishedAt)} • {post.readingTime} min read</div>
+                  <div className="text-sm text-foreground/60">
+                    {formatDate(post.publishedAt, locale)} • {post.readingTime} {t.common.minRead}
+                  </div>
                 </div>
               </div>
               
-              {/* Tags */}
               <div className="flex gap-2">
                 {post.tags.slice(0, 2).map((tag) => (
                   <span key={tag} className="text-xs bg-foreground/5 px-2 py-1 rounded">
@@ -100,13 +87,27 @@ function BlogPostCard({ post, featured = false }: { post: typeof blogPosts[0], f
   );
 }
 
-'use client';
-
-export default function BlogPage() {
+export default function BlogPage({ params }: BlogPageProps) {
+  const [translations, setTranslations] = useState<any>(null);
+  const [locale, setLocale] = useState<Locale | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { isOpen, currentVariant, openForm, closeForm, handleSubmit } = useFormModal();
-  const t = getTranslations('en');
-  
+
+  useEffect(() => {
+    const loadParams = async () => {
+      const { locale: paramLocale } = await params;
+      setLocale(paramLocale);
+      const t = getTranslations(paramLocale);
+      setTranslations(t);
+    };
+    loadParams();
+  }, [params]);
+
+  if (!translations || !locale) {
+    return <div>Loading...</div>;
+  }
+
+  const t = translations;
   const featuredPosts = getFeaturedPosts();
   const recentPosts = blogPosts.filter(post => !post.featured).slice(0, 6);
 
@@ -116,18 +117,18 @@ export default function BlogPage() {
       <nav className="sticky top-0 bg-background/95 backdrop-blur-sm border-b border-foreground/10 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-xl font-bold">
+            <Link href={locale === 'en' ? '/' : `/${locale}`} className="text-xl font-bold">
               AG
             </Link>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-6">
-              <Link href="/" className="hover:text-foreground/80 transition-colors">{t.nav.home}</Link>
-              <Link href="/about" className="hover:text-foreground/80 transition-colors">{t.nav.about}</Link>
-              <Link href="/services" className="hover:text-foreground/80 transition-colors">{t.nav.services}</Link>
-              <Link href="/blog" className="text-orange-600 font-semibold">{t.nav.blog}</Link>
-              <Link href="/contact" className="hover:text-foreground/80 transition-colors">{t.nav.contact}</Link>
-              <LanguageSwitcher currentLocale="en" />
+              <Link href={locale === 'en' ? '/' : `/${locale}`} className="hover:text-foreground/80 transition-colors">{t.nav.home}</Link>
+              <Link href={locale === 'en' ? '/about' : `/${locale}/about`} className="hover:text-foreground/80 transition-colors">{t.nav.about}</Link>
+              <Link href={locale === 'en' ? '/services' : `/${locale}/services`} className="hover:text-foreground/80 transition-colors">{t.nav.services}</Link>
+              <Link href={locale === 'en' ? '/blog' : `/${locale}/blog`} className="text-orange-600 font-semibold">{t.nav.blog}</Link>
+              <Link href={locale === 'en' ? '/contact' : `/${locale}/contact`} className="hover:text-foreground/80 transition-colors">{t.nav.contact}</Link>
+              <LanguageSwitcher currentLocale={locale} />
               <button 
                 onClick={() => openForm('consultation')}
                 className="bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors"
@@ -138,7 +139,7 @@ export default function BlogPage() {
 
             {/* Mobile Navigation */}
             <div className="md:hidden flex items-center space-x-4">
-              <LanguageSwitcher currentLocale="en" />
+              <LanguageSwitcher currentLocale={locale} />
               <button 
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="text-foreground hover:text-foreground/80 p-2"
@@ -155,11 +156,11 @@ export default function BlogPage() {
           {isMobileMenuOpen && (
             <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-foreground/10 shadow-lg">
               <div className="container mx-auto px-4 py-4 space-y-4">
-                <Link href="/" className="block py-2 hover:text-orange-600 transition-colors">{t.nav.home}</Link>
-                <Link href="/about" className="block py-2 hover:text-orange-600 transition-colors">{t.nav.about}</Link>
-                <Link href="/services" className="block py-2 hover:text-orange-600 transition-colors">{t.nav.services}</Link>
-                <Link href="/blog" className="block py-2 text-orange-600 font-semibold">{t.nav.blog}</Link>
-                <Link href="/contact" className="block py-2 hover:text-orange-600 transition-colors">{t.nav.contact}</Link>
+                <Link href={locale === 'en' ? '/' : `/${locale}`} className="block py-2 hover:text-orange-600 transition-colors">{t.nav.home}</Link>
+                <Link href={locale === 'en' ? '/about' : `/${locale}/about`} className="block py-2 hover:text-orange-600 transition-colors">{t.nav.about}</Link>
+                <Link href={locale === 'en' ? '/services' : `/${locale}/services`} className="block py-2 hover:text-orange-600 transition-colors">{t.nav.services}</Link>
+                <Link href={locale === 'en' ? '/blog' : `/${locale}/blog`} className="block py-2 text-orange-600 font-semibold">{t.nav.blog}</Link>
+                <Link href={locale === 'en' ? '/contact' : `/${locale}/contact`} className="block py-2 hover:text-orange-600 transition-colors">{t.nav.contact}</Link>
                 <div className="pt-4 border-t border-foreground/10">
                   <button 
                     onClick={() => {
@@ -181,11 +182,11 @@ export default function BlogPage() {
       <section className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Marketing Insights That 
-            <span className="text-orange-600"> Drive Results</span>
+            {t.blog.hero.title}
+            <span className="text-orange-600"> {t.blog.hero.titleHighlight}</span>
           </h1>
           <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Proven strategies and actionable tactics from managing $35M+ in campaigns across 100+ successful funnels with 10 years in business.
+            {t.blog.hero.subtitle}
           </p>
           
           {/* Categories */}
@@ -205,13 +206,15 @@ export default function BlogPage() {
       {/* Featured Posts */}
       {featuredPosts.length > 0 && (
         <section className="container mx-auto px-4 mb-16">
-          <h2 className="text-3xl font-bold mb-8">Featured Articles</h2>
+          <h2 className="text-3xl font-bold mb-8">{t.common.featuredArticle}</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {featuredPosts.map((post, index) => (
               <BlogPostCard 
                 key={post.id} 
                 post={post} 
                 featured={index === 0}
+                locale={locale}
+                t={t}
               />
             ))}
           </div>
@@ -221,15 +224,20 @@ export default function BlogPage() {
       {/* Recent Posts */}
       <section className="container mx-auto px-4 mb-16">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-3xl font-bold">Latest Articles</h2>
+          <h2 className="text-3xl font-bold">{t.common.latestArticles}</h2>
           <div className="text-foreground/60 text-sm">
-            Showing {blogPosts.length} articles
+            {t.blog.categories.showing.replace('{count}', blogPosts.length.toString())}
           </div>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {recentPosts.map((post) => (
-            <BlogPostCard key={post.id} post={post} />
+            <BlogPostCard 
+              key={post.id} 
+              post={post} 
+              locale={locale}
+              t={t}
+            />
           ))}
         </div>
       </section>
@@ -239,25 +247,25 @@ export default function BlogPage() {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-2xl mx-auto">
             <h3 className="text-3xl font-bold mb-4">
-              Get Weekly Marketing Insights
+              {t.blog.newsletter.title}
             </h3>
             <p className="text-xl text-foreground/80 mb-8">
-              Join 5,000+ marketers getting actionable strategies, case studies, and industry insights delivered every Tuesday.
+              {t.blog.newsletter.subtitle}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input 
                 type="email" 
-                placeholder="Enter your email"
+                placeholder={t.blog.newsletter.placeholder}
                 className="flex-1 px-4 py-3 rounded-lg border border-foreground/20 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
               />
               <button className="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors">
-                Subscribe
+                {t.blog.newsletter.button}
               </button>
             </div>
             
             <p className="text-sm text-foreground/60 mt-4">
-              No spam. Unsubscribe anytime. 📧 ✨
+              {t.blog.newsletter.privacy}
             </p>
           </div>
         </div>
@@ -265,7 +273,7 @@ export default function BlogPage() {
 
       {/* Category Grid */}
       <section className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold mb-8 text-center">Browse by Category</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">{t.blog.categories.title}</h2>
         <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {blogCategories.map((category) => {
             const categoryPosts = blogPosts.filter(post => post.category === category);
@@ -278,7 +286,7 @@ export default function BlogPage() {
                   {category}
                 </h3>
                 <p className="text-sm text-foreground/60">
-                  {categoryPosts.length} article{categoryPosts.length !== 1 ? 's' : ''}
+                  {categoryPosts.length} {categoryPosts.length === 1 ? 'artículo' : 'artículos'}
                 </p>
               </div>
             );
