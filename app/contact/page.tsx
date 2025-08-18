@@ -27,7 +27,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-xl font-bold">
-              Amir Gomez
+              AG
             </Link>
             <div className="flex items-center space-x-6">
               <Link href="/" className="hover:text-foreground/80 transition-colors">Home</Link>
