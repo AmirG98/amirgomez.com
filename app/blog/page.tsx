@@ -1,30 +1,12 @@
+'use client';
+
 import Link from 'next/link';
-import type { Metadata } from 'next';
 import { useState } from 'react';
 import { blogPosts, blogCategories, getFeaturedPosts } from '@/data/blog-posts';
 import { getTranslations } from '@/lib/i18n';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { useFormModal } from '@/components/useFormModal';
 import MultiStepForm from '@/components/MultiStepForm';
-
-export const metadata: Metadata = {
-  title: 'Marketing Blog - Digital Marketing Insights & Strategies | Amir Gomez',
-  description: 'Expert digital marketing insights, strategies, and case studies. Learn Google Ads, Facebook advertising, email marketing, and conversion optimization.',
-  keywords: [
-    'digital marketing blog',
-    'marketing strategies',
-    'google ads',
-    'facebook advertising',
-    'email marketing',
-    'conversion optimization',
-    'marketing insights'
-  ],
-  openGraph: {
-    title: 'Marketing Blog - Digital Marketing Insights & Strategies',
-    description: 'Expert digital marketing insights, strategies, and case studies from Amir Gomez.',
-    type: 'website',
-  }
-};
 
 function formatDate(dateString: string) {
   const date = new Date(dateString);
@@ -99,8 +81,6 @@ function BlogPostCard({ post, featured = false }: { post: typeof blogPosts[0], f
     </article>
   );
 }
-
-'use client';
 
 export default function BlogPage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
