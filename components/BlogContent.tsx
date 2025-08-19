@@ -2,11 +2,21 @@
 
 import React from 'react';
 
-interface BlogContentProps {
-  content: string;
+interface KPIWidget {
+  title: string;
+  metrics: {
+    value: string;
+    label: string;
+    color: 'orange' | 'green' | 'blue' | 'purple';
+  }[];
 }
 
-export default function BlogContent({ content }: BlogContentProps) {
+interface BlogContentProps {
+  content: string;
+  kpiWidget?: KPIWidget;
+}
+
+export default function BlogContent({ content, kpiWidget }: BlogContentProps) {
   
   // Function to generate ID from heading text
   const generateId = (text: string) => {
@@ -94,27 +104,38 @@ export default function BlogContent({ content }: BlogContentProps) {
     return elements;
   };
 
+  const getColorClasses = (color: string) => {
+    switch (color) {
+      case 'orange':
+        return 'text-orange-600';
+      case 'green':
+        return 'text-green-600';
+      case 'blue':
+        return 'text-blue-600';
+      case 'purple':
+        return 'text-purple-600';
+      default:
+        return 'text-orange-600';
+    }
+  };
+
   return (
     <div className="prose prose-lg max-w-none">
-      {/* Add some sample infographic placeholders */}
-      <div className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 rounded-xl p-8 mb-8 text-center">
-        <div className="text-4xl mb-4" role="img" aria-label="Stats infographic">📊</div>
-        <h4 className="text-xl font-bold text-orange-800 dark:text-orange-200 mb-2">Key Performance Indicators</h4>
-        <div className="grid md:grid-cols-3 gap-4 mt-6">
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
-            <div className="text-2xl font-bold text-orange-600">450%</div>
-            <div className="text-sm text-foreground/60">Average ROI Increase</div>
-          </div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
-            <div className="text-2xl font-bold text-green-600">73%</div>
-            <div className="text-sm text-foreground/60">Cost Reduction</div>
-          </div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-4">
-            <div className="text-2xl font-bold text-blue-600">6 months</div>
-            <div className="text-sm text-foreground/60">Time to Results</div>
+      {/* Render custom KPI widget if provided */}
+      {kpiWidget && (
+        <div className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 rounded-xl p-8 mb-8 text-center">
+          <div className="text-4xl mb-4" role="img" aria-label="Stats infographic">📊</div>
+          <h4 className="text-xl font-bold text-orange-800 dark:text-orange-200 mb-2">{kpiWidget.title}</h4>
+          <div className={`grid ${kpiWidget.metrics.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-4 mt-6`}>
+            {kpiWidget.metrics.map((metric, index) => (
+              <div key={index} className="bg-white dark:bg-gray-800 rounded-lg p-4">
+                <div className={`text-2xl font-bold ${getColorClasses(metric.color)}`}>{metric.value}</div>
+                <div className="text-sm text-foreground/60">{metric.label}</div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      )}
 
       {renderContent(content)}
 

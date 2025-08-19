@@ -157,7 +157,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
           {/* Article Content */}
           <div className="mb-12">
-            <BlogContent content={post.content} />
+            <BlogContent content={post.content} kpiWidget={post.kpiWidget} />
           </div>
 
           {/* Tags */}

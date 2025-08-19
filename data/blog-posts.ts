@@ -5,6 +5,14 @@ export interface BlogPost {
   excerpt: string;
   content: string;
   featuredImage?: string;
+  kpiWidget?: {
+    title: string;
+    metrics: {
+      value: string;
+      label: string;
+      color: 'orange' | 'green' | 'blue' | 'purple';
+    }[];
+  };
   author: {
     name: string;
     bio: string;
@@ -30,6 +38,14 @@ export const blogPosts: BlogPost[] = [
     slug: "google-ads-roi-optimization-guide-2024",
     excerpt: "Learn proven strategies to maximize your Google Ads return on investment with advanced bidding techniques, audience targeting, and conversion optimization.",
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
+    kpiWidget: {
+      title: "Google Ads ROI Optimization Results",
+      metrics: [
+        { value: "312%", label: "Average ROAS Improvement", color: "green" },
+        { value: "67%", label: "Cost Per Click Reduction", color: "blue" },
+        { value: "3 months", label: "Implementation Timeline", color: "orange" }
+      ]
+    },
     content: `# The Complete Guide to Google Ads ROI Optimization in 2024
 
 Google Ads can be one of the most profitable marketing channels for your business, but only if you optimize for ROI consistently. After managing over $2M in ad spend across 200+ campaigns, I've identified the key strategies that separate profitable campaigns from money-draining ones.
@@ -171,6 +187,14 @@ Ready to build an integrated advertising strategy? Let's discuss which platform 
     slug: "email-marketing-automation-sequences-that-convert",
     excerpt: "Discover the highest-performing email automation sequences that have generated millions in revenue for my clients, complete with templates and examples.",
     featuredImage: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=450&fit=crop&auto=format",
+    kpiWidget: {
+      title: "Email Automation Performance",
+      metrics: [
+        { value: "$3M+", label: "Revenue Generated", color: "green" },
+        { value: "456%", label: "Email Revenue Increase", color: "blue" },
+        { value: "2-3 weeks", label: "Setup Timeline", color: "orange" }
+      ]
+    },
     content: `# Email Marketing Automation: 7 Sequences That Convert Like Crazy
 
 Email marketing automation isn't just about sending scheduled emails – it's about creating intelligent conversation flows that nurture prospects into customers and customers into advocates. These 7 sequences have generated over $3M in revenue for my clients.
@@ -251,6 +275,14 @@ Ready to implement email automation that drives real revenue? Let's discuss whic
     slug: "landing-page-conversion-rate-optimization-guide",
     excerpt: "Learn the systematic approach to CRO that increased conversion rates by 340% across 50+ landing pages, with real examples and testing frameworks.",
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
+    kpiWidget: {
+      title: "Conversion Rate Optimization Results",
+      metrics: [
+        { value: "340%", label: "Conversion Rate Increase", color: "green" },
+        { value: "127%", label: "Average Improvement", color: "blue" },
+        { value: "6-8 weeks", label: "Testing Timeline", color: "orange" }
+      ]
+    },
     content: `# Landing Page Conversion Rate Optimization: A Data-Driven Approach
 
 Conversion Rate Optimization (CRO) isn't about lucky guesses or copying competitors. It's about systematic testing based on user behavior data. This framework has improved conversion rates by an average of 127% across 50+ landing pages.
@@ -438,6 +470,14 @@ Ready to transform your marketing analytics from vanity metrics to business-driv
     slug: "google-ads-keyword-research-profitable-keywords-2024",
     excerpt: "Master Google Ads keyword research with advanced techniques to discover high-converting, low-competition keywords that drive profitable traffic to your business.",
     featuredImage: "https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&h=450&fit=crop&auto=format",
+    kpiWidget: {
+      title: "Keyword Research Performance Impact",
+      metrics: [
+        { value: "89%", label: "Lower Competition Keywords", color: "green" },
+        { value: "234%", label: "Conversion Rate Increase", color: "blue" },
+        { value: "4-6 weeks", label: "Research Implementation", color: "orange" }
+      ]
+    },
     content: `# Google Ads Keyword Research: How to Find Profitable Keywords That Convert in 2024
 
 Keyword research is the foundation of every successful Google Ads campaign. Yet 78% of advertisers still rely on basic keyword tools without understanding search intent, competition analysis, and profitability calculations. This comprehensive guide reveals the advanced keyword research methodology I use to find profitable keywords for clients spending $50k-$500k monthly.
@@ -664,6 +704,14 @@ Ready to implement advanced keyword research that drives profitable traffic? I'l
     slug: "facebook-ads-targeting-strategy-advanced-audience-2024",
     excerpt: "Discover advanced Facebook Ads targeting strategies that increased ROAS by 312% for my clients. Learn interest targeting, lookalike audiences, and custom audience optimization.",
     featuredImage: "https://images.unsplash.com/photo-1607703703674-df96af81dffa?w=800&h=450&fit=crop&auto=format",
+    kpiWidget: {
+      title: "Facebook Ads Targeting Results",
+      metrics: [
+        { value: "312%", label: "ROAS Improvement", color: "green" },
+        { value: "52%", label: "Cost Per Lead Reduction", color: "blue" },
+        { value: "2-4 weeks", label: "Optimization Period", color: "orange" }
+      ]
+    },
     content: `# Facebook Ads Targeting Strategy: Advanced Audience Targeting for Higher ROAS in 2024
 
 Facebook's targeting capabilities are simultaneously its greatest strength and biggest trap for advertisers. While the platform offers unprecedented audience precision, 89% of advertisers over-complicate their targeting, leading to restricted reach and inflated costs. This guide reveals the advanced targeting strategies that have increased ROAS by an average of 247% across 150+ campaigns.
@@ -4395,6 +4443,14 @@ Ready to transform your Instagram presence into a powerful business growth engin
     title: "Digital Advertising Strategy: How to Build Multi-Channel Campaigns That Generate 400% ROI in 2024",
     slug: "digital-advertising-strategy-multi-channel-campaigns-400-roi-2024",
     excerpt: "Master the digital advertising framework that generated $12M+ in revenue across Google, Facebook, and LinkedIn. Includes budget allocation, audience targeting, and optimization strategies.",
+    kpiWidget: {
+      title: "Multi-Channel Advertising Results",
+      metrics: [
+        { value: "400%", label: "ROI Achievement", color: "green" },
+        { value: "$12M+", label: "Revenue Generated", color: "blue" },
+        { value: "8-12 weeks", label: "Full Implementation", color: "orange" }
+      ]
+    },
     content: `# Digital Advertising Strategy: How to Build Multi-Channel Campaigns That Generate 400% ROI in 2024
 
 Digital advertising success in 2024 requires a sophisticated multi-channel approach that leverages the unique strengths of each platform while maintaining consistent messaging and tracking. Gone are the days when businesses could rely on a single advertising channel to drive growth. This comprehensive guide reveals the digital advertising strategy framework that generated over $12M in revenue across Google Ads, Facebook Ads, and LinkedIn Ads for B2B and B2C clients.
