@@ -395,7 +395,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div className="font-semibold text-foreground">Steven Page</div>
                 <div className="text-sm text-orange-600 font-medium">VP of Marketing at Giant Partners</div>
               </div>
-            </div>
+            </HoverLift>
 
             <HoverLift className="bg-background rounded-xl p-8 shadow-sm border border-foreground/10 hover:shadow-lg transition-shadow">
               <div className="mb-6">
@@ -408,7 +408,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div className="font-semibold text-foreground">Nick Koriakos</div>
                 <div className="text-sm text-orange-600 font-medium">Founder of Stack Force</div>
               </div>
-            </div>
+            </HoverLift>
 
             <HoverLift className="bg-background rounded-xl p-8 shadow-sm border border-foreground/10 hover:shadow-lg transition-shadow">
               <div className="mb-6">
