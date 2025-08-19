@@ -7,6 +7,7 @@ import { useFormModal } from '@/components/useFormModal';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { FadeInView, SlideInView, StaggerContainer, CountUpNumber } from '@/components/animations';
 import { useState } from 'react';
 
 export default function Home() {
@@ -108,59 +109,74 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             
             {/* Left Column - Text Content */}
-            <div className="text-center lg:text-left">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
-                Grow Your Business with 
-                <span className="text-orange-600"> Proven Marketing</span>
-              </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 mb-8 leading-relaxed">
-                I help businesses increase revenue through data-driven advertising strategies.
-              </p>
+            <SlideInView direction="left" className="text-center lg:text-left">
+              <FadeInView delay={0.2}>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
+                  Grow Your Business with 
+                  <span className="text-orange-600"> Proven Marketing</span>
+                </h1>
+              </FadeInView>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-                <button 
-                  onClick={() => openForm('audit')}
-                  className="bg-orange-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-orange-700 transition-colors shadow-lg"
-                >
-                  Get Free Marketing Audit
-                </button>
-                <button 
-                  onClick={() => openForm('caseStudies')}
-                  className="border-2 border-foreground/20 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-foreground/5 transition-colors"
-                >
-                  Grab Growth Playbook
-                </button>
-              </div>
+              <FadeInView delay={0.4}>
+                <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 mb-8 leading-relaxed">
+                  I help businesses increase revenue through data-driven advertising strategies.
+                </p>
+              </FadeInView>
+              
+              <FadeInView delay={0.6}>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+                  <button 
+                    onClick={() => openForm('audit')}
+                    className="bg-orange-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-orange-700 transition-colors shadow-lg"
+                  >
+                    Get Free Marketing Audit
+                  </button>
+                  <button 
+                    onClick={() => openForm('caseStudies')}
+                    className="border-2 border-foreground/20 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-foreground/5 transition-colors"
+                  >
+                    Grab Growth Playbook
+                  </button>
+                </div>
+              </FadeInView>
               
               {/* Trust Indicators */}
-              <div className="space-y-6">
-                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 text-sm text-foreground/60">
-                  <div className="flex items-center gap-2">
-                    <span className="text-orange-500">✓</span>
-                    <span>$35M+ Generated with Campaigns</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-orange-500">✓</span>
-                    <span>100+ Successful Funnels</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-orange-500">✓</span>
-                    <span>Average 450% ROI</span>
+              <FadeInView delay={0.8}>
+                <div className="space-y-6">
+                  <StaggerContainer staggerDelay={0.1} className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 text-sm text-foreground/60">
+                    <div className="flex items-center gap-2">
+                      <span className="text-orange-500">✓</span>
+                      <span>
+                        <CountUpNumber to={35} prefix="$" suffix="M+ Generated with Campaigns" delay={1} />
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-orange-500">✓</span>
+                      <span>
+                        <CountUpNumber to={100} suffix="+ Successful Funnels" delay={1.2} />
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-orange-500">✓</span>
+                      <span>
+                        Average <CountUpNumber to={450} suffix="% ROI" delay={1.4} />
+                      </span>
+                    </div>
+                  </StaggerContainer>
+                  
+                  {/* Years in Business Tagline */}
+                  <div className="text-center lg:text-left">
+                    <div className="inline-flex items-center gap-2 bg-orange-50 dark:bg-orange-900/20 px-4 py-2 rounded-full text-orange-600 font-semibold text-sm">
+                      <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                      <CountUpNumber to={10} suffix=" years in business" delay={1.6} />
+                    </div>
                   </div>
                 </div>
-                
-                {/* Years in Business Tagline */}
-                <div className="text-center lg:text-left">
-                  <div className="inline-flex items-center gap-2 bg-orange-50 dark:bg-orange-900/20 px-4 py-2 rounded-full text-orange-600 font-semibold text-sm">
-                    <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
-                    10 years in business
-                  </div>
-                </div>
-              </div>
-            </div>
+              </FadeInView>
+            </SlideInView>
 
             {/* Right Column - Profile Image */}
-            <div className="flex justify-center lg:justify-end">
+            <SlideInView direction="right" delay={0.3} className="flex justify-center lg:justify-end">
               <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-orange-100 dark:border-orange-900/30">
                 <img 
                   src="/amir-profile.jpg" 
@@ -168,7 +184,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   className="w-full h-full object-cover"
                 />
               </div>
-            </div>
+            </SlideInView>
 
           </div>
         </div>
@@ -177,16 +193,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       {/* Services Section */}
       <section id="services" className="bg-foreground/5 py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <FadeInView className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Marketing Services That Drive Results
             </h2>
             <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
               Comprehensive digital marketing solutions tailored to your business goals
             </p>
-          </div>
+          </FadeInView>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <StaggerContainer staggerDelay={0.15} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="bg-background rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
               <div className="text-5xl mb-6">🎯</div>
               <h3 className="text-2xl font-bold mb-4">Google Ads Management</h3>
@@ -270,32 +286,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <li>• Growth planning & execution</li>
               </ul>
             </div>
-          </div>
+          </StaggerContainer>
 
-          <div className="text-center mt-12">
+          <FadeInView delay={0.3} className="text-center mt-12">
             <button 
               onClick={() => openForm('campaign')}
               className="bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-700 transition-colors"
             >
               Start Your Marketing Campaign
             </button>
-          </div>
+          </FadeInView>
         </div>
       </section>
 
       {/* Process Section */}
       <section id="process" className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <FadeInView className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               My Proven 4-Step Process
             </h2>
             <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-              A systematic approach that has helped 200+ businesses achieve their marketing goals
+              A systematic approach that has helped <CountUpNumber to={200} suffix="+ businesses" delay={0.5} /> achieve their marketing goals
             </p>
-          </div>
+          </FadeInView>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <StaggerContainer staggerDelay={0.2} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             <div className="text-center">
               <div className="bg-orange-100 dark:bg-orange-900/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold text-orange-600">1</span>
@@ -339,23 +355,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 ROI and scale successful campaigns.
               </p>
             </div>
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Testimonials Section */}
       <section id="testimonials" className="bg-foreground/5 py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <FadeInView className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               What Clients Say
             </h2>
             <p className="text-xl text-foreground/80">
               Real results from real businesses
             </p>
-          </div>
+          </FadeInView>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <StaggerContainer staggerDelay={0.2} className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="bg-background rounded-xl p-8 shadow-sm border border-foreground/10 hover:shadow-lg transition-shadow">
               <div className="mb-6">
                 <div className="text-orange-400 text-xl mb-4">★★★★★</div>
@@ -394,14 +410,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div className="text-sm text-orange-600 font-medium">General Manager of RollerShow</div>
               </div>
             </div>
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="py-20">
         <div className="container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto">
+          <FadeInView className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Ready to Grow Your Business?
             </h2>
@@ -425,23 +441,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <p className="text-sm text-foreground/60">
               Free consultation • No commitment
             </p>
-          </div>
+          </FadeInView>
         </div>
       </section>
 
       {/* Blog Highlights Section */}
       <section className="bg-foreground/5 py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <FadeInView className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Latest Marketing Insights
             </h2>
             <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-              Proven strategies and real case studies from managing $2M+ in ad spend
+              Proven strategies and real case studies from managing <CountUpNumber to={2} prefix="$" suffix="M+ in ad spend" delay={0.5} />
             </p>
-          </div>
+          </FadeInView>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <StaggerContainer staggerDelay={0.15} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {getFeaturedPosts().slice(0, 3).map((post) => (
               <article key={post.id} className="group">
                 <Link href={`/blog/${post.slug}`}>
@@ -497,9 +513,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </Link>
               </article>
             ))}
-          </div>
+          </StaggerContainer>
 
-          <div className="text-center mt-12">
+          <FadeInView delay={0.3} className="text-center mt-12">
             <Link 
               href="/blog"
               className="bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-700 transition-colors inline-flex items-center gap-2"
@@ -507,7 +523,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               Read All Articles
               <span>→</span>
             </Link>
-          </div>
+          </FadeInView>
         </div>
       </section>
 
