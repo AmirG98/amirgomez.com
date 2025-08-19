@@ -188,7 +188,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Full-Funnel Marketing Services That Drive Results
+              Full-Funnel Marketing Services That <span className="text-orange-600">Drive Results</span>
             </h2>
           </div>
           
@@ -260,6 +260,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <li>• Custom website design & development</li>
                 <li>• Analytics setup & tracking</li>
                 <li>• Strategic planning & optimization</li>
+              </ul>
+            </HoverLift>
+
+            <HoverLift className="bg-background rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+              <div className="text-5xl mb-6">📊</div>
+              <h3 className="text-2xl font-bold mb-4">Website Strategy and Analytics</h3>
+              <p className="text-foreground/80 mb-4 leading-relaxed">
+                Comprehensive website strategy development with advanced analytics, 
+                performance tracking, and data-driven optimization recommendations.
+              </p>
+              <ul className="text-sm text-foreground/70 space-y-2">
+                <li>• Website strategy development</li>
+                <li>• Advanced analytics implementation</li>
+                <li>• Performance tracking & reporting</li>
               </ul>
             </HoverLift>
           </div>
