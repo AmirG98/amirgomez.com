@@ -290,7 +290,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             </div>
           </div>
           <div className="border-t border-foreground/10 mt-8 pt-8 text-center text-foreground/60">
-            <p>&copy; 2024 Amir Gomez. All rights reserved.</p>
+            <p>&copy; 2025 Amir Gomez. All rights reserved.</p>
           </div>
         </div>
       </footer>
