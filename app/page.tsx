@@ -5,6 +5,8 @@ import { getFeaturedPosts } from '@/data/blog-posts';
 import MultiStepForm from '@/components/MultiStepForm';
 import { useFormModal } from '@/components/useFormModal';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { useState } from 'react';
 
 export default function Home() {
@@ -39,7 +41,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div className="min-h-screen bg-background text-foreground">
         {/* Navigation */}
       <nav className="sticky top-0 bg-background/95 backdrop-blur-sm border-b border-foreground/10 z-50">
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto px-4 py-3 sm:py-4">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-xl font-bold">
               AG
@@ -54,14 +56,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <LanguageSwitcher currentLocale="en" />
               <button 
                 onClick={() => openForm('consultation')}
-                className="bg-orange-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors"
+                className="bg-orange-600 text-white px-4 sm:px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors text-sm sm:text-base"
               >
                 Get Free Consultation
               </button>
             </div>
 
             {/* Mobile Navigation */}
-            <div className="md:hidden flex items-center space-x-4">
+            <div className="md:hidden flex items-center space-x-3">
               <LanguageSwitcher currentLocale="en" />
               <button 
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -78,12 +80,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
             <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-foreground/10 shadow-lg">
-              <div className="container mx-auto px-4 py-4 space-y-4">
+              <div className="container mx-auto px-4 py-4 space-y-3">
                 <Link href="/about" className="block py-2 hover:text-orange-600 transition-colors">About</Link>
                 <Link href="/services" className="block py-2 hover:text-orange-600 transition-colors">Services</Link>
                 <Link href="/blog" className="block py-2 hover:text-orange-600 transition-colors">Blog</Link>
                 <Link href="/contact" className="block py-2 hover:text-orange-600 transition-colors">Contact</Link>
-                <div className="pt-4 border-t border-foreground/10">
+                <div className="pt-3 border-t border-foreground/10">
                   <button 
                     onClick={() => {
                       openForm('consultation');
@@ -510,23 +512,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </section>
 
       {/* Footer */}
-      <footer className="bg-foreground/5 py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <div className="text-xl font-bold mb-2">Amir Gomez</div>
-              <p className="text-foreground/60">Digital Marketing Specialist</p>
-            </div>
-            <div className="flex space-x-6">
-              <a href="https://linkedin.com/in/amirgomez" className="text-foreground/60 hover:text-foreground transition-colors">LinkedIn</a>
-              <a href="mailto:amir@amirgomez.com" className="text-foreground/60 hover:text-foreground transition-colors">Email</a>
-            </div>
-          </div>
-          <div className="border-t border-foreground/10 mt-8 pt-8 text-center text-foreground/60">
-            <p>&copy; 2025 Amir Gomez. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
       
       {/* Multi-Step Form Modal */}
       {currentVariant && (

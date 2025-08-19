@@ -43,10 +43,38 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
     }
   };
 
-  const handleStep1Submit = (e: React.FormEvent) => {
+  const handleStep1Submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
       setFormData({ email });
+      
+      // Capture partial submission when email is entered
+      try {
+        const partialData = {
+          email,
+          formType: `${variant.id}_partial`,
+          status: 'partial_submission'
+        };
+
+        // Send partial data to Google Sheets
+        const appsScriptUrl = process.env.NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL;
+        
+        if (appsScriptUrl && appsScriptUrl !== 'YOUR_APPS_SCRIPT_URL_HERE') {
+          await fetch(appsScriptUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(partialData),
+            mode: 'no-cors'
+          });
+          console.log('Partial submission tracked for:', email);
+        }
+      } catch (error) {
+        console.error('Error tracking partial submission:', error);
+        // Don't block the form flow if tracking fails
+      }
+      
       setStep(2);
     }
   };
@@ -56,7 +84,7 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
     setIsSubmitting(true);
     
     try {
-      const finalData = { ...formData, email };
+      const finalData = { ...formData, email, status: 'completed' };
       await onSubmit(finalData);
       setIsSubmitted(true);
     } catch (error) {

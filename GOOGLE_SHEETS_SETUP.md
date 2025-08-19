@@ -4,9 +4,9 @@
 
 1. Open your Google Sheet: https://docs.google.com/spreadsheets/d/1R_a0qRm5majkxMqSie0E24H-qELRH3R_x0jQQokvoNU/edit
 
-2. **Add headers to Row 1** (copy and paste these into columns A-P):
+2. **Add headers to Row 1** (copy and paste these into columns A-Q):
    ```
-   Timestamp	Form Type	Email	First Name	Last Name	Company	Phone	Website	Monthly Budget	Biggest Challenge	Main Goal	Budget Range	Services Interested	Timeline	Industry	Role
+   Timestamp	Form Type	Email	First Name	Last Name	Company	Phone	Website	Monthly Budget	Biggest Challenge	Main Goal	Budget Range	Services Interested	Timeline	Industry	Role	Status
    ```
 
 ## Step 2: Create Google Apps Script
@@ -41,7 +41,8 @@ function doPost(e) {
       data.servicesInterested || '',     // M: Services Interested
       data.timeline || '',               // N: Timeline
       data.industry || '',               // O: Industry
-      data.role || ''                    // P: Role
+      data.role || '',                   // P: Role
+      data.status || 'completed'         // Q: Status
     ];
     
     // Append to sheet
