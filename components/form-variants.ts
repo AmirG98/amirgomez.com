@@ -60,7 +60,7 @@ export const formVariants: Record<string, FormVariant> = {
       }
     ],
     submitText: 'Schedule My Session',
-    successMessage: 'Thank you for your interest! I\'ll get in touch within 24 hours to talk about your project and next steps.'
+    successMessage: 'Thank you for your interest! I\'ll get in touch shortly to talk about your project and next steps.'
   },
 
   audit: {
@@ -130,7 +130,7 @@ export const formVariants: Record<string, FormVariant> = {
       }
     ],
     submitText: 'Get My Free Audit',
-    successMessage: 'Thank you for your interest! I\'ll get in touch within 48 hours to talk about your project and share your audit results.'
+    successMessage: 'Thank you for your interest! I\'ll get in touch shortly to talk about your project and share your audit results.'
   },
 
   campaign: {
@@ -213,7 +213,7 @@ export const formVariants: Record<string, FormVariant> = {
       }
     ],
     submitText: 'Start My Campaign',
-    successMessage: 'Thank you for your interest! I\'ll get in touch within 24 hours to talk about your project and discuss your campaign needs.'
+    successMessage: 'Thank you for your interest! I\'ll get in touch shortly to talk about your project and discuss your campaign needs.'
   },
 
   caseStudies: {
