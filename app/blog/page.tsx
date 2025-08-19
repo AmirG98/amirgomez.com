@@ -25,7 +25,7 @@ function BlogPostCard({ post, featured = false }: { post: typeof blogPosts[0], f
           {/* Featured Image */}
           <div className="relative overflow-hidden aspect-[16/9] bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900/30 dark:to-orange-800/30">
             <img 
-              src={post.featuredImage || 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=450&fit=crop&auto=format'} 
+              src={post.featuredImage || '/amir-profile.jpg'} 
               alt={post.title}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
@@ -95,6 +95,9 @@ export default function BlogPage() {
   const { isOpen, currentVariant, openForm, closeForm, handleSubmit } = useFormModal();
   const t = getTranslations('en');
   
+  // Category filtering state
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  
   // Newsletter subscription state
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -102,7 +105,14 @@ export default function BlogPage() {
   const [errorMessage, setErrorMessage] = useState('');
   
   const featuredPosts = getFeaturedPosts();
-  const recentPosts = blogPosts.filter(post => !post.featured).slice(0, 6);
+  
+  // Filter posts based on selected category
+  const filteredPosts = selectedCategory === 'All' 
+    ? blogPosts.filter(post => !post.featured)
+    : blogPosts.filter(post => !post.featured && post.category === selectedCategory);
+  
+  // Categories with "All" option
+  const allCategories = ['All', ...blogCategories];
   
   // Newsletter subscription handler
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
@@ -238,14 +248,26 @@ export default function BlogPage() {
           
           {/* Categories */}
           <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {blogCategories.slice(0, 6).map((category) => (
-              <button 
-                key={category}
-                className="bg-foreground/5 hover:bg-orange-100 dark:hover:bg-orange-900/30 px-4 py-2 rounded-full text-sm font-medium transition-colors hover:text-orange-600"
-              >
-                {category}
-              </button>
-            ))}
+            {allCategories.slice(0, 7).map((category) => {
+              const isActive = selectedCategory === category;
+              const categoryPostCount = category === 'All' 
+                ? blogPosts.length 
+                : blogPosts.filter(post => post.category === category).length;
+              
+              return (
+                <button 
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                    isActive 
+                      ? 'bg-orange-600 text-white' 
+                      : 'bg-foreground/5 hover:bg-orange-100 dark:hover:bg-orange-900/30 hover:text-orange-600'
+                  }`}
+                >
+                  {category} ({categoryPostCount})
+                </button>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -266,20 +288,36 @@ export default function BlogPage() {
         </section>
       )}
 
-      {/* Recent Posts */}
+      {/* Filtered Posts */}
       <section className="container mx-auto px-4 mb-16">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-3xl font-bold">Latest Articles</h2>
+          <h2 className="text-3xl font-bold">
+            {selectedCategory === 'All' ? 'Latest Articles' : `${selectedCategory} Articles`}
+          </h2>
           <div className="text-foreground/60 text-sm">
-            Showing {blogPosts.length} articles
+            Showing {filteredPosts.length} article{filteredPosts.length !== 1 ? 's' : ''}
           </div>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {recentPosts.map((post) => (
-            <BlogPostCard key={post.id} post={post} />
-          ))}
-        </div>
+        {filteredPosts.length === 0 ? (
+          <div className="text-center py-12">
+            <div className="text-foreground/60 text-lg mb-4">
+              No articles found in the "{selectedCategory}" category.
+            </div>
+            <button 
+              onClick={() => setSelectedCategory('All')}
+              className="bg-orange-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-700 transition-colors"
+            >
+              View All Articles
+            </button>
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredPosts.map((post) => (
+              <BlogPostCard key={post.id} post={post} />
+            ))}
+          </div>
+        )}
       </section>
 
       {/* Newsletter Signup */}
@@ -345,20 +383,31 @@ export default function BlogPage() {
       <section className="container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold mb-8 text-center">Browse by Category</h2>
         <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
-          {blogCategories.map((category) => {
-            const categoryPosts = blogPosts.filter(post => post.category === category);
+          {allCategories.map((category) => {
+            const categoryPosts = category === 'All' 
+              ? blogPosts 
+              : blogPosts.filter(post => post.category === category);
+            const isActive = selectedCategory === category;
+            
             return (
-              <div 
+              <button 
                 key={category}
-                className="bg-background border border-foreground/10 rounded-lg p-6"
+                onClick={() => setSelectedCategory(category)}
+                className={`bg-background border rounded-lg p-6 text-left transition-all duration-200 hover:shadow-lg ${
+                  isActive 
+                    ? 'border-orange-500 bg-orange-50 dark:bg-orange-900/20' 
+                    : 'border-foreground/10 hover:border-orange-300'
+                }`}
               >
-                <h3 className="font-semibold mb-2 text-orange-600">
+                <h3 className={`font-semibold mb-2 ${
+                  isActive ? 'text-orange-600' : 'text-orange-600'
+                }`}>
                   {category}
                 </h3>
                 <p className="text-sm text-foreground/60">
                   {categoryPosts.length} article{categoryPosts.length !== 1 ? 's' : ''}
                 </p>
-              </div>
+              </button>
             );
           })}
         </div>
