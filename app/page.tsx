@@ -7,7 +7,7 @@ import { useFormModal } from '@/components/useFormModal';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { FadeInView, SlideInView, StaggerContainer, CountUpNumber } from '@/components/animations';
+import { FadeInView, SlideInView, StaggerContainer, CountUpNumber, ParallaxView, HoverLift, AnimatedButton, MagneticHover, ScrollNavbar } from '@/components/animations';
 import { useState } from 'react';
 
 export default function Home() {
@@ -41,8 +41,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       <div className="min-h-screen bg-background text-foreground">
         {/* Navigation */}
-      <nav className="sticky top-0 bg-background/95 backdrop-blur-sm border-b border-foreground/10 z-50">
-        <div className="container mx-auto px-4 py-3 sm:py-4">
+      <ScrollNavbar className="border-b border-foreground/10">
+        <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-xl font-bold">
               AG
@@ -55,12 +55,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <Link href="/blog" className="hover:text-foreground/80 transition-colors">Blog</Link>
               <Link href="/contact" className="hover:text-foreground/80 transition-colors">Contact</Link>
               <LanguageSwitcher currentLocale="en" />
-              <button 
+              <AnimatedButton 
                 onClick={() => openForm('consultation')}
-                className="bg-orange-600 text-white px-4 sm:px-6 py-2 rounded-full font-semibold hover:bg-orange-700 transition-colors text-sm sm:text-base"
+                variant="primary"
+                size="sm"
+                className="text-sm sm:text-base"
               >
                 Get Free Consultation
-              </button>
+              </AnimatedButton>
             </div>
 
             {/* Mobile Navigation */}
@@ -87,21 +89,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <Link href="/blog" className="block py-2 hover:text-orange-600 transition-colors">Blog</Link>
                 <Link href="/contact" className="block py-2 hover:text-orange-600 transition-colors">Contact</Link>
                 <div className="pt-3 border-t border-foreground/10">
-                  <button 
+                  <AnimatedButton 
                     onClick={() => {
                       openForm('consultation');
                       setIsMobileMenuOpen(false);
                     }}
-                    className="w-full bg-orange-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-700 transition-colors"
+                    variant="primary"
+                    className="w-full"
                   >
                     Get Free Consultation
-                  </button>
+                  </AnimatedButton>
                 </div>
               </div>
             </div>
           )}
         </div>
-      </nav>
+      </ScrollNavbar>
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20">
@@ -125,18 +128,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               
               <FadeInView delay={0.6}>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-                  <button 
+                  <AnimatedButton 
                     onClick={() => openForm('audit')}
-                    className="bg-orange-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-orange-700 transition-colors shadow-lg"
+                    variant="primary"
+                    size="lg"
+                    className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
                   >
                     Get Free Marketing Audit
-                  </button>
-                  <button 
+                  </AnimatedButton>
+                  <AnimatedButton 
                     onClick={() => openForm('caseStudies')}
-                    className="border-2 border-foreground/20 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-foreground/5 transition-colors"
+                    variant="secondary"
+                    size="lg"
+                    className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
                   >
                     Grab Growth Playbook
-                  </button>
+                  </AnimatedButton>
                 </div>
               </FadeInView>
               
@@ -177,13 +184,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
             {/* Right Column - Profile Image */}
             <SlideInView direction="right" delay={0.3} className="flex justify-center lg:justify-end">
-              <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-orange-100 dark:border-orange-900/30">
-                <img 
-                  src="/amir-profile.jpg" 
-                  alt="Amir Gomez - Digital Marketing Specialist"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <ParallaxView speed={0.3}>
+                <MagneticHover strength={0.2}>
+                  <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-orange-100 dark:border-orange-900/30">
+                    <img 
+                      src="/amir-profile.jpg" 
+                      alt="Amir Gomez - Digital Marketing Specialist"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </MagneticHover>
+              </ParallaxView>
             </SlideInView>
 
           </div>
@@ -203,7 +214,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </FadeInView>
           
           <StaggerContainer staggerDelay={0.15} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="bg-background rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <HoverLift className="bg-background rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
               <div className="text-5xl mb-6">🎯</div>
               <h3 className="text-2xl font-bold mb-4">Google Ads Management</h3>
               <p className="text-foreground/80 mb-4 leading-relaxed">
@@ -215,9 +226,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <li>• Campaign setup & optimization</li>
                 <li>• Performance tracking & reporting</li>
               </ul>
-            </div>
+            </HoverLift>
 
-            <div className="bg-background rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <HoverLift className="bg-background rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
               <div className="text-5xl mb-6">📱</div>
               <h3 className="text-2xl font-bold mb-4">Social Media Advertising</h3>
               <p className="text-foreground/80 mb-4 leading-relaxed">
@@ -229,9 +240,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <li>• Creative development & testing</li>
                 <li>• Campaign optimization</li>
               </ul>
-            </div>
+            </HoverLift>
 
-            <div className="bg-background rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <HoverLift className="bg-background rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
               <div className="text-5xl mb-6">📊</div>
               <h3 className="text-2xl font-bold mb-4">Conversion Optimization</h3>
               <p className="text-foreground/80 mb-4 leading-relaxed">
@@ -243,9 +254,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <li>• A/B testing & analytics</li>
                 <li>• User experience optimization</li>
               </ul>
-            </div>
+            </HoverLift>
 
-            <div className="bg-background rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <HoverLift className="bg-background rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
               <div className="text-5xl mb-6">📧</div>
               <h3 className="text-2xl font-bold mb-4">Email Marketing</h3>
               <p className="text-foreground/80 mb-4 leading-relaxed">
@@ -257,9 +268,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <li>• List building & segmentation</li>
                 <li>• Performance optimization</li>
               </ul>
-            </div>
+            </HoverLift>
 
-            <div className="bg-background rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <HoverLift className="bg-background rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
               <div className="text-5xl mb-6">🔍</div>
               <h3 className="text-2xl font-bold mb-4">Marketing Analytics</h3>
               <p className="text-foreground/80 mb-4 leading-relaxed">
@@ -271,9 +282,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <li>• Performance reporting</li>
                 <li>• Data-driven recommendations</li>
               </ul>
-            </div>
+            </HoverLift>
 
-            <div className="bg-background rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
+            <HoverLift className="bg-background rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
               <div className="text-5xl mb-6">🚀</div>
               <h3 className="text-2xl font-bold mb-4">Marketing Strategy</h3>
               <p className="text-foreground/80 mb-4 leading-relaxed">
@@ -285,16 +296,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <li>• Competitive analysis</li>
                 <li>• Growth planning & execution</li>
               </ul>
-            </div>
+            </HoverLift>
           </StaggerContainer>
 
           <FadeInView delay={0.3} className="text-center mt-12">
-            <button 
+            <AnimatedButton 
               onClick={() => openForm('campaign')}
-              className="bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-700 transition-colors"
+              variant="primary"
+              size="lg"
             >
               Start Your Marketing Campaign
-            </button>
+            </AnimatedButton>
           </FadeInView>
         </div>
       </section>
@@ -372,7 +384,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </FadeInView>
 
           <StaggerContainer staggerDelay={0.2} className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="bg-background rounded-xl p-8 shadow-sm border border-foreground/10 hover:shadow-lg transition-shadow">
+            <HoverLift className="bg-background rounded-xl p-8 shadow-sm border border-foreground/10 hover:shadow-lg transition-shadow">
               <div className="mb-6">
                 <div className="text-orange-400 text-xl mb-4">★★★★★</div>
                 <p className="text-foreground/80 mb-6 text-lg leading-relaxed italic">
@@ -385,7 +397,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               </div>
             </div>
 
-            <div className="bg-background rounded-xl p-8 shadow-sm border border-foreground/10 hover:shadow-lg transition-shadow">
+            <HoverLift className="bg-background rounded-xl p-8 shadow-sm border border-foreground/10 hover:shadow-lg transition-shadow">
               <div className="mb-6">
                 <div className="text-orange-400 text-xl mb-4">★★★★★</div>
                 <p className="text-foreground/80 mb-6 text-lg leading-relaxed italic">
@@ -398,7 +410,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               </div>
             </div>
 
-            <div className="bg-background rounded-xl p-8 shadow-sm border border-foreground/10 hover:shadow-lg transition-shadow">
+            <HoverLift className="bg-background rounded-xl p-8 shadow-sm border border-foreground/10 hover:shadow-lg transition-shadow">
               <div className="mb-6">
                 <div className="text-orange-400 text-xl mb-4">★★★★★</div>
                 <p className="text-foreground/80 mb-6 text-lg leading-relaxed italic">
@@ -409,7 +421,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div className="font-semibold text-foreground">Agustin Oliva</div>
                 <div className="text-sm text-orange-600 font-medium">General Manager of RollerShow</div>
               </div>
-            </div>
+            </HoverLift>
           </StaggerContainer>
         </div>
       </section>
@@ -425,18 +437,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               Get a free marketing audit and custom growth strategy.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <button 
+              <AnimatedButton 
                 onClick={() => openForm('consultation')}
-                className="bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-700 transition-colors shadow-lg"
+                variant="primary"
+                size="lg"
               >
                 Get Free Consultation
-              </button>
-              <button 
+              </AnimatedButton>
+              <AnimatedButton 
                 onClick={() => openForm('caseStudies')}
-                className="border-2 border-foreground/20 px-8 py-4 rounded-full font-semibold text-lg hover:bg-foreground/5 transition-colors"
+                variant="secondary"
+                size="lg"
               >
                 Grab My Free Growth Playbook
-              </button>
+              </AnimatedButton>
             </div>
             <p className="text-sm text-foreground/60">
               Free consultation • No commitment
@@ -516,12 +530,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </StaggerContainer>
 
           <FadeInView delay={0.3} className="text-center mt-12">
-            <Link 
-              href="/blog"
-              className="bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-700 transition-colors inline-flex items-center gap-2"
-            >
-              Read All Articles
-              <span>→</span>
+            <Link href="/blog">
+              <AnimatedButton 
+                variant="primary"
+                size="lg"
+                className="inline-flex items-center gap-2"
+              >
+                Read All Articles
+                <span>→</span>
+              </AnimatedButton>
             </Link>
           </FadeInView>
         </div>

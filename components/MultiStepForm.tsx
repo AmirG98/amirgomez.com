@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { AnimatedButton } from './animations';
 
 export interface FormVariant {
   id: string;
@@ -192,12 +193,13 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit, loca
               <div className="text-4xl mb-4">🎉</div>
               <h3 className="text-xl font-bold text-green-600 mb-2">{texts.success}</h3>
               <p className="text-foreground/95 mb-6">{variant.successMessage}</p>
-              <button 
+              <AnimatedButton 
                 onClick={handleClose}
-                className="bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors"
+                variant="primary"
+                size="md"
               >
                 {texts.close}
-              </button>
+              </AnimatedButton>
             </div>
           ) : step === 1 ? (
             <form onSubmit={handleStep1Submit} className="space-y-6">
@@ -222,13 +224,15 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit, loca
                 />
               </div>
 
-              <button
+              <AnimatedButton
                 type="submit"
                 disabled={!email || isStep1Loading}
-                className="w-full bg-orange-600 text-white py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors disabled:bg-foreground/40 disabled:cursor-not-allowed"
+                loading={isStep1Loading}
+                variant="primary"
+                className="w-full"
               >
-                {isStep1Loading ? texts.loading : texts.continue}
-              </button>
+                {texts.continue}
+              </AnimatedButton>
               
               <p className="text-xs text-foreground/80 text-center">
                 {texts.privacy}
@@ -290,20 +294,23 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit, loca
               ))}
 
               <div className="flex gap-3">
-                <button
+                <AnimatedButton
                   type="button"
                   onClick={() => setStep(1)}
-                  className="flex-1 border border-foreground/20 py-3 rounded-lg font-semibold hover:bg-foreground/5 transition-colors"
+                  variant="secondary"
+                  className="flex-1"
                 >
                   {texts.back}
-                </button>
-                <button
+                </AnimatedButton>
+                <AnimatedButton
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex-1 bg-orange-600 text-white py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors disabled:bg-orange-400 disabled:cursor-not-allowed"
+                  loading={isSubmitting}
+                  variant="primary"
+                  className="flex-1"
                 >
-                  {isSubmitting ? texts.submitting : variant.submitText}
-                </button>
+                  {variant.submitText}
+                </AnimatedButton>
               </div>
             </form>
           )}
