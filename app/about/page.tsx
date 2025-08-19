@@ -196,12 +196,9 @@ export default function AboutPage() {
                 <p className="text-foreground/80 mb-6 leading-relaxed italic text-sm sm:text-base">
                   "{t.home.testimonials.testimonial1.text}"
                 </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gray-300 rounded-full" role="img" aria-label="Client avatar"></div>
-                  <div>
-                    <div className="font-semibold text-sm sm:text-base">{t.home.testimonials.testimonial1.author}</div>
-                    <div className="text-xs sm:text-sm text-foreground/60">{t.home.testimonials.testimonial1.company}</div>
-                  </div>
+                <div>
+                  <div className="font-semibold text-sm sm:text-base">{t.home.testimonials.testimonial1.author}</div>
+                  <div className="text-xs sm:text-sm text-foreground/60">{t.home.testimonials.testimonial1.company}</div>
                 </div>
               </div>
 
@@ -211,12 +208,9 @@ export default function AboutPage() {
                 <p className="text-foreground/80 mb-6 leading-relaxed italic text-sm sm:text-base">
                   "{t.home.testimonials.testimonial2.text}"
                 </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gray-300 rounded-full" role="img" aria-label="Client avatar"></div>
-                  <div>
-                    <div className="font-semibold text-sm sm:text-base">{t.home.testimonials.testimonial2.author}</div>
-                    <div className="text-xs sm:text-sm text-foreground/60">{t.home.testimonials.testimonial2.company}</div>
-                  </div>
+                <div>
+                  <div className="font-semibold text-sm sm:text-base">{t.home.testimonials.testimonial2.author}</div>
+                  <div className="text-xs sm:text-sm text-foreground/60">{t.home.testimonials.testimonial2.company}</div>
                 </div>
               </div>
 
@@ -226,12 +220,9 @@ export default function AboutPage() {
                 <p className="text-foreground/80 mb-6 leading-relaxed italic text-sm sm:text-base">
                   "{t.home.testimonials.testimonial3.text}"
                 </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gray-300 rounded-full" role="img" aria-label="Client avatar"></div>
-                  <div>
-                    <div className="font-semibold text-sm sm:text-base">{t.home.testimonials.testimonial3.author}</div>
-                    <div className="text-xs sm:text-sm text-foreground/60">{t.home.testimonials.testimonial3.company}</div>
-                  </div>
+                <div>
+                  <div className="font-semibold text-sm sm:text-base">{t.home.testimonials.testimonial3.author}</div>
+                  <div className="text-xs sm:text-sm text-foreground/60">{t.home.testimonials.testimonial3.company}</div>
                 </div>
               </div>
             </div>
