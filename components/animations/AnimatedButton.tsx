@@ -26,7 +26,7 @@ export default function AnimatedButton({
 }: AnimatedButtonProps) {
   const [isPressed, setIsPressed] = useState(false);
 
-  const baseClasses = "relative overflow-hidden font-semibold rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2";
+  const baseClasses = "relative overflow-hidden font-semibold rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 cursor-pointer";
   
   const variantClasses = {
     primary: "bg-orange-600 text-white hover:bg-orange-700 shadow-lg",

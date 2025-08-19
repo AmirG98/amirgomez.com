@@ -112,22 +112,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             
             {/* Left Column - Text Content */}
-            <SlideInView direction="left" className="text-center lg:text-left">
-              <FadeInView delay={0.2}>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
-                  Grow Your Business with 
-                  <span className="text-orange-600"> Proven Marketing</span>
-                </h1>
-              </FadeInView>
+            <div className="text-center lg:text-left">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
+                Grow Your Business with 
+                <span className="text-orange-600"> Proven Marketing</span>
+              </h1>
               
-              <FadeInView delay={0.4}>
-                <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 mb-8 leading-relaxed">
-                  I help businesses increase revenue through data-driven advertising strategies.
-                </p>
-              </FadeInView>
+              <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 mb-8 leading-relaxed">
+                I help businesses increase revenue through data-driven advertising strategies.
+              </p>
               
-              <FadeInView delay={0.6}>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
                   <AnimatedButton 
                     onClick={() => openForm('audit')}
                     variant="primary"
@@ -145,57 +140,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     Grab Growth Playbook
                   </AnimatedButton>
                 </div>
-              </FadeInView>
               
               {/* Trust Indicators */}
-              <FadeInView delay={0.8}>
-                <div className="space-y-6">
-                  <StaggerContainer staggerDelay={0.1} className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 text-sm text-foreground/60">
-                    <div className="flex items-center gap-2">
-                      <span className="text-orange-500">✓</span>
-                      <span>
-                        <CountUpNumber to={35} prefix="$" suffix="M+ Generated with Campaigns" delay={1} />
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-orange-500">✓</span>
-                      <span>
-                        <CountUpNumber to={100} suffix="+ Successful Funnels" delay={1.2} />
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-orange-500">✓</span>
-                      <span>
-                        Average <CountUpNumber to={450} suffix="% ROI" delay={1.4} />
-                      </span>
-                    </div>
-                  </StaggerContainer>
-                  
-                  {/* Years in Business Tagline */}
-                  <div className="text-center lg:text-left">
-                    <div className="inline-flex items-center gap-2 bg-orange-50 dark:bg-orange-900/20 px-4 py-2 rounded-full text-orange-600 font-semibold text-sm">
-                      <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
-                      <CountUpNumber to={10} suffix=" years in business" delay={1.6} />
-                    </div>
+              <div className="space-y-6">
+                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 text-sm text-foreground/60">
+                  <div className="flex items-center gap-2">
+                    <span className="text-orange-500">✓</span>
+                    <span>$35M+ Generated with Campaigns</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-orange-500">✓</span>
+                    <span>100+ Successful Funnels</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-orange-500">✓</span>
+                    <span>Average 450% ROI</span>
                   </div>
                 </div>
-              </FadeInView>
-            </SlideInView>
+                
+                {/* Years in Business Tagline */}
+                <div className="text-center lg:text-left">
+                  <div className="inline-flex items-center gap-2 bg-orange-50 dark:bg-orange-900/20 px-4 py-2 rounded-full text-orange-600 font-semibold text-sm">
+                    <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                    <span>10 years in business</span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             {/* Right Column - Profile Image */}
-            <SlideInView direction="right" delay={0.3} className="flex justify-center lg:justify-end">
-              <ParallaxView speed={0.3}>
-                <MagneticHover strength={0.2}>
-                  <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-orange-100 dark:border-orange-900/30">
-                    <img 
-                      src="/amir-profile.jpg" 
-                      alt="Amir Gomez - Digital Marketing Specialist"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </MagneticHover>
-              </ParallaxView>
-            </SlideInView>
+            <div className="flex justify-center lg:justify-end">
+              <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-orange-100 dark:border-orange-900/30">
+                <img 
+                  src="/amir-profile.jpg" 
+                  alt="Amir Gomez - Marketing Expert"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
 
           </div>
         </div>
@@ -204,16 +186,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       {/* Services Section */}
       <section id="services" className="bg-foreground/5 py-20">
         <div className="container mx-auto px-4">
-          <FadeInView className="text-center mb-16">
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Marketing Services That Drive Results
+              Full-Funnel Marketing Services That Drive Results
             </h2>
-            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-              Comprehensive digital marketing solutions tailored to your business goals
-            </p>
-          </FadeInView>
+          </div>
           
-          <StaggerContainer staggerDelay={0.15} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <HoverLift className="bg-background rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
               <div className="text-5xl mb-6">🎯</div>
               <h3 className="text-2xl font-bold mb-4">Google Ads Management</h3>
@@ -271,35 +250,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </HoverLift>
 
             <HoverLift className="bg-background rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-5xl mb-6">🔍</div>
-              <h3 className="text-2xl font-bold mb-4">Marketing Analytics</h3>
+              <div className="text-5xl mb-6">💻</div>
+              <h3 className="text-2xl font-bold mb-4">Website Development</h3>
               <p className="text-foreground/80 mb-4 leading-relaxed">
-                Comprehensive tracking and reporting that provides clear insights 
-                into campaign performance and ROI measurement.
+                Custom website design and development with integrated analytics, 
+                strategic planning, and performance optimization.
               </p>
               <ul className="text-sm text-foreground/70 space-y-2">
+                <li>• Custom website design & development</li>
                 <li>• Analytics setup & tracking</li>
-                <li>• Performance reporting</li>
-                <li>• Data-driven recommendations</li>
+                <li>• Strategic planning & optimization</li>
               </ul>
             </HoverLift>
+          </div>
 
-            <HoverLift className="bg-background rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-5xl mb-6">🚀</div>
-              <h3 className="text-2xl font-bold mb-4">Marketing Strategy</h3>
-              <p className="text-foreground/80 mb-4 leading-relaxed">
-                Comprehensive marketing strategies and consulting that align with 
-                your business goals and competitive positioning.
-              </p>
-              <ul className="text-sm text-foreground/70 space-y-2">
-                <li>• Marketing strategy development</li>
-                <li>• Competitive analysis</li>
-                <li>• Growth planning & execution</li>
-              </ul>
-            </HoverLift>
-          </StaggerContainer>
-
-          <FadeInView delay={0.3} className="text-center mt-12">
+          <div className="text-center mt-12">
             <AnimatedButton 
               onClick={() => openForm('campaign')}
               variant="primary"
@@ -307,23 +272,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             >
               Start Your Marketing Campaign
             </AnimatedButton>
-          </FadeInView>
+          </div>
         </div>
       </section>
 
       {/* Process Section */}
       <section id="process" className="py-20">
         <div className="container mx-auto px-4">
-          <FadeInView className="text-center mb-16">
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               My Proven 4-Step Process
             </h2>
             <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-              A systematic approach that has helped <CountUpNumber to={200} suffix="+ businesses" delay={0.5} /> achieve their marketing goals
+              A systematic approach that has helped 200+ businesses achieve their marketing goals
             </p>
-          </FadeInView>
+          </div>
 
-          <StaggerContainer staggerDelay={0.2} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             <div className="text-center">
               <div className="bg-orange-100 dark:bg-orange-900/30 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-2xl font-bold text-orange-600">1</span>
@@ -367,7 +332,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 ROI and scale successful campaigns.
               </p>
             </div>
-          </StaggerContainer>
+          </div>
         </div>
       </section>
 
