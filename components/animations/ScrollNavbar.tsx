@@ -37,13 +37,7 @@ export default function ScrollNavbar({
       className={className}
       animate={{
         y: isHidden ? -100 : 0,
-        backgroundColor: isScrolled 
-          ? 'rgba(255, 255, 255, 0.95)' 
-          : 'rgba(255, 255, 255, 0.95)',
-        backdropFilter: isScrolled ? 'blur(20px)' : 'blur(8px)',
-        borderColor: isScrolled 
-          ? 'rgba(0, 0, 0, 0.1)' 
-          : 'rgba(0, 0, 0, 0.05)'
+        backdropFilter: isScrolled ? 'blur(20px)' : 'blur(8px)'
       }}
       transition={{ 
         duration: 0.3, 

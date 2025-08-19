@@ -41,7 +41,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       
       <div className="min-h-screen bg-background text-foreground">
         {/* Navigation */}
-      <ScrollNavbar className="border-b border-foreground/10">
+      <ScrollNavbar className="bg-background/95 border-b border-foreground/10">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             <Link href="/" className="text-xl font-bold">
