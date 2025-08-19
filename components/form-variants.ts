@@ -280,5 +280,31 @@ export const formVariants: Record<string, FormVariant> = {
     ],
     submitText: 'Get My Growth Playbook',
     successMessage: 'Thank you! Check your email - I\'ve sent you my comprehensive growth playbook with proven strategies and frameworks. Start implementing today!'
+  },
+
+  newsletter: {
+    id: 'newsletter',
+    title: 'Join 5,000+ Marketers',
+    subtitle: 'Get weekly marketing insights delivered to your inbox',
+    step1Title: 'Get Weekly Marketing Insights',
+    step1Subtitle: 'Join 5,000+ marketers getting weekly strategies, case studies, and tactics delivered to their inbox. No spam, unsubscribe anytime.',
+    step2Fields: [
+      {
+        name: 'firstName',
+        label: 'First Name',
+        type: 'text',
+        required: true,
+        placeholder: 'John'
+      },
+      {
+        name: 'lastName',
+        label: 'Last Name',
+        type: 'text',
+        required: false,
+        placeholder: 'Smith (optional)'
+      }
+    ],
+    submitText: 'Subscribe',
+    successMessage: 'Welcome to the community! Check your email for a confirmation and your first marketing insights.'
   }
 };

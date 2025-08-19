@@ -119,6 +119,10 @@ Each form type sends different data:
 - formType: "caseStudies"
 - Fields: email, firstName, lastName, company, industry, role
 
+### Newsletter Form
+- formType: "newsletter"
+- Fields: email, firstName, lastName
+
 ## Troubleshooting
 
 - **No data appearing**: Check that the Apps Script URL is correct in `.env.local`

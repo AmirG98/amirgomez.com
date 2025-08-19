@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { blogPosts, getPostBySlug, getRelatedPosts } from '@/data/blog-posts';
 import TableOfContents from '@/components/TableOfContents';
 import BlogContent from '@/components/BlogContent';
+import NewsletterSignup from '@/components/NewsletterSignup';
 
 interface PageParams {
   slug: string;
@@ -249,30 +250,8 @@ export default async function BlogPostPage({ params }: PageProps) {
 
       {/* Newsletter Signup */}
       <section className="bg-foreground/5 py-16 mt-16">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-2xl mx-auto">
-            <h3 className="text-3xl font-bold mb-4">
-              Get More Insights Like This
-            </h3>
-            <p className="text-xl text-foreground/80 mb-8">
-              Join 5,000+ marketers getting weekly strategies, case studies, and tactics delivered to their inbox.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input 
-                type="email" 
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border border-foreground/20 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-              />
-              <button className="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors">
-                Subscribe
-              </button>
-            </div>
-            
-            <p className="text-sm text-foreground/60 mt-4">
-              No spam. Unsubscribe anytime.
-            </p>
-          </div>
+        <div className="container mx-auto px-4">
+          <NewsletterSignup />
         </div>
       </section>
 

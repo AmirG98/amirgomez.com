@@ -119,13 +119,38 @@ export default function BlogPage() {
     setSubscriptionStatus('idle');
     
     try {
-      // Simulate API call (replace with actual newsletter service integration)
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Create newsletter subscription data
+      const submissionData = {
+        email,
+        formType: 'newsletter',
+        firstName: '',
+        lastName: ''
+      };
+
+      // Send to Google Sheets via Apps Script
+      const appsScriptUrl = process.env.NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL;
       
-      // For now, just show success - in production, integrate with your newsletter service
+      if (!appsScriptUrl || appsScriptUrl === 'YOUR_APPS_SCRIPT_URL_HERE') {
+        console.warn('Google Apps Script URL not configured');
+        setSubscriptionStatus('success');
+        setEmail('');
+        return;
+      }
+
+      await fetch(appsScriptUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submissionData),
+        mode: 'no-cors' // Required for Google Apps Script
+      });
+
+      console.log('Newsletter subscription sent to Google Sheets');
       setSubscriptionStatus('success');
       setEmail('');
     } catch (error) {
+      console.error('Error submitting newsletter subscription:', error);
       setSubscriptionStatus('error');
       setErrorMessage('Something went wrong. Please try again.');
     } finally {
