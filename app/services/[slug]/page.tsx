@@ -81,7 +81,7 @@ Understanding search intent is crucial for keyword selection and campaign struct
 - **Commercial Investigation**: "Best [product]" (Mid-funnel, comparison content)
 - **Transactional**: "Buy," "Price," "Near me" (High commercial intent, priority keywords)
 
-**Match Type Strategy 2024:**
+**Match Type Strategy 2025:**
 Google's close variants have changed how match types work:
 - **Exact Match**: Still most controlled, but broader than before
 - **Phrase Match**: Now captures more variations, good for mid-volume keywords
@@ -166,7 +166,7 @@ Remember: every successful Google Ads account started with a single profitable c
     },
     category: 'Google Ads',
     readTime: '12 min read',
-    publishDate: 'Dec 15, 2024',
+    publishDate: 'Dec 15, 2025',
     image: '🎯',
     tags: ['Google Ads', 'PPC', 'Strategy', 'Revenue Growth'],
     author: 'Amir Gomez',
@@ -189,7 +189,7 @@ Remember: every successful Google Ads account started with a single profitable c
     },
     category: 'Social Media',
     readTime: '10 min read',
-    publishDate: 'Dec 12, 2024',
+    publishDate: 'Dec 12, 2025',
     image: '📱',
     tags: ['Facebook Ads', 'E-commerce', 'Social Media', 'ROAS'],
     author: 'Amir Gomez',
@@ -212,7 +212,7 @@ Remember: every successful Google Ads account started with a single profitable c
     },
     category: 'Conversion',
     readTime: '15 min read',
-    publishDate: 'Dec 10, 2024',
+    publishDate: 'Dec 10, 2025',
     image: '📊',
     tags: ['CRO', 'Landing Pages', 'A/B Testing', 'Optimization'],
     author: 'Amir Gomez',
