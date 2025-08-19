@@ -35,6 +35,7 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
   const [formData, setFormData] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isStep1Loading, setIsStep1Loading] = useState(false);
 
   // Handle escape key to close modal
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -46,36 +47,41 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
   const handleStep1Submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
+      // Show loading state immediately
+      setIsStep1Loading(true);
+      
       setFormData({ email });
       
-      // Capture partial submission when email is entered
-      try {
-        const partialData = {
-          email,
-          formType: `${variant.id}_partial`,
-          status: 'partial_submission'
-        };
-
-        // Send partial data to Google Sheets
-        const appsScriptUrl = process.env.NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL;
-        
-        if (appsScriptUrl && appsScriptUrl !== 'YOUR_APPS_SCRIPT_URL_HERE') {
-          await fetch(appsScriptUrl, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(partialData),
-            mode: 'no-cors'
-          });
-          console.log('Partial submission tracked for:', email);
-        }
-      } catch (error) {
-        console.error('Error tracking partial submission:', error);
-        // Don't block the form flow if tracking fails
-      }
+      // Small delay to show loading state, then advance
+      setTimeout(() => {
+        setStep(2);
+        setIsStep1Loading(false);
+      }, 200);
       
-      setStep(2);
+      // Capture partial submission in the background (non-blocking)
+      const partialData = {
+        email,
+        formType: `${variant.id}_partial`,
+        status: 'partial_submission'
+      };
+
+      // Send partial data to Google Sheets in background
+      const appsScriptUrl = process.env.NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL;
+      
+      if (appsScriptUrl && appsScriptUrl !== 'YOUR_APPS_SCRIPT_URL_HERE') {
+        fetch(appsScriptUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(partialData),
+          mode: 'no-cors'
+        }).then(() => {
+          console.log('Partial submission tracked for:', email);
+        }).catch((error) => {
+          console.error('Error tracking partial submission:', error);
+        });
+      }
     }
   };
 
@@ -100,6 +106,7 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
     setFormData({});
     setIsSubmitting(false);
     setIsSubmitted(false);
+    setIsStep1Loading(false);
     onClose();
   };
 
@@ -195,10 +202,10 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
 
               <button
                 type="submit"
-                disabled={!email}
+                disabled={!email || isStep1Loading}
                 className="w-full bg-orange-600 text-white py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors disabled:bg-foreground/20 disabled:cursor-not-allowed"
               >
-                Continue →
+                {isStep1Loading ? 'Loading...' : 'Continue →'}
               </button>
               
               <p className="text-xs text-foreground/60 text-center">
