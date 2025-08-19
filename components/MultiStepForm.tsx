@@ -128,11 +128,11 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
           <div className="flex justify-between items-start">
             <div>
               <h2 className="text-2xl font-bold text-foreground">{variant.title}</h2>
-              <p className="text-sm text-foreground/70 mt-1">{variant.subtitle}</p>
+              <p className="text-sm text-foreground/90 mt-1">{variant.subtitle}</p>
             </div>
             <button 
               onClick={handleClose}
-              className="text-foreground/60 hover:text-foreground text-2xl leading-none"
+              className="text-foreground/80 hover:text-foreground text-2xl leading-none"
               aria-label="Close form"
             >
               ×
@@ -156,7 +156,7 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
                   2
                 </div>
               </div>
-              <div className="flex justify-between mt-2 text-xs text-foreground/60">
+              <div className="flex justify-between mt-2 text-xs text-foreground/80">
                 <span>Email</span>
                 <span>Details</span>
               </div>
@@ -169,7 +169,7 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
             <div className="text-center py-8">
               <div className="text-4xl mb-4">🎉</div>
               <h3 className="text-xl font-bold text-green-600 mb-2">Success!</h3>
-              <p className="text-foreground/80 mb-6">{variant.successMessage}</p>
+              <p className="text-foreground/95 mb-6">{variant.successMessage}</p>
               <button 
                 onClick={handleClose}
                 className="bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors"
@@ -181,7 +181,7 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
             <form onSubmit={handleStep1Submit} className="space-y-6">
               <div>
                 <h3 className="text-xl font-bold mb-2">{variant.step1Title}</h3>
-                <p className="text-foreground/70 mb-6">{variant.step1Subtitle}</p>
+                <p className="text-foreground/90 mb-6">{variant.step1Subtitle}</p>
               </div>
               
               <div>
@@ -194,7 +194,7 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full px-4 py-3 border border-foreground/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-foreground/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-background text-foreground"
                   placeholder="your@email.com"
                   autoFocus
                 />
@@ -203,12 +203,12 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
               <button
                 type="submit"
                 disabled={!email || isStep1Loading}
-                className="w-full bg-orange-600 text-white py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors disabled:bg-foreground/20 disabled:cursor-not-allowed"
+                className="w-full bg-orange-600 text-white py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors disabled:bg-foreground/40 disabled:cursor-not-allowed"
               >
                 {isStep1Loading ? 'Loading...' : 'Continue →'}
               </button>
               
-              <p className="text-xs text-foreground/60 text-center">
+              <p className="text-xs text-foreground/80 text-center">
                 We respect your privacy. Unsubscribe at any time.
               </p>
             </form>
@@ -216,10 +216,10 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
             <form onSubmit={handleStep2Submit} className="space-y-6">
               <div>
                 <h3 className="text-xl font-bold mb-2">Almost Done!</h3>
-                <p className="text-foreground/70 mb-6">Just a few more details to personalize your experience.</p>
+                <p className="text-foreground/90 mb-6">Just a few more details to personalize your experience.</p>
                 
                 <div className="bg-orange-50 dark:bg-orange-900/20 rounded-lg p-3 mb-6">
-                  <div className="text-sm text-foreground/70">Email:</div>
+                  <div className="text-sm text-foreground/90">Email:</div>
                   <div className="font-semibold text-foreground">{email}</div>
                 </div>
               </div>
@@ -236,7 +236,7 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
                       value={formData[field.name] || ''}
                       onChange={(e) => handleInputChange(field.name, e.target.value)}
                       required={field.required}
-                      className="w-full px-4 py-3 border border-foreground/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-foreground/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-background text-foreground"
                     >
                       <option value="">{field.placeholder || `Select ${field.label.toLowerCase()}`}</option>
                       {field.options?.map((option) => (
@@ -250,7 +250,7 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
                       onChange={(e) => handleInputChange(field.name, e.target.value)}
                       required={field.required}
                       rows={3}
-                      className="w-full px-4 py-3 border border-foreground/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-foreground/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-background text-foreground"
                       placeholder={field.placeholder}
                     />
                   ) : (
@@ -260,7 +260,7 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
                       value={formData[field.name] || ''}
                       onChange={(e) => handleInputChange(field.name, e.target.value)}
                       required={field.required}
-                      className="w-full px-4 py-3 border border-foreground/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-foreground/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-background text-foreground"
                       placeholder={field.placeholder}
                     />
                   )}
