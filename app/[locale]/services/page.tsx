@@ -150,7 +150,7 @@ export default function ServicesPage({ params }: ServicesPageProps) {
   const [translations, setTranslations] = useState<any>(null);
   const [locale, setLocale] = useState<Locale | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { isOpen, currentVariant, openForm, closeForm, handleSubmit } = useFormModal();
+  const { isOpen, currentVariant, openForm, closeForm, handleSubmit } = useFormModal(locale || 'en');
 
   useEffect(() => {
     const loadParams = async () => {
@@ -484,6 +484,7 @@ export default function ServicesPage({ params }: ServicesPageProps) {
           isOpen={isOpen}
           onClose={closeForm}
           onSubmit={handleSubmit}
+          locale={locale}
         />
       )}
     </div>

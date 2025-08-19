@@ -27,15 +27,37 @@ interface MultiStepFormProps {
   isOpen: boolean;
   onClose: () => void;
   onSubmit: (data: Record<string, string>) => void;
+  locale?: string;
 }
 
-export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: MultiStepFormProps) {
+export default function MultiStepForm({ variant, isOpen, onClose, onSubmit, locale = 'en' }: MultiStepFormProps) {
   const [step, setStep] = useState(1);
   const [email, setEmail] = useState('');
   const [formData, setFormData] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isStep1Loading, setIsStep1Loading] = useState(false);
+
+  const isSpanish = locale === 'es';
+  const texts = {
+    emailLabel: isSpanish ? 'Dirección de Email' : 'Email Address',
+    emailPlaceholder: isSpanish ? 'tu@email.com' : 'your@email.com',
+    continue: isSpanish ? 'Continuar →' : 'Continue →',
+    loading: isSpanish ? 'Cargando...' : 'Loading...',
+    almostDone: isSpanish ? '¡Casi Terminamos!' : 'Almost Done!',
+    step2Subtitle: isSpanish ? 'Solo algunos detalles más para personalizar tu experiencia.' : 'Just a few more details to personalize your experience.',
+    emailPrefix: isSpanish ? 'Email:' : 'Email:',
+    back: isSpanish ? '← Atrás' : '← Back',
+    submitting: isSpanish ? 'Enviando...' : 'Submitting...',
+    privacy: isSpanish ? 'Respetamos tu privacidad. Cancela en cualquier momento.' : 'We respect your privacy. Unsubscribe at any time.',
+    success: isSpanish ? '¡Éxito!' : 'Success!',
+    close: isSpanish ? 'Cerrar' : 'Close',
+    stepLabels: {
+      email: isSpanish ? 'Email' : 'Email',
+      details: isSpanish ? 'Detalles' : 'Details'
+    },
+    selectPlaceholder: isSpanish ? 'Seleccionar' : 'Select'
+  };
 
   // Handle escape key to close modal
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -157,8 +179,8 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
                 </div>
               </div>
               <div className="flex justify-between mt-2 text-xs text-foreground/80">
-                <span>Email</span>
-                <span>Details</span>
+                <span>{texts.stepLabels.email}</span>
+                <span>{texts.stepLabels.details}</span>
               </div>
             </div>
           )}
@@ -168,13 +190,13 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
           {isSubmitted ? (
             <div className="text-center py-8">
               <div className="text-4xl mb-4">🎉</div>
-              <h3 className="text-xl font-bold text-green-600 mb-2">Success!</h3>
+              <h3 className="text-xl font-bold text-green-600 mb-2">{texts.success}</h3>
               <p className="text-foreground/95 mb-6">{variant.successMessage}</p>
               <button 
                 onClick={handleClose}
                 className="bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors"
               >
-                Close
+                {texts.close}
               </button>
             </div>
           ) : step === 1 ? (
@@ -186,7 +208,7 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
               
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                  Email Address *
+                  {texts.emailLabel} *
                 </label>
                 <input
                   type="email"
@@ -195,7 +217,7 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   className="w-full px-4 py-3 border border-foreground/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-background text-foreground"
-                  placeholder="your@email.com"
+                  placeholder={texts.emailPlaceholder}
                   autoFocus
                 />
               </div>
@@ -205,21 +227,21 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
                 disabled={!email || isStep1Loading}
                 className="w-full bg-orange-600 text-white py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors disabled:bg-foreground/40 disabled:cursor-not-allowed"
               >
-                {isStep1Loading ? 'Loading...' : 'Continue →'}
+                {isStep1Loading ? texts.loading : texts.continue}
               </button>
               
               <p className="text-xs text-foreground/80 text-center">
-                We respect your privacy. Unsubscribe at any time.
+                {texts.privacy}
               </p>
             </form>
           ) : (
             <form onSubmit={handleStep2Submit} className="space-y-6">
               <div>
-                <h3 className="text-xl font-bold mb-2">Almost Done!</h3>
-                <p className="text-foreground/90 mb-6">Just a few more details to personalize your experience.</p>
+                <h3 className="text-xl font-bold mb-2">{texts.almostDone}</h3>
+                <p className="text-foreground/90 mb-6">{texts.step2Subtitle}</p>
                 
                 <div className="bg-orange-50 dark:bg-orange-900/20 rounded-lg p-3 mb-6">
-                  <div className="text-sm text-foreground/90">Email:</div>
+                  <div className="text-sm text-foreground/90">{texts.emailPrefix}</div>
                   <div className="font-semibold text-foreground">{email}</div>
                 </div>
               </div>
@@ -238,7 +260,7 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
                       required={field.required}
                       className="w-full px-4 py-3 border border-foreground/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-background text-foreground"
                     >
-                      <option value="">{field.placeholder || `Select ${field.label.toLowerCase()}`}</option>
+                      <option value="">{field.placeholder || `${texts.selectPlaceholder} ${field.label.toLowerCase()}`}</option>
                       {field.options?.map((option) => (
                         <option key={option} value={option}>{option}</option>
                       ))}
@@ -273,14 +295,14 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit }: Mu
                   onClick={() => setStep(1)}
                   className="flex-1 border border-foreground/20 py-3 rounded-lg font-semibold hover:bg-foreground/5 transition-colors"
                 >
-                  ← Back
+                  {texts.back}
                 </button>
                 <button
                   type="submit"
                   disabled={isSubmitting}
                   className="flex-1 bg-orange-600 text-white py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors disabled:bg-orange-400 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? 'Submitting...' : variant.submitText}
+                  {isSubmitting ? texts.submitting : variant.submitText}
                 </button>
               </div>
             </form>

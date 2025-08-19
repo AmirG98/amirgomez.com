@@ -244,6 +244,136 @@
       "email": "Email"
     }
   },
+  "forms": {
+    "consultation": {
+      "title": "Agenda Tu Sesión de Estrategia Gratuita",
+      "subtitle": "Obtén una estrategia de marketing personalizada en 30 minutos",
+      "step1Title": "Obtén Tu Sesión de Estrategia Gratuita de 30 Minutos",
+      "step1Subtitle": "Únete a más de 200 dueños de negocios que han transformado su marketing con una sesión de estrategia personalizada. Sin presión de ventas, solo insights accionables.",
+      "submitText": "Agendar Mi Sesión",
+      "successMessage": "¡Gracias por tu interés! Me pondré en contacto pronto para hablar sobre tu proyecto y los próximos pasos."
+    },
+    "audit": {
+      "title": "Obtén Tu Auditoría de Marketing Gratuita",
+      "subtitle": "Descubre oportunidades ocultas en tu marketing actual",
+      "step1Title": "Obtén Tu Auditoría Gratuita de Rendimiento de Marketing",
+      "step1Subtitle": "Analizaré tu marketing actual y te proporcionaré un reporte detallado con recomendaciones específicas para mejorar tu ROI.",
+      "submitText": "Obtener Mi Auditoría Gratuita",
+      "successMessage": "¡Gracias por tu interés! Me pondré en contacto pronto para hablar sobre tu proyecto y compartir los resultados de tu auditoría."
+    },
+    "campaign": {
+      "title": "Inicia Tu Campaña de Marketing",
+      "subtitle": "Construyamos una campaña que genere resultados reales",
+      "step1Title": "¿Listo para Lanzar Tu Próxima Campaña?",
+      "step1Subtitle": "Cuéntame sobre tu negocio y crearé una estrategia de campaña personalizada diseñada para maximizar tu ROI desde el primer día.",
+      "submitText": "Iniciar Mi Campaña",
+      "successMessage": "¡Gracias por tu interés! Me pondré en contacto pronto para hablar sobre tu proyecto y discutir las necesidades de tu campaña."
+    },
+    "caseStudies": {
+      "title": "Obtén Mi Guía de Crecimiento Gratuita",
+      "subtitle": "Estrategias comprobadas para escalar tu negocio",
+      "step1Title": "Obtén Tu Guía de Crecimiento Gratuita",
+      "step1Subtitle": "Descarga mi guía completa con estrategias comprobadas, marcos de trabajo y tácticas que he usado para ayudar a más de 380 negocios a escalar sus ingresos.",
+      "submitText": "Obtener Mi Guía de Crecimiento",
+      "successMessage": "¡Gracias! Revisa tu email: te he enviado mi guía completa de crecimiento con estrategias y marcos comprobados. ¡Comienza a implementar hoy!"
+    },
+    "newsletter": {
+      "title": "Únete a 5,000+ Especialistas en Marketing",
+      "subtitle": "Recibe insights de marketing semanales en tu bandeja de entrada",
+      "step1Title": "Recibe Insights de Marketing Semanales",
+      "step1Subtitle": "Únete a más de 5,000 especialistas en marketing que reciben estrategias semanales, casos de estudio y tácticas en su bandeja de entrada. Sin spam, cancela en cualquier momento.",
+      "submitText": "Suscribirse",
+      "successMessage": "¡Bienvenido a la comunidad! Revisa tu email para confirmar y recibir tus primeros insights de marketing."
+    },
+    "fields": {
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "company": "Nombre de la Empresa",
+      "phone": "Número de Teléfono",
+      "website": "URL del Sitio Web",
+      "email": "Dirección de Email",
+      "emailPlaceholder": "tu@email.com",
+      "monthlyBudget": "Presupuesto Mensual de Marketing",
+      "budgetRange": "Rango de Presupuesto de Campaña",
+      "biggestChallenge": "¿Cuál es tu mayor desafío de marketing?",
+      "challengePlaceholder": "Cuéntame sobre tu situación actual de marketing y lo que quieres mejorar...",
+      "mainGoal": "¿Cuál es tu objetivo principal de marketing?",
+      "servicesInterested": "¿Qué servicios te interesan más?",
+      "timeline": "¿Cuándo te gustaría comenzar?",
+      "industry": "Industria",
+      "role": "Tu Rol",
+      "budgetOptions": {
+        "under1k": "Menos de $1,000",
+        "1k5k": "$1,000 - $5,000",
+        "5k10k": "$5,000 - $10,000", 
+        "10k25k": "$10,000 - $25,000",
+        "25k50k": "$25,000 - $50,000",
+        "50kplus": "$50,000+"
+      },
+      "campaignBudgetOptions": {
+        "2k5k": "$2,000 - $5,000/mes",
+        "5k10k": "$5,000 - $10,000/mes",
+        "10k25k": "$10,000 - $25,000/mes",
+        "25k50k": "$25,000 - $50,000/mes",
+        "50kplus": "$50,000+/mes"
+      },
+      "servicesOptions": {
+        "googleAds": "Gestión de Google Ads",
+        "facebookAds": "Publicidad en Facebook/Instagram",
+        "emailMarketing": "Automatización de Email Marketing",
+        "cro": "Optimización de Tasa de Conversión",
+        "analytics": "Análisis y Seguimiento de Marketing",
+        "fullStrategy": "Estrategia Completa de Marketing"
+      },
+      "timelineOptions": {
+        "immediately": "Inmediatamente",
+        "2weeks": "Dentro de 2 semanas",
+        "1month": "Dentro de 1 mes",
+        "3months": "Dentro de 3 meses",
+        "exploring": "Solo explorando opciones"
+      },
+      "industryOptions": {
+        "ecommerce": "E-commerce",
+        "saas": "SaaS/Tecnología",
+        "professional": "Servicios Profesionales",
+        "healthcare": "Salud",
+        "realestate": "Bienes Raíces",
+        "education": "Educación",
+        "manufacturing": "Manufactura",
+        "finance": "Finanzas/Seguros",
+        "other": "Otro"
+      },
+      "roleOptions": {
+        "owner": "Dueño del Negocio/CEO",
+        "director": "Director/Gerente de Marketing",
+        "coordinator": "Coordinador de Marketing",
+        "specialist": "Especialista en Marketing Digital",
+        "consultant": "Consultor/Agencia",
+        "other": "Otro"
+      },
+      "goalOptions": {
+        "leads": "Aumentar leads/conversiones",
+        "cpa": "Reducir costo por adquisición",
+        "roi": "Mejorar ROI/ROAS",
+        "scale": "Escalar campañas existentes",
+        "launch": "Lanzar nuevas campañas",
+        "tracking": "Mejor seguimiento/atribución"
+      }
+    },
+    "common": {
+      "continue": "Continuar →",
+      "loading": "Cargando...",
+      "back": "← Atrás",
+      "almostDone": "¡Casi Terminamos!",
+      "step2Subtitle": "Solo algunos detalles más para personalizar tu experiencia.",
+      "emailLabel": "Email:",
+      "privacy": "Respetamos tu privacidad. Cancela en cualquier momento.",
+      "success": "¡Éxito!",
+      "close": "Cerrar",
+      "required": "*",
+      "selectPlaceholder": "Seleccionar"
+    }
+  },
   "common": {
     "readMore": "Leer Más",
     "learnMore": "Saber Más",

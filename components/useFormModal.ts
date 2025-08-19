@@ -3,13 +3,15 @@
 import { useState } from 'react';
 import { FormVariant } from './MultiStepForm';
 import { formVariants } from './form-variants';
+import { formVariantsEs } from './form-variants-es';
 
-export function useFormModal() {
+export function useFormModal(locale: string = 'en') {
   const [isOpen, setIsOpen] = useState(false);
   const [currentVariant, setCurrentVariant] = useState<FormVariant | null>(null);
 
   const openForm = (variantId: keyof typeof formVariants) => {
-    setCurrentVariant(formVariants[variantId]);
+    const variants = locale === 'es' ? formVariantsEs : formVariants;
+    setCurrentVariant(variants[variantId]);
     setIsOpen(true);
   };
 
