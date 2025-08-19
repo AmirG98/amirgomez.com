@@ -95,8 +95,43 @@ export default function BlogPage() {
   const { isOpen, currentVariant, openForm, closeForm, handleSubmit } = useFormModal();
   const t = getTranslations('en');
   
+  // Newsletter subscription state
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [subscriptionStatus, setSubscriptionStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+  
   const featuredPosts = getFeaturedPosts();
   const recentPosts = blogPosts.filter(post => !post.featured).slice(0, 6);
+  
+  // Newsletter subscription handler
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email || !email.includes('@')) {
+      setErrorMessage('Please enter a valid email address');
+      setSubscriptionStatus('error');
+      return;
+    }
+    
+    setIsSubmitting(true);
+    setErrorMessage('');
+    setSubscriptionStatus('idle');
+    
+    try {
+      // Simulate API call (replace with actual newsletter service integration)
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // For now, just show success - in production, integrate with your newsletter service
+      setSubscriptionStatus('success');
+      setEmail('');
+    } catch (error) {
+      setSubscriptionStatus('error');
+      setErrorMessage('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -233,20 +268,50 @@ export default function BlogPage() {
               Join 5,000+ marketers getting actionable strategies, case studies, and industry insights delivered every Tuesday.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input 
-                type="email" 
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border border-foreground/20 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-              />
-              <button className="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors">
-                Subscribe
-              </button>
-            </div>
-            
-            <p className="text-sm text-foreground/60 mt-4">
-              No spam. Unsubscribe anytime. 📧 ✨
-            </p>
+            {subscriptionStatus === 'success' ? (
+              <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-6">
+                <div className="text-green-600 text-xl mb-2">🎉 Success!</div>
+                <p className="text-green-700 dark:text-green-300">
+                  Thanks for subscribing! You'll receive our first newsletter this Tuesday.
+                </p>
+                <button 
+                  onClick={() => setSubscriptionStatus('idle')}
+                  className="text-green-600 hover:text-green-700 font-semibold mt-2"
+                >
+                  Subscribe another email →
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <input 
+                    type="email" 
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="flex-1 px-4 py-3 rounded-lg border border-foreground/20 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    required
+                  />
+                  <button 
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors disabled:bg-orange-400 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+                  </button>
+                </div>
+                
+                {subscriptionStatus === 'error' && (
+                  <p className="text-red-600 text-sm mt-2">
+                    {errorMessage || 'Something went wrong. Please try again.'}
+                  </p>
+                )}
+                
+                <p className="text-sm text-foreground/60 mt-4">
+                  No spam. Unsubscribe anytime. 📧 ✨
+                </p>
+              </form>
+            )}
           </div>
         </div>
       </section>
