@@ -113,6 +113,17 @@ export default async function BlogPostPage({ params }: PageProps) {
               {post.excerpt}
             </p>
 
+            {/* Featured Image */}
+            {post.featuredImage && (
+              <div className="relative overflow-hidden aspect-[16/9] rounded-xl mb-8 bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900/30 dark:to-orange-800/30">
+                <img 
+                  src={post.featuredImage} 
+                  alt={post.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )}
+
             {/* Author and Meta */}
             <div className="flex items-center border-b border-foreground/10 pb-8">
               <div className="flex items-center gap-4">
