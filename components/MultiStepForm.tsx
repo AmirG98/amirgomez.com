@@ -192,14 +192,10 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit, loca
             <div className="text-center py-8">
               <div className="text-4xl mb-4">🎉</div>
               <h3 className="text-xl font-bold text-green-600 mb-2">{texts.success}</h3>
-              <p className="text-foreground/95 mb-6">{variant.successMessage}</p>
-              <AnimatedButton 
-                onClick={handleClose}
-                variant="primary"
-                size="md"
-              >
-                {texts.close}
-              </AnimatedButton>
+              <p className="text-foreground/95 mb-6">Redirecting you to complete your request...</p>
+              <div className="flex justify-center">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-600"></div>
+              </div>
             </div>
           ) : step === 1 ? (
             <form onSubmit={handleStep1Submit} className="space-y-6">

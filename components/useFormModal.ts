@@ -48,6 +48,29 @@ export function useFormModal(locale: string = 'en') {
     } else {
       console.warn('Google Apps Script URL not configured');
     }
+
+    // Redirect to appropriate thank you page after a brief delay
+    setTimeout(() => {
+      const formType = currentVariant?.id;
+      if (formType) {
+        // Map form types to their corresponding thank you pages
+        const thankYouRoutes: Record<string, string> = {
+          consultation: '/thank-you/consultation',
+          audit: '/thank-you/audit',
+          campaign: '/thank-you/campaign',
+          caseStudies: '/thank-you/case-studies',
+          newsletter: '/thank-you/newsletter'
+        };
+
+        const redirectUrl = thankYouRoutes[formType];
+        if (redirectUrl) {
+          // Close the modal first
+          closeForm();
+          // Then redirect to the thank you page
+          window.location.href = redirectUrl;
+        }
+      }
+    }, 1000); // 1 second delay to allow form submission to complete
   };
 
   return {
