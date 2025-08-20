@@ -3388,6 +3388,7 @@ Ready to transform your blog into a traffic and lead generation machine? I'll he
     title: "Social Media Marketing Strategy: How to Build Brand Awareness That Converts in 2025",
     slug: "social-media-marketing-strategy-brand-awareness-converts-2025",
     excerpt: "Master the social media strategy framework that increased brand awareness by 312% and generated 15,000+ leads across 6 platforms. Includes content planning and engagement tactics.",
+    featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     content: `# Social Media Marketing Strategy: How to Build Brand Awareness That Converts in 2025
 
 Social media marketing has evolved from simple posting to strategic brand building that drives measurable business results. In 2025, successful social media strategies require deep understanding of platform algorithms, audience behavior, and conversion optimization. This comprehensive guide reveals the social media framework that increased brand awareness by 312% and generated over 15,000 qualified leads across multiple platforms.
@@ -3909,6 +3910,7 @@ Ready to transform your social media presence into a brand awareness and lead ge
     title: "Instagram Marketing Strategy: How to Grow Your Business with 50,000+ Engaged Followers in 2025",
     slug: "instagram-marketing-strategy-grow-business-engaged-followers-2025",
     excerpt: "Learn the Instagram growth strategy that helped businesses gain 50,000+ engaged followers and generate $500K+ in revenue. Includes content creation and monetization tactics.",
+    featuredImage: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=800&h=450&fit=crop&auto=format",
     content: `# Instagram Marketing Strategy: How to Grow Your Business with 50,000+ Engaged Followers in 2025
 
 Instagram has evolved from a photo-sharing app to a powerful business platform that drives real revenue growth. With over 2 billion monthly active users and the highest engagement rates of any social platform, Instagram offers unprecedented opportunities for businesses willing to implement strategic growth tactics. This comprehensive guide reveals the Instagram marketing strategy that helped clients gain over 50,000 engaged followers and generate $500K+ in attributed revenue.
@@ -4443,6 +4445,7 @@ Ready to transform your Instagram presence into a powerful business growth engin
     title: "Digital Advertising Strategy: How to Build Multi-Channel Campaigns That Generate 400% ROI in 2025",
     slug: "digital-advertising-strategy-multi-channel-campaigns-400-roi-2025",
     excerpt: "Master the digital advertising framework that generated $12M+ in revenue across Google, Facebook, and LinkedIn. Includes budget allocation, audience targeting, and optimization strategies.",
+    featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     kpiWidget: {
       title: "Multi-Channel Advertising Results",
       metrics: [
