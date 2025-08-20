@@ -108,8 +108,8 @@ export default function BlogPage() {
   
   // Filter posts based on selected category
   const filteredPosts = selectedCategory === 'All' 
-    ? blogPosts.filter(post => !post.featured)
-    : blogPosts.filter(post => !post.featured && post.category === selectedCategory);
+    ? blogPosts
+    : blogPosts.filter(post => post.category === selectedCategory);
   
   // Categories with "All" option
   const allCategories = ['All', ...blogCategories];
