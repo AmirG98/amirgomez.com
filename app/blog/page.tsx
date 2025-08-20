@@ -25,7 +25,7 @@ function BlogPostCard({ post, featured = false }: { post: typeof blogPosts[0], f
           {/* Featured Image */}
           <div className="relative overflow-hidden aspect-[16/9] bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900/30 dark:to-orange-800/30">
             <img 
-              src={post.featuredImage || '/amir-profile.jpg'} 
+              src={post.featuredImage || 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=450&fit=crop&auto=format'} 
               alt={post.title}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
@@ -248,11 +248,8 @@ export default function BlogPage() {
           
           {/* Categories */}
           <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {allCategories.slice(0, 7).map((category) => {
+            {allCategories.map((category) => {
               const isActive = selectedCategory === category;
-              const categoryPostCount = category === 'All' 
-                ? blogPosts.length 
-                : blogPosts.filter(post => post.category === category).length;
               
               return (
                 <button 
@@ -264,7 +261,7 @@ export default function BlogPage() {
                       : 'bg-foreground/5 hover:bg-orange-100 dark:hover:bg-orange-900/30 hover:text-orange-600'
                   }`}
                 >
-                  {category} ({categoryPostCount})
+                  {category}
                 </button>
               );
             })}
@@ -290,13 +287,10 @@ export default function BlogPage() {
 
       {/* Filtered Posts */}
       <section className="container mx-auto px-4 mb-16">
-        <div className="flex justify-between items-center mb-8">
+        <div className="mb-8">
           <h2 className="text-3xl font-bold">
             {selectedCategory === 'All' ? 'Latest Articles' : `${selectedCategory} Articles`}
           </h2>
-          <div className="text-foreground/60 text-sm">
-            Showing {filteredPosts.length} article{filteredPosts.length !== 1 ? 's' : ''}
-          </div>
         </div>
         
         {filteredPosts.length === 0 ? (
@@ -384,9 +378,6 @@ export default function BlogPage() {
         <h2 className="text-3xl font-bold mb-8 text-center">Browse by Category</h2>
         <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {allCategories.map((category) => {
-            const categoryPosts = category === 'All' 
-              ? blogPosts 
-              : blogPosts.filter(post => post.category === category);
             const isActive = selectedCategory === category;
             
             return (
@@ -399,14 +390,9 @@ export default function BlogPage() {
                     : 'border-foreground/10 hover:border-orange-300'
                 }`}
               >
-                <h3 className={`font-semibold mb-2 ${
-                  isActive ? 'text-orange-600' : 'text-orange-600'
-                }`}>
+                <h3 className="font-semibold text-orange-600">
                   {category}
                 </h3>
-                <p className="text-sm text-foreground/60">
-                  {categoryPosts.length} article{categoryPosts.length !== 1 ? 's' : ''}
-                </p>
               </button>
             );
           })}

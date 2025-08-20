@@ -85,7 +85,7 @@ Ready to implement these strategies for your business? Let's discuss your specif
     author: {
       name: "Amir Gomez",
       bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
-      avatar: "/images/amir-avatar.jpg"
+      avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-08-10",
     category: "Google Ads",
@@ -168,7 +168,7 @@ Ready to build an integrated advertising strategy? Let's discuss which platform 
     author: {
       name: "Amir Gomez",
       bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
-      avatar: "/images/amir-avatar.jpg"
+      avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-08-05",
     category: "Advertising Strategy",
@@ -256,7 +256,7 @@ Ready to implement email automation that drives real revenue? Let's discuss whic
     author: {
       name: "Amir Gomez",
       bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
-      avatar: "/images/amir-avatar.jpg"
+      avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-07-28",
     category: "Email Marketing",
@@ -353,7 +353,7 @@ Ready to implement a systematic CRO process for your landing pages? Let's analyz
     author: {
       name: "Amir Gomez",
       bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
-      avatar: "/images/amir-avatar.jpg"
+      avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-07-20",
     category: "Conversion Optimization",
@@ -450,7 +450,7 @@ Ready to transform your marketing analytics from vanity metrics to business-driv
     author: {
       name: "Amir Gomez",
       bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
-      avatar: "/images/amir-avatar.jpg"
+      avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-07-15",
     category: "Analytics",
