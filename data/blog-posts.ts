@@ -6636,7 +6636,7 @@ Ready to implement a systematic A/B testing program that drives consistent conve
     title: "Landing Page Conversion Rate Optimization: 85% Improvement Through UX and Psychology",
     slug: "landing-page-conversion-rate-optimization-85-percent-improvement-ux-psychology-2025",
     excerpt: "Master landing page conversion rate optimization with UX design principles, psychological triggers, and testing strategies that achieve 85% conversion rate improvements through user-centered design.",
-    featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
+    featuredImage: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&h=450&fit=crop&auto=format",
     kpiWidget: {
       title: "Landing Page CRO Results",
       metrics: [
@@ -6984,7 +6984,7 @@ Ready to transform your e-commerce performance through systematic conversion rat
     title: "Google Analytics 4 Advanced Analysis: Extract 340% More Actionable Business Insights",
     slug: "google-analytics-4-advanced-analysis-extract-340-percent-actionable-business-insights-2025",
     excerpt: "Master Google Analytics 4 advanced analysis techniques with custom reporting, audience insights, and attribution modeling that extract 340% more actionable business insights for data-driven decision making.",
-    featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
+    featuredImage: "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&h=450&fit=crop&auto=format",
     kpiWidget: {
       title: "GA4 Analysis Results",
       metrics: [
@@ -7158,7 +7158,7 @@ Ready to transform your business intelligence capabilities through advanced Goog
     title: "Marketing Attribution Modeling: Track Customer Journeys for 65% Better ROI Decisions",
     slug: "marketing-attribution-modeling-track-customer-journeys-65-percent-better-roi-decisions-2025",
     excerpt: "Master marketing attribution modeling with multi-touch analysis, customer journey mapping, and ROI optimization strategies that improve marketing decisions by 65% through accurate attribution insights.",
-    featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
+    featuredImage: "https://images.unsplash.com/photo-1460472178825-e5240623afd5?w=800&h=450&fit=crop&auto=format",
     kpiWidget: {
       title: "Attribution Modeling Results",
       metrics: [
@@ -7336,7 +7336,7 @@ Ready to implement sophisticated marketing attribution modeling that transforms 
     title: "Marketing Funnel Analysis: Optimize Each Stage for 78% Higher Conversion Rates",
     slug: "marketing-funnel-analysis-optimize-each-stage-78-percent-higher-conversion-rates-2025",
     excerpt: "Master marketing funnel analysis with stage-by-stage optimization, conversion tracking, and performance improvement strategies that increase overall conversion rates by 78% through systematic funnel optimization.",
-    featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
+    featuredImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=450&fit=crop&auto=format",
     kpiWidget: {
       title: "Funnel Optimization Results",
       metrics: [
@@ -7521,7 +7521,7 @@ Ready to implement systematic marketing funnel analysis that transforms customer
     title: "Marketing Automation Workflows: Generate 67% More Qualified Leads on Autopilot",
     slug: "marketing-automation-workflows-generate-67-percent-qualified-leads-autopilot-2025",
     excerpt: "Master marketing automation workflows with lead nurturing sequences, behavioral triggers, and personalization strategies that generate 67% more qualified leads through systematic automation and optimization.",
-    featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
+    featuredImage: "https://images.unsplash.com/photo-1518186233392-c232efbf2373?w=800&h=450&fit=crop&auto=format",
     kpiWidget: {
       title: "Marketing Automation Results",
       metrics: [
@@ -8084,7 +8084,7 @@ Ready to implement strategic influencer marketing that transforms authentic part
     title: "Google Ads Remarketing Lists for Search Ads (RLSA): Advanced Targeting for 280% Higher Conversions",
     slug: "google-ads-rlsa-remarketing-lists-search-ads-targeting-2025",
     excerpt: "Master Google Ads RLSA targeting to increase conversions by 280% and reduce costs by 45%. Learn advanced remarketing strategies that turn previous visitors into high-converting customers.",
-    featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
+    featuredImage: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=450&fit=crop&auto=format",
     kpiWidget: {
       title: "RLSA Performance Results",
       metrics: [
@@ -8218,7 +8218,7 @@ Ready to implement RLSA targeting that transforms your previous website visitors
     title: "Google Ads Smart Bidding Strategies: Target CPA vs Target ROAS for E-commerce Success",
     slug: "google-ads-smart-bidding-target-cpa-vs-target-roas-ecommerce-2025",
     excerpt: "Master Google Ads smart bidding with Target CPA and Target ROAS strategies optimized for e-commerce. Learn when to use each bidding strategy to maximize profits and scale efficiently.",
-    featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
+    featuredImage: "https://images.unsplash.com/photo-1565728744382-61accd4aa148?w=800&h=450&fit=crop&auto=format",
     kpiWidget: {
       title: "Smart Bidding Performance Results",
       metrics: [
