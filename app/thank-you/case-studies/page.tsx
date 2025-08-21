@@ -117,18 +117,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               Access your comprehensive growth strategies and case studies right here:
             </p>
             
-            {/* PDF Embed - Will be replaced with actual PDF URL later */}
+            {/* Growth Marketing Playbook Embed */}
             <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden border border-foreground/10">
-              <div className="p-8 text-center">
-                <div className="text-6xl mb-4">📋</div>
-                <h3 className="text-xl font-semibold mb-4">PDF Embed Placeholder</h3>
-                <p className="text-foreground/80 mb-4">
-                  The Growth Playbook PDF will be embedded here once you provide the file.
-                </p>
-                <div className="bg-orange-50 dark:bg-orange-900/20 rounded-lg p-4">
-                  <p className="text-sm text-orange-700 dark:text-orange-300">
-                    This section will display your PDF document with full viewing capabilities.
-                  </p>
+              <div className="p-4 sm:p-6">
+                <div className="w-full flex justify-center">
+                  <iframe 
+                    src="https://gamma.app/embed/h61z4ybro7w63i4" 
+                    style={{ width: '700px', maxWidth: '100%', height: '450px' }}
+                    allow="fullscreen" 
+                    title="Growth Marketing Playbook 2025"
+                    className="rounded-lg"
+                  />
                 </div>
               </div>
             </div>
