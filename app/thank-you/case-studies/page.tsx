@@ -75,15 +75,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <section className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto text-center">
             <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-lg p-8 mb-8">
-              <div className="text-orange-600 text-6xl mb-4">📚</div>
+              <div className="text-orange-600 text-6xl mb-4">🎉</div>
               <h1 className="text-3xl md:text-4xl font-bold mb-4 text-orange-800 dark:text-orange-200">
-                Your Growth Playbook Is Being Prepared!
+                Here's Your Growth Marketing Playbook 2025!
               </h1>
               <p className="text-lg text-orange-700 dark:text-orange-300 mb-6">
-                I'm personally curating a collection of proven case studies and growth strategies that match your business goals.
+                Your comprehensive guide to scaling your business is ready! This playbook contains the exact strategies I've used to generate $35M+ in campaign results.
               </p>
               <div className="bg-white dark:bg-gray-800 rounded-lg p-6 text-left">
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Your Custom Growth Playbook Includes:</h3>
+                <h3 className="text-xl font-semibold mb-4 text-foreground">What's Inside Your Growth Playbook:</h3>
                 <ul className="space-y-3 text-foreground/80">
                   <li className="flex items-start gap-3">
                     <span className="text-orange-500 mt-1">📈</span>
@@ -91,7 +91,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-orange-500 mt-1">🎯</span>
-                    <span><strong>Industry-Specific Strategies:</strong> Tactics proven to work in your business sector</span>
+                    <span><strong>Industry-Specific Strategies:</strong> Tactics proven to work across multiple business sectors</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-orange-500 mt-1">🔧</span>
@@ -107,14 +107,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </div>
         </section>
 
-        {/* Growth Playbook PDF */}
+        {/* Growth Playbook Access */}
         <section className="container mx-auto px-4 pb-16">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
-              Your Growth Playbook
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
+              Access Your Growth Marketing Playbook 2025
             </h2>
-            <p className="text-lg text-foreground/80 text-center mb-8">
-              Access your comprehensive growth strategies and case studies right here:
+            
+            {/* Download Options */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <a 
+                href="https://gamma.app/docs/h61z4ybro7w63i4" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-orange-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-orange-700 transition-colors text-center"
+              >
+                📥 Download Full Playbook
+              </a>
+              <a 
+                href="https://gamma.app/embed/h61z4ybro7w63i4" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="border border-orange-600 text-orange-600 px-6 py-3 rounded-full font-semibold hover:bg-orange-50 dark:hover:bg-orange-900/20 transition-colors text-center"
+              >
+                🔗 Open in New Tab
+              </a>
+            </div>
+            
+            <p className="text-center text-foreground/80 mb-8">
+              View the playbook below or download it for offline access. Click fullscreen for the best reading experience.
             </p>
             
             {/* Growth Marketing Playbook Embed */}
@@ -129,6 +150,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     className="rounded-lg"
                   />
                 </div>
+              </div>
+            </div>
+            
+            {/* Additional Access Options */}
+            <div className="text-center mt-6">
+              <p className="text-sm text-foreground/60 mb-2">
+                Having trouble viewing the playbook? Try these options:
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <a 
+                  href="https://gamma.app/docs/h61z4ybro7w63i4" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-orange-600 hover:text-orange-700 text-sm underline"
+                >
+                  Direct Link
+                </a>
+                <span className="text-foreground/40 text-sm">•</span>
+                <a 
+                  href="mailto:amir@amirgomez.com?subject=Growth%20Playbook%20Access%20Issue" 
+                  className="text-orange-600 hover:text-orange-700 text-sm underline"
+                >
+                  Email Support
+                </a>
               </div>
             </div>
           </div>
