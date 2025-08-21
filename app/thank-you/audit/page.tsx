@@ -74,12 +74,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* Thank You Hero Section */}
         <section className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-8 mb-8">
-              <div className="text-blue-600 text-6xl mb-4">🔍</div>
-              <h1 className="text-3xl md:text-4xl font-bold mb-4 text-blue-800 dark:text-blue-200">
+            <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-lg p-8 mb-8">
+              <div className="text-orange-600 text-6xl mb-4">🔍</div>
+              <h1 className="text-3xl md:text-4xl font-bold mb-4 text-orange-800 dark:text-orange-200">
                 Your Free Marketing Audit Is On Its Way!
               </h1>
-              <p className="text-lg text-blue-700 dark:text-blue-300 mb-6">
+              <p className="text-lg text-orange-700 dark:text-orange-300 mb-6">
                 I've received your request and will personally conduct a comprehensive analysis of your marketing performance.
               </p>
               <div className="bg-white dark:bg-gray-800 rounded-lg p-6 text-left">

@@ -123,7 +123,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
               <div className="rounded-lg overflow-hidden" style={{ height: '700px' }}>
                 <iframe
-                  src="https://calendly.com/amir-amirgomez/30min?embed_domain=amirgomez.com&embed_type=Inline"
+                  src="https://calendly.com/amir-amirgomez/30min?embed_domain=amirgomez-com.vercel.app&embed_type=Inline"
                   width="100%"
                   height="100%"
                   frameBorder="0"

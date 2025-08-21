@@ -74,12 +74,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* Thank You Hero Section */}
         <section className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 rounded-lg p-8 mb-8">
-              <div className="text-purple-600 text-6xl mb-4">📚</div>
-              <h1 className="text-3xl md:text-4xl font-bold mb-4 text-purple-800 dark:text-purple-200">
+            <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-lg p-8 mb-8">
+              <div className="text-orange-600 text-6xl mb-4">📚</div>
+              <h1 className="text-3xl md:text-4xl font-bold mb-4 text-orange-800 dark:text-orange-200">
                 Your Growth Playbook Is Being Prepared!
               </h1>
-              <p className="text-lg text-purple-700 dark:text-purple-300 mb-6">
+              <p className="text-lg text-orange-700 dark:text-orange-300 mb-6">
                 I'm personally curating a collection of proven case studies and growth strategies that match your business goals.
               </p>
               <div className="bg-white dark:bg-gray-800 rounded-lg p-6 text-left">

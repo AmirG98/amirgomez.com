@@ -74,12 +74,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* Thank You Hero Section */}
         <section className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-8 mb-8">
-              <div className="text-green-600 text-6xl mb-4">📧</div>
-              <h1 className="text-3xl md:text-4xl font-bold mb-4 text-green-800 dark:text-green-200">
+            <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-lg p-8 mb-8">
+              <div className="text-orange-600 text-6xl mb-4">📧</div>
+              <h1 className="text-3xl md:text-4xl font-bold mb-4 text-orange-800 dark:text-orange-200">
                 Welcome to Our Marketing Community!
               </h1>
-              <p className="text-lg text-green-700 dark:text-green-300 mb-6">
+              <p className="text-lg text-orange-700 dark:text-orange-300 mb-6">
                 You've successfully subscribed to our newsletter. Get ready for weekly insights that will transform your marketing results.
               </p>
               <div className="bg-white dark:bg-gray-800 rounded-lg p-6 text-left">
