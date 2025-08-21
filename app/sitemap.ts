@@ -46,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }))
 
-  // Service pages (if you have individual service pages)
+  // Service pages
   const servicePages = [
     {
       url: `${baseUrl}/services/google-ads-management`,
@@ -68,5 +68,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  return [...staticPages, ...blogPages, ...servicePages]
+  // Thank you pages
+  const thankYouPages = [
+    {
+      url: `${baseUrl}/thank-you/consultation`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/thank-you/audit`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/thank-you/campaign`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/thank-you/case-studies`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/thank-you/newsletter`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.3,
+    },
+  ]
+
+  return [...staticPages, ...blogPages, ...servicePages, ...thankYouPages]
 }

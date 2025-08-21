@@ -7,6 +7,7 @@ import BlogContent from '@/components/BlogContent';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import BlogStructuredData from '@/components/BlogStructuredData';
 
 interface PageParams {
   slug: string;
@@ -73,6 +74,9 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {/* Structured Data for SEO */}
+      <BlogStructuredData post={post} />
+      
       {/* Navigation */}
       <Navigation currentPage="/blog" />
 
