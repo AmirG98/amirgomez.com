@@ -80,15 +80,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 Your Free Marketing Audit Is On Its Way!
               </h1>
               <p className="text-lg text-orange-700 dark:text-orange-300 mb-6">
-                I've received your request and will personally conduct a comprehensive analysis of your marketing performance.
+                I've received your request and will personally conduct a comprehensive analysis of your marketing setup and strategy.
               </p>
               <div className="bg-white dark:bg-gray-800 rounded-lg p-6 text-left">
                 <h3 className="text-xl font-semibold mb-4 text-foreground">What You'll Receive:</h3>
                 <ul className="space-y-3 text-foreground/80">
-                  <li className="flex items-start gap-3">
-                    <span className="text-orange-500 mt-1">📊</span>
-                    <span><strong>Performance Analysis:</strong> Detailed review of your current marketing metrics and ROI</span>
-                  </li>
                   <li className="flex items-start gap-3">
                     <span className="text-orange-500 mt-1">🎯</span>
                     <span><strong>Opportunity Assessment:</strong> Specific areas where you can improve results immediately</span>
