@@ -432,7 +432,7 @@ Ready to implement a comprehensive digital marketing strategy that generates con
     title: "Real Estate Lead Generation System 2025: Facebook Lead Ads + CRM Automation That Converts 47% of Leads",
     slug: "real-estate-lead-generation-system-facebook-lead-ads-crm-automation-converts-leads",
     excerpt: "Build a complete real estate lead generation system using Facebook Lead Ads and CRM automation that converts 47% of leads into clients. Step-by-step implementation guide.",
-    featuredImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=450&fit=crop&auto=format",
+    featuredImage: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&h=450&fit=crop&auto=format",
     kpiWidget: {
       title: "Lead Generation System Results",
       metrics: [
