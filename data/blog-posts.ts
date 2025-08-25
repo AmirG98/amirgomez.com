@@ -118,19 +118,16 @@ This fundamental difference shapes everything from targeting to creative strateg
 ## When Google Ads Wins
 
 ### High-Intent Keywords
-Google dominates when users have clear purchase intent:
-- "best CRM software"
-- "dentist near me"
-- "buy running shoes online"
+
+Google dominates when users demonstrate clear purchase intent through their search behavior. When someone searches for "best CRM software," "dentist near me," or "buy running shoes online," they've already identified their need and are actively seeking solutions. This intent-driven traffic converts at significantly higher rates because prospects have moved beyond the awareness stage and are ready to evaluate options or make immediate purchases.
 
 ### B2B Lead Generation
-Google typically outperforms Facebook for B2B because:
-- Professional searches happen during work hours
-- Decision-makers research solutions actively
-- Less competition for B2B keywords
+
+Google consistently outperforms Facebook for B2B lead generation because professional searches typically occur during business hours when decision-makers are actively researching solutions for their companies. These prospects use specific industry terminology and business-focused keywords, creating highly qualified traffic with genuine purchase authority. Additionally, B2B keywords often face less competition than consumer-focused terms, resulting in lower costs and better positioning opportunities.
 
 ### Local Businesses
-Google My Business integration gives local businesses advantages:
+
+Google My Business integration provides local businesses with unparalleled visibility advantages in their immediate service areas.
 - Map listings with ads
 - Location extensions
 - "Near me" search capture
@@ -138,22 +135,16 @@ Google My Business integration gives local businesses advantages:
 ## When Facebook Ads Wins
 
 ### Brand Awareness Campaigns
-Facebook's strength lies in introducing your brand to cold audiences:
-- Lookalike audiences from customer data
-- Interest-based targeting
-- Demographic precision
+
+Facebook excels at introducing your brand to cold audiences who aren't actively searching for your solutions but fit your ideal customer profile. Lookalike audiences leverage your existing customer data to find similar prospects at scale, while interest-based targeting reaches users based on their demonstrated preferences and behaviors. This demographic precision allows for sophisticated audience building that creates demand rather than simply capturing existing demand.
 
 ### E-commerce Retargeting
-Facebook's pixel tracking enables powerful retargeting:
-- Dynamic product ads
-- Cross-device attribution
-- Abandoned cart recovery
+
+Facebook's comprehensive pixel tracking system enables sophisticated retargeting campaigns that follow prospects across devices and platforms. Dynamic product ads automatically show previously viewed items to interested prospects, while cross-device attribution ensures you can track customer journeys from mobile discovery to desktop purchase. Abandoned cart recovery sequences can re-engage prospects with personalized reminders and incentives, often recovering 15-30% of lost sales.
 
 ### Creative-Driven Products
-Visual products perform better on Facebook:
-- Fashion and beauty
-- Food and restaurants
-- Lifestyle brands
+
+Visual products naturally perform better on Facebook's image and video-focused platform, particularly in fashion and beauty, food and restaurants, and lifestyle brands. These categories benefit from Facebook's native social environment where users expect to discover new products through visually appealing content that integrates naturally with their social feeds.
 
 ## My Recommendation: Use Both
 
@@ -849,22 +840,16 @@ Test one targeting element at a time:
 ### Performance Benchmarks by Targeting Type
 
 **Broad Audiences (1M+ people):**
-- Lower CPMs ($8-15)
-- Higher reach potential
-- Good for brand awareness
-- Lower conversion rates (1-3%)
+
+Broad audiences deliver lower CPMs ranging from $8-15, making them cost-effective for reaching large numbers of people with brand awareness campaigns. While these audiences offer higher reach potential and work well for introducing new brands or products, they typically achieve lower conversion rates of 1-3% due to less precise targeting. They're ideal for building brand recognition and testing initial market response.
 
 **Narrow Audiences (100k-500k):**
-- Higher CPMs ($15-35)
-- Better relevance scores
-- Higher conversion rates (3-8%)
-- Limited scale potential
+
+Narrow audiences command higher CPMs between $15-35 but compensate with better relevance scores and significantly higher conversion rates of 3-8%. These precisely defined audiences respond more favorably to targeted messaging because the advertising feels more personally relevant. However, their limited scale potential means they're best used for high-value conversions rather than volume-based campaigns.
 
 **Lookalike Audiences:**
-- Moderate CPMs ($12-25)
-- Consistent performance
-- Scalable with good data
-- 2-6% conversion rates
+
+Lookalike audiences offer a balanced approach with moderate CPMs of $12-25 and consistent performance across different campaign types. They're highly scalable when supported by quality source data and typically achieve conversion rates between 2-6%. This targeting type provides the best combination of reach potential and conversion efficiency, making it ideal for scaling successful campaigns.
 
 ## Real Campaign Case Study: E-commerce Targeting Optimization
 
@@ -1097,10 +1082,8 @@ Creative is the determining factor between profitable Facebook campaigns and bud
 ### Pillar 1: Hook (First 3 Seconds)
 
 **Pattern Interrupts That Work:**
-- Unexpected visual elements
-- Contrarian statements
-- Direct questions to viewer
-- Bold claims with proof
+
+Effective hooks immediately disrupt the user's scrolling behavior with unexpected visual elements that stand out from typical social media content. Contrarian statements challenge common assumptions in your industry, creating cognitive dissonance that compels viewers to keep watching. Direct questions to viewers create immediate engagement by making the content feel personally relevant, while bold claims backed by proof establish credibility and create curiosity about your methodology.
 
 **Hook Formulas:**
 
@@ -1135,16 +1118,12 @@ Creative is the determining factor between profitable Facebook campaigns and bud
 ### Pillar 3: Proof (Seconds 8-15)
 
 **Social Proof Elements:**
-- Customer testimonials
-- Before/after results
-- Number of customers served
-- Industry recognition
+
+Customer testimonials provide authentic validation from real users who have experienced your product or service benefits. Before/after results offer concrete evidence of transformation and value, while impressive numbers of customers served demonstrate market validation and scale. Industry recognition through awards, certifications, or media mentions establishes third-party credibility and authority in your field.
 
 **Visual Proof Strategies:**
-- Screenshot compilations
-- Video testimonials
-- Result demonstrations
-- Behind-the-scenes content
+
+Screenshot compilations effectively showcase multiple success stories and results in a digestible format that builds credibility through volume. Video testimonials add emotional resonance and authenticity that static text cannot match, while result demonstrations provide real-time evidence of your solution's effectiveness. Behind-the-scenes content builds trust by showing the human side of your business and the effort behind your results.
 
 ### Pillar 4: Call-to-Action (Final 5 Seconds)
 
