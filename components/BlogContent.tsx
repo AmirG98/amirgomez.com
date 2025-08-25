@@ -27,6 +27,17 @@ export default function BlogContent({ content, kpiWidget }: BlogContentProps) {
       .trim();
   };
 
+  // Function to parse inline formatting
+  const parseInlineFormatting = (text: string) => {
+    const parts = text.split(/(\*\*.*?\*\*)/);
+    return parts.map((part, index) => {
+      if (part.startsWith('**') && part.endsWith('**') && part.length > 4) {
+        return <strong key={index} className="font-semibold text-foreground">{part.slice(2, -2)}</strong>;
+      }
+      return part;
+    });
+  };
+
   // Parse markdown content and render with proper IDs for headings
   const renderContent = (content: string) => {
     const lines = content.split('\n');
@@ -84,15 +95,15 @@ export default function BlogContent({ content, kpiWidget }: BlogContentProps) {
         elements.push(
           <ul key={currentIndex++} className="list-disc list-inside mb-6 space-y-2 text-foreground/80">
             {listItems.map((item, idx) => (
-              <li key={idx}>{item}</li>
+              <li key={idx}>{parseInlineFormatting(item)}</li>
             ))}
           </ul>
         );
       } else if (line.length > 0 && !line.startsWith('#')) {
-        // Regular paragraph
+        // Regular paragraph - parse inline bold formatting
         elements.push(
           <p key={currentIndex++} className="mb-6 leading-relaxed text-foreground/80 text-lg">
-            {line}
+            {parseInlineFormatting(line)}
           </p>
         );
       } else if (line.length === 0) {
