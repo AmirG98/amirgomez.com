@@ -1088,7 +1088,7 @@ Ready to implement advanced GEO tactics that establish dominant authority in AI 
     title: "GEO vs SEO 2025: Integration Strategy for Traditional Search & AI Engines",
     slug: "geo-vs-seo-2025-integration-strategy-traditional-search-ai-engines",
     excerpt: "Master the integration of GEO and SEO strategies for maximum visibility across traditional search engines and AI platforms. Complete framework for unified search optimization.",
-    featuredImage: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800&h=450&fit=crop&auto=format",
+    featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     kpiWidget: {
       title: "GEO + SEO Integration Results",
       metrics: [
