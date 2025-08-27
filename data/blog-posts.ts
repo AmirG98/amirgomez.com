@@ -656,7 +656,7 @@ Ready to implement a complete lead generation system that consistently converts 
     title: "Generative Engine Optimization (GEO) 2025: Complete Strategy for AI Search Engines",
     slug: "generative-engine-optimization-geo-2025-complete-strategy-ai-search-engines",
     excerpt: "Master Generative Engine Optimization (GEO) for ChatGPT, Claude, Perplexity, and Google AI Overviews. Complete guide to optimizing content for AI-powered search engines in 2025.",
-    featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
+    featuredImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=450&fit=crop&auto=format",
     kpiWidget: {
       title: "GEO Implementation Results",
       metrics: [
@@ -872,7 +872,7 @@ Ready to develop a comprehensive GEO strategy that establishes your brand as an 
     title: "Advanced GEO Tactics 2025: Prompt Engineering & AI Citation Optimization for ChatGPT, Claude & Perplexity",
     slug: "advanced-geo-tactics-2025-prompt-engineering-ai-citation-optimization",
     excerpt: "Master advanced GEO tactics including prompt engineering, AI citation optimization, and content formatting strategies that increase AI engine visibility by 450%.",
-    featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
+    featuredImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=450&fit=crop&auto=format",
     kpiWidget: {
       title: "Advanced GEO Tactics Results",
       metrics: [
@@ -6090,7 +6090,7 @@ Ready to transform your blog into a traffic and lead generation machine? I'll he
     title: "Social Media Marketing Strategy: How to Build Brand Awareness That Converts in 2025",
     slug: "social-media-marketing-strategy-brand-awareness-converts-2025",
     excerpt: "Master the social media strategy framework that increased brand awareness by 312% and generated 15,000+ leads across 6 platforms. Includes content planning and engagement tactics.",
-    featuredImage: "https://images.unsplash.com/photo-1611605698335-8b1569810432?w=800&h=450&fit=crop&auto=format",
+    featuredImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=450&fit=crop&auto=format",
     content: `# Social Media Marketing Strategy: How to Build Brand Awareness That Converts in 2025
 
 Social media marketing has evolved from simple posting to strategic brand building that drives measurable business results. In 2025, successful social media strategies require deep understanding of platform algorithms, audience behavior, and conversion optimization. This comprehensive guide reveals the social media framework that increased brand awareness by 312% and generated over 15,000 qualified leads across multiple platforms.
@@ -6612,7 +6612,7 @@ Ready to transform your social media presence into a brand awareness and lead ge
     title: "Instagram Marketing Strategy: How to Grow Your Business with 50,000+ Engaged Followers in 2025",
     slug: "instagram-marketing-strategy-grow-business-engaged-followers-2025",
     excerpt: "Learn the Instagram growth strategy that helped businesses gain 50,000+ engaged followers and generate $500K+ in revenue. Includes content creation and monetization tactics.",
-    featuredImage: "https://images.unsplash.com/photo-1611605698335-8b1569810432?w=800&h=450&fit=crop&auto=format",
+    featuredImage: "https://images.unsplash.com/photo-1562577309-4fb6fb3fa5eb?w=800&h=450&fit=crop&auto=format",
     content: `# Instagram Marketing Strategy: How to Grow Your Business with 50,000+ Engaged Followers in 2025
 
 Instagram has evolved from a photo-sharing app to a powerful business platform that drives real revenue growth. With over 2 billion monthly active users and the highest engagement rates of any social platform, Instagram offers unprecedented opportunities for businesses willing to implement strategic growth tactics. This comprehensive guide reveals the Instagram marketing strategy that helped clients gain over 50,000 engaged followers and generate $500K+ in attributed revenue.
@@ -13120,7 +13120,7 @@ The competitive advantages of well-executed white label operations compound over
     title: "AI Marketing Automation 2025: How to Scale Personalization Beyond $47B Market Growth",
     slug: "ai-marketing-automation-personalization-2025-guide",
     excerpt: "Discover how AI marketing automation will dominate 2025 with $47.32B market growth. Learn advanced personalization strategies, predictive analytics, and AI agents for unprecedented campaign ROI.",
-    featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
+    featuredImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=450&fit=crop&auto=format",
     kpiWidget: {
       title: "AI Marketing Performance Results",
       metrics: [
