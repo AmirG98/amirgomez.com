@@ -872,7 +872,7 @@ Ready to develop a comprehensive GEO strategy that establishes your brand as an 
     title: "Advanced GEO Tactics 2025: Prompt Engineering & AI Citation Optimization for ChatGPT, Claude & Perplexity",
     slug: "advanced-geo-tactics-2025-prompt-engineering-ai-citation-optimization",
     excerpt: "Master advanced GEO tactics including prompt engineering, AI citation optimization, and content formatting strategies that increase AI engine visibility by 450%.",
-    featuredImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=450&fit=crop&auto=format",
+    featuredImage: "https://images.unsplash.com/photo-1518186233392-c232efbf2373?w=800&h=450&fit=crop&auto=format",
     kpiWidget: {
       title: "Advanced GEO Tactics Results",
       metrics: [
