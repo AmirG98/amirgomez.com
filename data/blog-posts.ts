@@ -15053,8 +15053,12 @@ Implement predictive churn models that identify at-risk customers 30-60 days bef
 Marketing automation represents the competitive advantage that separates scaling SaaS companies from those that plateau. By implementing sophisticated automation strategies that address the entire customer lifecycle, SaaS companies can achieve sustainable growth, improved unit economics, and the foundation for scaling to $10M ARR and beyond.`,
     tags: ["SaaS Marketing", "Marketing Automation", "Customer Acquisition", "Customer Retention", "Revenue Growth"],
     category: "SaaS Marketing",
-    author: "Amir Gomez",
-    publishedDate: "2025-01-15",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist helping businesses optimize their marketing automation, conversion rates, and customer acquisition strategies for sustainable growth.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2025-01-15",
     featured: true,
     readingTime: 16,
     seo: {
@@ -15247,8 +15251,12 @@ Feature customer photos, reviews, and influencer content that provides authentic
 E-commerce conversion rate optimization requires systematic attention to every customer touchpoint, from initial product discovery through post-purchase experience. By implementing these comprehensive CRO strategies, e-commerce businesses can achieve dramatic conversion improvements, increased average order values, and sustainable revenue growth.`,
     tags: ["E-commerce", "Conversion Rate Optimization", "Online Sales", "Customer Experience", "A/B Testing"],
     category: "E-commerce",
-    author: "Amir Gomez",
-    publishedDate: "2025-01-16",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist helping businesses optimize their marketing automation, conversion rates, and customer acquisition strategies for sustainable growth.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2025-01-16",
     featured: true,
     readingTime: 15,
     seo: {
@@ -15475,8 +15483,12 @@ Use AI-powered personalization to deliver customized content, email messaging, a
 B2B lead generation success requires a sophisticated, multi-channel approach that aligns marketing and sales efforts around the modern buyer journey. By implementing these advanced demand generation strategies, B2B companies can achieve consistent, scalable lead generation that drives significant pipeline growth and revenue impact.`,
     tags: ["B2B Marketing", "Lead Generation", "Demand Generation", "Account Based Marketing", "Sales Enablement"],
     category: "B2B Marketing",
-    author: "Amir Gomez",
-    publishedDate: "2025-01-17",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist helping businesses optimize their marketing automation, conversion rates, and customer acquisition strategies for sustainable growth.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2025-01-17",
     featured: true,
     readingTime: 17,
     seo: {
@@ -15753,8 +15765,12 @@ Implement systems to track:
 Local SEO success requires a comprehensive approach that combines technical optimization, content strategy, and community engagement. By implementing these advanced local SEO tactics, businesses can achieve dramatic improvements in local search visibility, customer acquisition, and sustainable growth in their target markets.`,
     tags: ["Local SEO", "Google Business Profile", "Local Search Marketing", "Small Business SEO", "Local Citations"],
     category: "Local SEO",
-    author: "Amir Gomez",
-    publishedDate: "2025-01-18",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist helping businesses optimize their marketing automation, conversion rates, and customer acquisition strategies for sustainable growth.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2025-01-18",
     featured: true,
     readingTime: 18,
     seo: {
