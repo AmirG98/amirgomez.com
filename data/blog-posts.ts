@@ -38,7 +38,7 @@ export const blogPosts: BlogPost[] = [
     title: "Meta Advertising Revolution 2025: Major Targeting Changes That Will Impact Your Campaigns This January",
     slug: "meta-advertising-revolution-2025-targeting-changes-january-impact-campaigns",
     excerpt: "Critical Meta advertising updates rolling out January 2025 including detailed targeting exclusions removal and new AI features. Essential changes every advertiser must know.",
-    featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
+    featuredImage: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=450&fit=crop&auto=format",
     kpiWidget: {
       title: "Meta 2025 Update Impact",
       metrics: [
@@ -53,7 +53,7 @@ export const blogPosts: BlogPost[] = [
 
 Meta is implementing transformative advertising platform changes that will fundamentally alter how advertisers target and optimize campaigns across Facebook and Instagram. These updates represent the most significant shift in digital advertising since iOS 14.5, with immediate implications for every advertiser using the platform.
 
-![Meta Advertising Dashboard Changes](https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=600&fit=crop&auto=format)
+![Meta Advertising Dashboard Changes](https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&h=600&fit=crop&auto=format)
 
 The magnitude of these changes cannot be overstated. Over 10 million advertisers will be affected by these updates, and those who fail to adapt quickly risk significant campaign disruption and performance decline.
 
@@ -68,7 +68,7 @@ Meta will completely remove the ability to use detailed targeting exclusions on 
 > - **67% of e-commerce advertisers** rely on exclusions for audience refinement
 > - **Average 15-20% targeting precision loss** expected post-removal
 
-![Targeting Exclusions Interface](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop&auto=format)
+![Targeting Exclusions Interface](https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=400&fit=crop&auto=format)
 
 **Historical Context**: This feature has been available since 2012 and became essential for advertisers managing broad awareness campaigns while avoiding irrelevant audiences. Its removal marks a fundamental shift toward AI-driven audience discovery rather than manual exclusion-based refinement.
 
@@ -98,7 +98,7 @@ The transition requires a complete rethinking of audience strategy. Here's a sys
 3. **Creative-Based Attraction**: Develop content that naturally appeals to ideal customers
 4. **Behavioral Targeting**: Focus on purchase behaviors and interests rather than exclusions
 
-![Custom Audience Building](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&auto=format)
+![Custom Audience Building](https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=800&h=400&fit=crop&auto=format)
 
 **Advanced Workaround Strategies**:
 - **Geographic Segmentation**: Use detailed location targeting instead of exclusions
@@ -120,7 +120,7 @@ Meta's generative AI capabilities represent the most significant advancement in 
 | Healthcare | +6.7% | +11.4% | +8.9% |
 | Education | +13.2% | +5.8% | +10.6% |
 
-![AI Creative Optimization](https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop&auto=format)
+![AI Creative Optimization](https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop&auto=format)
 
 **How AI Creative Works**:
 1. **Dynamic Asset Testing**: AI automatically tests thousands of creative combinations
@@ -164,7 +164,7 @@ The updated Ads Manager represents a fundamental evolution in how personalizatio
 
 The compliance requirements extend far beyond basic data verification, representing a comprehensive overhaul of how sensitive industries can leverage customer data for advertising purposes.
 
-![Data Compliance Interface](https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=400&fit=crop&auto=format)
+![Data Compliance Interface](https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=400&fit=crop&auto=format)
 
 **Affected Industry Categories**:
 - **Housing and Real Estate**: All property advertisements and related services
@@ -212,7 +212,7 @@ Meta's shift from third-party fact-checkers to community-driven moderation repre
 - **Transparency Focus**: All moderation decisions visible to users
 - **Appeal Process**: Simplified appeals through community review
 
-![Community Moderation System](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop&auto=format)
+![Community Moderation System](https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=400&fit=crop&auto=format)
 
 **Advertising Content Implications**:
 
@@ -242,7 +242,7 @@ Meta's revelation that **60% of platform time** is now spent viewing videos repr
 | Instagram Stories | 73% | +33% |
 | Facebook Stories | 51% | +22% |
 
-![Video Content Creation](https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=800&h=400&fit=crop&auto=format)
+![Video Content Creation](https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=800&h=400&fit=crop&auto=format)
 
 ### Advanced Video AI Tools Implementation
 
@@ -284,7 +284,7 @@ Advantage Plus represents Meta's vision for the future of advertising: AI system
 - **Cross-Campaign Learning**: AI insights transfer between all advertiser campaigns
 - **Predictive Optimization**: System anticipates performance trends before they occur
 
-![AI Campaign Management](https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=400&fit=crop&auto=format)
+![AI Campaign Management](https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=400&fit=crop&auto=format)
 
 **Performance Comparison: Traditional vs. Advantage Plus**
 
@@ -383,7 +383,7 @@ These changes represent the beginning of a fundamental transformation in digital
 - Data scientists and AI specialists joining marketing departments
 - Performance measurement shifting to long-term value metrics
 
-![Future of Digital Marketing](https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=400&fit=crop&auto=format)
+![Future of Digital Marketing](https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=400&fit=crop&auto=format)
 
 ### Privacy-First Evolution Impact
 
@@ -473,7 +473,7 @@ The window for preparation is closing rapidly as January 31st approaches. Advert
     title: "TikTok Algorithm Update 2025: Revolutionary Changes That Favor Quality Content Over Viral Mechanics",
     slug: "tiktok-algorithm-update-2025-revolutionary-changes-favor-quality-content-viral",
     excerpt: "TikTok's 2025 algorithm prioritizes high-quality content, niche communities, and longer-form videos. Major shifts in how content gets discovered and monetized on the platform.",
-    featuredImage: "https://images.unsplash.com/photo-1611262588024-d12430b98920?w=800&h=450&fit=crop&auto=format",
+    featuredImage: "https://images.unsplash.com/photo-1611262588019-db6cc2032da3?w=800&h=450&fit=crop&auto=format",
     kpiWidget: {
       title: "TikTok Algorithm 2025",
       metrics: [
@@ -488,7 +488,7 @@ The window for preparation is closing rapidly as January 31st approaches. Advert
 
 TikTok has implemented its most transformative algorithm update since the platform's inception, fundamentally shifting from viral-focused mechanics to quality-driven content discovery. This seismic change redefines how creators and brands achieve sustained success, rewarding substance over sensationalism.
 
-![TikTok Algorithm Revolution](https://images.unsplash.com/photo-1611262588024-d12430b98920?w=1200&h=600&fit=crop&auto=format)
+![TikTok Algorithm Revolution](https://images.unsplash.com/photo-1611262588019-db6cc2032da3?w=1200&h=600&fit=crop&auto=format)
 
 The implications are staggering: over **1 billion users** will experience dramatically different content recommendations, while **2.3 million creators** must adapt their strategies or risk algorithmic obscurity. Early data shows quality-focused creators experiencing **3x better reach** and **5x higher engagement rates** compared to those still chasing viral trends.
 
@@ -504,7 +504,7 @@ The implications are staggering: over **1 billion users** will experience dramat
 > - **Old Algorithm**: 70% viral signals, 20% quality signals, 10% user intent
 > - **New Algorithm**: 25% viral signals, 60% quality signals, 15% user intent
 
-![Algorithm Priority Changes](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop&auto=format)
+![Algorithm Priority Changes](https://images.unsplash.com/photo-1611605698335-8b1569810432?w=800&h=400&fit=crop&auto=format)
 
 ### Enhanced AI and Machine Learning Integration Deep Dive
 
@@ -541,7 +541,7 @@ The algorithm's user intent analysis has evolved beyond simple engagement metric
 - **Mood-Based Adaptation**: Adjusts content recommendations based on time-sensitive emotional states
 - **Long-Term Engagement**: Prioritizes content that builds sustained relationships over quick hits
 
-![User Intent Analysis](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop&auto=format)
+![User Intent Analysis](https://images.unsplash.com/photo-1611262617093-483885b59ea5?w=800&h=400&fit=crop&auto=format)
 
 **Intent Classification System**:
 - **Educational Seekers**: Users actively looking to learn new skills or information
@@ -569,7 +569,7 @@ The new algorithm demands production standards that were previously optional, ma
 - Music integration: Balanced audio levels between voice and background music
 - Environmental audio: Intentional ambient sound that enhances rather than distracts
 
-![Content Production Setup](https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=800&h=400&fit=crop&auto=format)
+![Content Production Setup](https://images.unsplash.com/photo-1611262588052-9ecddc90a545?w=800&h=400&fit=crop&auto=format)
 
 **Visual Stability Standards**:
 - Camera stability: Handheld movement acceptable only when intentional for effect
@@ -611,7 +611,7 @@ The algorithm's content evaluation has become remarkably sophisticated in measur
 - **Problem-Solving**: Content that addresses specific user challenges
 - **Practical Application**: Information users can immediately implement
 
-![Educational Content Creation](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop&auto=format)
+![Educational Content Creation](https://images.unsplash.com/photo-1611262588024-d12430b98920?w=800&h=400&fit=crop&auto=format)
 
 **Value Measurement Metrics**:
 | Content Type | Algorithm Weight | Success Indicators |
@@ -644,7 +644,7 @@ Data shows content with >85% completion rates receives **4x algorithmic boost**:
 - Implement pattern interrupts to reset attention
 - Create compelling reasons to watch until the end
 
-![Watch Time Optimization](https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=400&fit=crop&auto=format)
+![Watch Time Optimization](https://images.unsplash.com/photo-1611262588019-ec6d39ab8748?w=800&h=400&fit=crop&auto=format)
 
 **Replay Behavior Analysis**:
 The algorithm heavily weights content that generates multiple views from the same user:
@@ -675,7 +675,7 @@ TikTok's community identification has evolved to recognize and serve increasingl
 - **Creator Ecosystem Analysis**: Recognizes interconnected creator networks and their audiences
 - **Geographic and Cultural Nuancing**: Serves location and culture-specific content variations
 
-![Community Building Strategy](https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=400&fit=crop&auto=format)
+![Community Building Strategy](https://images.unsplash.com/photo-1611262588024-d12430b98920?w=800&h=400&fit=crop&auto=format)
 
 **Niche Community Categories with High Algorithm Support**:
 | Community Type | Algorithm Priority | Growth Potential |
@@ -714,7 +714,7 @@ TikTok's approach to brand safety has evolved into a sophisticated content categ
 - **Custom Brand Guidelines**: Advertisers can set specific criteria beyond platform defaults
 - **Creator Transparency**: Clear feedback on why content may be limited for advertising
 
-![Brand Safety Technology](https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&h=400&fit=crop&auto=format)
+![Brand Safety Technology](https://images.unsplash.com/photo-1611262588093-efe1a36a82fc?w=800&h=400&fit=crop&auto=format)
 
 **Advertiser Control Features**:
 - **Granular Placement Control**: Precise targeting based on content categories and creator types
@@ -750,7 +750,7 @@ Success in the new algorithm environment requires fundamental changes to content
 - **Equipment Upgrade**: Professional lighting, audio, and editing equipment for competitive content
 - **Long-Term Planning**: 90-day content calendars with series planning and community building focus
 
-![Content Strategy Planning](https://images.unsplash.com/photo-1553028826-f4804151e0e1?w=800&h=400&fit=crop&auto=format)
+![Content Strategy Planning](https://images.unsplash.com/photo-1611262588024-d12430b98920?w=800&h=400&fit=crop&auto=format)
 
 **Community Building Strategy**:
 - **Audience Research**: Deep analysis of target community needs, interests, and behaviors
