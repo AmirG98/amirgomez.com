@@ -38,7 +38,7 @@ export const blogPosts: BlogPost[] = [
     title: "Meta Advertising Revolution 2025: Major Targeting Changes That Will Impact Your Campaigns This January",
     slug: "meta-advertising-revolution-2025-targeting-changes-january-impact-campaigns",
     excerpt: "Critical Meta advertising updates rolling out January 2025 including detailed targeting exclusions removal and new AI features. Essential changes every advertiser must know.",
-    featuredImage: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=450&fit=crop&auto=format",
+    featuredImage: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=450&fit=crop&auto=format",
     kpiWidget: {
       title: "Meta 2025 Update Impact",
       metrics: [
@@ -53,7 +53,7 @@ export const blogPosts: BlogPost[] = [
 
 Meta is implementing transformative advertising platform changes that will fundamentally alter how advertisers target and optimize campaigns across Facebook and Instagram. These updates represent the most significant shift in digital advertising since iOS 14.5, with immediate implications for every advertiser using the platform.
 
-![Meta Advertising Dashboard Changes](https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&h=600&fit=crop&auto=format)
+![Meta Advertising Dashboard Changes](https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1200&h=600&fit=crop&auto=format)
 
 The magnitude of these changes cannot be overstated. Over 10 million advertisers will be affected by these updates, and those who fail to adapt quickly risk significant campaign disruption and performance decline.
 
