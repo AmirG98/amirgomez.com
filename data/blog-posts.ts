@@ -541,7 +541,7 @@ The algorithm's user intent analysis has evolved beyond simple engagement metric
 - **Mood-Based Adaptation**: Adjusts content recommendations based on time-sensitive emotional states
 - **Long-Term Engagement**: Prioritizes content that builds sustained relationships over quick hits
 
-![User Intent Analysis](https://images.unsplash.com/photo-1611262617093-483885b59ea5?w=800&h=400&fit=crop&auto=format)
+![User Intent Analysis](https://images.unsplash.com/photo-1611262588024-d12430b98920?w=800&h=400&fit=crop&auto=format)
 
 **Intent Classification System**:
 - **Educational Seekers**: Users actively looking to learn new skills or information
