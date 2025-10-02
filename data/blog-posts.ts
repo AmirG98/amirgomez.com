@@ -38,7 +38,7 @@ export const blogPosts: BlogPost[] = [
     title: "Meta's AI Chat Data for Ads: October 2025 Privacy Policy Update and What It Means for Advertisers",
     slug: "meta-ai-chat-data-ads-october-2025-privacy-policy-update",
     excerpt: "Meta announces groundbreaking privacy policy update allowing AI chat data to be used for hyper-targeted advertising. Learn how this affects 1 billion Meta AI users and what advertisers need to know about the December 2025 rollout.",
-    featuredImage: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=450&fit=crop&auto=format",
+    featuredImage: "https://images.unsplash.com/photo-1655393001768-d946c97d6fd1?w=800&h=450&fit=crop&auto=format",
     kpiWidget: {
       title: "Meta AI Advertising Impact",
       metrics: [
@@ -53,7 +53,7 @@ export const blogPosts: BlogPost[] = [
 
 Meta has unveiled a major privacy policy update that will fundamentally change how the company monetizes its AI products and delivers targeted advertising. Starting December 16, 2025, conversations with Meta AI and data from related AI products will be used to build detailed user profiles for advertising purposes across Facebook and Instagram.
 
-![Meta AI Advertising Integration](https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=600&fit=crop&auto=format)
+![Meta AI Advertising Integration](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=600&fit=crop&auto=format)
 
 This announcement represents Meta's strategy to monetize its free AI tools, which currently serve over 1 billion monthly users, by leveraging interaction data for its $46.5 billion quarterly advertising business.
 
