@@ -1,0 +1,259 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "blog": "Blog",
+    "contact": "Contact",
+    "getConsultation": "Get Free Consultation"
+  },
+  "home": {
+    "hero": {
+      "title": "Grow Your Business with",
+      "titleHighlight": "Proven Marketing",
+      "subtitle": "I help businesses increase revenue through data-driven advertising strategies.",
+      "ctaPrimary": "Get Free Marketing Audit",
+      "ctaSecondary": "Grab Growth Playbook",
+      "metrics": {
+        "campaigns": "$35M+ Generated with Campaigns",
+        "funnels": "100+ Successful Funnels",
+        "roi": "Average 450% ROI"
+      },
+      "yearsInBusiness": "10 years in business"
+    },
+    "testimonials": {
+      "title": "What Clients Say",
+      "subtitle": "Real results from real businesses",
+      "testimonial1": {
+        "text": "Amir is one of the most talented marketers I've had the opportunity to work with. I strongly recommend him.",
+        "author": "Steven Page",
+        "company": "VP of Marketing at Giant Partners"
+      },
+      "testimonial2": {
+        "text": "Amir possesses a deep understanding of market trends and customer behavior, and has a remarkable talent for creating innovative strategies that drive business growth and increase revenue.",
+        "author": "Nick Koriakos",
+        "company": "Founder of Stack Force"
+      },
+      "testimonial3": {
+        "text": "I deeply trust Amir's ability to drive business growth, simplifying complex scenarios into actionable strategies.",
+        "author": "Agustin Oliva",
+        "company": "General Manager of RollerShow"
+      }
+    },
+    "cta": {
+      "title": "Ready to Scale Your Marketing?",
+      "subtitle": "Get a free strategy session to discuss your business goals and discover growth opportunities.",
+      "button": "Schedule Free Consultation",
+      "features": "Free consultation • No commitment • Results focused"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Turning Marketing Spend Into",
+      "titleHighlight": "Profitable Growth",
+      "subtitle": "I'm Amir Gomez, and for the past 10 years, I've helped 100+ businesses transform their marketing from cost centers into profit drivers. My approach is simple: data-driven strategies, proven frameworks, and results that speak for themselves.",
+      "metrics": {
+        "generated": "$35M+ Generated with Campaigns",
+        "funnels": "100+ Successful Funnels", 
+        "roi": "450% Average ROI"
+      },
+      "cta": "Let's Talk Strategy"
+    },
+    "story": {
+      "title": "My Story",
+      "content": [
+        "My journey into digital marketing began with a pivotal moment that shaped everything I do today. Back in 2016, while helping a local business launch their first Google Ads campaign, I discovered that traditional metrics only tell part of the story. After analyzing their $5,000 spend over two weeks, I realized the key wasn't just getting clicks—it was understanding what actually drives profitable growth.",
+        "That experience became my foundation for success. I spent the following year reverse-engineering every high-performing campaign I could find, deconstructing landing pages, analyzing winning ad copy, and testing relentlessly. The breakthrough came when I shifted focus from surface-level metrics to true revenue attribution. Suddenly, campaigns that appeared modest on vanity metrics were actually generating substantial, profitable customer acquisition.",
+        "Over the past 8 years, I've had the privilege of scaling businesses from local service providers to 8-figure e-commerce brands, contributing to over $150 million in revenue generation. Each campaign has taught me something valuable, and each success has strengthened the proven framework I now implement with every client—from Ethan Allen and BMW to innovative startups across multiple industries.",
+        "Today, my approach combines rigorous data analysis with strategic creativity and AI-powered optimization. I build scalable systems that optimize for long-term customer value and transform marketing spend into predictable, sustainable business growth. Whether it's achieving a 20x ROAS for manufacturing clients or growing organic traffic by 5.3x using AI-powered SEO strategies, I focus on delivering measurable results that directly impact your bottom line."
+      ]
+    },
+    "approach": {
+      "title": "My Approach",
+      "beliefs": {
+        "title": "What I Believe",
+        "items": [
+          "Marketing should be measurable and accountable to revenue",
+          "Data beats opinions every time", 
+          "Customer lifetime value is more important than acquisition cost",
+          "Transparency builds trust and better results",
+          "Continuous testing leads to continuous improvement"
+        ]
+      },
+      "process": {
+        "title": "How I Work",
+        "items": [
+          "Start with comprehensive audit and strategic planning",
+          "Implement tracking and measurement systems first",
+          "Launch campaigns with clear success metrics", 
+          "Optimize based on performance data, not assumptions",
+          "Scale what works, eliminate what doesn't"
+        ]
+      }
+    }
+  },
+  "blog": {
+    "hero": {
+      "title": "Marketing Insights That",
+      "titleHighlight": "Drive Results",
+      "subtitle": "Proven strategies and actionable tactics from managing $35M+ in campaigns across 100+ successful funnels with 10 years in business."
+    },
+    "categories": {
+      "title": "Browse by Category",
+      "showing": "Showing {count} articles"
+    },
+    "newsletter": {
+      "title": "Get Weekly Marketing Insights",
+      "subtitle": "Join 5,000+ marketers getting actionable strategies, case studies, and industry insights delivered every Tuesday.",
+      "placeholder": "Enter your email",
+      "button": "Subscribe",
+      "privacy": "No spam. Unsubscribe anytime. 📧 ✨"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Let's Discuss Your",
+      "titleHighlight": "Growth Strategy",
+      "subtitle": "Ready to turn your marketing spend into profitable growth? Schedule a free 30-minute strategy session to discuss your challenges and explore opportunities."
+    },
+    "benefits": {
+      "strategy": {
+        "title": "Custom Strategy",
+        "description": "Tailored approach based on your specific business goals and challenges"
+      },
+      "audit": {
+        "title": "Performance Audit",
+        "description": "Free analysis of your current marketing performance and opportunities"
+      },
+      "plan": {
+        "title": "Actionable Plan",
+        "description": "Walk away with specific next steps to improve your marketing ROI"
+      }
+    },
+    "form": {
+      "title": "Schedule Your Free Consultation",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "company": "Company Name",
+      "website": "Website URL",
+      "budget": "Monthly Marketing Budget",
+      "budgetOptions": {
+        "select": "Select budget range",
+        "under1k": "Under $1,000",
+        "1k5k": "$1,000 - $5,000",
+        "5k10k": "$5,000 - $10,000",
+        "10k25k": "$10,000 - $25,000",
+        "25k50k": "$25,000 - $50,000",
+        "50kplus": "$50,000+"
+      },
+      "challenges": "What's your biggest marketing challenge?",
+      "challengesPlaceholder": "Tell me about your current marketing situation, what you've tried, and what's not working...",
+      "goals": "What would success look like for you?",
+      "goalsPlaceholder": "Specific revenue goals, lead targets, or other success metrics...",
+      "newsletter": "Yes, I'd like to receive weekly marketing insights and case studies",
+      "submit": "Schedule My Free Consultation",
+      "privacy": "By submitting this form, you agree to receive communication from Amir Gomez. You can unsubscribe at any time."
+    },
+    "calendar": {
+      "title": "Book Directly on My Calendar",
+      "description": "Prefer to book directly? Choose a time that works for you from my calendar below."
+    },
+    "other": {
+      "title": "Other Ways to Reach Me",
+      "email": "Email",
+      "linkedin": "LinkedIn",
+      "responseTime": "Response Time",
+      "within24": "Within 24 hours"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": {
+        "question": "What happens during the consultation?",
+        "answer": "We'll review your current marketing performance, discuss your goals, and I'll provide specific recommendations for improvement. You'll leave with actionable next steps."
+      },
+      "q2": {
+        "question": "Is there really no cost?",
+        "answer": "Yes, the initial consultation is completely free. My goal is to provide value upfront and help you understand how I can help your business grow."
+      },
+      "q3": {
+        "question": "What if I'm not ready to hire anyone?",
+        "answer": "No problem! I'll still provide valuable insights you can implement yourself. There's no pressure to work together beyond the initial consultation."
+      }
+    },
+    "social": {
+      "title": "Join 100+ Businesses That Trust My Expertise",
+      "satisfaction": "Client Satisfaction Rate",
+      "roiIncrease": "Average ROI Increase",
+      "adSpend": "Ad Spend Managed"
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "Digital Marketing Services That",
+      "titleHighlight": "Drive Real Results",
+      "subtitle": "Proven digital marketing solutions that turn ad spend into profitable growth. No contracts, no fluff – just results-driven strategies with guaranteed ROI."
+    },
+    "trustIndicators": {
+      "roiIncrease": "Average ROI Increase",
+      "adSpend": "Ad Spend Managed",
+      "campaigns": "Successful Campaigns",
+      "satisfaction": "Client Satisfaction"
+    },
+    "solutionsTitle": "Comprehensive Marketing Solutions",
+    "packagesTitle": "Choose Your Growth Package",
+    "packagesSubtitle": "Flexible packages designed to scale with your business growth and marketing needs",
+    "processTitle": "How We Work Together",
+    "process": {
+      "step1": {
+        "title": "Strategy Session",
+        "description": "Free consultation to understand your goals, challenges, and opportunities for growth."
+      },
+      "step2": {
+        "title": "Custom Plan",
+        "description": "Detailed marketing strategy tailored to your business, budget, and growth objectives."
+      },
+      "step3": {
+        "title": "Implementation",
+        "description": "Launch campaigns with proper tracking, optimization systems, and performance monitoring."
+      },
+      "step4": {
+        "title": "Scale & Optimize",
+        "description": "Continuous optimization and scaling based on performance data to maximize ROI."
+      }
+    },
+    "cta": {
+      "title": "Ready to Scale Your Marketing?",
+      "subtitle": "Get a free marketing audit and custom growth strategy. No payment required until you see results.",
+      "ctaPrimary": "Schedule Free Consultation",
+      "ctaSecondary": "Read Marketing Insights",
+      "features": "Free consultation • No commitment • Results guaranteed"
+    },
+    "packages": {
+      "mostPopular": "Most Popular",
+      "getStarted": "Get Started",
+      "customSolution": "Need a custom solution? Let's discuss your specific requirements.",
+      "customConsultation": "Schedule Custom Consultation"
+    }
+  },
+  "footer": {
+    "tagline": "Digital Marketing Specialist",
+    "copyright": "© 2025 Amir Gomez. All rights reserved.",
+    "links": {
+      "linkedin": "LinkedIn",
+      "email": "Email"
+    }
+  },
+  "common": {
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "viewAll": "View All",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "minRead": "min read",
+    "featuredArticle": "Featured Article",
+    "latestArticles": "Latest Articles",
+    "relatedArticles": "Related Articles"
+  }
+}
