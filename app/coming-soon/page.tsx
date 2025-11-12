@@ -1,11 +1,135 @@
 'use client';
 
 import Link from 'next/link';
+import { useEffect, useRef } from 'react';
 
 export default function ComingSoonPage() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    // Set canvas size
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Particle system
+    const particles: Array<{
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      radius: number;
+    }> = [];
+    const particleCount = 80;
+    const mouse = { x: 0, y: 0 };
+    const connectionDistance = 150;
+    const mouseConnectionDistance = 200;
+
+    // Create particles
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        radius: Math.random() * 2 + 1,
+      });
+    }
+
+    // Mouse move handler
+    const handleMouseMove = (e: MouseEvent) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+
+    // Animation loop
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Update and draw particles
+      particles.forEach((particle, i) => {
+        // Move particle
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+
+        // Bounce off edges
+        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
+        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+
+        // Draw particle
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+        ctx.fill();
+
+        // Connect particles to each other
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[j].x - particle.x;
+          const dy = particles[j].y - particle.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < connectionDistance) {
+            ctx.beginPath();
+            ctx.moveTo(particle.x, particle.y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(255, 255, 255, ${0.15 * (1 - distance / connectionDistance)})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+
+        // Connect particles to mouse
+        const dxMouse = mouse.x - particle.x;
+        const dyMouse = mouse.y - particle.y;
+        const distanceToMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+
+        if (distanceToMouse < mouseConnectionDistance) {
+          ctx.beginPath();
+          ctx.moveTo(particle.x, particle.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.strokeStyle = `rgba(16, 185, 129, ${0.3 * (1 - distanceToMouse / mouseConnectionDistance)})`;
+          ctx.lineWidth = 2;
+          ctx.stroke();
+
+          // Draw glow around mouse
+          const gradient = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 50);
+          gradient.addColorStop(0, 'rgba(16, 185, 129, 0.1)');
+          gradient.addColorStop(1, 'rgba(16, 185, 129, 0)');
+          ctx.fillStyle = gradient;
+          ctx.fillRect(mouse.x - 50, mouse.y - 50, 100, 100);
+        }
+      });
+
+      requestAnimationFrame(animate);
+    };
+    animate();
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-800 to-zinc-600 flex items-center justify-center p-4">
-      <div className="max-w-2xl w-full text-center space-y-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-800 to-zinc-600 flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Canvas for particle effect */}
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 pointer-events-none"
+      />
+
+      <div className="max-w-2xl w-full text-center space-y-8 relative z-10">
 
         {/* Logo/Brand */}
         <div className="flex justify-center mb-8">
