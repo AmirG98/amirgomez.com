@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function ComingSoonPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-800 to-zinc-600 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-800 to-zinc-600 flex items-center justify-center p-4">
       <div className="max-w-2xl w-full text-center space-y-8">
 
         {/* Logo/Brand */}
@@ -32,7 +32,7 @@ export default function ComingSoonPage() {
             href="https://linkedin.com/in/amir-gabriel-gomez"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 bg-white text-gray-800 px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-gray-100 transition-all hover:shadow-lg w-full sm:w-auto justify-center"
+            className="flex items-center gap-3 border border-zinc-200 bg-white text-gray-800 px-8 py-4 rounded-2xl font-semibold text-lg shadow-sm hover:shadow hover:bg-zinc-300 transition w-full sm:w-auto justify-center"
           >
             <svg
               className="w-6 h-6"
@@ -48,7 +48,7 @@ export default function ComingSoonPage() {
           {/* Email Button */}
           <Link
             href="mailto:amir@amirgomez.com"
-            className="flex items-center gap-3 bg-emerald-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-emerald-700 transition-all hover:shadow-lg w-full sm:w-auto justify-center"
+            className="flex items-center gap-3 bg-emerald-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:bg-emerald-700 transition w-full sm:w-auto justify-center"
           >
             <svg
               className="w-6 h-6"
