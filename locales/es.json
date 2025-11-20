@@ -25,17 +25,17 @@
       "title": "Lo Que Dicen los Clientes",
       "subtitle": "Resultados reales de empresas reales",
       "testimonial1": {
-        "text": "Amir es uno de los especialistas en marketing más talentosos con los que he tenido la oportunidad de trabajar. Lo recomiendo encarecidamente.",
+        "text": "A+Growth es uno de los equipos de marketing más talentosos con los que he tenido la oportunidad de trabajar. Los recomiendo encarecidamente.",
         "author": "Steven Page",
         "company": "VP de Marketing en Giant Partners"
       },
       "testimonial2": {
-        "text": "Amir posee un profundo entendimiento de las tendencias del mercado y el comportamiento del consumidor, y tiene un talento extraordinario para crear estrategias innovadoras que impulsan el crecimiento empresarial y aumentan los ingresos.",
+        "text": "A+Growth posee un profundo entendimiento de las tendencias del mercado y el comportamiento del consumidor, y tiene un talento extraordinario para crear estrategias innovadoras que impulsan el crecimiento empresarial y aumentan los ingresos.",
         "author": "Nick Koriakos",
         "company": "Fundador de Stack Force"
       },
       "testimonial3": {
-        "text": "Confío profundamente en la habilidad de Amir para impulsar el crecimiento empresarial, simplificando escenarios complejos en estrategias accionables.",
+        "text": "Confío profundamente en la habilidad de A+Growth para impulsar el crecimiento empresarial, simplificando escenarios complejos en estrategias accionables.",
         "author": "Agustin Oliva",
         "company": "Gerente General de RollerShow"
       }
@@ -51,7 +51,7 @@
     "hero": {
       "title": "Convirtiendo la Inversión en Marketing en",
       "titleHighlight": "Crecimiento Rentable",
-      "subtitle": "Soy Amir Gomez, y durante los últimos 10 años, he ayudado a más de 100 empresas a transformar su marketing de centros de costo a generadores de ganancias. Mi enfoque es simple: estrategias basadas en datos, marcos probados y resultados que hablan por sí mismos.",
+      "subtitle": "Somos A+Growth, y durante los últimos 10 años, hemos ayudado a más de 100 empresas a transformar su marketing de centros de costo a generadores de ganancias. Nuestro enfoque es simple: estrategias basadas en datos, marcos probados y resultados que hablan por sí mismos.",
       "metrics": {
         "generated": "$35M+ Generados con Campañas",
         "funnels": "100+ Embudos Exitosos",
@@ -60,18 +60,18 @@
       "cta": "Hablemos de Estrategia"
     },
     "story": {
-      "title": "Mi Historia",
+      "title": "Nuestra Historia",
       "content": [
-        "Mi camino en el marketing digital comenzó como muchos otros: con una campaña fallida y un presupuesto que se reducía. En 2016, estaba ayudando a un negocio local con su primera campaña de Google Ads. Después de quemar $5,000 en dos semanas sin conversiones, me di cuenta de que necesitaba entender seriamente qué funciona realmente.",
-        "Ese fracaso se convirtió en mi educación. Pasé el siguiente año estudiando cada campaña exitosa que pude encontrar, analizando páginas de destino, estudiando textos publicitarios y probando todo. El gran avance llegó cuando cambié el enfoque de métricas de vanidad a atribución de ingresos. De repente, las campañas que parecían \"no exitosas\" en la superficie estaban realmente generando adquisición rentable de clientes.",
-        "Durante los últimos 10 años, he tenido el privilegio de trabajar con empresas que van desde proveedores de servicios locales hasta marcas de comercio electrónico de 8 cifras. Cada campaña me enseñó algo nuevo, y cada éxito se basó en el marco que ahora uso con cada cliente.",
-        "Hoy, mi enfoque combina análisis riguroso de datos con estrategia creativa. No solo manejo anuncios: construyo sistemas que escalan, optimizo para el valor de por vida del cliente a largo plazo, y convierto la inversión en marketing en crecimiento empresarial predecible."
+        "Nuestro camino en el marketing digital comenzó como muchos otros: con una campaña fallida y un presupuesto que se reducía. En 2016, estábamos ayudando a un negocio local con su primera campaña de Google Ads. Después de quemar $5,000 en dos semanas sin conversiones, nos dimos cuenta de que necesitábamos entender seriamente qué funciona realmente.",
+        "Ese fracaso se convirtió en nuestra educación. Pasamos el siguiente año estudiando cada campaña exitosa que pudimos encontrar, analizando páginas de destino, estudiando textos publicitarios y probando todo. El gran avance llegó cuando cambiamos el enfoque de métricas de vanidad a atribución de ingresos. De repente, las campañas que parecían \"no exitosas\" en la superficie estaban realmente generando adquisición rentable de clientes.",
+        "Durante los últimos 10 años, hemos tenido el privilegio de trabajar con empresas que van desde proveedores de servicios locales hasta marcas de comercio electrónico de 8 cifras. Cada campaña nos enseñó algo nuevo, y cada éxito se basó en el marco que ahora usamos con cada cliente.",
+        "Hoy, nuestro enfoque combina análisis riguroso de datos con estrategia creativa. No solo manejamos anuncios: construimos sistemas que escalan, optimizamos para el valor de por vida del cliente a largo plazo, y convertimos la inversión en marketing en crecimiento empresarial predecible."
       ]
     },
     "approach": {
-      "title": "Mi Enfoque",
+      "title": "Nuestro Enfoque",
       "beliefs": {
-        "title": "En Lo Que Creo",
+        "title": "En Lo Que Creemos",
         "items": [
           "El marketing debe ser medible y responsable ante los ingresos",
           "Los datos vencen a las opiniones siempre",
@@ -81,7 +81,7 @@
         ]
       },
       "process": {
-        "title": "Cómo Trabajo",
+        "title": "Cómo Trabajamos",
         "items": [
           "Comenzar con auditoría integral y planificación estratégica",
           "Implementar sistemas de seguimiento y medición primero",
@@ -237,8 +237,8 @@
     }
   },
   "footer": {
-    "tagline": "Especialista en Marketing Digital",
-    "copyright": "© 2025 Amir Gomez. Todos los derechos reservados.",
+    "tagline": "Agencia de Marketing Digital",
+    "copyright": "© 2025 A+Growth. Todos los derechos reservados.",
     "links": {
       "linkedin": "LinkedIn",
       "email": "Email"

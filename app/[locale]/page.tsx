@@ -41,7 +41,7 @@ export default function HomePage({ params }: HomePageProps) {
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <Link href={locale === 'en' ? '/' : `/${locale}`} className="text-xl font-bold">
-              AG
+              A+Growth
             </Link>
             
             {/* Desktop Navigation */}
@@ -259,7 +259,7 @@ export default function HomePage({ params }: HomePageProps) {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <div className="text-xl font-bold mb-2">Amir Gomez</div>
+              <div className="text-xl font-bold mb-2">A+Growth</div>
               <p className="text-foreground/60">{t.footer.tagline}</p>
             </div>
             <div className="flex space-x-6">
