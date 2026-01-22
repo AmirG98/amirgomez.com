@@ -145,7 +145,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 text-sm text-foreground/60">
                   <div className="flex items-center gap-2">
                     <span className="text-orange-500">✓</span>
-                    <span>$35M+ Generated with Campaigns</span>
+                    <span>$125M+ Generated with Campaigns</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-orange-500">✓</span>

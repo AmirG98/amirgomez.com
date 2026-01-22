@@ -306,5 +306,38 @@ export const formVariants: Record<string, FormVariant> = {
     ],
     submitText: 'Subscribe',
     successMessage: 'Welcome to the community! Check your email for a confirmation and your first marketing insights.'
+  },
+
+  aiWebsite: {
+    id: 'aiWebsite',
+    title: 'Get Your AI-Optimized Website',
+    subtitle: 'Be found by AI search engines and agents',
+    step1Title: 'Let\'s Start With Your Info',
+    step1Subtitle: 'Join forward-thinking businesses preparing for the AI search revolution. We\'ll reach out within 24 hours.',
+    step2Fields: [
+      {
+        name: 'firstName',
+        label: 'First Name',
+        type: 'text',
+        required: true,
+        placeholder: 'John'
+      },
+      {
+        name: 'lastName',
+        label: 'Last Name',
+        type: 'text',
+        required: true,
+        placeholder: 'Smith'
+      },
+      {
+        name: 'phone',
+        label: 'Phone Number',
+        type: 'tel',
+        required: true,
+        placeholder: '(555) 123-4567'
+      }
+    ],
+    submitText: 'Continue to Company Info →',
+    successMessage: 'Thank you! We\'ll be in touch within 24 hours to discuss your AI-optimized website.'
   }
 };

@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 
 interface LocaleLayoutProps {
   children: React.ReactNode
-  params: Promise<{ locale: Locale }>
+  params: Promise<{ locale: string }>
 }
 
 // Generate static params for all locales
@@ -18,7 +18,7 @@ export default async function LocaleLayout({
   const { locale } = await params
   
   // Validate that the incoming locale parameter is valid
-  if (!locales.includes(locale)) {
+  if (!locales.includes(locale as Locale)) {
     notFound()
   }
 
