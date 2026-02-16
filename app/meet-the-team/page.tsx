@@ -25,6 +25,24 @@ export default function MeetTheTeamPage() {
         </div>
       </header>
 
+      {/* Important Notice Banner */}
+      <div className="relative z-10 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 border-y border-amber-500/30">
+        <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 md:py-6">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0 mt-1">
+              <svg className="w-6 h-6 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <div className="flex-1">
+              <p className="text-sm md:text-base text-white/90 leading-relaxed">
+                <span className="font-bold text-amber-400">IMPORTANT:</span> You were redirected to this page because you booked a call. Please go to your email and accept the invite so we can save your slot.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <main className="relative z-10 max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-12">
         {/* Hero Section */}
         <section className="text-center mb-16 animate-fadeIn">
