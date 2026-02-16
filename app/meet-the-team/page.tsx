@@ -237,6 +237,31 @@ export default function MeetTheTeamPage() {
           </div>
         </section>
 
+        {/* Request Case Studies CTA */}
+        <section className="mb-16">
+          <div className="text-center">
+            <div className="bg-gradient-to-r from-amber-500/10 to-yellow-500/10 backdrop-blur-xl border border-amber-500/30 rounded-3xl p-8 md:p-12 shadow-2xl">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                Want to See More Results?
+              </h2>
+              <p className="text-lg text-white/60 mb-8 max-w-2xl mx-auto">
+                Get detailed case studies showing exactly how we've helped businesses scale their revenue and reduce acquisition costs.
+              </p>
+              <a
+                href="mailto:amir@amirgomez.com?subject=Request%20for%20Case%20Studies&body=Hi%20Amir%2C%0A%0AI'd%20like%20to%20request%20detailed%20case%20studies%20to%20learn%20more%20about%20your%20work.%0A%0AThank%20you!"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-amber-500 to-yellow-500 text-black px-8 py-5 rounded-2xl font-bold text-lg hover:from-amber-600 hover:to-yellow-600 transition-all hover:shadow-lg hover:shadow-amber-500/25 hover:scale-105 transform"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                REQUEST CASE STUDIES
+              </a>
+              <p className="text-sm text-white/40 mt-6">
+                We'll send you detailed case studies via email within 24 hours
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* Why Choose Us Section */}
         <section className="mb-16">
