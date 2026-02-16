@@ -33,14 +33,14 @@ export default function MeetTheTeamPage() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500" />
             </span>
-            <span className="text-sm font-medium text-amber-400">Meet Your Growth Team</span>
+            <span className="text-sm font-medium text-amber-400">Meet Your Growth Partner</span>
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Data-Driven Marketers
+            Data-Driven Marketing
             <br />
             <span className="bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-500 bg-clip-text text-transparent">
-              Results-Focused Partners
+              Results-Focused Partnership
             </span>
           </h1>
 
@@ -219,63 +219,6 @@ export default function MeetTheTeamPage() {
           </div>
         </section>
 
-        {/* Team Section */}
-        <section className="mb-16">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              The <span className="bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent">A+Growth</span> Team
-            </h2>
-            <p className="text-lg text-white/60 max-w-2xl mx-auto">
-              Growth-focused professionals working collaboratively. The best idea wins.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            {/* Maia Gaitan */}
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all">
-              <div className="flex flex-col items-center text-center">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-amber-500/20 to-yellow-500/20 border-2 border-amber-500/30 flex items-center justify-center mb-4">
-                  <span className="text-4xl font-bold text-amber-400">MG</span>
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Maia Gaitan</h3>
-                <p className="text-amber-400 font-medium mb-4">Acquisition Lead</p>
-                <p className="text-white/70 leading-relaxed">
-                  Specializes in customer acquisition strategies, campaign management, and optimizing ad performance across multiple channels to drive qualified leads and conversions.
-                </p>
-              </div>
-            </div>
-
-            {/* Pilar Lucero */}
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all">
-              <div className="flex flex-col items-center text-center">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-amber-500/20 to-yellow-500/20 border-2 border-amber-500/30 flex items-center justify-center mb-4">
-                  <span className="text-4xl font-bold text-amber-400">PL</span>
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-2">Pilar Lucero</h3>
-                <p className="text-amber-400 font-medium mb-4">Full-Funnel Data Analysis</p>
-                <p className="text-white/70 leading-relaxed">
-                  Expert in analyzing full-funnel performance, identifying optimization opportunities, and translating complex data into actionable insights that drive revenue growth.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold text-white mb-2">Flexible Talent Acquisition</h4>
-                <p className="text-white/70 leading-relaxed">
-                  Our team uses a flexible talent acquisition approach, meeting the needs of each project in a unique way, with on-demand professionals who are highly skilled in the target industry. We approach our day-to-day work in a fully collaborative way. The best idea wins.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Why Choose Us Section */}
         <section className="mb-16">
