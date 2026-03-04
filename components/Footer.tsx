@@ -14,8 +14,8 @@ export default function Footer({ className = '' }: FooterProps) {
             <p className="text-foreground/60">Digital Marketing Specialist</p>
           </div>
           <div className="flex space-x-6">
-            <Link 
-              href="https://linkedin.com/in/amirgomez" 
+            <Link
+              href="https://www.linkedin.com/in/amir-gabriel-gomez/"
               className="text-foreground/60 hover:text-foreground transition-colors"
               target="_blank"
               rel="noopener noreferrer"
