@@ -9,7 +9,6 @@ function ThankYouContent() {
   const [readinessLevel, setReadinessLevel] = useState<'foundation' | 'positioning' | 'ready-to-scale'>('foundation');
   const [targetSegment, setTargetSegment] = useState('your target high net worth segment');
   const [goal, setGoal] = useState('');
-  const [spotsLeft, setSpotsLeft] = useState(3);
   const [showSticky, setShowSticky] = useState(false);
 
   // Show sticky CTA after scrolling past the first section
@@ -85,7 +84,7 @@ function ThankYouContent() {
           <div className="flex items-center gap-3">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
             <span className="text-white/70 text-sm">
-              <span className="text-amber-400 font-semibold">{spotsLeft} spots left</span> this week
+              <span className="text-amber-400 font-semibold">Limited availability</span>
             </span>
           </div>
           <a
@@ -167,7 +166,7 @@ function ThankYouContent() {
                   <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                   </svg>
-                  Only {spotsLeft} spots left this week
+                  30-min strategy session
                 </span>
               </p>
             </div>
@@ -447,9 +446,6 @@ function ThankYouContent() {
               </h2>
               <p className="text-white/60">
                 30 minutes to review your roadmap and find quick wins for high net worth targeting.
-              </p>
-              <p className="text-amber-400 text-sm mt-2 font-medium">
-                Only {spotsLeft} spots remaining this week
               </p>
             </div>
 
