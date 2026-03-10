@@ -104,130 +104,123 @@ function ThankYouContent() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-500/10 rounded-full blur-[200px] animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
 
-      {/* Header */}
+      {/* Header - Compact */}
       <header className="relative z-10 border-b border-white/10 bg-[#0a0a0a]/80 backdrop-blur-xl">
-        <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="/" className="text-xl font-bold bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+        <div className="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
+          <a href="/" className="text-lg font-bold bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
             A+Growth
           </a>
-          <div className="flex items-center gap-2 text-sm text-white/50">
+          <div className="flex items-center gap-2 text-xs text-white/50">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
             <span>Results Ready</span>
           </div>
         </div>
       </header>
 
-      <main className="relative z-10 max-w-4xl mx-auto px-6 py-8">
+      <main className="relative z-10 max-w-4xl mx-auto px-4 py-4">
         {/* Results Section */}
-        <section className="py-8 animate-fadeIn">
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl">
+        <section className="animate-fadeIn">
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-8 shadow-2xl">
             {/* Animated Score Badge */}
-            <div className="text-center mb-8">
+            {/* Header + CTA Above the Fold */}
+            <div className="text-center mb-6">
               <div
-                className="inline-block px-6 py-3 rounded-full mb-6 animate-pulse"
+                className="inline-block px-4 py-2 rounded-full mb-4"
                 style={{
                   background: `linear-gradient(135deg, ${readinessContent[readinessLevel].color}20, ${readinessContent[readinessLevel].color}10)`,
                   border: `2px solid ${readinessContent[readinessLevel].color}`,
                 }}
               >
                 <span
-                  className="text-sm font-bold uppercase tracking-wider"
+                  className="text-xs font-bold uppercase tracking-wider"
                   style={{ color: readinessContent[readinessLevel].color }}
                 >
-                  Readiness Level: {readinessContent[readinessLevel].score}
+                  {readinessContent[readinessLevel].score}
                 </span>
               </div>
 
-              <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">
                 {readinessContent[readinessLevel].headline}
               </h1>
-              <p className="text-lg text-white/60 max-w-xl mx-auto">
+              <p className="text-base text-white/60 max-w-xl mx-auto mb-4">
                 {readinessContent[readinessLevel].subtitle}
+              </p>
+
+              {/* CTA - ABOVE THE FOLD */}
+              <div className="inline-flex items-center gap-2 mb-3">
+                <span className="text-white/50 line-through">$500 value</span>
+                <span className="bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full text-xs font-bold uppercase">
+                  FREE this week
+                </span>
+              </div>
+
+              <a
+                href="#calendly"
+                className={`block w-full text-center text-black px-6 py-4 rounded-2xl font-semibold text-lg transition-all hover:shadow-lg hover:scale-[1.02] bg-gradient-to-r ${readinessContent[readinessLevel].gradient} mb-2`}
+                style={{ boxShadow: `0 10px 40px ${readinessContent[readinessLevel].color}30` }}
+              >
+                {readinessContent[readinessLevel].cta} →
+              </a>
+
+              <p className="text-amber-400/80 text-xs">
+                <span className="inline-flex items-center gap-1">
+                  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                  </svg>
+                  Only {spotsLeft} spots left this week
+                </span>
               </p>
             </div>
 
-            {/* Summary Card */}
+            {/* Divider */}
+            <div className="border-t border-white/10 my-6" />
+
+            {/* Summary Card - Compact */}
             {(targetSegment !== 'your target high net worth segment' || goal) && (
-              <div className="bg-white/5 rounded-2xl p-6 mb-8 border border-white/10">
-                <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-white/5 rounded-xl p-4 mb-6 border border-white/10">
+                <div className="flex flex-wrap gap-4 justify-center">
                   {goal && (
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center">
-                        <svg className="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <p className="text-sm text-white/50">Primary goal</p>
-                        <p className="font-medium text-white">{goal}</p>
-                      </div>
+                    <div className="flex items-center gap-2">
+                      <svg className="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <span className="text-sm text-white/70">Goal: <span className="text-white font-medium">{goal}</span></span>
                     </div>
                   )}
                   {targetSegment !== 'your target high net worth segment' && (
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center">
-                        <svg className="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <p className="text-sm text-white/50">Target segment</p>
-                        <p className="font-medium text-white">{targetSegment}</p>
-                      </div>
+                    <div className="flex items-center gap-2">
+                      <svg className="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <span className="text-sm text-white/70">Segment: <span className="text-white font-medium">{targetSegment}</span></span>
                     </div>
                   )}
                 </div>
               </div>
             )}
 
-            {/* Recommendations */}
-            <div className="mb-8">
-              <h3 className="text-lg font-semibold text-white mb-4">Your personalized roadmap:</h3>
-              <div className="space-y-3">
+            {/* Recommendations - Compact */}
+            <div>
+              <h3 className="text-sm font-semibold text-white/70 mb-3 uppercase tracking-wide">Your Roadmap</h3>
+              <div className="space-y-2">
                 {readinessContent[readinessLevel].bullets.map((bullet, i) => (
                   <div
                     key={i}
-                    className="flex items-start gap-4 p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition-all"
+                    className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10"
                   >
                     <div
-                      className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                      className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
                       style={{ backgroundColor: `${readinessContent[readinessLevel].color}30` }}
                     >
-                      <span className="text-sm font-bold" style={{ color: readinessContent[readinessLevel].color }}>
+                      <span className="text-xs font-bold" style={{ color: readinessContent[readinessLevel].color }}>
                         {i + 1}
                       </span>
                     </div>
-                    <span className="text-white/90">{bullet}</span>
+                    <span className="text-sm text-white/80">{bullet}</span>
                   </div>
                 ))}
               </div>
             </div>
-
-            {/* Value Badge + CTA */}
-            <div className="text-center mb-4">
-              <div className="inline-flex items-center gap-2 mb-3">
-                <span className="text-white/50 line-through text-lg">$500 value</span>
-                <span className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wide animate-pulse">
-                  FREE this week
-                </span>
-              </div>
-              <p className="text-amber-400/80 text-sm">
-                <span className="inline-flex items-center gap-1">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                  </svg>
-                  Only {spotsLeft} spots available this week
-                </span>
-              </p>
-            </div>
-
-            <a
-              href="#calendly"
-              className={`block w-full text-center text-black px-6 py-5 rounded-2xl font-semibold text-lg transition-all hover:shadow-lg hover:scale-[1.02] bg-gradient-to-r ${readinessContent[readinessLevel].gradient}`}
-              style={{ boxShadow: `0 10px 40px ${readinessContent[readinessLevel].color}30` }}
-            >
-              {readinessContent[readinessLevel].cta} →
-            </a>
           </div>
         </section>
 
