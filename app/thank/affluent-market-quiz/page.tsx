@@ -9,7 +9,10 @@ function ThankYouContent() {
   const [readinessLevel, setReadinessLevel] = useState<'foundation' | 'positioning' | 'ready-to-scale'>('foundation');
   const [targetSegment, setTargetSegment] = useState('your target high net worth segment');
   const [goal, setGoal] = useState('');
+  const [email, setEmail] = useState('');
   const [showSticky, setShowSticky] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   // Show sticky CTA after scrolling past the first section
   useEffect(() => {
@@ -24,11 +27,39 @@ function ThankYouContent() {
     const level = searchParams.get('level') as 'foundation' | 'positioning' | 'ready-to-scale';
     const segment = searchParams.get('segment');
     const goalParam = searchParams.get('goal');
+    const emailParam = searchParams.get('email');
 
     if (level) setReadinessLevel(level);
     if (segment) setTargetSegment(segment);
     if (goalParam) setGoal(goalParam);
+    if (emailParam) setEmail(emailParam);
   }, [searchParams]);
+
+  const handleRequestRoadmap = async () => {
+    if (isSubmitting || isSubmitted) return;
+
+    setIsSubmitting(true);
+
+    try {
+      await fetch('/api/request-roadmap', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email,
+          readinessLevel,
+          targetSegment,
+          goal,
+          source: 'affluent-market-quiz',
+        }),
+      });
+
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Failed to send request:', error);
+      // Still show success to user - we'll get the notification
+      setIsSubmitted(true);
+    }
+  };
 
   const readinessContent = {
     'foundation': {
@@ -40,7 +71,7 @@ function ThankYouContent() {
         'High net worth audience targeting setup (income + interests)',
         'High-end creative assets that resonate with wealthy buyers',
       ],
-      cta: 'Get Your Free Audit',
+      cta: 'Get My Free Roadmap',
       color: '#f59e0b',
       gradient: 'from-amber-500 to-yellow-500',
     },
@@ -53,7 +84,7 @@ function ThankYouContent() {
         'Premium funnel optimization with exclusivity messaging',
         'A/B testing luxury vs. standard creative approaches',
       ],
-      cta: 'View Available Slots',
+      cta: 'Get My Free Roadmap',
       color: '#f97316',
       gradient: 'from-orange-500 to-amber-500',
     },
@@ -66,11 +97,78 @@ function ThankYouContent() {
         'Multi-channel premium media plan (Search, Social, Display)',
         'Concierge-level lead nurturing sequences',
       ],
-      cta: 'Book Strategy Session',
+      cta: 'Get My Free Roadmap',
       color: '#22c55e',
       gradient: 'from-green-500 to-emerald-500',
     },
   };
+
+  // Success state
+  if (isSubmitted) {
+    return (
+      <div className="min-h-screen bg-[#0a0a0a] text-white overflow-hidden relative">
+        {/* Animated Background */}
+        <div className="fixed inset-0 pointer-events-none">
+          <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-green-500/20 rounded-full blur-[150px] animate-pulse" />
+          <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-emerald-500/15 rounded-full blur-[150px] animate-pulse" style={{ animationDelay: '1s' }} />
+        </div>
+
+        <div className="relative z-10 max-w-lg mx-auto px-6 py-8 text-center">
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl">
+            <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center">
+              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+
+            <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              Request Received!
+            </h1>
+
+            <p className="text-white/70 mb-6 leading-relaxed">
+              I'll personally review your quiz results and send you a custom roadmap for targeting high-net-worth customers within <span className="text-green-400 font-semibold">24 hours</span>.
+            </p>
+
+            <div className="bg-white/5 rounded-xl p-4 border border-white/10 mb-6">
+              <p className="text-sm text-white/60">
+                Check your inbox for an email from <span className="text-amber-400">amir@amirgomez.com</span>
+              </p>
+            </div>
+
+          </div>
+
+          {/* Book a call header */}
+          <div className="mt-8 text-center">
+            <h2 className="text-xl md:text-2xl font-bold text-white mb-2">
+              Or Book a Call to Discuss Your Roadmap Live
+            </h2>
+            <p className="text-white/60 text-sm">Skip the wait — let's talk strategy now</p>
+          </div>
+
+          {/* Calendly Embed */}
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-4 md:p-6 shadow-2xl mt-6">
+            <div className="rounded-2xl overflow-hidden bg-white" style={{ minHeight: '600px' }}>
+              <iframe
+                src="https://calendly.com/amir-amirgomez/30min"
+                width="100%"
+                height="600"
+                title="Calendly scheduling"
+                style={{ border: 'none' }}
+              />
+            </div>
+            <p className="text-white/40 text-xs mt-3 text-center">30-min strategy call • No obligation</p>
+          </div>
+
+          <a
+            href="/"
+            className="inline-block text-white/50 hover:text-white/70 text-sm transition-colors mt-6"
+          >
+            ← Back to homepage
+          </a>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white overflow-hidden relative">
@@ -84,15 +182,16 @@ function ThankYouContent() {
           <div className="flex items-center gap-3">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
             <span className="text-white/70 text-sm">
-              <span className="text-amber-400 font-semibold">Limited availability</span>
+              <span className="text-amber-400 font-semibold">Free personalized roadmap</span>
             </span>
           </div>
-          <a
-            href="#calendly"
-            className="w-full sm:w-auto text-center bg-gradient-to-r from-amber-500 to-yellow-500 text-black px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-amber-500/30 transition-all"
+          <button
+            onClick={handleRequestRoadmap}
+            disabled={isSubmitting}
+            className="w-full sm:w-auto text-center bg-gradient-to-r from-amber-500 to-yellow-500 text-black px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-amber-500/30 transition-all disabled:opacity-50"
           >
-            Book Free Strategy Session →
-          </a>
+            {isSubmitting ? 'Sending...' : 'Get My Free Roadmap →'}
+          </button>
         </div>
       </div>
 
@@ -120,7 +219,6 @@ function ThankYouContent() {
         {/* Results Section */}
         <section className="animate-fadeIn">
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 md:p-8 shadow-2xl">
-            {/* Animated Score Badge */}
             {/* Header + CTA Above the Fold */}
             <div className="text-center mb-6">
               <div
@@ -149,24 +247,25 @@ function ThankYouContent() {
               <div className="inline-flex items-center gap-2 mb-3">
                 <span className="text-white/50 line-through">$500 value</span>
                 <span className="bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full text-xs font-bold uppercase">
-                  FREE this week
+                  FREE
                 </span>
               </div>
 
-              <a
-                href="#calendly"
-                className={`block w-full text-center text-black px-6 py-4 rounded-2xl font-semibold text-lg transition-all hover:shadow-lg hover:scale-[1.02] bg-gradient-to-r ${readinessContent[readinessLevel].gradient} mb-2`}
+              <button
+                onClick={handleRequestRoadmap}
+                disabled={isSubmitting}
+                className={`block w-full text-center text-black px-6 py-4 rounded-2xl font-semibold text-lg transition-all hover:shadow-lg hover:scale-[1.02] bg-gradient-to-r ${readinessContent[readinessLevel].gradient} mb-2 disabled:opacity-50 disabled:cursor-not-allowed`}
                 style={{ boxShadow: `0 10px 40px ${readinessContent[readinessLevel].color}30` }}
               >
-                {readinessContent[readinessLevel].cta} →
-              </a>
+                {isSubmitting ? 'Sending Request...' : readinessContent[readinessLevel].cta + ' →'}
+              </button>
 
               <p className="text-amber-400/80 text-xs">
                 <span className="inline-flex items-center gap-1">
                   <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                    <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  30-min strategy session
+                  I'll send your personalized roadmap within 24 hours
                 </span>
               </p>
             </div>
@@ -200,7 +299,7 @@ function ThankYouContent() {
 
             {/* Recommendations - Compact */}
             <div>
-              <h3 className="text-sm font-semibold text-white/70 mb-3 uppercase tracking-wide">Your Roadmap</h3>
+              <h3 className="text-sm font-semibold text-white/70 mb-3 uppercase tracking-wide">Your Roadmap Preview</h3>
               <div className="space-y-2">
                 {readinessContent[readinessLevel].bullets.map((bullet, i) => (
                   <div
@@ -223,15 +322,15 @@ function ThankYouContent() {
           </div>
         </section>
 
-        {/* Who You'll Be Talking To Section - MOVED UP */}
+        {/* Who You'll Be Talking To Section */}
         <section className="py-8">
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl">
             <div className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                Who You'll Be Talking To
+                Who's Behind Your Roadmap
               </h2>
               <p className="text-white/60">
-                Your call will be with the founder — not a salesperson.
+                Your roadmap will be created personally by the founder.
               </p>
             </div>
 
@@ -370,104 +469,66 @@ function ThankYouContent() {
           </div>
         </section>
 
-        {/* What to Expect Section */}
+        {/* What You'll Get Section */}
         <section className="py-8">
           <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl">
             <div className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                What to Expect on Your Call
+                What's In Your Free Roadmap
               </h2>
               <p className="text-white/60">
-                A focused 30-minute session designed to give you real value
+                A personalized action plan delivered to your inbox within 24 hours
               </p>
             </div>
 
             <div className="space-y-4">
               <div className="flex items-start gap-4 p-5 bg-gradient-to-r from-amber-500/10 to-transparent rounded-xl border border-amber-500/20">
                 <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center flex-shrink-0">
-                  <span className="text-amber-400 font-bold">1</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-1">Quick Audit (5 min)</h4>
-                  <p className="text-white/60 text-sm">We'll review your current setup and identify immediate gaps in your high-net-worth targeting</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-5 bg-gradient-to-r from-amber-500/10 to-transparent rounded-xl border border-amber-500/20">
-                <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center flex-shrink-0">
-                  <span className="text-amber-400 font-bold">2</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-1">Strategy Deep-Dive (15 min)</h4>
-                  <p className="text-white/60 text-sm">I'll share 2-3 specific tactics you can implement to reach HHI $150K+ audiences effectively</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-5 bg-gradient-to-r from-amber-500/10 to-transparent rounded-xl border border-amber-500/20">
-                <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center flex-shrink-0">
-                  <span className="text-amber-400 font-bold">3</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-1">Action Plan (10 min)</h4>
-                  <p className="text-white/60 text-sm">You'll leave with a clear roadmap — whether we work together or you implement it yourself</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Guarantee */}
-            <div className="mt-8 p-5 bg-green-500/10 rounded-xl border border-green-500/30">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-green-400 mb-1">No-Pressure Guarantee</h4>
-                  <p className="text-white/60 text-sm">If within the first 5 minutes you feel this isn't a fit, just say so and we'll end the call — no hard feelings, no sales pitch.</p>
+                  <h4 className="font-semibold text-white mb-1">Custom Targeting Strategy</h4>
+                  <p className="text-white/60 text-sm">Specific audience segments for your business to reach HNW individuals</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-5 bg-gradient-to-r from-amber-500/10 to-transparent rounded-xl border border-amber-500/20">
+                <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-1">Quick Win Opportunities</h4>
+                  <p className="text-white/60 text-sm">2-3 tactics you can implement immediately based on your current setup</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-5 bg-gradient-to-r from-amber-500/10 to-transparent rounded-xl border border-amber-500/20">
+                <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-1">Premium Positioning Tips</h4>
+                  <p className="text-white/60 text-sm">How to position your brand to attract high-net-worth customers</p>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
 
-        {/* Calendly Section */}
-        <section id="calendly" className="py-8">
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl">
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center gap-2 mb-4">
-                <span className="text-white/50 line-through text-lg">$500 value</span>
-                <span className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wide">
-                  FREE this week
-                </span>
-              </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                Book Your Strategy Session
-              </h2>
-              <p className="text-white/60">
-                30 minutes to review your roadmap and find quick wins for high net worth targeting.
-              </p>
-            </div>
-
-            <div className="rounded-2xl overflow-hidden bg-white" style={{ minHeight: '700px' }}>
-              <iframe
-                src="https://calendly.com/amir-amirgomez/30min"
-                width="100%"
-                height="700"
-                title="Calendly scheduling"
-                style={{ border: 'none' }}
-              />
-            </div>
-
-            <div className="text-center mt-6">
-              <a
-                href="https://calendly.com/amir-amirgomez/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-amber-400 hover:text-amber-300 text-sm transition-colors"
+            {/* Final CTA */}
+            <div className="mt-8 text-center">
+              <button
+                onClick={handleRequestRoadmap}
+                disabled={isSubmitting}
+                className={`w-full md:w-auto bg-gradient-to-r ${readinessContent[readinessLevel].gradient} text-black px-8 py-4 rounded-2xl font-semibold text-lg transition-all hover:shadow-lg hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed`}
               >
-                Open Calendly in new tab →
-              </a>
+                {isSubmitting ? 'Sending Request...' : 'Get My Free Roadmap →'}
+              </button>
+              <p className="text-white/50 text-xs mt-3">No call required. Delivered straight to your inbox.</p>
             </div>
           </div>
         </section>

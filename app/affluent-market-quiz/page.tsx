@@ -228,6 +228,7 @@ export default function AffluentMarketQuizPage() {
       level,
       segment: answers.q3 || '',
       goal: answers.q1 || '',
+      email: leadData.email || '',
     });
     window.location.href = `/thank/affluent-market-quiz?${params.toString()}`;
   };
