@@ -14,8 +14,8 @@ interface AnimatedButtonProps {
   type?: 'button' | 'submit';
 }
 
-export default function AnimatedButton({ 
-  children, 
+export default function AnimatedButton({
+  children,
   onClick,
   variant = 'primary',
   size = 'md',
@@ -26,18 +26,18 @@ export default function AnimatedButton({
 }: AnimatedButtonProps) {
   const [isPressed, setIsPressed] = useState(false);
 
-  const baseClasses = "relative overflow-hidden font-semibold rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 cursor-pointer";
-  
+  const baseClasses = "relative overflow-hidden font-semibold rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 cursor-pointer";
+
   const variantClasses = {
-    primary: "bg-orange-600 text-white hover:bg-orange-700 shadow-lg",
-    secondary: "border-2 border-foreground/20 hover:bg-foreground/5",
+    primary: "text-white shimmer-on-hover",
+    secondary: "border-2 border-foreground/20 hover:bg-foreground/5 hover:border-brand-500/30",
     ghost: "hover:bg-foreground/5"
   };
 
   const sizeClasses = {
-    sm: "px-4 py-2 text-sm",
-    md: "px-6 py-3 text-base",
-    lg: "px-8 py-4 text-lg"
+    sm: "px-5 py-2.5 text-sm",
+    md: "px-7 py-3.5 text-base",
+    lg: "px-9 py-4.5 text-lg"
   };
 
   const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
@@ -48,12 +48,16 @@ export default function AnimatedButton({
       className={combinedClasses}
       onClick={onClick}
       disabled={disabled || loading}
-      whileHover={{ 
-        scale: disabled ? 1 : 1.02,
+      style={variant === 'primary' ? {
+        background: 'linear-gradient(135deg, var(--brand-500), var(--brand-600))',
+      } : undefined}
+      whileHover={{
+        scale: disabled ? 1 : 1.05,
+        boxShadow: variant === 'primary' ? 'var(--shadow-brand)' : undefined,
         transition: { duration: 0.2 }
       }}
-      whileTap={{ 
-        scale: disabled ? 1 : 0.98,
+      whileTap={{
+        scale: disabled ? 1 : 0.97,
         transition: { duration: 0.1 }
       }}
       onMouseDown={() => setIsPressed(true)}
@@ -69,7 +73,7 @@ export default function AnimatedButton({
         }}
         transition={{ duration: 0.3 }}
       />
-      
+
       {/* Loading spinner */}
       {loading && (
         <motion.div
@@ -85,7 +89,7 @@ export default function AnimatedButton({
           />
         </motion.div>
       )}
-      
+
       {/* Button content */}
       <motion.span
         animate={{ opacity: loading ? 0 : 1 }}

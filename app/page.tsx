@@ -1,18 +1,59 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { getFeaturedPosts } from '@/data/blog-posts';
 import MultiStepForm from '@/components/MultiStepForm';
 import { useFormModal } from '@/components/useFormModal';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
-import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { FadeInView, SlideInView, StaggerContainer, CountUpNumber, ParallaxView, HoverLift, AnimatedButton, MagneticHover, ScrollNavbar, HeroTextReveal, GSAPParallax, TimelineProcess } from '@/components/animations';
+import {
+  FadeInView,
+  SlideInView,
+  StaggerContainer,
+  CountUpNumber,
+  HoverLift,
+  AnimatedButton,
+  MagneticHover,
+  ScrollNavbar,
+  HeroTextReveal,
+  GSAPParallax,
+  TimelineProcess,
+} from '@/components/animations';
+import MeshGradient from '@/components/effects/MeshGradient';
+import SpotlightCard from '@/components/effects/SpotlightCard';
+import SectionDivider from '@/components/effects/SectionDivider';
+import AmbientOrbs from '@/components/effects/AmbientOrbs';
+import CustomCursor from '@/components/effects/CustomCursor';
 import { useState } from 'react';
+import { Target, Smartphone, BarChart3, Mail, Code2, TrendingUp, Quote, ArrowRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Home() {
   const { isOpen, currentVariant, openForm, closeForm, handleSubmit } = useFormModal();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const services = [
+    { icon: Target, title: 'Google Ads Management', desc: 'Strategic Google Ads campaigns that target your ideal customers and maximize your advertising budget with proven optimization techniques.', features: ['Keyword research & strategy', 'Campaign setup & optimization', 'Performance tracking & reporting'] },
+    { icon: Smartphone, title: 'Social Media Advertising', desc: 'Facebook, Instagram, and LinkedIn advertising that builds brand awareness and drives qualified leads through advanced targeting strategies.', features: ['Audience research & targeting', 'Creative development & testing', 'Campaign optimization'] },
+    { icon: BarChart3, title: 'Conversion Optimization', desc: 'Landing page optimization and conversion rate improvements that turn more visitors into customers through data-driven testing.', features: ['Landing page design & testing', 'A/B testing & analytics', 'User experience optimization'] },
+    { icon: Mail, title: 'Email Marketing', desc: 'Automated email sequences and campaigns that nurture leads and increase customer lifetime value through personalized messaging.', features: ['Email automation setup', 'List building & segmentation', 'Performance optimization'] },
+    { icon: Code2, title: 'Website Development', desc: 'Custom website design and development with integrated analytics, strategic planning, and performance optimization.', features: ['Custom website design & development', 'Analytics setup & tracking', 'Strategic planning & optimization'] },
+    { icon: TrendingUp, title: 'Marketing Strategy & Analytics', desc: 'Comprehensive marketing strategy development with advanced analytics, performance tracking, and data-driven optimization recommendations.', features: ['Marketing strategy development', 'Advanced analytics implementation', 'Performance tracking & reporting'] },
+  ];
+
+  const processSteps = [
+    { number: 1, title: 'Audit & Analysis', description: 'Comprehensive analysis of your current marketing performance, competitors, and growth opportunities.' },
+    { number: 2, title: 'Strategy Development', description: 'Custom marketing strategy creation based on your specific business goals, target audience, and budget.' },
+    { number: 3, title: 'Campaign Launch', description: 'Implementation of campaigns across selected platforms with proper tracking and optimization systems in place.' },
+    { number: 4, title: 'Optimize & Scale', description: 'Continuous optimization based on performance data to maximize ROI and scale successful campaigns.' },
+  ];
+
+  const testimonials = [
+    { quote: "Amir is one of the most talented marketers I've had the opportunity to work with. I strongly recommend him.", name: 'Steven Page', title: 'VP of Marketing at Giant Partners' },
+    { quote: "Amir possesses a deep understanding of market trends and customer behavior, and has a remarkable talent for creating innovative strategies that drive business growth and increase revenue.", name: 'Nick Koriakos', title: 'Founder of Stack Force' },
+    { quote: "I deeply trust Amir's ability to drive business growth, simplifying complex scenarios into actionable strategies.", name: 'Agustin Oliva', title: 'General Manager of RollerShow' },
+  ];
 
   return (
     <>
@@ -26,9 +67,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-5HKRKM7F');`,
         }}
       />
-      {/* End Google Tag Manager */}
-      
-      {/* Google Tag Manager (noscript) */}
       <noscript>
         <iframe
           src="https://www.googletagmanager.com/ns.html?id=GTM-5HKRKM7F"
@@ -37,497 +75,545 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           style={{ display: 'none', visibility: 'hidden' }}
         />
       </noscript>
-      {/* End Google Tag Manager (noscript) */}
-      
-      <div className="min-h-screen bg-background text-foreground">
-        {/* Navigation */}
-      <ScrollNavbar className="bg-background/95 border-b border-foreground/10">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center">
-            <Link href="/" className="text-xl font-bold">
-              AG
-            </Link>
-            
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-6">
-              <Link href="/about" className="hover:text-foreground/80 transition-colors">About</Link>
-              <Link href="/services" className="hover:text-foreground/80 transition-colors">Services</Link>
-              <Link href="/blog" className="hover:text-foreground/80 transition-colors">Blog</Link>
-              <Link href="/contact" className="hover:text-foreground/80 transition-colors">Contact</Link>
-              <LanguageSwitcher currentLocale="en" />
-              <AnimatedButton 
-                onClick={() => openForm('consultation')}
-                variant="primary"
-                size="sm"
-                className="text-sm sm:text-base"
-              >
-                Get Free Consultation
-              </AnimatedButton>
-            </div>
 
-            {/* Mobile Navigation */}
-            <div className="md:hidden flex items-center space-x-3">
-              <LanguageSwitcher currentLocale="en" />
-              <button 
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-foreground hover:text-foreground/80 p-2"
-                aria-label="Toggle mobile menu"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
-          </div>
+      {/* Custom Cursor */}
+      <CustomCursor />
 
-          {/* Mobile Menu */}
-          {isMobileMenuOpen && (
-            <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-foreground/10 shadow-lg">
-              <div className="container mx-auto px-4 py-4 space-y-3">
-                <Link href="/about" className="block py-2 hover:text-orange-600 transition-colors">About</Link>
-                <Link href="/services" className="block py-2 hover:text-orange-600 transition-colors">Services</Link>
-                <Link href="/blog" className="block py-2 hover:text-orange-600 transition-colors">Blog</Link>
-                <Link href="/contact" className="block py-2 hover:text-orange-600 transition-colors">Contact</Link>
-                <div className="pt-3 border-t border-foreground/10">
-                  <AnimatedButton 
-                    onClick={() => {
-                      openForm('consultation');
-                      setIsMobileMenuOpen(false);
-                    }}
-                    variant="primary"
-                    className="w-full"
-                  >
-                    Get Free Consultation
-                  </AnimatedButton>
-                </div>
+      {/* Ambient Background Orbs */}
+      <AmbientOrbs />
+
+      <div className="min-h-screen bg-background text-foreground relative">
+
+        {/* ==========================================
+            NAVIGATION
+           ========================================== */}
+        <ScrollNavbar>
+          <div className="container mx-auto px-4">
+            <div className="flex justify-between items-center">
+              <Link href="/" className="font-display text-2xl font-extrabold tracking-tight">
+                <span className="text-gradient-brand">AG</span>
+              </Link>
+
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex items-center gap-8">
+                {['About', 'Services', 'Blog', 'Contact'].map((item) => (
+                  <MagneticHover key={item} strength={0.2}>
+                    <Link
+                      href={`/${item.toLowerCase()}`}
+                      className="relative text-foreground/70 hover:text-foreground transition-colors py-1 group"
+                    >
+                      {item}
+                      <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-brand-500 to-accent group-hover:w-full transition-all duration-300" />
+                    </Link>
+                  </MagneticHover>
+                ))}
+                <LanguageSwitcher currentLocale="en" />
+                <AnimatedButton
+                  onClick={() => openForm('consultation')}
+                  variant="primary"
+                  size="sm"
+                >
+                  Get Free Consultation
+                </AnimatedButton>
+              </div>
+
+              {/* Mobile Navigation */}
+              <div className="md:hidden flex items-center gap-3">
+                <LanguageSwitcher currentLocale="en" />
+                <button
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  className="text-foreground hover:text-foreground/80 p-2"
+                  aria-label="Toggle mobile menu"
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+                  </svg>
+                </button>
               </div>
             </div>
-          )}
-        </div>
-      </ScrollNavbar>
 
-      {/* Hero Section */}
-      <section className="container mx-auto px-4 py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Mobile Menu */}
+            <AnimatePresence>
+              {isMobileMenuOpen && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  className="md:hidden overflow-hidden"
+                >
+                  <div className="py-4 space-y-1">
+                    {['About', 'Services', 'Blog', 'Contact'].map((item, i) => (
+                      <motion.div
+                        key={item}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: i * 0.05 }}
+                      >
+                        <Link
+                          href={`/${item.toLowerCase()}`}
+                          className="block py-3 text-lg hover:text-brand-500 transition-colors"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {item}
+                        </Link>
+                      </motion.div>
+                    ))}
+                    <div className="pt-4 border-t border-border-subtle">
+                      <AnimatedButton
+                        onClick={() => { openForm('consultation'); setIsMobileMenuOpen(false); }}
+                        variant="primary"
+                        className="w-full"
+                      >
+                        Get Free Consultation
+                      </AnimatedButton>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </ScrollNavbar>
 
-            {/* Left Column - Text Content */}
-            <div className="text-center lg:text-left">
-              <FadeInView delay={0.2} className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-[1.1] tracking-tight">
-                Grow Your Business with <span className="text-orange-600">Proven Marketing</span>
+        {/* ==========================================
+            HERO SECTION
+           ========================================== */}
+        <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+          <MeshGradient />
+
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-7xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+                {/* Left Column - Text */}
+                <div className="text-center lg:text-left">
+                  <HeroTextReveal className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-[1.05] tracking-tight">
+                    Grow Your Business with Proven Marketing
+                  </HeroTextReveal>
+
+                  <motion.p
+                    initial={{ opacity: 0, filter: 'blur(10px)' }}
+                    animate={{ opacity: 1, filter: 'blur(0px)' }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    className="text-xl md:text-2xl text-foreground/60 mb-10 leading-relaxed max-w-xl lg:max-w-none"
+                  >
+                    I help businesses increase revenue through data-driven advertising strategies.
+                  </motion.p>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.8 }}
+                    className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10"
+                  >
+                    <AnimatedButton
+                      onClick={() => openForm('audit')}
+                      variant="primary"
+                      size="lg"
+                    >
+                      Get Free Marketing Audit
+                    </AnimatedButton>
+                    <AnimatedButton
+                      onClick={() => openForm('caseStudies')}
+                      variant="secondary"
+                      size="lg"
+                    >
+                      Grab Growth Playbook
+                    </AnimatedButton>
+                  </motion.div>
+
+                  {/* Trust Indicators */}
+                  <StaggerContainer
+                    staggerDelay={0.1}
+                    initialDelay={1}
+                    className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-5 mb-6"
+                  >
+                    {[
+                      { value: '$125M+', label: 'Generated' },
+                      { value: '100+', label: 'Funnels' },
+                      { value: '450%', label: 'Avg ROI' },
+                    ].map((stat) => (
+                      <div
+                        key={stat.label}
+                        className="glass rounded-full px-5 py-2.5 text-sm flex items-center gap-2"
+                      >
+                        <span className="font-bold text-brand-500">{stat.value}</span>
+                        <span className="text-foreground/60">{stat.label}</span>
+                      </div>
+                    ))}
+                  </StaggerContainer>
+
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.4 }}
+                    className="text-center lg:text-left"
+                  >
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-brand-600"
+                      style={{ background: 'linear-gradient(135deg, var(--brand-50), var(--accent-soft))' }}
+                    >
+                      <span className="w-2 h-2 bg-brand-500 rounded-full animate-pulse" />
+                      10 years in business
+                    </div>
+                  </motion.div>
+                </div>
+
+                {/* Right Column - Profile Image */}
+                <div className="flex justify-center lg:justify-end">
+                  <GSAPParallax speed={0.3} scale={true}>
+                    <div className="relative">
+                      {/* Glow behind image */}
+                      <div className="absolute inset-0 rounded-3xl opacity-40 blur-3xl"
+                        style={{ background: 'linear-gradient(135deg, var(--brand-400), var(--accent))' }}
+                      />
+                      {/* Image container with gradient border */}
+                      <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden gradient-border"
+                        style={{ boxShadow: 'var(--shadow-lg)' }}
+                      >
+                        <img
+                          src="/amir-profile.jpg"
+                          alt="Amir Gomez - Marketing Expert"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      {/* Floating decorative orbs */}
+                      <div className="absolute -top-6 -right-6 w-20 h-20 rounded-full opacity-60 blur-sm"
+                        style={{ background: 'linear-gradient(135deg, var(--brand-400), var(--accent))', animation: 'float 6s ease-in-out infinite' }}
+                      />
+                      <div className="absolute -bottom-4 -left-4 w-14 h-14 rounded-full opacity-40 blur-sm"
+                        style={{ background: 'linear-gradient(135deg, var(--accent), var(--brand-500))', animation: 'float 8s ease-in-out infinite 2s' }}
+                      />
+                    </div>
+                  </GSAPParallax>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ==========================================
+            SERVICES SECTION
+           ========================================== */}
+        <SectionDivider fill="var(--background-secondary)" />
+
+        <section id="services" className="relative py-28 lg:py-36" style={{ background: 'var(--background-secondary)' }}>
+          <MeshGradient className="opacity-50" />
+
+          <div className="container mx-auto px-4 relative z-10">
+            <FadeInView className="text-center mb-20">
+              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight">
+                Full-Funnel Marketing Services That{' '}
+                <span className="text-gradient-brand">Drive Results</span>
+              </h2>
+            </FadeInView>
+
+            <StaggerContainer
+              staggerDelay={0.08}
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
+            >
+              {services.map((service) => {
+                const IconComponent = service.icon;
+                return (
+                  <SpotlightCard key={service.title} className="p-8">
+                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
+                      style={{ background: 'linear-gradient(135deg, var(--brand-500), var(--brand-600))' }}
+                    >
+                      <IconComponent className="w-7 h-7 text-white" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="font-display text-xl font-bold mb-4">{service.title}</h3>
+                    <p className="text-foreground/70 mb-5 leading-relaxed text-sm">{service.desc}</p>
+                    <ul className="text-sm text-foreground/60 space-y-2">
+                      {service.features.map((f) => (
+                        <li key={f} className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full bg-brand-500 shrink-0" />
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                  </SpotlightCard>
+                );
+              })}
+            </StaggerContainer>
+
+            <FadeInView delay={0.3} className="text-center mt-14">
+              <AnimatedButton
+                onClick={() => openForm('campaign')}
+                variant="primary"
+                size="lg"
+              >
+                Start Your Marketing Campaign
+              </AnimatedButton>
+            </FadeInView>
+          </div>
+        </section>
+
+        <SectionDivider variant="curve" flip fill="var(--background-secondary)" />
+
+        {/* ==========================================
+            PROCESS SECTION (Dark)
+           ========================================== */}
+        <section id="process" className="relative py-28 lg:py-36 bg-foreground text-background overflow-hidden">
+          {/* Subtle mesh on dark bg */}
+          <div className="absolute inset-0 pointer-events-none opacity-30" aria-hidden="true">
+            <div className="absolute w-[500px] h-[500px] rounded-full"
+              style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.15), transparent 70%)', top: '10%', right: '-5%', filter: 'blur(80px)' }}
+            />
+            <div className="absolute w-[400px] h-[400px] rounded-full"
+              style={{ background: 'radial-gradient(circle, rgba(245,158,11,0.1), transparent 70%)', bottom: '10%', left: '-5%', filter: 'blur(60px)' }}
+            />
+          </div>
+
+          <div className="container mx-auto px-4 max-w-7xl relative z-10">
+            <FadeInView className="text-center mb-20">
+              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight">
+                My Proven 4-Step Process
+              </h2>
+              <p className="text-xl md:text-2xl text-background/60 max-w-3xl mx-auto">
+                A systematic approach that has helped 200+ businesses achieve their marketing goals
+              </p>
+            </FadeInView>
+
+            <TimelineProcess
+              steps={processSteps}
+              className="relative"
+            />
+          </div>
+        </section>
+
+        {/* ==========================================
+            TESTIMONIALS SECTION
+           ========================================== */}
+        <section id="testimonials" className="relative py-28 lg:py-36 overflow-hidden"
+          style={{ background: 'var(--background-secondary)' }}
+        >
+          <MeshGradient className="opacity-40" />
+
+          <div className="container mx-auto px-4 relative z-10">
+            <FadeInView className="text-center mb-20">
+              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight">
+                What Clients Say
+              </h2>
+              <p className="text-xl md:text-2xl text-foreground/60">
+                Real results from real businesses
+              </p>
+            </FadeInView>
+
+            <StaggerContainer
+              staggerDelay={0.15}
+              className="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto"
+            >
+              {testimonials.map((t) => (
+                <SpotlightCard key={t.name} className="p-8 flex flex-col">
+                  {/* Decorative quote */}
+                  <Quote className="w-10 h-10 text-brand-500/30 mb-4" strokeWidth={1} />
+
+                  {/* Stars */}
+                  <div className="flex gap-1 mb-5">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-5 h-5" viewBox="0 0 20 20" fill="none">
+                        <defs>
+                          <linearGradient id={`star-grad-${t.name}-${i}`} x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stopColor="var(--brand-400)" />
+                            <stop offset="100%" stopColor="var(--accent)" />
+                          </linearGradient>
+                        </defs>
+                        <path
+                          d="M10 1l2.39 4.84L17.82 6.7l-3.91 3.81.92 5.38L10 13.23l-4.83 2.66.92-5.38L2.18 6.7l5.43-.86L10 1z"
+                          fill={`url(#star-grad-${t.name}-${i})`}
+                        />
+                      </svg>
+                    ))}
+                  </div>
+
+                  <p className="text-foreground/80 text-lg leading-relaxed italic flex-1 mb-6">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+
+                  <div className="border-t border-border-subtle pt-5">
+                    <div className="font-display font-bold">{t.name}</div>
+                    <div className="text-sm text-brand-600 font-medium">{t.title}</div>
+                  </div>
+                </SpotlightCard>
+              ))}
+            </StaggerContainer>
+          </div>
+        </section>
+
+        {/* ==========================================
+            CTA SECTION (Visual Climax)
+           ========================================== */}
+        <section className="relative py-32 lg:py-40 overflow-hidden">
+          {/* Dramatic gradient background */}
+          <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
+            style={{
+              background: 'radial-gradient(ellipse at center, rgba(249,115,22,0.08) 0%, transparent 70%)',
+            }}
+          />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
+            style={{
+              background: 'radial-gradient(circle, rgba(249,115,22,0.1), transparent 60%)',
+              filter: 'blur(80px)',
+              animation: 'pulseGlow 4s ease-in-out infinite',
+            }}
+            aria-hidden="true"
+          />
+
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <div className="max-w-5xl mx-auto">
+              <FadeInView>
+                <h2 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 tracking-tight">
+                  Ready to{' '}
+                  <span className="text-gradient-brand">Grow</span>
+                  {' '}Your Business?
+                </h2>
               </FadeInView>
 
-              <p className="text-xl md:text-2xl text-foreground/70 mb-8 leading-relaxed">
-                I help businesses increase revenue through data-driven advertising strategies.
-              </p>
+              <FadeInView delay={0.2}>
+                <p className="text-xl md:text-2xl text-foreground/60 mb-12">
+                  Get a free marketing audit and custom growth strategy.
+                </p>
+              </FadeInView>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-                  <AnimatedButton 
-                    onClick={() => openForm('audit')}
+              <FadeInView delay={0.4}>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                  <AnimatedButton
+                    onClick={() => openForm('consultation')}
                     variant="primary"
                     size="lg"
-                    className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
                   >
-                    Get Free Marketing Audit
+                    <span className="flex items-center gap-2">
+                      Get Free Consultation
+                      <ArrowRight className="w-5 h-5" />
+                    </span>
                   </AnimatedButton>
-                  <AnimatedButton 
+                  <AnimatedButton
                     onClick={() => openForm('caseStudies')}
                     variant="secondary"
                     size="lg"
-                    className="px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
                   >
-                    Grab Growth Playbook
+                    Grab My Free Growth Playbook
                   </AnimatedButton>
                 </div>
-              
-              {/* Trust Indicators */}
-              <div className="space-y-6">
-                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6 text-sm text-foreground/60">
-                  <div className="flex items-center gap-2">
-                    <span className="text-orange-500">✓</span>
-                    <span>$125M+ Generated with Campaigns</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-orange-500">✓</span>
-                    <span>100+ Successful Funnels</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-orange-500">✓</span>
-                    <span>Average 450% ROI</span>
-                  </div>
-                </div>
-                
-                {/* Years in Business Tagline */}
-                <div className="text-center lg:text-left">
-                  <div className="inline-flex items-center gap-2 bg-orange-50 dark:bg-orange-900/20 px-4 py-2 rounded-full text-orange-600 font-semibold text-sm">
-                    <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
-                    <span>10 years in business</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column - Profile Image */}
-            <div className="flex justify-center lg:justify-end">
-              <GSAPParallax speed={0.3} scale={true}>
-                <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-orange-100 dark:border-orange-900/30">
-                  <img
-                    src="/amir-profile.jpg"
-                    alt="Amir Gomez - Marketing Expert"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </GSAPParallax>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="bg-foreground/5 py-32">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
-              Full-Funnel Marketing Services That <span className="text-orange-600">Drive Results</span>
-            </h2>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            <div className="group bg-background border border-foreground/10 rounded-lg p-8 hover:border-orange-500/50 transition-all duration-300">
-              <div className="text-5xl mb-6">🎯</div>
-              <h3 className="text-2xl font-semibold mb-4">Google Ads Management</h3>
-              <p className="text-foreground/80 mb-4 leading-relaxed">
-                Strategic Google Ads campaigns that target your ideal customers 
-                and maximize your advertising budget with proven optimization techniques.
-              </p>
-              <ul className="text-sm text-foreground/70 space-y-2">
-                <li>• Keyword research & strategy</li>
-                <li>• Campaign setup & optimization</li>
-                <li>• Performance tracking & reporting</li>
-              </ul>
-            </div>
-
-            <div className="group bg-background border border-foreground/10 rounded-lg p-8 hover:border-orange-500/50 transition-all duration-300">
-              <div className="text-5xl mb-6">📱</div>
-              <h3 className="text-2xl font-semibold mb-4">Social Media Advertising</h3>
-              <p className="text-foreground/80 mb-4 leading-relaxed">
-                Facebook, Instagram, and LinkedIn advertising that builds brand awareness
-                and drives qualified leads through advanced targeting strategies.
-              </p>
-              <ul className="text-sm text-foreground/70 space-y-2">
-                <li>• Audience research & targeting</li>
-                <li>• Creative development & testing</li>
-                <li>• Campaign optimization</li>
-              </ul>
-            </div>
-
-            <div className="group bg-background border border-foreground/10 rounded-lg p-8 hover:border-orange-500/50 transition-all duration-300">
-              <div className="text-5xl mb-6">📊</div>
-              <h3 className="text-2xl font-semibold mb-4">Conversion Optimization</h3>
-              <p className="text-foreground/80 mb-4 leading-relaxed">
-                Landing page optimization and conversion rate improvements that turn
-                more visitors into customers through data-driven testing.
-              </p>
-              <ul className="text-sm text-foreground/70 space-y-2">
-                <li>• Landing page design & testing</li>
-                <li>• A/B testing & analytics</li>
-                <li>• User experience optimization</li>
-              </ul>
-            </div>
-
-            <div className="group bg-background border border-foreground/10 rounded-lg p-8 hover:border-orange-500/50 transition-all duration-300">
-              <div className="text-5xl mb-6">📧</div>
-              <h3 className="text-2xl font-semibold mb-4">Email Marketing</h3>
-              <p className="text-foreground/80 mb-4 leading-relaxed">
-                Automated email sequences and campaigns that nurture leads and
-                increase customer lifetime value through personalized messaging.
-              </p>
-              <ul className="text-sm text-foreground/70 space-y-2">
-                <li>• Email automation setup</li>
-                <li>• List building & segmentation</li>
-                <li>• Performance optimization</li>
-              </ul>
-            </div>
-
-            <div className="group bg-background border border-foreground/10 rounded-lg p-8 hover:border-orange-500/50 transition-all duration-300">
-              <div className="text-5xl mb-6">💻</div>
-              <h3 className="text-2xl font-semibold mb-4">Website Development</h3>
-              <p className="text-foreground/80 mb-4 leading-relaxed">
-                Custom website design and development with integrated analytics,
-                strategic planning, and performance optimization.
-              </p>
-              <ul className="text-sm text-foreground/70 space-y-2">
-                <li>• Custom website design & development</li>
-                <li>• Analytics setup & tracking</li>
-                <li>• Strategic planning & optimization</li>
-              </ul>
-            </div>
-
-            <div className="group bg-background border border-foreground/10 rounded-lg p-8 hover:border-orange-500/50 transition-all duration-300">
-              <div className="text-5xl mb-6">📊</div>
-              <h3 className="text-2xl font-semibold mb-4">Marketing Strategy and Analytics</h3>
-              <p className="text-foreground/80 mb-4 leading-relaxed">
-                Comprehensive marketing strategy development with advanced analytics,
-                performance tracking, and data-driven optimization recommendations.
-              </p>
-              <ul className="text-sm text-foreground/70 space-y-2">
-                <li>• Marketing strategy development</li>
-                <li>• Advanced analytics implementation</li>
-                <li>• Performance tracking & reporting</li>
-              </ul>
+                <p className="text-sm text-foreground/40">
+                  Free consultation &middot; No commitment
+                </p>
+              </FadeInView>
             </div>
           </div>
+        </section>
 
-          <div className="text-center mt-12">
-            <AnimatedButton 
-              onClick={() => openForm('campaign')}
-              variant="primary"
-              size="lg"
+        {/* ==========================================
+            BLOG HIGHLIGHTS SECTION
+           ========================================== */}
+        <SectionDivider fill="var(--background-secondary)" />
+
+        <section className="relative py-28 lg:py-36" style={{ background: 'var(--background-secondary)' }}>
+          <div className="container mx-auto px-4 relative z-10">
+            <FadeInView className="text-center mb-20">
+              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 tracking-tight">
+                Latest Marketing Insights
+              </h2>
+              <p className="text-xl md:text-2xl text-foreground/60 max-w-3xl mx-auto">
+                Proven strategies and real case studies from managing{' '}
+                <CountUpNumber to={2} prefix="$" suffix="M+ in ad spend" delay={0.5} />
+              </p>
+            </FadeInView>
+
+            <StaggerContainer
+              staggerDelay={0.1}
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
             >
-              Start Your Marketing Campaign
-            </AnimatedButton>
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section id="process" className="py-32">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
-              My Proven 4-Step Process
-            </h2>
-            <p className="text-xl md:text-2xl text-foreground/70 max-w-3xl mx-auto">
-              A systematic approach that has helped 200+ businesses achieve their marketing goals
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Step 1 */}
-            <div className="group bg-background border border-foreground/10 rounded-lg p-8 hover:border-orange-500/50 transition-all duration-300">
-              <div className="text-sm font-mono uppercase tracking-wider text-orange-600 mb-4">Step 01</div>
-              <h3 className="text-2xl font-semibold mb-4">Audit & Analysis</h3>
-              <p className="text-foreground/70 leading-relaxed">
-                Comprehensive analysis of your current marketing performance, competitors, and growth opportunities.
-              </p>
-            </div>
-
-            {/* Step 2 */}
-            <div className="group bg-background border border-foreground/10 rounded-lg p-8 hover:border-orange-500/50 transition-all duration-300">
-              <div className="text-sm font-mono uppercase tracking-wider text-orange-600 mb-4">Step 02</div>
-              <h3 className="text-2xl font-semibold mb-4">Strategy Development</h3>
-              <p className="text-foreground/70 leading-relaxed">
-                Custom marketing strategy creation based on your specific business goals, target audience, and budget.
-              </p>
-            </div>
-
-            {/* Step 3 */}
-            <div className="group bg-background border border-foreground/10 rounded-lg p-8 hover:border-orange-500/50 transition-all duration-300">
-              <div className="text-sm font-mono uppercase tracking-wider text-orange-600 mb-4">Step 03</div>
-              <h3 className="text-2xl font-semibold mb-4">Campaign Launch</h3>
-              <p className="text-foreground/70 leading-relaxed">
-                Implementation of campaigns across selected platforms with proper tracking and optimization systems in place.
-              </p>
-            </div>
-
-            {/* Step 4 */}
-            <div className="group bg-background border border-foreground/10 rounded-lg p-8 hover:border-orange-500/50 transition-all duration-300">
-              <div className="text-sm font-mono uppercase tracking-wider text-orange-600 mb-4">Step 04</div>
-              <h3 className="text-2xl font-semibold mb-4">Optimize & Scale</h3>
-              <p className="text-foreground/70 leading-relaxed">
-                Continuous optimization based on performance data to maximize ROI and scale successful campaigns.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section id="testimonials" className="bg-foreground/5 py-32">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
-              What Clients Say
-            </h2>
-            <p className="text-xl md:text-2xl text-foreground/70">
-              Real results from real businesses
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            <div className="group bg-background rounded-lg p-8 border border-foreground/10 hover:border-orange-500/50 transition-all duration-300">
-              <div className="mb-6">
-                <div className="text-orange-400 text-xl mb-4">★★★★★</div>
-                <p className="text-foreground/80 mb-6 text-lg leading-relaxed italic">
-                  "Amir is one of the most talented marketers I've had the opportunity to work with. I strongly recommend him."
-                </p>
-              </div>
-              <div className="border-t border-foreground/10 pt-6">
-                <div className="font-semibold text-foreground">Steven Page</div>
-                <div className="text-sm text-orange-600 font-medium">VP of Marketing at Giant Partners</div>
-              </div>
-            </div>
-
-            <div className="group bg-background rounded-lg p-8 border border-foreground/10 hover:border-orange-500/50 transition-all duration-300">
-              <div className="mb-6">
-                <div className="text-orange-400 text-xl mb-4">★★★★★</div>
-                <p className="text-foreground/80 mb-6 text-lg leading-relaxed italic">
-                  "Amir possesses a deep understanding of market trends and customer behavior, and has a remarkable talent for creating innovative strategies that drive business growth and increase revenue."
-                </p>
-              </div>
-              <div className="border-t border-foreground/10 pt-6">
-                <div className="font-semibold text-foreground">Nick Koriakos</div>
-                <div className="text-sm text-orange-600 font-medium">Founder of Stack Force</div>
-              </div>
-            </div>
-
-            <div className="group bg-background rounded-lg p-8 border border-foreground/10 hover:border-orange-500/50 transition-all duration-300">
-              <div className="mb-6">
-                <div className="text-orange-400 text-xl mb-4">★★★★★</div>
-                <p className="text-foreground/80 mb-6 text-lg leading-relaxed italic">
-                  "I deeply trust Amir's ability to drive business growth, simplifying complex scenarios into actionable strategies."
-                </p>
-              </div>
-              <div className="border-t border-foreground/10 pt-6">
-                <div className="font-semibold text-foreground">Agustin Oliva</div>
-                <div className="text-sm text-orange-600 font-medium">General Manager of RollerShow</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-32">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 tracking-tight">
-              Ready to Grow Your Business?
-            </h2>
-            <p className="text-xl md:text-2xl text-foreground/70 mb-10">
-              Get a free marketing audit and custom growth strategy.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <AnimatedButton 
-                onClick={() => openForm('consultation')}
-                variant="primary"
-                size="lg"
-              >
-                Get Free Consultation
-              </AnimatedButton>
-              <AnimatedButton 
-                onClick={() => openForm('caseStudies')}
-                variant="secondary"
-                size="lg"
-              >
-                Grab My Free Growth Playbook
-              </AnimatedButton>
-            </div>
-            <p className="text-base text-foreground/60">
-              Free consultation • No commitment
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Highlights Section */}
-      <section className="bg-foreground/5 py-32">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 tracking-tight">
-              Latest Marketing Insights
-            </h2>
-            <p className="text-xl md:text-2xl text-foreground/70 max-w-3xl mx-auto">
-              Proven strategies and real case studies from managing <CountUpNumber to={2} prefix="$" suffix="M+ in ad spend" delay={0.5} />
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            {getFeaturedPosts().slice(0, 3).map((post) => (
-              <article key={post.id} className="group">
-                <Link href={`/blog/${post.slug}`}>
-                  <div className="bg-background rounded-xl border border-foreground/10 overflow-hidden hover:shadow-lg transition-all duration-300 hover:border-orange-500/20">
-                    {/* Featured Image */}
-                    <div className="relative overflow-hidden aspect-[16/9] bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900/30 dark:to-orange-800/30">
-                      <img 
-                        src={post.featuredImage || 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=450&fit=crop&auto=format'} 
-                        alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    
-                    <div className="p-6">
-                      <div className="flex items-center gap-4 mb-4">
-                        <span className="bg-orange-100 dark:bg-orange-900/30 text-orange-600 px-3 py-1 rounded-full text-sm font-medium">
-                          {post.category}
-                        </span>
-                        <span className="text-sm text-foreground/60">
-                          {post.readingTime} min read
-                        </span>
+              {getFeaturedPosts().slice(0, 3).map((post) => (
+                <article key={post.id}>
+                  <Link href={`/blog/${post.slug}`}>
+                    <SpotlightCard className="overflow-hidden group">
+                      {/* Featured Image with gradient overlay */}
+                      <div className="relative overflow-hidden aspect-[16/9]">
+                        <img
+                          src={post.featuredImage || 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=450&fit=crop&auto=format'}
+                          alt={post.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                        {/* Category badge */}
+                        <div className="absolute top-4 left-4">
+                          <span className="glass rounded-full px-3 py-1 text-xs font-semibold text-white">
+                            {post.category}
+                          </span>
+                        </div>
+                        {/* Reading time */}
+                        <div className="absolute top-4 right-4">
+                          <span className="glass rounded-full px-3 py-1 text-xs text-white/80">
+                            {post.readingTime} min read
+                          </span>
+                        </div>
                       </div>
 
-                      <h3 className="text-xl font-bold mb-3 group-hover:text-orange-600 transition-colors">
-                        {post.title}
-                      </h3>
-
-                      <p className="text-foreground/80 mb-4 leading-relaxed">
-                        {post.excerpt}
-                      </p>
-
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-orange-100 dark:border-orange-900/30">
-                          <img 
-                            src={post.author.avatar} 
-                            alt={post.author.name}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div>
-                          <div className="font-semibold text-sm">{post.author.name}</div>
-                          <div className="text-sm text-foreground/60">
-                            {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                              month: 'long',
-                              day: 'numeric',
-                              year: 'numeric'
-                            })}
+                      <div className="p-6">
+                        <h3 className="font-display text-lg font-bold mb-3 group-hover:text-brand-500 transition-colors">
+                          {post.title}
+                        </h3>
+                        <p className="text-foreground/70 mb-5 leading-relaxed text-sm line-clamp-2">
+                          {post.excerpt}
+                        </p>
+                        <div className="flex items-center gap-3">
+                          <div className="w-9 h-9 rounded-full overflow-hidden border-2 border-brand-200">
+                            <img
+                              src={post.author.avatar}
+                              alt={post.author.name}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div>
+                            <div className="font-semibold text-sm">{post.author.name}</div>
+                            <div className="text-xs text-foreground/50">
+                              {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                                month: 'long',
+                                day: 'numeric',
+                                year: 'numeric'
+                              })}
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </Link>
-              </article>
-            ))}
-          </div>
+                    </SpotlightCard>
+                  </Link>
+                </article>
+              ))}
+            </StaggerContainer>
 
-          <div className="text-center mt-16">
-            <Link href="/blog">
-              <AnimatedButton 
-                variant="primary"
-                size="lg"
-                className="inline-flex items-center gap-2"
-              >
-                Read All Articles
-                <span>→</span>
-              </AnimatedButton>
-            </Link>
+            <FadeInView delay={0.3} className="text-center mt-16">
+              <Link href="/blog">
+                <AnimatedButton
+                  variant="primary"
+                  size="lg"
+                  className="inline-flex items-center gap-2"
+                >
+                  Read All Articles
+                  <ArrowRight className="w-5 h-5" />
+                </AnimatedButton>
+              </Link>
+            </FadeInView>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Footer */}
-      <Footer />
-      
-      {/* Multi-Step Form Modal */}
-      {currentVariant && (
-        <MultiStepForm
-          variant={currentVariant}
-          isOpen={isOpen}
-          onClose={closeForm}
-          onSubmit={handleSubmit}
-        />
-      )}
+        <SectionDivider variant="curve" flip fill="var(--background-secondary)" />
+
+        {/* ==========================================
+            FOOTER
+           ========================================== */}
+        <Footer />
+
+        {/* Multi-Step Form Modal */}
+        {currentVariant && (
+          <MultiStepForm
+            variant={currentVariant}
+            isOpen={isOpen}
+            onClose={closeForm}
+            onSubmit={handleSubmit}
+          />
+        )}
       </div>
     </>
   );
