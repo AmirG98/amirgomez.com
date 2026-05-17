@@ -237,6 +237,37 @@ body {
   100% { filter: hue-rotate(30deg); }
 }
 
+/* Animated gradient text */
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.text-gradient-animated {
+  background: linear-gradient(
+    90deg,
+    var(--brand-400),
+    var(--accent),
+    var(--brand-500),
+    var(--brand-300),
+    var(--accent),
+    var(--brand-400)
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 6s ease-in-out infinite;
+}
+
+/* Glow text shadow (applied via wrapper) */
+.hero-glow {
+  text-shadow:
+    0 0 40px rgba(249, 115, 22, 0.15),
+    0 0 80px rgba(249, 115, 22, 0.08),
+    0 0 120px rgba(245, 158, 11, 0.05);
+}
+
 /* ============================================
    NOISE TEXTURE OVERLAY
    ============================================ */

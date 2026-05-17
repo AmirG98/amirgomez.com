@@ -21,6 +21,7 @@ import {
   TimelineProcess,
 } from '@/components/animations';
 import MeshGradient from '@/components/effects/MeshGradient';
+import HeroBackground from '@/components/effects/HeroBackground';
 import SpotlightCard from '@/components/effects/SpotlightCard';
 // import SectionDivider from '@/components/effects/SectionDivider';
 import AmbientOrbs from '@/components/effects/AmbientOrbs';
@@ -178,30 +179,58 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* ==========================================
             HERO SECTION
            ========================================== */}
-        <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-          <MeshGradient />
+        <section className="relative min-h-screen flex items-center overflow-hidden bg-[#050505]">
+          {/* Canvas animated background */}
+          <HeroBackground />
+
+          {/* Radial glow behind text */}
+          <div
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none"
+            style={{
+              background: 'radial-gradient(circle, rgba(249,115,22,0.12) 0%, rgba(245,158,11,0.05) 30%, transparent 70%)',
+              filter: 'blur(40px)',
+            }}
+            aria-hidden="true"
+          />
 
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-5xl mx-auto text-center">
 
-              <HeroTextReveal className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-[1.05] tracking-tight">
-                Grow Your Business with Proven Marketing
-              </HeroTextReveal>
+              {/* Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="mb-8"
+              >
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold border border-white/10 bg-white/5 backdrop-blur-sm text-white/70">
+                  <span className="w-2 h-2 bg-brand-500 rounded-full animate-pulse" />
+                  10 years in business
+                </div>
+              </motion.div>
+
+              {/* Main headline */}
+              <div className="hero-glow">
+                <HeroTextReveal className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] font-extrabold mb-8 leading-[1.05] tracking-tight text-white">
+                  Grow Your Business with Proven Marketing
+                </HeroTextReveal>
+              </div>
 
               <motion.p
-                initial={{ opacity: 0, filter: 'blur(10px)' }}
-                animate={{ opacity: 1, filter: 'blur(0px)' }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-xl md:text-2xl text-foreground/60 mb-10 leading-relaxed max-w-2xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+                className="text-lg md:text-xl lg:text-2xl text-white/50 mb-12 leading-relaxed max-w-2xl mx-auto"
               >
                 I help businesses increase revenue through data-driven advertising strategies.
               </motion.p>
 
+              {/* CTA Buttons */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
+                transition={{ duration: 0.6, delay: 0.9 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center mb-14"
               >
                 <AnimatedButton
                   onClick={() => openForm('audit')}
@@ -210,51 +239,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 >
                   Get Free Marketing Audit
                 </AnimatedButton>
-                <AnimatedButton
+                <motion.button
                   onClick={() => openForm('caseStudies')}
-                  variant="secondary"
-                  size="lg"
+                  className="px-9 py-4.5 text-lg font-semibold rounded-full border border-white/20 text-white/80 hover:text-white hover:border-white/40 hover:bg-white/5 transition-all cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
                 >
                   Grab Growth Playbook
-                </AnimatedButton>
+                </motion.button>
               </motion.div>
 
               {/* Trust Indicators */}
-              <StaggerContainer
-                staggerDelay={0.1}
-                initialDelay={1}
-                className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 mb-6"
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+                className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6"
               >
                 {[
                   { value: '$125M+', label: 'Generated' },
                   { value: '100+', label: 'Funnels' },
                   { value: '450%', label: 'Avg ROI' },
-                ].map((stat) => (
+                ].map((stat, i) => (
                   <div
                     key={stat.label}
-                    className="glass rounded-full px-5 py-2.5 text-sm flex items-center gap-2"
+                    className="flex items-center gap-2 text-sm"
                   >
-                    <span className="font-bold text-brand-500">{stat.value}</span>
-                    <span className="text-foreground/60">{stat.label}</span>
+                    <span className="font-bold text-gradient-animated">{stat.value}</span>
+                    <span className="text-white/40">{stat.label}</span>
+                    {i < 2 && <span className="hidden sm:inline text-white/10 ml-3">|</span>}
                   </div>
                 ))}
-              </StaggerContainer>
-
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.4 }}
-              >
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-brand-600"
-                  style={{ background: 'linear-gradient(135deg, var(--brand-50), var(--accent-soft))' }}
-                >
-                  <span className="w-2 h-2 bg-brand-500 rounded-full animate-pulse" />
-                  10 years in business
-                </div>
               </motion.div>
 
             </div>
           </div>
+
+          {/* Bottom gradient fade to page background */}
+          <div
+            className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+            style={{
+              background: 'linear-gradient(to bottom, transparent, var(--background))',
+            }}
+          />
         </section>
 
         {/* ==========================================
