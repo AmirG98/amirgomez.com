@@ -16,7 +16,7 @@ import {
 } from '@/components/animations';
 import MeshGradient from '@/components/effects/MeshGradient';
 import SpotlightCard from '@/components/effects/SpotlightCard';
-import SectionDivider from '@/components/effects/SectionDivider';
+// import SectionDivider from '@/components/effects/SectionDivider';
 import AmbientOrbs from '@/components/effects/AmbientOrbs';
 import CustomCursor from '@/components/effects/CustomCursor';
 import { Target, Smartphone, Mail, BarChart3, Search, Rocket } from 'lucide-react';
@@ -324,7 +324,6 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <SectionDivider variant="wave" />
 
         {/* ==========================================
             SERVICES GRID
@@ -380,7 +379,6 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <SectionDivider variant="curve" fill="var(--background-secondary)" />
 
         {/* ==========================================
             PACKAGES SECTION
@@ -465,7 +463,6 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <SectionDivider variant="wave" flip />
 
         {/* ==========================================
             PROCESS SECTION
@@ -518,7 +515,6 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <SectionDivider variant="angle" fill="var(--background-secondary)" />
 
         {/* ==========================================
             CTA SECTION
@@ -555,7 +551,6 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <SectionDivider variant="curve" flip />
 
         {/* ==========================================
             FOOTER

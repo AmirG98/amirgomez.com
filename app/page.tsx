@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { getFeaturedPosts } from '@/data/blog-posts';
 import MultiStepForm from '@/components/MultiStepForm';
 import { useFormModal } from '@/components/useFormModal';
@@ -22,7 +22,7 @@ import {
 } from '@/components/animations';
 import MeshGradient from '@/components/effects/MeshGradient';
 import SpotlightCard from '@/components/effects/SpotlightCard';
-import SectionDivider from '@/components/effects/SectionDivider';
+// import SectionDivider from '@/components/effects/SectionDivider';
 import AmbientOrbs from '@/components/effects/AmbientOrbs';
 import CustomCursor from '@/components/effects/CustomCursor';
 import { useState } from 'react';
@@ -182,112 +182,77 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <MeshGradient />
 
           <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-7xl mx-auto">
-              <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="max-w-5xl mx-auto text-center">
 
-                {/* Left Column - Text */}
-                <div className="text-center lg:text-left">
-                  <HeroTextReveal className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-[1.05] tracking-tight">
-                    Grow Your Business with Proven Marketing
-                  </HeroTextReveal>
+              <HeroTextReveal className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-8 leading-[1.05] tracking-tight">
+                Grow Your Business with Proven Marketing
+              </HeroTextReveal>
 
-                  <motion.p
-                    initial={{ opacity: 0, filter: 'blur(10px)' }}
-                    animate={{ opacity: 1, filter: 'blur(0px)' }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                    className="text-xl md:text-2xl text-foreground/60 mb-10 leading-relaxed max-w-xl lg:max-w-none"
+              <motion.p
+                initial={{ opacity: 0, filter: 'blur(10px)' }}
+                animate={{ opacity: 1, filter: 'blur(0px)' }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="text-xl md:text-2xl text-foreground/60 mb-10 leading-relaxed max-w-2xl mx-auto"
+              >
+                I help businesses increase revenue through data-driven advertising strategies.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
+              >
+                <AnimatedButton
+                  onClick={() => openForm('audit')}
+                  variant="primary"
+                  size="lg"
+                >
+                  Get Free Marketing Audit
+                </AnimatedButton>
+                <AnimatedButton
+                  onClick={() => openForm('caseStudies')}
+                  variant="secondary"
+                  size="lg"
+                >
+                  Grab Growth Playbook
+                </AnimatedButton>
+              </motion.div>
+
+              {/* Trust Indicators */}
+              <StaggerContainer
+                staggerDelay={0.1}
+                initialDelay={1}
+                className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5 mb-6"
+              >
+                {[
+                  { value: '$125M+', label: 'Generated' },
+                  { value: '100+', label: 'Funnels' },
+                  { value: '450%', label: 'Avg ROI' },
+                ].map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="glass rounded-full px-5 py-2.5 text-sm flex items-center gap-2"
                   >
-                    I help businesses increase revenue through data-driven advertising strategies.
-                  </motion.p>
+                    <span className="font-bold text-brand-500">{stat.value}</span>
+                    <span className="text-foreground/60">{stat.label}</span>
+                  </div>
+                ))}
+              </StaggerContainer>
 
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.8 }}
-                    className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10"
-                  >
-                    <AnimatedButton
-                      onClick={() => openForm('audit')}
-                      variant="primary"
-                      size="lg"
-                    >
-                      Get Free Marketing Audit
-                    </AnimatedButton>
-                    <AnimatedButton
-                      onClick={() => openForm('caseStudies')}
-                      variant="secondary"
-                      size="lg"
-                    >
-                      Grab Growth Playbook
-                    </AnimatedButton>
-                  </motion.div>
-
-                  {/* Trust Indicators */}
-                  <StaggerContainer
-                    staggerDelay={0.1}
-                    initialDelay={1}
-                    className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-5 mb-6"
-                  >
-                    {[
-                      { value: '$125M+', label: 'Generated' },
-                      { value: '100+', label: 'Funnels' },
-                      { value: '450%', label: 'Avg ROI' },
-                    ].map((stat) => (
-                      <div
-                        key={stat.label}
-                        className="glass rounded-full px-5 py-2.5 text-sm flex items-center gap-2"
-                      >
-                        <span className="font-bold text-brand-500">{stat.value}</span>
-                        <span className="text-foreground/60">{stat.label}</span>
-                      </div>
-                    ))}
-                  </StaggerContainer>
-
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.4 }}
-                    className="text-center lg:text-left"
-                  >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-brand-600"
-                      style={{ background: 'linear-gradient(135deg, var(--brand-50), var(--accent-soft))' }}
-                    >
-                      <span className="w-2 h-2 bg-brand-500 rounded-full animate-pulse" />
-                      10 years in business
-                    </div>
-                  </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.4 }}
+              >
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-brand-600"
+                  style={{ background: 'linear-gradient(135deg, var(--brand-50), var(--accent-soft))' }}
+                >
+                  <span className="w-2 h-2 bg-brand-500 rounded-full animate-pulse" />
+                  10 years in business
                 </div>
+              </motion.div>
 
-                {/* Right Column - Profile Image */}
-                <div className="flex justify-center lg:justify-end">
-                  <GSAPParallax speed={0.3} scale={true}>
-                    <div className="relative">
-                      {/* Glow behind image */}
-                      <div className="absolute inset-0 rounded-3xl opacity-40 blur-3xl"
-                        style={{ background: 'linear-gradient(135deg, var(--brand-400), var(--accent))' }}
-                      />
-                      {/* Image container with gradient border */}
-                      <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-3xl overflow-hidden gradient-border"
-                        style={{ boxShadow: 'var(--shadow-lg)' }}
-                      >
-                        <img
-                          src="/amir-profile.jpg"
-                          alt="Amir Gomez - Marketing Expert"
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      {/* Floating decorative orbs */}
-                      <div className="absolute -top-6 -right-6 w-20 h-20 rounded-full opacity-60 blur-sm"
-                        style={{ background: 'linear-gradient(135deg, var(--brand-400), var(--accent))', animation: 'float 6s ease-in-out infinite' }}
-                      />
-                      <div className="absolute -bottom-4 -left-4 w-14 h-14 rounded-full opacity-40 blur-sm"
-                        style={{ background: 'linear-gradient(135deg, var(--accent), var(--brand-500))', animation: 'float 8s ease-in-out infinite 2s' }}
-                      />
-                    </div>
-                  </GSAPParallax>
-                </div>
-
-              </div>
             </div>
           </div>
         </section>
@@ -295,8 +260,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* ==========================================
             SERVICES SECTION
            ========================================== */}
-        <SectionDivider fill="var(--background-secondary)" />
-
         <section id="services" className="relative py-28 lg:py-36" style={{ background: 'var(--background-secondary)' }}>
           <MeshGradient className="opacity-50" />
 
@@ -347,8 +310,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </FadeInView>
           </div>
         </section>
-
-        <SectionDivider variant="curve" flip fill="var(--background-secondary)" />
 
         {/* ==========================================
             PROCESS SECTION (Dark)
@@ -506,8 +467,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* ==========================================
             BLOG HIGHLIGHTS SECTION
            ========================================== */}
-        <SectionDivider fill="var(--background-secondary)" />
-
         <section className="relative py-28 lg:py-36" style={{ background: 'var(--background-secondary)' }}>
           <div className="container mx-auto px-4 relative z-10">
             <FadeInView className="text-center mb-20">
@@ -597,8 +556,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </FadeInView>
           </div>
         </section>
-
-        <SectionDivider variant="curve" flip fill="var(--background-secondary)" />
 
         {/* ==========================================
             FOOTER

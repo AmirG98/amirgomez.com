@@ -32,88 +32,67 @@ function formatDate(dateString: string) {
 
 function BlogPostCard({ post, featured = false }: { post: typeof blogPosts[0], featured?: boolean }) {
   return (
-    <article className={`group ${featured ? 'md:col-span-2' : ''}`}>
+    <article className="group">
       <Link href={`/blog/${post.slug}`}>
-        <SpotlightCard>
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-          >
-            {/* Featured Image */}
-            <div className="relative overflow-hidden aspect-[16/9]">
-              <img
-                src={post.featuredImage || 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=450&fit=crop&auto=format'}
-                alt={post.title}
-                className="w-full h-full object-cover group-hover:scale-[1.08] transition-transform duration-500"
-              />
-              {/* Gradient overlay */}
+        <SpotlightCard className="overflow-hidden">
+          {/* Featured Image */}
+          <div className="relative overflow-hidden aspect-[16/9]">
+            <img
+              src={post.featuredImage || 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=450&fit=crop&auto=format'}
+              alt={post.title}
+              className="w-full h-full object-cover group-hover:scale-[1.08] transition-transform duration-500"
+            />
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+            {/* Featured badge */}
+            {featured && (
               <div
-                className="absolute inset-0 pointer-events-none"
+                className="absolute top-4 left-4 text-white px-4 py-2 text-sm font-semibold rounded-lg"
                 style={{
-                  background: 'linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.6) 100%)',
+                  background: 'linear-gradient(135deg, var(--brand-500), var(--brand-600))',
                 }}
-              />
-              {/* Featured badge */}
-              {featured && (
-                <div
-                  className="absolute top-4 left-4 glass text-white px-4 py-2 text-sm font-semibold rounded-lg"
-                  style={{
-                    background: 'linear-gradient(135deg, var(--brand-500), var(--brand-600))',
-                  }}
-                >
-                  Featured Article
-                </div>
-              )}
+              >
+                Featured Article
+              </div>
+            )}
+          </div>
+
+          <div className="p-6">
+            {/* Category and reading time */}
+            <div className="flex items-center gap-4 mb-4">
+              <span className="bg-brand-50 dark:bg-brand-900/20 text-brand-600 px-3 py-1 rounded-full text-sm font-medium">
+                {post.category}
+              </span>
+              <span className="text-sm text-foreground/60">
+                {post.readingTime} min read
+              </span>
             </div>
 
-            <div className="p-6">
-              {/* Category and reading time */}
-              <div className="flex items-center gap-4 mb-4">
-                <span className="glass px-3 py-1 rounded-full text-sm font-medium text-gradient-brand">
-                  {post.category}
-                </span>
-                <span className="text-sm text-foreground/60">
-                  {post.readingTime} min read
-                </span>
+            {/* Title */}
+            <h2 className={`font-display font-bold mb-3 group-hover:text-brand-500 transition-colors ${featured ? 'text-2xl md:text-3xl' : 'text-xl'}`}>
+              {post.title}
+            </h2>
+
+            {/* Excerpt */}
+            <p className="text-foreground/70 mb-4 leading-relaxed text-sm">
+              {post.excerpt}
+            </p>
+
+            {/* Author and date */}
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-full overflow-hidden border-2 border-brand-200 dark:border-brand-800/40">
+                <img
+                  src="/amir-profile.jpg"
+                  alt={post.author.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
-
-              {/* Title */}
-              <h2 className={`font-display font-bold mb-3 group-hover:text-gradient-brand transition-colors ${featured ? 'text-2xl md:text-3xl' : 'text-xl'}`}>
-                {post.title}
-              </h2>
-
-              {/* Excerpt */}
-              <p className="text-foreground/80 mb-4 leading-relaxed">
-                {post.excerpt}
-              </p>
-
-              {/* Author and date */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-brand-200 dark:border-brand-800/40">
-                    <img
-                      src="/amir-profile.jpg"
-                      alt={post.author.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-sm">{post.author.name}</div>
-                    <div className="text-sm text-foreground/60">{formatDate(post.publishedAt)} &bull; {post.readingTime} min read</div>
-                  </div>
-                </div>
-
-                {/* Tags */}
-                <div className="flex gap-2">
-                  {post.tags.slice(0, 2).map((tag) => (
-                    <span key={tag} className="text-xs glass px-2 py-1 rounded">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+              <div>
+                <div className="font-semibold text-sm">{post.author.name}</div>
+                <div className="text-xs text-foreground/50">{formatDate(post.publishedAt)}</div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </SpotlightCard>
       </Link>
     </article>
@@ -371,15 +350,16 @@ export default function BlogPage() {
             <FadeInView>
               <h2 className="font-display text-3xl font-extrabold tracking-tight mb-8">Featured Articles</h2>
             </FadeInView>
-            <StaggerContainer className="grid md:grid-cols-3 gap-8" staggerDelay={0.15}>
+            <div className="grid md:grid-cols-3 gap-6">
               {featuredPosts.map((post, index) => (
-                <BlogPostCard
-                  key={post.id}
-                  post={post}
-                  featured={index === 0}
-                />
+                <FadeInView key={post.id} delay={index * 0.1}>
+                  <BlogPostCard
+                    post={post}
+                    featured={index === 0}
+                  />
+                </FadeInView>
               ))}
-            </StaggerContainer>
+            </div>
           </section>
         )}
 
@@ -410,11 +390,11 @@ export default function BlogPage() {
               </div>
             </FadeInView>
           ) : (
-            <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" staggerDelay={0.1}>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredPosts.map((post) => (
                 <BlogPostCard key={post.id} post={post} />
               ))}
-            </StaggerContainer>
+            </div>
           )}
         </section>
 
