@@ -180,17 +180,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             HERO SECTION
            ========================================== */}
         <section className="relative min-h-screen flex items-center overflow-hidden bg-[#050505]">
-          {/* Canvas animated background */}
+          {/* Canvas animated background (includes bottom fade) */}
           <HeroBackground />
-
-          {/* Bottom fade: covers canvas, transitions to page bg */}
-          <div
-            className="absolute bottom-0 left-0 right-0 h-[40%] pointer-events-none z-[2]"
-            style={{
-              background: 'linear-gradient(to bottom, transparent 0%, var(--background) 100%)',
-            }}
-            aria-hidden="true"
-          />
 
           {/* Radial glow behind text */}
           <div

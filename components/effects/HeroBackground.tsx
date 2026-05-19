@@ -19,6 +19,9 @@ export default function HeroBackground() {
       hue: number;
     }> = [];
 
+    // Read the page background color from CSS variable
+    const pageBg = getComputedStyle(document.documentElement).getPropertyValue('--background').trim() || '#fafafa';
+
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -36,7 +39,7 @@ export default function HeroBackground() {
         vy: (Math.random() - 0.5) * 0.4,
         size: Math.random() * 2 + 0.5,
         opacity: Math.random() * 0.5 + 0.1,
-        hue: Math.random() * 40 + 15, // orange-amber range
+        hue: Math.random() * 40 + 15,
       });
     }
 
@@ -44,11 +47,16 @@ export default function HeroBackground() {
 
     const draw = () => {
       time += 0.003;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const W = canvas.width;
+      const H = canvas.height;
+
+      // Clear with solid dark background
+      ctx.fillStyle = '#050505';
+      ctx.fillRect(0, 0, W, H);
 
       // Draw aurora-like gradient waves
       for (let i = 0; i < 3; i++) {
-        const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        const gradient = ctx.createLinearGradient(0, 0, W, H);
         const shift = time * (0.5 + i * 0.3);
 
         gradient.addColorStop(0, `hsla(${25 + Math.sin(shift) * 15}, 95%, 55%, ${0.03 - i * 0.008})`);
@@ -60,15 +68,15 @@ export default function HeroBackground() {
 
         ctx.beginPath();
         ctx.moveTo(0, 0);
-        for (let x = 0; x <= canvas.width; x += 4) {
+        for (let x = 0; x <= W; x += 4) {
           const wave1 = Math.sin(x * 0.002 + shift + i) * 120;
           const wave2 = Math.cos(x * 0.001 + shift * 1.5 + i * 2) * 80;
           const wave3 = Math.sin(x * 0.003 + shift * 0.7) * 40;
-          const y = canvas.height * (0.3 + i * 0.15) + wave1 + wave2 + wave3;
+          const y = H * (0.3 + i * 0.15) + wave1 + wave2 + wave3;
           ctx.lineTo(x, y);
         }
-        ctx.lineTo(canvas.width, canvas.height);
-        ctx.lineTo(0, canvas.height);
+        ctx.lineTo(W, H);
+        ctx.lineTo(0, H);
         ctx.closePath();
         ctx.fill();
       }
@@ -78,20 +86,17 @@ export default function HeroBackground() {
         p.x += p.vx;
         p.y += p.vy;
 
-        // Wrap around
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
+        if (p.x < 0) p.x = W;
+        if (p.x > W) p.x = 0;
+        if (p.y < 0) p.y = H;
+        if (p.y > H) p.y = 0;
 
-        // Draw particle
         const pulse = Math.sin(time * 2 + idx) * 0.3 + 0.7;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size * pulse, 0, Math.PI * 2);
         ctx.fillStyle = `hsla(${p.hue}, 90%, 60%, ${p.opacity * pulse})`;
         ctx.fill();
 
-        // Draw connections
         for (let j = idx + 1; j < particles.length; j++) {
           const other = particles[j];
           const dx = p.x - other.x;
@@ -112,9 +117,9 @@ export default function HeroBackground() {
 
       // Large glowing orbs
       const orbs = [
-        { cx: canvas.width * (0.2 + Math.sin(time * 0.5) * 0.1), cy: canvas.height * (0.3 + Math.cos(time * 0.3) * 0.1), r: 250, hue: 25 },
-        { cx: canvas.width * (0.8 + Math.cos(time * 0.4) * 0.08), cy: canvas.height * (0.6 + Math.sin(time * 0.6) * 0.1), r: 200, hue: 35 },
-        { cx: canvas.width * (0.5 + Math.sin(time * 0.7) * 0.15), cy: canvas.height * (0.5 + Math.cos(time * 0.5) * 0.15), r: 300, hue: 20 },
+        { cx: W * (0.2 + Math.sin(time * 0.5) * 0.1), cy: H * (0.3 + Math.cos(time * 0.3) * 0.1), r: 250, hue: 25 },
+        { cx: W * (0.8 + Math.cos(time * 0.4) * 0.08), cy: H * (0.6 + Math.sin(time * 0.6) * 0.1), r: 200, hue: 35 },
+        { cx: W * (0.5 + Math.sin(time * 0.7) * 0.15), cy: H * (0.5 + Math.cos(time * 0.5) * 0.15), r: 300, hue: 20 },
       ];
 
       orbs.forEach((orb) => {
@@ -126,13 +131,30 @@ export default function HeroBackground() {
         ctx.fillRect(orb.cx - orb.r, orb.cy - orb.r, orb.r * 2, orb.r * 2);
       });
 
+      // === BOTTOM FADE: draw a gradient from transparent to page bg color ===
+      const fadeStart = H * 0.65;
+      const fadeGradient = ctx.createLinearGradient(0, fadeStart, 0, H);
+      fadeGradient.addColorStop(0, 'rgba(0,0,0,0)');
+      fadeGradient.addColorStop(1, pageBg);
+      ctx.fillStyle = fadeGradient;
+      ctx.fillRect(0, fadeStart, W, H - fadeStart);
+
       animationId = requestAnimationFrame(draw);
     };
 
-    // Check for reduced motion
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!prefersReduced) {
       draw();
+    } else {
+      // Draw one static frame
+      ctx.fillStyle = '#050505';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      const fadeStart = canvas.height * 0.65;
+      const fadeGradient = ctx.createLinearGradient(0, fadeStart, 0, canvas.height);
+      fadeGradient.addColorStop(0, 'rgba(0,0,0,0)');
+      fadeGradient.addColorStop(1, pageBg);
+      ctx.fillStyle = fadeGradient;
+      ctx.fillRect(0, fadeStart, canvas.width, canvas.height - fadeStart);
     }
 
     return () => {
@@ -145,7 +167,6 @@ export default function HeroBackground() {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full"
-      style={{ opacity: 0.9 }}
       aria-hidden="true"
     />
   );
