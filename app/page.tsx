@@ -179,7 +179,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* ==========================================
             HERO SECTION
            ========================================== */}
-        <section className="relative min-h-screen flex items-center overflow-hidden bg-[#050505]">
+        <section className="relative min-h-screen flex items-center overflow-hidden"
+          style={{ background: 'linear-gradient(to bottom, #050505 0%, #050505 75%, var(--background) 100%)' }}
+        >
           {/* Canvas animated background */}
           <HeroBackground />
 
@@ -275,20 +277,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
           </div>
 
-          {/* Bottom gradient fade to page background */}
-          <div
-            className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none"
-            style={{
-              background: 'linear-gradient(to bottom, transparent, var(--background))',
-            }}
-          />
         </section>
 
         {/* ==========================================
             SERVICES SECTION
            ========================================== */}
         <section id="services" className="relative py-28 lg:py-36 bg-background">
-          <MeshGradient className="opacity-50" />
 
           <div className="container mx-auto px-4 relative z-10">
             <FadeInView className="text-center mb-20">
