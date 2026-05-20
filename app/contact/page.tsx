@@ -16,8 +16,6 @@ import {
 } from '@/components/animations';
 import MeshGradient from '@/components/effects/MeshGradient';
 import SpotlightCard from '@/components/effects/SpotlightCard';
-import AmbientOrbs from '@/components/effects/AmbientOrbs';
-import CustomCursor from '@/components/effects/CustomCursor';
 import { Target, BarChart3, Rocket, Mail, Briefcase, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -52,12 +50,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
       </noscript>
       {/* End Google Tag Manager (noscript) */}
-
-      {/* Custom Cursor */}
-      <CustomCursor />
-
-      {/* Ambient Background Orbs */}
-      <AmbientOrbs />
 
       <div className="min-h-screen bg-background text-foreground relative">
 

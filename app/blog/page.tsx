@@ -18,8 +18,6 @@ import {
 } from '@/components/animations';
 import MeshGradient from '@/components/effects/MeshGradient';
 import SpotlightCard from '@/components/effects/SpotlightCard';
-import AmbientOrbs from '@/components/effects/AmbientOrbs';
-import CustomCursor from '@/components/effects/CustomCursor';
 
 function formatDate(dateString: string) {
   const date = new Date(dateString);
@@ -187,12 +185,6 @@ export default function BlogPage() {
 
   return (
     <>
-      {/* Custom Cursor */}
-      <CustomCursor />
-
-      {/* Ambient Background Orbs */}
-      <AmbientOrbs />
-
       <div className="min-h-screen bg-background text-foreground relative">
 
         {/* ==========================================

@@ -23,9 +23,6 @@ import {
 import MeshGradient from '@/components/effects/MeshGradient';
 import HeroBackground from '@/components/effects/HeroBackground';
 import SpotlightCard from '@/components/effects/SpotlightCard';
-// import SectionDivider from '@/components/effects/SectionDivider';
-import AmbientOrbs from '@/components/effects/AmbientOrbs';
-import CustomCursor from '@/components/effects/CustomCursor';
 import { useState } from 'react';
 import { Target, Smartphone, BarChart3, Mail, Code2, TrendingUp, Quote, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -76,12 +73,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           style={{ display: 'none', visibility: 'hidden' }}
         />
       </noscript>
-
-      {/* Custom Cursor */}
-      <CustomCursor />
-
-      {/* Ambient Background Orbs */}
-      <AmbientOrbs />
 
       <div className="min-h-screen bg-background text-foreground relative">
 
@@ -179,7 +170,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* ==========================================
             HERO SECTION
            ========================================== */}
-        <section className="relative min-h-screen flex items-center overflow-hidden bg-[#050505]">
+        <section className="relative min-h-screen flex items-center overflow-hidden"
+          style={{ background: 'linear-gradient(to bottom, #050505 50%, var(--background) 100%)' }}
+        >
           {/* Canvas animated background (includes bottom fade) */}
           <HeroBackground />
 

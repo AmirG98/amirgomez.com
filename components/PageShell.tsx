@@ -5,8 +5,6 @@ import { useState } from 'react';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Footer from '@/components/Footer';
 import { AnimatedButton, MagneticHover, ScrollNavbar } from '@/components/animations';
-import CustomCursor from '@/components/effects/CustomCursor';
-import AmbientOrbs from '@/components/effects/AmbientOrbs';
 import { useFormModal } from '@/components/useFormModal';
 import MultiStepForm from '@/components/MultiStepForm';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -25,9 +23,6 @@ export default function PageShell({ children, activeNav, locale = 'en' }: PageSh
 
   return (
     <>
-      <CustomCursor />
-      <AmbientOrbs />
-
       <div className="min-h-screen bg-background text-foreground relative">
         {/* Navigation */}
         <ScrollNavbar>

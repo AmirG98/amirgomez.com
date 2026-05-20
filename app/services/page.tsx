@@ -17,8 +17,6 @@ import {
 import MeshGradient from '@/components/effects/MeshGradient';
 import SpotlightCard from '@/components/effects/SpotlightCard';
 // import SectionDivider from '@/components/effects/SectionDivider';
-import AmbientOrbs from '@/components/effects/AmbientOrbs';
-import CustomCursor from '@/components/effects/CustomCursor';
 import { Target, Smartphone, Mail, BarChart3, Search, Rocket } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -155,12 +153,6 @@ export default function ServicesPage() {
 
   return (
     <>
-      {/* Custom Cursor */}
-      <CustomCursor />
-
-      {/* Ambient Background Orbs */}
-      <AmbientOrbs />
-
       <div className="min-h-screen bg-background text-foreground relative">
 
         {/* ==========================================

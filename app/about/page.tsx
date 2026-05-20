@@ -18,8 +18,6 @@ import {
 } from '@/components/animations';
 import SpotlightCard from '@/components/effects/SpotlightCard';
 import MeshGradient from '@/components/effects/MeshGradient';
-import CustomCursor from '@/components/effects/CustomCursor';
-import AmbientOrbs from '@/components/effects/AmbientOrbs';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function AboutPage() {
@@ -29,8 +27,6 @@ export default function AboutPage() {
 
   return (
     <>
-      <CustomCursor />
-      <AmbientOrbs />
       <div className="min-h-screen bg-background text-foreground relative">
         {/* Modern Navigation with ScrollNavbar */}
         <ScrollNavbar>
