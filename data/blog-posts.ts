@@ -33,6 +33,257 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "274",
+    title: "Unit Economics Explained: The Foundation of Sustainable Growth",
+    slug: "unit-economics-explained-sustainable-growth",
+    excerpt: "Master unit economics to build profitable, scalable businesses. Learn the essential metrics, frameworks, and strategies top companies use to drive sustainable growth.",
+    featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      avatar: "/images/amir-avatar.jpg"
+    },
+    publishedAt: "2026-05-26",
+    category: "Digital Marketing",
+    tags: ["unit economics", "customer acquisition", "LTV", "CAC", "growth metrics", "business strategy", "profitability", "SaaS metrics"],
+    featured: false,
+    readingTime: 9,
+    seo: {
+      metaTitle: "Unit Economics Explained: Growth Guide | Amir Gomez",
+      metaDescription: "Master unit economics to build profitable businesses. Learn CAC, LTV, and optimization strategies that drive sustainable growth. Expert insights inside.",
+      keywords: ["unit economics explained", "customer acquisition cost", "lifetime value", "CAC LTV ratio", "business profitability"]
+    },
+    content: `# Unit Economics Explained: The Foundation of Sustainable Growth
+
+In today's hyper-competitive digital landscape, understanding **unit economics explained** is the difference between building a sustainable business and burning through investor capital. While flashy growth metrics grab headlines, unit economics determines whether your company will thrive or become another cautionary tale.
+
+Unit economics measures the direct revenues and costs associated with a particular business model expressed on a per-unit basis. For SaaS companies, this might be per customer. For e-commerce, it's typically per order. For marketplaces, it could be per transaction.
+
+## What Are Unit Economics and Why They Matter
+
+**Unit economics explained** simply: it's the fundamental math that determines if your business model works at the most granular level. If you can't make money on a single customer, order, or transaction, scaling will only amplify your losses.
+
+Consider the cautionary tale of many dot-com era companies. Pets.com famously spent $300 to acquire customers who generated $150 in lifetime value. No amount of venture capital could fix those broken unit economics.
+
+Conversely, companies with strong unit economics can scale predictably. Amazon's Jeff Bezos famously said, "We can afford to lose money for a long time if we're improving our unit economics."
+
+### The Core Components
+
+Every unit economics model contains three essential elements:
+
+- **Revenue per unit**: What you earn from each customer/transaction
+- **Variable costs per unit**: Direct costs to serve each customer/transaction
+- **Unit contribution margin**: Revenue minus variable costs
+
+## Essential Unit Economics Metrics Every Marketer Must Track
+
+### Customer Acquisition Cost (CAC)
+
+**CAC** represents the total cost to acquire a new customer. Calculate it by dividing total acquisition costs by the number of customers acquired in that period.
+
+\`\`\`
+CAC = Total Marketing Spend ÷ Number of Customers Acquired
+\`\`\`
+
+HubSpot's 2024 analysis shows B2B SaaS companies with CACs under $200 grow 40% faster than those spending over $500 per customer.
+
+### Customer Lifetime Value (CLV or LTV)
+
+**LTV** predicts the total revenue a customer will generate throughout their relationship with your business.
+
+\`\`\`
+LTV = Average Purchase Value × Purchase Frequency × Customer Lifespan
+\`\`\`
+
+For subscription businesses:
+\`\`\`
+LTV = Monthly Recurring Revenue ÷ Monthly Churn Rate
+\`\`\`
+
+### LTV:CAC Ratio
+
+This critical ratio determines the sustainability of your growth engine. A healthy LTV:CAC ratio is generally 3:1 or higher, meaning each customer generates at least three times what you spend to acquire them.
+
+Shopify merchants with LTV:CAC ratios above 4:1 showed 60% higher profit margins in 2025 data.
+
+### Payback Period
+
+The time required to recover your customer acquisition investment:
+
+\`\`\`
+Payback Period = CAC ÷ Monthly Gross Margin per Customer
+\`\`\`
+
+Best-in-class SaaS companies achieve payback periods under 12 months.
+
+## Industry-Specific Unit Economics Models
+
+### SaaS Unit Economics
+
+Software businesses focus on **Monthly Recurring Revenue (MRR)** and **Annual Recurring Revenue (ARR)**. Key metrics include:
+
+- **Monthly churn rate**: Percentage of customers canceling monthly
+- **Net revenue retention**: Revenue expansion from existing customers
+- **Gross margin**: Typically 75-85% for mature SaaS companies
+
+Slack's pre-IPO unit economics showed $4.31 LTV for every $1.00 CAC, demonstrating the power of viral growth reducing acquisition costs.
+
+### E-commerce Unit Economics
+
+Retail businesses track:
+
+- **Average order value (AOV)**
+- **Gross margin per order**
+- **Repeat purchase rate**
+- **Inventory turnover**
+
+Warby Parker revolutionized eyewear by eliminating middlemen, achieving 60%+ gross margins compared to the industry average of 45%.
+
+### Marketplace Unit Economics
+
+Platform businesses monitor:
+
+- **Take rate**: Percentage commission per transaction
+- **Gross merchandise volume (GMV)**
+- **Network effects**: How additional users increase value
+
+Uber's unit economics improved dramatically as they achieved density in major markets, reducing driver wait times and increasing utilization rates.
+
+## How to Calculate and Optimize Your Unit Economics
+
+### Step 1: Define Your Unit
+
+Choose the most meaningful unit for your business:
+- **B2B SaaS**: Individual customer/account
+- **E-commerce**: Individual order or customer
+- **Media/Content**: Per user or per content piece
+- **Marketplace**: Per transaction or active user
+
+### Step 2: Track All Variable Costs
+
+Include every cost that scales with volume:
+- Marketing and advertising spend
+- Sales commissions and bonuses
+- Payment processing fees
+- Shipping and fulfillment costs
+- Customer support costs
+- Product/service delivery costs
+
+### Step 3: Calculate Core Metrics
+
+Use these formulas consistently:
+
+**Unit Revenue**: Total revenue ÷ Number of units
+**Unit Variable Cost**: Total variable costs ÷ Number of units
+**Unit Contribution Margin**: Unit revenue - Unit variable cost
+**Contribution Margin %**: (Unit contribution margin ÷ Unit revenue) × 100
+
+### Step 4: Optimize Each Component
+
+**Increase Unit Revenue**:
+- Implement dynamic pricing strategies
+- Develop premium product tiers
+- Add complementary services
+- Improve conversion rates
+
+**Decrease Variable Costs**:
+- Negotiate better supplier terms
+- Automate manual processes
+- Optimize logistics and fulfillment
+- Reduce customer support burden through self-service
+
+**Improve Customer Retention**:
+- Enhance onboarding experiences
+- Develop customer success programs
+- Create switching costs through integrations
+- Build community and network effects
+
+## Common Unit Economics Mistakes to Avoid
+
+### Mistake 1: Ignoring Cohort Analysis
+
+Calculating LTV using overall averages masks important trends. Analyze customer cohorts by acquisition month to identify improving or declining unit economics.
+
+Netflix's cohort analysis revealed that customers acquired through content recommendations had 25% higher LTV than those from paid advertising.
+
+### Mistake 2: Mixing Time Periods
+
+Never compare monthly CAC to annual LTV without adjusting for time value of money. Use consistent time periods or apply appropriate discount rates.
+
+### Mistake 3: Excluding Hidden Costs
+
+Many companies forget to include:
+- Credit card processing fees
+- Returns and refunds
+- Customer service overhead
+- Technical infrastructure costs
+- Fraud and chargebacks
+
+### Mistake 4: Optimizing for Vanity Metrics
+
+Focusing solely on growth rate or customer count while ignoring profitability per customer leads to unsustainable scaling.
+
+WeWork's spectacular collapse stemmed partly from prioritizing growth over unit economics fundamentals.
+
+## Advanced Unit Economics Strategies
+
+### Cohort-Based Analysis
+
+Track how unit economics evolve over time by analyzing customer groups acquired in specific periods. This reveals whether your business model is improving or deteriorating.
+
+### Scenario Modeling
+
+Create multiple unit economics scenarios:
+- **Conservative**: Assumes modest improvements
+- **Base case**: Current trajectory continues
+- **Optimistic**: Significant improvements in key metrics
+
+This helps with fundraising, budgeting, and strategic planning.
+
+### Geographic Segmentation
+
+Unit economics often vary dramatically by region due to:
+- Different CACs in various markets
+- Varying price sensitivity
+- Distinct competitive landscapes
+- Local operational costs
+
+Spotify's expansion strategy prioritized markets with favorable unit economics, leading to sustainable international growth.
+
+## The Future of Unit Economics in Digital Marketing
+
+As privacy regulations reshape digital advertising, unit economics become even more critical. iOS 14.5 and similar changes increased CACs by 15-30% for many advertisers.
+
+Successful companies are adapting by:
+- Investing in first-party data collection
+- Building direct customer relationships
+- Improving organic acquisition channels
+- Focusing on customer lifetime value optimization
+
+### AI and Machine Learning Applications
+
+Advanced analytics enable more sophisticated unit economics optimization:
+- **Predictive LTV modeling** using behavioral data
+- **Dynamic pricing** based on customer segments
+- **Personalized retention** strategies
+- **Automated bidding** optimization for profitable CACs
+
+## Taking Action: Your Unit Economics Roadmap
+
+Start improving your unit economics today with these concrete steps:
+
+1. **Audit your current tracking**: Ensure you're measuring all relevant costs and revenues
+2. **Calculate baseline metrics**: Establish your current CAC, LTV, and payback period
+3. **Identify optimization opportunities**: Find the biggest levers for improvement
+4. **Set improvement targets**: Create specific, measurable goals for each metric
+5. **Implement tracking systems**: Use tools like Google Analytics, Mixpanel, or custom dashboards
+6. **Regular review cycles**: Schedule monthly unit economics reviews
+
+Remember: **unit economics explained** is just the beginning. The real value comes from consistently measuring, optimizing, and scaling based on these fundamental metrics.
+
+Master your unit economics, and you'll build a business that doesn't just grow fast – it grows profitably and sustainably for the long term.`
+  },
+  {
     id: "273",
     title: "Product-Market Fit in 2026: Why Traditional Metrics Fail",
     slug: "product-market-fit-traditional-metrics-fail-2026",
