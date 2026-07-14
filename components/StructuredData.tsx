@@ -3,7 +3,7 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "A+ Growth",
-    "description": "A+ Growth turns scattered paid media, funnels and analytics into one clean acquisition signal, calibrating demand before you scale spend.",
+    "description": "A+ Growth turns ad spend into predictable revenue, connecting paid media, funnels and analytics into one clean acquisition signal.",
     "url": "https://www.amirgomez.com",
     "logo": "https://www.amirgomez.com/amir-profile.jpg",
     "image": "https://www.amirgomez.com/amir-profile.jpg",
