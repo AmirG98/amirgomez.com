@@ -107,11 +107,15 @@
   /* Narrative bridge shown above the 3D numbers so a business owner reads the "why" first */
   html.agrowth-scope .section-intro{position:relative;z-index:5;pointer-events:none;
     padding:6svh 6vw 0;max-width:44ch}
+  /* Soft scrim keeps the bridge copy legible where it sits over the 3D dials */
+  html.agrowth-scope .section-intro::before{content:'';position:absolute;z-index:-1;
+    top:-2svh;left:0;right:-6vw;bottom:-2svh;pointer-events:none;
+    background:radial-gradient(120% 100% at 20% 45%,rgba(5,6,8,.82) 0%,rgba(5,6,8,.55) 45%,transparent 78%)}
   html.agrowth-scope .section-intro .mono{display:block;margin-bottom:1rem}
   html.agrowth-scope .section-intro p{color:var(--fg);font-size:clamp(1.35rem,3.2vw,2.1rem);
     line-height:1.25;letter-spacing:-.02em;font-weight:500;
     text-shadow:0 2px 24px rgba(5,6,8,.85)}
-  @media(max-width:820px){
+  @media(max-width:900px){
     html.agrowth-scope .section-intro{padding-top:4svh}
     html.agrowth-scope .section-intro p{font-size:clamp(1.2rem,5vw,1.6rem)}
   }
@@ -135,9 +139,9 @@
   
   html.agrowth-scope #work .stage{min-height:52svh}
   html.agrowth-scope body.pairs-stack #work .stage{min-height:96svh}
-  @media(min-width:821px){html.agrowth-scope #work{padding-bottom:14svh}}
-  
-  @media(max-width:820px){
+  @media(min-width:901px){html.agrowth-scope #work{padding-bottom:14svh}}
+
+  @media(max-width:900px){
     html.agrowth-scope #signal .stage{min-height:40svh!important}
     html.agrowth-scope #method .stage{min-height:8.333svh}
     html.agrowth-scope body.pairs-stack #work .stage{min-height:33.333svh}
