@@ -104,21 +104,17 @@
   html.agrowth-scope .stage{min-height:100vh;min-height:100svh}
   html.agrowth-scope .stage-copy{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
     clip:rect(0,0,0,0);white-space:nowrap;border:0}
-  /* Narrative bridge shown above the 3D numbers so a business owner reads the "why" first */
-  html.agrowth-scope .section-intro{position:relative;z-index:5;pointer-events:none;
-    padding:6svh 6vw 0;max-width:44ch}
-  /* Soft scrim keeps the bridge copy legible where it sits over the 3D dials */
-  html.agrowth-scope .section-intro::before{content:'';position:absolute;z-index:-1;
-    top:-2svh;left:0;right:-6vw;bottom:-2svh;pointer-events:none;
-    background:radial-gradient(120% 100% at 20% 45%,rgba(5,6,8,.82) 0%,rgba(5,6,8,.55) 45%,transparent 78%)}
-  html.agrowth-scope .section-intro .mono{display:block;margin-bottom:1rem}
-  html.agrowth-scope .section-intro p{color:var(--fg);font-size:clamp(1.35rem,3.2vw,2.1rem);
-    line-height:1.25;letter-spacing:-.02em;font-weight:500;
-    text-shadow:0 2px 24px rgba(5,6,8,.85)}
-  @media(max-width:900px){
-    html.agrowth-scope .section-intro{padding-top:4svh}
-    html.agrowth-scope .section-intro p{font-size:clamp(1.2rem,5vw,1.6rem)}
-  }
+  /* Narrative lead-in: one full-screen opaque intro between the hero and the 3D
+     journey. Copies the .case-library pattern (z-index above the fixed canvas +
+     solid background + full section height) so it fully covers the canvas while
+     read and never overlaps the dials. Sits BEFORE #signal, so the JS journey
+     (which starts after hero + lead-in height) stays in sync. */
+  html.agrowth-scope .lead-in{position:relative;z-index:4;background:var(--bg);
+    min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+    padding:8svh 6vw;gap:1.2rem}
+  html.agrowth-scope .lead-in .mono{color:var(--brand)}
+  html.agrowth-scope .lead-in p{max-width:32ch;color:var(--fg);
+    font-size:clamp(1.6rem,4.2vw,3rem);line-height:1.18;letter-spacing:-.02em;font-weight:600}
   html.agrowth-scope.webgl-failed #gl, html.agrowth-scope.webgl-failed .scrim{display:none}
   html.agrowth-scope.webgl-failed .stage{min-height:auto!important}
   html.agrowth-scope.webgl-failed .stage-copy{position:relative;width:auto;height:auto;margin:1rem 6vw;padding:1.45rem 1.3rem;overflow:visible;
