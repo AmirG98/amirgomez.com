@@ -21,9 +21,9 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.amirgomez.com'),
-  title: "AG - Digital Marketing Specialist | $125M+ Generated with Campaigns",
-  description: "Digital marketing specialist helping businesses grow through Google Ads, Facebook advertising, email marketing, and conversion optimization. 10 years experience, 100+ successful funnels, 450% average ROI.",
-  keywords: ["digital marketing", "google ads", "facebook advertising", "email marketing", "conversion optimization", "marketing consultant", "ROI optimization", "PPC management"],
+  title: "A+ Growth — Demand Calibration | Paid Media, Funnels & Analytics",
+  description: "A+ Growth turns scattered paid media, funnels and analytics into one clean acquisition signal. 10 years, 300+ funnels across the US, Europe and LatAm — calibrate demand before you scale spend.",
+  keywords: ["demand generation", "paid media", "growth marketing", "acquisition", "funnels", "conversion optimization", "marketing analytics", "UGC", "SEO", "PPC management"],
   authors: [{ name: "Amir Gomez" }],
   creator: "Amir Gomez",
   publisher: "Amir Gomez",
@@ -42,22 +42,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://www.amirgomez.com",
-    siteName: "AG - Digital Marketing Specialist",
-    title: "AG - Digital Marketing Specialist | $125M+ Generated with Campaigns",
-    description: "Digital marketing specialist helping businesses grow through Google Ads, Facebook advertising, email marketing, and conversion optimization. 10 years experience, 100+ successful funnels, 450% average ROI.",
+    siteName: "A+ Growth",
+    title: "A+ Growth — Demand Calibration | Paid Media, Funnels & Analytics",
+    description: "A+ Growth turns scattered paid media, funnels and analytics into one clean acquisition signal. 10 years, 300+ funnels across the US, Europe and LatAm — calibrate demand before you scale spend.",
     images: [
       {
         url: "/amir-profile.jpg",
         width: 800,
         height: 800,
-        alt: "Amir Gomez - Digital Marketing Specialist",
+        alt: "Amir Gómez — A+ Growth",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AG - Digital Marketing Specialist | $125M+ Generated with Campaigns",
-    description: "Digital marketing specialist helping businesses grow through Google Ads, Facebook advertising, email marketing, and conversion optimization.",
+    title: "A+ Growth — Demand Calibration | Paid Media, Funnels & Analytics",
+    description: "A+ Growth turns scattered paid media, funnels and analytics into one clean acquisition signal. Calibrate demand before you scale spend.",
     images: ["/amir-profile.jpg"],
   },
 };

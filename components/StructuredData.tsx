@@ -2,24 +2,24 @@ export default function StructuredData() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Amir Gomez - Digital Marketing Specialist",
-    "description": "Digital marketing specialist helping businesses grow through Google Ads, Facebook advertising, email marketing, and conversion optimization.",
+    "name": "A+ Growth",
+    "description": "A+ Growth turns scattered paid media, funnels and analytics into one clean acquisition signal, calibrating demand before you scale spend.",
     "url": "https://www.amirgomez.com",
     "logo": "https://www.amirgomez.com/amir-profile.jpg",
     "image": "https://www.amirgomez.com/amir-profile.jpg",
     "founder": {
       "@type": "Person",
-      "name": "Amir Gomez",
-      "jobTitle": "Digital Marketing Specialist",
+      "name": "Amir Gómez",
+      "jobTitle": "Founder & Growth Lead",
       "image": "https://www.amirgomez.com/amir-profile.jpg",
       "url": "https://www.amirgomez.com/about"
     },
     "serviceType": [
-      "Google Ads Management",
-      "Facebook Advertising",
-      "Email Marketing",
-      "Conversion Rate Optimization",
-      "Digital Marketing Consulting"
+      "Full-funnel paid media",
+      "Creative & UGC (+AI)",
+      "SEO + GEO",
+      "Funnels, webinars & VSL",
+      "Data & full-funnel analytics"
     ],
     "areaServed": {
       "@type": "Place",
@@ -59,7 +59,7 @@ export default function StructuredData() {
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "",
+      "telephone": "+54-9-3541-370209",
       "contactType": "customer service",
       "availableLanguage": ["English", "Spanish"]
     },
