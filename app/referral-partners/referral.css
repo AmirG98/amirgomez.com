@@ -215,6 +215,14 @@
   .foot .contact a:hover { color: var(--orange-soft); border-color: var(--orange); }
   .foot .contact a:focus-visible { outline: 3px solid var(--orange-soft); outline-offset: 2px; }
   .foot .cta-row { margin-top: 28px; }
+  .rp .cal-embed {
+    margin-top: 30px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .cal-embed iframe { width: 100%; height: 700px; border: 0; display: block; }
+
   .rp .legal {
     margin-top: 40px;
     padding-top: 18px;
