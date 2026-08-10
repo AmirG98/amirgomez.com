@@ -68,6 +68,7 @@
     color: #fff;
     text-wrap: balance;
   }
+  .hero h1 .hl { color: var(--orange); }
   .rp .hero .sub {
     margin-top: 20px;
     max-width: 34em;
