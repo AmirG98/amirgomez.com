@@ -221,7 +221,10 @@
     overflow: hidden;
     background: #fff;
   }
-  .cal-embed iframe { width: 100%; height: 700px; border: 0; display: block; }
+  .cal-embed iframe { width: 100%; height: 1060px; border: 0; display: block; }
+  @media (max-width: 640px) {
+    .cal-embed iframe { height: 1000px; }
+  }
 
   .rp .legal {
     margin-top: 40px;
