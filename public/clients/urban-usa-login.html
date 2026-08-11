@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urban Real Estate — Reporte protegido</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #2b3947; --ink: #26303a; --ink-2: #5c6670; --ink-3: #98a0a8; --paper: #faf9f6; --hairline: #e4e0d7; --gold: #a8874f; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif; background: var(--paper); color: var(--ink);
+    min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px;
+  }
+  .box { text-align: center; max-width: 360px; width: 100%; }
+  .wordmark { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 24px; letter-spacing: 0.52em; text-indent: 0.52em; color: var(--navy); margin-top: 12px; }
+  .wordmark-sub { font-family: 'Jost', sans-serif; font-weight: 400; font-size: 9px; letter-spacing: 0.6em; text-indent: 0.6em; color: var(--navy); opacity: 0.75; margin-top: 3px; }
+  .rule { width: 48px; height: 1px; background: var(--gold); margin: 28px auto; }
+  p.msg { font-size: 14px; color: var(--ink-2); margin-bottom: 22px; }
+  input {
+    width: 100%; padding: 13px 16px; font-family: 'Inter', sans-serif; font-size: 15px; text-align: center;
+    letter-spacing: 0.1em; border: 1px solid var(--hairline); background: #fff; color: var(--ink); outline: none;
+  }
+  input:focus { border-color: var(--gold); }
+  button {
+    width: 100%; margin-top: 12px; padding: 13px 16px; cursor: pointer;
+    font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+    background: var(--navy); color: #fff; border: none; transition: background .25s;
+  }
+  button:hover { background: #1f2b37; }
+  .error { display: none; font-size: 13px; color: #a33; margin-top: 14px; }
+  .error.show { display: block; }
+</style>
+</head>
+<body>
+<div class="box">
+  <div id="burst"></div>
+  <div class="wordmark">URBAN</div>
+  <div class="wordmark-sub">REAL ESTATE</div>
+  <div class="rule"></div>
+  <p class="msg">Este reporte es privado. Ingresá la clave para acceder.</p>
+  <form id="f">
+    <input type="password" id="pass" placeholder="Clave de acceso" autocomplete="off" autofocus>
+    <button type="submit">Entrar</button>
+  </form>
+  <p class="error" id="err">Clave incorrecta. Probá de nuevo.</p>
+</div>
+<script>
+(function () {
+  var ns = 'http://www.w3.org/2000/svg';
+  var svg = document.createElementNS(ns, 'svg');
+  svg.setAttribute('width', 58); svg.setAttribute('height', 58);
+  svg.setAttribute('viewBox', '0 0 100 100'); svg.setAttribute('aria-hidden', 'true');
+  var lengths = [48, 24, 35, 24];
+  for (var i = 0; i < 48; i++) {
+    var a = (i * 7.5 - 90) * Math.PI / 180;
+    var line = document.createElementNS(ns, 'line');
+    line.setAttribute('x1', 50 + 12 * Math.cos(a)); line.setAttribute('y1', 50 + 12 * Math.sin(a));
+    line.setAttribute('x2', 50 + lengths[i % 4] * Math.cos(a)); line.setAttribute('y2', 50 + lengths[i % 4] * Math.sin(a));
+    line.setAttribute('stroke', '#2b3947'); line.setAttribute('stroke-width', '1');
+    svg.appendChild(line);
+  }
+  document.getElementById('burst').appendChild(svg);
+
+  var COOKIE = 'client_auth_urban-usa';
+  if (document.cookie.indexOf(COOKIE + '=') !== -1) {
+    document.getElementById('err').classList.add('show');
+    document.cookie = COOKIE + '=; path=/; max-age=0';
+  }
+  document.getElementById('f').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = document.getElementById('pass').value.trim();
+    if (!v) return;
+    document.cookie = COOKIE + '=' + encodeURIComponent(v) + '; path=/; max-age=2592000; SameSite=Lax';
+    location.reload();
+  });
+})();
+</script>
+</body>
+</html>

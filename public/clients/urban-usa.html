@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js');</script>
 <style>
   :root {
@@ -52,7 +52,7 @@
     display: flex; align-items: center; justify-content: space-between; gap: 16px;
     height: 54px;
   }
-  .nav-mark { font-family: var(--serif); font-size: 15px; letter-spacing: 0.32em; color: var(--navy); text-decoration: none; opacity: 0; transition: opacity .35s ease; white-space: nowrap; }
+  .nav-mark { font-family: 'Jost', var(--sans); font-weight: 300; font-size: 15px; letter-spacing: 0.38em; color: var(--navy); text-decoration: none; opacity: 0; transition: opacity .35s ease; white-space: nowrap; }
   nav.stuck .nav-mark { opacity: 1; }
   .nav-links { display: flex; gap: 22px; overflow-x: auto; scrollbar-width: none; }
   .nav-links::-webkit-scrollbar { display: none; }
@@ -74,8 +74,8 @@
 
   .hero { text-align: center; padding: 92px 0 64px; }
   .hero .burst svg { display: block; margin: 0 auto 14px; }
-  .wordmark { font-family: var(--serif); font-size: 26px; letter-spacing: 0.42em; color: var(--navy); text-indent: 0.42em; line-height: 1.1; }
-  .wordmark-sub { font-family: var(--serif); font-size: 10px; letter-spacing: 0.55em; text-indent: 0.55em; color: var(--ink-2); margin-top: 2px; }
+  .wordmark { font-family: 'Jost', var(--sans); font-weight: 300; font-size: 27px; letter-spacing: 0.52em; color: var(--navy); text-indent: 0.52em; line-height: 1.1; }
+  .wordmark-sub { font-family: 'Jost', var(--sans); font-weight: 400; font-size: 9.5px; letter-spacing: 0.6em; text-indent: 0.6em; color: var(--navy); opacity: 0.75; margin-top: 3px; }
   .hero .rule { width: 56px; height: 1px; background: var(--gold); margin: 28px auto 26px; }
   .hero h1 { font-family: var(--serif); font-size: 27px; font-weight: 400; color: var(--ink); letter-spacing: 0.02em; }
   .hero .period { margin-top: 10px; font-size: 13.5px; color: var(--ink-2); letter-spacing: 0.06em; }
@@ -193,7 +193,7 @@
 
   footer { text-align: center; padding-top: 56px; }
   footer .burst svg { display: block; margin: 0 auto 8px; }
-  footer .fm { font-family: var(--serif); font-size: 13px; letter-spacing: 0.35em; text-indent: 0.35em; color: var(--navy); }
+  footer .fm { font-family: 'Jost', var(--sans); font-weight: 300; font-size: 13px; letter-spacing: 0.42em; text-indent: 0.42em; color: var(--navy); }
   footer .credit { font-size: 12px; color: var(--ink-3); margin-top: 14px; letter-spacing: 0.04em; }
 
   .js .rv { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s cubic-bezier(.22,.61,.36,1); }
@@ -504,14 +504,15 @@
     svg.setAttribute('viewBox', '0 0 100 100');
     svg.setAttribute('aria-hidden', 'true');
     var cx = 50, cy = 50;
-    for (var i = 0; i < 36; i++) {
-      var a = (i * 10) * Math.PI / 180;
-      var r0 = 13;
-      var r1 = (i % 2 === 0) ? 46 : 30;
+    var lengths = [48, 24, 35, 24];
+    for (var i = 0; i < 48; i++) {
+      var a = (i * 7.5 - 90) * Math.PI / 180;
+      var r0 = 12;
+      var r1 = lengths[i % 4];
       var line = document.createElementNS(ns, 'line');
       line.setAttribute('x1', cx + r0 * Math.cos(a)); line.setAttribute('y1', cy + r0 * Math.sin(a));
       line.setAttribute('x2', cx + r1 * Math.cos(a)); line.setAttribute('y2', cy + r1 * Math.sin(a));
-      line.setAttribute('stroke', 'currentColor'); line.setAttribute('stroke-width', '1.4');
+      line.setAttribute('stroke', 'currentColor'); line.setAttribute('stroke-width', '1');
       svg.appendChild(line);
     }
     return svg;
