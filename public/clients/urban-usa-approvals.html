@@ -29,14 +29,27 @@
   #banner { display: none; max-width: 720px; margin: 0 auto 24px; font-size: 13px; color: var(--ink-2); background: var(--gold-soft); border-left: 2px solid var(--gold); padding: 10px 14px; }
   #banner.show { display: block; }
 
-  #admin-form { display: none; max-width: 720px; margin: 0 auto 28px; border: 1px solid var(--hairline); background: #fffefb; padding: 18px 20px; }
-  body.admin #admin-form { display: block; }
-  #admin-form .row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
-  #admin-form input, #admin-form select { font-family: var(--sans); font-size: 14px; padding: 9px 12px; border: 1px solid var(--hairline); background: #fff; color: var(--ink); outline: none; flex: 1; min-width: 140px; }
-  #admin-form input:focus, #admin-form select:focus { border-color: var(--gold); }
-  #admin-form button { font-family: var(--sans); font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; background: var(--navy); color: #fff; border: none; padding: 10px 22px; cursor: pointer; }
-  #admin-form button:hover { background: var(--navy-deep); }
-  #admin-form .t { font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 10px; }
+  .board-head { display: none; justify-content: flex-end; max-width: 1080px; margin: 0 0 14px; }
+  body.admin .board-head { display: flex; }
+  #btn-new { font-family: var(--sans); font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; background: var(--navy); color: #fff; border: none; padding: 11px 22px; cursor: pointer; }
+  #btn-new:hover { background: var(--navy-deep); }
+
+  #overlay { position: fixed; inset: 0; background: rgba(31,43,55,0.55); display: none; align-items: center; justify-content: center; z-index: 100; padding: 20px; }
+  #overlay.open { display: flex; }
+  .editor { background: #fffefb; max-width: 480px; width: 100%; padding: 28px 30px; }
+  .editor h2 { font-family: var(--serif); font-size: 20px; font-weight: 400; margin-bottom: 18px; }
+  .editor label { display: block; font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); margin: 14px 0 5px; }
+  .editor input, .editor select { width: 100%; font-family: var(--sans); font-size: 14.5px; padding: 10px 12px; border: 1px solid var(--hairline); background: #fff; color: var(--ink); outline: none; }
+  .editor input:focus, .editor select:focus { border-color: var(--gold); }
+  .editor .req { color: var(--gold); }
+  .editor .actions { display: flex; gap: 10px; margin-top: 22px; }
+  .editor .actions button { font-family: var(--sans); font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; padding: 11px 22px; cursor: pointer; border: none; }
+  #ed-save { background: var(--navy); color: #fff; flex: 1; }
+  #ed-save:hover { background: var(--navy-deep); }
+  #ed-cancel { background: none; border: 1px solid var(--hairline); color: var(--ink-2); }
+  #ed-cancel:hover { border-color: var(--ink-3); }
+  #ed-error { display: none; font-size: 12.5px; color: #a33; margin-top: 10px; }
+  #ed-error.show { display: block; }
 
   .board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: start; }
   .col { background: var(--paper-2); padding: 14px; min-height: 200px; }
@@ -96,10 +109,16 @@
 
   <div id="banner">Modo local: los movimientos se guardan en este navegador y A+Growth recibe aviso por email de cada cambio. El tablero compartido en vivo se activa próximamente.</div>
 
-  <div id="admin-form">
-    <p class="t">Agregar recurso (admin)</p>
-    <div class="row">
-      <input id="f-titulo" placeholder="Título del recurso">
+  <div class="board-head">
+    <button id="btn-new">+ Agregar recurso</button>
+  </div>
+
+  <div id="overlay">
+    <div class="editor">
+      <h2 id="ed-title">Nuevo recurso</h2>
+      <label>Título <span class="req">*</span></label>
+      <input id="f-titulo" placeholder="Video: Errores al comprar para Airbnb">
+      <label>Tipo</label>
       <select id="f-tipo">
         <option value="video">Video</option>
         <option value="imagen">Imagen</option>
@@ -107,12 +126,16 @@
         <option value="landing">Landing</option>
         <option value="otro">Otro</option>
       </select>
+      <label>Link al recurso <span class="req">*</span></label>
+      <input id="f-url" placeholder="drive.google.com/… · figma.com/… · preview de Meta">
+      <label>Nota breve (opcional)</label>
+      <input id="f-nota" placeholder="Variante con el hook nuevo">
+      <p id="ed-error"></p>
+      <div class="actions">
+        <button id="ed-save">Guardar</button>
+        <button id="ed-cancel">Cancelar</button>
+      </div>
     </div>
-    <div class="row">
-      <input id="f-url" placeholder="Link al recurso (Drive, Figma, preview…)">
-      <input id="f-nota" placeholder="Nota breve (opcional)">
-    </div>
-    <button id="f-add">Agregar al tablero</button>
   </div>
 
   <div class="board">
@@ -279,14 +302,7 @@
           if (c.comentario) notify(c.titulo, 'Nuevo comentario', c.comentario);
         }
       }
-      if (act === 'edit') {
-        var t = prompt('Título:', c.titulo); if (t === null) return;
-        var u = prompt('Link:', c.url || ''); if (u === null) return;
-        var n = prompt('Nota:', c.nota || ''); if (n === null) return;
-        c.titulo = t.trim() || c.titulo; c.url = u.trim(); c.nota = n.trim();
-        c.actualizado = new Date().toISOString();
-        save(); render();
-      }
+      if (act === 'edit') openEditor(c);
       if (act === 'archive') {
         if (confirm('¿Archivar "' + c.titulo + '"?')) { c.archivada = true; save(); render(); }
       }
@@ -309,20 +325,50 @@
     });
   });
 
-  document.getElementById('f-add').addEventListener('click', function () {
+  var editingId = null;
+  var overlay = document.getElementById('overlay');
+  function openEditor(card) {
+    editingId = card ? card.id : null;
+    document.getElementById('ed-title').textContent = card ? 'Editar recurso' : 'Nuevo recurso';
+    document.getElementById('f-titulo').value = card ? card.titulo : '';
+    document.getElementById('f-tipo').value = card ? card.tipo : 'video';
+    document.getElementById('f-url').value = card ? (card.url || '') : '';
+    document.getElementById('f-nota').value = card ? (card.nota || '') : '';
+    document.getElementById('ed-error').classList.remove('show');
+    overlay.classList.add('open');
+    document.getElementById('f-titulo').focus();
+  }
+  function closeEditor() { overlay.classList.remove('open'); editingId = null; }
+
+  document.getElementById('btn-new').addEventListener('click', function () { openEditor(null); });
+  document.getElementById('ed-cancel').addEventListener('click', closeEditor);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) closeEditor(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeEditor(); });
+
+  document.getElementById('ed-save').addEventListener('click', function () {
     var titulo = document.getElementById('f-titulo').value.trim();
-    if (!titulo) { alert('Falta el título.'); return; }
-    state.cards.push({
-      id: 'r-' + Date.now(),
-      titulo: titulo,
-      tipo: document.getElementById('f-tipo').value,
-      url: document.getElementById('f-url').value.trim(),
-      nota: document.getElementById('f-nota').value.trim(),
-      columna: 'Para revisar', comentario: '',
-      actualizado: new Date().toISOString()
-    });
-    ['f-titulo', 'f-url', 'f-nota'].forEach(function (id) { document.getElementById(id).value = ''; });
-    save(); render();
+    var url = document.getElementById('f-url').value.trim();
+    var err = document.getElementById('ed-error');
+    if (!titulo || !url) {
+      err.textContent = !titulo ? 'Falta el título del recurso.' : 'Falta el link al recurso.';
+      err.classList.add('show');
+      return;
+    }
+    if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
+    var tipo = document.getElementById('f-tipo').value;
+    var nota = document.getElementById('f-nota').value.trim();
+    if (editingId) {
+      var c = findCard(editingId);
+      if (c) { c.titulo = titulo; c.tipo = tipo; c.url = url; c.nota = nota; c.actualizado = new Date().toISOString(); }
+    } else {
+      state.cards.push({
+        id: 'r-' + Date.now(),
+        titulo: titulo, tipo: tipo, url: url, nota: nota,
+        columna: 'Para revisar', comentario: '',
+        actualizado: new Date().toISOString()
+      });
+    }
+    closeEditor(); save(); render();
   });
 
   function applyAdmin() {
