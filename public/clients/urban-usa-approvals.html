@@ -34,8 +34,10 @@
   #btn-new { font-family: var(--sans); font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; background: var(--navy); color: #fff; border: none; padding: 11px 22px; cursor: pointer; }
   #btn-new:hover { background: var(--navy-deep); }
 
-  #overlay { position: fixed; inset: 0; background: rgba(31,43,55,0.55); display: none; align-items: center; justify-content: center; z-index: 100; padding: 20px; }
-  #overlay.open { display: flex; }
+  #overlay, #fb-overlay { position: fixed; inset: 0; background: rgba(31,43,55,0.55); display: none; align-items: center; justify-content: center; z-index: 100; padding: 20px; }
+  #overlay.open, #fb-overlay.open { display: flex; }
+  .editor textarea { width: 100%; min-height: 110px; resize: vertical; font-family: var(--sans); font-size: 14.5px; line-height: 1.6; padding: 10px 12px; border: 1px solid var(--hairline); background: #fff; color: var(--ink); outline: none; }
+  .editor textarea:focus { border-color: var(--gold); }
   .editor { background: #fffefb; max-width: 480px; width: 100%; padding: 28px 30px; }
   .editor h2 { font-family: var(--serif); font-size: 20px; font-weight: 400; margin-bottom: 18px; }
   .editor label { display: block; font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); margin: 14px 0 5px; }
@@ -44,10 +46,10 @@
   .editor .req { color: var(--gold); }
   .editor .actions { display: flex; gap: 10px; margin-top: 22px; }
   .editor .actions button { font-family: var(--sans); font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; padding: 11px 22px; cursor: pointer; border: none; }
-  #ed-save { background: var(--navy); color: #fff; flex: 1; }
-  #ed-save:hover { background: var(--navy-deep); }
-  #ed-cancel { background: none; border: 1px solid var(--hairline); color: var(--ink-2); }
-  #ed-cancel:hover { border-color: var(--ink-3); }
+  #ed-save, #fb-send { background: var(--navy); color: #fff; flex: 1; }
+  #ed-save:hover, #fb-send:hover { background: var(--navy-deep); }
+  #ed-cancel, #fb-cancel { background: none; border: 1px solid var(--hairline); color: var(--ink-2); }
+  #ed-cancel:hover, #fb-cancel:hover { border-color: var(--ink-3); }
   #ed-error { display: none; font-size: 12.5px; color: #a33; margin-top: 10px; }
   #ed-error.show { display: block; }
 
@@ -70,9 +72,12 @@
   .card h3 { font-family: var(--serif); font-size: 16.5px; font-weight: 400; margin: 8px 0 2px; }
   .card .nota { font-size: 13px; color: var(--ink-2); }
   .card .comment { border-left: 2px solid var(--gold); padding: 2px 0 2px 10px; margin-top: 8px; font-size: 12.5px; font-style: italic; color: var(--ink-2); }
-  .card .foot { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+  .card .foot { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; gap: 10px; flex-wrap: wrap; }
+  .card .foot .links { display: flex; gap: 14px; }
   .card .foot a { font-size: 12.5px; color: var(--gold); text-decoration: none; letter-spacing: 0.03em; }
   .card .foot a:hover { text-decoration: underline; }
+  .card .foot a.fb { color: var(--ink-2); }
+  .card .foot a.fb:hover { color: var(--navy); }
   .card .when { font-size: 11.5px; color: var(--ink-3); }
   .card .menu-btn { position: absolute; top: 10px; right: 10px; background: none; border: none; color: var(--ink-3); font-size: 16px; cursor: pointer; padding: 2px 6px; }
   .card .menu-btn:hover { color: var(--ink); }
@@ -134,6 +139,19 @@
       <div class="actions">
         <button id="ed-save">Guardar</button>
         <button id="ed-cancel">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="fb-overlay">
+    <div class="editor">
+      <h2>Dejar feedback</h2>
+      <label id="fb-card-label">Sobre el recurso</label>
+      <textarea id="fb-text" placeholder="Contanos qué ajustarías, qué te gustó o qué falta…"></textarea>
+      <p id="fb-error" style="display:none; font-size:12.5px; color:#a33; margin-top:10px;"></p>
+      <div class="actions">
+        <button id="fb-send">Enviar feedback</button>
+        <button id="fb-cancel">Cancelar</button>
       </div>
     </div>
   </div>
@@ -203,6 +221,12 @@
     return 'hace ' + d + ' días';
   }
 
+  function extUrl(u) {
+    u = String(u || '').trim();
+    if (!u) return '';
+    return /^https?:\/\//i.test(u) ? u : 'https://' + u;
+  }
+
   function esc(s) {
     return String(s || '').replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
@@ -226,14 +250,16 @@
           (c.nota ? '<p class="nota">' + esc(c.nota) + '</p>' : '') +
           (c.comentario ? '<p class="comment">“' + esc(c.comentario) + '”</p>' : '') +
           '<div class="foot">' +
-            (c.url ? '<a href="' + esc(c.url) + '" target="_blank" rel="noopener">Ver recurso ↗</a>' : '<span></span>') +
+            '<span class="links">' +
+              (c.url ? '<a href="' + esc(extUrl(c.url)) + '" target="_blank" rel="noopener">Ver recurso ↗</a>' : '') +
+              '<a href="#" class="fb" data-act="feedback">Dejar feedback</a>' +
+            '</span>' +
             '<span class="when">' + relTime(c.actualizado) + '</span>' +
           '</div>' +
           '<div class="menu">' +
             COLS.filter(function (x) { return x !== col; }).map(function (x) {
               return '<button data-act="move" data-to="' + esc(x) + '">Mover a ' + esc(x.toLowerCase()) + '</button>';
             }).join('') +
-            '<button data-act="comment" class="sep">Comentar…</button>' +
             '<div class="admin-only"><button data-act="edit" class="sep">Editar (admin)</button>' +
             '<button data-act="archive" class="danger">Archivar (admin)</button></div>' +
           '</div>';
@@ -293,15 +319,7 @@
       var id = cardEl.getAttribute('data-id');
       var c = findCard(id);
       if (act === 'move') moveCard(id, e.target.getAttribute('data-to'));
-      if (act === 'comment') {
-        var txt = prompt('Comentario sobre "' + c.titulo + '":', c.comentario || '');
-        if (txt !== null) {
-          c.comentario = txt.trim();
-          c.actualizado = new Date().toISOString();
-          save(); render();
-          if (c.comentario) notify(c.titulo, 'Nuevo comentario', c.comentario);
-        }
-      }
+      if (act === 'feedback') { e.preventDefault(); openFeedback(c); }
       if (act === 'edit') openEditor(c);
       if (act === 'archive') {
         if (confirm('¿Archivar "' + c.titulo + '"?')) { c.archivada = true; save(); render(); }
@@ -343,7 +361,39 @@
   document.getElementById('btn-new').addEventListener('click', function () { openEditor(null); });
   document.getElementById('ed-cancel').addEventListener('click', closeEditor);
   overlay.addEventListener('click', function (e) { if (e.target === overlay) closeEditor(); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeEditor(); });
+
+  var fbOverlay = document.getElementById('fb-overlay');
+  var fbId = null;
+  function openFeedback(card) {
+    fbId = card.id;
+    document.getElementById('fb-card-label').textContent = 'Sobre: ' + card.titulo;
+    document.getElementById('fb-text').value = card.comentario || '';
+    document.getElementById('fb-error').style.display = 'none';
+    fbOverlay.classList.add('open');
+    document.getElementById('fb-text').focus();
+  }
+  function closeFeedback() { fbOverlay.classList.remove('open'); fbId = null; }
+  document.getElementById('fb-cancel').addEventListener('click', closeFeedback);
+  fbOverlay.addEventListener('click', function (e) { if (e.target === fbOverlay) closeFeedback(); });
+  document.getElementById('fb-send').addEventListener('click', function () {
+    var txt = document.getElementById('fb-text').value.trim();
+    if (!txt) {
+      var fe = document.getElementById('fb-error');
+      fe.textContent = 'Escribí el feedback antes de enviar.';
+      fe.style.display = 'block';
+      return;
+    }
+    var c = findCard(fbId);
+    if (!c) { closeFeedback(); return; }
+    c.comentario = txt;
+    if (c.columna === 'Para revisar') c.columna = 'Con comentarios';
+    c.actualizado = new Date().toISOString();
+    state.log.push({ ts: c.actualizado, quien: isAdmin ? 'admin' : 'cliente', que: 'feedback en "' + c.titulo + '"' });
+    closeFeedback(); save(); render();
+    notify(c.titulo, 'Feedback del cliente', txt);
+  });
+
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeEditor(); closeFeedback(); } });
 
   document.getElementById('ed-save').addEventListener('click', function () {
     var titulo = document.getElementById('f-titulo').value.trim();
