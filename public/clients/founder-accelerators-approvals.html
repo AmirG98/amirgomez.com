@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founder Accelerator — Aprobación de recursos</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #ff7139; --navy-deep: #e35f2b; --ink: #f2f5f7; --ink-2: #a7b4c0; --ink-3: #6c7a87;
+    --paper: #061018; --paper-2: #0d1826; --hairline: rgba(255,255,255,0.10); --gold: #f1b527; --gold-soft: rgba(241,181,39,0.12);
+    --panel: #101d2b;
+    --serif: 'Archivo', sans-serif; --sans: 'Inter', -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 1080px; margin: 0 auto; padding: 40px 24px 64px; }
+
+  header { text-align: center; margin-bottom: 34px; }
+  .wordmark { font-family: 'Archivo', var(--sans); font-weight: 700; font-size: 15px; letter-spacing: 0.26em; text-indent: 0.26em; color: #fff; margin-top: 14px; }
+  h1 { font-family: var(--serif); font-size: 24px; font-weight: 700; margin-top: 20px; }
+  .sub { font-size: 13.5px; color: var(--ink-2); margin-top: 4px; }
+  .backlink { display: inline-block; margin-top: 10px; font-size: 12.5px; color: var(--gold); text-decoration: none; letter-spacing: 0.04em; }
+  .backlink:hover { text-decoration: underline; }
+
+  #banner { display: none; max-width: 720px; margin: 0 auto 24px; font-size: 13px; color: var(--ink-2); background: var(--gold-soft); border-left: 2px solid var(--gold); padding: 10px 14px; }
+  #banner.show { display: block; }
+
+  .board-head { display: none; justify-content: flex-end; max-width: 1080px; margin: 0 0 14px; }
+  body.admin .board-head { display: flex; }
+  #btn-new { font-family: 'Archivo', var(--sans); font-size: 11.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; background: var(--navy); color: #061018; border: none; border-radius: 8px; padding: 11px 22px; cursor: pointer; }
+  #btn-new:hover { background: var(--navy-deep); }
+
+  #overlay, #fb-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.65); display: none; align-items: center; justify-content: center; z-index: 100; padding: 20px; }
+  #overlay.open, #fb-overlay.open { display: flex; }
+  .editor textarea { width: 100%; min-height: 110px; resize: vertical; font-family: var(--sans); font-size: 14.5px; line-height: 1.6; padding: 10px 12px; border: 1px solid var(--hairline); background: var(--paper-2); color: var(--ink); outline: none; border-radius: 8px; }
+  .editor textarea:focus { border-color: var(--navy); }
+  .editor input::placeholder, .editor textarea::placeholder { color: var(--ink-3); }
+  .editor { background: var(--panel); border: 1px solid var(--hairline); border-radius: 12px; max-width: 480px; width: 100%; padding: 28px 30px; }
+  .editor h2 { font-family: var(--serif); font-size: 20px; font-weight: 700; margin-bottom: 18px; }
+  .editor label { display: block; font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); margin: 14px 0 5px; }
+  .editor input, .editor select { width: 100%; font-family: var(--sans); font-size: 14.5px; padding: 10px 12px; border: 1px solid var(--hairline); background: var(--paper-2); color: var(--ink); outline: none; border-radius: 8px; }
+  .editor input:focus, .editor select:focus { border-color: var(--navy); }
+  .editor .req { color: var(--navy); }
+  .editor .actions { display: flex; gap: 10px; margin-top: 22px; }
+  .editor .actions button { font-family: var(--sans); font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; padding: 11px 22px; cursor: pointer; border: none; }
+  #ed-save, #fb-send { background: var(--navy); color: #061018; font-weight: 700; border-radius: 8px; flex: 1; }
+  #ed-save:hover, #fb-send:hover { background: var(--navy-deep); }
+  #ed-cancel, #fb-cancel { border-radius: 8px; }
+  #ed-cancel, #fb-cancel { background: none; border: 1px solid var(--hairline); color: var(--ink-2); }
+  #ed-cancel:hover, #fb-cancel:hover { border-color: var(--ink-3); }
+  #ed-error { display: none; font-size: 12.5px; color: #ff8a80; margin-top: 10px; }
+  #ed-error.show { display: block; }
+
+  .board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: start; }
+  .col { background: var(--paper-2); padding: 14px; min-height: 200px; }
+  .col h2 { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 12px; }
+  .col h2 .count { color: var(--gold); }
+  .cards { min-height: 60px; display: flex; flex-direction: column; gap: 10px; }
+
+  .card { background: var(--panel); border: 1px solid var(--hairline); border-radius: 10px; padding: 14px 16px; cursor: grab; position: relative; }
+  .card:active { cursor: grabbing; }
+  .card.sortable-ghost { opacity: 0.35; border-style: dashed; }
+  .card.sortable-drag { box-shadow: 0 10px 28px rgba(0,0,0,0.5); }
+  .chip { display: inline-block; font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 9px; border-radius: 5px; }
+  .chip.video { color: #8ec2ff; background: rgba(55,138,221,0.16); }
+  .chip.imagen { color: #ffab8a; background: rgba(255,113,57,0.16); }
+  .chip.copy { color: #b6abff; background: rgba(127,119,221,0.18); }
+  .chip.landing { color: #7fe0bb; background: rgba(29,158,117,0.16); }
+  .chip.otro { color: #b8c2cc; background: rgba(255,255,255,0.08); }
+  .card h3 { font-family: var(--serif); font-size: 16px; font-weight: 600; margin: 8px 0 2px; color: #fff; }
+  .card .nota { font-size: 13px; color: var(--ink-2); }
+  .card .comment { border-left: 2px solid var(--gold); padding: 2px 0 2px 10px; margin-top: 8px; font-size: 12.5px; font-style: italic; color: var(--ink-2); }
+  .card .foot { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; gap: 10px; flex-wrap: wrap; }
+  .card .foot .links { display: flex; gap: 14px; }
+  .card .foot a { font-size: 12.5px; color: var(--gold); text-decoration: none; letter-spacing: 0.03em; }
+  .card .foot a:hover { text-decoration: underline; }
+  .card .foot a.fb { color: var(--ink-2); }
+  .card .foot a.fb:hover { color: var(--navy); }
+  .card .when { font-size: 11.5px; color: var(--ink-3); }
+  .card .menu-btn { position: absolute; top: 10px; right: 10px; background: none; border: none; color: var(--ink-3); font-size: 16px; cursor: pointer; padding: 2px 6px; }
+  .card .menu-btn:hover { color: var(--ink); }
+  .menu { position: absolute; top: 32px; right: 10px; z-index: 10; background: var(--panel); border: 1px solid var(--hairline); border-radius: 8px; box-shadow: 0 10px 28px rgba(0,0,0,0.5); min-width: 190px; display: none; overflow: hidden; }
+  .menu.open { display: block; }
+  .menu button { display: block; width: 100%; text-align: left; background: none; border: none; font-family: var(--sans); font-size: 13px; color: var(--ink); padding: 9px 14px; cursor: pointer; }
+  .menu button:hover { background: var(--paper-2); }
+  .menu .sep { border-top: 1px solid var(--hairline); }
+  .menu .danger { color: #a33; }
+  .admin-only { display: none; }
+  body.admin .admin-only { display: block; }
+
+  footer { text-align: center; margin-top: 48px; font-size: 12px; color: var(--ink-3); }
+  footer a { color: var(--ink-3); text-decoration: none; }
+  footer a:hover { color: var(--gold); }
+
+  @media (max-width: 820px) {
+    .board { grid-template-columns: 1fr; }
+    .card { cursor: default; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true">
+      <defs><linearGradient id="fasun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F8D45C"/><stop offset="1" stop-color="#F96B45"/></linearGradient></defs>
+      <circle cx="50" cy="50" r="46" fill="url(#fasun)"/>
+    </svg>
+    <div class="wordmark">FOUNDER ACCELERATOR</div>
+    <h1>Aprobación de recursos</h1>
+    <p class="sub">Arrastrá cada recurso a su estado — o usá el menú ⋯ de la tarjeta.</p>
+    <a class="backlink" href="/clients/founder-accelerators">← Volver al portal</a>
+  </header>
+
+  <div id="banner">Modo local: los movimientos se guardan en este navegador y A+Growth recibe aviso por email de cada cambio. El tablero compartido en vivo se activa próximamente.</div>
+
+  <div class="board-head">
+    <button id="btn-new">+ Agregar recurso</button>
+  </div>
+
+  <div id="overlay">
+    <div class="editor">
+      <h2 id="ed-title">Nuevo recurso</h2>
+      <label>Título <span class="req">*</span></label>
+      <input id="f-titulo" placeholder="Video: Errores al comprar para Airbnb">
+      <label>Tipo</label>
+      <select id="f-tipo">
+        <option value="video">Video</option>
+        <option value="imagen">Imagen</option>
+        <option value="copy">Copy</option>
+        <option value="landing">Landing</option>
+        <option value="otro">Otro</option>
+      </select>
+      <label>Link al recurso <span class="req">*</span></label>
+      <input id="f-url" placeholder="drive.google.com/… · figma.com/… · preview de Meta">
+      <label>Nota breve (opcional)</label>
+      <input id="f-nota" placeholder="Variante con el hook nuevo">
+      <p id="ed-error"></p>
+      <div class="actions">
+        <button id="ed-save">Guardar</button>
+        <button id="ed-cancel">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="fb-overlay">
+    <div class="editor">
+      <h2>Dejar feedback</h2>
+      <label id="fb-card-label">Sobre el recurso</label>
+      <textarea id="fb-text" placeholder="Contanos qué ajustarías, qué te gustó o qué falta…"></textarea>
+      <p id="fb-error" style="display:none; font-size:12.5px; color:#ff8a80; margin-top:10px;"></p>
+      <div class="actions">
+        <button id="fb-send">Enviar feedback</button>
+        <button id="fb-cancel">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="board">
+    <div class="col">
+      <h2>Para revisar <span class="count" id="c-0"></span></h2>
+      <div class="cards" data-col="Para revisar"></div>
+    </div>
+    <div class="col">
+      <h2>Con comentarios <span class="count" id="c-1"></span></h2>
+      <div class="cards" data-col="Con comentarios"></div>
+    </div>
+    <div class="col">
+      <h2>Aprobado <span class="count" id="c-2"></span></h2>
+      <div class="cards" data-col="Aprobado"></div>
+    </div>
+  </div>
+
+  <footer>
+    Preparado por A+Growth · <a href="#" id="admin-toggle">modo admin</a>
+  </footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
+<script>
+(function () {
+  var CLIENT = 'founder-accelerators';
+  var API = '/api/approvals/' + CLIENT;
+  var LS_KEY = 'approvals_' + CLIENT;
+  var COLS = ['Para revisar', 'Con comentarios', 'Aprobado'];
+  var mode = 'local';
+  var state = null;
+  var isAdmin = false;
+  try { isAdmin = localStorage.getItem(LS_KEY + '_admin') === '1'; } catch (e) {}
+
+  function seed() {
+    return {
+      cards: [
+        { id: 'r-' + Date.now(), titulo: 'Recurso de ejemplo', tipo: 'video', url: '', nota: 'Tarjeta de muestra — editala o archivala desde modo admin', columna: 'Para revisar', comentario: '', actualizado: new Date().toISOString() }
+      ],
+      log: []
+    };
+  }
+
+  function relTime(iso) {
+    if (!iso) return '';
+    var d = Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
+    if (d <= 0) return 'hoy';
+    if (d === 1) return 'ayer';
+    return 'hace ' + d + ' días';
+  }
+
+  function extUrl(u) {
+    u = String(u || '').trim();
+    if (!u) return '';
+    return /^https?:\/\//i.test(u) ? u : 'https://' + u;
+  }
+
+  function esc(s) {
+    return String(s || '').replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function render() {
+    COLS.forEach(function (col, ci) {
+      var wrap = document.querySelector('.cards[data-col="' + col + '"]');
+      wrap.innerHTML = '';
+      var cards = state.cards.filter(function (c) { return c.columna === col && !c.archivada; });
+      document.getElementById('c-' + ci).textContent = cards.length ? '· ' + cards.length : '';
+      cards.forEach(function (c) {
+        var el = document.createElement('div');
+        el.className = 'card';
+        el.setAttribute('data-id', c.id);
+        el.innerHTML =
+          '<span class="chip ' + esc(c.tipo) + '">' + esc(c.tipo) + '</span>' +
+          '<button class="menu-btn" aria-label="Opciones">⋯</button>' +
+          '<h3>' + esc(c.titulo) + '</h3>' +
+          (c.nota ? '<p class="nota">' + esc(c.nota) + '</p>' : '') +
+          (c.comentario ? '<p class="comment">“' + esc(c.comentario) + '”</p>' : '') +
+          '<div class="foot">' +
+            '<span class="links">' +
+              (c.url ? '<a href="' + esc(extUrl(c.url)) + '" target="_blank" rel="noopener">Ver recurso ↗</a>' : '') +
+              '<a href="#" class="fb" data-act="feedback">Dejar feedback</a>' +
+            '</span>' +
+            '<span class="when">' + relTime(c.actualizado) + '</span>' +
+          '</div>' +
+          '<div class="menu">' +
+            COLS.filter(function (x) { return x !== col; }).map(function (x) {
+              return '<button data-act="move" data-to="' + esc(x) + '">Mover a ' + esc(x.toLowerCase()) + '</button>';
+            }).join('') +
+            '<div class="admin-only"><button data-act="edit" class="sep">Editar (admin)</button>' +
+            '<button data-act="archive" class="danger" style="color:#ff8a80;">Archivar (admin)</button></div>' +
+          '</div>';
+        wrap.appendChild(el);
+      });
+    });
+  }
+
+  function persistLocal() {
+    try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (e) {}
+  }
+
+  var saveTimer = null;
+  function save() {
+    persistLocal();
+    if (mode !== 'server') return;
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(function () {
+      fetch(API, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(state) }).catch(function () {});
+    }, 400);
+  }
+
+  function notify(titulo, accion, detalle) {
+    if (isAdmin) return;
+    fetch(API, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ titulo: titulo, accion: accion, detalle: detalle || '' })
+    }).catch(function () {});
+  }
+
+  function findCard(id) {
+    return state.cards.filter(function (c) { return c.id === id; })[0];
+  }
+
+  function moveCard(id, to) {
+    var c = findCard(id);
+    if (!c || c.columna === to) return;
+    c.columna = to;
+    c.actualizado = new Date().toISOString();
+    state.log.push({ ts: c.actualizado, quien: isAdmin ? 'admin' : 'cliente', que: 'movió "' + c.titulo + '" a ' + to });
+    save(); render();
+    notify(c.titulo, 'Movido a ' + to);
+  }
+
+  document.addEventListener('click', function (e) {
+    var openMenus = document.querySelectorAll('.menu.open');
+    if (e.target.classList.contains('menu-btn')) {
+      var menu = e.target.parentElement.querySelector('.menu');
+      openMenus.forEach(function (m) { if (m !== menu) m.classList.remove('open'); });
+      menu.classList.toggle('open');
+      e.preventDefault();
+      return;
+    }
+    var act = e.target.getAttribute && e.target.getAttribute('data-act');
+    if (act) {
+      var cardEl = e.target.closest('.card');
+      var id = cardEl.getAttribute('data-id');
+      var c = findCard(id);
+      if (act === 'move') moveCard(id, e.target.getAttribute('data-to'));
+      if (act === 'feedback') { e.preventDefault(); openFeedback(c); }
+      if (act === 'edit') openEditor(c);
+      if (act === 'archive') {
+        if (confirm('¿Archivar "' + c.titulo + '"?')) { c.archivada = true; save(); render(); }
+      }
+      return;
+    }
+    openMenus.forEach(function (m) { m.classList.remove('open'); });
+  });
+
+  document.querySelectorAll('.cards').forEach(function (wrap) {
+    new Sortable(wrap, {
+      group: 'board',
+      animation: 160,
+      delay: 120,
+      delayOnTouchOnly: true,
+      onEnd: function (evt) {
+        var id = evt.item.getAttribute('data-id');
+        var to = evt.to.getAttribute('data-col');
+        moveCard(id, to);
+      }
+    });
+  });
+
+  var editingId = null;
+  var overlay = document.getElementById('overlay');
+  function openEditor(card) {
+    editingId = card ? card.id : null;
+    document.getElementById('ed-title').textContent = card ? 'Editar recurso' : 'Nuevo recurso';
+    document.getElementById('f-titulo').value = card ? card.titulo : '';
+    document.getElementById('f-tipo').value = card ? card.tipo : 'video';
+    document.getElementById('f-url').value = card ? (card.url || '') : '';
+    document.getElementById('f-nota').value = card ? (card.nota || '') : '';
+    document.getElementById('ed-error').classList.remove('show');
+    overlay.classList.add('open');
+    document.getElementById('f-titulo').focus();
+  }
+  function closeEditor() { overlay.classList.remove('open'); editingId = null; }
+
+  document.getElementById('btn-new').addEventListener('click', function () { openEditor(null); });
+  document.getElementById('ed-cancel').addEventListener('click', closeEditor);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) closeEditor(); });
+
+  var fbOverlay = document.getElementById('fb-overlay');
+  var fbId = null;
+  function openFeedback(card) {
+    fbId = card.id;
+    document.getElementById('fb-card-label').textContent = 'Sobre: ' + card.titulo;
+    document.getElementById('fb-text').value = card.comentario || '';
+    document.getElementById('fb-error').style.display = 'none';
+    fbOverlay.classList.add('open');
+    document.getElementById('fb-text').focus();
+  }
+  function closeFeedback() { fbOverlay.classList.remove('open'); fbId = null; }
+  document.getElementById('fb-cancel').addEventListener('click', closeFeedback);
+  fbOverlay.addEventListener('click', function (e) { if (e.target === fbOverlay) closeFeedback(); });
+  document.getElementById('fb-send').addEventListener('click', function () {
+    var txt = document.getElementById('fb-text').value.trim();
+    if (!txt) {
+      var fe = document.getElementById('fb-error');
+      fe.textContent = 'Escribí el feedback antes de enviar.';
+      fe.style.display = 'block';
+      return;
+    }
+    var c = findCard(fbId);
+    if (!c) { closeFeedback(); return; }
+    c.comentario = txt;
+    if (c.columna === 'Para revisar') c.columna = 'Con comentarios';
+    c.actualizado = new Date().toISOString();
+    state.log.push({ ts: c.actualizado, quien: isAdmin ? 'admin' : 'cliente', que: 'feedback en "' + c.titulo + '"' });
+    closeFeedback(); save(); render();
+    notify(c.titulo, 'Feedback del cliente', txt);
+  });
+
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeEditor(); closeFeedback(); } });
+
+  document.getElementById('ed-save').addEventListener('click', function () {
+    var titulo = document.getElementById('f-titulo').value.trim();
+    var url = document.getElementById('f-url').value.trim();
+    var err = document.getElementById('ed-error');
+    if (!titulo || !url) {
+      err.textContent = !titulo ? 'Falta el título del recurso.' : 'Falta el link al recurso.';
+      err.classList.add('show');
+      return;
+    }
+    if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
+    var tipo = document.getElementById('f-tipo').value;
+    var nota = document.getElementById('f-nota').value.trim();
+    if (editingId) {
+      var c = findCard(editingId);
+      if (c) { c.titulo = titulo; c.tipo = tipo; c.url = url; c.nota = nota; c.actualizado = new Date().toISOString(); }
+    } else {
+      state.cards.push({
+        id: 'r-' + Date.now(),
+        titulo: titulo, tipo: tipo, url: url, nota: nota,
+        columna: 'Para revisar', comentario: '',
+        actualizado: new Date().toISOString()
+      });
+    }
+    closeEditor(); save(); render();
+  });
+
+  function applyAdmin() {
+    document.body.classList.toggle('admin', isAdmin);
+    document.getElementById('admin-toggle').textContent = isAdmin ? 'salir de modo admin' : 'modo admin';
+  }
+  document.getElementById('admin-toggle').addEventListener('click', function (e) {
+    e.preventDefault();
+    isAdmin = !isAdmin;
+    try { localStorage.setItem(LS_KEY + '_admin', isAdmin ? '1' : '0'); } catch (e2) {}
+    applyAdmin();
+  });
+
+  function loadLocal() {
+    mode = 'local';
+    document.getElementById('banner').classList.add('show');
+    try {
+      var raw = localStorage.getItem(LS_KEY);
+      state = raw ? JSON.parse(raw) : seed();
+    } catch (e) { state = seed(); }
+    persistLocal(); render(); applyAdmin();
+  }
+
+  fetch(API, { cache: 'no-store' })
+    .then(function (r) {
+      if (!r.ok) throw new Error('nostorage');
+      return r.json();
+    })
+    .then(function (data) {
+      mode = 'server';
+      state = data.doc || seed();
+      if (!data.doc) save();
+      render(); applyAdmin();
+    })
+    .catch(loadLocal);
+})();
+</script>
+</body>
+</html>

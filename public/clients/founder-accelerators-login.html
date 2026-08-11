@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founder Accelerator — Portal protegido</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #061018; --panel: #0e1a28; --ink: #f2f5f7; --ink-2: #a7b4c0; --ink-3: #6c7a87; --line: rgba(255,255,255,0.10); --orange: #ff7139; --amber: #f1b527; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--ink);
+    min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px;
+  }
+  .box { text-align: center; max-width: 360px; width: 100%; }
+  .sun { display: block; margin: 0 auto; }
+  .wordmark { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 17px; letter-spacing: 0.26em; text-indent: 0.26em; color: #fff; margin-top: 18px; }
+  .rule { width: 48px; height: 2px; background: linear-gradient(90deg, var(--amber), var(--orange)); margin: 26px auto; }
+  p.msg { font-size: 14px; color: var(--ink-2); margin-bottom: 22px; }
+  input {
+    width: 100%; padding: 13px 16px; font-family: 'Inter', sans-serif; font-size: 15px; text-align: center;
+    letter-spacing: 0.1em; border: 1px solid var(--line); background: var(--panel); color: var(--ink); outline: none; border-radius: 8px;
+  }
+  input:focus { border-color: var(--orange); }
+  input::placeholder { color: var(--ink-3); }
+  button {
+    width: 100%; margin-top: 12px; padding: 13px 16px; cursor: pointer; border-radius: 8px;
+    font-family: 'Archivo', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+    background: var(--orange); color: #061018; border: none; transition: background .25s;
+  }
+  button:hover { background: #ff8a57; }
+  .error { display: none; font-size: 13px; color: #ff8a80; margin-top: 14px; }
+  .error.show { display: block; }
+</style>
+</head>
+<body>
+<div class="box">
+  <svg class="sun" width="64" height="64" viewBox="0 0 100 100" aria-hidden="true">
+    <defs><linearGradient id="fasun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F8D45C"/><stop offset="1" stop-color="#F96B45"/></linearGradient></defs>
+    <circle cx="50" cy="50" r="46" fill="url(#fasun)"/>
+  </svg>
+  <div class="wordmark">FOUNDER ACCELERATOR</div>
+  <div class="rule"></div>
+  <p class="msg">Este portal es privado. Ingresá la clave para acceder.</p>
+  <form id="f">
+    <input type="password" id="pass" placeholder="Clave de acceso" autocomplete="off" autofocus>
+    <button type="submit">Entrar</button>
+  </form>
+  <p class="error" id="err">Clave incorrecta. Probá de nuevo.</p>
+</div>
+<script>
+(function () {
+  var COOKIE = 'client_auth_founder-accelerators';
+  if (document.cookie.indexOf(COOKIE + '=') !== -1) {
+    document.getElementById('err').classList.add('show');
+    document.cookie = COOKIE + '=; path=/; max-age=0';
+  }
+  document.getElementById('f').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = document.getElementById('pass').value.trim();
+    if (!v) return;
+    document.cookie = COOKIE + '=' + encodeURIComponent(v) + '; path=/; max-age=2592000; SameSite=Lax';
+    location.reload();
+  });
+})();
+</script>
+</body>
+</html>

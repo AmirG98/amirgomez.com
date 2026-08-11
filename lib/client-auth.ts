@@ -2,6 +2,7 @@
 // Alta de cliente: agregar acá + su <cliente>-login.html en public/clients/.
 export const CLIENT_PASSWORDS: Record<string, string> = {
   'urban-usa': 'URBAN2226',
+  'founder-accelerators': 'FOUNDER2226',
 };
 
 export function isClientAuthorized(client: string, cookieValue: string | undefined): boolean {
