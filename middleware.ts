@@ -1,20 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { CLIENT_PASSWORDS, isClientAuthorized } from './lib/client-auth';
 
-// Protege los espacios de clientes con clave (validación server-side vía cookie):
-//   /clients/<cliente>            → reporte  (public/clients/<cliente>.html)
+// Portal de clientes protegido con clave (validación server-side vía cookie):
+//   /clients/<cliente>            → hub      (public/clients/<cliente>-hub.html)
+//   /clients/<cliente>/reports    → reporte  (public/clients/<cliente>.html)
 //   /clients/<cliente>/approvals  → kanban   (public/clients/<cliente>-approvals.html)
 export function middleware(req: NextRequest) {
-  const match = req.nextUrl.pathname.match(/^\/clients\/([^/]+?)(?:\.html)?(\/approvals)?\/?$/);
+  const match = req.nextUrl.pathname.match(/^\/clients\/([^/]+?)(?:\.html)?(?:\/(approvals|reports))?\/?$/);
   if (!match) return NextResponse.next();
 
   const client = match[1];
-  const isApprovals = Boolean(match[2]);
-  if (client.endsWith('-login') || client.endsWith('-approvals')) {
-    // Los archivos internos solo se sirven vía rewrite, nunca por URL directa.
-    return client.endsWith('-login')
-      ? NextResponse.next()
-      : NextResponse.rewrite(new URL(`/clients/${client.replace(/-approvals$/, '')}-login.html`, req.url));
+  const section = match[2];
+
+  // Archivos internos (-hub, -approvals) nunca se sirven por URL directa; -login sí.
+  if (client.endsWith('-login')) return NextResponse.next();
+  if (client.endsWith('-hub') || client.endsWith('-approvals')) {
+    const base = client.replace(/-(hub|approvals)$/, '');
+    return NextResponse.rewrite(new URL(`/clients/${base}-login.html`, req.url));
   }
 
   if (!(client in CLIENT_PASSWORDS)) return NextResponse.next();
@@ -24,10 +26,10 @@ export function middleware(req: NextRequest) {
     return NextResponse.rewrite(new URL(`/clients/${client}-login.html`, req.url));
   }
 
-  if (isApprovals) {
-    return NextResponse.rewrite(new URL(`/clients/${client}-approvals.html`, req.url));
-  }
-  return NextResponse.next();
+  if (section === 'approvals') return NextResponse.rewrite(new URL(`/clients/${client}-approvals.html`, req.url));
+  if (section === 'reports') return NextResponse.rewrite(new URL(`/clients/${client}.html`, req.url));
+  if (req.nextUrl.pathname.endsWith('.html')) return NextResponse.next();
+  return NextResponse.rewrite(new URL(`/clients/${client}-hub.html`, req.url));
 }
 
 export const config = {
