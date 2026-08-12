@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founder Accelerator — Paid Media Report · 4–10 Ago 2026</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  :root {
+    --bg: #061018; --panel: #0e1a28; --panel-2: #101d2b; --ink: #f2f5f7; --ink-2: #a7b4c0; --ink-3: #6c7a87;
+    --line: rgba(255,255,255,0.10); --orange: #ff7139; --amber: #f1b527; --amber-soft: rgba(241,181,39,0.12);
+    --good: #4ecf9a; --good-soft: rgba(78,207,154,0.12);
+    --display: 'Archivo', sans-serif; --sans: 'Inter', -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.6; font-size: 15.5px; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 880px; margin: 0 auto; padding: 56px 24px 64px; }
+  .num { font-variant-numeric: tabular-nums; }
+
+  header.hero { text-align: center; margin-bottom: 44px; }
+  .wordmark { font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: 0.26em; text-indent: 0.26em; color: #fff; margin-top: 16px; }
+  .rule { width: 56px; height: 2px; background: linear-gradient(90deg, var(--amber), var(--orange)); margin: 28px auto 24px; }
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--amber); }
+  h1 { font-family: var(--display); font-weight: 700; font-size: 25px; margin-top: 10px; letter-spacing: -0.01em; }
+  .period { font-size: 13.5px; color: var(--ink-2); margin-top: 8px; }
+  .backlink { display: inline-block; margin-top: 12px; font-size: 12.5px; color: var(--amber); text-decoration: none; }
+  .backlink:hover { text-decoration: underline; }
+
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 16px; }
+  .kpi { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; }
+  .kpi.hero-k { background: linear-gradient(135deg, rgba(241,181,39,0.16), rgba(255,113,57,0.16)); border-color: rgba(255,113,57,0.4); }
+  .kpi .label { font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 8px; }
+  .kpi.hero-k .label { color: var(--amber); }
+  .kpi .value { font-family: var(--display); font-weight: 700; font-size: 32px; line-height: 1; color: #fff; }
+  .kpi .foot { font-size: 12.5px; color: var(--ink-2); margin-top: 8px; }
+  .lede { font-size: 15px; color: var(--ink-2); max-width: 62ch; margin: 0 auto 8px; text-align: center; }
+
+  section { margin-top: 60px; scroll-margin-top: 20px; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; }
+  .sec-head .n { font-family: var(--display); font-weight: 700; font-size: 13px; color: var(--orange); letter-spacing: 0.1em; }
+  .sec-head h2 { font-family: var(--display); font-weight: 700; font-size: 21px; }
+  .sec-rule { height: 1px; background: var(--line); margin-bottom: 22px; }
+  .note { font-size: 14px; color: var(--ink-2); max-width: 68ch; margin-top: 14px; }
+
+  .spend-row { display: grid; grid-template-columns: 250px 1fr 100px; gap: 16px; align-items: center; padding: 13px 0; border-bottom: 1px solid var(--line); }
+  .spend-row:first-child { border-top: 1px solid var(--line); }
+  .spend-name { font-size: 14px; font-weight: 600; color: #fff; }
+  .spend-name small { display: block; font-weight: 400; font-size: 12px; color: var(--ink-3); }
+  .bar-track { height: 5px; background: var(--panel-2); border-radius: 3px; overflow: hidden; }
+  .bar { height: 100%; background: linear-gradient(90deg, var(--amber), var(--orange)); border-radius: 3px; width: 0; transition: width 1.2s cubic-bezier(.22,.61,.36,1); }
+  .bar.in { width: var(--w); }
+  .spend-amt { font-family: var(--display); font-weight: 700; font-size: 16px; text-align: right; color: #fff; }
+
+  .duo { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+  .camp { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 24px; }
+  .camp .tag { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; font-family: var(--display); }
+  .camp .tag.heredada { color: var(--ink-3); }
+  .camp .tag.nueva { color: var(--amber); }
+  .camp h3 { font-family: var(--display); font-weight: 700; font-size: 17px; color: #fff; margin: 8px 0 14px; }
+  .mrow { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--ink-2); }
+  .mrow b { font-family: var(--display); font-weight: 700; font-size: 15px; color: #fff; }
+  .mrow.big b { font-size: 19px; color: var(--amber); }
+
+  .flag { font-size: 13.5px; border-radius: 10px; padding: 12px 16px; margin-top: 16px; }
+  .flag.good { color: var(--good); background: var(--good-soft); }
+  .flag.warn { color: var(--amber); background: var(--amber-soft); }
+  .flag b { font-weight: 600; }
+
+  .steps { display: grid; gap: 0; }
+  .step { display: grid; grid-template-columns: 56px 1fr; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+  .step:first-child { border-top: 1px solid var(--line); }
+  .step .sn { font-family: var(--display); font-weight: 700; font-size: 24px; color: var(--orange); line-height: 1.1; }
+  .step h3 { font-family: var(--display); font-weight: 700; font-size: 16px; color: #fff; margin-bottom: 4px; }
+  .step p { font-size: 14px; color: var(--ink-2); }
+
+  .closing { background: linear-gradient(135deg, rgba(241,181,39,0.10), rgba(255,113,57,0.10)); border: 1px solid rgba(255,113,57,0.3); border-radius: 12px; padding: 34px 36px; margin-top: 60px; text-align: center; }
+  .closing p.quote { font-family: var(--display); font-weight: 700; font-size: 21px; line-height: 1.45; color: #fff; max-width: 34ch; margin: 12px auto 0; }
+  .closing p.body { font-size: 14px; color: var(--ink-2); max-width: 60ch; margin: 14px auto 0; }
+  .closing b { color: var(--amber); }
+
+  footer { text-align: center; padding-top: 48px; font-size: 12px; color: var(--ink-3); }
+
+  .js .rv { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1); }
+  .js .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .rv { opacity: 1; transform: none; transition: none; }
+    .bar { transition: none; }
+  }
+  @media print {
+    body { background: #fff; color: #111; }
+    .js .rv { opacity: 1 !important; transform: none !important; }
+    .bar { width: var(--w) !important; }
+  }
+  @media (max-width: 640px) {
+    .spend-row { grid-template-columns: 1fr; gap: 6px; }
+    .spend-amt { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero rv">
+    <svg width="56" height="56" viewBox="0 0 100 100" aria-hidden="true">
+      <defs><linearGradient id="fasun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F8D45C"/><stop offset="1" stop-color="#F96B45"/></linearGradient></defs>
+      <circle cx="50" cy="50" r="46" fill="url(#fasun)"/>
+    </svg>
+    <div class="wordmark">FOUNDER ACCELERATOR</div>
+    <div class="rule"></div>
+    <p class="eyebrow">Paid media report</p>
+    <h1>Resultados de Meta Ads y plan de acción</h1>
+    <p class="period num">4 – 10 de agosto de 2026 · 7 días</p>
+    <a class="backlink" href="/clients/founder-accelerators">← Volver al portal</a>
+  </header>
+
+  <div class="kpis rv">
+    <div class="kpi hero-k">
+      <div class="label">Leads para llamadas 1:1</div>
+      <div class="value num" data-count="4" data-fmt="int">4</div>
+      <div class="foot">website leads · form ±$1M</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Costo por lead</div>
+      <div class="value num" data-count="223" data-fmt="usd0">$223</div>
+      <div class="foot num">benchmark feb: $283</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Ventas AI Brain</div>
+      <div class="value num">1</div>
+      <div class="foot num">CAC $406 · fase de testeo</div>
+    </div>
+    <div class="kpi">
+      <div class="label">Inversión total</div>
+      <div class="value num" data-count="1335" data-fmt="usd0">$1,335</div>
+      <div class="foot">USD · Meta Ads</div>
+    </div>
+  </div>
+  <p class="lede rv">Semana de transición ordenada: presupuesto contenido, leads de llamadas más baratos que el benchmark y el primer dato pago del AI Brain.</p>
+
+  <section id="inversion">
+    <div class="sec-head rv"><span class="n">01</span><h2>Dónde se invirtió</h2></div>
+    <div class="sec-rule rv"></div>
+    <div class="rv">
+      <div class="spend-row">
+        <div class="spend-name">1:1 Call · Direct Booking <small>heredada de la agencia anterior, sigue entregando</small></div>
+        <div class="bar-track"><div class="bar" style="--w:100%"></div></div>
+        <div class="spend-amt num">$629.09</div>
+      </div>
+      <div class="spend-row">
+        <div class="spend-name">AI Brain · Creative Incubator <small>compras · campaña nueva</small></div>
+        <div class="bar-track"><div class="bar" style="--w:64.6%"></div></div>
+        <div class="spend-amt num">$406.32</div>
+      </div>
+      <div class="spend-row">
+        <div class="spend-name">1:1 Call · Direct Booking (nueva) <small>campaña A+Growth</small></div>
+        <div class="bar-track"><div class="bar" style="--w:42.1%"></div></div>
+        <div class="spend-amt num">$264.70</div>
+      </div>
+      <div class="spend-row">
+        <div class="spend-name">Visit Profile · Tráfico <small>always-on de perfil</small></div>
+        <div class="bar-track"><div class="bar" style="--w:5.6%"></div></div>
+        <div class="spend-amt num">$35.02</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="llamadas">
+    <div class="sec-head rv"><span class="n">02</span><h2>Llamadas 1:1 — el motor</h2></div>
+    <div class="sec-rule rv"></div>
+    <div class="duo">
+      <div class="camp rv">
+        <span class="tag heredada">Campaña heredada</span>
+        <h3>1:1 Call · Direct Booking</h3>
+        <div class="mrow big"><span>Leads (web)</span><b class="num">3 · $209.70 c/u</b></div>
+        <div class="mrow"><span>Inversión</span><b class="num">$629.09</b></div>
+        <div class="mrow"><span>CTR · CPC</span><b class="num">0.80% · $2.33</b></div>
+        <div class="mrow"><span>Landing views</span><b class="num">159</b></div>
+      </div>
+      <div class="camp rv">
+        <span class="tag nueva">Campaña nueva (A+G)</span>
+        <h3>1:1 Call · Direct Booking</h3>
+        <div class="mrow big"><span>Leads (web)</span><b class="num">1 · $264.70 c/u</b></div>
+        <div class="mrow"><span>Inversión</span><b class="num">$264.70</b></div>
+        <div class="mrow"><span>CTR · CPC</span><b class="num">0.55% · $4.14</b></div>
+        <div class="mrow"><span>Landing views</span><b class="num">32</b></div>
+      </div>
+    </div>
+    <div class="flag good rv">✓ Blended: <b>4 leads a $223 — 21% por debajo del benchmark de febrero ($283)</b>, en semana de presupuesto contenido y sin promesas monetarias en los creativos.</div>
+    <p class="note rv">Metodología: contamos <strong>website leads</strong> (form ±$1M), no el evento "Qualified Lead" del pixel — ese evento sigue disparando con el criterio viejo (>$2M) y marca 2 en el período. Hasta redefinir eventos con Benji, el form es la referencia; la calificación final sigue siendo revisión manual.</p>
+  </section>
+
+  <section id="brain">
+    <div class="sec-head rv"><span class="n">03</span><h2>AI Brain — primer dato pago</h2></div>
+    <div class="sec-rule rv"></div>
+    <div class="camp rv">
+      <span class="tag nueva">Creative incubator · compras</span>
+      <h3>AI Brain</h3>
+      <div class="mrow big"><span>Compras</span><b class="num">1 · CAC $406.32</b></div>
+      <div class="mrow"><span>Inversión</span><b class="num">$406.32</b></div>
+      <div class="mrow"><span>Link clicks</span><b class="num">672 · $0.60 c/u</b></div>
+      <div class="mrow"><span>CTR · CPM</span><b class="num">0.64% · $3.85</b></div>
+      <div class="mrow"><span>Alcance</span><b class="num">91,223</b></div>
+    </div>
+    <div class="flag warn rv">⚠ La campaña registró <b>1 solo landing page view con 672 clicks</b> — el evento de LPV no está midiendo en esa landing. Antes de leer CAC como verdad, arreglar el tracking: hoy no sabemos cuánta gente llegó, rebotó o abandonó el checkout.</div>
+    <p class="note rv">Lectura honesta: 1 compra es un dato, no una tendencia. Lo valioso de la semana es el costo de tráfico (clicks a $0.60 con alcance de 91K) para iterar creativos del incubator. A $99/mes, un CAC de $406 exige ~4 meses de retención para recuperarse — la validación de CAC/LTV recién empieza y el plan sigue siendo warm primero.</p>
+  </section>
+
+  <section id="perfil">
+    <div class="sec-head rv"><span class="n">04</span><h2>Visit Profile — la llama piloto</h2></div>
+    <div class="sec-rule rv"></div>
+    <p class="note rv" style="margin-top:0;"><strong class="num" style="color:#fff;">495 visitas de perfil a $0.07</strong> con $35 de inversión. Cumple su rol de compounding de audiencia a costo marginal — sin cambios.</p>
+  </section>
+
+  <section id="pasos">
+    <div class="sec-head rv"><span class="n">05</span><h2>Próximos pasos</h2></div>
+    <div class="sec-rule rv"></div>
+    <div class="steps">
+      <div class="step rv"><span class="sn">01</span><div>
+        <h3>Sostener las campañas de llamadas con el CPL bajo el benchmark</h3>
+        <p>La heredada sigue entregando a $210/lead — no tocarla mientras rinda. La nueva necesita más data antes de juzgar ($4.14 de CPC es alto; revisar creativos/audiencia esta semana).</p>
+      </div></div>
+      <div class="step rv"><span class="sn">02</span><div>
+        <h3>Arreglar el tracking de la landing del Brain</h3>
+        <p>Evento de landing page view + funnel de checkout medible (con Benji). Sin eso, el CAC del incubator es una adivinanza.</p>
+      </div></div>
+      <div class="step rv"><span class="sn">03</span><div>
+        <h3>Entrar los creativos nuevos al incubator</h3>
+        <p>Los scripts pendientes de grabación (antes/después con historia ClickOn, "atascado entre 1 y 5M", 12 virus) — fondo profesional, sin promesas monetarias, rangos 1–5M → 10–12M.</p>
+      </div></div>
+      <div class="step rv"><span class="sn">04</span><div>
+        <h3>Redefinir el evento Qualified con Benji</h3>
+        <p>Pocos pero reales: ni el form crudo ni el criterio viejo de >$2M. Cuando esté, la optimización de Meta apunta a ese evento y este reporte deja de necesitar la nota metodológica.</p>
+      </div></div>
+    </div>
+  </section>
+
+  <div class="closing rv">
+    <p class="eyebrow">Mensaje principal</p>
+    <p class="quote">4 leads de llamadas a <b class="num">$223</b> — 21% mejor que el benchmark — y la primera venta paga del Brain.</p>
+    <p class="body">La cuenta está estabilizada después de la transición: presupuesto contenido, calidad de lead sostenida por el form ±$1M, y el incubator del Brain generando tráfico barato para iterar. Las dos prioridades técnicas: tracking de la landing del Brain y el evento Qualified nuevo.</p>
+  </div>
+
+  <footer>Preparado por A+Growth · Founder Accelerator · Agosto 2026</footer>
+
+</div>
+
+<script>
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fmtInt = new Intl.NumberFormat('en-US');
+  function renderCount(el, val) {
+    var f = el.getAttribute('data-fmt');
+    el.textContent = f === 'usd0' ? '$' + fmtInt.format(Math.round(val)) : fmtInt.format(Math.round(val));
+  }
+  function countUp(el) {
+    var target = parseFloat(el.getAttribute('data-count'));
+    if (reduced) { renderCount(el, target); return; }
+    var t0 = null, dur = 1200;
+    function tick(t) {
+      if (!t0) t0 = t;
+      var p = Math.min((t - t0) / dur, 1);
+      renderCount(el, target * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  var counted = new WeakSet();
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var el = entry.target;
+      el.classList.add('in');
+      el.querySelectorAll('.bar').forEach(function (b) { b.classList.add('in'); });
+      el.querySelectorAll('[data-count]').forEach(function (c) {
+        if (!counted.has(c)) { counted.add(c); countUp(c); }
+      });
+      io.unobserve(el);
+    });
+  }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
+  document.querySelectorAll('section').forEach(function (sec) {
+    sec.querySelectorAll('.rv').forEach(function (el, i) { el.style.transitionDelay = (i * 70) + 'ms'; });
+  });
+})();
+</script>
+</body>
+</html>
