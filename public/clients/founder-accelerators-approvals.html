@@ -55,7 +55,8 @@
   #ed-error { display: none; font-size: 12.5px; color: #ff8a80; margin-top: 10px; }
   #ed-error.show { display: block; }
 
-  .board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: start; }
+  .board { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; align-items: start; }
+  @media (max-width: 1060px) { .board { grid-template-columns: repeat(2, 1fr); } }
   .col { background: var(--paper-2); padding: 14px; min-height: 200px; }
   .col h2 { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 12px; }
   .col h2 .count { color: var(--gold); }
@@ -137,6 +138,13 @@
       </select>
       <label>Link al recurso <span class="req">*</span></label>
       <input id="f-url" placeholder="drive.google.com/… · figma.com/… · preview de Meta">
+      <label>Estado</label>
+      <select id="f-col">
+        <option>En proceso</option>
+        <option>Para revisar</option>
+        <option>Con comentarios</option>
+        <option>Aprobado</option>
+      </select>
       <label>Nota breve (opcional)</label>
       <input id="f-nota" placeholder="Variante con el hook nuevo">
       <p id="ed-error"></p>
@@ -162,15 +170,19 @@
 
   <div class="board">
     <div class="col">
-      <h2>Para revisar <span class="count" id="c-0"></span></h2>
+      <h2>En proceso <span class="count" id="c-0"></span></h2>
+      <div class="cards" data-col="En proceso"></div>
+    </div>
+    <div class="col">
+      <h2>Para revisar <span class="count" id="c-1"></span></h2>
       <div class="cards" data-col="Para revisar"></div>
     </div>
     <div class="col">
-      <h2>Con comentarios <span class="count" id="c-1"></span></h2>
+      <h2>Con comentarios <span class="count" id="c-2"></span></h2>
       <div class="cards" data-col="Con comentarios"></div>
     </div>
     <div class="col">
-      <h2>Aprobado <span class="count" id="c-2"></span></h2>
+      <h2>Aprobado <span class="count" id="c-3"></span></h2>
       <div class="cards" data-col="Aprobado"></div>
     </div>
   </div>
@@ -187,7 +199,7 @@
   var CLIENT = 'founder-accelerators';
   var API = '/api/approvals/' + CLIENT;
   var LS_KEY = 'approvals_' + CLIENT;
-  var COLS = ['Para revisar', 'Con comentarios', 'Aprobado'];
+  var COLS = ['En proceso', 'Para revisar', 'Con comentarios', 'Aprobado'];
   var mode = 'local';
   var state = null;
   var isAdmin = false;
@@ -341,6 +353,7 @@
     document.getElementById('f-tipo').value = card ? card.tipo : 'video';
     document.getElementById('f-url').value = card ? (card.url || '') : '';
     document.getElementById('f-nota').value = card ? (card.nota || '') : '';
+    document.getElementById('f-col').value = card ? card.columna : 'En proceso';
     document.getElementById('ed-error').classList.remove('show');
     overlay.classList.add('open');
     document.getElementById('f-titulo').focus();
@@ -396,14 +409,15 @@
     if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
     var tipo = document.getElementById('f-tipo').value;
     var nota = document.getElementById('f-nota').value.trim();
+    var col = document.getElementById('f-col').value;
     if (editingId) {
       var c = findCard(editingId);
-      if (c) { c.titulo = titulo; c.tipo = tipo; c.url = url; c.nota = nota; c.actualizado = new Date().toISOString(); }
+      if (c) { c.titulo = titulo; c.tipo = tipo; c.url = url; c.nota = nota; c.columna = col; c.actualizado = new Date().toISOString(); }
     } else {
       state.cards.push({
         id: 'r-' + Date.now(),
         titulo: titulo, tipo: tipo, url: url, nota: nota,
-        columna: 'Para revisar', comentario: '',
+        columna: col, comentario: '',
         actualizado: new Date().toISOString()
       });
     }
