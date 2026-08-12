@@ -55,8 +55,7 @@
   #ed-error { display: none; font-size: 12.5px; color: #ff8a80; margin-top: 10px; }
   #ed-error.show { display: block; }
 
-  .board { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; align-items: start; }
-  @media (max-width: 1060px) { .board { grid-template-columns: repeat(2, 1fr); } }
+  .board { display: grid; grid-template-columns: repeat(auto-fit, minmax(185px, 1fr)); gap: 10px; align-items: start; }
   .col { background: var(--paper-2); padding: 14px; min-height: 200px; }
   .col h2 { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 12px; }
   .col h2 .count { color: var(--gold); }
@@ -140,7 +139,8 @@
       <input id="f-url" placeholder="drive.google.com/… · figma.com/… · preview de Meta">
       <label>Estado</label>
       <select id="f-col">
-        <option>En proceso</option>
+        <option>En proceso · FA</option>
+        <option>En proceso · A+Growth</option>
         <option>Para revisar</option>
         <option>Con comentarios</option>
         <option>Aprobado</option>
@@ -170,19 +170,23 @@
 
   <div class="board">
     <div class="col">
-      <h2>En proceso <span class="count" id="c-0"></span></h2>
-      <div class="cards" data-col="En proceso"></div>
+      <h2>En proceso · FA <span class="count" id="c-0"></span></h2>
+      <div class="cards" data-col="En proceso · FA"></div>
     </div>
     <div class="col">
-      <h2>Para revisar <span class="count" id="c-1"></span></h2>
+      <h2>En proceso · A+Growth <span class="count" id="c-1"></span></h2>
+      <div class="cards" data-col="En proceso · A+Growth"></div>
+    </div>
+    <div class="col">
+      <h2>Para revisar <span class="count" id="c-2"></span></h2>
       <div class="cards" data-col="Para revisar"></div>
     </div>
     <div class="col">
-      <h2>Con comentarios <span class="count" id="c-2"></span></h2>
+      <h2>Con comentarios <span class="count" id="c-3"></span></h2>
       <div class="cards" data-col="Con comentarios"></div>
     </div>
     <div class="col">
-      <h2>Aprobado <span class="count" id="c-3"></span></h2>
+      <h2>Aprobado <span class="count" id="c-4"></span></h2>
       <div class="cards" data-col="Aprobado"></div>
     </div>
   </div>
@@ -199,7 +203,7 @@
   var CLIENT = 'founder-accelerators';
   var API = '/api/approvals/' + CLIENT;
   var LS_KEY = 'approvals_' + CLIENT;
-  var COLS = ['En proceso', 'Para revisar', 'Con comentarios', 'Aprobado'];
+  var COLS = ['En proceso · FA', 'En proceso · A+Growth', 'Para revisar', 'Con comentarios', 'Aprobado'];
   var mode = 'local';
   var state = null;
   var isAdmin = false;
@@ -235,6 +239,7 @@
   }
 
   function render() {
+    state.cards.forEach(function (c) { if (c.columna === 'En proceso') c.columna = 'En proceso · A+Growth'; });
     COLS.forEach(function (col, ci) {
       var wrap = document.querySelector('.cards[data-col="' + col + '"]');
       wrap.innerHTML = '';
@@ -353,7 +358,7 @@
     document.getElementById('f-tipo').value = card ? card.tipo : 'video';
     document.getElementById('f-url').value = card ? (card.url || '') : '';
     document.getElementById('f-nota').value = card ? (card.nota || '') : '';
-    document.getElementById('f-col').value = card ? card.columna : 'En proceso';
+    document.getElementById('f-col').value = card ? card.columna : 'En proceso · A+Growth';
     document.getElementById('ed-error').classList.remove('show');
     overlay.classList.add('open');
     document.getElementById('f-titulo').focus();
