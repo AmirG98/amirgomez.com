@@ -2,12 +2,17 @@ import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { isClientAuthorized } from '../../../../lib/client-auth';
 
-// Tablero de aprobación de recursos por cliente.
+// Tableros por cliente: aprobación de recursos (board=approvals, default) y banco de ideas (board=ideas).
 // Storage: Upstash Redis via REST (UPSTASH_REDIS_REST_URL / UPSTASH_REDIS_REST_TOKEN).
 // Sin esas env vars, GET/PUT devuelven 503 y el front cae a modo local (localStorage).
 
 function authorized(req: NextRequest, client: string): boolean {
   return isClientAuthorized(client, req.cookies.get(`client_auth_${client}`)?.value);
+}
+
+function boardKey(req: NextRequest, client: string): string {
+  const board = req.nextUrl.searchParams.get('board') === 'ideas' ? 'ideas' : 'approvals';
+  return `${board}:${client}`;
 }
 
 function storageConfig() {
@@ -23,7 +28,7 @@ export async function GET(req: NextRequest, ctx: { params: Promise<{ client: str
   const cfg = storageConfig();
   if (!cfg) return NextResponse.json({ error: 'storage_not_configured' }, { status: 503 });
 
-  const res = await fetch(`${cfg.url}/get/${encodeURIComponent(`approvals:${client}`)}`, {
+  const res = await fetch(`${cfg.url}/get/${encodeURIComponent(boardKey(req, client))}`, {
     headers: { Authorization: `Bearer ${cfg.token}` },
     cache: 'no-store',
   });
@@ -39,7 +44,7 @@ export async function PUT(req: NextRequest, ctx: { params: Promise<{ client: str
   if (!cfg) return NextResponse.json({ error: 'storage_not_configured' }, { status: 503 });
 
   const doc = await req.json();
-  const res = await fetch(`${cfg.url}/set/${encodeURIComponent(`approvals:${client}`)}`, {
+  const res = await fetch(`${cfg.url}/set/${encodeURIComponent(boardKey(req, client))}`, {
     method: 'POST',
     headers: { Authorization: `Bearer ${cfg.token}` },
     body: JSON.stringify(doc),
