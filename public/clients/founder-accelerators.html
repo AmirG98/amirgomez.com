@@ -207,7 +207,7 @@
       <div class="mrow"><span>CTR · CPM</span><b class="num">0.64% · $3.85</b></div>
       <div class="mrow"><span>Alcance</span><b class="num">91,223</b></div>
     </div>
-    <div class="flag warn rv">⚠ La campaña registró <b>1 solo landing page view con 672 clicks</b> — el evento de LPV no está midiendo en esa landing. Antes de leer CAC como verdad, arreglar el tracking: hoy no sabemos cuánta gente llegó, rebotó o abandonó el checkout.</div>
+    <div class="flag warn rv">⚠ La campaña registró <b>1 solo landing page view con 672 clicks</b>. No es un pixel roto: la configuración heredada de la agencia anterior disparaba el pixel <b>solo en compras</b>, sin medir landing views ni pasos intermedios. Nosotros lo hacemos distinto: medimos el funnel completo (landing → checkout → compra) para ver dónde se pierde la gente, no solo cuánta compra. El GTM ya quedó instalado en el funnel; los eventos intermedios se activan esta semana.</div>
     <p class="note rv">Lectura honesta: 1 compra es un dato, no una tendencia. Lo valioso de la semana es el costo de tráfico (clicks a $0.60 con alcance de 91K) para iterar creativos del incubator. A $99/mes, un CAC de $406 exige ~4 meses de retención para recuperarse — la validación de CAC/LTV recién empieza y el plan sigue siendo warm primero.</p>
   </section>
 
@@ -226,8 +226,8 @@
         <p>La heredada sigue entregando a $210/lead — no tocarla mientras rinda. La nueva necesita más data antes de juzgar ($4.14 de CPC es alto; revisar creativos/audiencia esta semana).</p>
       </div></div>
       <div class="step rv"><span class="sn">02</span><div>
-        <h3>Arreglar el tracking de la landing del Brain</h3>
-        <p>Evento de landing page view + funnel de checkout medible (con Benji). Sin eso, el CAC del incubator es una adivinanza.</p>
+        <h3>Instrumentar el funnel completo del Brain</h3>
+        <p>GTM ya instalado en el funnel ✓. Falta activar los eventos intermedios (landing view, checkout iniciado) además de la compra — el approach opuesto al heredado de "pixel solo en compras". Con eso, el CAC del incubator se vuelve diagnosticable etapa por etapa.</p>
       </div></div>
       <div class="step rv"><span class="sn">03</span><div>
         <h3>Entrar los creativos nuevos al incubator</h3>
