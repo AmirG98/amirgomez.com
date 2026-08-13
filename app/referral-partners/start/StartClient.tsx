@@ -100,7 +100,7 @@ export default function StartClient() {
           <h2>Who you&apos;re partnering with</h2>
           <div className="who-card">
             <p>
-              <b>Amir Gómez</b>, founder of <b>A+ Growth</b> — a digital marketing and AI-powered
+              <b>Amir Gomez</b>, founder of <b>A+ Growth</b> — a digital marketing and AI-powered
               growth agency with clients in the US (Los Angeles, Miami) and Latin America.
             </p>
             <p>

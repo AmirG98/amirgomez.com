@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "The honest step-by-step: how an intro turns into a paid commission, and how to start with one email.",
     url: "https://www.weareaplus.net/referral-partners/start",
-    images: [{ url: OG_IMAGE, width: 800, height: 800, alt: "Amir Gómez — A+ Growth" }],
+    images: [{ url: OG_IMAGE, width: 800, height: 800, alt: "Amir Gomez — A+ Growth" }],
   },
   twitter: {
     card: "summary_large_image",

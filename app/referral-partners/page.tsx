@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Earn up to USD 2,000 for every business you introduce that becomes an A+ Growth client.",
     url: "https://www.weareaplus.net/referral-partners",
-    images: [{ url: OG_IMAGE, width: 800, height: 800, alt: "Amir Gómez — A+ Growth" }],
+    images: [{ url: OG_IMAGE, width: 800, height: 800, alt: "Amir Gomez — A+ Growth" }],
   },
   twitter: {
     card: "summary_large_image",
