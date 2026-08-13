@@ -114,6 +114,7 @@
     });
   }
   function render() {
+    if (!state.oferta || !state.oferta.length) state.oferta = SEED.oferta || [];
     var secs = document.getElementById('secs');
     secs.innerHTML = '';
     SECTIONS.forEach(function (def) {
