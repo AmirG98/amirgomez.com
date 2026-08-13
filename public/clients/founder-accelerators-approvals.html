@@ -192,6 +192,11 @@
     <div class="col">
       <h2>Para revisar <span class="count" id="c-2"></span></h2>
       <div class="cards" data-col="Para revisar"></div>
+      <div class="quickadd" id="quickadd-rev">
+        <input id="qa2-titulo" placeholder="+ Agregar recurso…" autocomplete="off">
+        <div class="qa-row"><input id="qa2-url" placeholder="Link (Drive, Figma, doc…)" autocomplete="off"></div>
+        <div class="qa-actions"><button id="qa2-save">Agregar</button><button class="ghost" id="qa2-cancel">Cancelar</button></div>
+      </div>
     </div>
     <div class="col">
       <h2>Con comentarios <span class="count" id="c-3"></span></h2>
@@ -445,28 +450,31 @@
   });
 
 
-  var qa = document.getElementById('quickadd');
-  if (qa) {
-    var qaT = document.getElementById('qa-titulo');
-    var qaU = document.getElementById('qa-url');
-    qaT.addEventListener('focus', function () { qa.classList.add('open'); });
-    document.getElementById('qa-cancel').addEventListener('click', function () {
-      qaT.value = ''; qaU.value = ''; qa.classList.remove('open');
+  function wireQuickAdd(boxId, tId, uId, saveId, cancelId, destCol) {
+    var box = document.getElementById(boxId);
+    if (!box) return;
+    var t = document.getElementById(tId), u = document.getElementById(uId);
+    t.addEventListener('focus', function () { box.classList.add('open'); });
+    document.getElementById(cancelId).addEventListener('click', function () {
+      t.value = ''; u.value = ''; box.classList.remove('open');
     });
-    document.getElementById('qa-save').addEventListener('click', function () {
-      var t = qaT.value.trim();
-      if (!t) { qaT.focus(); return; }
+    document.getElementById(saveId).addEventListener('click', function () {
+      var titulo = t.value.trim();
+      if (!titulo) { t.focus(); return; }
       state.cards.push({
-        id: 'r-' + Date.now(), titulo: t, tipo: 'otro', url: qaU.value.trim(), nota: '',
-        columna: CLIENT_COL, comentario: '', actualizado: new Date().toISOString()
+        id: 'r-' + Date.now(), titulo: titulo, tipo: 'otro', url: u.value.trim(), nota: '',
+        columna: destCol, comentario: '', actualizado: new Date().toISOString()
       });
-      qaT.value = ''; qaU.value = ''; qa.classList.remove('open');
+      var link = u.value.trim();
+      t.value = ''; u.value = ''; box.classList.remove('open');
       save(); render();
-      notify(t, 'Recurso agregado por el cliente', qaU.value.trim());
+      notify(titulo, 'Recurso agregado por el cliente en ' + destCol, link);
     });
-    qaU.addEventListener('keydown', function (e) { if (e.key === 'Enter') document.getElementById('qa-save').click(); });
-    qaT.addEventListener('keydown', function (e) { if (e.key === 'Enter') qaU.focus(); });
+    t.addEventListener('keydown', function (e) { if (e.key === 'Enter') u.focus(); });
+    u.addEventListener('keydown', function (e) { if (e.key === 'Enter') document.getElementById(saveId).click(); });
   }
+  wireQuickAdd('quickadd', 'qa-titulo', 'qa-url', 'qa-save', 'qa-cancel', CLIENT_COL);
+  wireQuickAdd('quickadd-rev', 'qa2-titulo', 'qa2-url', 'qa2-save', 'qa2-cancel', 'Para revisar');
 
   function applyAdmin() {
     document.body.classList.toggle('admin', isAdmin);
