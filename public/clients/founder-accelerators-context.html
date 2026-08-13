@@ -155,24 +155,110 @@
   });
 
 
+
   function today() { return new Date().toISOString().slice(0, 10); }
-  function buildMarkdown() {
+  function fmtF(d) {
+    if (!d) return 's/f';
+    var p = String(d).split('-');
+    return p.length === 3 ? p[2] + '/' + p[1] + '/' + p[0] : d;
+  }
+  function fetchJson(url) {
+    return fetch(url, { cache: 'no-store' }).then(function (r) { if (!r.ok) throw 0; return r.json(); });
+  }
+  function getSource(url, lsKey) {
+    return fetchJson(url).then(function (d) { return d.doc; }).catch(function () {
+      try { var raw = localStorage.getItem(lsKey); return raw ? JSON.parse(raw) : null; } catch (e) { return null; }
+    });
+  }
+  function collectAll() {
+    return Promise.all([
+      getSource('/api/transcripts/' + CLIENT, 'transcripts_' + CLIENT),
+      getSource('/api/approvals/' + CLIENT, 'approvals_' + CLIENT),
+      getSource('/api/approvals/' + CLIENT + '?board=ideas', 'ideas_' + CLIENT)
+    ]).then(function (r) {
+      var notes = [];
+      try {
+        for (var i = 0; i < localStorage.length; i++) {
+          var k = localStorage.key(i);
+          if (k && k.indexOf('report_notes_' + CLIENT + '_') === 0) {
+            var v = JSON.parse(localStorage.getItem(k) || '{}');
+            if (v.text) notes.push({ fecha: k.split('_').pop(), text: v.text });
+          }
+        }
+      } catch (e) {}
+      var meetings = ((r[0] && r[0].meetings) || []).slice().sort(function (a, b) { return (b.fecha || '').localeCompare(a.fecha || ''); });
+      return {
+        meetings: meetings,
+        approvals: ((r[1] && r[1].cards) || []).filter(function (c) { return !c.archivada; }),
+        ideas: ((r[2] && r[2].cards) || []).filter(function (c) { return !c.archivada; }),
+        notes: notes
+      };
+    });
+  }
+
+  function buildMarkdown(all) {
     var brand = document.title.split(' — ')[0];
-    var md = '# Contexto del cliente — ' + brand + '\n\n';
+    var md = '# Dossier de cliente — ' + brand + '\n\n';
     md += '_Documento vivo mantenido por A+Growth. Exportado: ' + today() + '._\n';
     var f = state.fuentes || [];
-    if (f.length) {
-      md += '_Alimentado por ' + f.length + ' reunión' + (f.length === 1 ? '' : 'es') + ': ' +
-        f.map(function (x) { return x.titulo + ' (' + (x.fecha || 's/f') + ')'; }).join('; ') + '._\n';
-    }
-    md += '\n';
+    if (f.length) md += '_Contexto alimentado por ' + f.length + ' reunión' + (f.length === 1 ? '' : 'es') + ' procesada' + (f.length === 1 ? '' : 's') + '._\n';
+    md += '\n---\n\n# 1. Contexto del negocio\n\n';
     SECTIONS.forEach(function (def) {
       md += '## ' + def[1] + '\n\n';
       (state[def[0]] || []).forEach(function (b) { md += '- ' + b + '\n'; });
       md += '\n';
     });
+    md += '---\n\n# 2. Reuniones y recaps (' + all.meetings.length + ')\n\n';
+    if (!all.meetings.length) md += '_Sin reuniones cargadas todavía._\n\n';
+    all.meetings.forEach(function (m) {
+      md += '## ' + m.titulo + ' — ' + fmtF(m.fecha) + '\n\n';
+      if (m.recap) {
+        md += m.recap.replace(/^## /gm, '### ') + '\n\n';
+      } else {
+        md += '_(transcripción cargada, recap aún no generado)_\n\n';
+      }
+    });
+    md += '---\n\n# 3. Recursos en aprobación (' + all.approvals.length + ')\n\n';
+    if (!all.approvals.length) md += '_Sin recursos activos._\n\n';
+    var cols = {};
+    all.approvals.forEach(function (c) { (cols[c.columna] = cols[c.columna] || []).push(c); });
+    Object.keys(cols).forEach(function (col) {
+      md += '## ' + col + '\n\n';
+      cols[col].forEach(function (c) {
+        md += '- **' + c.titulo + '** (' + (c.tipo || 'recurso') + ')';
+        if (c.nota) md += ' — ' + c.nota;
+        if (c.url) md += ' — ' + c.url;
+        if (c.comentario) md += '\n  - Feedback del cliente: "' + c.comentario + '"';
+        md += '\n';
+      });
+      md += '\n';
+    });
+    md += '---\n\n# 4. Banco de ideas (' + all.ideas.length + ')\n\n';
+    ['Pendientes', 'Aplicadas'].forEach(function (col) {
+      var items = all.ideas.filter(function (c) { return c.columna === col; });
+      md += '## ' + col + '\n\n';
+      if (!items.length) md += '_—_\n';
+      items.forEach(function (c) {
+        md += '- **' + c.titulo + '**';
+        if (c.nota) md += ' — ' + c.nota.replace(/\n+/g, ' ');
+        if (c.url) md += ' — ' + c.url;
+        md += '\n';
+      });
+      md += '\n';
+    });
+    if (all.notes.length) {
+      md += '---\n\n# 5. Notas de reuniones de reporte\n\n';
+      all.notes.forEach(function (n) {
+        md += '## Reunión ' + fmtF(n.fecha) + '\n\n' + n.text + '\n\n';
+      });
+    }
+    md += '---\n\n# Anexo: transcripciones completas\n\n';
+    all.meetings.forEach(function (m) {
+      md += '## ' + m.titulo + ' — ' + fmtF(m.fecha) + '\n\n```\n' + (m.transcript || '') + '\n```\n\n';
+    });
     return md;
   }
+
   function downloadBlob(content, type, fname) {
     var blob = new Blob([content], { type: type });
     var a = document.createElement('a');
@@ -182,7 +268,9 @@
     setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
   }
   document.getElementById('dl-md').addEventListener('click', function () {
-    downloadBlob(buildMarkdown(), 'text/markdown;charset=utf-8', 'contexto-' + CLIENT + '-' + today() + '.md');
+    collectAll().then(function (all) {
+      downloadBlob(buildMarkdown(all), 'text/markdown;charset=utf-8', 'dossier-' + CLIENT + '-' + today() + '.md');
+    });
   });
 
   function latin(s) {
@@ -191,46 +279,110 @@
   }
   function withJsPDF(cb) {
     if (window.jspdf && window.jspdf.jsPDF) return cb();
-    var s = document.createElement('script');
+    var s = document.createElementNS('http://www.w3.org/1999/xhtml', 'script');
     s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
     s.onload = cb;
     s.onerror = function () { alert('No se pudo cargar el generador de PDF. Usá la descarga .md.'); };
     document.head.appendChild(s);
   }
   document.getElementById('dl-pdf').addEventListener('click', function () {
-    withJsPDF(function () {
-      var brand = document.title.split(' — ')[0];
-      var doc = new window.jspdf.jsPDF({ unit: 'pt', format: 'a4' });
-      var M = 56, W = 595 - M * 2, y = M;
-      function pageBreak(extra) {
-        if (y + (extra || 0) > 780) { doc.addPage(); y = M; }
-      }
-      doc.setFont('helvetica', 'bold'); doc.setFontSize(17); doc.setTextColor(20, 30, 40);
-      doc.text(latin('Contexto del cliente — ' + brand), M, y); y += 20;
-      doc.setFont('helvetica', 'normal'); doc.setFontSize(9.5); doc.setTextColor(120, 125, 130);
-      var f = state.fuentes || [];
-      var metaLine = 'Documento vivo mantenido por A+Growth  ·  Exportado: ' + today() +
-        (f.length ? '  ·  Alimentado por ' + f.length + ' reunion' + (f.length === 1 ? '' : 'es') : '');
-      doc.text(latin(metaLine), M, y); y += 10;
-      doc.setDrawColor(168, 135, 79); doc.setLineWidth(1);
-      doc.line(M, y + 6, M + 90, y + 6); y += 28;
-      SECTIONS.forEach(function (def) {
-        pageBreak(60);
-        doc.setFont('helvetica', 'bold'); doc.setFontSize(12.5); doc.setTextColor(20, 30, 40);
-        doc.text(latin(def[1].toUpperCase()), M, y); y += 16;
-        doc.setFont('helvetica', 'normal'); doc.setFontSize(10); doc.setTextColor(60, 70, 80);
-        (state[def[0]] || []).forEach(function (b) {
-          var lines = doc.splitTextToSize(latin(b), W - 16);
-          pageBreak(lines.length * 13 + 6);
-          doc.circle(M + 3, y - 3, 1.4, 'F');
-          doc.text(lines, M + 14, y);
-          y += lines.length * 13 + 5;
+    collectAll().then(function (all) {
+      withJsPDF(function () {
+        var brand = document.title.split(' — ')[0];
+        var doc = new window.jspdf.jsPDF({ unit: 'pt', format: 'a4' });
+        var M = 56, W = 595 - M * 2, y = M;
+        function brk(extra) { if (y + (extra || 0) > 780) { doc.addPage(); y = M; } }
+        function h1(t) { brk(40); doc.setFont('helvetica', 'bold'); doc.setFontSize(15); doc.setTextColor(20, 30, 40); doc.text(latin(t), M, y); y += 22; }
+        function h2(t) { brk(34); doc.setFont('helvetica', 'bold'); doc.setFontSize(11.5); doc.setTextColor(20, 30, 40); doc.text(latin(t).toUpperCase(), M, y); y += 15; }
+        function h3(t) { brk(28); doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(90, 100, 110); doc.text(latin(t), M, y); y += 13; }
+        function bullet(t, indent) {
+          var lines = doc.splitTextToSize(latin(t), W - 16 - (indent || 0));
+          brk(lines.length * 12.5 + 4);
+          doc.setFont('helvetica', 'normal'); doc.setFontSize(9.5); doc.setTextColor(60, 70, 80);
+          doc.circle(M + 3 + (indent || 0), y - 3, 1.3, 'F');
+          doc.text(lines, M + 14 + (indent || 0), y);
+          y += lines.length * 12.5 + 3;
+        }
+        function para(t, gray) {
+          var lines = doc.splitTextToSize(latin(t), W);
+          brk(lines.length * 12.5 + 4);
+          doc.setFont('helvetica', gray ? 'italic' : 'normal'); doc.setFontSize(9.5);
+          doc.setTextColor(gray ? 130 : 60, gray ? 135 : 70, gray ? 140 : 80);
+          doc.text(lines, M, y);
+          y += lines.length * 12.5 + 4;
+        }
+        function recapBlock(md) {
+          String(md).split('\n').forEach(function (ln) {
+            var l = ln.trim();
+            if (!l) return;
+            l = l.replace(/\*\*/g, '');
+            if (/^##+\s/.test(l)) h3(l.replace(/^##+\s*/, ''));
+            else if (/^[-•*]\s/.test(l)) bullet(l.replace(/^[-•*]\s*/, ''), 6);
+            else para(l);
+          });
+        }
+
+        doc.setFont('helvetica', 'bold'); doc.setFontSize(18); doc.setTextColor(20, 30, 40);
+        doc.text(latin('Dossier de cliente — ' + brand), M, y); y += 20;
+        doc.setFont('helvetica', 'normal'); doc.setFontSize(9.5); doc.setTextColor(120, 125, 130);
+        doc.text(latin('Documento vivo mantenido por A+Growth  ·  Exportado: ' + today()), M, y); y += 8;
+        doc.setDrawColor(168, 135, 79); doc.setLineWidth(1); doc.line(M, y + 6, M + 90, y + 6); y += 30;
+
+        h1('1. Contexto del negocio');
+        SECTIONS.forEach(function (def) {
+          h2(def[1]);
+          (state[def[0]] || []).forEach(function (b) { bullet(b); });
+          y += 8;
         });
-        y += 14;
+
+        y += 6; h1('2. Reuniones y recaps (' + all.meetings.length + ')');
+        if (!all.meetings.length) para('Sin reuniones cargadas todavía.', true);
+        all.meetings.forEach(function (m) {
+          h2(m.titulo + '  -  ' + fmtF(m.fecha));
+          if (m.recap) recapBlock(m.recap);
+          else para('Transcripción cargada; recap aún no generado.', true);
+          y += 8;
+        });
+
+        y += 6; h1('3. Recursos en aprobación (' + all.approvals.length + ')');
+        if (!all.approvals.length) para('Sin recursos activos.', true);
+        var cols = {};
+        all.approvals.forEach(function (c) { (cols[c.columna] = cols[c.columna] || []).push(c); });
+        Object.keys(cols).forEach(function (col) {
+          h2(col);
+          cols[col].forEach(function (c) {
+            var t = c.titulo + ' (' + (c.tipo || 'recurso') + ')' + (c.nota ? ' - ' + c.nota : '');
+            bullet(t);
+            if (c.comentario) bullet('Feedback del cliente: "' + c.comentario + '"', 14);
+          });
+          y += 6;
+        });
+
+        y += 6; h1('4. Banco de ideas (' + all.ideas.length + ')');
+        ['Pendientes', 'Aplicadas'].forEach(function (col) {
+          h2(col);
+          var items = all.ideas.filter(function (c) { return c.columna === col; });
+          if (!items.length) para('—', true);
+          items.forEach(function (c) {
+            bullet(c.titulo + (c.nota ? ' - ' + c.nota.replace(/\n+/g, ' ') : ''));
+          });
+          y += 6;
+        });
+
+        if (all.notes.length) {
+          y += 6; h1('5. Notas de reuniones de reporte');
+          all.notes.forEach(function (n) {
+            h2('Reunión ' + fmtF(n.fecha));
+            n.text.split('\n').forEach(function (l) { if (l.trim()) para(l.trim()); });
+          });
+        }
+
+        para(' ');
+        para('Las transcripciones completas están disponibles en el portal (Meeting transcripts) y en la exportación .md.', true);
+        doc.setFontSize(8.5); doc.setTextColor(150, 150, 150);
+        doc.text('Preparado por A+Growth - weareaplus.net', M, 812);
+        doc.save('dossier-' + CLIENT + '-' + today() + '.pdf');
       });
-      doc.setFontSize(8.5); doc.setTextColor(150, 150, 150);
-      doc.text('Preparado por A+Growth · weareaplus.net', M, 812);
-      doc.save('contexto-' + CLIENT + '-' + today() + '.pdf');
     });
   });
 
