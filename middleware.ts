@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { CLIENT_PASSWORDS, isClientAuthorized } from './lib/client-auth';
+import { CLIENT_PASSWORDS, isClientAuthorized, isMasterAuthorized } from './lib/client-auth';
 
 // Portal de clientes protegido con clave (validación server-side vía cookie):
 //   /clients/<cliente>                    → hub      (public/clients/<cliente>-hub.html)
@@ -10,6 +10,13 @@ import { CLIENT_PASSWORDS, isClientAuthorized } from './lib/client-auth';
 //   /clients/<cliente>/transcripts        → reuniones (public/clients/<cliente>-transcripts.html)
 //   /clients/<cliente>/context            → contexto vivo (public/clients/<cliente>-context.html)
 export function middleware(req: NextRequest) {
+  // HQ interno de A+Growth: /hq con clave maestra (env AGROWTH_MASTER_KEY).
+  if (req.nextUrl.pathname === '/hq' || req.nextUrl.pathname === '/hq.html' || req.nextUrl.pathname === '/hq/') {
+    const master = req.cookies.get('agrowth_master')?.value;
+    if (isMasterAuthorized(master)) return NextResponse.rewrite(new URL('/hq.html', req.url));
+    return NextResponse.rewrite(new URL('/hq-login.html', req.url));
+  }
+
   const match = req.nextUrl.pathname.match(
     /^\/clients\/([^/]+?)(?:\.html)?(?:\/(approvals|reports|ideas|transcripts|context)(?:\/(\d{4}-\d{2}-\d{2}))?)?\/?$/
   );
@@ -36,7 +43,8 @@ export function middleware(req: NextRequest) {
   if (!(client in CLIENT_PASSWORDS)) return NextResponse.next();
 
   const cookie = req.cookies.get(`client_auth_${client}`)?.value;
-  if (!isClientAuthorized(client, cookie)) {
+  const master = req.cookies.get('agrowth_master')?.value;
+  if (!isClientAuthorized(client, cookie, master)) {
     return NextResponse.rewrite(new URL(`/clients/${client}-login.html`, req.url));
   }
 
@@ -51,5 +59,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: '/clients/:path*',
+  matcher: ['/clients/:path*', '/hq', '/hq.html', '/hq/'],
 };

@@ -9,7 +9,7 @@ import { isClientAuthorized } from '../../../../lib/client-auth';
 export const maxDuration = 60;
 
 function authorized(req: NextRequest, client: string): boolean {
-  return isClientAuthorized(client, req.cookies.get(`client_auth_${client}`)?.value);
+  return isClientAuthorized(client, req.cookies.get(`client_auth_${client}`)?.value, req.cookies.get('agrowth_master')?.value);
 }
 
 function storageConfig() {

@@ -7,7 +7,7 @@ import { isClientAuthorized } from '../../../../lib/client-auth';
 // Sin esas env vars, GET/PUT devuelven 503 y el front cae a modo local (localStorage).
 
 function authorized(req: NextRequest, client: string): boolean {
-  return isClientAuthorized(client, req.cookies.get(`client_auth_${client}`)?.value);
+  return isClientAuthorized(client, req.cookies.get(`client_auth_${client}`)?.value, req.cookies.get('agrowth_master')?.value);
 }
 
 function boardKey(req: NextRequest, client: string): string {

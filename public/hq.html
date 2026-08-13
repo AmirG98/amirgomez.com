@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A+Growth HQ — Campaign Tracker</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #101214; --panel: #17191d; --panel-2: #1d2025; --ink: #f1f2f3; --ink-2: #a2a8ad; --ink-3: #6b7176; --line: rgba(255,255,255,0.09); --orange: #f97316; --orange-soft: rgba(249,115,22,0.12); --good: #34d399; --warn: #fbbf24; --bad: #f87171; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); font-size: 14.5px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 1400px; margin: 0 auto; padding: 32px 28px 64px; }
+
+  .top { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 26px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .wordmark { font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 20px; color: #fff; }
+  .wordmark span { color: var(--orange); }
+  .hq-badge { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.28em; color: var(--orange); border: 1px solid var(--orange); border-radius: 5px; padding: 2px 7px 2px 10px; }
+  .quick { display: flex; gap: 8px; flex-wrap: wrap; }
+  .quick a { font-size: 12px; font-weight: 500; color: var(--ink-2); text-decoration: none; border: 1px solid var(--line); border-radius: 7px; padding: 7px 12px; }
+  .quick a:hover { color: var(--orange); border-color: var(--orange); }
+
+  #banner { display: none; font-size: 13px; color: var(--ink-2); background: var(--orange-soft); border-left: 2px solid var(--orange); padding: 10px 14px; margin-bottom: 20px; }
+  #banner.show { display: block; }
+
+  .totals { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 24px; }
+  .tot { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+  .tot .l { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); }
+  .tot .v { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 22px; color: #fff; margin-top: 4px; }
+  .tot .v small { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 11.5px; color: var(--ink-2); display: block; }
+
+  .bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+  .filters { display: flex; gap: 8px; flex-wrap: wrap; }
+  .filters select { font-family: 'Inter', sans-serif; font-size: 12.5px; padding: 8px 10px; background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 7px; outline: none; cursor: pointer; }
+  .filters select:focus { border-color: var(--orange); }
+  .actions-bar { display: flex; gap: 8px; }
+  .btn { font-family: 'Archivo', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: var(--orange); color: #101214; border: none; border-radius: 7px; padding: 10px 18px; cursor: pointer; }
+  .btn:hover { background: #fb8b3c; }
+  .btn.ghost { background: none; border: 1px solid var(--line); color: var(--ink-2); }
+  .btn.ghost:hover { border-color: var(--orange); color: var(--orange); }
+
+  .tblwrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+  table { width: 100%; border-collapse: collapse; min-width: 1080px; }
+  th { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); background: var(--panel); white-space: nowrap; }
+  td { font-size: 13px; color: var(--ink-2); padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--panel); }
+  td b { color: #fff; font-weight: 600; }
+  .cliente-tag { display: inline-block; font-size: 10.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 5px; }
+  .cliente-tag.urban-usa { color: #d4b483; background: rgba(168,135,79,0.18); }
+  .cliente-tag.founder-accelerators { color: #ffab7a; background: rgba(255,113,57,0.16); }
+  .cliente-tag.otro { color: var(--ink-2); background: rgba(255,255,255,0.08); }
+  .estado { font-size: 11.5px; font-weight: 600; }
+  .estado.activa { color: var(--good); }
+  .estado.pausada { color: var(--warn); }
+  .estado.planificada { color: #93c5fd; }
+  .estado.finalizada { color: var(--ink-3); }
+  .sem { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: -1px; }
+  .sem.g { background: var(--good); }
+  .sem.a { background: var(--warn); }
+  .sem.r { background: var(--bad); }
+  .sem.n { background: var(--ink-3); }
+  .rowact { white-space: nowrap; }
+  .rowact a { font-size: 12px; color: var(--ink-3); text-decoration: none; margin-right: 10px; }
+  .rowact a:hover { color: var(--orange); }
+  .empty { text-align: center; color: var(--ink-3); padding: 34px 0; }
+
+  #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.65); display: none; align-items: center; justify-content: center; z-index: 100; padding: 20px; }
+  #overlay.open { display: flex; }
+  .editor { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; max-width: 640px; width: 100%; padding: 26px 28px; max-height: 92vh; overflow-y: auto; }
+  .editor h2 { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 18px; color: #fff; margin-bottom: 14px; }
+  .editor label { display: block; font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); margin: 12px 0 4px; }
+  .editor input, .editor select { width: 100%; font-family: 'Inter', sans-serif; font-size: 14px; padding: 9px 11px; border: 1px solid var(--line); background: var(--panel-2); color: var(--ink); outline: none; border-radius: 7px; }
+  .editor input:focus, .editor select:focus { border-color: var(--orange); }
+  .editor input::placeholder { color: var(--ink-3); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0 14px; }
+  .editor .actions { display: flex; gap: 10px; margin-top: 20px; }
+  #ed-save { flex: 1; }
+  #ed-error { display: none; font-size: 12.5px; color: var(--bad); margin-top: 10px; }
+  #ed-error.show { display: block; }
+
+  footer { text-align: center; margin-top: 40px; font-size: 12px; color: var(--ink-3); }
+  footer a { color: var(--ink-3); text-decoration: none; }
+  footer a:hover { color: var(--orange); }
+  @media (max-width: 640px) { .grid2, .grid3 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="top">
+    <div class="brand">
+      <span class="wordmark">A<span>+</span>GROWTH</span>
+      <span class="hq-badge">HQ</span>
+    </div>
+    <div class="quick" id="quick"></div>
+  </div>
+
+  <div id="banner">Modo local: el tracker se guarda en este navegador. Con Upstash activo pasa a compartido con el equipo.</div>
+
+  <div class="totals" id="totals"></div>
+
+  <div class="bar">
+    <div class="filters">
+      <select id="f-cliente"><option value="">Todos los clientes</option></select>
+      <select id="f-plataforma"><option value="">Todas las plataformas</option></select>
+      <select id="f-estado"><option value="">Todos los estados</option><option>activa</option><option>pausada</option><option>planificada</option><option>finalizada</option></select>
+    </div>
+    <div class="actions-bar">
+      <button class="btn ghost" id="dl-csv">CSV</button>
+      <button class="btn ghost" id="dl-md">MD</button>
+      <button class="btn" id="btn-new">+ Campaña</button>
+    </div>
+  </div>
+
+  <div class="tblwrap">
+    <table>
+      <thead><tr>
+        <th>Cliente</th><th>Campaña</th><th>Plataforma</th><th>Estado</th><th>Objetivo</th>
+        <th>Presupuesto</th><th>Target</th><th>Resultados</th><th>Costo/res</th><th></th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <div id="overlay">
+    <div class="editor">
+      <h2 id="ed-title">Nueva campaña</h2>
+      <div class="grid2">
+        <div><label>Cliente</label><select id="e-cliente"></select></div>
+        <div><label>Plataforma</label><select id="e-plataforma"><option>Meta</option><option>Google</option><option>TikTok</option><option>Email</option><option>Otro</option></select></div>
+      </div>
+      <label>Nombre de campaña</label>
+      <input id="e-nombre" placeholder="Leads Inversores | Form Nativo">
+      <div class="grid3">
+        <div><label>Estado</label><select id="e-estado"><option>activa</option><option>pausada</option><option>planificada</option><option>finalizada</option></select></div>
+        <div><label>Objetivo</label><select id="e-objetivo"><option>leads</option><option>llamadas</option><option>compras</option><option>tráfico</option><option>awareness</option><option>otro</option></select></div>
+        <div><label>Presupuesto (USD)</label><input id="e-monto" type="number" step="0.01" placeholder="35"></div>
+      </div>
+      <div class="grid3">
+        <div><label>Tipo de presupuesto</label><select id="e-ptipo"><option>diario</option><option>mensual</option><option>total</option><option value="adset">nivel ad set</option></select></div>
+        <div><label>Target KPI</label><input id="e-tkpi" placeholder="CPL"></div>
+        <div><label>Target valor (USD)</label><input id="e-tvalor" type="number" step="0.01" placeholder="10"></div>
+      </div>
+      <div class="grid3">
+        <div><label>Spend (USD)</label><input id="e-spend" type="number" step="0.01" placeholder="0"></div>
+        <div><label>Resultados (#)</label><input id="e-res" type="number" step="1" placeholder="0"></div>
+        <div><label>Data al (fecha)</label><input id="e-al" type="date"></div>
+      </div>
+      <label>Notas</label>
+      <input id="e-notas" placeholder="Creativo ganador, próximos tests…">
+      <label>Link (ad manager, reporte…)</label>
+      <input id="e-link" placeholder="https://…">
+      <p id="ed-error"></p>
+      <div class="actions">
+        <button class="btn" id="ed-save">Guardar</button>
+        <button class="btn ghost" id="ed-cancel">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>A+Growth HQ · interno · <a href="#" id="logout">salir</a></footer>
+</div>
+
+<script>
+(function () {
+  var API = '/api/tracker';
+  var LS_KEY = 'tracker_agrowth';
+  var CLIENTES = [
+    { slug: 'urban-usa', nombre: 'Urban USA' },
+    { slug: 'founder-accelerators', nombre: 'Founder Accelerator' }
+  ];
+  var SECCIONES = ['reports', 'approvals', 'ideas', 'transcripts', 'context'];
+  var mode = 'local';
+  var state = null;
+
+  function seed() {
+    var hoy = '2026-08-11';
+    return { campaigns: [
+      { id: 'c-1', cliente: 'urban-usa', nombre: 'LEADS | Inversores LATAM+Local | Form Nativo', plataforma: 'Meta', estado: 'activa', objetivo: 'leads', presupuesto: { monto: 35, tipo: 'diario' }, target: { kpi: 'CPL', valor: 10 }, resultado: { spend: 1848.67, resultados: 211, al: hoy }, notas: 'Creativo ganador: "No todos permiten Airbnb" (98.6% de los leads). Colombia 68%.', link: '' },
+      { id: 'c-2', cliente: 'urban-usa', nombre: 'Test — Inversores', plataforma: 'Meta', estado: 'pausada', objetivo: 'leads', presupuesto: { monto: 0, tipo: 'adset' }, target: { kpi: 'CPL', valor: 10 }, resultado: { spend: 305.73, resultados: 0, al: hoy }, notas: 'Tráfico barato sin leads atribuidos. Hook "BA vs Miami" CTR 11.76% — combinar con estructura del ganador.', link: '' },
+      { id: 'c-3', cliente: 'urban-usa', nombre: 'Property Management LATAM', plataforma: 'Meta', estado: 'activa', objetivo: 'leads', presupuesto: { monto: 0, tipo: 'adset' }, target: { kpi: 'CPL', valor: 15 }, resultado: { spend: 28.50, resultados: 0, al: hoy }, notas: 'Fase temprana. Primera señal: Colombia (CTR 2.71%, CPC $0.21).', link: '' },
+      { id: 'c-4', cliente: 'founder-accelerators', nombre: 'BAD | 1:1 Call | Direct Booking', plataforma: 'Meta', estado: 'activa', objetivo: 'llamadas', presupuesto: { monto: 0, tipo: 'adset' }, target: { kpi: 'CPL', valor: 283 }, resultado: { spend: 629.09, resultados: 3, al: '2026-08-10' }, notas: 'Heredada de la agencia anterior — sigue entregando. Website leads como referencia.', link: '' },
+      { id: 'c-5', cliente: 'founder-accelerators', nombre: 'AG | 1:1 Call | Direct Booking', plataforma: 'Meta', estado: 'activa', objetivo: 'llamadas', presupuesto: { monto: 35, tipo: 'diario' }, target: { kpi: 'CPL', valor: 283 }, resultado: { spend: 264.70, resultados: 1, al: '2026-08-10' }, notas: 'CPC $4.14 alto — revisar creativos/audiencia esta semana.', link: '' },
+      { id: 'c-6', cliente: 'founder-accelerators', nombre: 'AG | AI Brain | Creative Incubator', plataforma: 'Meta', estado: 'activa', objetivo: 'compras', presupuesto: { monto: 60, tipo: 'diario' }, target: { kpi: 'CAC', valor: 300 }, resultado: { spend: 406.32, resultados: 1, al: '2026-08-10' }, notas: 'Primera compra paga. Clicks a $0.60. Eventos intermedios del funnel esta semana (GTM listo).', link: '' },
+      { id: 'c-7', cliente: 'founder-accelerators', nombre: 'TF | Visit Profile', plataforma: 'Meta', estado: 'activa', objetivo: 'tráfico', presupuesto: { monto: 5, tipo: 'diario' }, target: { kpi: 'CPV', valor: 0.15 }, resultado: { spend: 35.02, resultados: 495, al: '2026-08-10' }, notas: 'Always-on de perfil, compounding.', link: '' }
+    ] };
+  }
+
+  function esc(s) {
+    return String(s || '').replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+  function money(n) {
+    if (n == null || isNaN(n)) return '—';
+    return '$' + Number(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+  function clienteNombre(slug) {
+    var c = CLIENTES.filter(function (x) { return x.slug === slug; })[0];
+    return c ? c.nombre : slug;
+  }
+  function costo(c) {
+    if (!c.resultado || !c.resultado.spend || !c.resultado.resultados) return null;
+    return c.resultado.spend / c.resultado.resultados;
+  }
+  function semaforo(c) {
+    var k = costo(c);
+    if (k == null || !c.target || !c.target.valor) return 'n';
+    if (k <= c.target.valor) return 'g';
+    if (k <= c.target.valor * 1.25) return 'a';
+    return 'r';
+  }
+
+  function filtered() {
+    var fc = document.getElementById('f-cliente').value;
+    var fp = document.getElementById('f-plataforma').value;
+    var fe = document.getElementById('f-estado').value;
+    return state.campaigns.filter(function (c) {
+      return (!fc || c.cliente === fc) && (!fp || c.plataforma === fp) && (!fe || c.estado === fe) && !c.archivada;
+    });
+  }
+
+  function render() {
+    var rows = document.getElementById('rows');
+    rows.innerHTML = '';
+    var items = filtered();
+    if (!items.length) {
+      rows.innerHTML = '<tr><td colspan="10" class="empty">Sin campañas con estos filtros.</td></tr>';
+    }
+    items.forEach(function (c) {
+      var k = costo(c);
+      var tr = document.createElement('tr');
+      tr.innerHTML =
+        '<td><span class="cliente-tag ' + esc(c.cliente) + '">' + esc(clienteNombre(c.cliente)) + '</span></td>' +
+        '<td><b>' + esc(c.nombre) + '</b>' + (c.notas ? '<br><span style="font-size:11.5px;color:var(--ink-3);">' + esc(c.notas) + '</span>' : '') + '</td>' +
+        '<td>' + esc(c.plataforma) + '</td>' +
+        '<td><span class="estado ' + esc(c.estado) + '">' + esc(c.estado) + '</span></td>' +
+        '<td>' + esc(c.objetivo) + '</td>' +
+        '<td class="num">' + (c.presupuesto && c.presupuesto.monto ? money(c.presupuesto.monto) + '<br><span style="font-size:11px;color:var(--ink-3);">' + esc(c.presupuesto.tipo) + '</span>' : '<span style="color:var(--ink-3);">ad set</span>') + '</td>' +
+        '<td>' + (c.target && c.target.valor ? esc(c.target.kpi || 'KPI') + ' ≤ ' + money(c.target.valor) : '—') + '</td>' +
+        '<td>' + (c.resultado && c.resultado.al ? '<b>' + (c.resultado.resultados != null ? c.resultado.resultados : '—') + '</b> · ' + money(c.resultado.spend) + '<br><span style="font-size:11px;color:var(--ink-3);">al ' + esc(c.resultado.al) + '</span>' : '—') + '</td>' +
+        '<td><span class="sem ' + semaforo(c) + '"></span><b>' + (k != null ? money(k) : '—') + '</b></td>' +
+        '<td class="rowact"><a href="#" data-act="edit" data-id="' + c.id + '">editar</a><a href="#" data-act="del" data-id="' + c.id + '">archivar</a>' + (c.link ? '<a href="' + esc(c.link) + '" target="_blank" rel="noopener">↗</a>' : '') + '</td>';
+      rows.appendChild(tr);
+    });
+
+    var items2 = filtered();
+    var activas = items2.filter(function (c) { return c.estado === 'activa'; });
+    var spendTot = items2.reduce(function (a, c) { return a + ((c.resultado && c.resultado.spend) || 0); }, 0);
+    var diario = activas.reduce(function (a, c) { return a + (c.presupuesto && c.presupuesto.tipo === 'diario' ? (c.presupuesto.monto || 0) : 0); }, 0);
+    var porCliente = {};
+    items2.forEach(function (c) { porCliente[c.cliente] = (porCliente[c.cliente] || 0) + ((c.resultado && c.resultado.spend) || 0); });
+    var t = document.getElementById('totals');
+    t.innerHTML =
+      '<div class="tot"><div class="l">Campañas activas</div><div class="v">' + activas.length + '<small>de ' + items2.length + ' visibles</small></div></div>' +
+      '<div class="tot"><div class="l">Spend acumulado (visible)</div><div class="v">' + money(spendTot) + '<small>según última data cargada</small></div></div>' +
+      '<div class="tot"><div class="l">Presupuesto diario comprometido</div><div class="v">' + money(diario) + '<small>solo campañas activas con budget diario</small></div></div>' +
+      CLIENTES.map(function (cl) {
+        return '<div class="tot"><div class="l">' + esc(cl.nombre) + '</div><div class="v">' + money(porCliente[cl.slug] || 0) + '<small>spend visible</small></div></div>';
+      }).join('');
+  }
+
+  function persistLocal() { try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (e) {} }
+  var saveTimer = null;
+  function save() {
+    persistLocal();
+    if (mode !== 'server') return;
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(function () {
+      fetch(API, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(state) }).catch(function () {});
+    }, 400);
+  }
+  function find(id) { return state.campaigns.filter(function (c) { return c.id === id; })[0]; }
+
+  var editingId = null;
+  var overlay = document.getElementById('overlay');
+  function openEditor(c) {
+    editingId = c ? c.id : null;
+    document.getElementById('ed-title').textContent = c ? 'Editar campaña' : 'Nueva campaña';
+    document.getElementById('e-cliente').value = c ? c.cliente : CLIENTES[0].slug;
+    document.getElementById('e-plataforma').value = c ? c.plataforma : 'Meta';
+    document.getElementById('e-nombre').value = c ? c.nombre : '';
+    document.getElementById('e-estado').value = c ? c.estado : 'activa';
+    document.getElementById('e-objetivo').value = c ? c.objetivo : 'leads';
+    document.getElementById('e-monto').value = c && c.presupuesto ? (c.presupuesto.monto || '') : '';
+    document.getElementById('e-ptipo').value = c && c.presupuesto ? (c.presupuesto.tipo || 'diario') : 'diario';
+    document.getElementById('e-tkpi').value = c && c.target ? (c.target.kpi || '') : 'CPL';
+    document.getElementById('e-tvalor').value = c && c.target ? (c.target.valor || '') : '';
+    document.getElementById('e-spend').value = c && c.resultado ? (c.resultado.spend || '') : '';
+    document.getElementById('e-res').value = c && c.resultado ? (c.resultado.resultados || '') : '';
+    document.getElementById('e-al').value = c && c.resultado ? (c.resultado.al || '') : '';
+    document.getElementById('e-notas').value = c ? (c.notas || '') : '';
+    document.getElementById('e-link').value = c ? (c.link || '') : '';
+    document.getElementById('ed-error').classList.remove('show');
+    overlay.classList.add('open');
+    document.getElementById('e-nombre').focus();
+  }
+  function closeEditor() { overlay.classList.remove('open'); editingId = null; }
+  document.getElementById('btn-new').addEventListener('click', function () { openEditor(null); });
+  document.getElementById('ed-cancel').addEventListener('click', closeEditor);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) closeEditor(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeEditor(); });
+
+  document.getElementById('ed-save').addEventListener('click', function () {
+    var nombre = document.getElementById('e-nombre').value.trim();
+    if (!nombre) {
+      var err = document.getElementById('ed-error');
+      err.textContent = 'Falta el nombre de la campaña.';
+      err.classList.add('show');
+      return;
+    }
+    var data = {
+      cliente: document.getElementById('e-cliente').value,
+      plataforma: document.getElementById('e-plataforma').value,
+      nombre: nombre,
+      estado: document.getElementById('e-estado').value,
+      objetivo: document.getElementById('e-objetivo').value,
+      presupuesto: { monto: parseFloat(document.getElementById('e-monto').value) || 0, tipo: document.getElementById('e-ptipo').value },
+      target: { kpi: document.getElementById('e-tkpi').value.trim() || 'KPI', valor: parseFloat(document.getElementById('e-tvalor').value) || 0 },
+      resultado: {
+        spend: parseFloat(document.getElementById('e-spend').value) || 0,
+        resultados: parseInt(document.getElementById('e-res').value, 10) || 0,
+        al: document.getElementById('e-al').value
+      },
+      notas: document.getElementById('e-notas').value.trim(),
+      link: document.getElementById('e-link').value.trim()
+    };
+    if (editingId) {
+      var c = find(editingId);
+      if (c) { Object.keys(data).forEach(function (k) { c[k] = data[k]; }); }
+    } else {
+      data.id = 'c-' + Date.now();
+      state.campaigns.push(data);
+    }
+    closeEditor(); save(); render();
+  });
+
+  document.getElementById('rows').addEventListener('click', function (e) {
+    var act = e.target.getAttribute && e.target.getAttribute('data-act');
+    if (!act) return;
+    e.preventDefault();
+    var c = find(e.target.getAttribute('data-id'));
+    if (act === 'edit') openEditor(c);
+    if (act === 'del') { if (confirm('¿Archivar "' + c.nombre + '"?')) { c.archivada = true; save(); render(); } }
+  });
+
+  ['f-cliente', 'f-plataforma', 'f-estado'].forEach(function (id) {
+    document.getElementById(id).addEventListener('change', render);
+  });
+
+  function csvCell(v) { return '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"'; }
+  document.getElementById('dl-csv').addEventListener('click', function () {
+    var head = ['cliente', 'campaña', 'plataforma', 'estado', 'objetivo', 'presupuesto', 'tipo', 'target_kpi', 'target', 'spend', 'resultados', 'costo', 'data_al', 'notas'];
+    var lines = [head.join(',')];
+    filtered().forEach(function (c) {
+      var k = costo(c);
+      lines.push([c.cliente, c.nombre, c.plataforma, c.estado, c.objetivo,
+        c.presupuesto && c.presupuesto.monto, c.presupuesto && c.presupuesto.tipo,
+        c.target && c.target.kpi, c.target && c.target.valor,
+        c.resultado && c.resultado.spend, c.resultado && c.resultado.resultados,
+        k != null ? k.toFixed(2) : '', c.resultado && c.resultado.al, c.notas].map(csvCell).join(','));
+    });
+    dl(lines.join('\n'), 'text/csv;charset=utf-8', 'campaign-tracker-' + hoy() + '.csv');
+  });
+  document.getElementById('dl-md').addEventListener('click', function () {
+    var md = '# A+Growth — Campaign Tracker (' + hoy() + ')\n\n';
+    CLIENTES.forEach(function (cl) {
+      var items = filtered().filter(function (c) { return c.cliente === cl.slug; });
+      if (!items.length) return;
+      md += '## ' + cl.nombre + '\n\n';
+      items.forEach(function (c) {
+        var k = costo(c);
+        md += '- **' + c.nombre + '** (' + c.plataforma + ' · ' + c.estado + ' · ' + c.objetivo + ') — presupuesto ' +
+          (c.presupuesto && c.presupuesto.monto ? '$' + c.presupuesto.monto + ' ' + c.presupuesto.tipo : 'a nivel ad set') +
+          (c.target && c.target.valor ? ' — target ' + c.target.kpi + ' ≤ $' + c.target.valor : '') +
+          (c.resultado && c.resultado.al ? ' — resultados: ' + c.resultado.resultados + ' por $' + c.resultado.spend + (k != null ? ' (' + (c.target && c.target.kpi || 'costo') + ' $' + k.toFixed(2) + ')' : '') + ' al ' + c.resultado.al : '') +
+          (c.notas ? '. ' + c.notas : '') + '\n';
+      });
+      md += '\n';
+    });
+    dl(md, 'text/markdown;charset=utf-8', 'campaign-tracker-' + hoy() + '.md');
+  });
+  function hoy() { return new Date().toISOString().slice(0, 10); }
+  function dl(content, type, fname) {
+    var blob = new Blob([content], { type: type });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = fname;
+    document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+  }
+
+  document.getElementById('logout').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.cookie = 'agrowth_master=; path=/; max-age=0';
+    location.reload();
+  });
+
+  var quick = document.getElementById('quick');
+  CLIENTES.forEach(function (cl) {
+    SECCIONES.forEach(function (s, i) {
+      if (i === 0) {
+        var a0 = document.createElement('a');
+        a0.href = '/clients/' + cl.slug;
+        a0.textContent = cl.nombre;
+        a0.style.color = 'var(--orange)';
+        quick.appendChild(a0);
+      }
+    });
+  });
+  var selCliente = document.getElementById('f-cliente');
+  var selClienteEd = document.getElementById('e-cliente');
+  var selPlat = document.getElementById('f-plataforma');
+  CLIENTES.forEach(function (cl) {
+    [selCliente, selClienteEd].forEach(function (sel) {
+      var o = document.createElement('option');
+      o.value = cl.slug; o.textContent = cl.nombre;
+      sel.appendChild(o);
+    });
+  });
+  ['Meta', 'Google', 'TikTok', 'Email', 'Otro'].forEach(function (p) {
+    var o = document.createElement('option');
+    o.textContent = p; selPlat.appendChild(o);
+  });
+
+  function loadLocal() {
+    mode = 'local';
+    document.getElementById('banner').classList.add('show');
+    try {
+      var raw = localStorage.getItem(LS_KEY);
+      state = raw ? JSON.parse(raw) : seed();
+    } catch (e) { state = seed(); }
+    persistLocal(); render();
+  }
+  fetch(API, { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error('nostorage'); return r.json(); })
+    .then(function (data) {
+      mode = 'server';
+      state = data.doc || seed();
+      if (!data.doc) save();
+      render();
+    })
+    .catch(loadLocal);
+})();
+</script>
+</body>
+</html>
