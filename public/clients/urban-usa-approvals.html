@@ -59,6 +59,17 @@
   .col h2 .count { color: var(--gold); }
   .cards { min-height: 60px; display: flex; flex-direction: column; gap: 10px; }
 
+  .quickadd { margin-top: 10px; }
+  .quickadd input { width: 100%; font-family: var(--sans); font-size: 13px; padding: 9px 11px; border: 1px dashed var(--hairline); background: transparent; color: var(--ink); outline: none; border-radius: 0px; }
+  .quickadd input:focus { border-style: solid; border-color: var(--navy); }
+  .quickadd input::placeholder { color: var(--ink-3); }
+  .quickadd .qa-row { display: none; gap: 8px; margin-top: 8px; }
+  .quickadd.open .qa-row { display: flex; }
+  .quickadd .qa-row input { flex: 1; }
+  .quickadd .qa-actions { display: none; gap: 8px; margin-top: 8px; }
+  .quickadd.open .qa-actions { display: flex; }
+  .quickadd button { font-family: var(--btnf, var(--sans)); font-size: 10.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 8px 14px; border: none; border-radius: 0px; cursor: pointer; background: var(--navy); color: #ffffff; }
+  .quickadd button.ghost { background: none; border: 1px solid var(--hairline); color: var(--ink-2); }
   .card { background: #fff; border: 1px solid var(--hairline); padding: 16px 18px; cursor: grab; position: relative; }
   .card:active { cursor: grabbing; }
   .card.sortable-ghost { opacity: 0.35; border-style: dashed; }
@@ -108,7 +119,7 @@
     <div class="wordmark">URBAN</div>
     <div class="wordmark-sub">REAL ESTATE</div>
     <h1>Aprobación de recursos</h1>
-    <p class="sub">Arrastrá cada recurso a su estado — o usá el menú ⋯ de la tarjeta.</p>
+    <p class="sub">Arrastrá cada recurso a su estado — o usá el menú ⋯ de la tarjeta.<br>Podés agregar recursos y links en tu columna, y sumar el link a cualquier tarjeta desde “Editar · agregar link”.</p>
     <a class="backlink" href="/clients/urban-usa">← Volver al portal</a>
   </header>
 
@@ -168,6 +179,11 @@
     <div class="col">
       <h2>En proceso · Urban <span class="count" id="c-0"></span></h2>
       <div class="cards" data-col="En proceso · Urban"></div>
+      <div class="quickadd" id="quickadd">
+        <input id="qa-titulo" placeholder="+ Agregar recurso…" autocomplete="off">
+        <div class="qa-row"><input id="qa-url" placeholder="Link (Drive, Figma, doc…)" autocomplete="off"></div>
+        <div class="qa-actions"><button id="qa-save">Agregar</button><button class="ghost" id="qa-cancel">Cancelar</button></div>
+      </div>
     </div>
     <div class="col">
       <h2>En proceso · A+Growth <span class="count" id="c-1"></span></h2>
@@ -199,6 +215,7 @@
   var CLIENT = 'urban-usa';
   var API = '/api/approvals/' + CLIENT;
   var LS_KEY = 'approvals_' + CLIENT;
+  var CLIENT_COL = 'En proceso · Urban';
   var COLS = ['En proceso · Urban', 'En proceso · A+Growth', 'Para revisar', 'Con comentarios', 'Aprobado'];
   var mode = 'local';
   var state = null;
@@ -277,7 +294,8 @@
             COLS.filter(function (x) { return x !== col; }).map(function (x) {
               return '<button data-act="move" data-to="' + esc(x) + '">Mover a ' + esc(x.toLowerCase()) + '</button>';
             }).join('') +
-            '<div class="admin-only"><button data-act="edit" class="sep">Editar (admin)</button>' +
+            '<button data-act="edit" class="sep">Editar · agregar link</button>' +
+            '<div class="admin-only">' +
             '<button data-act="archive" class="danger">Archivar (admin)</button></div>' +
           '</div>';
         wrap.appendChild(el);
@@ -372,7 +390,8 @@
     document.getElementById('f-col').value = card ? card.columna : 'En proceso · A+Growth';
     document.getElementById('ed-error').classList.remove('show');
     overlay.classList.add('open');
-    document.getElementById('f-titulo').focus();
+    if (card && card.titulo && !card.url) document.getElementById('f-url').focus();
+    else document.getElementById('f-titulo').focus();
   }
   function closeEditor() { overlay.classList.remove('open'); editingId = null; }
 
@@ -439,6 +458,30 @@
     }
     closeEditor(); save(); render();
   });
+
+
+  var qa = document.getElementById('quickadd');
+  if (qa) {
+    var qaT = document.getElementById('qa-titulo');
+    var qaU = document.getElementById('qa-url');
+    qaT.addEventListener('focus', function () { qa.classList.add('open'); });
+    document.getElementById('qa-cancel').addEventListener('click', function () {
+      qaT.value = ''; qaU.value = ''; qa.classList.remove('open');
+    });
+    document.getElementById('qa-save').addEventListener('click', function () {
+      var t = qaT.value.trim();
+      if (!t) { qaT.focus(); return; }
+      state.cards.push({
+        id: 'r-' + Date.now(), titulo: t, tipo: 'otro', url: qaU.value.trim(), nota: '',
+        columna: CLIENT_COL, comentario: '', actualizado: new Date().toISOString()
+      });
+      qaT.value = ''; qaU.value = ''; qa.classList.remove('open');
+      save(); render();
+      notify(t, 'Recurso agregado por el cliente', qaU.value.trim());
+    });
+    qaU.addEventListener('keydown', function (e) { if (e.key === 'Enter') document.getElementById('qa-save').click(); });
+    qaT.addEventListener('keydown', function (e) { if (e.key === 'Enter') qaU.focus(); });
+  }
 
   function applyAdmin() {
     document.body.classList.toggle('admin', isAdmin);
