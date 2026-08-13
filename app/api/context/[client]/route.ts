@@ -47,7 +47,7 @@ export async function PUT(req: NextRequest, ctx: { params: Promise<{ client: str
   return NextResponse.json({ ok: true });
 }
 
-const SECTION_KEYS = ['negocio', 'objetivos', 'canales', 'guardrails', 'aprendizajes', 'equipo'];
+const SECTION_KEYS = ['negocio', 'oferta', 'objetivos', 'canales', 'guardrails', 'aprendizajes', 'equipo'];
 
 export async function POST(req: NextRequest, ctx: { params: Promise<{ client: string }> }) {
   const { client } = await ctx.params;
@@ -68,7 +68,8 @@ export async function POST(req: NextRequest, ctx: { params: Promise<{ client: st
   const system =
     'Sos el asistente de A+Growth, una agencia de marketing. Mantenés el documento de contexto vivo de un cliente de la agencia. ' +
     'Recibís el contexto actual (JSON) y la transcripción de una reunión nueva. Devolvé el contexto ACTUALIZADO como JSON válido con exactamente estas claves: ' +
-    'negocio, objetivos, canales, guardrails, aprendizajes, equipo — cada una un array de strings (bullets). ' +
+    'negocio, oferta, objetivos, canales, guardrails, aprendizajes, equipo — cada una un array de strings (bullets). ' +
+    'En "oferta" describí cada producto/servicio del cliente en detalle (qué es, precio si se conoce, estado). ' +
     'Reglas: sé conservador — no elimines información vigente salvo que la reunión la contradiga explícitamente (en ese caso reemplazala por la versión nueva); ' +
     'agregá lo nuevo en la sección que corresponda; máximo 8 bullets por sección (consolidá los redundantes); bullets concretos, breves, en español rioplatense; ' +
     'incluí cifras y fechas cuando la reunión las mencione. Si la reunión no aporta nada a una sección, devolvela igual que estaba. ' +
