@@ -93,6 +93,30 @@
   .btn-ghost { border: 1px solid #3a3835; color: #fff; }
   .btn-ghost:hover { border-color: var(--orange); color: var(--orange-soft); }
 
+  /* Trust chips del hero (sin CTA arriba: la única opción es seguir leyendo) */
+  .rp .trust-chips { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .rp .trust-chips .chip {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid #2f2d2a;
+    color: #d8d5d0;
+  }
+
+  /* ---------- Primer CTA (mid-page, después de Commission) ---------- */
+  .rp .mid-cta {
+    margin-top: 36px;
+    background: var(--peach);
+    border-radius: var(--radius);
+    padding: 30px 26px;
+    text-align: center;
+  }
+  .rp .mid-cta-line {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 18px;
+    text-wrap: pretty;
+  }
+
   /* ---------- Sections ---------- */
   .section { padding: 56px 0 0; }
   .section:last-of-type { padding-bottom: 64px; }

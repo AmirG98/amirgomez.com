@@ -1,0 +1,167 @@
+/* /referral-partners/start — mismo sistema visual que la landing principal, scopeado bajo .rps */
+.rps {
+  --dark: #0d0d0c;
+  --orange: #e85c1f;
+  --orange-soft: #f3a26e;
+  --ink: #2e2c29;
+  --txt: #55524d;
+  --muted: #8a8781;
+  --page: #fdfcfa;
+  --card: #f7f5f1;
+  --peach: #fbefe7;
+  --chip: #edeae4;
+  --on-dark: #b8b5b0;
+  --radius: 14px;
+  --sans: "Avenir Next", Avenir, "Montserrat", "Century Gothic", "Segoe UI", system-ui, sans-serif;
+  font-family: var(--sans);
+  background: var(--page);
+  color: var(--txt);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.rps * { margin: 0; padding: 0; box-sizing: border-box; }
+.rps .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+/* ---------- Encabezado: sin CTA, abre con la explicación ---------- */
+.rps .top { background: var(--dark); color: #fff; position: relative; overflow: hidden; }
+.rps .top::before {
+  content: "";
+  display: block;
+  height: 9px;
+  background: linear-gradient(90deg, #f3a26e 0%, #e85c1f 55%, #d24f16 100%);
+}
+.rps .top .wrap { padding-top: 40px; padding-bottom: 44px; }
+.rps .wordmark { font-weight: 800; font-size: 20px; color: #fff; }
+.rps .wordmark span { color: var(--orange); }
+.rps .back {
+  display: inline-block;
+  margin-top: 22px;
+  font-size: 13px;
+  color: var(--on-dark);
+  text-decoration: none;
+}
+.rps .back:hover { color: var(--orange-soft); }
+.rps .eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin: 26px 0 12px;
+}
+.rps .top h1 {
+  font-size: clamp(30px, 6vw, 42px);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: #fff;
+  text-wrap: balance;
+}
+.rps .top .sub { margin-top: 14px; font-size: 16.5px; color: var(--on-dark); max-width: 34em; text-wrap: pretty; }
+
+/* ---------- Bloque 1: pasos ---------- */
+.rps .block { padding: 48px 0 0; }
+.rps h2 {
+  font-size: clamp(22px, 4.5vw, 28px);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+  text-wrap: balance;
+}
+.rps .steps { display: grid; gap: 16px; }
+.rps .step {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 16px;
+  align-items: start;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+}
+.rps .step .n {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--orange);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.rps .step .big { font-size: 17px; font-weight: 700; color: var(--ink); display: block; margin-bottom: 5px; text-wrap: pretty; }
+.rps .step .small { font-size: 14.5px; color: var(--txt); text-wrap: pretty; }
+
+/* ---------- Bloque 2: quién sos ---------- */
+.rps .who-card { background: var(--card); border-radius: var(--radius); padding: 26px 24px; }
+.rps .who-card p { font-size: 15.5px; text-wrap: pretty; }
+.rps .who-card p + p { margin-top: 10px; }
+.rps .who-card b { color: var(--ink); }
+.rps .statcards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; }
+.rps .statcard { background: #fff; border-radius: 12px; padding: 16px 18px; }
+.rps .statcard .metric {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+.rps .statcard .ctx { margin-top: 4px; font-size: 13px; color: var(--txt); text-wrap: pretty; }
+.rps .statcard.placeholder { border: 1px dashed #d9d5ce; background: #fbfaf8; }
+.rps .statcard.placeholder .metric { color: var(--muted); }
+.rps .links { margin-top: 18px; font-size: 13.5px; color: var(--muted); }
+.rps .links a { color: var(--ink); text-decoration: none; border-bottom: 1px solid #ddd9d2; }
+.rps .links a:hover { color: var(--orange); border-color: var(--orange); }
+
+/* ---------- Bloque 3: CTA principal (email) ---------- */
+.rps .cta-block {
+  margin-top: 48px;
+  background: var(--dark);
+  border-radius: var(--radius);
+  padding: 40px 30px;
+  text-align: center;
+  color: #fff;
+}
+.rps .cta-block h2 { color: #fff; font-size: clamp(24px, 5vw, 32px); margin-bottom: 22px; }
+.rps .btn {
+  display: inline-block;
+  padding: 16px 34px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 16.5px;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.rps .btn-solid { background: var(--orange); color: #fff; }
+.rps .btn-solid:hover { background: #d24f16; transform: translateY(-1px); }
+.rps .btn:focus-visible { outline: 3px solid var(--orange-soft); outline-offset: 2px; }
+.rps .cta-note { margin-top: 16px; font-size: 14px; color: var(--on-dark); max-width: 34em; margin-left: auto; margin-right: auto; text-wrap: pretty; }
+
+/* ---------- Bloque 4: opción secundaria (call) ---------- */
+.rps .secondary { margin-top: 26px; text-align: center; padding-bottom: 8px; }
+.rps .secondary p { font-size: 15px; color: var(--txt); }
+.rps .secondary a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid #cfcac2;
+}
+.rps .secondary a:hover { color: var(--orange); border-color: var(--orange); }
+.rps .secondary a:focus-visible { outline: 3px solid var(--orange-soft); outline-offset: 2px; }
+
+.rps .legal {
+  margin-top: 42px;
+  padding: 18px 0 44px;
+  border-top: 1px solid #e6e2db;
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .rps .statcards { grid-template-columns: 1fr; }
+  .rps .step { grid-template-columns: 36px 1fr; gap: 12px; padding: 18px 18px; }
+  .rps .step .n { font-size: 26px; }
+  .rps .cta-block { padding: 32px 22px; }
+  .rps .btn { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rps .btn { transition: none; }
+}
