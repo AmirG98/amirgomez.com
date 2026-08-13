@@ -146,10 +146,15 @@ const bodyHtml: string = `<header class="hero">
     <p class="eyebrow">Who We Are</p>
     <h2>A growth agency built on results</h2>
     <p>A+ Growth is a digital marketing and AI-powered growth agency founded by Amir Gómez,
-      serving clients in the US (Los Angeles, Miami) and Latin America — from luxury verticals
-      like fine art, private aviation, and real estate to service businesses and e-commerce.
-      We deliver paid advertising (Meta, Google, TikTok, LinkedIn), high-converting websites and
-      landing pages, marketing automation, and AI solutions.</p>
+      serving clients in the US (Los Angeles, Miami) and Latin America across multiple verticals —
+      from luxury (fine art, private aviation, real estate) to service businesses, e-commerce,
+      coaching, hospitality and more. We deliver paid advertising (Meta, Google, TikTok, LinkedIn),
+      high-converting websites and landing pages, marketing automation, and AI solutions.</p>
+    <div class="who-stats">
+      <div><div class="n">$125M+</div><p class="d">in revenue generated for clients</p></div>
+      <div><div class="n">$20M+</div><p class="d">in ad spend managed</p></div>
+      <div><div class="n">170+</div><p class="d">clients served</p></div>
+    </div>
     <p class="process">Discovery <span class="arrow">→</span> Strategy
       <span class="arrow">→</span> Implementation <span class="arrow">→</span> Optimization</p>
   </section>

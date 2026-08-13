@@ -104,22 +104,23 @@ export default function StartClient() {
               growth agency with clients in the US (Los Angeles, Miami) and Latin America.
             </p>
             <p>
-              We work across luxury verticals (fine art, private aviation, real estate), service
-              businesses, and e-commerce. Full stack: paid ads (Meta, Google, TikTok, LinkedIn),
-              high-converting websites and funnels, automation, and AI.
+              We work across multiple verticals — from luxury (fine art, private aviation, real
+              estate) to service businesses, e-commerce, coaching, hospitality and more. Full
+              stack: paid ads (Meta, Google, TikTok, LinkedIn), high-converting websites and
+              funnels, automation, and AI.
             </p>
             <div className="statcards">
-              <div className="statcard placeholder">
-                <div className="metric">[metric]</div>
-                <p className="ctx">[one-line context]</p>
+              <div className="statcard">
+                <div className="metric">$125M+</div>
+                <p className="ctx">in revenue generated for clients</p>
               </div>
-              <div className="statcard placeholder">
-                <div className="metric">[metric]</div>
-                <p className="ctx">[one-line context]</p>
+              <div className="statcard">
+                <div className="metric">$20M+</div>
+                <p className="ctx">in ad spend managed</p>
               </div>
-              <div className="statcard placeholder">
-                <div className="metric">[metric]</div>
-                <p className="ctx">[one-line context]</p>
+              <div className="statcard">
+                <div className="metric">170+</div>
+                <p className="ctx">clients served</p>
               </div>
             </div>
             <p className="links">

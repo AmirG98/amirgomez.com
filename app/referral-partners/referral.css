@@ -282,3 +282,22 @@
     html { scroll-behavior: auto; }
     .btn { transition: none; }
   }
+
+  /* Métricas de agencia en Who We Are */
+  .rp .who-stats {
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .rp .who-stats .n {
+    font-size: clamp(24px, 3.6vw, 32px);
+    font-weight: 700;
+    color: var(--orange);
+    letter-spacing: -0.01em;
+    font-variant-numeric: tabular-nums;
+  }
+  .rp .who-stats .d { font-size: 14px; margin-top: 2px; text-wrap: pretty; }
+  @media (max-width: 640px) {
+    .rp .who-stats { grid-template-columns: 1fr; gap: 14px; }
+  }
