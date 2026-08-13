@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urban Real Estate — Contexto del cliente</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #2b3947; --navy-deep: #1f2b37; --ink: #26303a; --ink-2: #5c6670; --ink-3: #98a0a8; --paper: #faf9f6; --hairline: #e4e0d7; --gold: #a8874f; --gold-soft: #f4ede1; --panel: #ffffff; --field: #faf9f6; --btnink: #ffffff; --titleink: #26303a; --serif: 'Marcellus', serif; --sans: 'Inter', -apple-system, sans-serif; --btnfont: var(--sans); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 880px; margin: 0 auto; padding: 40px 24px 64px; }
+  header { text-align: center; margin-bottom: 26px; }
+  h1 { font-family: var(--serif); font-size: 24px; font-weight: 400; margin-top: 18px; }
+  .sub { font-size: 13.5px; color: var(--ink-2); margin-top: 6px; max-width: 58ch; margin-left: auto; margin-right: auto; }
+  .backlink { display: inline-block; margin-top: 10px; font-size: 12.5px; color: var(--gold); text-decoration: none; }
+  .backlink:hover { text-decoration: underline; }
+  .meta { text-align: center; font-size: 12.5px; color: var(--ink-3); margin-bottom: 24px; }
+  #banner { display: none; max-width: 760px; margin: 0 auto 22px; font-size: 13px; color: var(--ink-2); background: var(--gold-soft); border-left: 2px solid var(--gold); padding: 10px 14px; }
+  #banner.show { display: block; }
+  .secs { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .sec { background: var(--panel); border: 1px solid var(--hairline); border-radius: 0px; padding: 22px 24px; }
+  .sec.wide { grid-column: 1 / -1; }
+  .sec .head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 10px; }
+  .sec h2 { font-family: var(--serif); font-size: 16px; font-weight: 400; color: var(--titleink); letter-spacing: 0.02em; }
+  .sec .edit { display: none; font-size: 11px; color: var(--ink-3); cursor: pointer; text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; }
+  body.admin .sec .edit { display: inline; }
+  .sec .edit:hover { color: var(--gold); }
+  .sec ul { margin: 0 0 0 16px; }
+  .sec li { font-size: 13.5px; color: var(--ink-2); margin-top: 6px; }
+  #overlay { position: fixed; inset: 0; background: rgba(31,43,55,0.55); display: none; align-items: center; justify-content: center; z-index: 100; padding: 20px; }
+  #overlay.open { display: flex; }
+  .editor { background: var(--panel); border: 1px solid var(--hairline); border-radius: 0px; max-width: 560px; width: 100%; padding: 26px 28px; }
+  .editor h2 { font-family: var(--serif); font-size: 18px; font-weight: 400; margin-bottom: 6px; color: var(--titleink); }
+  .editor p.hint { font-size: 12px; color: var(--ink-3); margin-bottom: 12px; }
+  .editor textarea { width: 100%; min-height: 180px; resize: vertical; font-family: var(--sans); font-size: 14px; line-height: 1.6; padding: 12px 14px; border: 1px solid var(--hairline); background: var(--field); color: var(--ink); outline: none; border-radius: 0px; }
+  .editor textarea:focus { border-color: var(--navy); }
+  .editor .actions { display: flex; gap: 10px; margin-top: 16px; }
+  .editor button { font-family: var(--btnfont); font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; padding: 11px 22px; cursor: pointer; border: none; border-radius: 0px; }
+  #ed-save { background: var(--navy); color: var(--btnink); flex: 1; }
+  #ed-save:hover { background: var(--navy-deep); }
+  #ed-cancel { background: none; border: 1px solid var(--hairline); color: var(--ink-2); }
+  footer { text-align: center; margin-top: 44px; font-size: 12px; color: var(--ink-3); }
+  footer a { color: var(--ink-3); text-decoration: none; }
+  footer a:hover { color: var(--gold); }
+  @media (max-width: 680px) { .secs { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true" id="uburst"></svg>
+    <div style="font-family:'Jost',sans-serif; font-weight:300; font-size:20px; letter-spacing:0.52em; text-indent:0.52em; color:#2b3947; margin-top:8px;">URBAN</div>
+    <div style="font-family:'Jost',sans-serif; font-weight:400; font-size:8.5px; letter-spacing:0.6em; text-indent:0.6em; color:#2b3947; opacity:0.75; margin-top:2px;">REAL ESTATE</div>
+    <script>
+    (function(){var ns='http://www.w3.org/2000/svg';var svg=document.getElementById('uburst');var L=[48,24,35,24];for(var i=0;i<48;i++){var a=(i*7.5-90)*Math.PI/180;var l=document.createElementNS(ns,'line');l.setAttribute('x1',50+12*Math.cos(a));l.setAttribute('y1',50+12*Math.sin(a));l.setAttribute('x2',50+L[i%4]*Math.cos(a));l.setAttribute('y2',50+L[i%4]*Math.sin(a));l.setAttribute('stroke','#2b3947');l.setAttribute('stroke-width','1');svg.appendChild(l);}})();
+    </script>
+    <h1>Contexto del cliente</h1>
+    <p class="sub">El documento vivo del negocio: se actualiza automáticamente con cada reunión procesada en Meeting transcripts.</p>
+    <a class="backlink" href="/clients/urban-usa">← Volver al portal</a>
+  </header>
+  <p class="meta" id="meta"></p>
+  <div id="banner"></div>
+  <div class="secs" id="secs"></div>
+  <div id="overlay">
+    <div class="editor">
+      <h2 id="ed-title">Editar sección</h2>
+      <p class="hint">Un bullet por línea.</p>
+      <textarea id="ed-text"></textarea>
+      <div class="actions">
+        <button id="ed-save">Guardar</button>
+        <button id="ed-cancel">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    Preparado por A+Growth · <a href="#" id="admin-toggle">modo admin</a>
+  </footer>
+</div>
+<script>
+(function () {
+  var CLIENT = 'urban-usa';
+  var API = '/api/context/' + CLIENT;
+  var LS_KEY = 'context_' + CLIENT;
+  var SEED = {"negocio": ["Urban USA Real Estate: inmobiliaria en Miami enfocada en inversores.", "Público principal: inversores de LATAM (y locales) que compran propiedades para renta, con foco en unidades aptas para alquiler de corto plazo (Airbnb).", "Línea nueva en validación: Property Management para propietarios en LATAM."], "objetivos": ["Generar leads calificados de inversores a CPL sostenible (referencia jul-ago 2026: USD 8.76).", "Convertir el funnel completo: leads → meetings → clientes, con medición en cada etapa.", "Validar Property Management por país antes de escalar (primera señal positiva: Colombia)."], "canales": ["Meta Ads como canal principal: campañas de leads con formulario nativo.", "Ángulo creativo ganador: 'No todos permiten Airbnb' (restricciones de alquiler) — genera ~99% de los leads de la campaña principal.", "GoHighLevel para agendamiento y seguimiento comercial de los leads."], "guardrails": ["Consistencia anuncio → destino: lo que promete el ad tiene que estar visible al llegar.", "No diluir el ángulo de Airbnb/restricciones con mensajes genéricos de inversión: es el que conecta con intención real.", "Escalar presupuesto de forma gradual: acelerar de golpe encarece el CPL 20-30%."], "aprendizajes": ["Colombia concentra ~68% de los leads de inversores con CPL en línea con el promedio (jul-ago 2026).", "El hook 'Buenos Aires vs Miami' capta atención fuerte (CTR 11.76% en test) pero aún no probó convertir a lead — combinar con la estructura del ganador.", "EE.UU. trae leads más caros (~USD 12) — evaluar calidad por mercado antes de decidir presupuesto."], "equipo": ["A+Growth: estrategia y gestión de paid media, reporting y optimización.", "Urban USA: feedback de calidad de leads y cierre comercial."]};
+  var SECTIONS = [
+    ['negocio', 'El negocio', true],
+    ['objetivos', 'Objetivos y KPIs', false],
+    ['canales', 'Canales de adquisición', false],
+    ['guardrails', 'Guardrails', false],
+    ['aprendizajes', 'Aprendizajes validados', false],
+    ['equipo', 'Equipo y roles', true]
+  ];
+  var mode = 'local';
+  var state = null;
+  var isAdmin = false;
+  try { isAdmin = localStorage.getItem('approvals_' + CLIENT + '_admin') === '1'; } catch (e) {}
+
+  function esc(s) {
+    return String(s || '').replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+  function render() {
+    var secs = document.getElementById('secs');
+    secs.innerHTML = '';
+    SECTIONS.forEach(function (def) {
+      var key = def[0], titulo = def[1], wide = def[2];
+      var items = state[key] || [];
+      var el = document.createElement('div');
+      el.className = 'sec' + (wide ? ' wide' : '');
+      el.innerHTML = '<div class="head"><h2>' + titulo + '</h2><a class="edit" data-key="' + key + '" href="#">Editar</a></div>' +
+        '<ul>' + items.map(function (i) { return '<li>' + esc(i) + '</li>'; }).join('') + '</ul>';
+      secs.appendChild(el);
+    });
+    var f = state.fuentes || [];
+    var meta = f.length
+      ? 'Alimentado por ' + f.length + ' reunión' + (f.length === 1 ? '' : 'es') + ' · última: ' + esc((f[f.length - 1] || {}).titulo || '') +
+        (state.actualizado ? ' · actualizado ' + new Date(state.actualizado).toLocaleDateString('es-AR') : '')
+      : 'Contexto inicial cargado por A+Growth — se irá enriqueciendo con cada reunión procesada.';
+    document.getElementById('meta').textContent = meta;
+  }
+  function persistLocal() { try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (e) {} }
+  function save() {
+    persistLocal();
+    if (mode !== 'server') return;
+    fetch(API, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(state) }).catch(function () {});
+  }
+
+  var editKey = null;
+  var overlay = document.getElementById('overlay');
+  document.getElementById('secs').addEventListener('click', function (e) {
+    var key = e.target.getAttribute && e.target.getAttribute('data-key');
+    if (!key) return;
+    e.preventDefault();
+    editKey = key;
+    var def = SECTIONS.filter(function (s) { return s[0] === key; })[0];
+    document.getElementById('ed-title').textContent = 'Editar: ' + def[1];
+    document.getElementById('ed-text').value = (state[key] || []).join('\n');
+    overlay.classList.add('open');
+  });
+  document.getElementById('ed-cancel').addEventListener('click', function () { overlay.classList.remove('open'); });
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) overlay.classList.remove('open'); });
+  document.getElementById('ed-save').addEventListener('click', function () {
+    state[editKey] = document.getElementById('ed-text').value.split('\n').map(function (l) { return l.trim(); }).filter(Boolean);
+    state.actualizado = new Date().toISOString();
+    overlay.classList.remove('open');
+    save(); render();
+  });
+
+  function applyAdmin() {
+    document.body.classList.toggle('admin', isAdmin);
+    document.getElementById('admin-toggle').textContent = isAdmin ? 'salir de modo admin' : 'modo admin';
+  }
+  document.getElementById('admin-toggle').addEventListener('click', function (e) {
+    e.preventDefault();
+    isAdmin = !isAdmin;
+    try { localStorage.setItem('approvals_' + CLIENT + '_admin', isAdmin ? '1' : '0'); } catch (e2) {}
+    applyAdmin();
+  });
+
+  function banner(msg) {
+    var b = document.getElementById('banner');
+    if (!msg) return b.classList.remove('show');
+    b.textContent = msg; b.classList.add('show');
+  }
+  function loadLocal() {
+    mode = 'local';
+    banner('Modo local: este contexto se guarda en este navegador. El documento compartido se activa próximamente.');
+    try {
+      var raw = localStorage.getItem(LS_KEY);
+      state = raw ? JSON.parse(raw) : SEED;
+    } catch (e) { state = SEED; }
+    persistLocal(); render(); applyAdmin();
+  }
+  fetch(API, { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error('nostorage'); return r.json(); })
+    .then(function (data) {
+      mode = 'server';
+      state = data.doc || SEED;
+      if (!data.doc) save();
+      render(); applyAdmin();
+    })
+    .catch(loadLocal);
+})();
+</script>
+</body>
+</html>

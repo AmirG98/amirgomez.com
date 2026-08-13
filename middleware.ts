@@ -8,9 +8,10 @@ import { CLIENT_PASSWORDS, isClientAuthorized } from './lib/client-auth';
 //   /clients/<cliente>/approvals          → kanban   (public/clients/<cliente>-approvals.html)
 //   /clients/<cliente>/ideas              → banco    (public/clients/<cliente>-ideas.html)
 //   /clients/<cliente>/transcripts        → reuniones (public/clients/<cliente>-transcripts.html)
+//   /clients/<cliente>/context            → contexto vivo (public/clients/<cliente>-context.html)
 export function middleware(req: NextRequest) {
   const match = req.nextUrl.pathname.match(
-    /^\/clients\/([^/]+?)(?:\.html)?(?:\/(approvals|reports|ideas|transcripts)(?:\/(\d{4}-\d{2}-\d{2}))?)?\/?$/
+    /^\/clients\/([^/]+?)(?:\.html)?(?:\/(approvals|reports|ideas|transcripts|context)(?:\/(\d{4}-\d{2}-\d{2}))?)?\/?$/
   );
   if (!match) return NextResponse.next();
 
@@ -25,9 +26,10 @@ export function middleware(req: NextRequest) {
     client.endsWith('-approvals') ||
     client.endsWith('-ideas') ||
     client.endsWith('-transcripts') ||
+    client.endsWith('-context') ||
     /-report-\d{4}-\d{2}-\d{2}$/.test(client)
   ) {
-    const base = client.replace(/-(hub|approvals|ideas|transcripts|report-\d{4}-\d{2}-\d{2})$/, '');
+    const base = client.replace(/-(hub|approvals|ideas|transcripts|context|report-\d{4}-\d{2}-\d{2})$/, '');
     return NextResponse.rewrite(new URL(`/clients/${base}-login.html`, req.url));
   }
 
@@ -41,6 +43,7 @@ export function middleware(req: NextRequest) {
   if (section === 'approvals') return NextResponse.rewrite(new URL(`/clients/${client}-approvals.html`, req.url));
   if (section === 'ideas') return NextResponse.rewrite(new URL(`/clients/${client}-ideas.html`, req.url));
   if (section === 'transcripts') return NextResponse.rewrite(new URL(`/clients/${client}-transcripts.html`, req.url));
+  if (section === 'context') return NextResponse.rewrite(new URL(`/clients/${client}-context.html`, req.url));
   if (section === 'reports' && date) return NextResponse.rewrite(new URL(`/clients/${client}-report-${date}.html`, req.url));
   if (section === 'reports') return NextResponse.rewrite(new URL(`/clients/${client}.html`, req.url));
   if (req.nextUrl.pathname.endsWith('.html')) return NextResponse.next();

@@ -117,6 +117,39 @@
   var isAdmin = false;
   try { isAdmin = localStorage.getItem('approvals_' + CLIENT + '_admin') === '1'; } catch (e) {}
 
+
+  var CTX_LS = 'context_' + CLIENT;
+  var CTX_API = '/api/context/' + CLIENT;
+  var CTX_SEED = {"negocio": ["Urban USA Real Estate: inmobiliaria en Miami enfocada en inversores.", "Público principal: inversores de LATAM (y locales) que compran propiedades para renta, con foco en unidades aptas para alquiler de corto plazo (Airbnb).", "Línea nueva en validación: Property Management para propietarios en LATAM."], "objetivos": ["Generar leads calificados de inversores a CPL sostenible (referencia jul-ago 2026: USD 8.76).", "Convertir el funnel completo: leads → meetings → clientes, con medición en cada etapa.", "Validar Property Management por país antes de escalar (primera señal positiva: Colombia)."], "canales": ["Meta Ads como canal principal: campañas de leads con formulario nativo.", "Ángulo creativo ganador: 'No todos permiten Airbnb' (restricciones de alquiler) — genera ~99% de los leads de la campaña principal.", "GoHighLevel para agendamiento y seguimiento comercial de los leads."], "guardrails": ["Consistencia anuncio → destino: lo que promete el ad tiene que estar visible al llegar.", "No diluir el ángulo de Airbnb/restricciones con mensajes genéricos de inversión: es el que conecta con intención real.", "Escalar presupuesto de forma gradual: acelerar de golpe encarece el CPL 20-30%."], "aprendizajes": ["Colombia concentra ~68% de los leads de inversores con CPL en línea con el promedio (jul-ago 2026).", "El hook 'Buenos Aires vs Miami' capta atención fuerte (CTR 11.76% en test) pero aún no probó convertir a lead — combinar con la estructura del ganador.", "EE.UU. trae leads más caros (~USD 12) — evaluar calidad por mercado antes de decidir presupuesto."], "equipo": ["A+Growth: estrategia y gestión de paid media, reporting y optimización.", "Urban USA: feedback de calidad de leads y cierre comercial."]};
+  function ingestContext(m) {
+    fetch(CTX_API, { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (d) { return { doc: d.doc, server: true }; })
+      .catch(function () {
+        var raw = null;
+        try { raw = localStorage.getItem(CTX_LS); } catch (e) {}
+        return { doc: raw ? JSON.parse(raw) : null, server: false };
+      })
+      .then(function (res) {
+        var ctx = res.doc || CTX_SEED;
+        ctx.fuentes = ctx.fuentes || [];
+        if (ctx.fuentes.some(function (f) { return f.id === m.id; })) return;
+        fetch(CTX_API, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'ingest', titulo: m.titulo, fecha: m.fecha, transcript: m.transcript, context: ctx })
+        })
+          .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+          .then(function (d) {
+            var nc = d.context;
+            nc.fuentes = ctx.fuentes.concat([{ id: m.id, titulo: m.titulo, fecha: m.fecha }]);
+            nc.actualizado = new Date().toISOString();
+            try { localStorage.setItem(CTX_LS, JSON.stringify(nc)); } catch (e) {}
+            if (res.server) {
+              fetch(CTX_API, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(nc) }).catch(function () {});
+            }
+          }).catch(function () {});
+      });
+  }
   function esc(s) {
     return String(s || '').replace(/[&<>"\x27]/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "\x27": '&#39;' }[c];
@@ -273,6 +306,7 @@
           m.recap = data.recap || '';
           m.actualizado = new Date().toISOString();
           save(); render();
+          ingestContext(m);
         })
         .catch(function (er) {
           btn.disabled = false; spin.style.display = 'none';
