@@ -83147,9 +83147,9 @@ Success in visual discovery marketing requires matching platform strengths with 
   },
   {
     id: "449",
-    title: "Cuánto cuesta un lead inmobiliario en Meta Ads: datos reales por país",
-    slug: "costo-lead-inmobiliario-meta-ads-por-pais",
-    excerpt: "Analizamos una campaña real de captación de inversores inmobiliarios en Meta Ads y el CPL varió hasta 40% según el país de origen del lead.",
+    title: "What a Real Estate Lead Really Costs on Meta Ads: Data by Country",
+    slug: "real-estate-lead-cost-meta-ads-by-country",
+    excerpt: "We analyzed a real investor lead generation campaign on Meta Ads and CPL varied by more than 30% depending on the lead's country of origin.",
     featuredImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
@@ -83162,61 +83162,59 @@ Success in visual discovery marketing requires matching platform strengths with 
     featured: false,
     readingTime: 7,
     seo: {
-      metaTitle: "Costo de Lead Inmobiliario en Meta Ads por País",
-      metaDescription: "Datos reales de una campaña de Meta Ads para inversores inmobiliarios: el CPL varía hasta 40% según el país de origen. Qué mercados priorizar en tu cuenta.",
-      keywords: ["costo por lead inmobiliario", "Meta Ads real estate", "CPL por país", "captación inversores LATAM", "Facebook Ads inmobiliaria"]
+      metaTitle: "Real Estate Lead Cost on Meta Ads by Country (2026)",
+      metaDescription: "Real campaign data for real estate investor lead gen on Meta Ads: CPL varies by 30%+ depending on country of origin. Which markets to prioritize in your account.",
+      keywords: ["real estate lead cost", "Meta Ads real estate", "CPL by country", "LATAM investor lead generation", "Facebook Ads real estate"]
     },
-    content: `Una campaña de captación de inversores inmobiliarios que gestionamos generó **211 leads a un costo promedio de $8.76** en un período de 30 días. Pero ese número general esconde algo mucho más útil: el costo por lead varió hasta 40% dependiendo del país de origen del usuario que completó el formulario.
+    content: `A real estate lead generation campaign we managed for an investor-focused client produced leads at an **average cost of between $8 and $9** over a 30-day window. But that blended number hides something far more useful: cost per lead swung by more than 30% depending on the country the lead came from.
 
-Esto importa porque la mayoría de las agencias reportan un CPL "blended" (promedio general) y toman decisiones de presupuesto con ese único número. Es un error. Cuando abrís el dato por país, la historia cambia completamente y las decisiones de dónde poner el próximo dólar de presupuesto también.
+This matters because most agencies report a single blended CPL and make budget decisions based on that one number. That's a mistake. Once you break the data down by country, the story changes completely — and so do the decisions about where to put your next advertising dollar.
 
-## El caso: captación de inversores para real estate en Miami
+## The account: investor lead gen for U.S. real estate
 
-La cuenta apunta a un público específico: inversores de real estate en Estados Unidos, principalmente interesados en propiedades en Miami con potencial de renta vía Airbnb. La campaña principal usa **formulario nativo de Meta** (lead ads), no landing page externa, lo que reduce fricción pero también reduce el control sobre la calificación previa del lead.
+The account targets a specific audience: real estate investors interested in properties with short-term rental income potential. The primary campaign runs through **Meta's native lead form** (Lead Ads), not an external landing page, which reduces friction but also reduces control over pre-qualification.
 
-En la ventana de 30 días analizada, la distribución de leads por país fue:
+Over the 30-day window analyzed, the lead distribution by country showed a clear pattern:
 
-- **Colombia**: 141 leads (68% del total)
-- **Argentina**: 27 leads
-- **Chile**: 19 leads
-- **México**: 17 leads
-- **Estados Unidos**: 3 leads, pero al CPL más alto de todos ($12.32)
+- **One South American country accounted for more than two-thirds of total volume**, at the lowest CPL in the account.
+- **Two or three other countries in the region** made up the rest of the LatAm volume, each at meaningfully smaller shares.
+- **The U.S. produced only a handful of leads, but at the highest CPL of all** — more than 35% above the account's overall average.
 
-## Por qué el CPL de Estados Unidos casi duplica al de Colombia
+## Why the domestic market ends up being the most expensive
 
-El patrón no es casualidad, es estructural. Colombia concentra volumen y eficiencia porque:
+This pattern isn't random, it's structural. The leading LatAm market concentrates volume and efficiency because:
 
-- **El público objetivo (inversión en dólares) tiene mayor densidad relativa** en el ecosistema de Meta colombiano para este nicho específico.
-- **La competencia por CPM es menor** que en Estados Unidos, donde compiten agencias inmobiliarias locales con presupuestos mucho más grandes.
-- El mensaje del anuncio (rentabilidad vía alquiler temporario) resuena más fuerte en audiencias que ya están buscando activamente alternativas de inversión en dólares fuera de su país.
+- **The target audience (dollar-denominated investment) has a relatively higher density** within that region's Meta ecosystem for this specific niche.
+- **CPM competition is lower** than in the U.S., where local real estate agencies with much larger budgets are bidding for the same auction.
+- The ad message (income potential via short-term rental) resonates more strongly with audiences already actively looking for dollar investment alternatives outside their home country.
 
-Estados Unidos, en cambio, compite en un mercado de subasta saturado de anuncios inmobiliarios domésticos, lo que empuja el CPM y por lo tanto el CPL hacia arriba. **No es que el público estadounidense esté menos interesado — es que cuesta más caro llegarle en esa plataforma.**
+The U.S., by contrast, competes in a saturated auction full of domestic real estate ads, which pushes CPM — and therefore CPL — upward. **It's not that U.S. audiences are less interested, it's that reaching them on that platform simply costs more.**
 
-## El creativo que sostiene el 98% de los resultados
+## The one creative carrying nearly all the results
 
-Un solo creativo generó el 98.6% de los leads de la campaña principal. El ángulo: contrastar qué ciudades permiten operar bajo modelo Airbnb y cuáles no, un dato práctico y accionable que el inversor necesita saber antes de decidir dónde comprar.
+A single creative generated **the overwhelming majority of leads** in the main campaign. The angle: a specific, practical piece of local regulation information the investor needs before deciding where to buy, not a generic category message.
 
-**El patrón que vemos una y otra vez: un ángulo informativo y específico supera a un ángulo genérico de "invertí en Miami" por márgenes enormes.** El usuario no reacciona a la categoría (real estate), reacciona a la información nueva y útil dentro de la categoría.
+**This is a pattern we see over and over: a specific, informative angle beats a generic "invest here" angle by huge margins.** The user isn't reacting to the category (real estate), they're reacting to new, useful information within that category.
 
-Un segundo creativo en testeo, con el hook "Buenos Aires vs Miami" (comparación directa de mercados), logró 11.76% de CTR — muy por encima del promedio de la cuenta — pero todavía no tiene leads atribuidos con volumen suficiente para sacar conclusiones. Es la próxima variable a combinar con la estructura del creativo ganador.
+A second creative in testing, using a direct comparison hook between two markets, landed a CTR well above the account average — but still doesn't have enough attributed lead volume to draw conclusions. It's the next variable to combine with the structure of the winning creative.
 
-## Qué hacer con este dato si gestionás una cuenta similar
+## What to do with this if you manage a similar account
 
-### Desagregar el CPL por país antes de decidir presupuesto
+### Break down CPL by country before making budget decisions
 
-Si tu dashboard solo muestra el CPL blended, estás promediando mercados con dinámicas de subasta completamente distintas. Pedí (o armá) el reporte por país como mínimo, y por país + edad si el volumen lo permite.
+If your dashboard only shows a blended CPL, you're averaging together markets with completely different auction dynamics. Pull (or build) a report broken down by country at minimum, and by country plus age if volume allows.
 
-### No apagar mercados caros sin mirar el valor del lead
+### Don't cut expensive markets without looking at lead value
 
-Un lead de Estados Unidos a $12.32 puede valer más en el fondo del funnel que tres leads de Colombia a $8, si el ticket promedio de conversión de ese mercado es más alto. El CPL es una métrica de entrada, no de rentabilidad. Sin dato de cierre por país, cualquier decisión de recorte es una apuesta a ciegas.
+A lead from your most expensive market can be worth more at the bottom of the funnel than several leads from your cheapest market, if that market's average conversion ticket is higher. CPL is a top-of-funnel metric, not a profitability metric. Without close-rate data by country, any cutback decision is a guess in the dark.
 
-### Duplicar el mensaje ganador antes de buscar uno nuevo
+### Scale the winning message before hunting for a new one
 
-Antes de testear diez ángulos nuevos, asegurate de haber explotado completamente el ángulo que ya funciona: variaciones de formato (video vs estático), variaciones de hook dentro del mismo insight, y expansión de la audiencia manteniendo el mismo creativo.
+Before testing ten new angles, make sure you've fully exploited the angle that's already working: format variations (video vs. static), hook variations within the same insight, and audience expansion while keeping the same creative.
 
 ## Conclusion
 
-El CPL blended es un buen número para un titular, pero una mala base para tomar decisiones. Si gestionás Meta Ads para un negocio con audiencia multi-país — real estate, educación, SaaS con expansión LatAm — el primer paso de optimización real no es un creativo nuevo, es abrir el reporte por geografía y entender qué mercado está financiando el promedio y cuál lo está inflando. Empezá por ahí antes de tocar presupuesto.`
+Blended CPL makes a good headline number, but a poor basis for decisions. If you manage Meta Ads for a business with a multi-country audience — real estate, education, SaaS with LatAm expansion — the highest-leverage next step isn't a new creative, it's opening the report by geography and understanding which market is subsidizing the average and which one is inflating it. Start there before touching budget.`
   },
   {
     id: "450",
