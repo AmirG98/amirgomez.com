@@ -40,7 +40,7 @@ export const blogPosts: BlogPost[] = [
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-15",
@@ -186,7 +186,7 @@ What metric will you eliminate from your dashboard this week?`
     featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-15",
@@ -359,7 +359,7 @@ The choice is yours. But if you're going to implement OKRs, do it like a startup
     featuredImage: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-15",
@@ -679,7 +679,7 @@ Your next funding round starts with the relationships you build today.`
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-15",
@@ -938,7 +938,7 @@ The subscription businesses that thrive in 2026 will be those that harness AI to
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-14",
@@ -1164,7 +1164,7 @@ The startups winning with SEO in 2026 aren't necessarily the ones with the bigge
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-14",
@@ -1459,7 +1459,7 @@ Remember: every major company started as a startup. The SEO work you do today bu
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-14",
@@ -1716,7 +1716,7 @@ Remember: the goal isn't to track everything—it's to track what matters and ac
     featuredImage: "https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-14",
@@ -1878,7 +1878,7 @@ The choice, as always, is yours. But the data is clear: **the brands that adapt 
     featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-14",
@@ -2210,7 +2210,7 @@ Begin implementing these strategies today, and you'll be well-positioned to leve
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-13",
@@ -2507,7 +2507,7 @@ Your content strategy's future depends on how well you integrate AI today.`
     featuredImage: "https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-13",
@@ -2739,7 +2739,7 @@ The companies that act now will establish advantages in customer satisfaction, o
     featuredImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-13",
@@ -2894,7 +2894,7 @@ The brands moving first are already pulling ahead.`
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-13",
@@ -3190,7 +3190,7 @@ Start with any model. Improve as you go. Your future ROI depends on the attribut
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-13",
@@ -3359,7 +3359,7 @@ Who knew?`
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-13",
@@ -3517,7 +3517,7 @@ Start testing broad audiences this week. Create more creative angles. Track deep
     featuredImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-13",
@@ -3797,7 +3797,7 @@ Start building your partnership strategy today. Identify three potential partner
     featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-13",
@@ -4082,7 +4082,7 @@ Start with one platform, master the fundamentals, then expand your efforts. The 
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-12",
@@ -4290,7 +4290,7 @@ The companies that will dominate their markets in 2026 and beyond are those that
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-12",
@@ -4413,7 +4413,7 @@ Stop optimizing for yesterday's search algorithms. Start building for tomorrow's
     featuredImage: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-12",
@@ -4563,7 +4563,7 @@ The AI revolution is democratizing innovation. The question isn't whether you ca
     featuredImage: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-12",
@@ -4705,7 +4705,7 @@ The creative revolution is happening now. The only question is whether you're re
     featuredImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-12",
@@ -4986,7 +4986,7 @@ By following this comprehensive framework, your organization can join the 23% of
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-12",
@@ -5164,7 +5164,7 @@ Remember: the goal isn't to replace humans but to amplify human capabilities by 
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-12",
@@ -5380,7 +5380,7 @@ The multimodal AI revolution isn't coming – it's here. The question isn't whet
     featuredImage: "https://images.unsplash.com/photo-1560472355-536de3962603?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-12",
@@ -5605,7 +5605,7 @@ The future of email marketing automation is here. The question isn't whether the
     featuredImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-11",
@@ -5802,7 +5802,7 @@ Stop collecting AI tools. Start solving real problems.`
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-11",
@@ -5936,7 +5936,7 @@ The future of marketing isn't about better targeting—it's about creating exper
     featuredImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-11",
@@ -6248,7 +6248,7 @@ Remember: Google's algorithms are constantly evolving. What works today might ne
     featuredImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-11",
@@ -6471,7 +6471,7 @@ The time for generic, one-size-fits-all marketing is over. Your customers expect
     featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-11",
@@ -6744,7 +6744,7 @@ Ready to transform your influencer marketing results? Begin with a comprehensive
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-11",
@@ -6907,7 +6907,7 @@ The transformation is happening now. The only question is whether you'll lead it
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-10",
@@ -7099,7 +7099,7 @@ Begin your AI automation journey today. Start small, measure everything, and sca
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-10",
@@ -7262,7 +7262,7 @@ What's one value creation opportunity you could implement this week? The compani
     featuredImage: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-10",
@@ -7607,7 +7607,7 @@ The businesses that master TikTok advertising now will have a significant advant
     featuredImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-10",
@@ -7835,7 +7835,7 @@ What's your biggest retention challenge right now? The time to fix it is today�
     featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-10",
@@ -8016,7 +8016,7 @@ The companies that master strategic PR timing won't just compete more effectivel
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-10",
@@ -8152,7 +8152,7 @@ The future of conversion optimization isn't about testing better—it's about bu
     featuredImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-10",
@@ -8454,7 +8454,7 @@ The future of marketplaces is bright, with emerging technologies creating new op
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-10",
@@ -8727,7 +8727,7 @@ Start with your highest-impact, lowest-effort improvements first. Focus on one e
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-09",
@@ -9004,7 +9004,7 @@ The companies that master these B2B SaaS metrics in 2026 will be the ones that a
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-09",
@@ -9277,7 +9277,7 @@ The future of marketing is hyper-personalized, AI-driven, and happening right no
     featuredImage: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-09",
@@ -9415,7 +9415,7 @@ Start testing. Start learning. Start building the TikTok advertising expertise t
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-09",
@@ -9702,7 +9702,7 @@ The digital advertising landscape will continue evolving, but the fundamentals o
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-09",
@@ -9852,7 +9852,7 @@ Your competitors are already making this transition. The question isn't whether 
     featuredImage: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-09",
@@ -10138,7 +10138,7 @@ Remember: automation amplifies your strategy—make sure your strategy is sound 
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-09",
@@ -10347,7 +10347,7 @@ The AI marketing revolution is happening now. The question isn't whether you'll 
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-09",
@@ -10603,7 +10603,7 @@ The technology is ready. The ROI is proven. The competitive advantage is waiting
     featuredImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-08",
@@ -10759,7 +10759,7 @@ The question isn't whether AI will transform your industry. It's whether you'll 
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-08",
@@ -11053,7 +11053,7 @@ Start small, measure everything, and scale what works. Your customers are waitin
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-08",
@@ -11284,7 +11284,7 @@ The digital advertising landscape will continue evolving, but these fundamental 
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-08",
@@ -11525,7 +11525,7 @@ The difference between companies that thrive and those that struggle often comes
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-08",
@@ -11805,7 +11805,7 @@ The data is there. The tools are ready. Now it's time to turn your marketing ana
     featuredImage: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-08",
@@ -11990,7 +11990,7 @@ Begin with one landing page or email campaign. Apply these principles systematic
     featuredImage: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-08",
@@ -12206,7 +12206,7 @@ By following this comprehensive guide and maintaining focus on prospect experien
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-08",
@@ -12468,7 +12468,7 @@ Start your generative AI journey now. Your customers—and your bottom line—wi
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-07",
@@ -12639,7 +12639,7 @@ The question isn't whether to adopt these new tools—it's which one to implemen
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-07",
@@ -12980,7 +12980,7 @@ Remember, the best remarketing campaign is one that feels helpful rather than in
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-07",
@@ -13241,7 +13241,7 @@ Start with these A/B testing best practices, but more importantly, commit to con
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-07",
@@ -13418,7 +13418,7 @@ The choice is yours. But choose quickly—your competitors already are.`
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-07",
@@ -13679,7 +13679,7 @@ The question isn't whether AI will revolutionize landing page optimization—it'
     featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-07",
@@ -13853,7 +13853,7 @@ The question isn't whether AI will transform video marketing—it's whether you'
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-07",
@@ -14022,7 +14022,7 @@ The marketers thriving in this new landscape aren't waiting for perfect attribut
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-07",
@@ -14331,7 +14331,7 @@ The businesses that master marketing budget allocation today will be the market 
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-07",
@@ -14579,7 +14579,7 @@ Start your **generative AI for e-commerce** journey today, and join the ranks of
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-06",
@@ -14741,7 +14741,7 @@ The question isn't whether micro-niche expansion works. The question is: which m
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-06",
@@ -15050,7 +15050,7 @@ What marketplace opportunity are you most excited about? The next trillion-dolla
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-06",
@@ -15165,7 +15165,7 @@ The question isn't whether you'll adopt AI workflow automation. The question is 
     featuredImage: "https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-06",
@@ -15316,7 +15316,7 @@ The future of B2B isn't about generating more leads. It's about generating more 
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-06",
@@ -15464,7 +15464,7 @@ The future belongs to companies that optimize for buyer success, not funnel effi
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-06",
@@ -15814,7 +15814,7 @@ Start today, stay consistent, and watch organic traffic become your most profita
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-06",
@@ -16067,7 +16067,7 @@ Start with the fundamentals: clean data, proper tracking, and clear objectives. 
     featuredImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-06",
@@ -16348,7 +16348,7 @@ The businesses thriving in 2026 aren't necessarily the largest or best-funded �
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-06",
@@ -16634,7 +16634,7 @@ Your customers' journeys are complex, but your attribution strategy doesn't have
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-06",
@@ -16969,7 +16969,7 @@ The most successful businesses in 2026 won't be those that grow the fastest – 
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-05",
@@ -17187,7 +17187,7 @@ Your customers are already providing the behavioral signals that reveal their ne
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-05",
@@ -17482,7 +17482,7 @@ The only question left is: which agent will you build first?`
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-05",
@@ -17747,7 +17747,7 @@ Remember: The goal isn't to replace human creativity and decision-making but to 
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-05",
@@ -18091,7 +18091,7 @@ Ready to transform your marketing approach? Start with mapping your customer jou
     featuredImage: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-05",
@@ -18259,7 +18259,7 @@ Start facilitating instead of persuading. Your conversion rates—and your custo
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-05",
@@ -18519,7 +18519,7 @@ Start implementing these optimization strategies today, and you'll see measurabl
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-05",
@@ -18795,7 +18795,7 @@ Begin your predictive analytics journey today by auditing your current data capa
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-05",
@@ -18942,7 +18942,7 @@ The businesses winning local search in 2026 aren't just optimized—they're **in
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-05",
@@ -19165,7 +19165,7 @@ Remember: the best growth marketing tactics are the ones you can execute consist
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-04",
@@ -19328,7 +19328,7 @@ The question isn't whether your product fits the market—it's whether you can b
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-04",
@@ -19578,7 +19578,7 @@ Start with the 70-20-10 framework, implement robust measurement systems, and con
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-04",
@@ -19803,7 +19803,7 @@ Your competition is already leveraging these AI capabilities. The question isn't
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-04",
@@ -20054,7 +20054,7 @@ The question isn't whether you can afford to optimize your pricing strategy—it
     featuredImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-04",
@@ -20338,7 +20338,7 @@ The businesses that thrive in 2026 and beyond will be those that can seamlessly 
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-04",
@@ -20577,7 +20577,7 @@ Your next growth breakthrough is one experiment away. Which tactic will you test
     featuredImage: "https://images.unsplash.com/photo-1560472355-536de3962603?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-04",
@@ -20820,7 +20820,7 @@ The key insight from recent founder discussions is clear: fundraising success de
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-04",
@@ -21094,7 +21094,7 @@ Your customers are your most valuable asset. AI gives you unprecedented tools to
     featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-04",
@@ -21344,7 +21344,7 @@ The businesses winning with video in 2026 aren't necessarily the ones with the b
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-04",
@@ -21601,7 +21601,7 @@ Ready to transform your business operations? Begin with one use case today, and 
     featuredImage: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-03",
@@ -21761,7 +21761,7 @@ The e-commerce brands that will dominate the next decade are being built today. 
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-03",
@@ -22024,7 +22024,7 @@ Ready to transform your advertising performance? Begin with automated bidding th
     featuredImage: "https://images.unsplash.com/photo-1556155092-490a1ba16284?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-03",
@@ -22281,7 +22281,7 @@ The startup ecosystem rewards those who are prepared, persistent, and strategic.
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-03",
@@ -22570,7 +22570,7 @@ The brands winning with content marketing aren't just creating more content—th
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-03",
@@ -22912,7 +22912,7 @@ Begin your optimization journey today. Audit your current funnel, identify the b
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-03",
@@ -23256,7 +23256,7 @@ The brands that dominate tomorrow's market are building awareness today. Start i
     featuredImage: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-03",
@@ -23588,7 +23588,7 @@ Remember: building a remote team isn't just about working from home—it's about
     featuredImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-03",
@@ -23744,7 +23744,7 @@ The revolution is already here. It's just not evenly distributed yet.`
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-03",
@@ -24056,7 +24056,7 @@ Your customers are leaving digital breadcrumbs throughout their journey. It's ti
     featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-03",
@@ -24330,7 +24330,7 @@ Ready to implement OKRs in your startup? The best time to start was last quarter
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-02",
@@ -24494,7 +24494,7 @@ The question isn't whether you'll eventually adopt dynamic allocation—it's whe
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-02",
@@ -24647,7 +24647,7 @@ The subscription businesses still measuring yesterday's metrics will become tomo
     featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-02",
@@ -24927,7 +24927,7 @@ The brands that succeed with social media advertising don't just follow best pra
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-02",
@@ -25097,7 +25097,7 @@ The funnel is dead. Long live the flywheel.`
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-02",
@@ -25305,7 +25305,7 @@ The future of performance marketing belongs to those who can harness AI to predi
     featuredImage: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-02",
@@ -25545,7 +25545,7 @@ The businesses that thrive in 2026 and beyond won't be those with the biggest bu
     featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-02",
@@ -25820,7 +25820,7 @@ Ready to transform your B2B marketing results? Start implementing these strategi
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-02",
@@ -26037,7 +26037,7 @@ The competitive advantage goes to those who implement systematically, measure ri
     featuredImage: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-02",
@@ -26196,7 +26196,7 @@ The transformation window is now. The question is whether you're ready to act on
     featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-01",
@@ -26478,7 +26478,7 @@ Remember: The best remarketing campaigns feel helpful, not intrusive. Focus on s
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-01",
@@ -26775,7 +26775,7 @@ What's your first AI implementation going to be?`
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-01",
@@ -27119,7 +27119,7 @@ What metrics could you be tracking more effectively with an intelligent dashboar
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-01",
@@ -27397,7 +27397,7 @@ The question isn't whether you can afford to measure content marketing ROI—it'
     featuredImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-01",
@@ -27707,7 +27707,7 @@ Start your partnership journey today, and watch your business achieve growth rat
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-01",
@@ -27967,7 +27967,7 @@ The brands that master programmatic advertising in 2026 will capture disproporti
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-01",
@@ -28235,7 +28235,7 @@ The question isn't whether AI will transform your revenue growth—it's whether 
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-06-01",
@@ -28343,7 +28343,7 @@ The future of SEO belongs to practitioners who can combine AI efficiency with un
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-31",
@@ -28510,7 +28510,7 @@ What path are you choosing, and more importantly, are you fully committed to mak
     featuredImage: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-31",
@@ -28885,7 +28885,7 @@ Remember: AI is a powerful amplifier of creativity, not a replacement for strate
     featuredImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-31",
@@ -29063,7 +29063,7 @@ The science is clear. The question is: will you use it?`
     featuredImage: "https://images.unsplash.com/photo-1555421689-491a97ff2040?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-31",
@@ -29287,7 +29287,7 @@ The question is: Will you lead or follow?`
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-31",
@@ -29538,7 +29538,7 @@ Start with a clear vision, begin with manageable projects, and build systematic 
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-31",
@@ -29813,7 +29813,7 @@ The future of video advertising is here. The question isn't whether AI will tran
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-31",
@@ -30035,7 +30035,7 @@ Start with one optimization strategy from this guide and implement it thoroughly
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-31",
@@ -30208,7 +30208,7 @@ Your customers are already interacting with AI-optimized ads from your competito
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-31",
@@ -30398,7 +30398,7 @@ The future belongs to marketers who understand that in a world of infinite choic
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-30",
@@ -30653,7 +30653,7 @@ Start your AI personalization journey today, and transform how your customers ex
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-30",
@@ -30863,7 +30863,7 @@ The marketing teams that embrace predictive analytics marketing now will have si
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-30",
@@ -31038,7 +31038,7 @@ The marketing teams winning in 2026 are those who recognized in 2024 that compet
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-30",
@@ -31183,7 +31183,7 @@ The question isn't whether AI will transform marketing automation – it already
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-30",
@@ -31332,7 +31332,7 @@ The companies making this shift now will own their markets by 2027. The question
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-30",
@@ -31560,7 +31560,7 @@ The marketplaces that dominate the next decade will be those that successfully b
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-30",
@@ -31908,7 +31908,7 @@ The future of marketing is predictive. The question isn't whether you'll adopt t
     featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-30",
@@ -32065,7 +32065,7 @@ What's your next move?`
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-30",
@@ -32315,7 +32315,7 @@ What's the first element you'll test on your website? The data—and your bottom
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-29",
@@ -32542,7 +32542,7 @@ Your next budget planning cycle is an opportunity to leapfrog competitors. Start
     featuredImage: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-29",
@@ -32699,7 +32699,7 @@ The question isn't whether you should advertise on TikTok. The question is wheth
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-29",
@@ -32842,7 +32842,7 @@ Your dashboard should make you uncomfortable sometimes. If it doesn't, you're pr
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-29",
@@ -33065,7 +33065,7 @@ The brands that thrive in this new environment won't be those with the biggest b
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-29",
@@ -33245,7 +33245,7 @@ Your content strategy needs both. The question isn't whether to use AI or humans
     featuredImage: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-29",
@@ -33497,7 +33497,7 @@ Remember: Your competitors are already exploring these technologies. The questio
     featuredImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-29",
@@ -33690,7 +33690,7 @@ Ready to transform your business with AI? Start with one tool from this guide an
     featuredImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-29",
@@ -33961,7 +33961,7 @@ The time to automate is now. Begin with one workflow, perfect it, then scale. Yo
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-29",
@@ -34222,7 +34222,7 @@ The question isn't whether AI will transform marketing—it already has. The que
     featuredImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-28",
@@ -34471,7 +34471,7 @@ The question isn't whether AI agents will transform business automation—it's w
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-28",
@@ -34712,7 +34712,7 @@ Remember: scaling isn't a destination, it's an ongoing capability. The systems a
     featuredImage: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-28",
@@ -34967,7 +34967,7 @@ Remember: the best funding approach is the one that gives your specific business
     featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-28",
@@ -35101,7 +35101,7 @@ The tools are getting smarter, but the human strategic element is becoming more 
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-28",
@@ -35300,7 +35300,7 @@ Start with a single use case, measure rigorously, and scale systematically. The 
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-28",
@@ -35643,7 +35643,7 @@ Your competitors are already using these tools to gain unfair advantages. The qu
     featuredImage: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-28",
@@ -35914,7 +35914,7 @@ Start by honestly assessing your business model, personal goals, and market cond
     featuredImage: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-28",
@@ -36046,7 +36046,7 @@ That's not just better marketing—it's better business.`
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-28",
@@ -36325,7 +36325,7 @@ The key is starting with solid fundamentals, maintaining statistical rigor, and 
     featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-28",
@@ -36483,7 +36483,7 @@ Start with one platform, one long-term partnership, and one improved measurement
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-27",
@@ -36794,7 +36794,7 @@ Start your AI automation journey today, and transform your business operations f
     featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-27",
@@ -37087,7 +37087,7 @@ The opportunity is massive, but success requires strategic thinking, consistent 
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-27",
@@ -37395,7 +37395,7 @@ Your journey toward AI-powered information management begins with understanding 
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-27",
@@ -37564,7 +37564,7 @@ The future of landing page optimization isn't about following best practices—i
     featuredImage: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-27",
@@ -37711,7 +37711,7 @@ Start small, test quickly, and scale what works. Your future self (and your CFO)
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-27",
@@ -37858,7 +37858,7 @@ Because in 2026, the question isn't whether you can afford to optimize your pric
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-27",
@@ -38044,7 +38044,7 @@ What lead generation strategy will you implement first? The prospects are out th
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-27",
@@ -38312,7 +38312,7 @@ Remember: the best attribution model is the one you'll actually use to make bett
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-27",
@@ -38530,7 +38530,7 @@ The companies mastering this new approach aren't just expanding successfully—t
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-27",
@@ -38814,7 +38814,7 @@ Ready to transform your conversion rates? Pick one strategy from this list and i
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-26",
@@ -38985,7 +38985,7 @@ That's the difference between dying omnichannel and thriving contextual strategy
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-26",
@@ -39181,7 +39181,7 @@ Start with one content type, perfect your process, then scale systematically. Th
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-26",
@@ -39365,7 +39365,7 @@ The question isn't whether you can afford to optimize your sales pipeline. It's 
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-26",
@@ -39597,7 +39597,7 @@ The startups winning with SEO today will be the market leaders tomorrow. Your or
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-26",
@@ -39786,7 +39786,7 @@ The attribution revolution is here. The question isn't whether you'll adapt – 
     featuredImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-26",
@@ -40022,7 +40022,7 @@ Success in this new era requires both strategic vision and tactical execution. S
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-26",
@@ -40230,7 +40230,7 @@ Remember: every day you delay is another day your competitors might gain an adva
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-26",
@@ -40481,7 +40481,7 @@ Master your unit economics, and you'll build a business that doesn't just grow f
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-26",
@@ -40658,7 +40658,7 @@ Because in a world where change is the only constant, the best product-market fi
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-26",
@@ -40884,7 +40884,7 @@ Start with one agent, measure the impact, and scale systematically. Your 300% RO
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-25",
@@ -41032,7 +41032,7 @@ Because in 2026, the companies that figure this out first won't just be more eff
     featuredImage: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-25",
@@ -41190,7 +41190,7 @@ Start small. Scale smart. Ship consistently. The rest is just noise.`
     featuredImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-25",
@@ -41409,7 +41409,7 @@ The market rewards focus over breadth, and timing over technology sophistication
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-25",
@@ -41592,7 +41592,7 @@ Start with your data, focus on your customers' needs, and let AI amplify your ab
     featuredImage: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-25",
@@ -41811,7 +41811,7 @@ Start building your partnership strategy today. Your future growth depends on th
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-25",
@@ -42046,7 +42046,7 @@ Start with one strategy from this guide today. Your future customers are already
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-25",
@@ -42215,7 +42215,7 @@ The companies that master this transition won't just outperform their competitor
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-25",
@@ -42509,7 +42509,7 @@ The businesses that master customer acquisition cost today will be the market le
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-25",
@@ -42755,7 +42755,7 @@ The question isn't whether to optimize your landing pages. It's whether you'll l
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-24",
@@ -43016,7 +43016,7 @@ Remember: Meta advertising success isn't about finding a single winning formula�
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-24",
@@ -43183,7 +43183,7 @@ The marketers who adapt their content marketing ROI measurement strategies now w
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-24",
@@ -43526,7 +43526,7 @@ The future belongs to brands that truly understand their customers' journeys. Ma
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-24",
@@ -43771,7 +43771,7 @@ Start with the tactics that align closest to your current capabilities and custo
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-24",
@@ -43910,7 +43910,7 @@ The brands that move first will have the biggest advantage as this transition ac
     featuredImage: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-24",
@@ -44142,7 +44142,7 @@ The choice is yours: chase new customers endlessly or build a loyal base that dr
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-24",
@@ -44446,7 +44446,7 @@ The key to successful RAG implementation lies in starting with a clear use case,
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-24",
@@ -44624,7 +44624,7 @@ The question isn't whether you can afford to invest in SEO. It's whether you can
     featuredImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-24",
@@ -44867,7 +44867,7 @@ Ready to transform your e-commerce marketing results? Begin with a thorough audi
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-23",
@@ -45068,7 +45068,7 @@ The businesses that embrace AI-driven **sales pipeline optimization** today will
     featuredImage: "https://images.unsplash.com/photo-1556155092-490a1ba16284?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-23",
@@ -45230,7 +45230,7 @@ The demo day culture is dead. The relationship economy has taken its place. The 
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-23",
@@ -45433,7 +45433,7 @@ The question isn't whether these tools will transform marketing analytics—it's
     featuredImage: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-23",
@@ -45730,7 +45730,7 @@ Ready to transform your email marketing? Pick one workflow from this guide and i
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-23",
@@ -45887,7 +45887,7 @@ That's not just better marketing. That's better business.`
     featuredImage: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-23",
@@ -46033,7 +46033,7 @@ Systems first. Culture follows. Results compound.`
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-23",
@@ -46280,7 +46280,7 @@ Ready to transform your business operations? The time to start is now.`
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-23",
@@ -46623,7 +46623,7 @@ Start with one or two practices from this guide, master them, then gradually exp
     featuredImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-23",
@@ -46830,7 +46830,7 @@ The question isn't whether you can afford to implement OKRs—it's whether you c
     featuredImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-22",
@@ -47031,7 +47031,7 @@ The brands that thrive in today's competitive landscape understand that awarenes
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-22",
@@ -47305,7 +47305,7 @@ The subscription economy rewards companies that understand their numbers. Make s
     featuredImage: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-22",
@@ -47519,7 +47519,7 @@ Remember: The best funding strategy is the one that gives you the highest probab
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-22",
@@ -47863,7 +47863,7 @@ Your customers are already telling you which marketing touchpoints work—market
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-22",
@@ -48101,7 +48101,7 @@ By focusing on these performance marketing KPIs and implementing them systematic
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-22",
@@ -48386,7 +48386,7 @@ The digital advertising landscape will continue evolving, but the principles of 
     featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-22",
@@ -48611,7 +48611,7 @@ The era of spray and pray is dead. Long live surgical precision.`
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-22",
@@ -48954,7 +48954,7 @@ The businesses that invest in modern B2B lead generation strategies today will h
     featuredImage: "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-22",
@@ -49108,7 +49108,7 @@ Your customers don't care about your AI. They care about getting help quickly an
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-21",
@@ -49271,7 +49271,7 @@ Your future customers—and your CFO—will thank you.`
     featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-21",
@@ -49670,7 +49670,7 @@ The brands winning in 2026 aren't just running influencer campaigns—they're bu
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-21",
@@ -49810,7 +49810,7 @@ The dashboard era is over. The Decision Intelligence era has begun.`
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-21",
@@ -50123,7 +50123,7 @@ Remember: Every expert was once a beginner. Start small, stay consistent, and le
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-21",
@@ -50411,7 +50411,7 @@ The question isn't whether you can afford to optimize your pricing—it's whethe
     featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-21",
@@ -50737,7 +50737,7 @@ Your video marketing strategy is only as good as your commitment to testing, mea
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-21",
@@ -50936,7 +50936,7 @@ The strategies outlined in this guide have helped hundreds of companies achieve 
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-21",
@@ -51148,7 +51148,7 @@ Start small, measure everything, and scale what works. Your organic traffic will
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-21",
@@ -51370,7 +51370,7 @@ What's your experience with AI content generation? Are you seeing the same patte
     featuredImage: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-21",
@@ -51688,7 +51688,7 @@ The lead generation game has changed. It's time to change with it.`
     featuredImage: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-20",
@@ -51930,7 +51930,7 @@ Start with one strategy today. Your conversion rates—and revenue—will thank 
     featuredImage: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-20",
@@ -52065,7 +52065,7 @@ The choice is yours: be a strategic implementer or a feature collector. Your Q4 
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-20",
@@ -52313,7 +52313,7 @@ Start with one platform, focus on a specific use case, and build from there. The
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-20",
@@ -52639,7 +52639,7 @@ The question isn't whether AI video generation will transform your advertising r
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-20",
@@ -52811,7 +52811,7 @@ The question isn't whether these changes are coming. They're already here. The q
     featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-20",
@@ -52974,7 +52974,7 @@ Make your ads feel like discoveries, and you'll never struggle with social media
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-20",
@@ -53139,7 +53139,7 @@ The brands that embrace journey complexity today will capture the customers that
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-20",
@@ -53281,7 +53281,7 @@ Start by picking one personalization touchpoint and making it transparent. Then 
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-20",
@@ -53434,7 +53434,7 @@ The conversion rate optimization revolution is here. The question isn't whether 
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-19",
@@ -53629,7 +53629,7 @@ Begin building your AI-powered **competitive analysis framework** today. Your fu
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-19",
@@ -53885,7 +53885,7 @@ The future of marketing is intelligent, automated, and highly personalized. The 
     featuredImage: "https://images.unsplash.com/photo-1611262588024-d12430b98920?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-19",
@@ -54109,7 +54109,7 @@ Start experimenting with AI-powered TikTok content creation today. The creative 
     featuredImage: "https://images.unsplash.com/photo-1556155092-490a1ba16284?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-19",
@@ -54365,7 +54365,7 @@ Start small, think big, and remember: the best marketplaces don't just facilitat
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-19",
@@ -54543,7 +54543,7 @@ The question isn't whether predictive analytics works. It's whether you're imple
     featuredImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-19",
@@ -54805,7 +54805,7 @@ Remember: successful digital PR strategy requires consistent execution over mont
     featuredImage: "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-19",
@@ -54939,7 +54939,7 @@ The choice is yours. But choose quickly—your competition already is.`
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-19",
@@ -55236,7 +55236,7 @@ What's your biggest challenge with budget allocation? The answer often reveals y
     featuredImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-18",
@@ -55526,7 +55526,7 @@ Start small, think big, and let automation transform your business operations fr
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-17",
@@ -55788,7 +55788,7 @@ Your growth depends on getting this right. The data is waiting—now it's time t
     featuredImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2026-05-17",
@@ -56055,7 +56055,7 @@ Start small, measure results, and scale what works. Your future self (and your b
     },
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics.",
+      bio: "Digital Marketing Strategist specializing in paid advertising, conversion optimization, and marketing analytics with 10+ years of experience.",
       avatar: "/images/amir-avatar.jpg"
     },
     publishedAt: "2025-01-15",
@@ -57133,7 +57133,7 @@ Meta's October 2025 announcement represents the most significant evolution in di
 The December 16, 2025 implementation date is approaching rapidly. Both advertisers and users should prepare now to navigate this transformative change in the digital advertising ecosystem.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-10-02",
@@ -57550,7 +57550,7 @@ The window for preparation is closing rapidly as January 31st approaches. Advert
 > The transformation is happening now. Start your preparation today to ensure your campaigns not only survive but thrive in Meta's AI-driven future. The opportunities are unprecedented for those who adapt quickly and strategically.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-16",
@@ -57987,7 +57987,7 @@ The opportunity is unprecedented for creators willing to invest in quality, auth
 The revolution has begun. Success in TikTok's quality-first era awaits those bold enough to prioritize substance over sensationalism and community over virality.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-15",
@@ -58386,7 +58386,7 @@ The AI marketing revolution isn't coming—it's here. The question isn't whether
 The AI marketing revolution demands bold action, strategic thinking, and immediate implementation. Success awaits those who embrace the AI-driven future of marketing with confidence, creativity, and commitment to continuous innovation.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-14",
@@ -59282,7 +59282,7 @@ Global expansion opportunities abound in emerging markets with mobile-first adop
 The $1 trillion social commerce opportunity represents a fundamental shift in retail, where social interaction, content creation, and commerce converge into seamless experiences. Brands that successfully integrate influencer partnerships, advanced technology, and community building will capture disproportionate market share in this rapidly expanding ecosystem.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-13",
@@ -60118,7 +60118,7 @@ The marketing measurement crisis of 2025 represents both a significant challenge
 Ready to rebuild your marketing measurement foundation for the privacy-first future? The transition window is narrowing as competitive disadvantages compound for brands relying on outdated attribution models.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-12",
@@ -60288,7 +60288,7 @@ The Performance Max revolution of 2025 provides advertisers with unprecedented c
 Ready to leverage these game-changing Performance Max updates for superior campaign performance and ROI optimization?`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-11",
@@ -60353,7 +60353,7 @@ These developments create immediate opportunities for self-service deal setup, a
 Amazon's 2025 advertising transformation provides unprecedented opportunities for businesses to reach customers across the entire shopping journey with sophisticated targeting, measurement, and optimization capabilities that drive measurable business results.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-10",
@@ -60442,7 +60442,7 @@ Successful retail media strategies require sophisticated data integration and at
 The retail media revolution represents a fundamental shift in digital advertising toward high-intent, data-rich environments where brands can reach customers at the moment of purchase decision. Success requires strategic platform selection, sophisticated measurement, and integration with broader marketing objectives.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-09",
@@ -60527,7 +60527,7 @@ Long-term competitive strategy emphasizes data asset development through custome
 The cookie apocalypse of 2025 represents both the greatest challenge and the most significant opportunity in digital marketing history. Companies that successfully adapt to privacy-first measurement and customer engagement will emerge stronger and more sustainable than ever before, while privacy-first constraints drive unprecedented innovation in measurement, targeting, and customer engagement strategies that prioritize value creation over surveillance.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-08",
@@ -60612,7 +60612,7 @@ AI content creation accelerates marketing innovation by enabling rapid experimen
 The generative AI revolution in marketing represents both an unprecedented opportunity for efficiency and creativity enhancement and a fundamental challenge to traditional content creation roles and processes. Success requires strategic adoption, human oversight, and continuous adaptation to evolving AI capabilities.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-07",
@@ -60699,7 +60699,7 @@ Successful creators are increasingly operating as media companies with sophistic
 The influencer marketing shakeup of 2025 represents both significant challenges and opportunities for brands and creators willing to adapt to higher standards of professionalism, compliance, and performance accountability. Success requires legal review of all influencer partnerships and contracts, FTC training for marketing teams managing creator relationships, documentation systems for partnership transparency and protection, micro-influencer focus for better engagement and cost efficiency, long-term partnerships for deeper brand integration and authenticity, and platform diversification to reduce dependency on single channels.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-06",
@@ -60854,7 +60854,7 @@ The email marketing renaissance of 2025 represents both the greatest challenge a
 Ready to transform your email marketing strategy for the privacy-first future and build lasting customer relationships that drive sustainable business growth?`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-05",
@@ -61025,7 +61025,7 @@ The Connected TV advertising revolution represents the most significant media tr
 Ready to dominate the Connected TV advertising landscape and capture your audience's attention in the streaming-first entertainment world?`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-04",
@@ -61230,7 +61230,7 @@ The voice search revolution represents the most significant shift in search beha
 Ready to dominate the voice search landscape and capture customers in the conversational AI-powered future of search and discovery?`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-03",
@@ -61454,7 +61454,7 @@ The programmatic advertising crisis of 2025 represents both the industry's great
 Ready to navigate the programmatic advertising transformation and build quality-focused automated advertising strategies that protect your brand while driving real business results?`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-02",
@@ -61646,7 +61646,7 @@ Real estate marketing success requires consistent execution across multiple chan
 Ready to develop a comprehensive marketing strategy that generates consistent leads and grows your real estate business? Let's discuss your specific market challenges and create a customized approach that leverages your unique strengths and local opportunities.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist helping real estate professionals generate quality leads and grow their business through proven marketing strategies.",
+      bio: "Digital marketing specialist helping real estate professionals generate quality leads and grow their business through proven marketing strategies with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-26",
@@ -61848,7 +61848,7 @@ Digital marketing success for real estate agents requires consistent execution a
 Ready to implement a comprehensive digital marketing strategy that generates consistent leads for your real estate business? Let's discuss your specific market opportunities and create a customized approach that maximizes your digital marketing ROI while building long-term client relationships.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist helping real estate professionals generate quality leads and grow their business through proven online marketing strategies.",
+      bio: "Digital marketing specialist helping real estate professionals generate quality leads and grow their business through proven online marketing strategies with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-27",
@@ -62072,7 +62072,7 @@ Real estate lead generation success requires systematic implementation of proven
 Ready to implement a complete lead generation system that consistently converts prospects into clients? Let's discuss your specific market opportunities and create a customized system that maximizes your conversion rates while building long-term business value through systematic lead generation and nurturing processes.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist helping real estate professionals build systematic lead generation systems that convert prospects into clients at scale.",
+      bio: "Digital marketing specialist helping real estate professionals build systematic lead generation systems that convert prospects into clients at scale with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-28",
@@ -62288,7 +62288,7 @@ Generative Engine Optimization represents a fundamental shift in how brands achi
 Ready to develop a comprehensive GEO strategy that establishes your brand as an authority in AI search engines? Let's discuss your specific industry opportunities and create an optimization approach that drives sustained visibility and authority in the generative AI ecosystem.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist helping businesses optimize for AI search engines and generative AI platforms through proven GEO strategies.",
+      bio: "Digital marketing specialist helping businesses optimize for AI search engines and generative AI platforms through proven GEO strategies with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-29",
@@ -62504,7 +62504,7 @@ Advanced GEO tactics require sophisticated understanding of AI engine behavior c
 Ready to implement advanced GEO tactics that establish dominant authority in AI search results? Let's discuss your specific optimization opportunities and develop sophisticated strategies that drive sustained citation success across the evolving AI engine ecosystem.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist and GEO expert helping businesses master advanced AI search engine optimization and citation strategies.",
+      bio: "Digital marketing specialist and GEO expert helping businesses master advanced AI search engine optimization and citation strategies with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-30",
@@ -62722,7 +62722,7 @@ The future of search optimization requires mastery of both traditional SEO and e
 Ready to develop an integrated SEO and GEO strategy that maximizes your visibility across traditional search engines and AI platforms? Let's discuss your specific optimization opportunities and create a comprehensive approach that drives results across all search channels.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing strategist specializing in integrated SEO and GEO optimization for maximum visibility across traditional and AI search platforms.",
+      bio: "Digital marketing strategist specializing in integrated SEO and GEO optimization for maximum visibility across traditional and AI search platforms with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-31",
@@ -62968,7 +62968,7 @@ Successful dental marketing requires integration of digital and traditional stra
 Ready to develop a comprehensive marketing strategy that attracts quality patients and grows your dental practice? Let's discuss your specific market challenges and create a customized approach that leverages your expertise while building lasting patient relationships that drive sustainable practice success.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist helping dental practices attract quality patients and grow their practice through proven marketing strategies and patient experience optimization.",
+      bio: "Digital marketing specialist helping dental practices attract quality patients and grow their practice through proven marketing strategies and patient experience optimization with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-02-01",
@@ -63184,7 +63184,7 @@ Digital marketing success for dental practices requires integration of paid adve
 Ready to implement a comprehensive digital marketing strategy that attracts quality patients and grows your dental practice? Let's discuss your specific market opportunities and create a customized approach that leverages digital channels while building lasting patient relationships that drive sustainable practice growth.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist helping dental practices master Google Ads, Facebook advertising, and local SEO to attract quality patients and grow their practice.",
+      bio: "Digital marketing specialist helping dental practices master Google Ads, Facebook advertising, and local SEO to attract quality patients and grow their practice with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-02-02",
@@ -63424,7 +63424,7 @@ Successful dental patient acquisition requires systematic implementation of auto
 Ready to implement a comprehensive patient acquisition system that consistently converts inquiries into scheduled patients? Let's discuss your specific practice needs and create a customized system that leverages automation while maintaining the personal touch that builds lasting patient relationships and drives sustainable practice success.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist helping dental practices build automated patient acquisition systems that convert inquiries into loyal patients through proven CRM and marketing workflows.",
+      bio: "Digital marketing specialist helping dental practices build automated patient acquisition systems that convert inquiries into loyal patients through proven CRM and marketing workflows with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-02-03",
@@ -63678,7 +63678,7 @@ White label marketing agencies represent significant opportunities for scalable,
 Ready to build a successful white label marketing agency that provides comprehensive services while maintaining healthy profit margins? Let's discuss your specific market opportunities and develop a strategic approach that leverages partnerships while building lasting client relationships that drive sustainable business growth.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing strategist helping entrepreneurs build and scale profitable white label marketing agencies through proven partnership and client management strategies.",
+      bio: "Digital marketing strategist helping entrepreneurs build and scale profitable white label marketing agencies through proven partnership and client management strategies with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-02-04",
@@ -63926,7 +63926,7 @@ Exceptional white label service delivery requires systematic approaches to quali
 Ready to implement service delivery systems that consistently exceed client expectations while maintaining healthy profit margins? Let's discuss your specific service portfolio and develop systematic approaches that leverage your partner network while building lasting client relationships that drive sustainable agency growth.`,
     author: {
       name: "Amir Gomez",
-      bio: "White label marketing expert helping agencies implement service delivery systems and client management processes that achieve exceptional retention rates and premium pricing.",
+      bio: "White label marketing expert helping agencies implement service delivery systems and client management processes that achieve exceptional retention rates and premium pricing with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-02-05",
@@ -64174,7 +64174,7 @@ Scaling white label agency operations requires systematic approaches to process 
 Ready to scale your white label agency operations beyond 100 clients while maintaining exceptional service quality and healthy profit margins? Let's discuss your specific scaling challenges and develop systematic approaches that leverage technology and process optimization to achieve sustainable, profitable growth.`,
     author: {
       name: "Amir Gomez",
-      bio: "Scaling operations expert helping white label agencies implement systems and automation that manage hundreds of clients profitably while maintaining exceptional service quality.",
+      bio: "Scaling operations expert helping white label agencies implement systems and automation that manage hundreds of clients profitably while maintaining exceptional service quality with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-02-06",
@@ -64240,7 +64240,7 @@ Place customer testimonials above the fold to immediately establish credibility 
 Ready to implement these strategies for your business? Let's discuss your specific Google Ads challenges and opportunities.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-08-10",
@@ -64314,7 +64314,7 @@ The most successful campaigns I manage use both platforms strategically:
 Ready to build an integrated advertising strategy? Let's discuss which platform mix will work best for your specific business goals.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-08-05",
@@ -64402,7 +64402,7 @@ Remember: the best automation sequence is the one that's actually running. Start
 Ready to implement email automation that drives real revenue? Let's discuss which sequences will have the biggest impact on your business.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-07-28",
@@ -64499,7 +64499,7 @@ Remember: CRO is a long-term strategy, not a quick fix. Consistent testing and o
 Ready to implement a systematic CRO process for your landing pages? Let's analyze your current performance and identify the highest-impact optimization opportunities.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-07-20",
@@ -64596,7 +64596,7 @@ Remember: The goal isn't to have perfect data – it's to have data that drives 
 Ready to transform your marketing analytics from vanity metrics to business-driving insights? Let's audit your current setup and build a measurement strategy that actually matters.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-07-15",
@@ -72945,7 +72945,7 @@ Implement marketing mix modeling for comprehensive attribution insight:
 Ready to implement these iOS 14.5 attribution strategies? Let's discuss your specific measurement challenges and develop a customized attribution recovery plan.`,
     author: {
       name: "Amir Gomez",
-      bio: "Mobile marketing specialist with expertise in iOS attribution and App Tracking Transparency solutions.",
+      bio: "Mobile marketing specialist with expertise in iOS attribution and App Tracking Transparency solutions with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-12-15",
@@ -73163,7 +73163,7 @@ Configure comprehensive reporting for iOS attribution:
 Ready to implement these Facebook iOS attribution strategies? Let's discuss your specific campaign challenges and develop a customized attribution recovery plan.`,
     author: {
       name: "Amir Gomez",
-      bio: "Mobile marketing specialist with expertise in Facebook iOS attribution and post-ATT optimization strategies.",
+      bio: "Mobile marketing specialist with expertise in Facebook iOS attribution and post-ATT optimization strategies with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-12-12",
@@ -73371,7 +73371,7 @@ Performance maintenance strategies adapt to attribution limitations through crea
 Ready to implement comprehensive mobile attribution strategies for the post-iOS 14.5 environment? Let's discuss your specific technical requirements and develop a customized SKAdNetwork implementation plan.`,
     author: {
       name: "Amir Gomez",
-      bio: "Mobile attribution specialist with expertise in SKAdNetwork implementation and post-ATT measurement strategies.",
+      bio: "Mobile attribution specialist with expertise in SKAdNetwork implementation and post-ATT measurement strategies with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-12-10",
@@ -73589,7 +73589,7 @@ Implement ongoing optimization processes that adapt to changing market condition
 Ready to implement advanced Performance Max optimization strategies? Let's discuss your specific campaign challenges and develop a customized optimization plan that delivers consistent ROAS improvements.`,
     author: {
       name: "Amir Gomez",
-      bio: "Google Ads specialist with expertise in Performance Max campaign optimization and automated advertising strategies.",
+      bio: "Google Ads specialist with expertise in Performance Max campaign optimization and automated advertising strategies with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-12-08",
@@ -73832,7 +73832,7 @@ Implement systematic feed optimization processes that adapt to changing market c
 Ready to implement advanced Google Shopping feed optimization strategies? Let's discuss your specific product catalog challenges and develop a customized feed optimization plan that maximizes revenue growth.`,
     author: {
       name: "Amir Gomez",
-      bio: "E-commerce advertising specialist with expertise in Google Shopping optimization and product feed management.",
+      bio: "E-commerce advertising specialist with expertise in Google Shopping optimization and product feed management with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-12-05",
@@ -74075,7 +74075,7 @@ Implement sophisticated analytics and reporting systems to maximize Dynamic Prod
 Ready to implement advanced Facebook Dynamic Product Ad strategies? Let's discuss your specific e-commerce challenges and develop a customized DPA optimization plan that maximizes return on ad spend.`,
     author: {
       name: "Amir Gomez",
-      bio: "Facebook advertising specialist with expertise in Dynamic Product Ads and e-commerce catalog optimization.",
+      bio: "Facebook advertising specialist with expertise in Dynamic Product Ads and e-commerce catalog optimization with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-12-03",
@@ -74155,7 +74155,7 @@ The unique characteristics of LSAs demand dedicated management attention rather 
     },
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Specialist with 10 years of experience managing local service campaigns",
+      bio: "Digital Marketing Specialist with 10+ years of experience managing local service campaigns",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-12-04",
@@ -74243,7 +74243,7 @@ The shift from manual campaign management to AI-assisted optimization represents
     },
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Specialist with 10 years of experience in AI-powered advertising campaigns",
+      bio: "Digital Marketing Specialist with 10+ years of experience in AI-powered advertising campaigns",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-12-05",
@@ -74339,7 +74339,7 @@ The competitive advantages of well-executed white label operations compound over
     },
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Specialist with 10 years of experience in agency scaling and white label services",
+      bio: "Digital Marketing Specialist with 10+ years of experience in agency scaling and white label services",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-12-06",
@@ -74489,7 +74489,7 @@ The $47 billion AI marketing transformation is creating unprecedented opportunit
 Success requires strategic thinking, technical expertise, and commitment to continuous optimization. The businesses leading this transformation are building the marketing infrastructure that will dominate the next decade of digital commerce.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Specialist with 10 years of experience in AI marketing automation and personalization strategies",
+      bio: "Digital Marketing Specialist with 10+ years of experience in AI marketing automation and personalization strategies",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-15",
@@ -74689,7 +74689,7 @@ Privacy-first marketing represents both challenge and opportunity. Organizations
 The transition requires strategic thinking, technological investment, and cultural adaptation. Companies successfully navigating this transformation are establishing the foundation for long-term success in an increasingly privacy-conscious digital economy.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Specialist with 10 years of experience in privacy-compliant marketing and data strategy",
+      bio: "Digital Marketing Specialist with 10+ years of experience in privacy-compliant marketing and data strategy",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-18",
@@ -74879,7 +74879,7 @@ The short-form video revolution represents a permanent shift in digital marketin
 Success requires understanding platform-specific dynamics, investing in content creation capabilities, and implementing sophisticated commerce integration that meets modern consumer expectations for seamless shopping experiences within entertainment content.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Specialist with 10 years of experience in video marketing and social commerce strategies",
+      bio: "Digital Marketing Specialist with 10+ years of experience in video marketing and social commerce strategies",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-20",
@@ -74978,7 +74978,7 @@ Modern voice search optimization requires understanding how AI systems interpret
 Voice search optimization represents a fundamental shift toward more conversational, immediate, and local search experiences. Businesses successfully adapting their SEO strategies for voice search are capturing increasing market share as consumer behavior evolves toward conversational AI interactions.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Specialist with 10 years of experience in SEO and voice search optimization",
+      bio: "Digital Marketing Specialist with 10+ years of experience in SEO and voice search optimization",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-22",
@@ -75075,7 +75075,7 @@ Trust represents major currency in modern marketing, and nano influencers typica
 Nano influencer marketing represents a return to authentic, community-focused marketing that prioritizes genuine relationships over follower counts. The brands successfully implementing nano influencer strategies are building sustainable competitive advantages through enhanced trust, superior engagement rates, and cost-effective customer acquisition.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital Marketing Specialist with 10 years of experience in influencer marketing and community building",
+      bio: "Digital Marketing Specialist with 10+ years of experience in influencer marketing and community building",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-24",
@@ -75153,7 +75153,7 @@ Interactive quizzes generate 2x more engagement than standard content while capt
 Ready to transform your content strategy with interactive experiences? Let's discuss implementing AR/VR marketing campaigns that drive measurable engagement and conversions.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-08-22",
@@ -75228,7 +75228,7 @@ Customer-led growth transforms satisfied customers into growth engines through w
 Ready to implement customer-led growth strategies that scale with digital-first B2B sales? Let's discuss building sustainable growth engines through existing customer relationships.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-08-22",
@@ -75293,7 +75293,7 @@ Dynamic Creative Optimization represents the next evolution in programmatic adve
 Ready to leverage programmatic advertising evolution for measurable revenue growth? Let's discuss implementing dynamic creative optimization strategies that drive performance in privacy-first environments.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-08-22",
@@ -75358,7 +75358,7 @@ Modern customers interact with brands through an average of 7 touchpoints before
 Ready to implement omnichannel customer experience strategies that drive satisfaction and loyalty? Let's discuss creating seamless journey optimization that differentiates your brand in competitive markets.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-08-22",
@@ -75423,7 +75423,7 @@ Predictive analytics uses machine learning algorithms to analyze historical cust
 Ready to implement predictive analytics that drives measurable marketing performance? Let's discuss building customer behavior forecasting capabilities that optimize revenue and reduce churn.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-08-22",
@@ -75547,7 +75547,7 @@ iOS 14.5 attribution challenges require fundamental strategy shifts toward priva
 Ready to implement iOS 14.5-compliant attribution strategies? Let's discuss building measurement solutions that drive growth while respecting customer privacy preferences.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-08-22",
@@ -75734,7 +75734,7 @@ For advanced targeting combinations and behavioral layering strategies, explore 
 For detailed targeting strategies and campaign optimization specific to your industry, let's discuss implementing data-driven interest targeting that reduces costs while improving conversion rates.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-08-22",
@@ -75958,7 +75958,7 @@ For specific interest categories and audience research strategies, explore our c
 Ready to implement advanced detailed targeting strategies? Let's discuss building audience targeting frameworks that improve campaign performance while reducing acquisition costs.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-08-22",
@@ -76124,7 +76124,7 @@ RLSA strategy success requires systematic audience segmentation, strategic bid o
 Ready to implement advanced RLSA strategies that significantly improve search campaign performance? Let's discuss building remarketing frameworks that maximize conversion rates while reducing acquisition costs.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-08-22",
@@ -76293,7 +76293,7 @@ Marketing automation represents the competitive advantage that separates scaling
     category: "SaaS Marketing",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist helping businesses optimize their marketing automation, conversion rates, and customer acquisition strategies for sustainable growth.",
+      bio: "Digital marketing specialist helping businesses optimize their marketing automation, conversion rates, and customer acquisition strategies for sustainable growth with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-15",
@@ -76491,7 +76491,7 @@ E-commerce conversion rate optimization requires systematic attention to every c
     category: "E-commerce",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist helping businesses optimize their marketing automation, conversion rates, and customer acquisition strategies for sustainable growth.",
+      bio: "Digital marketing specialist helping businesses optimize their marketing automation, conversion rates, and customer acquisition strategies for sustainable growth with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-16",
@@ -76710,7 +76710,7 @@ B2B lead generation success requires a sophisticated, multi-channel approach tha
     category: "B2B Marketing",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist helping businesses optimize their marketing automation, conversion rates, and customer acquisition strategies for sustainable growth.",
+      bio: "Digital marketing specialist helping businesses optimize their marketing automation, conversion rates, and customer acquisition strategies for sustainable growth with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-17",
@@ -76933,7 +76933,7 @@ Local SEO success requires a comprehensive approach that combines technical opti
     category: "Local SEO",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist helping businesses optimize their marketing automation, conversion rates, and customer acquisition strategies for sustainable growth.",
+      bio: "Digital marketing specialist helping businesses optimize their marketing automation, conversion rates, and customer acquisition strategies for sustainable growth with 10+ years of experience.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-18",
@@ -77037,7 +77037,7 @@ Conduct quarterly audits of your technology stack to identify unused tools, over
 Ready to build a marketing technology stack that drives real results? Let's discuss your specific business needs and growth objectives.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-02",
@@ -77157,7 +77157,7 @@ Analyze how marketing touchpoints influence sales cycle length, win rates, and d
 Ready to transform your B2B marketing strategy? Let's discuss your specific target market and growth objectives.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-01",
@@ -77291,7 +77291,7 @@ Calculate the financial impact of customer experience investments through retent
 Ready to transform your customer experience strategy? Let's discuss your specific customer journey challenges and optimization opportunities.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-12-30",
@@ -77439,7 +77439,7 @@ Add predictive analytics, cross-channel orchestration, and AI-powered personaliz
 Ready to build marketing automation that drives real results? Let's discuss your specific lead nurturing challenges and growth objectives.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-12-28",
@@ -77575,7 +77575,7 @@ Create clear upgrade paths between pricing tiers with meaningful feature differe
 Ready to accelerate your SaaS growth with proven strategies? Let's discuss your specific product positioning and growth challenges.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-12-25",
@@ -77709,7 +77709,7 @@ Connect customer strategy investments to business outcomes through retention rat
 Ready to build a customer strategy that drives sustainable growth? Let's discuss your specific community building and retention challenges.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-05",
@@ -77857,7 +77857,7 @@ Efficient order processing and shipping improves customer satisfaction and reduc
 Ready to transform your e-commerce performance? Let's discuss your specific conversion challenges and growth opportunities.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-04",
@@ -78023,7 +78023,7 @@ Monitor local competitors' rankings, reviews, and strategies to identify opportu
 Ready to dominate your local market with proven local SEO strategies? Let's discuss your specific geographic market and local competition challenges.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-03",
@@ -78185,7 +78185,7 @@ Implement systems that automatically identify unusual patterns or performance ch
 Ready to transform your marketing performance with advanced analytics? Let's discuss your specific data challenges and optimization opportunities.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-12-31",
@@ -78347,7 +78347,7 @@ Implement agile planning processes that enable rapid strategy adjustments based 
 Ready to build a marketing strategy that drives sustainable growth to $50M and beyond? Let's discuss your specific business objectives and strategic challenges.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-12-29",
@@ -78509,7 +78509,7 @@ Implement monitoring systems to ensure micro-influencer content aligns with bran
 Ready to build a micro-influencer marketing program that delivers authentic engagement and superior ROI? Let's discuss your specific audience and partnership objectives.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-12-27",
@@ -78671,7 +78671,7 @@ Create exclusive content for subscribers or community members to build loyalty a
 Ready to create content that drives massive organic reach and builds loyal communities? Let's discuss your specific content objectives and audience engagement challenges.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-12-26",
@@ -78837,7 +78837,7 @@ Create formal advocacy programs that recognize and reward your most engaged comm
 Ready to transform your social media presence into a revenue-driving community? Let's discuss your specific audience engagement and community building challenges.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-12-24",
@@ -78999,7 +78999,7 @@ Implement cross-device tracking to understand complete customer journeys and opt
 Ready to implement advanced conversion optimization strategies that consistently improve your business results? Let's discuss your specific optimization challenges and testing opportunities.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-12-23",
@@ -79165,7 +79165,7 @@ Establish robust data protection protocols that secure subscriber information wh
 Ready to transform your email marketing into a revenue-generating machine with AI-powered automation? Let's discuss your specific email marketing challenges and growth opportunities.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2024-12-22",
@@ -79341,7 +79341,7 @@ Coordinate Pinterest campaigns with other social media advertising to create com
 Ready to transform your e-commerce performance with Pinterest advertising? Let's discuss your specific product catalog and visual marketing objectives.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-06",
@@ -79517,7 +79517,7 @@ Coordinate TikTok campaigns with Google My Business, Facebook, and other local m
 Ready to transform your local business with TikTok advertising that drives real foot traffic? Let's discuss your specific local market and customer acquisition objectives.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-07",
@@ -79709,7 +79709,7 @@ Implement proper email authentication (SPF, DKIM, DMARC) to improve deliverabili
 Ready to transform your Shopify store's email marketing into a revenue-generating powerhouse? Let's discuss your specific product catalog and customer journey optimization opportunities.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-08",
@@ -79911,7 +79911,7 @@ Continuously optimize campaigns based on patient lifetime value and treatment co
 Ready to transform your dental practice's patient acquisition with targeted Google Ads campaigns? Let's discuss your specific services and local market opportunities.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-09",
@@ -80115,7 +80115,7 @@ Focus budgets on proven successful neighborhoods and expand gradually based on p
 Ready to transform your real estate business with Facebook advertising that generates consistent, high-quality leads? Let's discuss your specific market area and property specialization opportunities.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-10",
@@ -80331,7 +80331,7 @@ Use LinkedIn campaigns to increase awareness and engagement within target accoun
 Ready to transform your B2B SaaS lead generation with LinkedIn advertising that targets enterprise decision-makers effectively? Let's discuss your specific target accounts and sales objectives.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-11",
@@ -80563,7 +80563,7 @@ Target businesses and organizations with corporate training packages and bulk en
 Ready to transform your online course business with YouTube advertising that converts viewers into successful students? Let's discuss your specific course topics and target student demographics.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-12",
@@ -80793,7 +80793,7 @@ Plan cash flow and profitability carefully during aggressive growth phases to ma
 Ready to launch your private label products on Amazon with PPC strategies that drive rapid growth and market domination? Let's discuss your specific product categories and launch timeline objectives.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-13",
@@ -81017,7 +81017,7 @@ Adjust product offerings, sizing information, and style recommendations based on
 Ready to transform your fashion brand's Instagram presence into a revenue-driving visual experience that builds loyal customers? Let's discuss your specific style aesthetic and target customer demographics.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-14",
@@ -81249,7 +81249,7 @@ Implement secure communication systems that comply with attorney-client privileg
 Ready to transform your law firm's client acquisition with Google Ads campaigns that attract high-quality clients while maintaining complete ethical compliance? Let's discuss your specific practice areas and local market opportunities.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-15",
@@ -81620,7 +81620,7 @@ The choice between Google Ads and Microsoft Ads isn't binary—it's strategic. M
 The future belongs to advertisers who master both platforms, understanding when and how to leverage each for maximum competitive advantage. Start with data-driven testing, scale what works, and continuously optimize based on performance metrics that matter most to your business success.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-20",
@@ -82129,7 +82129,7 @@ The Facebook Ads vs Google Ads debate misses the fundamental truth: these platfo
 The future belongs to marketers who master platform integration, creating seamless customer experiences that guide prospects from initial discovery through Google searches to final conversion, regardless of where that journey concludes. Start with data, optimize for performance, and scale with confidence across both platforms for maximum competitive advantage.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-19",
@@ -82622,7 +82622,7 @@ The TikTok vs Instagram advertising debate overlooks a fundamental truth: these 
 Success in short-form video advertising requires mastering both platforms while understanding their unique contributions to your overall marketing objectives. Start with clear goals, test systematically, and optimize based on platform-specific performance metrics for maximum competitive advantage in the evolving social media landscape.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-18",
@@ -83131,7 +83131,7 @@ Pinterest vs Facebook advertising isn't about choosing a single winner—it's ab
 Success in visual discovery marketing requires matching platform strengths with business objectives, creating platform-native content, and measuring performance across extended customer journeys. Start with clear goals, test systematically, and optimize based on platform-specific metrics for maximum competitive advantage in the visual commerce landscape.`,
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2025-01-17",
@@ -83153,7 +83153,7 @@ Success in visual discovery marketing requires matching platform strengths with 
     featuredImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -83224,7 +83224,7 @@ Blended CPL makes a good headline number, but a poor basis for decisions. If you
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -83289,7 +83289,7 @@ Si administrás presupuesto pago para más de una marca, producto o campaña den
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -83360,7 +83360,7 @@ Si hace más de un trimestre que nadie audita manualmente los valores únicos de
     featuredImage: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -83426,7 +83426,7 @@ Si vendés un servicio de ticket alto y estás optimizando creativos solo por la
     featuredImage: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -83497,7 +83497,7 @@ Datos según los reportes Real Estate Marketing Benchmarks 2026, Meta Ads Cost P
     featuredImage: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -83560,7 +83560,7 @@ Datos según Education & Coaching Google Ads Statistics 2026 de Web Tonic, el re
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -83625,7 +83625,7 @@ Datos según la guía Meta Conversions API 2026 de Chatterbuzz Media, la guía d
     featuredImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -83685,7 +83685,7 @@ Datos según la guía de Call Tracking 2026 de AdNabu y la documentación oficia
     featuredImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -83746,7 +83746,7 @@ Datos según TikTok vs Meta CPM Benchmark Data 2026 de Trendtrack, Meta vs TikTo
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -83815,7 +83815,7 @@ Datos según los benchmarks de LTV:CAC ratio 2026 de Growthspree y los reportes 
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -83876,7 +83876,7 @@ Datos según First-Party Data Statistics 2026 de TechRT, Top 10 Marketing Analyt
     featuredImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -83942,7 +83942,7 @@ Datos según el reporte de adopción de IA en pequeñas empresas 2026 de Capsule
     featuredImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -84022,7 +84022,7 @@ Data according to WordStream and get-ryze.ai.`
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -84100,7 +84100,7 @@ Data according to WordStream, the Zulu Method, and Digital Applied.`
     featuredImage: "https://images.unsplash.com/photo-1607082349566-187342175e2f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -84174,7 +84174,7 @@ Data according to Trendtrack and Digital Applied.`
     featuredImage: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -84243,7 +84243,7 @@ Data according to WordStream.`
     featuredImage: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -84316,7 +84316,7 @@ Data according to SearchLight Digital and WordStream.`
     featuredImage: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -84394,7 +84394,7 @@ Data according to get-ryze.ai and Web Tonic.`
     featuredImage: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -84462,7 +84462,7 @@ Data according to WordStream and Cropink.`
     featuredImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -84535,7 +84535,7 @@ Data according to Google Ads Help and Invoca.`
     featuredImage: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -84600,7 +84600,7 @@ Data according to WOLF Financial and Web Tonic.`
     featuredImage: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -84658,7 +84658,7 @@ Data according to Foundry CRO and PPC Chief.`
     featuredImage: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -84721,7 +84721,7 @@ Data according to Dreamdata and Demand Gen Report.`
     featuredImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -84787,7 +84787,7 @@ Data according to Tenjin and SEM Nexus.`
     featuredImage: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -84851,7 +84851,7 @@ Data according to Foundry CRO and NA Media Experts.`
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -84917,7 +84917,7 @@ Data according to GrowthSpree and Digital Applied.`
     featuredImage: "https://images.unsplash.com/photo-1596558450268-9c27524ba856?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -84980,7 +84980,7 @@ Data according to Triple Whale and Lebesgue.`
     featuredImage: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -85047,7 +85047,7 @@ Data according to Get Ryze and Adamigo.`
     featuredImage: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -85149,7 +85149,7 @@ Data according to Klaviyo, MailerLite, WebFX, and Brevo email marketing benchmar
     featuredImage: "https://images.unsplash.com/photo-1556740758-90de374c12ad?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -85232,7 +85232,7 @@ Data according to WebFX and Foundry CRO Google Ads and Shopping benchmark report
     featuredImage: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -85314,7 +85314,7 @@ Data according to SearchLight Digital and PipelineOn Local Services Ads and Goog
     featuredImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -85399,7 +85399,7 @@ Data according to CustomerLabs and Attryb Meta Conversions API setup guides for 
     featuredImage: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -85481,7 +85481,7 @@ Data according to iLawyerMarketing and Google Ads Help documentation on the 2026
     featuredImage: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -85570,7 +85570,7 @@ Data according to Speed Commerce and Mobiloud e-commerce conversion rate benchma
     featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -85645,7 +85645,7 @@ Data according to Shopify and HubSpot's 2026 small and midsize business survey, 
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -85712,7 +85712,7 @@ Data according to Improvado's 2026 cookieless attribution research and industry 
     featuredImage: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -85783,7 +85783,7 @@ Data according to zero-click search research from Arfadia and Strategyc, and Sim
     featuredImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -85847,7 +85847,7 @@ Data according to U.S. Small Business Administration guidance and small business
     featuredImage: "https://images.unsplash.com/photo-1611944212129-29977ae1398c?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -85908,7 +85908,7 @@ Data according to Dreamdata's 2026 LinkedIn Ads Benchmarks Report and industry B
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -85975,7 +85975,7 @@ If you're testing a new creative and it posts a huge CTR lift with a conversion 
     featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -86036,7 +86036,7 @@ Native lead forms aren't the problem — running them exclusively, with no landi
     featuredImage: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -86093,7 +86093,7 @@ If any meaningful share of your funnel's traffic is tagged with a generic source
     featuredImage: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -86158,7 +86158,7 @@ A small, obviously broken value in your tracking data is actually the easy case 
     featuredImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -86220,7 +86220,7 @@ If your ad copy leans on a single, precise number to describe your audience or y
     featuredImage: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-14",
@@ -86293,7 +86293,7 @@ If your ad copy for a high-ticket offer leans on a specific, prominent dollar fi
     featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-15",
@@ -86345,7 +86345,7 @@ If you're budgeting Google Ads for a roofing company in 2026, plan for $150-$300
     featuredImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-15",
@@ -86392,7 +86392,7 @@ Budget $80-$300 per lead for solar on Google Ads search in 2026, with Local Serv
     featuredImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-15",
@@ -86444,7 +86444,7 @@ Expect to pay $0.75-$2.00 per click for a well-targeted Reddit campaign in 2026 
     featuredImage: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-15",
@@ -86497,7 +86497,7 @@ Don't budget to the $5 technical minimum for anything beyond a pure awareness te
     featuredImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-15",
@@ -86551,7 +86551,7 @@ Budget around $3-$3.50 per click for veterinary Google Ads campaigns, and expect
     featuredImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-15",
@@ -86604,7 +86604,7 @@ Budget $150-$400 per lead for a new home remodeling Google Ads account in 2026, 
     featuredImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=450&fit=crop&auto=format",
     author: {
       name: "Amir Gomez",
-      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
       avatar: "/amir-profile.jpg"
     },
     publishedAt: "2026-08-15",
