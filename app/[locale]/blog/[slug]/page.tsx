@@ -177,9 +177,14 @@ export default async function BlogPostPage({ params }: PageProps) {
               Get personalized guidance on implementing these tactics for your specific business goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-orange-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-700 transition-colors">
+              <Link
+                href="https://calendly.com/amir-amirgomez"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-orange-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-700 transition-colors"
+              >
                 Schedule Free Consultation
-              </button>
+              </Link>
               <Link 
                 href="/services"
                 className="border border-orange-600 text-orange-600 px-8 py-3 rounded-full font-semibold hover:bg-orange-50 dark:hover:bg-orange-900/20 transition-colors"
