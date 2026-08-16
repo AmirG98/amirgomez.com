@@ -180,19 +180,17 @@ export default async function BlogPostPage({ params }: PageProps) {
                 Get personalized guidance on implementing these tactics for your specific business goals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <AnimatedButton variant="primary" size="lg">
-                  <Link
-                    href="https://calendly.com/amir-amirgomez"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Schedule Free Consultation
-                  </Link>
+                <AnimatedButton
+                  variant="primary"
+                  size="lg"
+                  href="https://calendly.com/amir-amirgomez"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Schedule Free Consultation
                 </AnimatedButton>
-                <AnimatedButton variant="secondary" size="lg">
-                  <Link href="/services">
-                    View All Services
-                  </Link>
+                <AnimatedButton variant="secondary" size="lg" href="/services">
+                  View All Services
                 </AnimatedButton>
               </div>
             </div>

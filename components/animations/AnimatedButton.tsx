@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import Link from 'next/link';
 
 interface AnimatedButtonProps {
   children: React.ReactNode;
@@ -12,6 +13,10 @@ interface AnimatedButtonProps {
   disabled?: boolean;
   loading?: boolean;
   type?: 'button' | 'submit';
+  /** Si se pasa, el componente renderiza un link (<a>) en vez de un <button>. */
+  href?: string;
+  target?: string;
+  rel?: string;
 }
 
 export default function AnimatedButton({
@@ -22,7 +27,10 @@ export default function AnimatedButton({
   className = '',
   disabled = false,
   loading = false,
-  type = 'button'
+  type = 'button',
+  href,
+  target,
+  rel
 }: AnimatedButtonProps) {
   const [isPressed, setIsPressed] = useState(false);
 
@@ -42,30 +50,31 @@ export default function AnimatedButton({
 
   const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
 
-  return (
-    <motion.button
-      type={type}
-      className={combinedClasses}
-      onClick={onClick}
-      disabled={disabled || loading}
-      style={variant === 'primary' ? {
-        background: 'linear-gradient(135deg, var(--brand-500), var(--brand-600))',
-      } : undefined}
-      whileHover={{
-        scale: disabled ? 1 : 1.05,
-        boxShadow: variant === 'primary' ? 'var(--shadow-brand)' : undefined,
-        transition: { duration: 0.2 }
-      }}
-      whileTap={{
-        scale: disabled ? 1 : 0.97,
-        transition: { duration: 0.1 }
-      }}
-      onMouseDown={() => setIsPressed(true)}
-      onMouseUp={() => setIsPressed(false)}
-      onMouseLeave={() => setIsPressed(false)}
-    >
+  const sharedStyle = variant === 'primary' ? {
+    background: 'linear-gradient(135deg, var(--brand-500), var(--brand-600))',
+  } : undefined;
+
+  const sharedMotionProps = {
+    className: combinedClasses,
+    style: sharedStyle,
+    whileHover: {
+      scale: disabled ? 1 : 1.05,
+      boxShadow: variant === 'primary' ? 'var(--shadow-brand)' : undefined,
+      transition: { duration: 0.2 }
+    },
+    whileTap: {
+      scale: disabled ? 1 : 0.97,
+      transition: { duration: 0.1 }
+    },
+    onMouseDown: () => setIsPressed(true),
+    onMouseUp: () => setIsPressed(false),
+    onMouseLeave: () => setIsPressed(false),
+  };
+
+  const innerContent = (
+    <>
       {/* Ripple effect background */}
-      <motion.div
+      <motion.span
         className="absolute inset-0 bg-white opacity-0"
         animate={{
           scale: isPressed ? 1 : 0,
@@ -76,18 +85,18 @@ export default function AnimatedButton({
 
       {/* Loading spinner */}
       {loading && (
-        <motion.div
+        <motion.span
           className="absolute inset-0 flex items-center justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.2 }}
         >
-          <motion.div
-            className="w-5 h-5 border-2 border-current border-t-transparent rounded-full"
+          <motion.span
+            className="block w-5 h-5 border-2 border-current border-t-transparent rounded-full"
             animate={{ rotate: 360 }}
             transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
           />
-        </motion.div>
+        </motion.span>
       )}
 
       {/* Button content */}
@@ -98,6 +107,35 @@ export default function AnimatedButton({
       >
         {children}
       </motion.span>
+    </>
+  );
+
+  // Cuando se pasa href, renderizamos un link real en vez de un <button>,
+  // para no anidar un <a> dentro de un <button> (HTML inválido).
+  if (href) {
+    return (
+      <motion.span {...sharedMotionProps} className={`${combinedClasses} inline-flex items-center justify-center`}>
+        <Link
+          href={href}
+          target={target}
+          rel={rel}
+          onClick={onClick}
+          className="absolute inset-0 z-20"
+          aria-label={typeof children === 'string' ? children : undefined}
+        />
+        {innerContent}
+      </motion.span>
+    );
+  }
+
+  return (
+    <motion.button
+      type={type}
+      onClick={onClick}
+      disabled={disabled || loading}
+      {...sharedMotionProps}
+    >
+      {innerContent}
     </motion.button>
   );
 }
