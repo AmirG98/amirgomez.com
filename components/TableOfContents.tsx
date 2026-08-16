@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { List } from 'lucide-react';
 
 interface TocItem {
   id: string;
@@ -77,20 +78,20 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
   };
 
   return (
-    <div className="bg-foreground/5 rounded-xl p-6 mb-8">
-      <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-        <span className="text-orange-600">📋</span>
+    <div className="bg-surface-secondary border border-border-default rounded-2xl p-6 mb-8">
+      <h3 className="font-display text-lg font-semibold mb-4 flex items-center gap-2">
+        <List className="w-5 h-5 text-brand-600" aria-hidden="true" />
         Table of Contents
       </h3>
       <nav>
         <ul className="space-y-2">
           {tocItems.map((item) => (
-            <li key={item.id} className={`pl-${(item.level - 1) * 4}`}>
+            <li key={item.id}>
               <button
                 onClick={() => scrollToHeading(item.id)}
-                className={`text-left w-full transition-colors hover:text-orange-600 ${
+                className={`text-left w-full transition-colors cursor-pointer hover:text-brand-500 ${
                   activeId === item.id
-                    ? 'text-orange-600 font-semibold'
+                    ? 'text-brand-600 font-semibold'
                     : 'text-foreground/80'
                 } ${
                   item.level === 1 ? 'text-base font-medium' :
