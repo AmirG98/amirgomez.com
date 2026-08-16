@@ -86650,6 +86650,307 @@ Unlike several other categories where paid social costs have climbed, fitness co
 
 Expect to pay $8-$52 per lead on Meta Ads for a gym or fitness studio, with the exact number driven mainly by facility type and price point rather than by ad platform mechanics. Fitness's above-average 14.29% conversion rate means a moderate ad budget can produce a meaningful, steady stream of qualified leads compared to lower-converting categories at the same spend level.`
   },
+  {
+    id: "501",
+    title: "What's the Minimum Ad Budget for LinkedIn Ads in 2026?",
+    slug: "linkedin-ads-minimum-budget-2026",
+    excerpt: "LinkedIn's platform minimum is $10 a day or $100 total, but a realistic working budget runs $1,500-$3,000 a month once typical $5-$8 CPCs are factored in.",
+    featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-16",
+    category: "Advertising Strategy",
+    tags: ["LinkedIn Ads", "Ad Budget", "B2B Marketing", "PPC Benchmarks", "Social Media Advertising"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "LinkedIn Ads Minimum Budget in 2026: What It Costs",
+      metaDescription: "LinkedIn requires a $10/day, $100 total minimum budget, but a working budget for real results runs $1,500-$3,000/month given average CPCs of $5-$8.",
+      keywords: ["linkedin ads minimum budget", "linkedin ads cost 2026", "how much does linkedin ads cost", "linkedin campaign manager minimum budget"]
+    },
+    content: `LinkedIn requires a minimum daily budget of $10 and a minimum total budget of $100 for any new campaign, per LinkedIn's own Campaign Manager rules. That platform floor isn't a realistic working budget, though — most advertisers spend $1,500-$3,000 a month ($50-$100 a day) to gather enough data for LinkedIn's algorithm to optimize, since average cost per click on the platform runs $5-$8, well above Google or Meta.
+
+## LinkedIn's official minimum budget
+
+- **Minimum daily budget:** $10 per day, required for every campaign regardless of format (Sponsored Content, Message Ads, Text Ads, or Dynamic Ads)
+- **Minimum total budget:** $100 for a new, inactive campaign before it can go live
+- **Minimum bid:** $2 for both cost-per-click and cost-per-1,000-impressions bidding
+
+These are hard floors enforced by LinkedIn's Campaign Manager, not recommendations — a campaign can't be created below them.
+
+## What LinkedIn actually costs per click
+
+LinkedIn's own budget suggestions inside Campaign Manager point new advertisers toward roughly $25 a day, and established advertisers toward $50-$100 a day, which is a better signal of what the platform expects a functioning budget to look like. Third-party benchmark tracking backs that up: average cost per click on LinkedIn Ads runs roughly $5-$8, and average CPM sits around $25-$45, though CPM can climb to $90-$150 or more for narrowly targeted B2B or enterprise audiences. That's several times higher than typical Google Search or Meta CPCs, which is the main reason the $10/day floor rarely produces meaningful results on its own.
+
+## Daily budget vs. total budget: how LinkedIn actually spends it
+
+LinkedIn's Campaign Manager offers two budget types, and they behave differently. A daily budget lets LinkedIn spend up to roughly 20% more than your set amount on higher-traffic days, then evens spend out over the month so the average holds. A total (lifetime) budget instead paces spend across the campaign's full run so the entire amount is used by the end date. At the $10/day minimum, that 20% daily overspend allowance is trivial in dollar terms — but at $50-$100/day it can mean an extra $10-$20 on a strong day, which is worth accounting for when setting a hard monthly cap.
+
+## Why the platform minimum isn't a working budget
+
+At $10 a day and $5-$8 per click, a campaign at the legal minimum buys somewhere between one and two clicks daily — nowhere near enough volume for LinkedIn's delivery algorithm to learn who converts, and nowhere near enough data to tell a working campaign from a broken one. That's why the commonly cited practical floor for LinkedIn Ads is $1,500-$3,000 per month, roughly $50-$100 a day, which lines up with LinkedIn's own recommended range for established advertisers rather than its technical minimum for new ones.
+
+## Bottom Line
+
+Treat LinkedIn's $10/day, $100-total minimum as a technical requirement to launch a campaign, not a real budget — plan for at least $50-$100 a day if you want enough click volume for the algorithm to optimize and enough data to judge whether the campaign is actually working.`
+  },
+  {
+    id: "502",
+    title: "What's a Good Click-Through Rate for Google Ads by Industry in 2026?",
+    slug: "good-ctr-google-ads-by-industry-2026",
+    excerpt: "A good Google Ads CTR in 2026 is 6.64% or higher, the all-industry average — though top categories like Arts & Entertainment top 12%, while others sit near 5.4%.",
+    featuredImage: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-16",
+    category: "Google Ads",
+    tags: ["Google Ads", "CTR", "PPC Benchmarks", "Search Ads", "Advertising Strategy"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Good CTR for Google Ads by Industry in 2026",
+      metaDescription: "A good Google Ads Search CTR in 2026 is 6.64% or higher, the current all-industry average across 13,000+ campaigns, per LocaliQ's 2026 benchmark report.",
+      keywords: ["good ctr for google ads", "google ads ctr by industry 2026", "average click through rate google ads", "google ads benchmarks 2026"]
+    },
+    content: `A good click-through rate for a Google Ads Search campaign in 2026 is 6.64% or higher — the current all-industry average across more than 13,000 U.S. Search campaigns tracked in LocaliQ's annual Google Ads Benchmarks report. Anything close to or above that number puts a campaign in line with typical performance; well below it usually signals a targeting, ad copy, or keyword-match problem.
+
+## The 2026 all-industry averages
+
+Across the full LocaliQ/WordStream dataset (April 2025-March 2026, 23 industries, minimum 52 active campaigns per category), the blended Search Network averages are:
+
+- **Click-through rate:** 6.64%
+- **Conversion rate:** 8.18%
+- **Cost per click:** $5.42
+- **Cost per lead:** $66.69
+
+## CTR by industry: who's above and below average
+
+- **Arts and Entertainment:** 12.75%, the highest CTR of any industry tracked
+- **Finance and Insurance:** above 9%
+- **Travel:** above 9%
+- **Industrial and Commercial:** 6.57%
+- **Attorneys and Legal Services:** 5.87%
+- **Automotive Repair, Service, and Parts:** 5.56%
+- **Dentists and Dental Services:** 5.44%
+
+A high CTR doesn't automatically mean a high conversion rate, either — the industries with the best click-through rates aren't the same ones with the best conversion rates. Animals and Pets (16.22%), Automotive Repair (15.51%), and Education and Instruction (13.14%) post the highest conversion rates in the same report, while Finance and Insurance (2.64%), Furniture (2.99%), and Career and Employment (3.05%) post the lowest — despite Finance and Insurance having one of the stronger CTRs.
+
+## Why CTR moved year over year
+
+Overall CTR rose roughly 3.74% year over year in the 2026 report, though just over half of individual industries actually saw declines. The average is being pulled up by a handful of categories with outsized gains, including Education and Instruction (+31.71%), Beauty and Personal Care (+18.21%), and Finance and Insurance (+18.01%) — meaning the headline "CTR is up" doesn't apply evenly across accounts.
+
+## What counts as "good" for your account
+
+Benchmark comparisons only tell you where an average account in your category lands — not what your specific account should hit. Use the 6.64% all-industry figure as a sanity check for a new or unfamiliar account, and the industry-specific figures above as the more meaningful comparison once you know which of the 23 tracked categories your business falls into. A campaign sitting well under its industry's benchmark, even if it beats the 6.64% overall average, usually still has room to improve through tighter keyword match types or more relevant ad copy — while one beating its industry benchmark is a stronger signal that the account is genuinely healthy.
+
+It's also worth remembering that CTR is a diagnostic metric, not a business outcome. A campaign can post an excellent CTR and still lose money if the traffic it attracts doesn't convert, which is why the report pairs every CTR figure with a conversion rate and cost-per-lead figure rather than publishing click-through rate on its own.
+
+## Bottom Line
+
+Aim for 6.64% or better as a baseline Google Ads Search CTR in 2026, but judge your account against its specific industry benchmark rather than the blended average — a legal or dental account performing at 5.5-5.9% CTR is on pace for its category, while an arts and entertainment account at the same rate is underperforming its category by more than half.`
+  },
+  {
+    id: "503",
+    title: "What's a Good Cost Per Lead for Landscaping Companies on Google Ads?",
+    slug: "landscaping-company-cost-per-lead-google-ads-2026",
+    excerpt: "Landscaping companies pay $85-$105 per lead on Google Ads on average, per a 2025 study of 61 businesses — but that swings from ~$40 in spring to $200+ in winter.",
+    featuredImage: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-16",
+    category: "Google Ads",
+    tags: ["Google Ads", "Landscaping", "Cost Per Lead", "Local Services", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Landscaping Cost Per Lead on Google Ads: 2026 Data",
+      metaDescription: "Landscaping companies average $87.80 per lead on Google Ads, per a 2025 study of 61 businesses, with costs ranging from $40 in spring to $200+ in winter.",
+      keywords: ["landscaping google ads cost per lead", "lawn care google ads cost", "landscaping ppc benchmark 2026", "cost per lead landscaping company"]
+    },
+    content: `Landscaping and lawn care companies pay an average of $87.80 per lead on Google Ads Search campaigns, based on a 2025 analysis of 61 landscaping businesses that spent a combined $225,000 on Google Ads (Evergrow Marketing). Average cost per click across the same accounts was $3.65, and the number swings heavily by season.
+
+## The data behind the number
+
+Evergrow Marketing's 2025 Landscaping and Lawn Care Google Ads Benchmarks report tracked 61 companies and $225,000 in combined Search ad spend over 2024, landing on an average cost per lead of $87.80 and average CPC of $3.65. A separate industry estimate puts landscaping specifically closer to $104 per lead as a reasonable target figure, while broader home-services benchmark tracking from LocaliQ puts the category average around $85 per lead — different sources, but a consistent range in the $85-$105 band.
+
+## Seasonality moves the number more than almost anything else
+
+- **Late April through May (peak season):** cost per lead drops to roughly $40-$50, the cheapest window of the year
+- **Mid-summer:** costs level back out to the mid-$80s to $90s
+- **Winter (off-season):** cost per lead can climb above $200 in many markets, since fewer people are searching but competition for the smaller remaining pool of leads doesn't fall proportionally
+
+A landscaping company judging its account against a flat $87.80 benchmark without accounting for the month it's looking at will draw the wrong conclusion in both directions — a $150 lead in January isn't necessarily a failing campaign, and a $95 lead in May might actually be underperforming.
+
+## How this compares to Local Services Ads
+
+Google Local Services Ads — a separate pay-per-lead product from standard Search ads — show a lower and tighter range for landscaping contractors: average $47.69 per lead, median $44.83, with the middle 80% of advertisers landing between $39.20 and $59.72, according to LSA cost-estimator data from 99 Calls. That gap makes sense: LSA leads are pre-qualified through Google's own screening and the Google Guarantee badge, which typically costs more per lead to unlock but converts at a higher rate than standard Search traffic.
+
+## What this means for budgeting
+
+If you're running standard Search ads, plan around $85-$105 per lead as a full-year average, with real month-to-month swings from roughly $40 in spring to $200+ in winter. Some industry estimates put close rates on Google-sourced landscaping leads around 30-50%, which would put blended customer acquisition cost in the $170-$300 range on top of the lead cost itself — treat that figure as a rough estimate rather than a hard benchmark, since it depends heavily on each company's own sales process. If low, predictable cost per lead matters more than raw volume, Local Services Ads are worth testing alongside standard Search, given their tighter observed range.
+
+## Bottom Line
+
+Budget $85-$105 per lead for a landscaping or lawn care Google Ads account in 2026 on a full-year average, and expect that number to compress to $40-$50 in peak spring season and expand well past $150-$200 in the off-season — plan cash flow and lead-volume expectations around the season, not the annual average.`
+  },
+  {
+    id: "504",
+    title: "How Long Does It Take to See Results from Google Ads for a Local Service Business?",
+    slug: "how-long-to-see-results-google-ads-local-service-business",
+    excerpt: "Expect 2-3 weeks before judging a new Google Ads campaign fairly, and 60-90 days for cost per lead to stabilize, per Google's own Smart Bidding documentation.",
+    featuredImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-16",
+    category: "Google Ads",
+    tags: ["Google Ads", "Local Services", "PPC Strategy", "Smart Bidding", "Advertising Strategy"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "How Long for Google Ads Results? Local Service Timeline",
+      metaDescription: "Give a new Google Ads account at least 2-3 weeks before judging it, and 60-90 days for cost per lead to stabilize, per Google's own bidding documentation.",
+      keywords: ["how long for google ads results", "google ads learning period", "google ads timeline local business", "when do google ads start working"]
+    },
+    content: `Expect at least 2-3 weeks before you can fairly judge a new Google Ads campaign's performance, and roughly 60-90 days before cost per lead stabilizes at a sustainable level. Google's own bidding documentation states that Smart Bidding strategies can take up to 3 weeks or 1-2 conversion cycles to calibrate after a campaign is created or its settings are changed, and recommends not evaluating performance until that learning period ends.
+
+## Why the first few weeks look worse than they will later
+
+When a Smart Bidding campaign is created, reactivated, or has a significant setting changed, Google Ads Help documentation confirms it enters a **Learning** status, during which performance is more volatile and typically less efficient than it will be once calibrated. Google explicitly advises waiting at least 2 weeks without further changes before drawing conclusions, and notes full calibration can take up to 3 weeks or 1-2 full conversion cycles, depending on how much conversion data the account already has going in.
+
+## What that means in practice, week by week
+
+- **Weeks 1-3:** the algorithm is still learning; cost per lead is typically higher and less consistent than it will settle to later
+- **Weeks 3-8:** performance starts stabilizing as Smart Bidding accumulates enough conversion data to optimize targeting and bids more precisely
+- **60-90 days:** third-party benchmark guidance from WordStream points to this window as when cost per lead and overall ROI reach a more dependable, judgeable baseline
+
+Making major changes — new keywords, a new bid strategy, a new landing page — during that first learning window resets the clock and extends the timeline. That's the single most common reason a business writes off Google Ads as "not working" before the campaign has had a fair chance to leave the learning phase.
+
+## Why local service businesses shouldn't expect a shortcut
+
+Local service categories — home services, legal, medical, and similar — often carry higher costs per click and longer, more considered buying cycles than e-commerce, which means the conversion data needed to exit the learning period accumulates more slowly than it would for a high-volume online store. A local service account generating fewer than a handful of conversions a week should expect the lower end of the 60-90 day range to stretch longer, simply because it takes more calendar time to accumulate the same 1-2 conversion cycles Google's documentation references.
+
+## What to actually track during the waiting period
+
+Rather than watching cost per lead day to day during the first three weeks, track impressions, click volume, and whether the campaign is spending its daily budget — those signal whether the campaign is even getting a fair chance to collect data, independent of whether the resulting leads look expensive yet.
+
+## Bottom Line
+
+Give a new Google Ads account at least 2-3 weeks before evaluating it at all, and 60-90 days before expecting cost per lead to reach a stable, judgeable number — and avoid resetting the learning period with unnecessary changes in that window, since that's what most often makes a working campaign look like a failing one.`
+  },
+  {
+    id: "505",
+    title: "What's the Average Cost Per Lead for Moving Companies on Google Ads?",
+    slug: "moving-company-cost-per-lead-google-ads-2026",
+    excerpt: "Moving companies pay $130-$183 per lead on Google Ads on average, per SmartMoving's analysis of 500 movers — well-optimized accounts get it down to $40-$100.",
+    featuredImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-16",
+    category: "Google Ads",
+    tags: ["Google Ads", "Moving Companies", "Cost Per Lead", "Local Services", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Moving Company Cost Per Lead on Google Ads 2026",
+      metaDescription: "Moving companies pay $130-$183 per lead on Google Ads on average, per SmartMoving's analysis of 500 movers, dropping to $40-$100 for optimized campaigns.",
+      keywords: ["moving company google ads cost per lead", "moving company ppc benchmark", "cost per lead movers google ads", "google ads for moving companies"]
+    },
+    content: `Most moving companies pay $130-$183 per lead on Google Ads, according to SmartMoving's analysis of data pulled from 500 moving companies running Search campaigns. Well-optimized accounts bring that down to $40-$100 per lead, and the average company in the dataset spent roughly $6,300 a month on Google Ads.
+
+## The data behind the number
+
+SmartMoving, a moving-industry CRM and software vendor, analyzed Google Ads performance data across 500 moving companies and found most pay in the $130-$183 per lead range, with average monthly Google Ads spend around $6,300. That's a meaningfully wide range even at the "typical" end, which reflects how much moving company PPC costs vary by metro, season, and how tightly the campaign is targeted.
+
+## What separates a $180 lead from a $50 lead
+
+- **Geographic targeting:** broad, statewide or metro-wide targeting pulls in more expensive, less-qualified clicks than campaigns narrowed to specific service areas
+- **Service-specific campaign structure:** separate campaigns for local moves, long-distance moves, and specialty services like piano or storage typically outperform one generic "moving company" campaign, since search intent and competition differ sharply between them
+- **Seasonality:** moving demand peaks in summer, which drives both search volume and competition up at the same time — meaning cost per lead doesn't necessarily fall just because more people are searching
+
+SmartMoving's data shows well-optimized moving company campaigns landing in the $40-$100 per lead range — roughly half to a third of the typical figure — largely through tighter geographic and service-level targeting rather than through a fundamentally different strategy.
+
+## Why moving companies can absorb a relatively high cost per lead
+
+An average local move runs well into four figures, and long-distance moves often run higher still, which is part of why a $130-$183 cost per lead can still pencil out. The more useful comparison for a moving company isn't cost per lead in isolation — it's cost per lead measured against average job value and close rate, where even a $180 lead is inexpensive relative to a $2,000+ signed job if the sales process converts at a reasonable rate.
+
+## Where the budget actually goes
+
+At an average monthly spend of $6,300 and a typical $130-$183 cost per lead, that works out to roughly 34-48 leads per month for the average company in SmartMoving's dataset. A company splitting that same budget across tightly targeted, service-specific campaigns at the optimized $40-$100 range could see that lead count more than double without increasing spend — which is the real argument for account structure over simply raising bids.
+
+## What this means before you launch a campaign
+
+If you're setting up a Google Ads account for a moving company for the first time, build separate campaigns for local and long-distance moves from day one rather than merging them later — restructuring an existing account tends to reset the conversion data Google's bidding algorithm has already accumulated, which can temporarily push cost per lead back up before it improves.
+
+## Bottom Line
+
+Budget $130-$183 per lead for a new moving company Google Ads account, and treat $40-$100 as the realistic target once campaigns are split by service type and geography rather than run as one broad, generic account — that gap represents the single biggest lever moving companies have over their Google Ads cost per lead.`
+  },
+  {
+    id: "506",
+    title: "What's the Average Cost Per Lead for Pest Control Companies on Google Ads?",
+    slug: "pest-control-cost-per-lead-google-ads-2026",
+    excerpt: "Pest control companies paid an average of $98.12 per lead on Google Ads in 2025, per trade publication PCT, down from near $200 after optimization.",
+    featuredImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 10+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-16",
+    category: "Google Ads",
+    tags: ["Google Ads", "Pest Control", "Cost Per Lead", "Local Services", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Pest Control Cost Per Lead on Google Ads: 2026 Data",
+      metaDescription: "Pest control companies averaged $98.12 per lead on Google Ads in 2025, per Pest Control Technology, down from near $200 before optimization.",
+      keywords: ["pest control google ads cost per lead", "pest control ppc benchmark 2026", "cost per lead pest control company", "google ads for pest control"]
+    },
+    content: `Pest control companies paid an average of $98.12 per lead on Google Ads in 2025, according to trade publication Pest Control Technology (PCT), down from close to $200 per lead earlier that same year after campaign optimization. Average cost per click across the period was $5.99.
+
+## The data behind the number
+
+PCT's 2025 reporting on pest control Google Ads performance tracked leads costing close to $200 early in the year, falling to an average of $98.12 as campaigns were optimized, with average cost per click landing at $5.99 (PCT recommends keeping maximum CPC bids under $8 for the category). This is trade-press reporting on real campaign performance rather than a large-sample statistical survey, so treat the $98.12 figure as a representative, checkable data point rather than a precise industry-wide average.
+
+## What drove leads from $200 down to $98
+
+The improvement PCT documented came from active account optimization rather than a market-wide price drop — meaning pest control companies running unoptimized, broad-match campaigns should expect costs closer to the $150-$200 end of that range, while accounts with tighter keyword targeting, negative keywords, and service-specific ad groups can realistically land nearer $98 or lower.
+
+## Service-specific cost varies significantly
+
+- **General pest control:** tracks closest to the $98.12 blended average
+- **Mosquito control:** as low as $30 per lead during peak season months, specifically March and July per PCT's data
+- **Rodent control:** as low as $45 per lead in April
+
+Running one broad "pest control" campaign instead of splitting out these service lines is one of the more common reasons an account's blended cost per lead sits above what any individual service should actually cost.
+
+## A widely-cited "$90.92" figure isn't traceable to a real source
+
+Many marketing blogs cite pest control's Google Ads cost per lead as "$90.92, per WordStream/LocaliQ benchmarks." That specific figure could not be traced to LocaliQ's or WordStream's actual published industry benchmark tables, which report Home Services subcategories like HVAC and plumbing individually but do not appear to break out pest control as its own line item. Treat the PCT-reported $98.12 figure as the more reliably sourced number for this specific vertical, and be skeptical of round, precisely-cited numbers that circulate across marketing blogs without a traceable original source.
+
+## How pest control compares to nearby home-service categories
+
+$98.12 per lead lands pest control roughly in line with other recurring-revenue home services rather than at the expensive end of local service advertising — well below categories like legal or home remodeling, and in a similar range to HVAC and plumbing. That matters for budgeting: a pest control company evaluating whether Google Ads is worth the spend should weigh that cost per lead against the recurring value of a pest control contract, not just the value of a single treatment visit, since most accounts are won as ongoing service plans rather than one-time jobs.
+
+## Bottom Line
+
+Budget close to $98 per lead for an optimized pest control Google Ads account, expect unoptimized campaigns to run closer to $150-$200, and split high-volume seasonal services like mosquito and rodent control into their own campaigns — those can run meaningfully below the blended average when targeted specifically.`
+  },
 ];
 
 export const blogCategories = [
