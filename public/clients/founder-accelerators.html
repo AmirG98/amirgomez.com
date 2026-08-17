@@ -57,6 +57,7 @@
   .flag { font-size: 13.5px; border-radius: 10px; padding: 12px 16px; margin-top: 12px; }
   .flag.good { color: var(--good); background: var(--good-soft); }
   .flag.warn { color: var(--amber); background: var(--amber-soft); }
+  .flag.attr { color: var(--ink-2); background: rgba(255,255,255,0.05); border-left: 2px solid var(--ink-3); border-radius: 0 10px 10px 0; }
   .flag b { font-weight: 600; }
   .note { font-size: 13px; color: var(--ink-3); max-width: 68ch; margin-top: 12px; }
   .leadgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
@@ -113,7 +114,7 @@
 
   <div class="totals rv num">
     <span>Invertido <b>$1,167.15</b></span>
-    <span class="hl">Respuestas 1:1 <b>8</b></span>
+    <span class="hl">Respuestas 1:1 <b>8</b> <span style="font-size:11px;color:var(--ink-3);">(no todas de Meta)</span></span>
     <span>Clicks al Brain <b>539 · $0.53</b></span>
     <span>Visitas de perfil <b>453</b></span>
   </div>
@@ -135,10 +136,11 @@
       <div class="lead rv">
         <div class="l">Total respuestas</div>
         <div class="v num">8</div>
-        <p class="d">$845.27 invertidos en 1:1 → <b>$105.66</b> por respuesta.</p>
+        <p class="d">$845.27 invertidos en campañas 1:1 en el período. Referencia: <b>$105.66</b> por respuesta.</p>
       </div>
     </div>
     <div class="flag warn rv">⚠ <b>Meta reporta 0 conversiones en estas campañas</b> porque la elección de facturación en la web no está configurada como evento. Los 8 datos salen del backoffice. Instrumentar ese paso es lo que convierte el funnel en optimizable — hoy el algoritmo no sabe a quién buscar.</div>
+    <div class="flag attr rv">◆ <b>Atribución:</b> las 8 respuestas son del total del funnel del período, <b>no todas atribuidas a Meta</b>. Sin el evento instrumentado no se puede asignar cada respuesta a su campaña, así que el costo por respuesta es una referencia de orden de magnitud, no un CPL atribuido.</div>
     <p class="note rv">Lectura: 6 de cada 8 respuestas son de founders bajo 1M. Con el ruteo al Brain que definimos, dejan de ser descarte y pasan a ser demanda para el producto de $99/mes — el mismo tráfico alimenta dos ofertas.</p>
   </section>
 
@@ -183,7 +185,8 @@
         <p class="extra num">409 clicks · CPC <b>$0.57</b> · CTR <b>0.52%</b> · alcance <b>75,067</b></p>
       </div>
     </div>
-    <div class="flag good rv">✓ <b>Social Proof es el hallazgo de la semana:</b> 1.99% de CTR y $1.13 por landing view — 7x mejor que el incubator ($8.29) con una fracción del presupuesto. La prueba social funciona mejor que el concepto creativo puro.</div>
+    <div class="flag good rv">✓ <b>Social Proof es el hallazgo de la semana:</b> <b>1.99% de CTR</b> contra 0.52% del incubator — casi 4x — y CPC de <b>$0.43 vs $0.57</b>, con apenas $55 invertidos. La prueba social engancha mucho mejor que el concepto creativo puro.</div>
+    <p class="note rv">Comparación honesta: el costo por landing view del incubator ($8.29) no se puede comparar contra la semana pasada, porque hasta ahora el pixel solo disparaba en compras y registraba 1 LPV cada 672 clicks. Recién ahora ese evento mide de verdad. El CTR y el CPC sí son comparables entre semanas — y ahí el CPC del incubator se mantiene estable ($0.60 → $0.57), mientras Social Proof arranca por debajo.</p>
     <p class="note rv">Visit Profile always-on: $34.38 → 453 visitas de perfil a $0.08. Sin cambios.</p>
   </section>
 
@@ -197,7 +200,7 @@
       </div>
       <div class="upd rv">
         <h3>Auditoría de la LP → versión B esta semana</h3>
-        <p>Puntos de mejora identificados con el equipo:</p>
+        <p><b>Todavía no aplicada</b> — los cambios se implementan esta semana. Puntos identificados con el equipo:</p>
         <ul>
           <li>Más social proof en la página: reviews existentes, videos de Ignacio y capturas de uso real.</li>
           <li>Mostrar resultados (propios, sin especificar demasiado — solo porcentajes).</li>
@@ -207,7 +210,7 @@
       </div>
       <div class="upd rv">
         <h3>Videos nuevos para ads del Brain</h3>
-        <p>En edición. Versiones más cortas deberían mejorar CTR y CPC — consistente con lo que ya muestra Social Proof esta semana.</p>
+        <p>En edición. Versiones más cortas deberían mejorar CTR y CPC — la señal temprana de Social Proof apunta en esa dirección.</p>
       </div>
       <div class="upd rv">
         <h3>Escalar a $100/día</h3>
@@ -242,7 +245,7 @@
 
   <div class="closing rv">
     <p class="eyebrow">Mensaje principal</p>
-    <p class="quote">8 respuestas del funnel 1:1 que Meta no está viendo — y <b>Social Proof</b> convirtiendo tráfico al Brain a <b>$1.13</b> por visita.</p>
+    <p class="quote">8 respuestas del funnel 1:1 que Meta no está viendo — y <b>Social Proof</b> con <b>4x el CTR</b> del resto de la cuenta.</p>
   </div>
 
   <footer>Preparado por A+Growth · Founder Accelerator · Agosto 2026</footer>
