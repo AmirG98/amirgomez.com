@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A+Growth — Presupuestos</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#101214; --panel:#17191d; --panel-2:#1d2025; --ink:#f1f2f3; --ink-2:#a2a8ad; --ink-3:#6b7176; --line:rgba(255,255,255,0.09); --orange:#f97316; --orange-soft:rgba(249,115,22,0.12); --good:#34d399; --warn:#fbbf24; --bad:#f87171; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--ink); font-size:14.5px; line-height:1.55; -webkit-font-smoothing:antialiased; }
+  .page { max-width:1400px; margin:0 auto; padding:32px 28px 64px; }
+  .num { font-variant-numeric: tabular-nums; }
+
+  .top { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:22px; }
+  .brand { display:flex; align-items:center; gap:12px; }
+  .wordmark { font-family:'Archivo',sans-serif; font-weight:800; font-size:20px; color:#fff; }
+  .wordmark span { color:var(--orange); }
+  .tag { font-family:'Archivo',sans-serif; font-weight:700; font-size:10px; letter-spacing:0.26em; color:var(--orange); border:1px solid var(--orange); border-radius:5px; padding:2px 7px 2px 10px; }
+  .top-right { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .top-right a { font-size:12px; color:var(--ink-2); text-decoration:none; border:1px solid var(--line); border-radius:7px; padding:7px 12px; }
+  .top-right a:hover { color:var(--orange); border-color:var(--orange); }
+  .monthsel { font-family:'Inter',sans-serif; font-size:13px; padding:8px 12px; background:var(--panel); color:var(--ink); border:1px solid var(--line); border-radius:7px; outline:none; cursor:pointer; }
+  .monthsel:focus { border-color:var(--orange); }
+
+  #banner { display:none; font-size:13px; color:var(--ink-2); background:var(--orange-soft); border-left:2px solid var(--orange); padding:10px 14px; margin-bottom:20px; }
+  #banner.show { display:block; }
+
+  .clients { display:grid; gap:16px; }
+  .cl { background:var(--panel); border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+  .cl-head { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; padding:18px 22px; border-bottom:1px solid var(--line); }
+  .cl-name { font-family:'Archivo',sans-serif; font-weight:700; font-size:17px; color:#fff; }
+  .cap-box { display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--ink-2); }
+  .cap-box input { width:110px; font-family:'Inter',sans-serif; font-size:13.5px; padding:7px 10px; background:var(--panel-2); color:var(--ink); border:1px solid var(--line); border-radius:7px; outline:none; text-align:right; }
+  .cap-box input:focus { border-color:var(--orange); }
+
+  .meter-wrap { padding:16px 22px 4px; }
+  .meter-top { display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:8px; font-size:13px; color:var(--ink-2); }
+  .meter-top b { font-family:'Archivo',sans-serif; font-weight:700; font-size:17px; color:#fff; }
+  .meter { height:10px; background:var(--panel-2); border-radius:6px; overflow:hidden; position:relative; }
+  .meter .fill { height:100%; border-radius:6px; transition:width .5s ease; }
+  .meter .fill.g { background:var(--good); }
+  .meter .fill.a { background:var(--warn); }
+  .meter .fill.r { background:var(--bad); }
+  .meter .spent { position:absolute; top:0; left:0; height:100%; background:rgba(255,255,255,0.28); border-right:2px solid #fff; }
+  .meter-legend { display:flex; gap:16px; flex-wrap:wrap; font-size:11.5px; color:var(--ink-3); margin-top:8px; }
+  .meter-legend .sw { display:inline-block; width:9px; height:9px; border-radius:2px; margin-right:5px; vertical-align:-1px; }
+  .alert { margin:12px 22px 0; font-size:13px; border-radius:8px; padding:10px 14px; display:none; }
+  .alert.show { display:block; }
+  .alert.warn { color:var(--warn); background:rgba(251,191,36,0.12); }
+  .alert.bad { color:var(--bad); background:rgba(248,113,113,0.12); }
+
+  .tblwrap { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; min-width:840px; }
+  th { font-size:10px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-3); text-align:left; padding:12px 14px; border-bottom:1px solid var(--line); white-space:nowrap; }
+  td { font-size:13.5px; color:var(--ink-2); padding:10px 14px; border-bottom:1px solid var(--line); }
+  tr:last-child td { border-bottom:none; }
+  td b { color:#fff; font-weight:600; }
+  td input, td select { font-family:'Inter',sans-serif; font-size:13.5px; padding:7px 9px; background:var(--panel-2); color:var(--ink); border:1px solid var(--line); border-radius:6px; outline:none; width:100%; }
+  td input:focus, td select:focus { border-color:var(--orange); }
+  td input.money { text-align:right; }
+  .plat { display:inline-block; font-size:10.5px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; padding:2px 8px; border-radius:5px; }
+  .plat.Meta { color:#8ec2ff; background:rgba(55,138,221,0.16); }
+  .plat.Google { color:#7fe0bb; background:rgba(29,158,117,0.16); }
+  .plat.TikTok { color:#ffab7a; background:rgba(255,113,57,0.16); }
+  .plat.Otro { color:#b8c2cc; background:rgba(255,255,255,0.08); }
+  .rowdel { color:var(--ink-3); text-decoration:none; font-size:15px; }
+  .rowdel:hover { color:var(--bad); }
+  .addrow { padding:12px 22px 18px; }
+  .btn { font-family:'Archivo',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; background:var(--orange); color:#101214; border:none; border-radius:7px; padding:9px 16px; cursor:pointer; }
+  .btn:hover { background:#fb8b3c; }
+  .btn.ghost { background:none; border:1px solid var(--line); color:var(--ink-2); }
+  .btn.ghost:hover { border-color:var(--orange); color:var(--orange); }
+  .foot-tot { display:flex; gap:22px; flex-wrap:wrap; padding:14px 22px; background:var(--panel-2); font-size:13px; color:var(--ink-2); }
+  .foot-tot b { font-family:'Archivo',sans-serif; font-weight:700; color:#fff; }
+  footer { text-align:center; margin-top:36px; font-size:12px; color:var(--ink-3); }
+  footer a { color:var(--ink-3); text-decoration:none; }
+  footer a:hover { color:var(--orange); }
+  .saved { font-size:12px; color:var(--good); opacity:0; transition:opacity .3s; }
+  .saved.show { opacity:1; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top">
+    <div class="brand">
+      <span class="wordmark">A<span>+</span>GROWTH</span>
+      <span class="tag">PRESUPUESTOS</span>
+    </div>
+    <div class="top-right">
+      <span class="saved" id="saved">Guardado ✓</span>
+      <select class="monthsel" id="month"></select>
+      <a href="#" id="dl-csv">CSV</a>
+      <a href="#" id="logout">salir</a>
+    </div>
+  </div>
+
+  <div id="banner"></div>
+  <div class="clients" id="clients"></div>
+
+  <footer>A+Growth · presupuestos y guardrails · el gasto real se completa desde los reportes</footer>
+</div>
+
+<script>
+(function () {
+  var API = '/api/budgets';
+  var LS = 'budgets_agrowth';
+  var CLIENTES = [
+    { slug: 'urban-usa', nombre: 'Urban USA' },
+    { slug: 'founder-accelerators', nombre: 'Founder Accelerator' },
+    { slug: 'disker', nombre: 'Disker' }
+  ];
+  var PLATS = ['Meta', 'Google', 'TikTok', 'Otro'];
+  var mode = 'local', state = null, mes = null;
+
+  function ym(d) { return d.toISOString().slice(0, 7); }
+  function monthLabel(m) {
+    var n = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+    var p = m.split('-');
+    return n[parseInt(p[1], 10) - 1] + ' ' + p[0];
+  }
+  function money(n) { return '$' + Number(n || 0).toLocaleString('en-US', { maximumFractionDigits: 0 }); }
+  function esc(s) { return String(s || '').replace(/[&<>"]/g, function (c) { return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]; }); }
+
+  function seed() {
+    var m = ym(new Date());
+    return {
+      caps: { 'urban-usa': {}, 'founder-accelerators': {}, 'disker': {} },
+      lines: [
+        { id:'b1', cliente:'urban-usa', campana:'Leads Inversores | Form Nativo', plataforma:'Meta', objetivo:'leads', planificado:1050, gastado:0, tipo:'mensual', mes:m, notas:'Always-on, ángulo Airbnb' },
+        { id:'b2', cliente:'urban-usa', campana:'Property Management LATAM', plataforma:'Meta', objetivo:'leads', planificado:300, gastado:0, tipo:'mensual', mes:m, notas:'Validación por país' },
+        { id:'b3', cliente:'founder-accelerators', campana:'1:1 Call | Direct Booking', plataforma:'Meta', objetivo:'llamadas', planificado:1050, gastado:0, tipo:'mensual', mes:m, notas:'' },
+        { id:'b4', cliente:'founder-accelerators', campana:'AI Brain | Social Proof', plataforma:'Meta', objetivo:'compras', planificado:900, gastado:0, tipo:'mensual', mes:m, notas:'Mejor CTR de la cuenta' },
+        { id:'b5', cliente:'founder-accelerators', campana:'Visit Profile (always-on)', plataforma:'Meta', objetivo:'tráfico', planificado:150, gastado:0, tipo:'mensual', mes:m, notas:'' },
+        { id:'b6', cliente:'disker', campana:'Always-on Creadores', plataforma:'TikTok', objetivo:'leads', planificado:0, gastado:0, tipo:'mensual', mes:m, notas:'70% del presupuesto según playbook' },
+        { id:'b7', cliente:'disker', campana:'Always-on Creadores', plataforma:'Meta', objetivo:'leads', planificado:0, gastado:0, tipo:'mensual', mes:m, notas:'' },
+        { id:'b8', cliente:'disker', campana:'Campañas de marca', plataforma:'Meta', objetivo:'awareness', planificado:0, gastado:0, tipo:'mensual', mes:m, notas:'20% — puntuales por marca' },
+        { id:'b9', cliente:'disker', campana:'Experimentos', plataforma:'Otro', objetivo:'otro', planificado:0, gastado:0, tipo:'mensual', mes:m, notas:'10% — ángulos y formatos nuevos' }
+      ],
+      log: []
+    };
+  }
+
+  function lines(cliente) {
+    return state.lines.filter(function (l) { return l.cliente === cliente && l.mes === mes; });
+  }
+  function cap(cliente) {
+    return (state.caps[cliente] || {})[mes] || 0;
+  }
+  function sum(arr, k) { return arr.reduce(function (a, l) { return a + (Number(l[k]) || 0); }, 0); }
+
+  function render() {
+    var wrap = document.getElementById('clients');
+    wrap.innerHTML = '';
+    CLIENTES.forEach(function (cl) {
+      var ls = lines(cl.slug);
+      var plan = sum(ls, 'planificado'), spent = sum(ls, 'gastado'), c = cap(cl.slug);
+      var pct = c ? (plan / c) * 100 : 0;
+      var sPct = c ? Math.min((spent / c) * 100, 100) : 0;
+      var cls = !c ? 'g' : pct > 100 ? 'r' : pct >= 90 ? 'a' : 'g';
+      var el = document.createElement('div');
+      el.className = 'cl';
+      el.innerHTML =
+        '<div class="cl-head">' +
+          '<span class="cl-name">' + esc(cl.nombre) + '</span>' +
+          '<span class="cap-box">Tope aprobado del mes: <input class="num" type="number" step="50" data-cap="' + cl.slug + '" value="' + (c || '') + '" placeholder="sin definir"> USD</span>' +
+        '</div>' +
+        '<div class="meter-wrap">' +
+          '<div class="meter-top"><span>Planificado <b class="num">' + money(plan) + '</b> de ' + (c ? money(c) : '— sin tope') + '</span>' +
+          '<span>' + (c ? Math.round(pct) + '% del tope' : '') + (spent ? ' · gastado ' + money(spent) : '') + '</span></div>' +
+          '<div class="meter"><div class="fill ' + cls + '" style="width:' + Math.min(pct, 100) + '%"></div>' +
+          (spent ? '<div class="spent" style="width:' + sPct + '%"></div>' : '') + '</div>' +
+          '<div class="meter-legend"><span><span class="sw" style="background:var(--good)"></span>planificado</span>' +
+          '<span><span class="sw" style="background:rgba(255,255,255,0.4)"></span>gastado real (de los reportes)</span></div>' +
+        '</div>' +
+        '<div class="alert ' + (pct > 100 ? 'bad show' : pct >= 90 && c ? 'warn show' : '') + '">' +
+          (pct > 100 ? '🚨 El plan supera el tope aprobado en ' + money(plan - c) + '. Ajustá antes de cargar en las plataformas.'
+                     : pct >= 90 && c ? '⚠️ Estás al ' + Math.round(pct) + '% del tope aprobado. Queda ' + money(c - plan) + '.' : '') +
+        '</div>' +
+        '<div class="tblwrap"><table><thead><tr>' +
+          '<th style="width:26%">Campaña</th><th style="width:12%">Plataforma</th><th style="width:12%">Objetivo</th>' +
+          '<th style="width:13%">Planificado</th><th style="width:13%">Gastado</th><th>Notas</th><th style="width:38px"></th>' +
+        '</tr></thead><tbody>' +
+        (ls.length ? ls.map(function (l) {
+          return '<tr data-id="' + l.id + '">' +
+            '<td><input data-f="campana" value="' + esc(l.campana) + '"></td>' +
+            '<td><select data-f="plataforma">' + PLATS.map(function (p) { return '<option' + (p === l.plataforma ? ' selected' : '') + '>' + p + '</option>'; }).join('') + '</select></td>' +
+            '<td><input data-f="objetivo" value="' + esc(l.objetivo || '') + '"></td>' +
+            '<td><input class="money num" type="number" step="10" data-f="planificado" value="' + (l.planificado || 0) + '"></td>' +
+            '<td><input class="money num" type="number" step="10" data-f="gastado" value="' + (l.gastado || 0) + '" title="Se completa desde el reporte"></td>' +
+            '<td><input data-f="notas" value="' + esc(l.notas || '') + '"></td>' +
+            '<td><a href="#" class="rowdel" data-del="' + l.id + '" title="Eliminar">×</a></td>' +
+          '</tr>';
+        }).join('') : '<tr><td colspan="7" style="text-align:center;color:var(--ink-3);padding:22px;">Sin campañas cargadas para este mes.</td></tr>') +
+        '</tbody></table></div>' +
+        '<div class="addrow"><button class="btn ghost" data-add="' + cl.slug + '">+ Campaña</button>' +
+        (ls.length ? ' <button class="btn ghost" data-copy="' + cl.slug + '" title="Copiar las campañas del mes anterior">Copiar mes anterior</button>' : '') +
+        '</div>' +
+        '<div class="foot-tot"><span>Planificado <b class="num">' + money(plan) + '</b></span>' +
+        '<span>Gastado <b class="num">' + money(spent) + '</b></span>' +
+        '<span>Disponible <b class="num">' + (c ? money(c - spent) : '—') + '</b></span></div>';
+      wrap.appendChild(el);
+    });
+  }
+
+  var saveTimer = null;
+  function flashSaved() {
+    var s = document.getElementById('saved');
+    s.classList.add('show');
+    setTimeout(function () { s.classList.remove('show'); }, 1400);
+  }
+  function save() {
+    try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {}
+    if (mode !== 'server') { flashSaved(); return; }
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(function () {
+      fetch(API, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(state) })
+        .then(function () { flashSaved(); }).catch(function () {});
+    }, 500);
+  }
+
+  var notified = {};
+  function checkGuard(cliente) {
+    var c = cap(cliente);
+    if (!c) return;
+    var plan = sum(lines(cliente), 'planificado');
+    var pct = (plan / c) * 100;
+    var key = cliente + mes + (pct > 100 ? 'over' : 'near');
+    if (pct >= 90 && !notified[key]) {
+      notified[key] = true;
+      fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ cliente: cliente, mes: mes, planificado: plan, cap: c, pct: pct, quien: 'media buyer' }) }).catch(function () {});
+    }
+  }
+
+  document.getElementById('clients').addEventListener('input', function (e) {
+    var capSlug = e.target.getAttribute('data-cap');
+    if (capSlug) {
+      state.caps[capSlug] = state.caps[capSlug] || {};
+      state.caps[capSlug][mes] = parseFloat(e.target.value) || 0;
+      save(); render(); checkGuard(capSlug);
+      return;
+    }
+    var f = e.target.getAttribute('data-f');
+    if (!f) return;
+    var id = e.target.closest('tr').getAttribute('data-id');
+    var line = state.lines.filter(function (l) { return l.id === id; })[0];
+    if (!line) return;
+    line[f] = (f === 'planificado' || f === 'gastado') ? (parseFloat(e.target.value) || 0) : e.target.value;
+    line.actualizado = new Date().toISOString();
+    save();
+    if (f === 'planificado' || f === 'gastado') {
+      var cl = line.cliente;
+      // Re-render diferido para no perder el foco mientras se tipea.
+      clearTimeout(window.__rt);
+      window.__rt = setTimeout(function () { render(); checkGuard(cl); }, 700);
+    }
+  });
+
+  document.getElementById('clients').addEventListener('click', function (e) {
+    var add = e.target.getAttribute('data-add');
+    if (add) {
+      state.lines.push({ id: 'b-' + Date.now(), cliente: add, campana: '', plataforma: 'Meta', objetivo: '', planificado: 0, gastado: 0, tipo: 'mensual', mes: mes, notas: '' });
+      save(); render(); return;
+    }
+    var copy = e.target.getAttribute('data-copy');
+    if (copy) {
+      var p = mes.split('-'); var d = new Date(parseInt(p[0],10), parseInt(p[1],10) - 2, 1);
+      var prev = ym(d);
+      var src = state.lines.filter(function (l) { return l.cliente === copy && l.mes === prev; });
+      if (!src.length) { alert('No hay campañas cargadas en ' + monthLabel(prev) + '.'); return; }
+      src.forEach(function (l, i) {
+        state.lines.push(Object.assign({}, l, { id: 'b-' + (Date.now() + i), mes: mes, gastado: 0 }));
+      });
+      save(); render(); return;
+    }
+    var del = e.target.getAttribute('data-del');
+    if (del) {
+      e.preventDefault();
+      if (!confirm('¿Eliminar esta línea?')) return;
+      state.lines = state.lines.filter(function (l) { return l.id !== del; });
+      save(); render();
+    }
+  });
+
+  var msel = document.getElementById('month');
+  var now = new Date();
+  for (var i = -3; i <= 3; i++) {
+    var d = new Date(now.getFullYear(), now.getMonth() + i, 1);
+    var o = document.createElement('option');
+    o.value = ym(d); o.textContent = monthLabel(ym(d));
+    if (i === 0) o.selected = true;
+    msel.appendChild(o);
+  }
+  mes = msel.value;
+  msel.addEventListener('change', function () { mes = msel.value; render(); });
+
+  document.getElementById('dl-csv').addEventListener('click', function (e) {
+    e.preventDefault();
+    var head = ['cliente','mes','campana','plataforma','objetivo','planificado','gastado','tope_mes','notas'];
+    var rows = [head.join(',')];
+    CLIENTES.forEach(function (cl) {
+      lines(cl.slug).forEach(function (l) {
+        rows.push([cl.nombre, l.mes, l.campana, l.plataforma, l.objetivo, l.planificado, l.gastado, cap(cl.slug), l.notas]
+          .map(function (v) { return '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"'; }).join(','));
+      });
+    });
+    var blob = new Blob([rows.join('\n')], { type: 'text/csv;charset=utf-8' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = 'presupuestos-' + mes + '.csv';
+    document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+  });
+
+  document.getElementById('logout').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.cookie = 'agrowth_buyer=; path=/; max-age=0';
+    location.reload();
+  });
+
+  function loadLocal() {
+    mode = 'local';
+    var b = document.getElementById('banner');
+    b.textContent = 'Modo local: los presupuestos se guardan en este navegador.';
+    b.classList.add('show');
+    try { var raw = localStorage.getItem(LS); state = raw ? JSON.parse(raw) : seed(); }
+    catch (e) { state = seed(); }
+    render();
+  }
+  fetch(API, { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error('x'); return r.json(); })
+    .then(function (d) {
+      mode = 'server';
+      state = d.doc && d.doc.lines ? d.doc : seed();
+      if (!state.caps) state.caps = {};
+      if (!d.doc) save();
+      render();
+    })
+    .catch(loadLocal);
+})();
+</script>
+</body>
+</html>

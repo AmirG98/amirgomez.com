@@ -9,16 +9,36 @@ import { CLIENT_PASSWORDS, isClientAuthorized, isMasterAuthorized } from './lib/
 //   /clients/<cliente>/ideas              → banco    (public/clients/<cliente>-ideas.html)
 //   /clients/<cliente>/transcripts        → reuniones (public/clients/<cliente>-transcripts.html)
 //   /clients/<cliente>/context            → contexto vivo (public/clients/<cliente>-context.html)
+function buyerOk(req: NextRequest): boolean {
+  const key = process.env.AGROWTH_BUYER_KEY;
+  const cookie = req.cookies.get('agrowth_buyer')?.value;
+  return Boolean(key && cookie && cookie === key);
+}
+
 export function middleware(req: NextRequest) {
-  // HQ interno de A+Growth: /hq con clave maestra (env AGROWTH_MASTER_KEY).
-  if (req.nextUrl.pathname === '/hq' || req.nextUrl.pathname === '/hq.html' || req.nextUrl.pathname === '/hq/') {
+  // Presupuestos: entran master (AGROWTH_MASTER_KEY) y media buyer (AGROWTH_BUYER_KEY).
+  if (req.nextUrl.pathname === '/hq/budgets' || req.nextUrl.pathname === '/hq/budgets/') {
     const master = req.cookies.get('agrowth_master')?.value;
+    if (isMasterAuthorized(master) || buyerOk(req)) {
+      return NextResponse.rewrite(new URL('/hq-budgets.html', req.url));
+    }
+    return NextResponse.rewrite(new URL('/hq-budgets-login.html', req.url));
+  }
+
+  // HQ interno de A+Growth: /hq con clave maestra (env AGROWTH_MASTER_KEY).
+  if (req.nextUrl.pathname === '/hq' || req.nextUrl.pathname === '/hq.html' || req.nextUrl.pathname === '/hq/'
+      || req.nextUrl.pathname === '/hq-budgets.html') {
+    const master = req.cookies.get('agrowth_master')?.value;
+    if (req.nextUrl.pathname === '/hq-budgets.html') {
+      if (isMasterAuthorized(master) || buyerOk(req)) return NextResponse.next();
+      return NextResponse.rewrite(new URL('/hq-budgets-login.html', req.url));
+    }
     if (isMasterAuthorized(master)) return NextResponse.rewrite(new URL('/hq.html', req.url));
     return NextResponse.rewrite(new URL('/hq-login.html', req.url));
   }
 
   const match = req.nextUrl.pathname.match(
-    /^\/clients\/([^/]+?)(?:\.html)?(?:\/(approvals|reports|ideas|transcripts|context)(?:\/(\d{4}-\d{2}-\d{2}))?)?\/?$/
+    /^\/clients\/([^/]+?)(?:\.html)?(?:\/(approvals|reports|ideas|transcripts|context|budgets)(?:\/(\d{4}-\d{2}-\d{2}))?)?\/?$/
   );
   if (!match) return NextResponse.next();
 
@@ -34,9 +54,10 @@ export function middleware(req: NextRequest) {
     client.endsWith('-ideas') ||
     client.endsWith('-transcripts') ||
     client.endsWith('-context') ||
+    client.endsWith('-budgets') ||
     /-report-\d{4}-\d{2}-\d{2}$/.test(client)
   ) {
-    const base = client.replace(/-(hub|approvals|ideas|transcripts|context|report-\d{4}-\d{2}-\d{2})$/, '');
+    const base = client.replace(/-(hub|approvals|ideas|transcripts|context|budgets|report-\d{4}-\d{2}-\d{2})$/, '');
     return NextResponse.rewrite(new URL(`/clients/${base}-login.html`, req.url));
   }
 
@@ -52,6 +73,7 @@ export function middleware(req: NextRequest) {
   if (section === 'ideas') return NextResponse.rewrite(new URL(`/clients/${client}-ideas.html`, req.url));
   if (section === 'transcripts') return NextResponse.rewrite(new URL(`/clients/${client}-transcripts.html`, req.url));
   if (section === 'context') return NextResponse.rewrite(new URL(`/clients/${client}-context.html`, req.url));
+  if (section === 'budgets') return NextResponse.rewrite(new URL(`/clients/${client}-budgets.html`, req.url));
   if (section === 'reports' && date) return NextResponse.rewrite(new URL(`/clients/${client}-report-${date}.html`, req.url));
   if (section === 'reports') return NextResponse.rewrite(new URL(`/clients/${client}.html`, req.url));
   if (req.nextUrl.pathname.endsWith('.html')) return NextResponse.next();
@@ -59,5 +81,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/clients/:path*', '/hq', '/hq.html', '/hq/'],
+  matcher: ['/clients/:path*', '/hq', '/hq.html', '/hq/', '/hq/budgets', '/hq/budgets/', '/hq-budgets.html'],
 };

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urban Real Estate — Presupuesto</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#26303a; --ink-2:#5c6670; --ink-3:#98a0a8; --paper:#faf9f6; --hairline:#e4e0d7; --gold:#a8874f; --gold-soft:#f4ede1; --panel:#ffffff; --field:#f3f1ec; --titleink:#26303a; --serif:'Marcellus',serif; --sans:'Inter',-apple-system,sans-serif; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:var(--sans); background:var(--paper); color:var(--ink); font-size:15px; line-height:1.6; -webkit-font-smoothing:antialiased; }
+  .page { max-width:880px; margin:0 auto; padding:40px 24px 64px; }
+  .num { font-variant-numeric: tabular-nums; }
+  header { text-align:center; margin-bottom:26px; }
+  h1 { font-family:var(--serif); font-size:24px; font-weight:400; margin-top:18px; }
+  .sub { font-size:13.5px; color:var(--ink-2); margin-top:6px; }
+  .backlink { display:inline-block; margin-top:10px; font-size:12.5px; color:var(--gold); text-decoration:none; }
+  .backlink:hover { text-decoration:underline; }
+  .monthsel { font-family:var(--sans); font-size:13px; padding:8px 12px; background:var(--panel); color:var(--ink); border:1px solid var(--hairline); border-radius:0px; outline:none; cursor:pointer; margin-top:14px; }
+  #banner { display:none; font-size:13px; color:var(--ink-2); background:var(--gold-soft); border-left:2px solid var(--gold); padding:10px 14px; margin-bottom:20px; }
+  #banner.show { display:block; }
+  .cap-card { background:var(--panel); border:1px solid var(--hairline); border-radius:0px; padding:24px 26px; margin-bottom:16px; }
+  .cap-top { display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:10px; }
+  .cap-top .big { font-family:var(--serif); font-weight:400; font-size:26px; color:var(--titleink); }
+  .cap-top .of { font-size:13.5px; color:var(--ink-2); }
+  .meter { height:10px; background:var(--field); border-radius:6px; overflow:hidden; position:relative; }
+  .meter .fill { height:100%; border-radius:6px; background:var(--gold); }
+  .meter .spent { position:absolute; top:0; left:0; height:100%; background:var(--titleink); opacity:0.35; border-right:2px solid var(--titleink); }
+  .legend { display:flex; gap:16px; flex-wrap:wrap; font-size:11.5px; color:var(--ink-3); margin-top:8px; }
+  .legend .sw { display:inline-block; width:9px; height:9px; border-radius:2px; margin-right:5px; vertical-align:-1px; }
+  table { width:100%; border-collapse:collapse; }
+  th { font-size:10px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-3); text-align:left; padding:10px 12px; border-bottom:1px solid var(--hairline); }
+  td { font-size:13.5px; color:var(--ink-2); padding:11px 12px; border-bottom:1px solid var(--hairline); }
+  tr:last-child td { border-bottom:none; }
+  td b { color:var(--titleink); font-weight:600; }
+  td.r, th.r { text-align:right; }
+  .plat { display:inline-block; font-size:10.5px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; padding:2px 8px; border-radius:5px; background:var(--field); color:var(--ink-2); }
+  .empty { text-align:center; color:var(--ink-3); padding:28px 0; font-size:14px; }
+  .note { font-size:12.5px; color:var(--ink-3); margin-top:16px; text-align:center; }
+  footer { text-align:center; margin-top:40px; font-size:12px; color:var(--ink-3); }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true" id="uburst"></svg>
+    <div style="font-family:'Jost',sans-serif;font-weight:300;font-size:20px;letter-spacing:0.52em;text-indent:0.52em;color:#2b3947;margin-top:8px;">URBAN</div>
+    <div style="font-family:'Jost',sans-serif;font-weight:400;font-size:8.5px;letter-spacing:0.6em;text-indent:0.6em;color:#2b3947;opacity:0.75;margin-top:2px;">REAL ESTATE</div>
+    <script>
+    (function(){var ns='http://www.w3.org/2000/svg';var svg=document.getElementById('uburst');var L=[48,24,35,24];for(var i=0;i<48;i++){var a=(i*7.5-90)*Math.PI/180;var l=document.createElementNS(ns,'line');l.setAttribute('x1',50+12*Math.cos(a));l.setAttribute('y1',50+12*Math.sin(a));l.setAttribute('x2',50+L[i%4]*Math.cos(a));l.setAttribute('y2',50+L[i%4]*Math.sin(a));l.setAttribute('stroke','#2b3947');l.setAttribute('stroke-width','1');svg.appendChild(l);}})();
+    </script>
+    <h1>Presupuesto del mes</h1>
+    <p class="sub">Qué se planifica invertir por campaña y plataforma, contra el tope aprobado.</p>
+    <select class="monthsel" id="month"></select><br>
+    <a class="backlink" href="/clients/urban-usa">← Volver al portal</a>
+  </header>
+  <div id="banner"></div>
+  <div id="content"></div>
+  <footer>Preparado por A+Growth</footer>
+</div>
+<script>
+(function () {
+  var CLIENT = 'urban-usa';
+  var state = null, mes = null;
+  function ym(d) { return d.toISOString().slice(0,7); }
+  function monthLabel(m) {
+    var n = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+    var p = m.split('-'); return n[parseInt(p[1],10)-1] + ' ' + p[0];
+  }
+  function money(n) { return '$' + Number(n||0).toLocaleString('en-US', { maximumFractionDigits: 0 }); }
+  function esc(s) { return String(s||'').replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  function render() {
+    var c = document.getElementById('content');
+    if (!state) { c.innerHTML = '<p class="empty">Todavía no hay presupuesto cargado.</p>'; return; }
+    var ls = (state.lines||[]).filter(function (l) { return l.mes === mes; });
+    var cap = ((state.caps||{})[CLIENT]||{})[mes] || 0;
+    var plan = ls.reduce(function (a,l) { return a + (Number(l.planificado)||0); }, 0);
+    var spent = ls.reduce(function (a,l) { return a + (Number(l.gastado)||0); }, 0);
+    var pct = cap ? Math.min((plan/cap)*100, 100) : 0;
+    var sPct = cap ? Math.min((spent/cap)*100, 100) : 0;
+    c.innerHTML =
+      '<div class="cap-card">' +
+        '<div class="cap-top"><span class="big num">' + money(plan) + '</span>' +
+        '<span class="of">' + (cap ? 'de ' + money(cap) + ' aprobados para ' + monthLabel(mes) : 'sin tope definido para ' + monthLabel(mes)) + '</span></div>' +
+        '<div class="meter"><div class="fill" style="width:' + pct + '%"></div>' + (spent ? '<div class="spent" style="width:' + sPct + '%"></div>' : '') + '</div>' +
+        '<div class="legend"><span><span class="sw" style="background:var(--gold)"></span>planificado</span>' +
+        '<span><span class="sw" style="background:var(--titleink);opacity:.4"></span>invertido a la fecha' + (spent ? ': ' + money(spent) : '') + '</span></div>' +
+      '</div>' +
+      '<div class="cap-card" style="padding:0;overflow:hidden;">' +
+      (ls.length ?
+        '<table><thead><tr><th>Campaña</th><th>Plataforma</th><th class="r">Planificado</th><th class="r">Invertido</th></tr></thead><tbody>' +
+        ls.map(function (l) {
+          return '<tr><td><b>' + esc(l.campana) + '</b>' + (l.notas ? '<br><span style="font-size:12px;color:var(--ink-3);">' + esc(l.notas) + '</span>' : '') + '</td>' +
+            '<td><span class="plat">' + esc(l.plataforma) + '</span></td>' +
+            '<td class="r num">' + money(l.planificado) + '</td>' +
+            '<td class="r num">' + (l.gastado ? money(l.gastado) : '—') + '</td></tr>';
+        }).join('') + '</tbody></table>'
+        : '<p class="empty">Sin campañas cargadas para ' + monthLabel(mes) + '.</p>') +
+      '</div>' +
+      '<p class="note">Los montos invertidos se actualizan con cada reporte. Vista de solo lectura.</p>';
+  }
+
+  var msel = document.getElementById('month');
+  var now = new Date();
+  for (var i = -3; i <= 1; i++) {
+    var d = new Date(now.getFullYear(), now.getMonth() + i, 1);
+    var o = document.createElement('option');
+    o.value = ym(d); o.textContent = monthLabel(ym(d));
+    if (i === 0) o.selected = true;
+    msel.appendChild(o);
+  }
+  mes = msel.value;
+  msel.addEventListener('change', function () { mes = msel.value; render(); });
+
+  fetch('/api/budgets', { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error('x'); return r.json(); })
+    .then(function (d) { state = d.doc; render(); })
+    .catch(function () {
+      var b = document.getElementById('banner');
+      b.textContent = 'El presupuesto compartido todavía no está disponible. Escribinos y te lo pasamos.';
+      b.classList.add('show');
+      render();
+    });
+})();
+</script>
+</body>
+</html>
