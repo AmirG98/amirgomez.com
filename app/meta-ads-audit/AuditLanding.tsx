@@ -66,7 +66,7 @@ export default function AuditLanding() {
           <h1>Your Meta ads might be <em>leaking money</em>. Let&rsquo;s find out in 15 minutes.</h1>
           <p className="sub">A <strong>free audit, no obligation</strong> — from a team that&rsquo;s
             launched <strong>300+ funnels</strong>.</p>
-          <p className="scroll-cue">What you&rsquo;ll get ↓</p>
+          <p className="scroll-cue">Scroll ↓</p>
         </div>
       </header>
 
