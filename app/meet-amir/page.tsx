@@ -36,13 +36,13 @@ export default function MeetAmirPage() {
         </p>
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">Book your audit call</h1>
         <p className="text-white/60 mb-6">15 minutes, virtual. Pick the slot that works for you.</p>
-        <div className="rounded-2xl overflow-hidden border border-white/10 bg-[#0a0a0a]">
-          <iframe
-            src={CAL}
-            title="Book your audit call — A+ Growth"
-            className="w-full h-[1000px] border-0 block"
-          />
-        </div>
+        {/* Sin tarjeta contenedora: el fondo del embed es el mismo #0a0a0a de la página,
+            así el calendario flota y no hay costura con la sección siguiente */}
+        <iframe
+          src={CAL}
+          title="Book your audit call — A+ Growth"
+          className="w-full h-[760px] border-0 block"
+        />
       </section>
 
       {/* Todo lo de meet-the-team debajo, sin header ni banner duplicados */}
