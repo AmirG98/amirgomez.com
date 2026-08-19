@@ -171,7 +171,7 @@ export default function AuditLanding() {
                   <label>Email
                     <input name="email" type="email" autoComplete="email" required />
                   </label>
-                  <label>Website or Meta ad account
+                  <label>Website
                     <input name="website" type="text" inputMode="url" placeholder="yourbrand.com" required />
                   </label>
                   <label>How much do you spend per month on Meta ads?
