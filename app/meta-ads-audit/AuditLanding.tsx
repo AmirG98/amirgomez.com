@@ -14,9 +14,25 @@ const SPEND_OPTIONS = ['Less than $1,000', '$1,000 – $2,000', '$2,000 – $5,0
 const RUNNER_OPTIONS = ['Myself', 'An agency', 'A freelancer', 'Nobody yet'];
 const TENURE_OPTIONS = ['Less than 3 months', '3 – 12 months', '1 – 3 years', '3+ years'];
 
+// Mailto prepopulado para quienes aún no llegan al spend de la auditoría
+const MAILTO_NOT_READY =
+  'mailto:amir@amirgomez.com' +
+  '?subject=' + encodeURIComponent('About my business — Meta ads audit') +
+  '&body=' + encodeURIComponent(
+    'Hi Amir,\n\n' +
+    "I requested the free Meta ads audit, but we're not spending $2,000/month on ads yet.\n\n" +
+    'A bit about my business:\n' +
+    '- What we sell: \n' +
+    '- Website: \n' +
+    "- Marketing we're doing today: \n" +
+    '- Goal for the next 6 months: \n\n' +
+    'What would you suggest as the best next step?\n'
+  );
+
 export default function AuditLanding() {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  const [qualified, setQualified] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -25,6 +41,8 @@ export default function AuditLanding() {
 
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+    const isQualified = data.spend === '$2,000 – $5,000' || data.spend === '$5,000+';
+    setQualified(isQualified);
     // Notificación por mail a Amir (Resend, mismo esquema que notify-affluent-quiz)
     fetch('/api/notify-audit', {
       method: 'POST',
@@ -55,8 +73,10 @@ export default function AuditLanding() {
 
     setSubmitted(true);
     setSending(false);
-    // Todos pasan a bookear su slot; la priorización por spend viaja en el mail
-    setTimeout(() => { window.location.href = '/meet-amir'; }, 2000);
+    if (isQualified) {
+      // Califica: pasa a bookear su slot de auditoría
+      setTimeout(() => { window.location.href = '/meet-amir'; }, 2000);
+    }
   };
 
   return (
@@ -157,11 +177,24 @@ export default function AuditLanding() {
             {submitted ? (
               <div className="thanks" role="status">
                 <div className="check">✓</div>
-                <h2>Request received.</h2>
-                <p><b>Next step:</b> book your <b>15-minute audit call</b> — pick the slot that
-                  works for you.</p>
-                <p className="redirect-note">Taking you to <a href="/meet-amir">the
-                  calendar</a>&hellip;</p>
+                {qualified ? (
+                  <>
+                    <h2>Request received.</h2>
+                    <p><b>Next step:</b> book your <b>15-minute audit call</b> — pick the slot
+                      that works for you.</p>
+                    <p className="redirect-note">Taking you to <a href="/meet-amir">the
+                      calendar</a>&hellip;</p>
+                  </>
+                ) : (
+                  <>
+                    <h2>Thanks — one honest note.</h2>
+                    <p>At your current ad spend, the audit might not be the most useful next
+                      step yet. <b>That doesn&rsquo;t mean we can&rsquo;t help.</b></p>
+                    <p>Send us the details of your business and let&rsquo;s talk about what
+                      would actually move the needle — the email is pre-filled for you.</p>
+                    <a className="mail-btn" href={MAILTO_NOT_READY}>Email Amir</a>
+                  </>
+                )}
               </div>
             ) : (
               <>

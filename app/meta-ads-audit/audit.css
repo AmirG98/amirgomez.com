@@ -116,6 +116,20 @@
 .ma .thanks p b { color: var(--ink); }
 
 
+.ma .mail-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.ma .mail-btn:hover { background: #d24f16; }
+.ma .mail-btn:focus-visible { outline: 3px solid var(--accent-soft); outline-offset: 2px; }
+
 /* ---------- Social proof ---------- */
 .ma .proof blockquote { margin-top: 16px; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 0 14px 14px 0; padding: 22px 20px; }
 .ma .proof .pull { font-family: var(--serif); font-size: clamp(19px, 5.2vw, 24px); line-height: 1.35; color: var(--ink); text-wrap: pretty; }
