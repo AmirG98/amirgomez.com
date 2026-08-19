@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Human at Scale — Banco de ideas</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #2b3947; --navy-deep: #1f2b37; --ink: #26303a; --ink-2: #5c6670; --ink-3: #98a0a8; --paper: #faf9f6; --paper-2: #f3f1ec; --hairline: #e4e0d7; --gold: #a8874f; --gold-soft: #f4ede1; --panel: #ffffff; --field: #ffffff; --btnink: #ffffff; --titleink: #26303a; --errcol: #a33c3c; --serif: 'Marcellus', serif; --sans: 'Inter', -apple-system, sans-serif; --btnfont: var(--sans); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 880px; margin: 0 auto; padding: 40px 24px 64px; }
+  header { text-align: center; margin-bottom: 30px; }
+  .wordmark { font-family: 'Jost', var(--sans); font-weight: 300; font-size: 20px; letter-spacing: 0.52em; text-indent: 0.52em; color: var(--navy); margin-top: 8px; }
+  .wordmark-sub { font-family: 'Jost', var(--sans); font-weight: 400; font-size: 8.5px; letter-spacing: 0.6em; text-indent: 0.6em; color: var(--navy); opacity: 0.75; margin-top: 2px; }
+  h1 { font-family: var(--serif); font-size: 24px; font-weight: 400; margin-top: 20px; }
+  .sub { font-size: 13.5px; color: var(--ink-2); margin-top: 6px; max-width: 56ch; margin-left: auto; margin-right: auto; }
+  .backlink { display: inline-block; margin-top: 10px; font-size: 12.5px; color: var(--gold); text-decoration: none; letter-spacing: 0.04em; }
+  .backlink:hover { text-decoration: underline; }
+  #banner { display: none; max-width: 720px; margin: 0 auto 24px; font-size: 13px; color: var(--ink-2); background: var(--gold-soft); border-left: 2px solid var(--gold); padding: 10px 14px; }
+  #banner.show { display: block; }
+  .board-head { display: flex; justify-content: flex-end; margin: 0 0 14px; }
+  #btn-new { font-family: var(--btnfont); font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; background: var(--navy); color: var(--btnink); border: none; border-radius: 0px; padding: 11px 22px; cursor: pointer; }
+  #btn-new:hover { background: var(--navy-deep); }
+  #overlay { position: fixed; inset: 0; background: rgba(31,43,55,0.55); display: none; align-items: center; justify-content: center; z-index: 100; padding: 20px; }
+  #overlay.open { display: flex; }
+  .editor { background: var(--panel); border: 1px solid var(--hairline); border-radius: 0px; max-width: 480px; width: 100%; padding: 28px 30px; }
+  .editor h2 { font-family: var(--serif); font-size: 20px; font-weight: 400; margin-bottom: 18px; }
+  .editor label { display: block; font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); margin: 14px 0 5px; }
+  .editor input, .editor select, .editor textarea { width: 100%; font-family: var(--sans); font-size: 14.5px; padding: 10px 12px; border: 1px solid var(--hairline); background: var(--field); color: var(--ink); outline: none; border-radius: 0px; }
+  .editor textarea { min-height: 96px; resize: vertical; line-height: 1.6; }
+  .editor input:focus, .editor select:focus, .editor textarea:focus { border-color: var(--navy); }
+  .editor input::placeholder, .editor textarea::placeholder { color: var(--ink-3); }
+  .editor .req { color: var(--navy); }
+  .editor .actions { display: flex; gap: 10px; margin-top: 22px; }
+  .editor .actions button { font-family: var(--btnfont); font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; padding: 11px 22px; cursor: pointer; border: none; border-radius: 0px; }
+  #ed-save { background: var(--navy); color: var(--btnink); flex: 1; }
+  #ed-save:hover { background: var(--navy-deep); }
+  #ed-cancel { background: none; border: 1px solid var(--hairline); color: var(--ink-2); }
+  #ed-cancel:hover { border-color: var(--ink-3); }
+  #ed-error { display: none; font-size: 12.5px; color: var(--errcol); margin-top: 10px; }
+  #ed-error.show { display: block; }
+  .board { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; align-items: start; }
+  .col { background: var(--paper-2); padding: 14px; min-height: 220px; }
+  .col h2 { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 12px; }
+  .col h2 .count { color: var(--gold); }
+  .cards { min-height: 60px; display: flex; flex-direction: column; gap: 10px; }
+  .card { background: var(--panel); border: 1px solid var(--hairline); border-radius: 0px; padding: 14px 16px; cursor: grab; position: relative; }
+  .card:active { cursor: grabbing; }
+  .card.sortable-ghost { opacity: 0.35; border-style: dashed; }
+  .card.sortable-drag { box-shadow: 0 8px 24px rgba(43,57,71,0.16); }
+  .card h3 { font-family: var(--serif); font-size: 16px; font-weight: 400; margin: 0 24px 4px 0; color: var(--titleink); }
+  .card .nota { font-size: 13px; color: var(--ink-2); white-space: pre-wrap; }
+  .card img { width: 100%; max-height: 150px; object-fit: cover; border-radius: 6px; margin-top: 10px; display: block; }
+  .card .foot { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; gap: 10px; flex-wrap: wrap; }
+  .card .foot a { font-size: 12.5px; color: var(--gold); text-decoration: none; letter-spacing: 0.03em; }
+  .card .foot a:hover { text-decoration: underline; }
+  .card .when { font-size: 11.5px; color: var(--ink-3); }
+  .card .menu-btn { position: absolute; top: 10px; right: 10px; background: none; border: none; color: var(--ink-3); font-size: 16px; cursor: pointer; padding: 2px 6px; }
+  .card .menu-btn:hover { color: var(--ink); }
+  .menu { position: absolute; top: 32px; right: 10px; z-index: 10; background: var(--panel); border: 1px solid var(--hairline); border-radius: 0px; box-shadow: 0 8px 24px rgba(43,57,71,0.16); min-width: 190px; display: none; overflow: hidden; }
+  .menu.open { display: block; }
+  .menu button { display: block; width: 100%; text-align: left; background: none; border: none; font-family: var(--sans); font-size: 13px; color: var(--ink); padding: 9px 14px; cursor: pointer; }
+  .menu button:hover { background: var(--paper-2); }
+  .menu .sep { border-top: 1px solid var(--hairline); }
+  .admin-only { display: none; }
+  body.admin .admin-only { display: block; }
+  footer { text-align: center; margin-top: 48px; font-size: 12px; color: var(--ink-3); }
+  footer a { color: var(--ink-3); text-decoration: none; }
+  footer a:hover { color: var(--gold); }
+  @media (max-width: 680px) { .board { grid-template-columns: 1fr; } .card { cursor: default; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true" id="uburst"></svg>
+    <div class="wordmark">URBAN</div>
+    <div class="wordmark-sub">REAL ESTATE</div>
+    <script>
+    (function(){var ns='http://www.w3.org/2000/svg';var svg=document.getElementById('uburst');var L=[48,24,35,24];for(var i=0;i<48;i++){var a=(i*7.5-90)*Math.PI/180;var l=document.createElementNS(ns,'line');l.setAttribute('x1',50+12*Math.cos(a));l.setAttribute('y1',50+12*Math.sin(a));l.setAttribute('x2',50+L[i%4]*Math.cos(a));l.setAttribute('y2',50+L[i%4]*Math.sin(a));l.setAttribute('stroke','#2b3947');l.setAttribute('stroke-width','1');svg.appendChild(l);}})();
+    </script>
+    <h1>Banco de ideas</h1>
+    <p class="sub">Un lugar para dejar ideas sueltas e implementarlas a futuro. Sumá la tuya con el botón — puede llevar contexto, links o una imagen — y cuando una idea se lleva a la práctica, pasa a "Aplicadas".</p>
+    <a class="backlink" href="/clients/human-at-scale">← Volver al portal</a>
+  </header>
+
+  <div id="banner">Modo local: las ideas se guardan en este navegador y we get an email notification for every change. El banco compartido en vivo se activa próximamente.</div>
+
+  <div class="board-head">
+    <button id="btn-new">+ Nueva idea</button>
+  </div>
+
+  <div id="overlay">
+    <div class="editor">
+      <h2 id="ed-title">Nueva idea</h2>
+      <label>Título <span class="req">*</span></label>
+      <input id="f-titulo" placeholder="Probar formato carrusel con testimonios">
+      <label>Contexto / cómo funcionaría (opcional)</label>
+      <textarea id="f-nota" placeholder="De dónde sale la idea, qué problema resuelve, cómo se implementaría…"></textarea>
+      <label>Link (opcional)</label>
+      <input id="f-url" placeholder="Referencia, ejemplo, inspiración…">
+      <label>Imagen (URL, opcional)</label>
+      <input id="f-img" placeholder="Link a una imagen (se muestra en la tarjeta)">
+      <label>Estado</label>
+      <select id="f-col"><option>Pendientes</option><option>Aplicadas</option></select>
+      <p id="ed-error"></p>
+      <div class="actions">
+        <button id="ed-save">Guardar</button>
+        <button id="ed-cancel">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="board">
+    <div class="col">
+      <h2>Pendientes <span class="count" id="c-0"></span></h2>
+      <div class="cards" data-col="Pendientes"></div>
+    </div>
+    <div class="col">
+      <h2>Aplicadas <span class="count" id="c-1"></span></h2>
+      <div class="cards" data-col="Aplicadas"></div>
+    </div>
+  </div>
+
+  <footer>
+    Human at Scale · <a href="#" id="admin-toggle">modo admin</a>
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
+<script>
+(function () {
+  var CLIENT = 'human-at-scale';
+  var API = '/api/approvals/' + CLIENT + '?board=ideas';
+  var NOTIFY_API = '/api/approvals/' + CLIENT;
+  var LS_KEY = 'ideas_' + CLIENT;
+  var COLS = ['Pendientes', 'Aplicadas'];
+  var mode = 'local';
+  var state = null;
+  var isAdmin = false;
+  try { isAdmin = localStorage.getItem('approvals_' + CLIENT + '_admin') === '1'; } catch (e) {}
+
+  function seed() {
+    return { cards: [{ id: 'i-' + Date.now(), titulo: 'Idea de ejemplo', nota: 'Editala o archivala desde modo admin. Las ideas pueden llevar contexto, un link de referencia y una imagen.', url: '', img: '', columna: 'Pendientes', actualizado: new Date().toISOString() }], log: [] };
+  }
+
+  function relTime(iso) {
+    if (!iso) return '';
+    var d = Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
+    if (d <= 0) return 'hoy';
+    if (d === 1) return 'ayer';
+    return 'hace ' + d + ' días';
+  }
+  function extUrl(u) {
+    u = String(u || '').trim();
+    if (!u) return '';
+    return /^https?:\/\//i.test(u) ? u : 'https://' + u;
+  }
+  function esc(s) {
+    return String(s || '').replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function render() {
+    COLS.forEach(function (col, ci) {
+      var wrap = document.querySelector('.cards[data-col="' + col + '"]');
+      wrap.innerHTML = '';
+      var cards = state.cards.filter(function (c) { return c.columna === col && !c.archivada; });
+      document.getElementById('c-' + ci).textContent = cards.length ? '· ' + cards.length : '';
+      cards.forEach(function (c) {
+        var el = document.createElement('div');
+        el.className = 'card';
+        el.setAttribute('data-id', c.id);
+        el.innerHTML =
+          '<button class="menu-btn" aria-label="Opciones">⋯</button>' +
+          '<h3>' + esc(c.titulo) + '</h3>' +
+          (c.nota ? '<p class="nota">' + esc(c.nota) + '</p>' : '') +
+          (c.img ? '<img src="' + esc(extUrl(c.img)) + '" alt="" loading="lazy" onerror="this.remove()">' : '') +
+          '<div class="foot">' +
+            (c.url ? '<a href="' + esc(extUrl(c.url)) + '" target="_blank" rel="noopener">Ver link ↗</a>' : '<span></span>') +
+            '<span class="when">' + relTime(c.actualizado) + '</span>' +
+          '</div>' +
+          '<div class="menu">' +
+            COLS.filter(function (x) { return x !== col; }).map(function (x) {
+              return '<button data-act="move" data-to="' + esc(x) + '">Mover a ' + esc(x.toLowerCase()) + '</button>';
+            }).join('') +
+            '<button data-act="edit" class="sep">Editar</button>' +
+            '<div class="admin-only"><button data-act="archive" class="sep" style="color:var(--errcol)">Archivar (admin)</button></div>' +
+          '</div>';
+        wrap.appendChild(el);
+      });
+    });
+  }
+
+  function persistLocal() { try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (e) {} }
+  var saveTimer = null;
+  function save() {
+    persistLocal();
+    if (mode !== 'server') return;
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(function () {
+      fetch(API, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(state) }).catch(function () {});
+    }, 400);
+  }
+  function notify(titulo, accion, detalle) {
+    if (isAdmin) return;
+    fetch(NOTIFY_API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ titulo: titulo, accion: '[Banco de ideas] ' + accion, detalle: detalle || '' }) }).catch(function () {});
+  }
+  function findCard(id) { return state.cards.filter(function (c) { return c.id === id; })[0]; }
+  function moveCard(id, to) {
+    var c = findCard(id);
+    if (!c || c.columna === to) return;
+    c.columna = to;
+    c.actualizado = new Date().toISOString();
+    state.log.push({ ts: c.actualizado, quien: isAdmin ? 'admin' : 'cliente', que: 'movió "' + c.titulo + '" a ' + to });
+    save(); render();
+    notify(c.titulo, 'Idea movida a ' + to);
+  }
+
+  document.addEventListener('click', function (e) {
+    var openMenus = document.querySelectorAll('.menu.open');
+    if (e.target.classList.contains('menu-btn')) {
+      var menu = e.target.parentElement.querySelector('.menu');
+      openMenus.forEach(function (m) { if (m !== menu) m.classList.remove('open'); });
+      menu.classList.toggle('open');
+      e.preventDefault();
+      return;
+    }
+    var act = e.target.getAttribute && e.target.getAttribute('data-act');
+    if (act) {
+      var cardEl = e.target.closest('.card');
+      var id = cardEl.getAttribute('data-id');
+      var c = findCard(id);
+      if (act === 'move') moveCard(id, e.target.getAttribute('data-to'));
+      if (act === 'edit') openEditor(c);
+      if (act === 'archive') { if (confirm('¿Archivar "' + c.titulo + '"?')) { c.archivada = true; save(); render(); } }
+      return;
+    }
+    openMenus.forEach(function (m) { m.classList.remove('open'); });
+  });
+
+  document.querySelectorAll('.cards').forEach(function (wrap) {
+    new Sortable(wrap, {
+      group: 'ideas', animation: 160, delay: 120, delayOnTouchOnly: true,
+      onEnd: function (evt) {
+        moveCard(evt.item.getAttribute('data-id'), evt.to.getAttribute('data-col'));
+      }
+    });
+  });
+
+  var editingId = null;
+  var overlay = document.getElementById('overlay');
+  function openEditor(card) {
+    editingId = card ? card.id : null;
+    document.getElementById('ed-title').textContent = card ? 'Editar idea' : 'Nueva idea';
+    document.getElementById('f-titulo').value = card ? card.titulo : '';
+    document.getElementById('f-nota').value = card ? (card.nota || '') : '';
+    document.getElementById('f-url').value = card ? (card.url || '') : '';
+    document.getElementById('f-img').value = card ? (card.img || '') : '';
+    document.getElementById('f-col').value = card ? card.columna : 'Pendientes';
+    document.getElementById('ed-error').classList.remove('show');
+    overlay.classList.add('open');
+    document.getElementById('f-titulo').focus();
+  }
+  function closeEditor() { overlay.classList.remove('open'); editingId = null; }
+  document.getElementById('btn-new').addEventListener('click', function () { openEditor(null); });
+  document.getElementById('ed-cancel').addEventListener('click', closeEditor);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) closeEditor(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeEditor(); });
+
+  document.getElementById('ed-save').addEventListener('click', function () {
+    var titulo = document.getElementById('f-titulo').value.trim();
+    if (!titulo) {
+      var err = document.getElementById('ed-error');
+      err.textContent = 'Falta el título de la idea.';
+      err.classList.add('show');
+      return;
+    }
+    var nota = document.getElementById('f-nota').value.trim();
+    var url = document.getElementById('f-url').value.trim();
+    var img = document.getElementById('f-img').value.trim();
+    var col = document.getElementById('f-col').value;
+    var isNew = !editingId;
+    if (editingId) {
+      var c = findCard(editingId);
+      if (c) { c.titulo = titulo; c.nota = nota; c.url = url; c.img = img; c.columna = col; c.actualizado = new Date().toISOString(); }
+    } else {
+      state.cards.push({ id: 'i-' + Date.now(), titulo: titulo, nota: nota, url: url, img: img, columna: col, actualizado: new Date().toISOString() });
+    }
+    closeEditor(); save(); render();
+    if (isNew) notify(titulo, 'Idea nueva', nota);
+  });
+
+  function applyAdmin() {
+    document.body.classList.toggle('admin', isAdmin);
+    document.getElementById('admin-toggle').textContent = isAdmin ? 'salir de modo admin' : 'modo admin';
+  }
+  document.getElementById('admin-toggle').addEventListener('click', function (e) {
+    e.preventDefault();
+    isAdmin = !isAdmin;
+    try { localStorage.setItem('approvals_' + CLIENT + '_admin', isAdmin ? '1' : '0'); } catch (e2) {}
+    applyAdmin();
+  });
+
+  function loadLocal() {
+    mode = 'local';
+    document.getElementById('banner').classList.add('show');
+    try {
+      var raw = localStorage.getItem(LS_KEY);
+      state = raw ? JSON.parse(raw) : seed();
+    } catch (e) { state = seed(); }
+    persistLocal(); render(); applyAdmin();
+  }
+
+  fetch(API, { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error('nostorage'); return r.json(); })
+    .then(function (data) {
+      mode = 'server';
+      state = data.doc || seed();
+      if (!data.doc) save();
+      render(); applyAdmin();
+    })
+    .catch(loadLocal);
+})();
+</script>
+</body>
+</html>

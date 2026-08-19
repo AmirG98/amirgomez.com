@@ -3,6 +3,7 @@
 export const CLIENT_PASSWORDS: Record<string, string> = {
   'urban-usa': 'URBAN2226',
   'founder-accelerators': 'FOUNDER2226',
+  'human-at-scale': 'HAS2226',
 };
 
 // Clave maestra interna de A+Growth (env AGROWTH_MASTER_KEY, nunca en el repo).

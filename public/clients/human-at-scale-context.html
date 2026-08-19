@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Human at Scale — Contexto del cliente</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #2b3947; --navy-deep: #1f2b37; --ink: #26303a; --ink-2: #5c6670; --ink-3: #98a0a8; --paper: #faf9f6; --hairline: #e4e0d7; --gold: #a8874f; --gold-soft: #f4ede1; --panel: #ffffff; --field: #faf9f6; --btnink: #ffffff; --titleink: #26303a; --serif: 'Marcellus', serif; --sans: 'Inter', -apple-system, sans-serif; --btnfont: var(--sans); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 880px; margin: 0 auto; padding: 40px 24px 64px; }
+  header { text-align: center; margin-bottom: 26px; }
+  h1 { font-family: var(--serif); font-size: 24px; font-weight: 400; margin-top: 18px; }
+  .sub { font-size: 13.5px; color: var(--ink-2); margin-top: 6px; max-width: 58ch; margin-left: auto; margin-right: auto; }
+  .backlink { display: inline-block; margin-top: 10px; font-size: 12.5px; color: var(--gold); text-decoration: none; }
+  .backlink:hover { text-decoration: underline; }
+  .meta { text-align: center; font-size: 12.5px; color: var(--ink-3); margin-bottom: 24px; }
+  #banner { display: none; max-width: 760px; margin: 0 auto 22px; font-size: 13px; color: var(--ink-2); background: var(--gold-soft); border-left: 2px solid var(--gold); padding: 10px 14px; }
+  #banner.show { display: block; }
+  .secs { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .sec { background: var(--panel); border: 1px solid var(--hairline); border-radius: 0px; padding: 22px 24px; }
+  .sec.wide { grid-column: 1 / -1; }
+  .sec .head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 10px; }
+  .sec h2 { font-family: var(--serif); font-size: 16px; font-weight: 400; color: var(--titleink); letter-spacing: 0.02em; }
+  .sec .edit { display: none; font-size: 11px; color: var(--ink-3); cursor: pointer; text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; }
+  body.admin .sec .edit { display: inline; }
+  .sec .edit:hover { color: var(--gold); }
+  .sec ul { margin: 0 0 0 16px; }
+  .sec li { font-size: 13.5px; color: var(--ink-2); margin-top: 6px; }
+  #overlay { position: fixed; inset: 0; background: rgba(31,43,55,0.55); display: none; align-items: center; justify-content: center; z-index: 100; padding: 20px; }
+  #overlay.open { display: flex; }
+  .editor { background: var(--panel); border: 1px solid var(--hairline); border-radius: 0px; max-width: 560px; width: 100%; padding: 26px 28px; }
+  .editor h2 { font-family: var(--serif); font-size: 18px; font-weight: 400; margin-bottom: 6px; color: var(--titleink); }
+  .editor p.hint { font-size: 12px; color: var(--ink-3); margin-bottom: 12px; }
+  .editor textarea { width: 100%; min-height: 180px; resize: vertical; font-family: var(--sans); font-size: 14px; line-height: 1.6; padding: 12px 14px; border: 1px solid var(--hairline); background: var(--field); color: var(--ink); outline: none; border-radius: 0px; }
+  .editor textarea:focus { border-color: var(--navy); }
+  .editor .actions { display: flex; gap: 10px; margin-top: 16px; }
+  .editor button { font-family: var(--btnfont); font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; padding: 11px 22px; cursor: pointer; border: none; border-radius: 0px; }
+  #ed-save { background: var(--navy); color: var(--btnink); flex: 1; }
+  #ed-save:hover { background: var(--navy-deep); }
+  #ed-cancel { background: none; border: 1px solid var(--hairline); color: var(--ink-2); }
+  .dl { display: flex; gap: 10px; justify-content: center; margin-bottom: 24px; }
+  .dlbtn { font-family: var(--btnfont); font-size: 10.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; background: none; border: 1px solid var(--hairline); color: var(--ink-2); border-radius: 0px; padding: 9px 18px; cursor: pointer; }
+  .dlbtn:hover { border-color: var(--gold); color: var(--gold); }
+  footer { text-align: center; margin-top: 44px; font-size: 12px; color: var(--ink-3); }
+  footer a { color: var(--ink-3); text-decoration: none; }
+  footer a:hover { color: var(--gold); }
+  @media (max-width: 680px) { .secs { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true" id="uburst"></svg>
+    <div style="font-family:'Jost',sans-serif; font-weight:300; font-size:20px; letter-spacing:0.52em; text-indent:0.52em; color:#2b3947; margin-top:8px;">URBAN</div>
+    <div style="font-family:'Jost',sans-serif; font-weight:400; font-size:8.5px; letter-spacing:0.6em; text-indent:0.6em; color:#2b3947; opacity:0.75; margin-top:2px;">REAL ESTATE</div>
+    <script>
+    (function(){var ns='http://www.w3.org/2000/svg';var svg=document.getElementById('uburst');var L=[48,24,35,24];for(var i=0;i<48;i++){var a=(i*7.5-90)*Math.PI/180;var l=document.createElementNS(ns,'line');l.setAttribute('x1',50+12*Math.cos(a));l.setAttribute('y1',50+12*Math.sin(a));l.setAttribute('x2',50+L[i%4]*Math.cos(a));l.setAttribute('y2',50+L[i%4]*Math.sin(a));l.setAttribute('stroke','#2b3947');l.setAttribute('stroke-width','1');svg.appendChild(l);}})();
+    </script>
+    <h1>Contexto del cliente</h1>
+    <p class="sub">El documento vivo del negocio: se actualiza automáticamente con cada reunión procesada en Meeting transcripts.</p>
+    <a class="backlink" href="/clients/human-at-scale">← Volver al portal</a>
+  </header>
+  <p class="meta" id="meta"></p>
+  <div id="banner"></div>
+  <div class="dl">
+    <button class="dlbtn" id="dl-md">Descargar .md</button>
+    <button class="dlbtn" id="dl-pdf">Descargar PDF</button>
+  </div>
+
+  <div class="secs" id="secs"></div>
+  <div id="overlay">
+    <div class="editor">
+      <h2 id="ed-title">Editar sección</h2>
+      <p class="hint">Un bullet por línea.</p>
+      <textarea id="ed-text"></textarea>
+      <div class="actions">
+        <button id="ed-save">Guardar</button>
+        <button id="ed-cancel">Cancelar</button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    Human at Scale · <a href="#" id="admin-toggle">modo admin</a>
+  </footer>
+</div>
+<script>
+(function () {
+  var CLIENT = 'human-at-scale';
+  var API = '/api/context/' + CLIENT;
+  var LS_KEY = 'context_' + CLIENT;
+  var SEED = {"negocio": ["Human at Scale: agencia de operaciones estratégicas para firmas contables (accounting, CAS, bookkeeping y tax).", "ICP: dueños de firmas de USD 1M a 5M de facturación, 5 a 50 empleados, founder-led, técnicamente excelentes pero atrapados dentro de su propia firma.", "Fundada por Chase Damiano, que construyó Commonwealth Joe hasta ~USD 6M con un equipo de 40."], "oferta": ["Operations Audit: diagnóstico del flujo de trabajo real de la firma, dónde se gana el dinero, dónde están los cuellos de botella y qué está haciendo la tecnología por el equipo o contra él.", "HumanOS: sistema operativo embebido, construido específicamente para firmas contables. Instala estructura de personas, workflows, datos y ritmo operativo.", "Acompañamiento a través de la implementación completa, no un reporte y listo."], "objetivos": ["Crecer la lista de Ops Notes con dueños y operadores de firmas contables en EE.UU.", "Generar demanda calificada para el Operations Assessment.", "Construir prueba social con case studies de firmas contables."], "canales": ["Newsletter Ops Notes como canal principal de nurture.", "LinkedIn Ads y contenido de thought leadership de Chase.", "Webinars y partnerships con comunidades del rubro contable.", "Meta Ads para el funnel del Operations Assessment."], "guardrails": ["Nada de lo que escribe Chase se reescribe con IA. Solo edición de gramática, puntuación, saltos de línea y formato.", "Prueba pública solo con resultados y testimonios ya publicados en humanatscale.com/case-studies. Nunca desde notas internas, transcripts o Slack.", "Sin frameworks con nombre propio inventado. Se llaman por lo que son: workflows, KPIs, cadencias de reunión, claridad de roles.", "Precisión en las cifras: si fue 85%, se dice 85%. Nunca redondear para arriba."], "aprendizajes": ["Las relaciones con partners son de Chase: cualquier pedido a terceros se hace con permiso, no como expectativa.", "Los case studies necesitan un método replicable, no un molde único. Cada firma tiene su propia historia."], "equipo": ["Human at Scale: Chase Damiano (founder y CEO), define estrategia, contenido y relaciones.", "Andrés Espinosa: operaciones y sistemas.", "Equipo de marketing: paid media, newsletter, web y reporting."]};
+  var SECTIONS = [
+    ['negocio', 'El negocio', true],
+    ['oferta', 'Oferta: productos y servicios', true],
+    ['objetivos', 'Objetivos y KPIs', false],
+    ['canales', 'Canales de adquisición', false],
+    ['guardrails', 'Guardrails', false],
+    ['aprendizajes', 'Aprendizajes validados', false],
+    ['equipo', 'Equipo y roles', true]
+  ];
+  var mode = 'local';
+  var state = null;
+  var isAdmin = false;
+  try { isAdmin = localStorage.getItem('approvals_' + CLIENT + '_admin') === '1'; } catch (e) {}
+
+  function esc(s) {
+    return String(s || '').replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+  function render() {
+    if (!state.oferta || !state.oferta.length) state.oferta = SEED.oferta || [];
+    var secs = document.getElementById('secs');
+    secs.innerHTML = '';
+    SECTIONS.forEach(function (def) {
+      var key = def[0], titulo = def[1], wide = def[2];
+      var items = state[key] || [];
+      var el = document.createElement('div');
+      el.className = 'sec' + (wide ? ' wide' : '');
+      el.innerHTML = '<div class="head"><h2>' + titulo + '</h2><a class="edit" data-key="' + key + '" href="#">Editar</a></div>' +
+        '<ul>' + items.map(function (i) { return '<li>' + esc(i) + '</li>'; }).join('') + '</ul>';
+      secs.appendChild(el);
+    });
+    var f = state.fuentes || [];
+    var meta = f.length
+      ? 'Alimentado por ' + f.length + ' reunión' + (f.length === 1 ? '' : 'es') + ' · última: ' + esc((f[f.length - 1] || {}).titulo || '') +
+        (state.actualizado ? ' · actualizado ' + new Date(state.actualizado).toLocaleDateString('es-AR') : '')
+      : 'Contexto inicial cargado por Human at Scale — se irá enriqueciendo con cada reunión procesada.';
+    document.getElementById('meta').textContent = meta;
+  }
+  function persistLocal() { try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (e) {} }
+  function save() {
+    persistLocal();
+    if (mode !== 'server') return;
+    fetch(API, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(state) }).catch(function () {});
+  }
+
+  var editKey = null;
+  var overlay = document.getElementById('overlay');
+  document.getElementById('secs').addEventListener('click', function (e) {
+    var key = e.target.getAttribute && e.target.getAttribute('data-key');
+    if (!key) return;
+    e.preventDefault();
+    editKey = key;
+    var def = SECTIONS.filter(function (s) { return s[0] === key; })[0];
+    document.getElementById('ed-title').textContent = 'Editar: ' + def[1];
+    document.getElementById('ed-text').value = (state[key] || []).join('\n');
+    overlay.classList.add('open');
+  });
+  document.getElementById('ed-cancel').addEventListener('click', function () { overlay.classList.remove('open'); });
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) overlay.classList.remove('open'); });
+  document.getElementById('ed-save').addEventListener('click', function () {
+    state[editKey] = document.getElementById('ed-text').value.split('\n').map(function (l) { return l.trim(); }).filter(Boolean);
+    state.actualizado = new Date().toISOString();
+    overlay.classList.remove('open');
+    save(); render();
+  });
+
+
+
+  function today() { return new Date().toISOString().slice(0, 10); }
+  function fmtF(d) {
+    if (!d) return 's/f';
+    var p = String(d).split('-');
+    return p.length === 3 ? p[2] + '/' + p[1] + '/' + p[0] : d;
+  }
+  function fetchJson(url) {
+    return fetch(url, { cache: 'no-store' }).then(function (r) { if (!r.ok) throw 0; return r.json(); });
+  }
+  function getSource(url, lsKey) {
+    return fetchJson(url).then(function (d) { return d.doc; }).catch(function () {
+      try { var raw = localStorage.getItem(lsKey); return raw ? JSON.parse(raw) : null; } catch (e) { return null; }
+    });
+  }
+  function collectAll() {
+    return Promise.all([
+      getSource('/api/transcripts/' + CLIENT, 'transcripts_' + CLIENT),
+      getSource('/api/approvals/' + CLIENT, 'approvals_' + CLIENT),
+      getSource('/api/approvals/' + CLIENT + '?board=ideas', 'ideas_' + CLIENT)
+    ]).then(function (r) {
+      var notes = [];
+      try {
+        for (var i = 0; i < localStorage.length; i++) {
+          var k = localStorage.key(i);
+          if (k && k.indexOf('report_notes_' + CLIENT + '_') === 0) {
+            var v = JSON.parse(localStorage.getItem(k) || '{}');
+            if (v.text) notes.push({ fecha: k.split('_').pop(), text: v.text });
+          }
+        }
+      } catch (e) {}
+      var meetings = ((r[0] && r[0].meetings) || []).slice().sort(function (a, b) { return (b.fecha || '').localeCompare(a.fecha || ''); });
+      return {
+        meetings: meetings,
+        approvals: ((r[1] && r[1].cards) || []).filter(function (c) { return !c.archivada; }),
+        ideas: ((r[2] && r[2].cards) || []).filter(function (c) { return !c.archivada; }),
+        notes: notes
+      };
+    });
+  }
+
+  function buildMarkdown(all) {
+    var brand = document.title.split(' — ')[0];
+    var md = '# Dossier de cliente — ' + brand + '\n\n';
+    md += '_Documento vivo mantenido por Human at Scale. Exportado: ' + today() + '._\n';
+    var f = state.fuentes || [];
+    if (f.length) md += '_Contexto alimentado por ' + f.length + ' reunión' + (f.length === 1 ? '' : 'es') + ' procesada' + (f.length === 1 ? '' : 's') + '._\n';
+    md += '\n---\n\n# 1. Contexto del negocio\n\n';
+    SECTIONS.forEach(function (def) {
+      md += '## ' + def[1] + '\n\n';
+      (state[def[0]] || []).forEach(function (b) { md += '- ' + b + '\n'; });
+      md += '\n';
+    });
+    md += '---\n\n# 2. Reuniones y recaps (' + all.meetings.length + ')\n\n';
+    if (!all.meetings.length) md += '_Sin reuniones cargadas todavía._\n\n';
+    all.meetings.forEach(function (m) {
+      md += '## ' + m.titulo + ' — ' + fmtF(m.fecha) + '\n\n';
+      if (m.recap) {
+        md += m.recap.replace(/^## /gm, '### ') + '\n\n';
+      } else {
+        md += '_(transcripción cargada, recap aún no generado)_\n\n';
+      }
+    });
+    md += '---\n\n# 3. Recursos en aprobación (' + all.approvals.length + ')\n\n';
+    if (!all.approvals.length) md += '_Sin recursos activos._\n\n';
+    var cols = {};
+    all.approvals.forEach(function (c) { (cols[c.columna] = cols[c.columna] || []).push(c); });
+    Object.keys(cols).forEach(function (col) {
+      md += '## ' + col + '\n\n';
+      cols[col].forEach(function (c) {
+        md += '- **' + c.titulo + '** (' + (c.tipo || 'recurso') + ')';
+        if (c.nota) md += ' — ' + c.nota;
+        if (c.url) md += ' — ' + c.url;
+        if (c.comentario) md += '\n  - Feedback del cliente: "' + c.comentario + '"';
+        md += '\n';
+      });
+      md += '\n';
+    });
+    md += '---\n\n# 4. Banco de ideas (' + all.ideas.length + ')\n\n';
+    ['Pendientes', 'Aplicadas'].forEach(function (col) {
+      var items = all.ideas.filter(function (c) { return c.columna === col; });
+      md += '## ' + col + '\n\n';
+      if (!items.length) md += '_—_\n';
+      items.forEach(function (c) {
+        md += '- **' + c.titulo + '**';
+        if (c.nota) md += ' — ' + c.nota.replace(/\n+/g, ' ');
+        if (c.url) md += ' — ' + c.url;
+        md += '\n';
+      });
+      md += '\n';
+    });
+    if (all.notes.length) {
+      md += '---\n\n# 5. Notas de reuniones de reporte\n\n';
+      all.notes.forEach(function (n) {
+        md += '## Reunión ' + fmtF(n.fecha) + '\n\n' + n.text + '\n\n';
+      });
+    }
+    md += '---\n\n# Anexo: transcripciones completas\n\n';
+    all.meetings.forEach(function (m) {
+      md += '## ' + m.titulo + ' — ' + fmtF(m.fecha) + '\n\n```\n' + (m.transcript || '') + '\n```\n\n';
+    });
+    return md;
+  }
+
+  function downloadBlob(content, type, fname) {
+    var blob = new Blob([content], { type: type });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = fname;
+    document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+  }
+  document.getElementById('dl-md').addEventListener('click', function () {
+    collectAll().then(function (all) {
+      downloadBlob(buildMarkdown(all), 'text/markdown;charset=utf-8', 'dossier-' + CLIENT + '-' + today() + '.md');
+    });
+  });
+
+  function latin(s) {
+    return String(s).replace(/—|–/g, '-').replace(/[“”]/g, '"').replace(/[‘’]/g, "'")
+      .replace(/·/g, '-').replace(/≥/g, '>=').replace(/→/g, '->').replace(/…/g, '...');
+  }
+  function withJsPDF(cb) {
+    if (window.jspdf && window.jspdf.jsPDF) return cb();
+    var s = document.createElementNS('http://www.w3.org/1999/xhtml', 'script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+    s.onload = cb;
+    s.onerror = function () { alert('No se pudo cargar el generador de PDF. Usá la descarga .md.'); };
+    document.head.appendChild(s);
+  }
+  document.getElementById('dl-pdf').addEventListener('click', function () {
+    collectAll().then(function (all) {
+      withJsPDF(function () {
+        var brand = document.title.split(' — ')[0];
+        var doc = new window.jspdf.jsPDF({ unit: 'pt', format: 'a4' });
+        var M = 56, W = 595 - M * 2, y = M;
+        function brk(extra) { if (y + (extra || 0) > 780) { doc.addPage(); y = M; } }
+        function h1(t) { brk(40); doc.setFont('helvetica', 'bold'); doc.setFontSize(15); doc.setTextColor(20, 30, 40); doc.text(latin(t), M, y); y += 22; }
+        function h2(t) { brk(34); doc.setFont('helvetica', 'bold'); doc.setFontSize(11.5); doc.setTextColor(20, 30, 40); doc.text(latin(t).toUpperCase(), M, y); y += 15; }
+        function h3(t) { brk(28); doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(90, 100, 110); doc.text(latin(t), M, y); y += 13; }
+        function bullet(t, indent) {
+          var lines = doc.splitTextToSize(latin(t), W - 16 - (indent || 0));
+          brk(lines.length * 12.5 + 4);
+          doc.setFont('helvetica', 'normal'); doc.setFontSize(9.5); doc.setTextColor(60, 70, 80);
+          doc.circle(M + 3 + (indent || 0), y - 3, 1.3, 'F');
+          doc.text(lines, M + 14 + (indent || 0), y);
+          y += lines.length * 12.5 + 3;
+        }
+        function para(t, gray) {
+          var lines = doc.splitTextToSize(latin(t), W);
+          brk(lines.length * 12.5 + 4);
+          doc.setFont('helvetica', gray ? 'italic' : 'normal'); doc.setFontSize(9.5);
+          doc.setTextColor(gray ? 130 : 60, gray ? 135 : 70, gray ? 140 : 80);
+          doc.text(lines, M, y);
+          y += lines.length * 12.5 + 4;
+        }
+        function recapBlock(md) {
+          String(md).split('\n').forEach(function (ln) {
+            var l = ln.trim();
+            if (!l) return;
+            l = l.replace(/\*\*/g, '');
+            if (/^##+\s/.test(l)) h3(l.replace(/^##+\s*/, ''));
+            else if (/^[-•*]\s/.test(l)) bullet(l.replace(/^[-•*]\s*/, ''), 6);
+            else para(l);
+          });
+        }
+
+        doc.setFont('helvetica', 'bold'); doc.setFontSize(18); doc.setTextColor(20, 30, 40);
+        doc.text(latin('Dossier de cliente — ' + brand), M, y); y += 20;
+        doc.setFont('helvetica', 'normal'); doc.setFontSize(9.5); doc.setTextColor(120, 125, 130);
+        doc.text(latin('Documento vivo mantenido por Human at Scale  ·  Exportado: ' + today()), M, y); y += 8;
+        doc.setDrawColor(168, 135, 79); doc.setLineWidth(1); doc.line(M, y + 6, M + 90, y + 6); y += 30;
+
+        h1('1. Contexto del negocio');
+        SECTIONS.forEach(function (def) {
+          h2(def[1]);
+          (state[def[0]] || []).forEach(function (b) { bullet(b); });
+          y += 8;
+        });
+
+        y += 6; h1('2. Reuniones y recaps (' + all.meetings.length + ')');
+        if (!all.meetings.length) para('Sin reuniones cargadas todavía.', true);
+        all.meetings.forEach(function (m) {
+          h2(m.titulo + '  -  ' + fmtF(m.fecha));
+          if (m.recap) recapBlock(m.recap);
+          else para('Transcripción cargada; recap aún no generado.', true);
+          y += 8;
+        });
+
+        y += 6; h1('3. Recursos en aprobación (' + all.approvals.length + ')');
+        if (!all.approvals.length) para('Sin recursos activos.', true);
+        var cols = {};
+        all.approvals.forEach(function (c) { (cols[c.columna] = cols[c.columna] || []).push(c); });
+        Object.keys(cols).forEach(function (col) {
+          h2(col);
+          cols[col].forEach(function (c) {
+            var t = c.titulo + ' (' + (c.tipo || 'recurso') + ')' + (c.nota ? ' - ' + c.nota : '');
+            bullet(t);
+            if (c.comentario) bullet('Feedback del cliente: "' + c.comentario + '"', 14);
+          });
+          y += 6;
+        });
+
+        y += 6; h1('4. Banco de ideas (' + all.ideas.length + ')');
+        ['Pendientes', 'Aplicadas'].forEach(function (col) {
+          h2(col);
+          var items = all.ideas.filter(function (c) { return c.columna === col; });
+          if (!items.length) para('—', true);
+          items.forEach(function (c) {
+            bullet(c.titulo + (c.nota ? ' - ' + c.nota.replace(/\n+/g, ' ') : ''));
+          });
+          y += 6;
+        });
+
+        if (all.notes.length) {
+          y += 6; h1('5. Notas de reuniones de reporte');
+          all.notes.forEach(function (n) {
+            h2('Reunión ' + fmtF(n.fecha));
+            n.text.split('\n').forEach(function (l) { if (l.trim()) para(l.trim()); });
+          });
+        }
+
+        para(' ');
+        para('Las transcripciones completas están disponibles en el portal (Meeting transcripts) y en la exportación .md.', true);
+        doc.setFontSize(8.5); doc.setTextColor(150, 150, 150);
+        doc.text('Human at Scale', M, 812);
+        doc.save('dossier-' + CLIENT + '-' + today() + '.pdf');
+      });
+    });
+  });
+
+  function applyAdmin() {
+    document.body.classList.toggle('admin', isAdmin);
+    document.getElementById('admin-toggle').textContent = isAdmin ? 'salir de modo admin' : 'modo admin';
+  }
+  document.getElementById('admin-toggle').addEventListener('click', function (e) {
+    e.preventDefault();
+    isAdmin = !isAdmin;
+    try { localStorage.setItem('approvals_' + CLIENT + '_admin', isAdmin ? '1' : '0'); } catch (e2) {}
+    applyAdmin();
+  });
+
+  function banner(msg) {
+    var b = document.getElementById('banner');
+    if (!msg) return b.classList.remove('show');
+    b.textContent = msg; b.classList.add('show');
+  }
+  function loadLocal() {
+    mode = 'local';
+    banner('Modo local: este contexto se guarda en este navegador. El documento compartido se activa próximamente.');
+    try {
+      var raw = localStorage.getItem(LS_KEY);
+      state = raw ? JSON.parse(raw) : SEED;
+    } catch (e) { state = SEED; }
+    persistLocal(); render(); applyAdmin();
+  }
+  fetch(API, { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error('nostorage'); return r.json(); })
+    .then(function (data) {
+      mode = 'server';
+      state = data.doc || SEED;
+      if (!data.doc) save();
+      render(); applyAdmin();
+    })
+    .catch(loadLocal);
+})();
+</script>
+</body>
+</html>
