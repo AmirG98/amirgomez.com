@@ -17,6 +17,7 @@ const TENURE_OPTIONS = ['Less than 3 months', '3 – 12 months', '1 – 3 years'
 export default function AuditLanding() {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  const [qualified, setQualified] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -25,6 +26,15 @@ export default function AuditLanding() {
 
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+    const isQualified = data.spend === '$2,000 – $5,000' || data.spend === '$5,000+';
+    setQualified(isQualified);
+
+    // Notificación por mail a Amir (Resend, mismo esquema que notify-affluent-quiz)
+    fetch('/api/notify-audit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    }).catch(() => {});
 
     // Meta Pixel: Lead (el pixel se carga globalmente en app/layout.tsx)
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -49,8 +59,10 @@ export default function AuditLanding() {
 
     setSubmitted(true);
     setSending(false);
-    // Confirmación breve y pase a conocer al equipo
-    setTimeout(() => { window.location.href = '/meet-the-team'; }, 3000);
+    if (isQualified) {
+      // Pre-califica: pasa a bookear su slot de auditoría
+      setTimeout(() => { window.location.href = '/meet-amir'; }, 2800);
+    }
   };
 
   return (
@@ -151,14 +163,23 @@ export default function AuditLanding() {
             {submitted ? (
               <div className="thanks" role="status">
                 <div className="check">✓</div>
-                <h2>Request received.</h2>
-                <p><b>Here&rsquo;s what happens next:</b> we review your account details by hand —
-                  every request, no exceptions.</p>
-                <p>Within <b>24 hours</b> you&rsquo;ll get an email with either <b>your audit</b> or
-                  an invite to a <b>quick call</b> to walk through it together.</p>
-                <p>If we&rsquo;re not the right fit, we&rsquo;ll tell you that too.</p>
-                <p className="redirect-note">Taking you to <a href="/meet-the-team">meet the
-                  team</a>&hellip;</p>
+                {qualified ? (
+                  <>
+                    <h2>You pre-qualify.</h2>
+                    <p><b>Next step:</b> book your <b>15-minute audit call</b> — pick the slot
+                      that works for you.</p>
+                    <p className="redirect-note">Taking you to <a href="/meet-amir">the
+                      calendar</a>&hellip;</p>
+                  </>
+                ) : (
+                  <>
+                    <h2>Request received.</h2>
+                    <p><b>Here&rsquo;s what happens next:</b> we review your account details by
+                      hand — every request, no exceptions — and reply by email within
+                      <b> 24 hours</b>.</p>
+                    <p>If we&rsquo;re not the right fit, we&rsquo;ll tell you that too.</p>
+                  </>
+                )}
               </div>
             ) : (
               <>
