@@ -75,8 +75,8 @@
   <div class="secs" id="secs"></div>
   <div id="overlay">
     <div class="editor">
-      <h2 id="ed-title">Edit sección</h2>
-      <p class="hint">Un bullet por línea.</p>
+      <h2 id="ed-title">Edit section</h2>
+      <p class="hint">One bullet per line.</p>
       <textarea id="ed-text"></textarea>
       <div class="actions">
         <button id="ed-save">Save</button>
@@ -93,15 +93,15 @@
   var CLIENT = 'human-at-scale';
   var API = '/api/context/' + CLIENT;
   var LS_KEY = 'context_' + CLIENT;
-  var SEED = {"negocio": ["Human at Scale: agencia de operaciones estratégicas para firmas contables (accounting, CAS, bookkeeping y tax).", "ICP: dueños de firmas de USD 1M a 5M de facturación, 5 a 50 empleados, founder-led, técnicamente excelentes pero atrapados dentro de su propia firma.", "Fundada por Chase Damiano, que construyó Commonwealth Joe hasta ~USD 6M con un equipo de 40."], "oferta": ["Operations Audit: diagnóstico del flujo de trabajo real de la firma, dónde se gana el dinero, dónde están los cuellos de botella y qué está haciendo la tecnología por el equipo o contra él.", "HumanOS: sistema operativo embebido, construido específicamente para firmas contables. Instala estructura de personas, workflows, datos y ritmo operativo.", "Acompañamiento a través de la implementación completa, no un reporte y listo."], "objetivos": ["Crecer la lista de Ops Notes con dueños y operadores de firmas contables en EE.UU.", "Generar demanda calificada para el Operations Assessment.", "Construir prueba social con case studies de firmas contables."], "canales": ["Newsletter Ops Notes como canal principal de nurture.", "LinkedIn Ads y contenido de thought leadership de Chase.", "Webinars y partnerships con comunidades del rubro contable.", "Meta Ads para el funnel del Operations Assessment."], "guardrails": ["Nada de lo que escribe Chase se reescribe con IA. Solo edición de gramática, puntuación, saltos de línea y formato.", "Prueba pública solo con resultados y testimonios ya publicados en humanatscale.com/case-studies. Nunca desde notas internas, transcripts o Slack.", "Sin frameworks con nombre propio inventado. Se llaman por lo que son: workflows, KPIs, cadencias de reunión, claridad de roles.", "Precisión en las cifras: si fue 85%, se dice 85%. Nunca redondear para arriba."], "aprendizajes": ["Las relaciones con partners son de Chase: cualquier pedido a terceros se hace con permiso, no como expectativa.", "Los case studies necesitan un método replicable, no un molde único. Cada firma tiene su propia historia."], "equipo": ["Human at Scale: Chase Damiano (founder y CEO), define estrategia, contenido y relaciones.", "Andrés Espinosa: operaciones y sistemas.", "Equipo de marketing: paid media, newsletter, web y reporting."]};
+  var SEED = {"negocio": ["Human at Scale is a strategic operations agency for accounting firms (accounting, CAS, bookkeeping and tax).", "ICP: firm owners doing USD 1M to 5M in revenue, 5 to 50 employees, founder-led, technically excellent but stuck inside their own firm.", "Founded by Chase Damiano, who built Commonwealth Joe to roughly USD 6M in annual revenue with a team of 40."], "oferta": ["Operations Audit: a read on how work actually flows through the firm, where the money is really made, where things slow down, and what the tech stack is doing for the team versus to it.", "HumanOS: an embedded operating system built specifically for accounting firms. It installs the people structure, workflows, data and operating rhythm.", "We stay through implementation rather than handing over a report and leaving."], "objetivos": ["Grow the Ops Notes list with US accounting firm owners and operators.", "Generate qualified demand for the Operations Assessment.", "Build proof with case studies from accounting firms."], "canales": ["Ops Notes newsletter as the main nurture channel.", "LinkedIn ads and Chase's thought leadership content.", "Webinars and partnerships with communities in the accounting space.", "Meta ads for the Operations Assessment funnel."], "guardrails": ["Nothing Chase writes gets rewritten with AI. Edits are limited to grammar, punctuation, line breaks and formatting.", "Public proof only comes from results and testimonials already published on humanatscale.com/case-studies. Never from internal notes, transcripts or Slack.", "No invented framework names. Things get called what they are: workflows, KPIs, meeting cadences, role clarity.", "Precision on numbers. If it was 85%, it says 85%. Never round up."], "aprendizajes": ["Partner relationships belong to Chase. Anything asked of a third party gets framed as a favor, not an expectation.", "Case studies need a repeatable method rather than a single mold. Every firm has its own story."], "equipo": ["Chase Damiano: founder and CEO. Owns strategy, content and relationships.", "Andres Espinosa: operations and systems.", "Marketing team: paid media, newsletter, web and reporting."]};
   var SECTIONS = [
-    ['negocio', 'El negocio', true],
-    ['oferta', 'Oferta: productos y servicios', true],
-    ['objetivos', 'Objetivos y KPIs', false],
-    ['canales', 'Canales de adquisición', false],
+    ['negocio', 'The business', true],
+    ['oferta', 'Offer: products and services', true],
+    ['objetivos', 'Goals and KPIs', false],
+    ['canales', 'Acquisition channels', false],
     ['guardrails', 'Guardrails', false],
-    ['aprendizajes', 'Aprendizajes validados', false],
-    ['equipo', 'Equipo y roles', true]
+    ['aprendizajes', 'Validated learnings', false],
+    ['equipo', 'Team and roles', true]
   ];
   var mode = 'local';
   var state = null;
@@ -128,9 +128,9 @@
     });
     var f = state.fuentes || [];
     var meta = f.length
-      ? 'Alimentado por ' + f.length + ' reunión' + (f.length === 1 ? '' : 'es') + ' · última: ' + esc((f[f.length - 1] || {}).titulo || '') +
+      ? 'Alimentado por ' + f.length + ' meeting' + (f.length === 1 ? '' : 'es') + ' · last: ' + esc((f[f.length - 1] || {}).titulo || '') +
         (state.actualizado ? ' · actualizado ' + new Date(state.actualizado).toLocaleDateString('es-AR') : '')
-      : 'Contexto inicial cargado por Human at Scale — se irá enriqueciendo con cada reunión procesada.';
+      : 'Initial context loaded by Human at Scale. It gets richer with every meeting processed.';
     document.getElementById('meta').textContent = meta;
   }
   function persistLocal() { try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (e) {} }

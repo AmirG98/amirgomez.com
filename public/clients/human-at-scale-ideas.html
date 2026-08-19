@@ -99,7 +99,7 @@
       <h2 id="ed-title">New idea</h2>
       <label>Title <span class="req">*</span></label>
       <input id="f-titulo" placeholder="Segment the newsletter by firm size">
-      <label>Contexto / cómo funcionaría (opcional)</label>
+      <label>Context / how it would work (optional)</label>
       <textarea id="f-nota" placeholder="Where the idea came from, what problem it solves, how it would work"></textarea>
       <label>Link (opcional)</label>
       <input id="f-url" placeholder="Reference, example, inspiration">
@@ -217,7 +217,7 @@
     if (!c || c.columna === to) return;
     c.columna = to;
     c.actualizado = new Date().toISOString();
-    state.log.push({ ts: c.actualizado, quien: isAdmin ? 'admin' : 'cliente', que: 'movió "' + c.titulo + '" a ' + to });
+    state.log.push({ ts: c.actualizado, quien: isAdmin ? 'admin' : 'cliente', que: 'moved "' + c.titulo + '" a ' + to });
     save(); render();
     notify(c.titulo, 'Idea movida a ' + to);
   }
@@ -238,7 +238,7 @@
       var c = findCard(id);
       if (act === 'move') moveCard(id, e.target.getAttribute('data-to'));
       if (act === 'edit') openEditor(c);
-      if (act === 'archive') { if (confirm('¿Archive "' + c.titulo + '"?')) { c.archivada = true; save(); render(); } }
+      if (act === 'archive') { if (confirm('Archive "' + c.titulo + '"?')) { c.archivada = true; save(); render(); } }
       return;
     }
     openMenus.forEach(function (m) { m.classList.remove('open'); });
@@ -277,7 +277,7 @@
     var titulo = document.getElementById('f-titulo').value.trim();
     if (!titulo) {
       var err = document.getElementById('ed-error');
-      err.textContent = 'Falta el título de la idea.';
+      err.textContent = 'The idea title is missing.';
       err.classList.add('show');
       return;
     }

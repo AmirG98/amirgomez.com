@@ -89,7 +89,7 @@
         <input type="date" id="f-fecha">
       </div>
     </div>
-    <label>Transcripción</label>
+    <label>Transcript</label>
     <textarea id="f-text" placeholder="Paste the full transcript here"></textarea>
     <div class="filebar">
       <input type="file" id="f-file" accept=".txt,.vtt,.srt,text/plain">
@@ -120,7 +120,7 @@
 
   var CTX_LS = 'context_' + CLIENT;
   var CTX_API = '/api/context/' + CLIENT;
-  var CTX_SEED = {"negocio": ["Human at Scale: agencia de operaciones estratégicas para firmas contables (accounting, CAS, bookkeeping y tax).", "ICP: dueños de firmas de USD 1M a 5M de facturación, 5 a 50 empleados, founder-led, técnicamente excelentes pero atrapados dentro de su propia firma.", "Fundada por Chase Damiano, que construyó Commonwealth Joe hasta ~USD 6M con un equipo de 40."], "oferta": ["Operations Audit: diagnóstico del flujo de trabajo real de la firma, dónde se gana el dinero, dónde están los cuellos de botella y qué está haciendo la tecnología por el equipo o contra él.", "HumanOS: sistema operativo embebido, construido específicamente para firmas contables. Instala estructura de personas, workflows, datos y ritmo operativo.", "Acompañamiento a través de la implementación completa, no un reporte y listo."], "objetivos": ["Crecer la lista de Ops Notes con dueños y operadores de firmas contables en EE.UU.", "Generar demanda calificada para el Operations Assessment.", "Construir prueba social con case studies de firmas contables."], "canales": ["Newsletter Ops Notes como canal principal de nurture.", "LinkedIn Ads y contenido de thought leadership de Chase.", "Webinars y partnerships con comunidades del rubro contable.", "Meta Ads para el funnel del Operations Assessment."], "guardrails": ["Nada de lo que escribe Chase se reescribe con IA. Solo edición de gramática, puntuación, saltos de línea y formato.", "Prueba pública solo con resultados y testimonios ya publicados en humanatscale.com/case-studies. Nunca desde notas internas, transcripts o Slack.", "Sin frameworks con nombre propio inventado. Se llaman por lo que son: workflows, KPIs, cadencias de reunión, claridad de roles.", "Precisión en las cifras: si fue 85%, se dice 85%. Nunca redondear para arriba."], "aprendizajes": ["Las relaciones con partners son de Chase: cualquier pedido a terceros se hace con permiso, no como expectativa.", "Los case studies necesitan un método replicable, no un molde único. Cada firma tiene su propia historia."], "equipo": ["Human at Scale: Chase Damiano (founder y CEO), define estrategia, contenido y relaciones.", "Andrés Espinosa: operaciones y sistemas.", "Equipo de marketing: paid media, newsletter, web y reporting."]};
+  var CTX_SEED = {"negocio": ["Human at Scale is a strategic operations agency for accounting firms (accounting, CAS, bookkeeping and tax).", "ICP: firm owners doing USD 1M to 5M in revenue, 5 to 50 employees, founder-led, technically excellent but stuck inside their own firm.", "Founded by Chase Damiano, who built Commonwealth Joe to roughly USD 6M in annual revenue with a team of 40."], "oferta": ["Operations Audit: a read on how work actually flows through the firm, where the money is really made, where things slow down, and what the tech stack is doing for the team versus to it.", "HumanOS: an embedded operating system built specifically for accounting firms. It installs the people structure, workflows, data and operating rhythm.", "We stay through implementation rather than handing over a report and leaving."], "objetivos": ["Grow the Ops Notes list with US accounting firm owners and operators.", "Generate qualified demand for the Operations Assessment.", "Build proof with case studies from accounting firms."], "canales": ["Ops Notes newsletter as the main nurture channel.", "LinkedIn ads and Chase's thought leadership content.", "Webinars and partnerships with communities in the accounting space.", "Meta ads for the Operations Assessment funnel."], "guardrails": ["Nothing Chase writes gets rewritten with AI. Edits are limited to grammar, punctuation, line breaks and formatting.", "Public proof only comes from results and testimonials already published on humanatscale.com/case-studies. Never from internal notes, transcripts or Slack.", "No invented framework names. Things get called what they are: workflows, KPIs, meeting cadences, role clarity.", "Precision on numbers. If it was 85%, it says 85%. Never round up."], "aprendizajes": ["Partner relationships belong to Chase. Anything asked of a third party gets framed as a favor, not an expectation.", "Case studies need a repeatable method rather than a single mold. Every firm has its own story."], "equipo": ["Chase Damiano: founder and CEO. Owns strategy, content and relationships.", "Andres Espinosa: operations and systems.", "Marketing team: paid media, newsletter, web and reporting."]};
   function ingestContext(m) {
     fetch(CTX_API, { cache: 'no-store' })
       .then(function (r) { if (!r.ok) throw 0; return r.json(); })
@@ -209,7 +209,7 @@
     list.innerHTML = '';
     var items = (state.meetings || []).slice().sort(function (a, b) { return (b.fecha || '').localeCompare(a.fecha || ''); });
     if (!items.length) {
-      list.innerHTML = '<p class="empty">Todavía no hay reuniones cargadas. Subí la primera transcripción arriba.</p>';
+      list.innerHTML = '<p class="empty">No meetings yet. Upload the first transcript above.</p>';
       return;
     }
     items.forEach(function (m) {
@@ -221,9 +221,9 @@
         (m.recap ? '<div class="recap">' + mdLite(m.recap) + '</div>' : '') +
         '<div class="actions">' +
           '<button class="btn" data-act="recap">' + (m.recap ? 'Regenerar recap' : 'Generar recap') + '</button>' +
-          '<button class="btn ghost" data-act="toggle">Ver transcripción</button>' +
+          '<button class="btn ghost" data-act="toggle">View transcript</button>' +
           '<button class="btn ghost admin-only" data-act="del" style="color:var(--errcol); border-color:var(--errcol);">Delete</button>' +
-          '<span class="spin" style="display:none;">Generando recap…</span>' +
+          '<span class="spin" style="display:none;">Generating recap…</span>' +
         '</div>' +
         '<div class="transcript">' + esc(m.transcript).slice(0, 200000) + '</div>';
       list.appendChild(el);
@@ -261,7 +261,7 @@
     var text = document.getElementById('f-text').value.trim();
     var err = document.getElementById('form-error');
     if (!titulo || !text) {
-      err.textContent = !titulo ? 'Falta el título de la reunión.' : 'Falta la transcripción (pegala o subí el archivo).';
+      err.textContent = !titulo ? 'The meeting title is missing.' : 'The transcript is missing (paste it or upload the file).';
       err.classList.add('show');
       return;
     }
@@ -279,16 +279,16 @@
     var m = find(id);
     if (act === 'toggle') {
       card.querySelector('.transcript').classList.toggle('open');
-      e.target.textContent = card.querySelector('.transcript').classList.contains('open') ? 'Ocultar transcripción' : 'Ver transcripción';
+      e.target.textContent = card.querySelector('.transcript').classList.contains('open') ? 'Hide transcript' : 'View transcript';
     }
     if (act === 'del') {
-      if (confirm('¿Delete "' + m.titulo + '" y su recap?')) {
+      if (confirm('Delete "' + m.titulo + '" y su recap?')) {
         state.meetings = state.meetings.filter(function (x) { return x.id !== id; });
         save(); render();
       }
     }
     if (act === 'recap') {
-      if (aiAvailable === false) { alert('El recap automático se activa cuando Human at Scale configure la IA (ANTHROPIC_API_KEY). Mientras tanto podés trabajar la transcripción manualmente.'); return; }
+      if (aiAvailable === false) { alert('Automatic recaps turn on once the AI key is configured (ANTHROPIC_API_KEY). Until then you can work the transcript manually.'); return; }
       var btn = e.target;
       var spin = card.querySelector('.spin');
       btn.disabled = true; spin.style.display = 'inline-block';
@@ -311,9 +311,9 @@
         .catch(function (er) {
           btn.disabled = false; spin.style.display = 'none';
           if (er.message === 'ai_off') {
-            alert('El recap automático todavía no está activo: falta configurar la IA en el servidor (ANTHROPIC_API_KEY en Vercel). La transcripción quedó guardada.');
+            alert('Automatic recaps are not active yet, the AI key still needs to be configured on the server (ANTHROPIC_API_KEY in Vercel). The transcript was saved.');
           } else {
-            alert('No se pudo generar el recap. Probá de nuevo en un rato.');
+            alert('The recap could not be generated. Try again in a moment.');
           }
         });
     }

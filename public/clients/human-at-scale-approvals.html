@@ -326,7 +326,7 @@
     if (!c || c.columna === to) return;
     c.columna = to;
     c.actualizado = new Date().toISOString();
-    state.log.push({ ts: c.actualizado, quien: isAdmin ? 'admin' : 'cliente', que: 'movió "' + c.titulo + '" a ' + to });
+    state.log.push({ ts: c.actualizado, quien: isAdmin ? 'admin' : 'cliente', que: 'moved "' + c.titulo + '" a ' + to });
     save(); render();
     notify(c.titulo, 'Movido a ' + to);
   }
@@ -349,7 +349,7 @@
       if (act === 'feedback') { e.preventDefault(); openFeedback(c); }
       if (act === 'edit') openEditor(c);
       if (act === 'archive') {
-        if (confirm('¿Archive "' + c.titulo + '"?')) { c.archivada = true; save(); render(); }
+        if (confirm('Archive "' + c.titulo + '"?')) { c.archivada = true; save(); render(); }
       }
       return;
     }
@@ -408,7 +408,7 @@
     var txt = document.getElementById('fb-text').value.trim();
     if (!txt) {
       var fe = document.getElementById('fb-error');
-      fe.textContent = 'Escribí el feedback antes de enviar.';
+      fe.textContent = 'Write your feedback before sending.';
       fe.style.display = 'block';
       return;
     }
@@ -429,7 +429,7 @@
     var url = document.getElementById('f-url').value.trim();
     var err = document.getElementById('ed-error');
     if (!titulo || !url) {
-      err.textContent = !titulo ? 'Falta el título del recurso.' : 'Falta el link al recurso.';
+      err.textContent = !titulo ? 'The asset title is missing.' : 'The asset link is missing.';
       err.classList.add('show');
       return;
     }
