@@ -115,10 +115,10 @@ export default function MultiStepForm({ variant, isOpen, onClose, onSubmit, loca
     try {
       const finalData = { ...formData, email, status: 'completed' };
       await onSubmit(finalData);
-      setIsSubmitted(true);
+      // onSubmit redirige a /meet-amir; el botón queda en estado enviando hasta navegar
+      return;
     } catch (error) {
       console.error('Form submission error:', error);
-    } finally {
       setIsSubmitting(false);
     }
   };
