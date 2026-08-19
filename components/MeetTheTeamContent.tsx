@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 
-export default function MeetTheTeamContent() {
+export default function MeetTheTeamContent({ embedded = false }: { embedded?: boolean }) {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white overflow-hidden relative">
       {/* Animated Background - Gold/Luxury theme */}
@@ -13,6 +13,7 @@ export default function MeetTheTeamContent() {
       </div>
 
       {/* Header */}
+      {!embedded && (
       <header className="relative z-10 border-b border-white/10 bg-[#0a0a0a]/80 backdrop-blur-xl">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <a href="/" className="text-xl font-bold bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
@@ -24,8 +25,10 @@ export default function MeetTheTeamContent() {
           </div>
         </div>
       </header>
+      )}
 
       {/* Important Notice Banner */}
+      {!embedded && (
       <div className="relative z-10 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 border-y border-amber-500/30">
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 md:py-6">
           <div className="flex items-start gap-4">
@@ -42,6 +45,7 @@ export default function MeetTheTeamContent() {
           </div>
         </div>
       </div>
+      )}
 
       <main className="relative z-10 max-w-6xl mx-auto px-4 md:px-6 py-8 md:py-12">
         {/* Hero Section */}

@@ -8,15 +8,29 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+// Evento "Growth Plan w/Expert" (único calendario habilitado para audits)
 const CAL =
-  "https://calendly.com/amir-amirgomez?embed_domain=www.weareaplus.net&embed_type=Inline" +
+  "https://calendly.com/amir-amirgomez/30min?embed_domain=www.weareaplus.net&embed_type=Inline" +
   "&hide_gdpr_banner=1&primary_color=f59e0b&background_color=0a0a0a&text_color=ffffff";
 
 export default function MeetAmirPage() {
   return (
     <div className="bg-[#0a0a0a]">
+      {/* Un solo header para toda la página */}
+      <header className="relative z-10 border-b border-white/10 bg-[#0a0a0a]/80 backdrop-blur-xl">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+          <a href="/" className="text-xl font-bold bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+            A+Growth
+          </a>
+          <div className="flex items-center gap-2 text-sm text-white/50">
+            <span className="w-2 h-2 bg-amber-500 rounded-full animate-pulse" />
+            <span>Full-Funnel Marketing</span>
+          </div>
+        </div>
+      </header>
+
       {/* Calendario arriba */}
-      <section className="relative z-10 max-w-6xl mx-auto px-4 md:px-6 pt-10 pb-6">
+      <section className="relative z-10 max-w-6xl mx-auto px-4 md:px-6 pt-10 pb-2">
         <p className="text-amber-400 text-xs font-semibold tracking-[0.3em] uppercase mb-3">
           Free Meta Ads Audit
         </p>
@@ -30,8 +44,9 @@ export default function MeetAmirPage() {
           />
         </div>
       </section>
-      {/* Todo lo de meet-the-team debajo */}
-      <MeetTheTeamContent />
+
+      {/* Todo lo de meet-the-team debajo, sin header ni banner duplicados */}
+      <MeetTheTeamContent embedded />
     </div>
   );
 }
