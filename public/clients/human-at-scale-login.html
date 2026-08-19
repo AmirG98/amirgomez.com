@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +7,9 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
 <style>
-  :root { --navy: #2b3947; --ink: #26303a; --ink-2: #5c6670; --ink-3: #98a0a8; --paper: #faf9f6; --hairline: #e4e0d7; --gold: #a8874f; }
+  :root { --navy: #130D18; --ink: #1D1226; --ink-2: #6B6478; --ink-3: #6B6478; --paper: #FFFFFF; --hairline: #E6E1EB; --gold: #8005E0; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: 'Inter', -apple-system, sans-serif; background: var(--paper); color: var(--ink);
@@ -30,7 +30,7 @@
     font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
     background: var(--navy); color: #fff; border: none; transition: background .25s;
   }
-  button:hover { background: #1f2b37; }
+  button:hover { background: #130D18; }
   .error { display: none; font-size: 13px; color: #a33; margin-top: 14px; }
   .error.show { display: block; }
 </style>
@@ -38,32 +38,19 @@
 <body>
 <div class="box">
   <div id="burst"></div>
-  <div class="wordmark">HUMAN AT SCALE</div>
-  <div class="wordmark-sub">CLIENT PORTAL</div>
+  <div class="wordmark">human at scale</div>
+  <div class="wordmark-sub">client portal</div>
   <div class="rule"></div>
-  <p class="msg">Este reporte es privado. Ingresá la clave para acceder.</p>
+  <p class="msg">This portal is private. Enter your access key to continue.</p>
   <form id="f">
-    <input type="password" id="pass" placeholder="Clave de acceso" autocomplete="off" autofocus>
-    <button type="submit">Entrar</button>
+    <input type="password" id="pass" placeholder="Access key" autocomplete="off" autofocus>
+    <button type="submit">Enter</button>
   </form>
-  <p class="error" id="err">Clave incorrecta. Probá de nuevo.</p>
+  <p class="error" id="err">Wrong key. Probá de nuevo.</p>
 </div>
 <script>
 (function () {
-  var ns = 'http://www.w3.org/2000/svg';
-  var svg = document.createElementNS(ns, 'svg');
-  svg.setAttribute('width', 58); svg.setAttribute('height', 58);
-  svg.setAttribute('viewBox', '0 0 100 100'); svg.setAttribute('aria-hidden', 'true');
-  var lengths = [48, 24, 35, 24];
-  for (var i = 0; i < 48; i++) {
-    var a = (i * 7.5 - 90) * Math.PI / 180;
-    var line = document.createElementNS(ns, 'line');
-    line.setAttribute('x1', 50 + 12 * Math.cos(a)); line.setAttribute('y1', 50 + 12 * Math.sin(a));
-    line.setAttribute('x2', 50 + lengths[i % 4] * Math.cos(a)); line.setAttribute('y2', 50 + lengths[i % 4] * Math.sin(a));
-    line.setAttribute('stroke', '#2b3947'); line.setAttribute('stroke-width', '1');
-    svg.appendChild(line);
-  }
-  document.getElementById('burst').appendChild(svg);
+  document.getElementById('burst').innerHTML = '<svg width="46" height="46" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16.9798 0C26.5114 0.0251279 34.0285 7.84764 33.9378 17.1682C33.8471 26.4781 26.1901 34.0976 16.7859 34C7.50993 33.9024 -0.0785035 26.25 0.000613089 16.8463C0.0787648 7.68914 7.52151 0.0173962 16.9798 0ZM16.9875 1.70773C8.5809 1.71063 1.74118 8.51643 1.70644 16.9314C1.67171 25.5097 8.63686 32.2536 16.893 32.2932C25.2099 32.3329 32.2107 25.5899 32.231 17.0367C32.2512 8.57538 25.4009 1.72803 16.9866 1.70773H16.9875Z" fill="#130D18"/><path d="M17.0808 19.3185C20.5909 19.3611 23.6697 20.5314 26.2998 22.8674C26.8083 23.3187 27.2753 23.8135 27.7066 24.3403C28.0336 24.7394 28.0414 25.1318 27.7172 25.5396C25.7045 28.0689 23.1361 29.7273 19.9888 30.4724C19.162 30.6677 18.3235 30.7788 17.4735 30.8088C13.6508 30.945 10.325 29.7205 7.50192 27.142C7.05327 26.7322 6.64997 26.2703 6.24473 25.8151C5.89353 25.4208 5.89643 25.0177 6.2293 24.6012C8.37606 21.9154 11.1249 20.2183 14.5037 19.5611C15.3538 19.3959 16.2115 19.3195 17.0798 19.3195L17.0808 19.3185ZM17.077 21.0408C16.3553 21.033 15.6442 21.1026 14.9369 21.2302C12.5731 21.6564 10.5228 22.704 8.7755 24.3499C8.26993 24.8264 8.27475 25.5454 8.79769 26.0006C9.16337 26.3196 9.53965 26.6308 9.9362 26.9101C11.9189 28.3095 14.1332 29.0256 16.5511 29.1088C17.4079 29.1378 18.2589 29.0604 19.1031 28.9C21.4129 28.4603 23.4159 27.4252 25.1411 25.8267C25.6611 25.3444 25.6351 24.5712 25.1198 24.118C22.8168 22.0923 20.1345 21.0756 17.077 21.0408Z" fill="#130D18"/><path d="M3.21875 16.3419C3.29015 12.6104 5.34428 7.68627 10.2727 4.9193C14.9048 2.31856 20.6524 2.63942 24.9913 5.74852C27.166 7.30645 28.7609 9.33408 29.7739 11.814C30.3191 13.1477 30.6442 14.5346 30.7426 16.0258C30.6433 15.9563 30.5892 15.9176 30.5352 15.8789C30.0325 15.5204 29.5356 15.1551 29.0252 14.8081C28.8911 14.7173 28.8245 14.6148 28.7927 14.464C28.4039 12.6258 27.6281 10.9664 26.4568 9.50224C24.5532 7.12379 22.1035 5.64511 19.1067 5.0836C18.1149 4.89804 17.1134 4.84778 16.1128 4.92606C13.3264 5.14158 10.8882 6.19019 8.82541 8.08155C7.01828 9.73806 5.82574 11.7676 5.23815 14.1519C5.1793 14.3916 5.13974 14.6361 5.07895 14.8748C5.06159 14.9424 5.01528 15.0169 4.96028 15.0574C4.3862 15.4866 3.80826 15.9099 3.21971 16.3428L3.21875 16.3419Z" fill="#130D18"/><path d="M29.1541 23.4482C28.7334 22.9824 28.3311 22.5369 27.9394 22.1029C28.1227 21.6023 28.3137 21.1142 28.4806 20.6175C28.5887 20.2976 28.6996 19.9748 28.6948 19.6269C28.6871 19.046 28.4584 18.5753 27.9972 18.2303C27.1038 17.5644 26.1486 16.9991 25.1462 16.5139C23.4895 15.7127 21.7499 15.1773 19.9331 14.8922C18.648 14.6912 17.3532 14.6303 16.0584 14.7134C12.3929 14.9492 9.07777 16.1611 6.13019 18.3627C5.95845 18.4913 5.78671 18.6314 5.65453 18.7976C5.29079 19.2548 5.18079 19.7747 5.33806 20.3449C5.49919 20.9267 5.71724 21.4873 5.96328 22.0372C5.99415 22.1068 6.02503 22.1764 6.0559 22.2469C5.65453 22.706 5.25991 23.1564 4.84889 23.6251C4.76881 23.4782 4.69162 23.3458 4.62312 23.2095C3.95835 21.8893 3.50487 20.5015 3.29936 19.0354C3.25402 18.7107 3.35918 18.4458 3.59943 18.2265C4.31341 17.5751 5.06887 16.9759 5.86872 16.4327C8.15828 14.8786 10.663 13.8407 13.378 13.3168C14.1731 13.1632 14.9748 13.0656 15.7834 13.0095C16.6083 12.9515 17.4342 12.9428 18.2582 12.9892C20.4754 13.1158 22.6202 13.5894 24.6811 14.4254C26.6774 15.2353 28.499 16.3361 30.144 17.7287C30.2202 17.7935 30.2974 17.8582 30.3707 17.9269C30.556 18.0979 30.6689 18.3086 30.6419 18.5638C30.6004 18.9465 30.5579 19.3311 30.4836 19.709C30.2386 20.9499 29.8324 22.1377 29.2535 23.2636C29.2255 23.3178 29.1956 23.3699 29.1531 23.4463L29.1541 23.4482Z" fill="#130D18"/></svg>';
 
   var COOKIE = 'client_auth_human-at-scale';
   if (document.cookie.indexOf(COOKIE + '=') !== -1) {

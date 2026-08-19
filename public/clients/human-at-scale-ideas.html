@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Human at Scale — Banco de ideas</title>
+<title>Human at Scale — Idea Bank</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
 <style>
-  :root { --navy: #2b3947; --navy-deep: #1f2b37; --ink: #26303a; --ink-2: #5c6670; --ink-3: #98a0a8; --paper: #faf9f6; --paper-2: #f3f1ec; --hairline: #e4e0d7; --gold: #a8874f; --gold-soft: #f4ede1; --panel: #ffffff; --field: #ffffff; --btnink: #ffffff; --titleink: #26303a; --errcol: #a33c3c; --serif: 'Marcellus', serif; --sans: 'Inter', -apple-system, sans-serif; --btnfont: var(--sans); }
+  :root { --navy: #130D18; --navy-deep: #130D18; --ink: #1D1226; --ink-2: #6B6478; --ink-3: #6B6478; --paper: #FFFFFF; --paper-2: #F6F4F8; --hairline: #E6E1EB; --gold: #8005E0; --gold-soft: #F3E8FF; --panel: #ffffff; --field: #ffffff; --btnink: #ffffff; --titleink: #1D1226; --errcol: #a33c3c; --serif: 'Satoshi','Satoshi Variable',-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif; --sans: 'Satoshi','Satoshi Variable',-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif; --btnfont: var(--sans); }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
   .page { max-width: 880px; margin: 0 auto; padding: 40px 24px 64px; }
@@ -78,56 +78,56 @@
 <div class="page">
   <header>
     <svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true" id="uburst"></svg>
-    <div class="wordmark">HUMAN AT SCALE</div>
-    <div class="wordmark-sub">CLIENT PORTAL</div>
+    <div class="wordmark">human at scale</div>
+    <div class="wordmark-sub">client portal</div>
     <script>
-    (function(){var ns='http://www.w3.org/2000/svg';var svg=document.getElementById('uburst');var L=[48,24,35,24];for(var i=0;i<48;i++){var a=(i*7.5-90)*Math.PI/180;var l=document.createElementNS(ns,'line');l.setAttribute('x1',50+12*Math.cos(a));l.setAttribute('y1',50+12*Math.sin(a));l.setAttribute('x2',50+L[i%4]*Math.cos(a));l.setAttribute('y2',50+L[i%4]*Math.sin(a));l.setAttribute('stroke','#2b3947');l.setAttribute('stroke-width','1');svg.appendChild(l);}})();
+    (function(){var ns='http://www.w3.org/2000/svg';var svg=document.getElementById('uburst');var L=[48,24,35,24];for(var i=0;i<48;i++){var a=(i*7.5-90)*Math.PI/180;var l=document.createElementNS(ns,'line');l.setAttribute('x1',50+12*Math.cos(a));l.setAttribute('y1',50+12*Math.sin(a));l.setAttribute('x2',50+L[i%4]*Math.cos(a));l.setAttribute('y2',50+L[i%4]*Math.sin(a));l.setAttribute('stroke','#130D18');l.setAttribute('stroke-width','1');svg.appendChild(l);}})();
     </script>
-    <h1>Banco de ideas</h1>
-    <p class="sub">Un lugar para dejar ideas sueltas e implementarlas a futuro. Sumá la tuya con el botón — puede llevar contexto, links o una imagen — y cuando una idea se lleva a la práctica, pasa a "Aplicadas".</p>
-    <a class="backlink" href="/clients/human-at-scale">← Volver al portal</a>
+    <h1>Idea Bank</h1>
+    <p class="sub">A place to capture ideas as they come up and act on them later. Add yours with the button. Each one can carry context, a link or an image. When an idea gets put into practice, move it to Applied.</p>
+    <a class="backlink" href="/clients/human-at-scale">← Back to portal</a>
   </header>
 
-  <div id="banner">Modo local: las ideas se guardan en este navegador y we get an email notification for every change. El banco compartido en vivo se activa próximamente.</div>
+  <div id="banner">Local mode: ideas are stored in this browser and we get an email notification for every change. The shared live bank is coming soon.</div>
 
   <div class="board-head">
-    <button id="btn-new">+ Nueva idea</button>
+    <button id="btn-new">+ New idea</button>
   </div>
 
   <div id="overlay">
     <div class="editor">
-      <h2 id="ed-title">Nueva idea</h2>
-      <label>Título <span class="req">*</span></label>
-      <input id="f-titulo" placeholder="Probar formato carrusel con testimonios">
+      <h2 id="ed-title">New idea</h2>
+      <label>Title <span class="req">*</span></label>
+      <input id="f-titulo" placeholder="Segment the newsletter by firm size">
       <label>Contexto / cómo funcionaría (opcional)</label>
-      <textarea id="f-nota" placeholder="De dónde sale la idea, qué problema resuelve, cómo se implementaría…"></textarea>
+      <textarea id="f-nota" placeholder="Where the idea came from, what problem it solves, how it would work"></textarea>
       <label>Link (opcional)</label>
-      <input id="f-url" placeholder="Referencia, ejemplo, inspiración…">
+      <input id="f-url" placeholder="Reference, example, inspiration">
       <label>Imagen (URL, opcional)</label>
-      <input id="f-img" placeholder="Link a una imagen (se muestra en la tarjeta)">
+      <input id="f-img" placeholder="Image link (shown on the card)">
       <label>Estado</label>
-      <select id="f-col"><option>Pendientes</option><option>Aplicadas</option></select>
+      <select id="f-col"><option>Open</option><option>Applied</option></select>
       <p id="ed-error"></p>
       <div class="actions">
-        <button id="ed-save">Guardar</button>
-        <button id="ed-cancel">Cancelar</button>
+        <button id="ed-save">Save</button>
+        <button id="ed-cancel">Cancel</button>
       </div>
     </div>
   </div>
 
   <div class="board">
     <div class="col">
-      <h2>Pendientes <span class="count" id="c-0"></span></h2>
-      <div class="cards" data-col="Pendientes"></div>
+      <h2>Open <span class="count" id="c-0"></span></h2>
+      <div class="cards" data-col="Open"></div>
     </div>
     <div class="col">
-      <h2>Aplicadas <span class="count" id="c-1"></span></h2>
-      <div class="cards" data-col="Aplicadas"></div>
+      <h2>Applied <span class="count" id="c-1"></span></h2>
+      <div class="cards" data-col="Applied"></div>
     </div>
   </div>
 
   <footer>
-    Human at Scale · <a href="#" id="admin-toggle">modo admin</a>
+    Human at Scale · <a href="#" id="admin-toggle">admin mode</a>
   </footer>
 </div>
 
@@ -138,22 +138,22 @@
   var API = '/api/approvals/' + CLIENT + '?board=ideas';
   var NOTIFY_API = '/api/approvals/' + CLIENT;
   var LS_KEY = 'ideas_' + CLIENT;
-  var COLS = ['Pendientes', 'Aplicadas'];
+  var COLS = ['Open', 'Applied'];
   var mode = 'local';
   var state = null;
   var isAdmin = false;
   try { isAdmin = localStorage.getItem('approvals_' + CLIENT + '_admin') === '1'; } catch (e) {}
 
   function seed() {
-    return { cards: [{ id: 'i-' + Date.now(), titulo: 'Idea de ejemplo', nota: 'Editala o archivala desde modo admin. Las ideas pueden llevar contexto, un link de referencia y una imagen.', url: '', img: '', columna: 'Pendientes', actualizado: new Date().toISOString() }], log: [] };
+    return { cards: [{ id: 'i-' + Date.now(), titulo: 'Idea de ejemplo', nota: 'Editala o archivala desde admin mode. Las ideas pueden llevar contexto, un link de referencia y una imagen.', url: '', img: '', columna: 'Open', actualizado: new Date().toISOString() }], log: [] };
   }
 
   function relTime(iso) {
     if (!iso) return '';
     var d = Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
-    if (d <= 0) return 'hoy';
-    if (d === 1) return 'ayer';
-    return 'hace ' + d + ' días';
+    if (d <= 0) return 'today';
+    if (d === 1) return 'yesterday';
+    return d + ' days ago';
   }
   function extUrl(u) {
     u = String(u || '').trim();
@@ -189,8 +189,8 @@
             COLS.filter(function (x) { return x !== col; }).map(function (x) {
               return '<button data-act="move" data-to="' + esc(x) + '">Mover a ' + esc(x.toLowerCase()) + '</button>';
             }).join('') +
-            '<button data-act="edit" class="sep">Editar</button>' +
-            '<div class="admin-only"><button data-act="archive" class="sep" style="color:var(--errcol)">Archivar (admin)</button></div>' +
+            '<button data-act="edit" class="sep">Edit</button>' +
+            '<div class="admin-only"><button data-act="archive" class="sep" style="color:var(--errcol)">Archive (admin)</button></div>' +
           '</div>';
         wrap.appendChild(el);
       });
@@ -209,7 +209,7 @@
   }
   function notify(titulo, accion, detalle) {
     if (isAdmin) return;
-    fetch(NOTIFY_API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ titulo: titulo, accion: '[Banco de ideas] ' + accion, detalle: detalle || '' }) }).catch(function () {});
+    fetch(NOTIFY_API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ titulo: titulo, accion: '[Idea Bank] ' + accion, detalle: detalle || '' }) }).catch(function () {});
   }
   function findCard(id) { return state.cards.filter(function (c) { return c.id === id; })[0]; }
   function moveCard(id, to) {
@@ -238,7 +238,7 @@
       var c = findCard(id);
       if (act === 'move') moveCard(id, e.target.getAttribute('data-to'));
       if (act === 'edit') openEditor(c);
-      if (act === 'archive') { if (confirm('¿Archivar "' + c.titulo + '"?')) { c.archivada = true; save(); render(); } }
+      if (act === 'archive') { if (confirm('¿Archive "' + c.titulo + '"?')) { c.archivada = true; save(); render(); } }
       return;
     }
     openMenus.forEach(function (m) { m.classList.remove('open'); });
@@ -257,12 +257,12 @@
   var overlay = document.getElementById('overlay');
   function openEditor(card) {
     editingId = card ? card.id : null;
-    document.getElementById('ed-title').textContent = card ? 'Editar idea' : 'Nueva idea';
+    document.getElementById('ed-title').textContent = card ? 'Edit idea' : 'New idea';
     document.getElementById('f-titulo').value = card ? card.titulo : '';
     document.getElementById('f-nota').value = card ? (card.nota || '') : '';
     document.getElementById('f-url').value = card ? (card.url || '') : '';
     document.getElementById('f-img').value = card ? (card.img || '') : '';
-    document.getElementById('f-col').value = card ? card.columna : 'Pendientes';
+    document.getElementById('f-col').value = card ? card.columna : 'Open';
     document.getElementById('ed-error').classList.remove('show');
     overlay.classList.add('open');
     document.getElementById('f-titulo').focus();
@@ -298,7 +298,7 @@
 
   function applyAdmin() {
     document.body.classList.toggle('admin', isAdmin);
-    document.getElementById('admin-toggle').textContent = isAdmin ? 'salir de modo admin' : 'modo admin';
+    document.getElementById('admin-toggle').textContent = isAdmin ? 'salir de admin mode' : 'admin mode';
   }
   document.getElementById('admin-toggle').addEventListener('click', function (e) {
     e.preventDefault();

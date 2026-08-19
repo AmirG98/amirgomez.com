@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Human at Scale — Meeting transcripts</title>
+<title>Human at Scale — Meeting Transcripts</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
 <style>
-  :root { --navy: #2b3947; --navy-deep: #1f2b37; --ink: #26303a; --ink-2: #5c6670; --ink-3: #98a0a8; --paper: #faf9f6; --paper-2: #f3f1ec; --hairline: #e4e0d7; --gold: #a8874f; --gold-soft: #f4ede1; --panel: #ffffff; --field: #faf9f6; --btnink: #ffffff; --titleink: #26303a; --errcol: #a33c3c; --serif: 'Marcellus', serif; --sans: 'Inter', -apple-system, sans-serif; --btnfont: var(--sans); }
+  :root { --navy: #130D18; --navy-deep: #130D18; --ink: #1D1226; --ink-2: #6B6478; --ink-3: #6B6478; --paper: #FFFFFF; --paper-2: #F6F4F8; --hairline: #E6E1EB; --gold: #8005E0; --gold-soft: #F3E8FF; --panel: #ffffff; --field: #FFFFFF; --btnink: #ffffff; --titleink: #1D1226; --errcol: #a33c3c; --serif: 'Satoshi','Satoshi Variable',-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif; --sans: 'Satoshi','Satoshi Variable',-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif; --btnfont: var(--sans); }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
   .page { max-width: 880px; margin: 0 auto; padding: 40px 24px 64px; }
@@ -65,24 +65,24 @@
 <div class="page">
   <header>
     <svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true" id="uburst"></svg>
-    <div style="font-family:'Jost',sans-serif; font-weight:300; font-size:20px; letter-spacing:0.52em; text-indent:0.52em; color:#2b3947; margin-top:8px;">HUMAN AT SCALE</div>
-    <div style="font-family:'Jost',sans-serif; font-weight:400; font-size:8.5px; letter-spacing:0.6em; text-indent:0.6em; color:#2b3947; opacity:0.75; margin-top:2px;">CLIENT PORTAL</div>
+    <div style="font-family:'Jost',sans-serif; font-weight:300; font-size:20px; letter-spacing:0.52em; text-indent:0.52em; color:#130D18; margin-top:8px;">HUMAN AT SCALE</div>
+    <div style="font-family:'Jost',sans-serif; font-weight:400; font-size:8.5px; letter-spacing:0.6em; text-indent:0.6em; color:#130D18; opacity:0.75; margin-top:2px;">CLIENT PORTAL</div>
     <script>
-    (function(){var ns='http://www.w3.org/2000/svg';var svg=document.getElementById('uburst');var L=[48,24,35,24];for(var i=0;i<48;i++){var a=(i*7.5-90)*Math.PI/180;var l=document.createElementNS(ns,'line');l.setAttribute('x1',50+12*Math.cos(a));l.setAttribute('y1',50+12*Math.sin(a));l.setAttribute('x2',50+L[i%4]*Math.cos(a));l.setAttribute('y2',50+L[i%4]*Math.sin(a));l.setAttribute('stroke','#2b3947');l.setAttribute('stroke-width','1');svg.appendChild(l);}})();
+    (function(){var ns='http://www.w3.org/2000/svg';var svg=document.getElementById('uburst');var L=[48,24,35,24];for(var i=0;i<48;i++){var a=(i*7.5-90)*Math.PI/180;var l=document.createElementNS(ns,'line');l.setAttribute('x1',50+12*Math.cos(a));l.setAttribute('y1',50+12*Math.sin(a));l.setAttribute('x2',50+L[i%4]*Math.cos(a));l.setAttribute('y2',50+L[i%4]*Math.sin(a));l.setAttribute('stroke','#130D18');l.setAttribute('stroke-width','1');svg.appendChild(l);}})();
     </script>
-    <h1>Meeting transcripts</h1>
-    <p class="sub">Subí o pegá la transcripción de cada reunión (Fireflies, Zoom, Meet) y generá el recap automático: resumen, decisiones, accionables y temas abiertos.</p>
-    <a class="backlink" href="/clients/human-at-scale">← Volver al portal</a>
+    <h1>Meeting Transcripts</h1>
+    <p class="sub">Upload or paste a transcript and get an automatic recap.</p>
+    <a class="backlink" href="/clients/human-at-scale">← Back to portal</a>
   </header>
 
   <div id="banner"></div>
 
   <div class="panel">
-    <h2>Nueva reunión</h2>
+    <h2>New meeting</h2>
     <div class="row2">
       <div>
-        <label>Título</label>
-        <input type="text" id="f-titulo" placeholder="Reunión semanal — resultados y próximos pasos">
+        <label>Title</label>
+        <input type="text" id="f-titulo" placeholder="Weekly sync: results and next steps">
       </div>
       <div>
         <label>Fecha</label>
@@ -90,19 +90,19 @@
       </div>
     </div>
     <label>Transcripción</label>
-    <textarea id="f-text" placeholder="Pegá acá la transcripción completa…"></textarea>
+    <textarea id="f-text" placeholder="Paste the full transcript here"></textarea>
     <div class="filebar">
       <input type="file" id="f-file" accept=".txt,.vtt,.srt,text/plain">
-      <span>o subí el archivo exportado (.txt · .vtt · .srt)</span>
+      <span>or upload the exported file (.txt · .vtt · .srt)</span>
     </div>
     <p id="form-error"></p>
-    <div style="margin-top:16px;"><button class="btn" id="f-add">Guardar reunión</button></div>
+    <div style="margin-top:16px;"><button class="btn" id="f-add">Save meeting</button></div>
   </div>
 
   <div id="list"></div>
 
   <footer>
-    Human at Scale · <a href="#" id="admin-toggle">modo admin</a>
+    Human at Scale · <a href="#" id="admin-toggle">admin mode</a>
   </footer>
 </div>
 
@@ -222,7 +222,7 @@
         '<div class="actions">' +
           '<button class="btn" data-act="recap">' + (m.recap ? 'Regenerar recap' : 'Generar recap') + '</button>' +
           '<button class="btn ghost" data-act="toggle">Ver transcripción</button>' +
-          '<button class="btn ghost admin-only" data-act="del" style="color:var(--errcol); border-color:var(--errcol);">Eliminar</button>' +
+          '<button class="btn ghost admin-only" data-act="del" style="color:var(--errcol); border-color:var(--errcol);">Delete</button>' +
           '<span class="spin" style="display:none;">Generando recap…</span>' +
         '</div>' +
         '<div class="transcript">' + esc(m.transcript).slice(0, 200000) + '</div>';
@@ -282,7 +282,7 @@
       e.target.textContent = card.querySelector('.transcript').classList.contains('open') ? 'Ocultar transcripción' : 'Ver transcripción';
     }
     if (act === 'del') {
-      if (confirm('¿Eliminar "' + m.titulo + '" y su recap?')) {
+      if (confirm('¿Delete "' + m.titulo + '" y su recap?')) {
         state.meetings = state.meetings.filter(function (x) { return x.id !== id; });
         save(); render();
       }
@@ -321,7 +321,7 @@
 
   function applyAdmin() {
     document.body.classList.toggle('admin', isAdmin);
-    document.getElementById('admin-toggle').textContent = isAdmin ? 'salir de modo admin' : 'modo admin';
+    document.getElementById('admin-toggle').textContent = isAdmin ? 'salir de admin mode' : 'admin mode';
   }
   document.getElementById('admin-toggle').addEventListener('click', function (e) {
     e.preventDefault();

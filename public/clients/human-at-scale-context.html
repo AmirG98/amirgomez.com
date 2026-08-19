@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Human at Scale — Contexto del cliente</title>
+<title>Human at Scale — Client Context</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
 <style>
-  :root { --navy: #2b3947; --navy-deep: #1f2b37; --ink: #26303a; --ink-2: #5c6670; --ink-3: #98a0a8; --paper: #faf9f6; --hairline: #e4e0d7; --gold: #a8874f; --gold-soft: #f4ede1; --panel: #ffffff; --field: #faf9f6; --btnink: #ffffff; --titleink: #26303a; --serif: 'Marcellus', serif; --sans: 'Inter', -apple-system, sans-serif; --btnfont: var(--sans); }
+  :root { --navy: #130D18; --navy-deep: #130D18; --ink: #1D1226; --ink-2: #6B6478; --ink-3: #6B6478; --paper: #FFFFFF; --hairline: #E6E1EB; --gold: #8005E0; --gold-soft: #F3E8FF; --panel: #ffffff; --field: #FFFFFF; --btnink: #ffffff; --titleink: #1D1226; --serif: 'Satoshi','Satoshi Variable',-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif; --sans: 'Satoshi','Satoshi Variable',-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif; --btnfont: var(--sans); }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
   .page { max-width: 880px; margin: 0 auto; padding: 40px 24px 64px; }
@@ -56,36 +56,36 @@
 <div class="page">
   <header>
     <svg width="46" height="46" viewBox="0 0 100 100" aria-hidden="true" id="uburst"></svg>
-    <div style="font-family:'Jost',sans-serif; font-weight:300; font-size:20px; letter-spacing:0.52em; text-indent:0.52em; color:#2b3947; margin-top:8px;">HUMAN AT SCALE</div>
-    <div style="font-family:'Jost',sans-serif; font-weight:400; font-size:8.5px; letter-spacing:0.6em; text-indent:0.6em; color:#2b3947; opacity:0.75; margin-top:2px;">CLIENT PORTAL</div>
+    <div style="font-family:'Jost',sans-serif; font-weight:300; font-size:20px; letter-spacing:0.52em; text-indent:0.52em; color:#130D18; margin-top:8px;">HUMAN AT SCALE</div>
+    <div style="font-family:'Jost',sans-serif; font-weight:400; font-size:8.5px; letter-spacing:0.6em; text-indent:0.6em; color:#130D18; opacity:0.75; margin-top:2px;">CLIENT PORTAL</div>
     <script>
-    (function(){var ns='http://www.w3.org/2000/svg';var svg=document.getElementById('uburst');var L=[48,24,35,24];for(var i=0;i<48;i++){var a=(i*7.5-90)*Math.PI/180;var l=document.createElementNS(ns,'line');l.setAttribute('x1',50+12*Math.cos(a));l.setAttribute('y1',50+12*Math.sin(a));l.setAttribute('x2',50+L[i%4]*Math.cos(a));l.setAttribute('y2',50+L[i%4]*Math.sin(a));l.setAttribute('stroke','#2b3947');l.setAttribute('stroke-width','1');svg.appendChild(l);}})();
+    (function(){var ns='http://www.w3.org/2000/svg';var svg=document.getElementById('uburst');var L=[48,24,35,24];for(var i=0;i<48;i++){var a=(i*7.5-90)*Math.PI/180;var l=document.createElementNS(ns,'line');l.setAttribute('x1',50+12*Math.cos(a));l.setAttribute('y1',50+12*Math.sin(a));l.setAttribute('x2',50+L[i%4]*Math.cos(a));l.setAttribute('y2',50+L[i%4]*Math.sin(a));l.setAttribute('stroke','#130D18');l.setAttribute('stroke-width','1');svg.appendChild(l);}})();
     </script>
-    <h1>Contexto del cliente</h1>
-    <p class="sub">El documento vivo del negocio: se actualiza automáticamente con cada reunión procesada en Meeting transcripts.</p>
-    <a class="backlink" href="/clients/human-at-scale">← Volver al portal</a>
+    <h1>Client Context</h1>
+    <p class="sub">A living document of the business, updated automatically with every meeting processed in Meeting Transcripts.</p>
+    <a class="backlink" href="/clients/human-at-scale">← Back to portal</a>
   </header>
   <p class="meta" id="meta"></p>
   <div id="banner"></div>
   <div class="dl">
     <button class="dlbtn" id="dl-md">Descargar .md</button>
-    <button class="dlbtn" id="dl-pdf">Descargar PDF</button>
+    <button class="dlbtn" id="dl-pdf">Download PDF</button>
   </div>
 
   <div class="secs" id="secs"></div>
   <div id="overlay">
     <div class="editor">
-      <h2 id="ed-title">Editar sección</h2>
+      <h2 id="ed-title">Edit sección</h2>
       <p class="hint">Un bullet por línea.</p>
       <textarea id="ed-text"></textarea>
       <div class="actions">
-        <button id="ed-save">Guardar</button>
-        <button id="ed-cancel">Cancelar</button>
+        <button id="ed-save">Save</button>
+        <button id="ed-cancel">Cancel</button>
       </div>
     </div>
   </div>
   <footer>
-    Human at Scale · <a href="#" id="admin-toggle">modo admin</a>
+    Human at Scale · <a href="#" id="admin-toggle">admin mode</a>
   </footer>
 </div>
 <script>
@@ -122,7 +122,7 @@
       var items = state[key] || [];
       var el = document.createElement('div');
       el.className = 'sec' + (wide ? ' wide' : '');
-      el.innerHTML = '<div class="head"><h2>' + titulo + '</h2><a class="edit" data-key="' + key + '" href="#">Editar</a></div>' +
+      el.innerHTML = '<div class="head"><h2>' + titulo + '</h2><a class="edit" data-key="' + key + '" href="#">Edit</a></div>' +
         '<ul>' + items.map(function (i) { return '<li>' + esc(i) + '</li>'; }).join('') + '</ul>';
       secs.appendChild(el);
     });
@@ -148,7 +148,7 @@
     e.preventDefault();
     editKey = key;
     var def = SECTIONS.filter(function (s) { return s[0] === key; })[0];
-    document.getElementById('ed-title').textContent = 'Editar: ' + def[1];
+    document.getElementById('ed-title').textContent = 'Edit: ' + def[1];
     document.getElementById('ed-text').value = (state[key] || []).join('\n');
     overlay.classList.add('open');
   });
@@ -206,228 +206,6 @@
   function buildMarkdown(all) {
     var brand = document.title.split(' — ')[0];
     var md = '# Dossier de cliente — ' + brand + '\n\n';
-    md += '_Documento vivo mantenido por Human at Scale. Exportado: ' + today() + '._\n';
-    var f = state.fuentes || [];
-    if (f.length) md += '_Contexto alimentado por ' + f.length + ' reunión' + (f.length === 1 ? '' : 'es') + ' procesada' + (f.length === 1 ? '' : 's') + '._\n';
-    md += '\n---\n\n# 1. Contexto del negocio\n\n';
-    SECTIONS.forEach(function (def) {
-      md += '## ' + def[1] + '\n\n';
-      (state[def[0]] || []).forEach(function (b) { md += '- ' + b + '\n'; });
-      md += '\n';
-    });
-    md += '---\n\n# 2. Reuniones y recaps (' + all.meetings.length + ')\n\n';
-    if (!all.meetings.length) md += '_Sin reuniones cargadas todavía._\n\n';
-    all.meetings.forEach(function (m) {
-      md += '## ' + m.titulo + ' — ' + fmtF(m.fecha) + '\n\n';
-      if (m.recap) {
-        md += m.recap.replace(/^## /gm, '### ') + '\n\n';
-      } else {
-        md += '_(transcripción cargada, recap aún no generado)_\n\n';
-      }
-    });
-    md += '---\n\n# 3. Recursos en aprobación (' + all.approvals.length + ')\n\n';
-    if (!all.approvals.length) md += '_Sin recursos activos._\n\n';
-    var cols = {};
-    all.approvals.forEach(function (c) { (cols[c.columna] = cols[c.columna] || []).push(c); });
-    Object.keys(cols).forEach(function (col) {
-      md += '## ' + col + '\n\n';
-      cols[col].forEach(function (c) {
-        md += '- **' + c.titulo + '** (' + (c.tipo || 'recurso') + ')';
-        if (c.nota) md += ' — ' + c.nota;
-        if (c.url) md += ' — ' + c.url;
-        if (c.comentario) md += '\n  - Feedback del cliente: "' + c.comentario + '"';
-        md += '\n';
-      });
-      md += '\n';
-    });
-    md += '---\n\n# 4. Banco de ideas (' + all.ideas.length + ')\n\n';
-    ['Pendientes', 'Aplicadas'].forEach(function (col) {
-      var items = all.ideas.filter(function (c) { return c.columna === col; });
-      md += '## ' + col + '\n\n';
-      if (!items.length) md += '_—_\n';
-      items.forEach(function (c) {
-        md += '- **' + c.titulo + '**';
-        if (c.nota) md += ' — ' + c.nota.replace(/\n+/g, ' ');
-        if (c.url) md += ' — ' + c.url;
-        md += '\n';
-      });
-      md += '\n';
-    });
-    if (all.notes.length) {
-      md += '---\n\n# 5. Notas de reuniones de reporte\n\n';
-      all.notes.forEach(function (n) {
-        md += '## Reunión ' + fmtF(n.fecha) + '\n\n' + n.text + '\n\n';
-      });
-    }
-    md += '---\n\n# Anexo: transcripciones completas\n\n';
-    all.meetings.forEach(function (m) {
-      md += '## ' + m.titulo + ' — ' + fmtF(m.fecha) + '\n\n```\n' + (m.transcript || '') + '\n```\n\n';
-    });
-    return md;
-  }
-
-  function downloadBlob(content, type, fname) {
-    var blob = new Blob([content], { type: type });
-    var a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = fname;
-    document.body.appendChild(a); a.click();
-    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 500);
-  }
-  document.getElementById('dl-md').addEventListener('click', function () {
-    collectAll().then(function (all) {
-      downloadBlob(buildMarkdown(all), 'text/markdown;charset=utf-8', 'dossier-' + CLIENT + '-' + today() + '.md');
-    });
-  });
-
-  function latin(s) {
-    return String(s).replace(/—|–/g, '-').replace(/[“”]/g, '"').replace(/[‘’]/g, "'")
-      .replace(/·/g, '-').replace(/≥/g, '>=').replace(/→/g, '->').replace(/…/g, '...');
-  }
-  function withJsPDF(cb) {
-    if (window.jspdf && window.jspdf.jsPDF) return cb();
-    var s = document.createElementNS('http://www.w3.org/1999/xhtml', 'script');
-    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
-    s.onload = cb;
-    s.onerror = function () { alert('No se pudo cargar el generador de PDF. Usá la descarga .md.'); };
-    document.head.appendChild(s);
-  }
-  document.getElementById('dl-pdf').addEventListener('click', function () {
-    collectAll().then(function (all) {
-      withJsPDF(function () {
-        var brand = document.title.split(' — ')[0];
-        var doc = new window.jspdf.jsPDF({ unit: 'pt', format: 'a4' });
-        var M = 56, W = 595 - M * 2, y = M;
-        function brk(extra) { if (y + (extra || 0) > 780) { doc.addPage(); y = M; } }
-        function h1(t) { brk(40); doc.setFont('helvetica', 'bold'); doc.setFontSize(15); doc.setTextColor(20, 30, 40); doc.text(latin(t), M, y); y += 22; }
-        function h2(t) { brk(34); doc.setFont('helvetica', 'bold'); doc.setFontSize(11.5); doc.setTextColor(20, 30, 40); doc.text(latin(t).toUpperCase(), M, y); y += 15; }
-        function h3(t) { brk(28); doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(90, 100, 110); doc.text(latin(t), M, y); y += 13; }
-        function bullet(t, indent) {
-          var lines = doc.splitTextToSize(latin(t), W - 16 - (indent || 0));
-          brk(lines.length * 12.5 + 4);
-          doc.setFont('helvetica', 'normal'); doc.setFontSize(9.5); doc.setTextColor(60, 70, 80);
-          doc.circle(M + 3 + (indent || 0), y - 3, 1.3, 'F');
-          doc.text(lines, M + 14 + (indent || 0), y);
-          y += lines.length * 12.5 + 3;
-        }
-        function para(t, gray) {
-          var lines = doc.splitTextToSize(latin(t), W);
-          brk(lines.length * 12.5 + 4);
-          doc.setFont('helvetica', gray ? 'italic' : 'normal'); doc.setFontSize(9.5);
-          doc.setTextColor(gray ? 130 : 60, gray ? 135 : 70, gray ? 140 : 80);
-          doc.text(lines, M, y);
-          y += lines.length * 12.5 + 4;
-        }
-        function recapBlock(md) {
-          String(md).split('\n').forEach(function (ln) {
-            var l = ln.trim();
-            if (!l) return;
-            l = l.replace(/\*\*/g, '');
-            if (/^##+\s/.test(l)) h3(l.replace(/^##+\s*/, ''));
-            else if (/^[-•*]\s/.test(l)) bullet(l.replace(/^[-•*]\s*/, ''), 6);
-            else para(l);
-          });
-        }
-
-        doc.setFont('helvetica', 'bold'); doc.setFontSize(18); doc.setTextColor(20, 30, 40);
-        doc.text(latin('Dossier de cliente — ' + brand), M, y); y += 20;
-        doc.setFont('helvetica', 'normal'); doc.setFontSize(9.5); doc.setTextColor(120, 125, 130);
-        doc.text(latin('Documento vivo mantenido por Human at Scale  ·  Exportado: ' + today()), M, y); y += 8;
-        doc.setDrawColor(168, 135, 79); doc.setLineWidth(1); doc.line(M, y + 6, M + 90, y + 6); y += 30;
-
-        h1('1. Contexto del negocio');
-        SECTIONS.forEach(function (def) {
-          h2(def[1]);
-          (state[def[0]] || []).forEach(function (b) { bullet(b); });
-          y += 8;
-        });
-
-        y += 6; h1('2. Reuniones y recaps (' + all.meetings.length + ')');
-        if (!all.meetings.length) para('Sin reuniones cargadas todavía.', true);
-        all.meetings.forEach(function (m) {
-          h2(m.titulo + '  -  ' + fmtF(m.fecha));
-          if (m.recap) recapBlock(m.recap);
-          else para('Transcripción cargada; recap aún no generado.', true);
-          y += 8;
-        });
-
-        y += 6; h1('3. Recursos en aprobación (' + all.approvals.length + ')');
-        if (!all.approvals.length) para('Sin recursos activos.', true);
-        var cols = {};
-        all.approvals.forEach(function (c) { (cols[c.columna] = cols[c.columna] || []).push(c); });
-        Object.keys(cols).forEach(function (col) {
-          h2(col);
-          cols[col].forEach(function (c) {
-            var t = c.titulo + ' (' + (c.tipo || 'recurso') + ')' + (c.nota ? ' - ' + c.nota : '');
-            bullet(t);
-            if (c.comentario) bullet('Feedback del cliente: "' + c.comentario + '"', 14);
-          });
-          y += 6;
-        });
-
-        y += 6; h1('4. Banco de ideas (' + all.ideas.length + ')');
-        ['Pendientes', 'Aplicadas'].forEach(function (col) {
-          h2(col);
-          var items = all.ideas.filter(function (c) { return c.columna === col; });
-          if (!items.length) para('—', true);
-          items.forEach(function (c) {
-            bullet(c.titulo + (c.nota ? ' - ' + c.nota.replace(/\n+/g, ' ') : ''));
-          });
-          y += 6;
-        });
-
-        if (all.notes.length) {
-          y += 6; h1('5. Notas de reuniones de reporte');
-          all.notes.forEach(function (n) {
-            h2('Reunión ' + fmtF(n.fecha));
-            n.text.split('\n').forEach(function (l) { if (l.trim()) para(l.trim()); });
-          });
-        }
-
-        para(' ');
-        para('Las transcripciones completas están disponibles en el portal (Meeting transcripts) y en la exportación .md.', true);
-        doc.setFontSize(8.5); doc.setTextColor(150, 150, 150);
-        doc.text('Human at Scale', M, 812);
-        doc.save('dossier-' + CLIENT + '-' + today() + '.pdf');
-      });
-    });
-  });
-
-  function applyAdmin() {
-    document.body.classList.toggle('admin', isAdmin);
-    document.getElementById('admin-toggle').textContent = isAdmin ? 'salir de modo admin' : 'modo admin';
-  }
-  document.getElementById('admin-toggle').addEventListener('click', function (e) {
-    e.preventDefault();
-    isAdmin = !isAdmin;
-    try { localStorage.setItem('approvals_' + CLIENT + '_admin', isAdmin ? '1' : '0'); } catch (e2) {}
-    applyAdmin();
-  });
-
-  function banner(msg) {
-    var b = document.getElementById('banner');
-    if (!msg) return b.classList.remove('show');
-    b.textContent = msg; b.classList.add('show');
-  }
-  function loadLocal() {
-    mode = 'local';
-    banner('Modo local: este contexto se guarda en este navegador. El documento compartido se activa próximamente.');
-    try {
-      var raw = localStorage.getItem(LS_KEY);
-      state = raw ? JSON.parse(raw) : SEED;
-    } catch (e) { state = SEED; }
-    persistLocal(); render(); applyAdmin();
-  }
-  fetch(API, { cache: 'no-store' })
-    .then(function (r) { if (!r.ok) throw new Error('nostorage'); return r.json(); })
-    .then(function (data) {
-      mode = 'server';
-      state = data.doc || SEED;
-      if (!data.doc) save();
-      render(); applyAdmin();
-    })
-    .catch(loadLocal);
-})();
-</script>
+    md += '_A living document with the business context, goals, channels and learnings.</script>
 </body>
 </html>

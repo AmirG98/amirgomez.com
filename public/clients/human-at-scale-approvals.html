@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Human at Scale — Aprobación de recursos</title>
+<title>Human at Scale — Asset Approvals</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #2b3947; --navy-deep: #1f2b37; --ink: #26303a; --ink-2: #5c6670; --ink-3: #98a0a8;
-    --paper: #faf9f6; --paper-2: #f3f1ec; --hairline: #e4e0d7; --gold: #a8874f; --gold-soft: #f4ede1;
-    --serif: 'Marcellus', serif; --sans: 'Inter', -apple-system, sans-serif;
+    --navy: #130D18; --navy-deep: #130D18; --ink: #1D1226; --ink-2: #6B6478; --ink-3: #6B6478;
+    --paper: #FFFFFF; --paper-2: #F6F4F8; --hairline: #E6E1EB; --gold: #8005E0; --gold-soft: #F3E8FF;
+    --serif: 'Satoshi','Satoshi Variable',-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif; --sans: 'Satoshi','Satoshi Variable',-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
@@ -116,24 +116,24 @@
 
   <header>
     <div id="burst"></div>
-    <div class="wordmark">HUMAN AT SCALE</div>
-    <div class="wordmark-sub">CLIENT PORTAL</div>
-    <h1>Aprobación de recursos</h1>
-    <p class="sub">Arrastrá cada recurso a su estado — o usá el menú ⋯ de la tarjeta.<br>Podés agregar recursos y links en tu columna, y sumar el link a cualquier tarjeta desde “Editar · agregar link”.</p>
-    <a class="backlink" href="/clients/human-at-scale">← Volver al portal</a>
+    <div class="wordmark">human at scale</div>
+    <div class="wordmark-sub">client portal</div>
+    <h1>Asset Approvals</h1>
+    <p class="sub">Drag each asset to its status, or use the card menu. You can add assets and links in your column, and attach a link to any card from "Edit · add link".</p>
+    <a class="backlink" href="/clients/human-at-scale">← Back to portal</a>
   </header>
 
-  <div id="banner">Modo local: los movimientos se guardan en este navegador y we get an email notification for every change. El tablero compartido en vivo se activa próximamente.</div>
+  <div id="banner">Local mode: changes are stored in this browser and we get an email notification for every update. The shared live board is coming soon.</div>
 
   <div class="board-head">
-    <button id="btn-new">+ Agregar recurso</button>
+    <button id="btn-new">+ Add asset</button>
   </div>
 
   <div id="overlay">
     <div class="editor">
-      <h2 id="ed-title">Nuevo recurso</h2>
-      <label>Título <span class="req">*</span></label>
-      <input id="f-titulo" placeholder="Video: Errores al comprar para Airbnb">
+      <h2 id="ed-title">New asset</h2>
+      <label>Title <span class="req">*</span></label>
+      <input id="f-titulo" placeholder="Case study: the owner bottleneck">
       <label>Tipo</label>
       <select id="f-tipo">
         <option value="video">Video</option>
@@ -142,22 +142,22 @@
         <option value="landing">Landing</option>
         <option value="otro">Otro</option>
       </select>
-      <label>Link al recurso <span class="req">*</span></label>
-      <input id="f-url" placeholder="drive.google.com/… · figma.com/… · preview de Meta">
+      <label>Asset link <span class="req">*</span></label>
+      <input id="f-url" placeholder="drive.google.com · figma.com · LinkedIn preview">
       <label>Estado</label>
       <select id="f-col">
-        <option>En proceso · Human at Scale</option>
-        <option>En proceso · Human at Scale</option>
-        <option>Para revisar</option>
-        <option>Con comentarios</option>
-        <option>Aprobado</option>
+        <option>In progress</option>
+        <option>In progress</option>
+        <option>For review</option>
+        <option>Commented</option>
+        <option>Approved</option>
       </select>
-      <label>Nota breve (opcional)</label>
-      <input id="f-nota" placeholder="Variante con el hook nuevo">
+      <label>Note breve (opcional)</label>
+      <input id="f-nota" placeholder="Variant with the new hook">
       <p id="ed-error"></p>
       <div class="actions">
-        <button id="ed-save">Guardar</button>
-        <button id="ed-cancel">Cancelar</button>
+        <button id="ed-save">Save</button>
+        <button id="ed-cancel">Cancel</button>
       </div>
     </div>
   </div>
@@ -165,51 +165,51 @@
   <div id="fb-overlay">
     <div class="editor">
       <h2>Dejar feedback</h2>
-      <label id="fb-card-label">Sobre el recurso</label>
-      <textarea id="fb-text" placeholder="Contanos qué ajustarías, qué te gustó o qué falta…"></textarea>
+      <label id="fb-card-label">About this asset</label>
+      <textarea id="fb-text" placeholder="What would you change, what worked, what is missing?"></textarea>
       <p id="fb-error" style="display:none; font-size:12.5px; color:#a33; margin-top:10px;"></p>
       <div class="actions">
         <button id="fb-send">Enviar feedback</button>
-        <button id="fb-cancel">Cancelar</button>
+        <button id="fb-cancel">Cancel</button>
       </div>
     </div>
   </div>
 
   <div class="board">
     <div class="col">
-      <h2>En proceso · Human at Scale <span class="count" id="c-0"></span></h2>
-      <div class="cards" data-col="En proceso · Human at Scale"></div>
+      <h2>In progress <span class="count" id="c-0"></span></h2>
+      <div class="cards" data-col="In progress"></div>
       <div class="quickadd" id="quickadd">
-        <input id="qa-titulo" placeholder="+ Agregar recurso…" autocomplete="off">
-        <div class="qa-row"><input id="qa-url" placeholder="Link (Drive, Figma, doc…)" autocomplete="off"></div>
-        <div class="qa-actions"><button id="qa-save">Agregar</button><button class="ghost" id="qa-cancel">Cancelar</button></div>
+        <input id="qa-titulo" placeholder="+ Add asset..." autocomplete="off">
+        <div class="qa-row"><input id="qa-url" placeholder="Link (Drive, Figma, doc)" autocomplete="off"></div>
+        <div class="qa-actions"><button id="qa-save">Agregar</button><button class="ghost" id="qa-cancel">Cancel</button></div>
       </div>
     </div>
     <div class="col">
-      <h2>En proceso · Human at Scale <span class="count" id="c-1"></span></h2>
-      <div class="cards" data-col="En proceso · Human at Scale"></div>
+      <h2>In progress <span class="count" id="c-1"></span></h2>
+      <div class="cards" data-col="In progress"></div>
     </div>
     <div class="col">
-      <h2>Para revisar <span class="count" id="c-2"></span></h2>
-      <div class="cards" data-col="Para revisar"></div>
+      <h2>For review <span class="count" id="c-2"></span></h2>
+      <div class="cards" data-col="For review"></div>
       <div class="quickadd" id="quickadd-rev">
-        <input id="qa2-titulo" placeholder="+ Agregar recurso…" autocomplete="off">
-        <div class="qa-row"><input id="qa2-url" placeholder="Link (Drive, Figma, doc…)" autocomplete="off"></div>
-        <div class="qa-actions"><button id="qa2-save">Agregar</button><button class="ghost" id="qa2-cancel">Cancelar</button></div>
+        <input id="qa2-titulo" placeholder="+ Add asset..." autocomplete="off">
+        <div class="qa-row"><input id="qa2-url" placeholder="Link (Drive, Figma, doc)" autocomplete="off"></div>
+        <div class="qa-actions"><button id="qa2-save">Agregar</button><button class="ghost" id="qa2-cancel">Cancel</button></div>
       </div>
     </div>
     <div class="col">
-      <h2>Con comentarios <span class="count" id="c-3"></span></h2>
-      <div class="cards" data-col="Con comentarios"></div>
+      <h2>Commented <span class="count" id="c-3"></span></h2>
+      <div class="cards" data-col="Commented"></div>
     </div>
     <div class="col">
-      <h2>Aprobado <span class="count" id="c-4"></span></h2>
-      <div class="cards" data-col="Aprobado"></div>
+      <h2>Approved <span class="count" id="c-4"></span></h2>
+      <div class="cards" data-col="Approved"></div>
     </div>
   </div>
 
   <footer>
-    Human at Scale · <a href="#" id="admin-toggle">modo admin</a>
+    Human at Scale · <a href="#" id="admin-toggle">admin mode</a>
   </footer>
 
 </div>
@@ -220,32 +220,19 @@
   var CLIENT = 'human-at-scale';
   var API = '/api/approvals/' + CLIENT;
   var LS_KEY = 'approvals_' + CLIENT;
-  var CLIENT_COL = 'En proceso · Human at Scale';
-  var COLS = ['En proceso · Human at Scale', 'Para revisar', 'Con comentarios', 'Aprobado'];
+  var CLIENT_COL = 'In progress';
+  var COLS = ['In progress', 'For review', 'Commented', 'Approved'];
   var mode = 'local';
   var state = null;
   var isAdmin = false;
   try { isAdmin = localStorage.getItem(LS_KEY + '_admin') === '1'; } catch (e) {}
 
-  var ns = 'http://www.w3.org/2000/svg';
-  var svg = document.createElementNS(ns, 'svg');
-  svg.setAttribute('width', 46); svg.setAttribute('height', 46);
-  svg.setAttribute('viewBox', '0 0 100 100'); svg.setAttribute('aria-hidden', 'true');
-  var lengths = [48, 24, 35, 24];
-  for (var i = 0; i < 48; i++) {
-    var a = (i * 7.5 - 90) * Math.PI / 180;
-    var line = document.createElementNS(ns, 'line');
-    line.setAttribute('x1', 50 + 12 * Math.cos(a)); line.setAttribute('y1', 50 + 12 * Math.sin(a));
-    line.setAttribute('x2', 50 + lengths[i % 4] * Math.cos(a)); line.setAttribute('y2', 50 + lengths[i % 4] * Math.sin(a));
-    line.setAttribute('stroke', '#2b3947'); line.setAttribute('stroke-width', '1');
-    svg.appendChild(line);
-  }
-  document.getElementById('burst').appendChild(svg);
+  document.getElementById('burst').innerHTML = '<svg width="46" height="46" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M16.9798 0C26.5114 0.0251279 34.0285 7.84764 33.9378 17.1682C33.8471 26.4781 26.1901 34.0976 16.7859 34C7.50993 33.9024 -0.0785035 26.25 0.000613089 16.8463C0.0787648 7.68914 7.52151 0.0173962 16.9798 0ZM16.9875 1.70773C8.5809 1.71063 1.74118 8.51643 1.70644 16.9314C1.67171 25.5097 8.63686 32.2536 16.893 32.2932C25.2099 32.3329 32.2107 25.5899 32.231 17.0367C32.2512 8.57538 25.4009 1.72803 16.9866 1.70773H16.9875Z" fill="#130D18"/><path d="M17.0808 19.3185C20.5909 19.3611 23.6697 20.5314 26.2998 22.8674C26.8083 23.3187 27.2753 23.8135 27.7066 24.3403C28.0336 24.7394 28.0414 25.1318 27.7172 25.5396C25.7045 28.0689 23.1361 29.7273 19.9888 30.4724C19.162 30.6677 18.3235 30.7788 17.4735 30.8088C13.6508 30.945 10.325 29.7205 7.50192 27.142C7.05327 26.7322 6.64997 26.2703 6.24473 25.8151C5.89353 25.4208 5.89643 25.0177 6.2293 24.6012C8.37606 21.9154 11.1249 20.2183 14.5037 19.5611C15.3538 19.3959 16.2115 19.3195 17.0798 19.3195L17.0808 19.3185ZM17.077 21.0408C16.3553 21.033 15.6442 21.1026 14.9369 21.2302C12.5731 21.6564 10.5228 22.704 8.7755 24.3499C8.26993 24.8264 8.27475 25.5454 8.79769 26.0006C9.16337 26.3196 9.53965 26.6308 9.9362 26.9101C11.9189 28.3095 14.1332 29.0256 16.5511 29.1088C17.4079 29.1378 18.2589 29.0604 19.1031 28.9C21.4129 28.4603 23.4159 27.4252 25.1411 25.8267C25.6611 25.3444 25.6351 24.5712 25.1198 24.118C22.8168 22.0923 20.1345 21.0756 17.077 21.0408Z" fill="#130D18"/><path d="M3.21875 16.3419C3.29015 12.6104 5.34428 7.68627 10.2727 4.9193C14.9048 2.31856 20.6524 2.63942 24.9913 5.74852C27.166 7.30645 28.7609 9.33408 29.7739 11.814C30.3191 13.1477 30.6442 14.5346 30.7426 16.0258C30.6433 15.9563 30.5892 15.9176 30.5352 15.8789C30.0325 15.5204 29.5356 15.1551 29.0252 14.8081C28.8911 14.7173 28.8245 14.6148 28.7927 14.464C28.4039 12.6258 27.6281 10.9664 26.4568 9.50224C24.5532 7.12379 22.1035 5.64511 19.1067 5.0836C18.1149 4.89804 17.1134 4.84778 16.1128 4.92606C13.3264 5.14158 10.8882 6.19019 8.82541 8.08155C7.01828 9.73806 5.82574 11.7676 5.23815 14.1519C5.1793 14.3916 5.13974 14.6361 5.07895 14.8748C5.06159 14.9424 5.01528 15.0169 4.96028 15.0574C4.3862 15.4866 3.80826 15.9099 3.21971 16.3428L3.21875 16.3419Z" fill="#130D18"/><path d="M29.1541 23.4482C28.7334 22.9824 28.3311 22.5369 27.9394 22.1029C28.1227 21.6023 28.3137 21.1142 28.4806 20.6175C28.5887 20.2976 28.6996 19.9748 28.6948 19.6269C28.6871 19.046 28.4584 18.5753 27.9972 18.2303C27.1038 17.5644 26.1486 16.9991 25.1462 16.5139C23.4895 15.7127 21.7499 15.1773 19.9331 14.8922C18.648 14.6912 17.3532 14.6303 16.0584 14.7134C12.3929 14.9492 9.07777 16.1611 6.13019 18.3627C5.95845 18.4913 5.78671 18.6314 5.65453 18.7976C5.29079 19.2548 5.18079 19.7747 5.33806 20.3449C5.49919 20.9267 5.71724 21.4873 5.96328 22.0372C5.99415 22.1068 6.02503 22.1764 6.0559 22.2469C5.65453 22.706 5.25991 23.1564 4.84889 23.6251C4.76881 23.4782 4.69162 23.3458 4.62312 23.2095C3.95835 21.8893 3.50487 20.5015 3.29936 19.0354C3.25402 18.7107 3.35918 18.4458 3.59943 18.2265C4.31341 17.5751 5.06887 16.9759 5.86872 16.4327C8.15828 14.8786 10.663 13.8407 13.378 13.3168C14.1731 13.1632 14.9748 13.0656 15.7834 13.0095C16.6083 12.9515 17.4342 12.9428 18.2582 12.9892C20.4754 13.1158 22.6202 13.5894 24.6811 14.4254C26.6774 15.2353 28.499 16.3361 30.144 17.7287C30.2202 17.7935 30.2974 17.8582 30.3707 17.9269C30.556 18.0979 30.6689 18.3086 30.6419 18.5638C30.6004 18.9465 30.5579 19.3311 30.4836 19.709C30.2386 20.9499 29.8324 22.1377 29.2535 23.2636C29.2255 23.3178 29.1956 23.3699 29.1531 23.4463L29.1541 23.4482Z" fill="#130D18"/></svg>';
 
   function seed() {
     return {
       cards: [
-        { id: 'r-' + Date.now(), titulo: 'Video: Errores al comprar para Airbnb', tipo: 'video', url: '', nota: 'Variante 1 del concepto ganador — link a cargar', columna: 'Para revisar', comentario: '', actualizado: new Date().toISOString() }
+        { id: 'r-' + Date.now(), titulo: 'Case study: the owner bottleneck', tipo: 'video', url: '', nota: 'Variante 1 del concepto ganador — link a cargar', columna: 'For review', comentario: '', actualizado: new Date().toISOString() }
       ],
       log: []
     };
@@ -254,9 +241,9 @@
   function relTime(iso) {
     if (!iso) return '';
     var d = Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
-    if (d <= 0) return 'hoy';
-    if (d === 1) return 'ayer';
-    return 'hace ' + d + ' días';
+    if (d <= 0) return 'today';
+    if (d === 1) return 'yesterday';
+    return d + ' days ago';
   }
 
   function extUrl(u) {
@@ -272,7 +259,7 @@
   }
 
   function render() {
-    state.cards.forEach(function (c) { if (c.columna === 'En proceso') c.columna = 'En proceso · Human at Scale'; });
+    state.cards.forEach(function (c) { if (c.columna === 'En proceso') c.columna = 'In progress'; });
     COLS.forEach(function (col, ci) {
       var wrap = document.querySelector('.cards[data-col="' + col + '"]');
       wrap.innerHTML = '';
@@ -299,9 +286,9 @@
             COLS.filter(function (x) { return x !== col; }).map(function (x) {
               return '<button data-act="move" data-to="' + esc(x) + '">Mover a ' + esc(x.toLowerCase()) + '</button>';
             }).join('') +
-            '<button data-act="edit" class="sep">Editar · agregar link</button>' +
+            '<button data-act="edit" class="sep">Edit · add link</button>' +
             '<div class="admin-only">' +
-            '<button data-act="archive" class="danger">Archivar (admin)</button></div>' +
+            '<button data-act="archive" class="danger">Archive (admin)</button></div>' +
           '</div>';
         wrap.appendChild(el);
       });
@@ -362,7 +349,7 @@
       if (act === 'feedback') { e.preventDefault(); openFeedback(c); }
       if (act === 'edit') openEditor(c);
       if (act === 'archive') {
-        if (confirm('¿Archivar "' + c.titulo + '"?')) { c.archivada = true; save(); render(); }
+        if (confirm('¿Archive "' + c.titulo + '"?')) { c.archivada = true; save(); render(); }
       }
       return;
     }
@@ -387,12 +374,12 @@
   var overlay = document.getElementById('overlay');
   function openEditor(card) {
     editingId = card ? card.id : null;
-    document.getElementById('ed-title').textContent = card ? 'Editar recurso' : 'Nuevo recurso';
+    document.getElementById('ed-title').textContent = card ? 'Edit recurso' : 'New asset';
     document.getElementById('f-titulo').value = card ? card.titulo : '';
     document.getElementById('f-tipo').value = card ? card.tipo : 'video';
     document.getElementById('f-url').value = card ? (card.url || '') : '';
     document.getElementById('f-nota').value = card ? (card.nota || '') : '';
-    document.getElementById('f-col').value = card ? card.columna : 'En proceso · Human at Scale';
+    document.getElementById('f-col').value = card ? card.columna : 'In progress';
     document.getElementById('ed-error').classList.remove('show');
     overlay.classList.add('open');
     if (card && card.titulo && !card.url) document.getElementById('f-url').focus();
@@ -428,7 +415,7 @@
     var c = findCard(fbId);
     if (!c) { closeFeedback(); return; }
     c.comentario = txt;
-    if (c.columna === 'Para revisar') c.columna = 'Con comentarios';
+    if (c.columna === 'For review') c.columna = 'Commented';
     c.actualizado = new Date().toISOString();
     state.log.push({ ts: c.actualizado, quien: isAdmin ? 'admin' : 'cliente', que: 'feedback en "' + c.titulo + '"' });
     closeFeedback(); save(); render();
@@ -489,11 +476,11 @@
     u.addEventListener('keydown', function (e) { if (e.key === 'Enter') document.getElementById(saveId).click(); });
   }
   wireQuickAdd('quickadd', 'qa-titulo', 'qa-url', 'qa-save', 'qa-cancel', CLIENT_COL);
-  wireQuickAdd('quickadd-rev', 'qa2-titulo', 'qa2-url', 'qa2-save', 'qa2-cancel', 'Para revisar');
+  wireQuickAdd('quickadd-rev', 'qa2-titulo', 'qa2-url', 'qa2-save', 'qa2-cancel', 'For review');
 
   function applyAdmin() {
     document.body.classList.toggle('admin', isAdmin);
-    document.getElementById('admin-toggle').textContent = isAdmin ? 'salir de modo admin' : 'modo admin';
+    document.getElementById('admin-toggle').textContent = isAdmin ? 'salir de admin mode' : 'admin mode';
   }
   document.getElementById('admin-toggle').addEventListener('click', function (e) {
     e.preventDefault();
