@@ -49,6 +49,8 @@ export default function AuditLanding() {
 
     setSubmitted(true);
     setSending(false);
+    // Confirmación breve y pase a conocer al equipo
+    setTimeout(() => { window.location.href = '/meet-the-team'; }, 3000);
   };
 
   return (
@@ -111,12 +113,34 @@ export default function AuditLanding() {
             <p><b>Amir Gómez</b> has spent <b>10+ years</b> building paid acquisition for brands in
               the US (LA, Miami) and Latin America — <b>300+ funnels launched</b> across Meta ads,
               Google ads, and AI-assisted creative.</p>
-            {/* PLACEHOLDERS: reemplazar solo con resultados reales provistos por Amir */}
+            {/* Métricas reales — las mismas publicadas en el home de weareaplus.net */}
             <div className="stat-cards">
-              <div className="stat-card"><div className="m">[metric]</div><p className="c">[context]</p></div>
-              <div className="stat-card"><div className="m">[metric]</div><p className="c">[context]</p></div>
-              <div className="stat-card"><div className="m">[metric]</div><p className="c">[context]</p></div>
+              <div className="stat-card"><div className="m">63,000 leads</div>
+                <p className="c">at $4.50 average cost — a $335K/yr social campaign for a US
+                  home-decor brand.</p></div>
+              <div className="stat-card"><div className="m">7× ROAS</div>
+                <p className="c">up from 2×, after scaling UGC + AI creative volume 20× for a US
+                  legal company.</p></div>
+              <div className="stat-card"><div className="m">$50 → $5</div>
+                <p className="c">10× lower cost per qualified lead — full funnel and lead magnet
+                  built end to end.</p></div>
             </div>
+          </div>
+        </section>
+
+        {/* Social proof: mensaje de LinkedIn recibido por Amir (texto literal, anónimo) */}
+        <section className="proof" aria-label="What a former client says">
+          <div className="col">
+            <p className="eyebrow">Unprompted, via LinkedIn</p>
+            <blockquote>
+              <p className="pull">&ldquo;You were the first and only person that came to mind as
+                the person who actually understood it all — <em>without marketing smoke and
+                mirrors</em>.&rdquo;</p>
+              <p className="rest">&ldquo;The nuances. How to iterate in a controlled, systematic
+                manner to build slow but consistent growth. And I know you understand the
+                interwoven fabric of organic and paid and how they work together.&rdquo;</p>
+              <footer>Former client, now leading marketing in-house — name and company withheld.</footer>
+            </blockquote>
           </div>
         </section>
 
@@ -132,6 +156,8 @@ export default function AuditLanding() {
                 <p>Within <b>24 hours</b> you&rsquo;ll get an email with either <b>your audit</b> or
                   an invite to a <b>quick call</b> to walk through it together.</p>
                 <p>If we&rsquo;re not the right fit, we&rsquo;ll tell you that too.</p>
+                <p className="redirect-note">Taking you to <a href="/meet-the-team">meet the
+                  team</a>&hellip;</p>
               </div>
             ) : (
               <>

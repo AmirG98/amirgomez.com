@@ -114,6 +114,16 @@
 .ma .thanks p { margin-top: 12px; font-size: 15px; }
 .ma .thanks p b { color: var(--ink); }
 
+
+/* ---------- Social proof ---------- */
+.ma .proof blockquote { margin-top: 16px; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 0 14px 14px 0; padding: 22px 20px; }
+.ma .proof .pull { font-family: var(--serif); font-size: clamp(19px, 5.2vw, 24px); line-height: 1.35; color: var(--ink); text-wrap: pretty; }
+.ma .proof .pull em { font-style: italic; color: var(--accent); }
+.ma .proof .rest { margin-top: 12px; font-size: 14.5px; }
+.ma .proof footer { margin-top: 14px; font-size: 12.5px; color: var(--muted); font-style: italic; }
+.ma .redirect-note { font-size: 13.5px; }
+.ma .redirect-note a { color: var(--accent); }
+
 /* ---------- Footer ---------- */
 .ma footer { margin-top: 56px; border-top: 1px solid var(--line); }
 .ma footer .col { padding-top: 22px; padding-bottom: 30px; font-size: 12.5px; display: flex; flex-wrap: wrap; gap: 6px 14px; }
