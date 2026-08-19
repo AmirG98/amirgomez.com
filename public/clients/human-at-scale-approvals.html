@@ -146,8 +146,8 @@
       <input id="f-url" placeholder="drive.google.com · figma.com · LinkedIn preview">
       <label>Estado</label>
       <select id="f-col">
-        <option>In progress</option>
-        <option>In progress</option>
+        <option>In progress · Team</option>
+        <option>In progress · Human at Scale</option>
         <option>For review</option>
         <option>Commented</option>
         <option>Approved</option>
@@ -177,8 +177,8 @@
 
   <div class="board">
     <div class="col">
-      <h2>In progress <span class="count" id="c-0"></span></h2>
-      <div class="cards" data-col="In progress"></div>
+      <h2>In progress · Team <span class="count" id="c-0"></span></h2>
+      <div class="cards" data-col="In progress · Team"></div>
       <div class="quickadd" id="quickadd">
         <input id="qa-titulo" placeholder="+ Add asset..." autocomplete="off">
         <div class="qa-row"><input id="qa-url" placeholder="Link (Drive, Figma, doc)" autocomplete="off"></div>
@@ -186,8 +186,8 @@
       </div>
     </div>
     <div class="col">
-      <h2>In progress <span class="count" id="c-1"></span></h2>
-      <div class="cards" data-col="In progress"></div>
+      <h2>In progress · Human at Scale <span class="count" id="c-1"></span></h2>
+      <div class="cards" data-col="In progress · Human at Scale"></div>
     </div>
     <div class="col">
       <h2>For review <span class="count" id="c-2"></span></h2>
@@ -220,8 +220,8 @@
   var CLIENT = 'human-at-scale';
   var API = '/api/approvals/' + CLIENT;
   var LS_KEY = 'approvals_' + CLIENT;
-  var CLIENT_COL = 'In progress';
-  var COLS = ['In progress', 'For review', 'Commented', 'Approved'];
+  var CLIENT_COL = 'In progress · Human at Scale';
+  var COLS = ['In progress · Team', 'In progress · Human at Scale', 'For review', 'Commented', 'Approved'];
   var mode = 'local';
   var state = null;
   var isAdmin = false;
