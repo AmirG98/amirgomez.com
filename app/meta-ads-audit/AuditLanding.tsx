@@ -136,10 +136,10 @@ export default function AuditLanding() {
             <blockquote>
               <p className="pull">&ldquo;You were the first and only person that came to mind as
                 the person who actually understood it all — <em>without marketing smoke and
-                mirrors</em>.&rdquo;</p>
-              <p className="rest">&ldquo;The nuances. How to iterate in a controlled, systematic
-                manner to build slow but consistent growth. And I know you understand the
-                interwoven fabric of organic and paid and how they work together.&rdquo;</p>
+                mirrors</em>.</p>
+              <p className="rest">The nuances. How to iterate in a controlled, systematic manner
+                to build slow but consistent growth. And I know you understand the interwoven
+                fabric of organic and paid and how they work together.&rdquo;</p>
               <footer>Former client, now leading marketing in-house — name and company withheld.</footer>
             </blockquote>
           </div>
