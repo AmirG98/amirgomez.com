@@ -61,6 +61,7 @@
 .ma .filter .big { font-family: var(--serif); font-size: clamp(20px, 5.4vw, 26px); line-height: 1.3; color: var(--ink); text-wrap: pretty; }
 .ma .filter .big span { color: var(--accent); }
 .ma .filter .small { margin-top: 12px; font-size: 14px; }
+.ma .filter .small a { color: var(--accent); text-underline-offset: 3px; }
 
 /* ---------- Credibilidad ---------- */
 .ma .cred p { margin-top: 16px; font-size: 15px; max-width: 36em; text-wrap: pretty; }

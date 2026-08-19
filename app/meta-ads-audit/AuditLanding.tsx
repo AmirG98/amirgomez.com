@@ -100,8 +100,9 @@ export default function AuditLanding() {
           <div className="filter">
             <p className="big">This is for you if you&rsquo;re spending <span>$2,000+/month</span> on
               Meta ads and you&rsquo;re not confident it&rsquo;s working.</p>
-            <p className="small">Not running paid ads yet? This audit isn&rsquo;t for you — but
-              let&rsquo;s talk when you are.</p>
+            <p className="small">Not spending that yet, but still want to talk about launching
+              your marketing? Email us directly at{' '}
+              <a href="mailto:amir@amirgomez.com">amir@amirgomez.com</a>.</p>
           </div>
         </div>
 
