@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 
 interface KPIWidget {
   title: string;
@@ -27,14 +28,46 @@ export default function BlogContent({ content, kpiWidget }: BlogContentProps) {
       .trim();
   };
 
-  // Function to parse inline formatting
+  // Function to parse inline formatting: **bold** y [texto](/ruta)
   const parseInlineFormatting = (text: string) => {
-    const parts = text.split(/(\*\*.*?\*\*)/);
+    // Se parte por links primero para no romper el bold que pueda haber dentro.
+    const parts = text.split(/(\[[^\]]+\]\([^)]+\))/);
     return parts.map((part, index) => {
-      if (part.startsWith('**') && part.endsWith('**') && part.length > 4) {
-        return <strong key={index} className="font-semibold text-foreground">{part.slice(2, -2)}</strong>;
+      const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      if (link) {
+        const [, label, href] = link;
+        const external = /^https?:\/\//.test(href);
+        if (external) {
+          return (
+            <a
+              key={index}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-600 underline underline-offset-2 hover:text-brand-500 transition-colors"
+            >
+              {label}
+            </a>
+          );
+        }
+        return (
+          <Link
+            key={index}
+            href={href}
+            className="text-brand-600 underline underline-offset-2 hover:text-brand-500 transition-colors"
+          >
+            {label}
+          </Link>
+        );
       }
-      return part;
+      // Sin link: se resuelve el bold como antes.
+      const bolds = part.split(/(\*\*.*?\*\*)/);
+      return bolds.map((b, i) => {
+        if (b.startsWith('**') && b.endsWith('**') && b.length > 4) {
+          return <strong key={`${index}-${i}`} className="font-semibold text-foreground">{b.slice(2, -2)}</strong>;
+        }
+        return b;
+      });
     });
   };
 
