@@ -77,6 +77,10 @@ const nextConfig: NextConfig = {
       {
         source: '/clients/:client',
         destination: '/clients/:client.html'
+      },
+      {
+        source: '/case-studies',
+        destination: '/case-studies.html'
       }
     ];
   },
