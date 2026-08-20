@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
     const { name, email, website, spend, runner, tenure } = body;
     const qualified = spend === '$2,000 – $5,000' || spend === '$5,000+';
 
-    await resend.emails.send({
+    const { error: sendError } = await resend.emails.send({
       from: 'A+Growth Notifications <notifications@amirgomez.com>',
       to: 'amir@amirgomez.com',
       subject: `${qualified ? '✅ QUALIFIED' : '🔔'} Audit request — ${spend || 'no spend'} · ${name || email}`,
@@ -38,6 +38,11 @@ export async function POST(req: NextRequest) {
         </div>
       `,
     });
+
+    if (sendError) {
+      console.error('Resend error:', sendError);
+      return NextResponse.json({ error: 'resend_failed', detail: sendError }, { status: 502 });
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {

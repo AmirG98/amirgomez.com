@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
       )
       .join('');
 
-    await resend.emails.send({
+    const { error: sendError } = await resend.emails.send({
       from: 'A+Growth Notifications <notifications@amirgomez.com>',
       to: 'amir@amirgomez.com',
       subject: `🔔 New ${formType || 'website'} form submission — ${email || 'no email'}`,
@@ -36,6 +36,11 @@ export async function POST(req: NextRequest) {
         </div>
       `,
     });
+
+    if (sendError) {
+      console.error('Resend error:', sendError);
+      return NextResponse.json({ error: 'resend_failed', detail: sendError }, { status: 502 });
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {

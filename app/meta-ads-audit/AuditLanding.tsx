@@ -66,7 +66,15 @@ export default function AuditLanding() {
       fetch(appsScriptUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, formType: 'meta-ads-audit' }),
+        body: JSON.stringify({
+          ...data,
+          // claves que el Apps Script mapea a columnas del Sheet
+          firstName: data.name,
+          monthlyBudget: data.spend,
+          role: data.runner,
+          timeline: data.tenure,
+          formType: 'meta-ads-audit',
+        }),
         mode: 'no-cors',
       }).catch(() => {});
     }
