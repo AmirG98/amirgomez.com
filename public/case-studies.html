@@ -118,6 +118,10 @@
   .subgroup { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin-top: 34px; display: flex; align-items: center; gap: 14px; }
   .subgroup::after { content: ""; flex: 1; height: 1px; background: var(--hair); }
 
+  /* ---------- Reviews ---------- */
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; padding: 34px 0 20px; align-items: start; }
+  .reviews-grid .shot { cursor: zoom-in; }
+
   /* ---------- Zero-click note ---------- */
   .zero-note { border-left: 3px solid var(--orange); background: rgba(224,78,16,0.06); padding: 14px 18px; margin-top: 22px; max-width: 900px; font-size: 14px; }
   .zero-note b { color: var(--ink); font-weight: 700; }
@@ -162,45 +166,36 @@
 
 <nav class="secnav" id="secnav">
   <div class="wrap">
-    <a href="#organic"><em>01</em>Organic Growth</a>
-    <a href="#paid"><em>02</em>Paid Acquisition</a>
-    <a href="#funnels"><em>03</em>Funnels &amp; VSL</a>
-    <a href="#webs"><em>04</em>Webs &amp; Landings</a>
+    <a href="#paid"><em>01</em>Paid Acquisition</a>
+    <a href="#funnels"><em>02</em>Funnels &amp; VSL</a>
+    <a href="#webs"><em>03</em>Webs &amp; Landings</a>
+    <a href="#organic"><em>04</em>Organic Growth</a>
+    <a href="#reviews" id="nav-reviews"><em>05</em>Reviews</a>
   </div>
 </nav>
 
-<!-- ============ 01 · ORGANIC ============ -->
-<section class="disc" id="organic">
-  <div class="wrap">
-    <div class="sec-head rv"><span class="no">01</span><h2>Organic Growth — SEO &amp; GEO</h2><span class="count">5 cases</span></div>
-    <p class="sec-intro rv">Compounding visibility on Google <b>and inside AI answers</b>.</p>
-    <div class="zero-note rv"><b>A note on these results:</b> every case below happened during the "zero-click era" — while AI Overviews were reshaping search and most sites reported falling clicks. We optimize to be the source AI cites, not just another blue link.</div>
-    <div id="organic-cases"></div>
-  </div>
-</section>
-
-<!-- ============ 02 · PAID ============ -->
+<!-- ============ 01 · PAID ============ -->
 <section class="disc" id="paid">
   <div class="wrap">
-    <div class="sec-head rv"><span class="no">02</span><h2>Paid Acquisition</h2><span class="count">3 cases</span></div>
+    <div class="sec-head rv"><span class="no">01</span><h2>Paid Acquisition</h2><span class="count">3 cases</span></div>
     <p class="sec-intro rv">Meta, Google and Microsoft — creative volume, structure and relentless testing, always measured against <b>business results, not vanity metrics</b>.</p>
     <div id="paid-cases"></div>
   </div>
 </section>
 
-<!-- ============ 03 · FUNNELS ============ -->
+<!-- ============ 02 · FUNNELS ============ -->
 <section class="disc" id="funnels">
   <div class="wrap">
-    <div class="sec-head rv"><span class="no">03</span><h2>Funnels &amp; VSL</h2><span class="count">2 cases</span></div>
+    <div class="sec-head rv"><span class="no">02</span><h2>Funnels &amp; VSL</h2><span class="count">2 cases</span></div>
     <p class="sec-intro rv">End-to-end builds — lead magnet, pages, automation and follow-up — engineered to turn cold attention into <b>booked meetings and closed deals</b>.</p>
     <div id="funnels-cases"></div>
   </div>
 </section>
 
-<!-- ============ 04 · WEBS & LANDINGS ============ -->
+<!-- ============ 03 · WEBS & LANDINGS ============ -->
 <section class="disc" id="webs">
   <div class="wrap">
-    <div class="sec-head rv"><span class="no">04</span><h2>Webs &amp; Landings We've Built</h2><span class="count">7 live</span></div>
+    <div class="sec-head rv"><span class="no">03</span><h2>Webs &amp; Landings We've Built</h2><span class="count">7 live</span></div>
     <p class="sec-intro rv">These previews are <b>the real sites, live</b> — not screenshots. Click any of them to open the full experience.</p>
 
     <div class="subgroup rv">Full websites</div>
@@ -209,6 +204,25 @@
     <div class="subgroup rv">VSL landing pages</div>
     <div class="live-grid" id="live-vsl"></div>
     <p class="live-note rv"><b>Tip:</b> the VSL pages are built for one job — press play, watch, book. Simple on purpose.</p>
+  </div>
+</section>
+
+<!-- ============ 04 · ORGANIC ============ -->
+<section class="disc" id="organic">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">04</span><h2>Organic Growth — SEO &amp; GEO</h2><span class="count">5 cases</span></div>
+    <p class="sec-intro rv">Compounding visibility on Google <b>and inside AI answers</b>.</p>
+    <div class="zero-note rv"><b>A note on these results:</b> every case below happened during the "zero-click era" — while AI Overviews were reshaping search and most sites reported falling clicks. We optimize to be the source AI cites, not just another blue link.</div>
+    <div id="organic-cases"></div>
+  </div>
+</section>
+
+<!-- ============ 05 · REVIEWS ============ -->
+<section class="disc" id="reviews" hidden>
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">05</span><h2>What Clients Say</h2><span class="count" id="reviews-count"></span></div>
+    <p class="sec-intro rv">Unfiltered — straight from the inbox and the group chats.</p>
+    <div class="reviews-grid" id="reviews-grid"></div>
   </div>
 </section>
 
@@ -281,6 +295,10 @@ var VSLS = [
   { url:'https://go.everpresent.com/preserve-what-matters-b', name:'EverPresent', what:'VSL landing — radically simple' }
 ];
 
+/* ---------- Reviews (capturas de clientes; agregar acá) ----------
+   Formato: { img:'case-studies/reviews/archivo.jpg', source:'LinkedIn · Cliente X', cap:'texto del pie' } */
+var REVIEWS = [];
+
 function esc(s){ return String(s||'').replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
 
 /* ---------- Render de casos por sección ---------- */
@@ -348,6 +366,24 @@ document.querySelectorAll('.live').forEach(function(el){ io ? io.observe(el) : (
   var f = el.querySelector('iframe[data-src]'); if (f) { f.src = f.getAttribute('data-src'); }
 })(); });
 scaleFrames();
+
+/* ---------- Render de reviews (la sección se oculta si no hay) ---------- */
+(function(){
+  var sec = document.getElementById('reviews'), nav = document.getElementById('nav-reviews');
+  if (!REVIEWS.length) { if (nav) nav.style.display = 'none'; return; }
+  sec.hidden = false;
+  document.getElementById('reviews-count').textContent = REVIEWS.length + (REVIEWS.length === 1 ? ' review' : ' reviews');
+  var g = document.getElementById('reviews-grid');
+  REVIEWS.forEach(function(r){
+    var f = document.createElement('figure');
+    f.className = 'shot rv';
+    f.setAttribute('data-img', r.img);
+    f.setAttribute('data-cap', r.cap || r.source || '');
+    f.innerHTML = '<div class="bar"><i></i><i></i><i></i><span class="url">' + esc(r.source || 'client review') + '</span></div>' +
+      '<img loading="lazy" src="' + r.img + '" alt="' + esc(r.source || 'Client review') + '">';
+    g.appendChild(f);
+  });
+})();
 
 /* ---------- Reveal on scroll ---------- */
 var rio = ('IntersectionObserver' in window) ? new IntersectionObserver(function(entries){
