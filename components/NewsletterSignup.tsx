@@ -108,13 +108,14 @@ export default function NewsletterSignup({
             onChange={(e) => setEmail(e.target.value)}
             placeholder={placeholder}
             disabled={isSubmitting}
-            className="flex-1 px-4 py-3 rounded-lg border border-foreground/20 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:opacity-50"
+            className="flex-1 px-4 py-3 rounded-lg border border-foreground/20 bg-background focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent disabled:opacity-50"
             required
           />
-          <button 
+          <button
             type="submit"
             disabled={isSubmitting}
-            className="bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-orange-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            style={{ background: 'linear-gradient(135deg, var(--brand-500), var(--brand-600))' }}
+            className="text-white px-8 py-3 rounded-lg font-semibold shimmer-on-hover transition-all disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
           >
             {isSubmitting ? 'Subscribing...' : buttonText}
           </button>
