@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A+ Growth — Training: Long-Form That Retains and Converts</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F2EFEA; --card: #FAF8F5; --ink: #2E2C28; --ink-2: #55524D; --muted: #8A8781;
+    --orange: #E04E10; --orange-soft: #F0956A; --hair: #DDD8CF; --dark: #14120F;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --serif: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink-2); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 26px; }
+  ::selection { background: var(--orange); color: #fff; }
+
+  /* Barra de progreso de lectura */
+  #progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--orange); width: 0; z-index: 40; transition: width .1s linear; }
+
+  .rv { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+  .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .rv { opacity: 1; transform: none; transition: none; }
+    * { animation: none !important; transition: none !important; }
+  }
+
+  header.mast { position: relative; overflow: hidden; padding: 54px 0 46px; }
+  header.mast::after { content: ""; position: absolute; right: -180px; top: -180px; width: 480px; height: 480px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(224,78,16,0.16) 0%, rgba(224,78,16,0) 70%); filter: blur(30px); pointer-events: none; }
+  .head-row { display: flex; align-items: center; gap: 18px; margin-bottom: 46px; }
+  .wordmark { font-size: 21px; font-weight: 800; color: var(--ink); white-space: nowrap; }
+  .wordmark span { color: var(--orange); }
+  .head-row .rule { flex: 1; height: 1px; background: var(--ink); }
+  .head-row .tag { font-size: 11.5px; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; white-space: nowrap; }
+  .lang { font-size: 12px; letter-spacing: 0.08em; color: var(--muted); white-space: nowrap; }
+  .lang a { color: var(--muted); text-decoration: none; }
+  .lang a:hover { color: var(--orange); }
+  .lang b { color: var(--ink); }
+  .kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
+  h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(38px, 6.4vw, 62px); color: var(--ink); letter-spacing: -0.015em; line-height: 1.04; text-wrap: balance; }
+  h1 em { font-style: italic; color: var(--orange); }
+  .sub { margin-top: 18px; font-size: 17px; max-width: 56ch; text-wrap: pretty; }
+  .sub b { color: var(--ink); }
+
+  nav.secnav { position: sticky; top: 0; z-index: 20; background: rgba(242,239,234,0.93); backdrop-filter: blur(10px); border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+  nav.secnav .wrap { display: flex; gap: 4px; overflow-x: auto; padding: 9px 26px; }
+  nav.secnav a { flex: none; font-size: 12px; font-weight: 600; color: var(--ink-2); text-decoration: none; padding: 7px 14px; border-radius: 999px; transition: all .15s; }
+  nav.secnav a:hover { color: var(--orange); }
+  nav.secnav a.on { background: var(--ink); color: var(--paper); }
+
+  section.blk { padding: 64px 0 8px; }
+  .sec-head { display: flex; align-items: baseline; gap: 16px; border-bottom: 1px solid var(--ink); padding-bottom: 14px; margin-bottom: 20px; }
+  .sec-head .no { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 18px; color: var(--orange); }
+  .sec-head h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(26px, 4vw, 38px); color: var(--ink); letter-spacing: -0.01em; text-wrap: balance; }
+  .blk p { margin-bottom: 14px; font-size: 15.5px; max-width: 70ch; text-wrap: pretty; }
+  .blk p b, .blk li b { color: var(--ink); }
+  .blk ul { margin: 0 0 16px 20px; }
+  .blk li { margin-bottom: 8px; font-size: 15px; }
+
+  .pull { font-family: var(--serif); font-weight: 500; font-size: clamp(20px, 3vw, 26px); line-height: 1.4; color: var(--ink);
+    border-left: 3px solid var(--orange); padding: 6px 0 6px 22px; margin: 26px 0; max-width: 34ch; text-wrap: pretty; }
+  .pull span { color: var(--orange); }
+
+  .note { border-left: 3px solid var(--orange); background: rgba(224,78,16,0.06); padding: 14px 18px; margin: 20px 0; font-size: 14px; max-width: 760px; }
+  .note b { color: var(--ink); }
+
+  /* Diagrama curva de retención */
+  .diagram { background: var(--card); border: 1px solid var(--hair); border-radius: 14px; padding: 26px 24px 18px; margin: 26px 0; }
+  .diagram figcaption { font-size: 12.5px; color: var(--muted); margin-top: 10px; }
+  .diagram svg { width: 100%; height: auto; display: block; }
+
+  /* Pasos del framework */
+  .step { display: grid; grid-template-columns: 64px 1fr; gap: 20px; padding: 28px 0; border-bottom: 1px solid var(--hair); }
+  .step:last-of-type { border-bottom: 0; }
+  .step .n { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 38px; color: var(--orange); line-height: 1; }
+  .step .t { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .step h3 { font-family: var(--serif); font-weight: 600; font-size: clamp(20px, 2.6vw, 26px); color: var(--ink); margin-bottom: 8px; text-wrap: balance; }
+  .step p { font-size: 15px; }
+  .step .ej { background: var(--card); border: 1px solid var(--hair); border-radius: 10px; padding: 12px 16px; margin-top: 10px; font-size: 13.5px; }
+  .step .ej b { color: var(--orange); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+
+  /* Toolbox en dos columnas */
+  .tools { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; margin: 24px 0; }
+  .tool { background: var(--card); border: 1px solid var(--hair); border-radius: 12px; padding: 18px 20px; }
+  .tool h4 { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+  .tool h4 span { color: var(--orange); margin-right: 6px; }
+  .tool p { font-size: 13.5px; margin: 0; }
+
+  /* Checklist interactiva */
+  .check { background: var(--dark); border-radius: 16px; padding: 30px 28px; margin: 28px 0 10px; color: #B8B3AB; }
+  .check h3 { font-family: var(--serif); font-weight: 600; font-size: 24px; color: #F2EFEA; margin-bottom: 4px; }
+  .check .hint { font-size: 12.5px; color: #7A756D; margin-bottom: 18px; }
+  .check label { display: flex; gap: 12px; align-items: flex-start; padding: 9px 0; border-bottom: 1px solid #26231F; font-size: 14.5px; cursor: pointer; }
+  .check label:last-of-type { border-bottom: 0; }
+  .check input { margin-top: 4px; width: 16px; height: 16px; accent-color: var(--orange); flex: none; }
+  .check input:checked + span { color: #6E6A63; text-decoration: line-through; }
+  .check .score { margin-top: 16px; font-family: var(--serif); font-size: 18px; color: var(--orange-soft); }
+
+  /* Tabla CTA débil vs fuerte */
+  .cmp { width: 100%; border-collapse: collapse; margin: 22px 0; font-size: 14px; }
+  .cmp th { text-align: left; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding: 0 14px 8px 0; }
+  .cmp td { border-top: 1px solid var(--hair); padding: 10px 14px 10px 0; vertical-align: top; }
+  .cmp td.bad { color: var(--muted); text-decoration: line-through; text-decoration-color: rgba(224,78,16,.4); }
+  .cmp td.good { color: var(--ink); font-weight: 600; }
+
+  /* Fuentes */
+  .refs { counter-reset: ref; margin: 20px 0; }
+  .ref { counter-increment: ref; display: grid; grid-template-columns: 34px 1fr; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--hair); font-size: 14px; }
+  .ref::before { content: counter(ref, decimal-leading-zero); font-family: var(--serif); font-style: italic; color: var(--orange); font-size: 15px; }
+  .ref b { color: var(--ink); }
+  .ref a { color: var(--orange); text-decoration: none; border-bottom: 1px solid rgba(224,78,16,.3); }
+  .ref a:hover { border-color: var(--orange); }
+  .ref .who { font-size: 12.5px; color: var(--muted); }
+  .srcnote { font-size: 12px; color: var(--muted); margin-top: -6px; }
+  .srcnote a { color: var(--orange); text-decoration: none; }
+
+  footer { border-top: 1px solid var(--hair); margin-top: 64px; padding: 26px 0 44px; font-size: 13px; color: var(--muted); }
+  footer a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--hair); }
+  footer a:hover { color: var(--orange); border-color: var(--orange); }
+  .private { font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+
+  @media (max-width: 640px) { .step { grid-template-columns: 44px 1fr; gap: 14px; } .step .n { font-size: 28px; } }
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<header class="mast">
+  <div class="wrap">
+    <div class="head-row">
+      <div class="wordmark">A<span>+</span> Growth</div>
+      <div class="rule"></div>
+      <div class="lang"><b>EN</b> · <a href="/long-form-training-es">ES</a></div>
+      <div class="tag">Training · Content</div>
+    </div>
+    <p class="kicker rv">Long-form · Step-by-step</p>
+    <h1 class="rv">Long-form content that <em>retains</em> — and then <em>converts</em>.</h1>
+    <p class="sub rv">How to structure a tutorial, long video or step-by-step piece so people
+      <b>stay to the end</b> and finish by <b>taking the next step with you</b>. A concrete
+      method, with examples and a checklist to apply on your very next piece.</p>
+  </div>
+</header>
+
+<nav class="secnav" id="secnav">
+  <div class="wrap">
+    <a href="#principios">Principles</a>
+    <a href="#curva">The curve</a>
+    <a href="#metodo">The method (7 steps)</a>
+    <a href="#retencion">Retention toolbox</a>
+    <a href="#conversion">Conversion toolbox</a>
+    <a href="#cta">The CTA, in depth</a>
+    <a href="#errores">Mistakes</a>
+    <a href="#checklist">Checklist</a>
+    <a href="#metricas">Metrics</a>
+    <a href="#fuentes">Sources</a>
+  </div>
+</nav>
+
+<!-- ============ PRINCIPIOS ============ -->
+<section class="blk" id="principios">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">01</span><h2>Three principles before you record or write</h2></div>
+    <p class="rv"><b>1 · Leaving is the default.</b> Nobody owes your content their attention. Every second,
+      the viewer decides again whether to stay. Retention is not luck or charisma: it is a structure
+      that makes staying easier than leaving.</p>
+    <p class="rv"><b>2 · Retention is a managed promise.</b> Viewers stay as long as they believe what is coming
+      is worth more than what they have already seen. Your job is to open a clear promise early,
+      pay it in installments, and always owe them one more.</p>
+    <p class="rv"><b>3 · Conversion is a byproduct of trust.</b> In long-form you do not convert by interrupting:
+      you convert because after 15 minutes of real help, the next step with you is the logical
+      continuation. First you earn attention, then you earn permission to offer.</p>
+    <div class="pull rv">People do not leave because the content is long. They leave because
+      <span>they stopped believing the ending is worth it</span>.</div>
+    <p class="srcnote rv">Grounding: Nielsen Norman Group measured that most abandonment happens in the first
+      10 seconds — and that past the half-minute mark, the odds of staying rise dramatically
+      <a href="#fuentes">[1]</a>. YouTube officially recommends treating the first 15 seconds as the
+      critical retention zone <a href="#fuentes">[2]</a>.</p>
+  </div>
+</section>
+
+<!-- ============ LA CURVA ============ -->
+<section class="blk" id="curva">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">02</span><h2>Know your enemy: the retention curve</h2></div>
+    <p class="rv">Every long piece loses its audience in the same three places. If you know where people drop,
+      you know where to work:</p>
+    <figure class="diagram rv">
+      <svg viewBox="0 0 720 300" role="img" aria-label="Typical retention curve with three leak zones">
+        <line x1="50" y1="250" x2="700" y2="250" stroke="#DDD8CF" stroke-width="1.5"/>
+        <line x1="50" y1="30" x2="50" y2="250" stroke="#DDD8CF" stroke-width="1.5"/>
+        <text x="40" y="40" font-size="12" fill="#8A8781" text-anchor="end">100%</text>
+        <text x="40" y="253" font-size="12" fill="#8A8781" text-anchor="end">0%</text>
+        <text x="55" y="270" font-size="12" fill="#8A8781">start</text>
+        <text x="690" y="270" font-size="12" fill="#8A8781" text-anchor="end">end</text>
+        <!-- curva mala -->
+        <path d="M 50 40 C 90 150, 130 180, 200 195 C 320 215, 500 225, 700 235" fill="none" stroke="#B8B3AB" stroke-width="2.5" stroke-dasharray="6 5"/>
+        <!-- curva buena -->
+        <path d="M 50 40 C 100 85, 150 95, 240 100 C 400 108, 520 118, 640 150 C 670 160, 690 165, 700 168" fill="none" stroke="#E04E10" stroke-width="3.5"/>
+        <!-- zonas -->
+        <rect x="50" y="30" width="90" height="220" fill="rgba(224,78,16,0.05)"/>
+        <text x="95" y="52" font-size="11.5" font-weight="700" fill="#E04E10" text-anchor="middle">LEAK 1</text>
+        <text x="95" y="66" font-size="10.5" fill="#8A8781" text-anchor="middle">first 30s</text>
+        <text x="370" y="52" font-size="11.5" font-weight="700" fill="#E04E10" text-anchor="middle">LEAK 2</text>
+        <text x="370" y="66" font-size="10.5" fill="#8A8781" text-anchor="middle">the "plateau" middle</text>
+        <text x="640" y="52" font-size="11.5" font-weight="700" fill="#E04E10" text-anchor="middle">LEAK 3</text>
+        <text x="640" y="66" font-size="10.5" fill="#8A8781" text-anchor="middle">smells like a pitch</text>
+        <text x="210" y="132" font-size="12" font-weight="600" fill="#E04E10">with structure</text>
+        <text x="230" y="212" font-size="12" fill="#8A8781">without structure</text>
+      </svg>
+      <figcaption>Leak 1: they never understood what they would gain. Leak 2: they feel they "already got the
+        idea". Leak 3: they smell the sell starting and leave before the CTA.</figcaption>
+    </figure>
+    <p class="rv">The method below attacks all three leaks, in order.</p>
+  </div>
+</section>
+
+<!-- ============ EL MÉTODO ============ -->
+<section class="blk" id="metodo">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">03</span><h2>The method: 7 steps to build the piece</h2></div>
+
+    <div class="step rv"><div class="n">1</div><div>
+      <div class="t">First 30 seconds · attacks Leak 1</div>
+      <h3>The hook: outcome + mistake + open loop</h3>
+      <p>Before greeting anyone, before introducing yourself: name <b>the exact outcome</b> the viewer
+        wants, <b>the mistake</b> most people make chasing it, and <b>one specific promise</b> that only
+        pays off by watching the whole piece. No "in this video we’re going to cover...".</p>
+      <div class="ej"><b>Example</b>"You’re going to build your first campaign that sells on its own. 90% of people
+        start with the ad — and that’s why they burn money. The right order has 5 steps, and the fifth
+        is the one almost nobody does: I’ll show it at the end with a real case."</div>
+    </div></div>
+
+    <div class="step rv"><div class="n">2</div><div>
+      <div class="t">Minute 1 · the map</div>
+      <h3>Show the destination and the path in 30 seconds</h3>
+      <p>Show <b>the finished end result</b> (the campaign running, the dish plated, the furniture
+        assembled) and the map of steps you will walk together. People decide to stay when they see
+        that (a) the destination is real and (b) the path is finite. A visual "index" of 5–7 steps
+        lowers anxiety and lifts retention.</p>
+    </div></div>
+
+    <div class="step rv"><div class="n">3</div><div>
+      <div class="t">The body · value stepping stones</div>
+      <h3>Every step = a complete win on its own</h3>
+      <p>Structure the content so <b>every step leaves something usable</b> even if the viewer left right
+        there. Name the step, show it (don’t narrate it: do it on screen), and close it with the
+        visible "partial result". The feeling of constant progress is the best retainer there is.</p>
+      <div class="ej"><b>Practical rule</b>If a step runs longer than 2–3 minutes with nothing changing on screen
+        and no mini-win, split it in two.</div>
+    </div></div>
+
+    <div class="step rv"><div class="n">4</div><div>
+      <div class="t">Between steps · attacks Leak 2</div>
+      <h3>Re-hooks: close one door, open the next</h3>
+      <p>The middle is where long-form dies. When each step ends, do two things in one sentence:
+        <b>recap what they gained</b> + <b>preview the cost of leaving</b>: "You now have X. But X
+        without the next step breaks in two weeks — fixing it takes 5 minutes now or 5 hours later."</p>
+      <div class="ej"><b>Tool</b>Plant 2–3 loops that only close at the end: "the step-5 mistake", "the exact
+        number I use", "the before/after of the real case".</div>
+    </div></div>
+
+    <div class="step rv"><div class="n">5</div><div>
+      <div class="t">Every 60–90 seconds</div>
+      <h3>Change something: the brain stays where there is motion</h3>
+      <p>Alternate framing, pace, visual device, tone. A chart, a zoom into detail, a 20-second story,
+        a "wait — this matters". You don’t need expensive production: you need <b>deliberate
+        variation</b>. Audiovisual monotony kills pieces with excellent content.</p>
+    </div></div>
+
+    <div class="step rv"><div class="n">6</div><div>
+      <div class="t">The bridge · attacks Leak 3</div>
+      <h3>From teaching to offering without breaking trust</h3>
+      <p>The classic mistake: cutting the teaching to start "the sell". The right bridge shows
+        <b>the natural limit of do-it-yourself</b>: "You can do all of this on your own, and with this
+        video you will. Now, if you want X faster / at more scale / without the trial and error,
+        that’s exactly what we do with clients." The offer appears as <b>the next rung of the same
+        ladder</b>, not a change of subject.</p>
+    </div></div>
+
+    <div class="step rv"><div class="n">7</div><div>
+      <div class="t">The close</div>
+      <h3>One single CTA, said as an instruction</h3>
+      <p>One concrete, imperative CTA, repeated at most twice (softly at the mid-piece value peak;
+        directly at the end). Say <b>what to do, what happens next and how long it takes</b>: "Book the
+        15-minute call — you leave with your plan, whether you apply it with us or on your own." And
+        close by closing the loops you opened in the hook: the ending should feel like a debt paid.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============ CAJA DE RETENCIÓN ============ -->
+<section class="blk" id="retencion">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">04</span><h2>Toolbox: retention</h2></div>
+    <div class="tools">
+      <div class="tool rv"><h4><span>→</span>Open loops</h4><p>Promise something specific for later and name it now and then. The brain hates unfinished stories.</p></div>
+      <div class="tool rv"><h4><span>→</span>Specificity</h4><p>"I raised CTR 2.3x in 11 days" retains; "improve your results" repels. Concrete numbers are hooks.</p></div>
+      <div class="tool rv"><h4><span>→</span>Show &gt; tell</h4><p>Screen, hands, real process. Every minute of talking head without visual support is a minute at risk.</p></div>
+      <div class="tool rv"><h4><span>→</span>Callbacks</h4><p>Return to an earlier joke, phrase or example. It rewards those who stayed and creates a shared-journey feeling.</p></div>
+      <div class="tool rv"><h4><span>→</span>"Most people fail here"</h4><p>Pointing at the exact spot where others go wrong re-hooks: nobody wants to be most people.</p></div>
+      <div class="tool rv"><h4><span>→</span>Edit pace</h4><p>Cut silences and filler. In step-by-step, the standard is never letting 5 seconds pass without new information.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAJA DE CONVERSIÓN ============ -->
+<section class="blk" id="conversion">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">05</span><h2>Toolbox: conversion</h2></div>
+    <div class="tools">
+      <div class="tool rv"><h4><span>→</span>CTA at the peak, not the door</h4><p>The moment of highest perceived value (right after the biggest win) is where a soft CTA performs best.</p></div>
+      <div class="tool rv"><h4><span>→</span>Stacked proof</h4><p>Before the final CTA: a case, a number, a client quote. 20 seconds of proof beat 2 minutes of arguments.</p></div>
+      <div class="tool rv"><h4><span>→</span>De-risk the step</h4><p>The CTA doesn’t sell the product: it sells the next step (a call, a demo, a template). Small, clear, frictionless.</p></div>
+      <div class="tool rv"><h4><span>→</span>Honest urgency</h4><p>If there is a real reason to act now (spots, date, price), say it. If there isn’t, don’t invent one: it burns the trust you built.</p></div>
+      <div class="tool rv"><h4><span>→</span>The "even if you never buy"</h4><p>"Apply it on your own and it will work" — paradoxically, letting go of the sell is what sells most in long-form.</p></div>
+      <div class="tool rv"><h4><span>→</span>One funnel per piece</h4><p>Each long piece points to ONE destination (a landing, a lead magnet, a call). Two different CTAs = half the conversion on each.</p></div>
+    </div>
+    <div class="note rv"><b>Golden rule:</b> the healthy ratio in a step-by-step piece is
+      <b>90% teaching / 10% offering</b> — and the 10% works precisely because the 90% was genuinely generous.</div>
+  </div>
+</section>
+
+<!-- ============ CTA A FONDO ============ -->
+<section class="blk" id="cta">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">06</span><h2>The CTA in depth: anatomy, types, timing and wording</h2></div>
+
+    <p class="rv"><b>Anatomy of a CTA that works.</b> Four parts, always: <b>imperative verb</b> +
+      <b>concrete object</b> + <b>what happens next</b> + <b>how long it takes</b>. "Book your 15-minute
+      call — you leave with your plan built" has all four. "Contact us for more information"
+      has none.</p>
+
+    <table class="cmp rv">
+      <tr><th>Weak</th><th>Strong</th></tr>
+      <tr><td class="bad">Contact us</td><td class="good">Book your 15-min call — you leave with your plan</td></tr>
+      <tr><td class="bad">Learn more</td><td class="good">Download the checklist and apply it today (2 min)</td></tr>
+      <tr><td class="bad">Subscribe</td><td class="good">Subscribe: step 6 drops Tuesday with the real case</td></tr>
+      <tr><td class="bad">Submit</td><td class="good">I want my free audit</td></tr>
+    </table>
+
+    <p class="rv"><b>The 3 CTA types — and when to use each.</b> Not every audience is ready for the same ask;
+      long-form usually needs two of these three:</p>
+    <ul class="rv">
+      <li><b>Direct</b> (booking, purchase, application): for the hot viewer who reached the end.
+        Just one, at the close, with the step-6 bridge already built.</li>
+      <li><b>Transitional</b> (template, checklist, lead magnet): the "easy yes" for whoever is not
+        ready yet — StoryBrand formalizes it as the direct + transitional CTA pair every brand needs
+        <a href="#fuentes">[6]</a>. You capture the email and continue the conversation.</li>
+      <li><b>Continuity</b> (watch the next piece, subscribe): keeps the pure learner inside your
+        ecosystem. On YouTube, it is also the CTA that feeds the algorithm.</li>
+    </ul>
+
+    <p class="rv"><b>Where to place it: timing is half the conversion.</b> Wistia’s classic study across
+      thousands of videos with CTAs found that <b>mid-roll CTAs convert best</b> (≈17%), above
+      post-roll (≈11%) and far above pre-roll (≈3%) <a href="#fuentes">[3]</a>. The right reading: the
+      best moment is <b>right after a value peak</b>, when trust is highest — not when the piece is
+      already saying goodbye and attention is gone. In practice: one soft mention after the method’s
+      first big win, and the direct CTA at the close.</p>
+
+    <p class="rv"><b>How many: one destination, few mentions.</b> Every extra option competes with your
+      conversion — that is Unbounce’s <b>1:1 attention ratio</b> principle: a page (or piece) with one
+      goal should have one clickable destination <a href="#fuentes">[5]</a>. In video: one single place
+      to send people; name it at most 2–3 times. In long articles: the same CTA repeated per section
+      counts as one.</p>
+
+    <p class="rv"><b>Wording that moves the needle</b> (all of this is tested, not opinion):</p>
+    <ul class="rv">
+      <li><b>First person.</b> "I want <i>my</i> plan" beats "Get <i>your</i> plan" — Michael Aagaard’s
+        classic test measured +90% CTR by switching "your" to "my" on the button <a href="#fuentes">[7]</a>.</li>
+      <li><b>Reader context.</b> HubSpot, across 330,000 CTAs: CTAs personalized to who is looking
+        convert <b>202% better</b> than generic ones <a href="#fuentes">[4]</a>. In long-form this means
+        speaking to the exact moment: "Made it this far? Then this is for you."</li>
+      <li><b>Specificity of the after.</b> Saying what happens post-click (who writes to you, what you
+        receive, when) lowers friction more than any "it’s free!".</li>
+      <li><b>Reversed risk.</b> "You leave with your plan, whether you apply it with us or on your
+        own" — explicit generosity triggers reciprocity, Cialdini’s first principle <a href="#fuentes">[8]</a>.</li>
+    </ul>
+
+    <div class="note rv"><b>Why 90/10 works (the psychology underneath):</b> open loops retain through the
+      <b>Zeigarnik effect</b> — the unfinished occupies the mind until it closes <a href="#fuentes">[9]</a>;
+      curiosity fires when there is a concrete <b>information gap</b> between what I know and what I
+      want to know (Loewenstein) <a href="#fuentes">[10]</a>; and an hour of genuine help creates the
+      <b>reciprocity</b> debt the final CTA collects (Cialdini) <a href="#fuentes">[8]</a>. The whole
+      method is these three mechanisms placed in order.</div>
+  </div>
+</section>
+
+<!-- ============ ERRORES ============ -->
+<section class="blk" id="errores">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">07</span><h2>The 6 mistakes we see most</h2></div>
+    <ul class="rv">
+      <li><b>Introducing yourself first.</b> Nobody wants your bio before knowing what they gain. Credibility is demonstrated by teaching, not announced.</li>
+      <li><b>Promising in generic.</b> "Marketing tips" retains no one. One outcome, one timeframe, one named method.</li>
+      <li><b>Saving "the good part" for the end without saying so.</b> If viewers don’t know something better is coming, they don’t stay to find out. The loop must be opened explicitly.</li>
+      <li><b>Steps that are theory.</b> A step without visible action is a podcast chapter. In step-by-step, every block ends with something done.</li>
+      <li><b>The handbrake pitch.</b> Selling while apologizing ("well, if you’re interested, I don’t know, maybe...") signals even you don’t believe in your offer. The step-6 bridge exists for this.</li>
+      <li><b>Publishing without reading the curve.</b> The first piece is a hypothesis. Without reading where people drop, the second piece repeats the same mistakes.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CHECKLIST ============ -->
+<section class="blk" id="checklist">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">08</span><h2>Pre-publish checklist</h2></div>
+    <div class="check rv" id="cl">
+      <h3>The piece is ready if you can tick everything.</h3>
+      <p class="hint">Ticks are saved in this browser — use it piece by piece.</p>
+      <label><input type="checkbox" data-k="c1"><span>The first 30s name the outcome, the common mistake, and one specific promise for the end.</span></label>
+      <label><input type="checkbox" data-k="c2"><span>The finished end result is shown before minute 2.</span></label>
+      <label><input type="checkbox" data-k="c3"><span>There is a visible map/index of the steps (5–7 max).</span></label>
+      <label><input type="checkbox" data-k="c4"><span>Every step ends with a visible, usable win.</span></label>
+      <label><input type="checkbox" data-k="c5"><span>Between steps there is a re-hook: recap + what leavers lose.</span></label>
+      <label><input type="checkbox" data-k="c6"><span>There are 2–3 open loops that only close at the end.</span></label>
+      <label><input type="checkbox" data-k="c7"><span>Something changes on screen or in pace at least every 90 seconds.</span></label>
+      <label><input type="checkbox" data-k="c8"><span>The bridge to the offer shows the limit of do-it-yourself before offering.</span></label>
+      <label><input type="checkbox" data-k="c9"><span>There is ONE single CTA, concrete, with what-happens-next and how long it takes.</span></label>
+      <label><input type="checkbox" data-k="c10"><span>Before the final CTA there is proof (case, number or testimonial).</span></label>
+      <label><input type="checkbox" data-k="c11"><span>The ratio is ~90% teaching / 10% offering.</span></label>
+      <label><input type="checkbox" data-k="c12"><span>You defined which metric you will read at 48h to iterate.</span></label>
+      <div class="score" id="cl-score"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MÉTRICAS ============ -->
+<section class="blk" id="metricas">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">09</span><h2>After publishing: read the curve and iterate</h2></div>
+    <p class="rv"><b>The 4 readings that matter</b> (YouTube Studio, your VSL player’s analytics, or whatever
+      tool you use):</p>
+    <ul class="rv">
+      <li><b>Retention at 30s.</b> If you lose more than 30–40% there, the problem is the hook (step 1) — don’t touch anything else yet.</li>
+      <li><b>The slope of the middle.</b> Smooth, constant decline is normal; sharp "cliffs" mark the exact minute of a boring step or a missing re-hook.</li>
+      <li><b>The cliff right before the CTA.</b> If people leave just before the offer, the bridge (step 6) is announcing "the sell starts now". Soften it or move it.</li>
+      <li><b>CTA conversion</b> (clicks or bookings / viewers who reached the CTA). Measure it over those who arrived, not the total: they are different decisions.</li>
+    </ul>
+    <p class="rv">Iterate <b>one variable per piece</b>: hook first, then middle, then bridge. In 3–4 pieces the
+      curve changes shape — and conversions with it.</p>
+    <div class="pull rv">Publishing is step <span>one</span> of content. Reading the curve is where the
+      craft is learned.</div>
+  </div>
+</section>
+
+<!-- ============ FUENTES ============ -->
+<section class="blk" id="fuentes">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">10</span><h2>References and sources</h2></div>
+    <p class="rv">The tactics in this training come from our client work; the mechanisms and numbers cited come
+      from here:</p>
+    <div class="refs rv">
+      <div class="ref"><div><b>Nielsen Norman Group — "How Long Do Users Stay on Web Pages?"</b><br>
+        Most users leave within the first 10 seconds; past the half-minute mark, the abandonment curve flattens.
+        <div class="who"><a href="https://www.nngroup.com/articles/how-long-do-users-stay-on-web-pages/" target="_blank" rel="noopener">nngroup.com</a> · Jakob Nielsen</div></div></div>
+      <div class="ref"><div><b>YouTube — official creator guidance on retention</b><br>
+        The first 15 seconds as the critical zone; reading the retention curve cliff-by-cliff in YouTube Studio.
+        <div class="who"><a href="https://support.google.com/youtube/answer/9314415" target="_blank" rel="noopener">support.google.com/youtube</a></div></div></div>
+      <div class="ref"><div><b>Wistia — CTA-placement conversion study in video</b><br>
+        Mid-roll ≈17% &gt; post-roll ≈11% &gt; pre-roll ≈3% conversion, across their base of videos with CTAs.
+        <div class="who"><a href="https://wistia.com/learn" target="_blank" rel="noopener">wistia.com/learn</a></div></div></div>
+      <div class="ref"><div><b>HubSpot — analysis of 330,000 CTAs</b><br>
+        CTAs personalized to the audience convert 202% better than generic ones.
+        <div class="who"><a href="https://blog.hubspot.com/marketing/personalized-calls-to-action-convert-better-data" target="_blank" rel="noopener">blog.hubspot.com</a></div></div></div>
+      <div class="ref"><div><b>Unbounce / Oli Gardner — "Attention Ratio"</b><br>
+        A piece with one conversion goal should have a single clickable destination (1:1 ratio).
+        <div class="who"><a href="https://unbounce.com/conversion-rate-optimization/attention-ratio/" target="_blank" rel="noopener">unbounce.com</a></div></div></div>
+      <div class="ref"><div><b>Donald Miller — <i>Building a StoryBrand</i></b><br>
+        The direct + transitional CTA pair as the standard of a brand that converts.
+        <div class="who">HarperCollins Leadership, 2017</div></div></div>
+      <div class="ref"><div><b>Michael Aagaard (ContentVerve) — button-copy tests</b><br>
+        Switching "your" to "my" on the button: +90% CTR in the most-cited published first-person copy test.
+        <div class="who">Cases replicated and popularized by Unbounce and CXL</div></div></div>
+      <div class="ref"><div><b>Robert Cialdini — <i>Influence: The Psychology of Persuasion</i></b><br>
+        Reciprocity, commitment/consistency, social proof and scarcity — the basis of 90/10 and honest urgency.
+        <div class="who">Harper Business, ed. revisada 2021</div></div></div>
+      <div class="ref"><div><b>Bluma Zeigarnik — the Zeigarnik effect (1927)</b><br>
+        Unfinished tasks are remembered and "pull" more than finished ones: the mechanism behind open loops.
+        <div class="who">"Über das Behalten von erledigten und unerledigten Handlungen", Psychologische Forschung</div></div></div>
+      <div class="ref"><div><b>George Loewenstein — "The Psychology of Curiosity" (1994)</b><br>
+        Curiosity as an information gap: triggered by the specific, not the vague.
+        <div class="who">Psychological Bulletin, 116(1)</div></div></div>
+    </div>
+    <p class="srcnote rv">Third-party numbers correspond to the cited studies at their publication dates; use them as
+      direction, not guarantee — <i>your</i> audience’s curve is the final source.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b style="color:var(--ink)">A+ Growth</b> — Training prepared by Amir Gómez ·
+      <a href="https://www.weareaplus.net">weareaplus.net</a> · <a href="mailto:amir@amirgomez.com">amir@amirgomez.com</a></div>
+    <div class="private">Private material for A+ Growth clients — not indexed.</div>
+  </div>
+</footer>
+
+<script>
+/* Barra de progreso */
+var bar = document.getElementById('progress');
+addEventListener('scroll', function(){
+  var h = document.documentElement;
+  bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+}, { passive: true });
+
+/* Reveals */
+var rio = ('IntersectionObserver' in window) ? new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }) : null;
+document.querySelectorAll('.rv').forEach(function(el){ rio ? rio.observe(el) : el.classList.add('in'); });
+
+/* Nav activa */
+var navLinks = document.querySelectorAll('.secnav a');
+var so = ('IntersectionObserver' in window) ? new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if (!e.isIntersecting) return;
+    navLinks.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id); });
+  });
+}, { rootMargin: '-25% 0px -65% 0px' }) : null;
+if (so) document.querySelectorAll('section.blk').forEach(function(s){ so.observe(s); });
+
+/* Checklist con persistencia local */
+(function(){
+  var boxes = document.querySelectorAll('#cl input[type="checkbox"]');
+  var KEY = 'aplus-longform-checklist';
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch(e) {}
+  function score(){
+    var on = Array.prototype.filter.call(boxes, function(b){ return b.checked; }).length;
+    document.getElementById('cl-score').textContent = on === boxes.length
+      ? '12/12 — ready to publish.' : on + '/' + boxes.length + ' ticked.';
+  }
+  boxes.forEach(function(b){
+    b.checked = !!saved[b.getAttribute('data-k')];
+    b.addEventListener('change', function(){
+      saved[b.getAttribute('data-k')] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch(e) {}
+      score();
+    });
+  });
+  score();
+})();
+</script>
+</body>
+</html>
