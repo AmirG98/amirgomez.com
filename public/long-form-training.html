@@ -49,6 +49,17 @@
   .headsup b { color: var(--ink); }
   .headsup a { color: var(--orange); font-weight: 700; text-decoration: none; white-space: nowrap; }
   .headsup a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .headsup form { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+  .headsup input[type="email"] { flex: 1 1 210px; min-height: 44px; padding: 10px 14px; font-size: 15px; font-family: inherit;
+    color: var(--ink); background: var(--card); border: 1px solid var(--hair); border-radius: 9px; }
+  .headsup input[type="email"]:focus-visible { outline: 2px solid var(--orange); border-color: var(--orange); }
+  .headsup button { min-height: 44px; padding: 0 20px; border: 0; border-radius: 999px; background: var(--orange); color: #fff;
+    font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; white-space: nowrap; }
+  .headsup button:hover { background: #C64510; }
+  .headsup button:focus-visible { outline: 3px solid var(--orange-soft); outline-offset: 2px; }
+  .headsup .ok { display: none; margin-top: 12px; font-weight: 700; color: var(--orange); }
+  .headsup.done form { display: none; }
+  .headsup.done .ok { display: block; }
   .kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
   h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(38px, 6.4vw, 62px); color: var(--ink); letter-spacing: -0.015em; line-height: 1.04; text-wrap: balance; }
   h1 em { font-style: italic; color: var(--orange); }
@@ -173,7 +184,11 @@
       method, with examples and a checklist to apply on your very next piece.</p>
     <div class="headsup rv"><b>This is a training</b> — and soon it gets a very good tool:
       you&rsquo;ll be able to upload your content and an AI will review it against this method, free.
-      <a href="#tool">Leave your email to hear first ↓</a></div>
+      <form class="waitlist-form">
+        <input type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+        <button type="submit">Notify me when it&rsquo;s ready</button>
+      </form>
+      <p class="ok">Done — we&rsquo;ll let you know as soon as it&rsquo;s ready.</p></div>
   </div>
 </header>
 
@@ -471,7 +486,7 @@
       <p>We&rsquo;re building a tool that processes your content (video or script), recognizes
         <b>whether you followed each step of this training</b> — hook, map, stepping stones, re-hooks,
         bridge, CTA — and tells you <b>exactly how to improve it</b>. Free.</p>
-      <form id="tool-form">
+      <form id="tool-form" class="waitlist-form">
         <input type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
         <button type="submit">Notify me when it&rsquo;s ready</button>
       </form>
@@ -596,10 +611,8 @@ if (so) document.querySelectorAll('section.blk').forEach(function(s){ so.observe
   score();
 })();
 
-/* Waitlist de la herramienta */
-(function(){
-  var f = document.getElementById('tool-form');
-  if (!f) return;
+/* Waitlist de la herramienta (banner superior + sección) */
+document.querySelectorAll('form.waitlist-form').forEach(function(f){
   f.addEventListener('submit', function(e){
     e.preventDefault();
     var email = f.querySelector('input[type="email"]').value.trim();
@@ -608,12 +621,14 @@ if (so) document.querySelectorAll('section.blk').forEach(function(s){ so.observe
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ formType: 'longform-ai-waitlist', email: email,
-        lang: document.documentElement.lang, page: location.pathname }),
+        lang: document.documentElement.lang, page: location.pathname,
+        placement: f.closest('.headsup') ? 'banner' : 'section' }),
       keepalive: true
     }).catch(function(){});
-    document.getElementById('toolcta').classList.add('done');
+    var box = f.closest('.headsup, .toolcta');
+    if (box) box.classList.add('done');
   });
-})();
+});
 </script>
 </body>
 </html>
