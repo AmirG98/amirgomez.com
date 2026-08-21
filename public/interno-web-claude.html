@@ -136,6 +136,13 @@
   footer a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--hair); }
   .private { font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
   @media (max-width: 640px) { .step { grid-template-columns: 40px 1fr; gap: 12px; } .step .n { font-size: 26px; } }
+  @media print {
+    #progress, nav.secnav, .tabs, .dl-btn { display: none !important; }
+    .rv { opacity: 1 !important; transform: none !important; }
+    .pane { display: block !important; padding-top: 14px; }
+    .pane::before { content: attr(data-region); display: block; font-weight: 700; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); margin-bottom: 8px; }
+    section.blk { padding: 34px 0 6px; break-inside: avoid-page; }
+  }
 </style>
 </head>
 <body>
@@ -367,6 +374,11 @@ Mostrame 2-3 variantes de esa sección sin tocar el resto de la página.</pre>
         humano; reescribilo como le hablarías a un cliente en WhatsApp"</i>. El copy natural convierte
         más que el copy perfecto.</p>
     </div></div>
+    <div class="note rv"><b>No estás solo en ningún paso:</b> Claude no es solo el que escribe el
+      código — es tu guía en vivo para todo el proceso. ¿No sabés cómo seguir? Preguntale ahí mismo:
+      <i>"guiame paso a paso para subir esto a Vercel"</i>, <i>"¿cómo conecto mi dominio?"</i>,
+      <i>"¿qué registro DNS pongo?"</i> — te va llevando de la mano, y de muchas de esas cosas se
+      encarga él directamente.</div>
   </div>
 </section>
 
@@ -386,7 +398,7 @@ Mostrame 2-3 variantes de esa sección sin tocar el resto de la página.</pre>
       <button class="tab" data-pane="eu">🇪🇺 Europa</button>
     </div>
 
-    <div class="pane on rv" id="pane-ar">
+    <div class="pane on rv" id="pane-ar" data-region="🇦🇷 Argentina">
       <div class="methods">
         <div class="method star"><h4>Mercado Pago <span class="rec">Recomendado</span></h4>
           <p><b>Cómo incluirlo:</b> en tu cuenta de vendedor → <b>Cobrar → Link de pago</b>: nombre,
@@ -404,7 +416,7 @@ Mostrame 2-3 variantes de esa sección sin tocar el resto de la página.</pre>
       </div>
     </div>
 
-    <div class="pane rv" id="pane-latam">
+    <div class="pane rv" id="pane-latam" data-region="🌎 Latinoamérica">
       <div class="methods">
         <div class="method star"><h4>Mercado Pago <span class="rec">Recomendado donde opera</span></h4>
           <p>Brasil, México, Chile, Colombia, Uruguay y Perú funcionan igual que Argentina:
@@ -418,7 +430,7 @@ Mostrame 2-3 variantes de esa sección sin tocar el resto de la página.</pre>
       </div>
     </div>
 
-    <div class="pane rv" id="pane-us">
+    <div class="pane rv" id="pane-us" data-region="🇺🇸 Estados Unidos">
       <div class="methods">
         <div class="method star"><h4>Stripe <span class="rec">Recomendado</span></h4>
           <p><b>Cómo incluirlo:</b> en el dashboard de Stripe → <b>Payment Links</b> → producto, precio,
@@ -435,7 +447,7 @@ Mostrame 2-3 variantes de esa sección sin tocar el resto de la página.</pre>
       </div>
     </div>
 
-    <div class="pane rv" id="pane-eu">
+    <div class="pane rv" id="pane-eu" data-region="🇪🇺 Europa">
       <div class="methods">
         <div class="method star"><h4>Stripe <span class="rec">Recomendado</span></h4>
           <p>Igual que en USA: <b>Payment Links</b> sin código con redirect a tu thank-you page. Ventaja
@@ -496,6 +508,10 @@ Mostrame 2-3 variantes de esa sección sin tocar el resto de la página.</pre>
       <p>La propagación puede tardar de minutos a unas horas — si no anda al instante, <b>no toques
         nada</b>: esperá y volvé a probar. El HTTPS se activa solo.</p>
     </div></div>
+    <div class="note rv"><b>Atajo:</b> todo este capítulo se puede hacer con Claude de copiloto.
+      Decile en qué paso estás ("ya bajé el HTML, quiero subirlo a Vercel" / "compré el dominio en
+      Namecheap, ¿ahora qué?") y te da las instrucciones exactas para tu caso — o directamente lo hace,
+      si estás usando Claude Code.</div>
     <div class="pull rv">Artifact para validar → Vercel para publicar → <span>tu dominio</span> para
       crecer.</div>
   </div>
@@ -534,8 +550,24 @@ Mostrame 2-3 variantes de esa sección sin tocar el resto de la página.</pre>
         propaga — escribí a <a href="mailto:amir@amirgomez.com">amir@amirgomez.com</a> o mandá mensaje
         directo por el canal del equipo. <b>Como equipo nos dedicamos a enseñarle al resto</b>: ninguna
         pregunta es demasiado básica, y lo que te trabó a vos seguro le sirve al próximo.</p>
-      <p style="margin-bottom:0">Si armaste algo con esta guía, compartilo en el canal — los mejores
+      <p>Si armaste algo con esta guía, compartilo en el canal — los mejores
         ejemplos se suman como casos a este training.</p>
+      <p style="margin-bottom:0"><a class="dl-btn" href="/interno-web-claude.pdf" download
+        style="display:inline-block;padding:12px 24px;border-radius:999px;background:var(--orange);color:#fff;font-weight:700;font-size:14px;text-decoration:none">⬇ Descargar esta guía en PDF</a></p>
+    </div>
+
+    <p class="rv" style="margin-top:26px"><b>El truco final — que Claude te corrija contra la guía:</b>
+      descargá el PDF, subilo a Claude junto con tu página, y pedile la auditoría:</p>
+    <div class="promptbox rv">
+      <div class="pb-bar"><span class="t">Prompt de auditoría final</span><button data-copy="p3">Copiar</button></div>
+      <pre id="p3">Te adjunto la guía interna de A+ Growth (PDF) y el HTML de mi página.
+Revisá mi página contra TODOS los requisitos y la checklist de la guía:
+estructura de conversión, un solo CTA, mobile-first, velocidad, prueba
+social real, link de pago conectado, SEO básico, espacio para Pixel, y
+seguridad (ningún token secreto en el código).
+Devolveme: (1) qué cumple, (2) qué falta o está flojo, en orden de
+impacto, y (3) el fix concreto de cada punto. Después aplicamos los
+fixes de a uno.</pre>
     </div>
   </div>
 </section>
