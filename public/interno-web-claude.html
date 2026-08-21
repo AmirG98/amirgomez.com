@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A+ Growth · Interno — Web completa con Claude + Mercado Pago</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F2EFEA; --card: #FAF8F5; --ink: #2E2C28; --ink-2: #55524D; --muted: #8A8781;
+    --orange: #E04E10; --orange-soft: #F0956A; --hair: #DDD8CF; --dark: #14120F;
+    --ok: #1E7A4A; --bad: #B3341B;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --serif: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+    --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink-2); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 26px; }
+  ::selection { background: var(--orange); color: #fff; }
+  #progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--orange); width: 0; z-index: 40; }
+
+  .rv { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+  .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .rv { opacity: 1; transform: none; transition: none; }
+    * { animation: none !important; transition: none !important; }
+  }
+
+  /* Banda de material interno */
+  .internal { background: var(--dark); color: #B8B3AB; font-size: 12.5px; letter-spacing: 0.04em; }
+  .internal .wrap { display: flex; align-items: center; gap: 10px; padding-top: 10px; padding-bottom: 10px; flex-wrap: wrap; }
+  .internal b { color: var(--orange-soft); text-transform: uppercase; letter-spacing: 0.14em; font-size: 11px; }
+
+  header.mast { position: relative; overflow: hidden; padding: 50px 0 46px; }
+  header.mast::after { content: ""; position: absolute; right: -180px; top: -180px; width: 480px; height: 480px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(224,78,16,0.16) 0%, rgba(224,78,16,0) 70%); filter: blur(30px); pointer-events: none; }
+  .head-row { display: flex; align-items: center; gap: 18px; margin-bottom: 42px; }
+  .wordmark { font-size: 21px; font-weight: 800; color: var(--ink); white-space: nowrap; }
+  .wordmark span { color: var(--orange); }
+  .head-row .rule { flex: 1; height: 1px; background: var(--ink); }
+  .head-row .tag { font-size: 11.5px; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; white-space: nowrap; }
+  .kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
+  h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(36px, 6vw, 58px); color: var(--ink); letter-spacing: -0.015em; line-height: 1.05; text-wrap: balance; }
+  h1 em { font-style: italic; color: var(--orange); }
+  .sub { margin-top: 18px; font-size: 16.5px; max-width: 58ch; text-wrap: pretty; }
+  .sub b { color: var(--ink); }
+
+  nav.secnav { position: sticky; top: 0; z-index: 20; background: rgba(242,239,234,0.93); backdrop-filter: blur(10px); border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+  nav.secnav .wrap { display: flex; gap: 4px; overflow-x: auto; padding: 9px 26px; }
+  nav.secnav a { flex: none; font-size: 12px; font-weight: 600; color: var(--ink-2); text-decoration: none; padding: 7px 13px; border-radius: 999px; transition: all .15s; }
+  nav.secnav a:hover { color: var(--orange); }
+  nav.secnav a.on { background: var(--ink); color: var(--paper); }
+
+  section.blk { padding: 60px 0 8px; }
+  .sec-head { display: flex; align-items: baseline; gap: 16px; border-bottom: 1px solid var(--ink); padding-bottom: 14px; margin-bottom: 20px; }
+  .sec-head .no { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 18px; color: var(--orange); }
+  .sec-head h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(25px, 3.8vw, 36px); color: var(--ink); letter-spacing: -0.01em; text-wrap: balance; }
+  .blk p { margin-bottom: 14px; font-size: 15.5px; max-width: 70ch; text-wrap: pretty; }
+  .blk p b, .blk li b { color: var(--ink); }
+  .blk ul, .blk ol { margin: 0 0 16px 20px; }
+  .blk li { margin-bottom: 8px; font-size: 15px; }
+  .blk code { font-family: var(--mono); font-size: 0.9em; background: #E9E5DD; padding: 1px 6px; border-radius: 5px; color: var(--ink); }
+
+  .pull { font-family: var(--serif); font-weight: 500; font-size: clamp(20px, 3vw, 25px); line-height: 1.4; color: var(--ink);
+    border-left: 3px solid var(--orange); padding: 6px 0 6px 22px; margin: 24px 0; max-width: 36ch; text-wrap: pretty; }
+  .pull span { color: var(--orange); }
+  .note { border-left: 3px solid var(--orange); background: rgba(224,78,16,0.06); padding: 14px 18px; margin: 20px 0; font-size: 14px; max-width: 760px; }
+  .note b { color: var(--ink); }
+
+  /* Pasos numerados */
+  .step { display: grid; grid-template-columns: 56px 1fr; gap: 18px; padding: 24px 0; border-bottom: 1px solid var(--hair); }
+  .step:last-of-type { border-bottom: 0; }
+  .step .n { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 34px; color: var(--orange); line-height: 1; }
+  .step h3 { font-family: var(--serif); font-weight: 600; font-size: clamp(19px, 2.4vw, 24px); color: var(--ink); margin-bottom: 8px; text-wrap: balance; }
+  .step p { font-size: 15px; }
+
+  /* Hacer / No hacer */
+  .dd { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 22px 0; }
+  .dd .col-h { font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 4px; }
+  .dd .no-h { color: var(--bad); } .dd .si-h { color: var(--ok); }
+  .ddcard { border-radius: 12px; padding: 16px 18px; font-size: 13.5px; border: 1px solid var(--hair); background: var(--card); }
+  .ddcard.no { border-left: 3px solid var(--bad); }
+  .ddcard.si { border-left: 3px solid var(--ok); }
+  .ddcard .q { font-family: var(--mono); font-size: 12.5px; color: var(--ink); background: #EDEAE4; border-radius: 8px; padding: 10px 12px; display: block; margin-bottom: 10px; }
+  .ddcard .why { color: var(--muted); font-size: 12.5px; }
+  @media (max-width: 700px) { .dd { grid-template-columns: 1fr; } }
+
+  /* Bloques de prompt copiables */
+  .promptbox { background: var(--dark); border-radius: 14px; margin: 22px 0; overflow: hidden; }
+  .promptbox .pb-bar { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid #26231F; }
+  .promptbox .pb-bar .t { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange-soft); }
+  .promptbox button { font-family: var(--sans); font-size: 12px; font-weight: 700; color: #F2EFEA; background: #26231F; border: 1px solid #34302A; border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .promptbox button:hover { border-color: var(--orange); color: var(--orange-soft); }
+  .promptbox pre { padding: 18px 20px; overflow-x: auto; font-family: var(--mono); font-size: 12.5px; line-height: 1.7; color: #D8D4CC; white-space: pre-wrap; }
+  .promptbox pre b { color: var(--orange-soft); font-weight: 600; }
+
+  /* Tabs de región */
+  .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 20px 0 0; }
+  .tab { font-family: var(--sans); font-size: 13.5px; font-weight: 700; padding: 10px 18px; border-radius: 999px;
+    border: 1px solid var(--hair); background: var(--card); color: var(--ink-2); cursor: pointer; transition: all .15s; }
+  .tab:hover { border-color: var(--orange); color: var(--orange); }
+  .tab.on { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+  .pane { display: none; padding-top: 6px; }
+  .pane.on { display: block; }
+  .methods { display: grid; gap: 16px; margin: 18px 0 6px; }
+  .method { background: var(--card); border: 1px solid var(--hair); border-radius: 12px; padding: 18px 20px; }
+  .method.star { border-left: 3px solid var(--orange); }
+  .method h4 { font-size: 15.5px; font-weight: 700; color: var(--ink); display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .method h4 .rec { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(224,78,16,0.1); color: var(--orange); padding: 3px 9px; border-radius: 999px; }
+  .method p { font-size: 13.5px; margin: 8px 0 0; }
+  .method p b { color: var(--ink); }
+
+  /* Checklist */
+  .check { background: var(--dark); border-radius: 16px; padding: 28px; margin: 26px 0 10px; color: #B8B3AB; }
+  .check h3 { font-family: var(--serif); font-weight: 600; font-size: 22px; color: #F2EFEA; margin-bottom: 4px; }
+  .check .hint { font-size: 12.5px; color: #7A756D; margin-bottom: 16px; }
+  .check label { display: flex; gap: 12px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid #26231F; font-size: 14px; cursor: pointer; }
+  .check label:last-of-type { border-bottom: 0; }
+  .check input { margin-top: 4px; width: 16px; height: 16px; accent-color: var(--orange); flex: none; }
+  .check input:checked + span { color: #6E6A63; text-decoration: line-through; }
+  .check .score { margin-top: 14px; font-family: var(--serif); font-size: 17px; color: var(--orange-soft); }
+
+  /* Ayuda */
+  .help { background: var(--card); border: 1px solid var(--hair); border-left: 3px solid var(--orange); border-radius: 0 14px 14px 0; padding: 22px 24px; margin: 26px 0; }
+  .help b { color: var(--ink); }
+  .help a { color: var(--orange); font-weight: 700; text-decoration: none; }
+  .help a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  footer { border-top: 1px solid var(--hair); margin-top: 60px; padding: 24px 0 44px; font-size: 13px; color: var(--muted); }
+  footer a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--hair); }
+  .private { font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+  @media (max-width: 640px) { .step { grid-template-columns: 40px 1fr; gap: 12px; } .step .n { font-size: 26px; } }
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<div class="internal">
+  <div class="wrap"><b>Material interno</b> Uso exclusivo del equipo de A+ Growth — no compartir fuera del equipo, ni con clientes.</div>
+</div>
+
+<header class="mast">
+  <div class="wrap">
+    <div class="head-row">
+      <div class="wordmark">A<span>+</span> Growth</div>
+      <div class="rule"></div>
+      <div class="tag">Training interno · Nº 2</div>
+    </div>
+    <p class="kicker rv">Claude · Webs · Mercado Pago</p>
+    <h1 class="rv">Una web completa, con pagos, <em>conversando con Claude</em>.</h1>
+    <p class="sub rv">De cero a una página publicada que <b>cobra con Mercado Pago</b>, sin escribir
+      código: el trabajo de verdad es <b>promptear bien</b>. Esta guía te lleva de punta a punta —
+      qué preparar, qué pedirle a Claude (y qué no), el prompt maestro listo para copiar, y cómo
+      pasar del dominio de Claude a tu propio dominio en Vercel.</p>
+  </div>
+</header>
+
+<nav class="secnav" id="secnav">
+  <div class="wrap">
+    <a href="#idea">La idea</a>
+    <a href="#prep">Preparación</a>
+    <a href="#promptear">Promptear bien</a>
+    <a href="#prompt">El prompt maestro</a>
+    <a href="#construir">Construir e iterar</a>
+    <a href="#pagos">Pagos por país</a>
+    <a href="#publicar">Publicar + dominio</a>
+    <a href="#checklist">Checklist</a>
+    <a href="#ayuda">Ayuda</a>
+  </div>
+</nav>
+
+<!-- ============ LA IDEA ============ -->
+<section class="blk" id="idea">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">01</span><h2>La idea: esto es más simple de lo que parece</h2></div>
+    <p class="rv">Hace dos años, publicar una web que cobra online era un proyecto: programador, diseñador,
+      pasarela de pagos, hosting. Hoy es <b>una conversación</b>. Claude escribe todo el código; Mercado
+      Pago te da el botón de cobro; Vercel la publica gratis. El único talento que hace la diferencia es
+      <b>saber pedir</b> — y eso es exactamente lo que enseña esta guía.</p>
+    <p class="rv">El flujo completo tiene 5 etapas, y ninguna requiere saber programar:</p>
+    <ol class="rv">
+      <li><b>Preparar el brief</b> — juntar la información del negocio (15 min).</li>
+      <li><b>Promptear a Claude</b> — con el prompt maestro de esta guía (5 min).</li>
+      <li><b>Iterar</b> — afinar la página por partes, como con un diseñador (30–60 min).</li>
+      <li><b>Conectar Mercado Pago</b> — un link de pago pegado en el botón (10 min).</li>
+      <li><b>Publicar</b> — primero en el dominio de Claude para revisar; después Vercel + dominio propio (30 min).</li>
+    </ol>
+    <div class="pull rv">Una tarde de trabajo. El 80% del resultado se decide en el <span>prompt</span>,
+      no en el código.</div>
+  </div>
+</section>
+
+<!-- ============ PREPARACIÓN ============ -->
+<section class="blk" id="prep">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">02</span><h2>Antes de promptear: prepará el brief</h2></div>
+    <p class="rv">La regla de oro: <b>Claude no puede inventar tu negocio</b>. Si el prompt tiene poca
+      información, la página va a ser genérica — linda, pero genérica. Antes de abrir Claude, tené
+      escrito esto (bullets, sin pulir):</p>
+    <ul class="rv">
+      <li><b>Qué vendés</b> y a qué precio exacto.</li>
+      <li><b>A quién</b> — quién compra, qué problema tiene, qué palabras usa.</li>
+      <li><b>Por qué vos</b> — el diferencial real (no "calidad y servicio").</li>
+      <li><b>Prueba social</b> — testimonios reales, números reales, fotos reales. <b>Si no hay, no se
+        inventa</b>: una página sin testimonios es honesta; una con testimonios falsos es una bomba de tiempo.</li>
+      <li><b>La acción única</b> que querés que haga el visitante: comprar / dejar datos / agendar. Una sola.</li>
+      <li><b>Tono</b> — cercano, profesional, premium; español rioplatense o neutro.</li>
+    </ul>
+    <p class="rv">También dejá creadas estas dos cuentas (gratis las dos):</p>
+    <ul class="rv">
+      <li><b>claude.ai</b> — con un plan que incluya artifacts/código (los pagos de A+ ya lo tienen).</li>
+      <li><b>Mercado Pago</b> — cuenta de vendedor verificada, para generar el link de pago.</li>
+    </ul>
+    <div class="note rv"><b>Por qué insistimos tanto acá:</b> el 90% de las páginas flojas que vimos no
+      fallaron por Claude — fallaron por un brief de dos líneas. Basura entra, basura sale.</div>
+  </div>
+</section>
+
+<!-- ============ PROMPTEAR BIEN ============ -->
+<section class="blk" id="promptear">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">03</span><h2>Cómo promptear bien a Claude</h2></div>
+    <p class="rv">Cinco principios — y al lado de cada uno, el ejemplo de qué <b>no</b> hacer y qué
+      <b>sí</b>:</p>
+
+    <p class="rv"><b>1 · Todo el contexto primero, el pedido después.</b> Claude trabaja con lo que le das
+      en el momento; no adivina lo que quedó en tu cabeza.</p>
+    <div class="dd rv">
+      <div><div class="col-h no-h">✗ No</div><div class="ddcard no"><span class="q">hazme una página para mi negocio de velas</span>
+        <span class="why">Sin público, sin precio, sin diferencial → Claude rellena con clichés y la página no vende.</span></div></div>
+      <div><div class="col-h si-h">✓ Sí</div><div class="ddcard si"><span class="q">Vendo velas de soja artesanales a $18.000 el pack de 3, a mujeres de 28-45 que buscan regalos con onda. Mi diferencial: aromas de la Patagonia y packaging premium. Tono cercano pero cuidado, español neutro. Objetivo único: que compren el pack…</span>
+        <span class="why">Con contexto real, la primera versión ya sale un 80% correcta.</span></span></div></div>
+    </div>
+
+    <p class="rv"><b>2 · Pedí por resultado, no por implementación.</b> Vos ponés el "qué" y el "para qué";
+      Claude decide el "cómo" técnico — para eso está.</p>
+    <div class="dd rv">
+      <div><div class="col-h no-h">✗ No</div><div class="ddcard no"><span class="q">usá flexbox con un div container de 1200px y media queries en 768</span>
+        <span class="why">Microgestionar el código produce peleas técnicas que no mejoran la conversión.</span></div></div>
+      <div><div class="col-h si-h">✓ Sí</div><div class="ddcard si"><span class="q">La página tiene que verse impecable en el celular primero — ahí va a llegar el 90% del tráfico desde Instagram.</span>
+        <span class="why">El objetivo de negocio le deja a Claude elegir la mejor técnica.</span></div></div>
+    </div>
+
+    <p class="rv"><b>3 · Una cosa por mensaje al iterar.</b> Cambios de a uno se revisan de a uno.</p>
+    <div class="dd rv">
+      <div><div class="col-h no-h">✗ No</div><div class="ddcard no"><span class="q">cambiá el título, el color, agregá FAQ, achicá el hero, otra tipografía y hacé el footer más chico</span>
+        <span class="why">Seis cambios juntos = no sabés cuál rompió qué, ni cuál mejoró qué.</span></div></div>
+      <div><div class="col-h si-h">✓ Sí</div><div class="ddcard si"><span class="q">El título no menciona el beneficio. Probá 3 opciones que arranquen con lo que gana el cliente.</span>
+        <span class="why">Feedback específico + pedido de variantes = iteración con criterio.</span></div></div>
+    </div>
+
+    <p class="rv"><b>4 · Feedback con diagnóstico, no con humor.</b> "No me gusta" no le da nada con qué
+      trabajar.</p>
+    <div class="dd rv">
+      <div><div class="col-h no-h">✗ No</div><div class="ddcard no"><span class="q">mmm no me convence, hacelo más lindo</span>
+        <span class="why">"Lindo" no es una instrucción. Vas a dar vueltas en círculos.</span></div></div>
+      <div><div class="col-h si-h">✓ Sí</div><div class="ddcard si"><span class="q">Se siente apretado: falta aire entre secciones y el texto del hero compite con la foto. Más espacio y jerarquía clara.</span>
+        <span class="why">Nombrar el problema (aunque sea en criollo) le permite resolverlo.</span></div></div>
+    </div>
+
+    <p class="rv"><b>5 · Que pregunte antes de asumir.</b> La última línea de todo buen prompt largo:</p>
+    <div class="dd rv">
+      <div><div class="col-h no-h">✗ No</div><div class="ddcard no"><span class="q">[mandar el prompt y aceptar lo primero que salga]</span>
+        <span class="why">Si faltaba un dato, Claude lo asumió — y capaz asumió mal.</span></div></div>
+      <div><div class="col-h si-h">✓ Sí</div><div class="ddcard si"><span class="q">Antes de escribir código, haceme todas las preguntas que necesites sobre el negocio. Después mostrame la página completa y la iteramos por partes.</span>
+        <span class="why">Dos minutos de preguntas ahorran diez rondas de corrección.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROMPT MAESTRO ============ -->
+<section class="blk" id="prompt">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">04</span><h2>El prompt maestro (copiar, completar, pegar)</h2></div>
+    <p class="rv">Este prompt ya trae la estructura de conversión que usamos en A+ — hero con beneficio,
+      prueba social temprana, oferta clara, objeciones, un solo CTA — más los requisitos técnicos para que
+      la página salga rápida, mobile-first y lista para tracking. <b>Reemplazá todo lo que está entre
+      [corchetes]</b> con tu brief del paso 02:</p>
+
+    <div class="promptbox rv">
+      <div class="pb-bar"><span class="t">Prompt maestro · pegar en claude.ai</span><button data-copy="p1">Copiar</button></div>
+      <pre id="p1">Quiero que construyas una landing page de venta completa, en un solo archivo HTML con CSS y JS incluidos, lista para publicar tal cual.
+
+SOBRE EL NEGOCIO
+- Negocio: <b>[nombre + qué vende, en una línea]</b>
+- Público: <b>[quién compra, qué problema tiene, qué palabras usa]</b>
+- Oferta: <b>[producto/servicio exacto, precio, qué incluye]</b>
+- Diferencial: <b>[por qué elegirnos y no a otro]</b>
+- Prueba social REAL: <b>[testimonios textuales, números, logos — solo cosas verdaderas; si no tengo, omití la sección]</b>
+- Tono: <b>[cercano / profesional / premium]</b>, español <b>[rioplatense / neutro]</b>
+
+OBJETIVO — UNA SOLA CONVERSIÓN
+Todo en la página empuja a una única acción: <b>[comprar / dejar datos / agendar]</b>. No agregues CTAs secundarios ni links que saquen a la gente de la página.
+
+ESTRUCTURA (en este orden)
+1. Hero: titular con el beneficio principal (no el nombre del negocio), subtítulo diciendo para quién es, y el botón de acción visible sin scrollear.
+2. Prueba social temprana: testimonios o números reales apenas después del hero.
+3. La oferta: qué incluye, precio claro, sin letra chica.
+4. Cómo funciona: 3 pasos simples de qué pasa después de comprar/contactar.
+5. Objeciones: las 3-5 preguntas que frenan la compra, respondidas honestamente (FAQ).
+6. CTA final: repetir el botón con una línea de refuerzo.
+
+REQUISITOS TÉCNICOS
+- Mobile-first: diseñala para celular primero; en desktop que escale bien.
+- Velocidad: sin librerías externas, sin frameworks; imágenes con lazy loading; el archivo debe abrir instantáneo.
+- El botón de pago apunta a mi link de Mercado Pago: <b>[PEGAR-LINK-DE-PAGO]</b> (si todavía no lo tengo, dejá el href como "#" con un comentario).
+- SEO básico: title y meta description con el beneficio; open graph para que se vea bien al compartir por WhatsApp.
+- Dejame comentado en el head un espacio claro para pegar después el Meta Pixel y GTM.
+- Accesible: contraste correcto, botones grandes en mobile, textos legibles.
+
+ESTILO
+- <b>[colores de la marca si existen / "elegí una paleta que transmita X"]</b>
+- Tipografía del sistema o de Google Fonts, máximo dos familias.
+- Que se sienta hecha a medida, no como template.
+
+ANTES DE EMPEZAR
+Haceme todas las preguntas que necesites sobre el negocio si falta información importante. Cuando esté la primera versión, mostramela completa y la iteramos por partes.</pre>
+    </div>
+
+    <p class="rv">Y cuando estés iterando, este mini-prompt es tu mejor amigo:</p>
+    <div class="promptbox rv">
+      <div class="pb-bar"><span class="t">Prompt de iteración</span><button data-copy="p2">Copiar</button></div>
+      <pre id="p2">Vamos a iterar solo <b>[el hero / la sección de precio / las FAQ]</b>.
+Problema: <b>[qué no está funcionando, en tus palabras]</b>.
+Mostrame 2-3 variantes de esa sección sin tocar el resto de la página.</pre>
+    </div>
+
+    <div class="note rv"><b>Tip A+:</b> pedile siempre variantes del hero (titular + subtítulo) aunque el
+      primero te guste. El hero decide la conversión más que toda el resto de la página junta — vale la
+      pena elegir entre 3.</div>
+  </div>
+</section>
+
+<!-- ============ CONSTRUIR E ITERAR ============ -->
+<section class="blk" id="construir">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">05</span><h2>Construir e iterar con Claude</h2></div>
+    <div class="step rv"><div class="n">1</div><div>
+      <h3>Pegá el prompt maestro completo</h3>
+      <p>En claude.ai, conversación nueva. Claude probablemente te haga 2-4 preguntas — <b>respondelas
+        bien</b>, ahí se define la calidad. Después va a generar la página como artifact: la ves
+        renderizada al lado del chat, en vivo.</p>
+    </div></div>
+    <div class="step rv"><div class="n">2</div><div>
+      <h3>Primera revisión: mobile antes que nada</h3>
+      <p>Achicá la ventana o usá la vista responsive. ¿El titular y el botón entran sin scrollear en un
+        celular? ¿Los botones son fáciles de tocar? Lo que falle acá, se itera primero.</p>
+    </div></div>
+    <div class="step rv"><div class="n">3</div><div>
+      <h3>Iterá por partes con el prompt de iteración</h3>
+      <p>Hero → precio → FAQ → detalles. Una sección por mensaje, con diagnóstico. En 5-8 mensajes la
+        página queda fina. Si en algún momento se rompe algo, decile exactamente qué se rompió y que lo
+        arregle sin tocar el resto.</p>
+    </div></div>
+    <div class="step rv"><div class="n">4</div><div>
+      <h3>Leé el copy en voz alta</h3>
+      <p>Si algo suena a robot o a "template de marketing", marcáselo: <i>"este párrafo no lo diría un
+        humano; reescribilo como le hablarías a un cliente en WhatsApp"</i>. El copy natural convierte
+        más que el copy perfecto.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============ PAGOS POR PAÍS ============ -->
+<section class="blk" id="pagos">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">06</span><h2>Conectar los pagos (sí, es así de simple)</h2></div>
+    <p class="rv">Para el 90% de los casos no hace falta integrar nada: todas las pasarelas serias generan
+      un <b>link o botón de pago sin código</b> que se pega en el botón de la página — y casi todas dejan
+      <b>redirigir al comprador a tu página de gracias</b> después de pagar. Elegí desde dónde va a
+      cobrar el negocio y mirá qué recomendamos:</p>
+
+    <div class="tabs rv" role="tablist">
+      <button class="tab on" data-pane="ar">🇦🇷 Argentina</button>
+      <button class="tab" data-pane="latam">🌎 Latinoamérica</button>
+      <button class="tab" data-pane="us">🇺🇸 Estados Unidos</button>
+      <button class="tab" data-pane="eu">🇪🇺 Europa</button>
+    </div>
+
+    <div class="pane on rv" id="pane-ar">
+      <div class="methods">
+        <div class="method star"><h4>Mercado Pago <span class="rec">Recomendado</span></h4>
+          <p><b>Cómo incluirlo:</b> en tu cuenta de vendedor → <b>Cobrar → Link de pago</b>: nombre,
+            precio, listo — te da una URL tipo <code>mpago.la/…</code> que pegás en el botón de la página
+            (el prompt maestro ya lo contempla). El comprador paga con tarjeta, cuotas o dinero en
+            cuenta.</p>
+          <p><b>Thank-you page:</b> si querés que después de pagar vuelva a una página de gracias tuya
+            (donde además dispara el Pixel), eso se hace con Checkout Pro y sus URLs de retorno — un
+            backend chico que <b>Claude te arma en 10 minutos</b> y se deploya en Vercel. Para arrancar,
+            el link de pago solo alcanza.</p></div>
+        <div class="method"><h4>PayPal (complemento)</h4>
+          <p>Para cobrarle al exterior en dólares: creás tu link o botón de cobro en PayPal y lo usás
+            como opción secundaria ("¿estás fuera de Argentina? Pagá por acá"). También permite
+            configurar la vuelta a tu página tras el pago.</p></div>
+      </div>
+    </div>
+
+    <div class="pane rv" id="pane-latam">
+      <div class="methods">
+        <div class="method star"><h4>Mercado Pago <span class="rec">Recomendado donde opera</span></h4>
+          <p>Brasil, México, Chile, Colombia, Uruguay y Perú funcionan igual que Argentina:
+            <b>Cobrar → Link de pago</b>, pegás la URL en el botón y listo. Es el método con más
+            confianza local y el que menos fricción de checkout tiene en la región.</p></div>
+        <div class="method"><h4>Stripe (México y Brasil)</h4>
+          <p>Si el negocio está en México o Brasil, Stripe también opera: <b>Payment Links</b> sin
+            código, con redirección a tu página de gracias configurable desde el mismo panel.</p></div>
+        <div class="method"><h4>PayPal (complemento)</h4>
+          <p>La opción universal para clientes fuera del país. Link de cobro + retorno a tu página.</p></div>
+      </div>
+    </div>
+
+    <div class="pane rv" id="pane-us">
+      <div class="methods">
+        <div class="method star"><h4>Stripe <span class="rec">Recomendado</span></h4>
+          <p><b>Cómo incluirlo:</b> en el dashboard de Stripe → <b>Payment Links</b> → producto, precio,
+            crear. Pegás la URL en el botón. Acepta todas las tarjetas, Apple Pay y Google Pay.</p>
+          <p><b>Thank-you page:</b> el propio Payment Link te deja configurar "redirect customers to
+            your website" después del pago — ponés la URL de tu página de gracias y ahí disparás el
+            Pixel de compra. Sin código.</p></div>
+        <div class="method"><h4>PayPal</h4>
+          <p>Sigue convirtiendo fuerte en USA como opción secundaria: botón o link de cobro con
+            auto-retorno a tu página configurable en la cuenta business.</p></div>
+        <div class="method"><h4>Square</h4>
+          <p>Si el negocio ya cobra presencial con Square, sus <b>Payment Links</b> mantienen todo en
+            una sola cuenta.</p></div>
+      </div>
+    </div>
+
+    <div class="pane rv" id="pane-eu">
+      <div class="methods">
+        <div class="method star"><h4>Stripe <span class="rec">Recomendado</span></h4>
+          <p>Igual que en USA: <b>Payment Links</b> sin código con redirect a tu thank-you page. Ventaja
+            europea: habilitá en el mismo panel los métodos locales que convierten en cada país —
+            <b>SEPA, iDEAL (Países Bajos), Bancontact (Bélgica), Klarna</b> — y el link los ofrece solo.</p></div>
+        <div class="method"><h4>PayPal</h4>
+          <p>Muy usado en Alemania y sur de Europa; como opción secundaria suma conversión real.
+            Link de cobro + retorno configurables.</p></div>
+      </div>
+    </div>
+
+    <div class="note rv"><b>El patrón es siempre el mismo, con cualquier pasarela:</b> botón de la página
+      → link de pago → pago → <b>thank-you page tuya</b> (que también la arma Claude: pedile "una página
+      de gracias simple, misma estética, que confirme la compra y diga qué pasa ahora"). En esa página va
+      el Pixel de conversión — así las campañas optimizan sobre compras reales.</div>
+
+    <div class="note rv"><b>Seguridad — la única regla dura:</b> en la página solo van <b>links de
+      pago</b> (o claves públicas). Los tokens secretos (Access Token de MP, Secret Key de Stripe)
+      <b>jamás se pegan en el HTML ni en un prompt</b>. Si un caso necesita checkout embebido o
+      suscripciones por API, lleva backend con el token como variable de entorno — hablá primero con Amir.</div>
+  </div>
+</section>
+
+<!-- ============ PUBLICAR ============ -->
+<section class="blk" id="publicar">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">07</span><h2>Publicar: del dominio de Claude a tu dominio propio</h2></div>
+    <p class="rv">La página va a vivir en tres direcciones a lo largo de su vida — y las tres transiciones
+      son simples:</p>
+    <div class="step rv"><div class="n">1</div><div>
+      <h3>Primero: el link del artifact de Claude</h3>
+      <p>Desde el artifact, <b>Publish/Share</b> te da un link público con dominio de Claude. Sirve para
+        revisar en tu celular, mostrar internamente y validar — pero <b>no es la dirección definitiva</b>:
+        no es tu marca y no está pensada para correr tráfico.</p>
+    </div></div>
+    <div class="step rv"><div class="n">2</div><div>
+      <h3>Después: subila a Vercel (gratis)</h3>
+      <p>Descargá el archivo HTML del artifact (o copiá el código a un archivo <code>index.html</code>).
+        En <b>vercel.com</b>: cuenta gratis → <b>Add New → Project</b> → arrastrá la carpeta con tu
+        <code>index.html</code> → Deploy. En un minuto tenés la página en <code>tuproyecto.vercel.app</code>,
+        con hosting rápido y HTTPS incluido. (Netlify funciona igual de bien si lo preferís.)</p>
+    </div></div>
+    <div class="step rv"><div class="n">3</div><div>
+      <h3>Comprá el dominio</h3>
+      <p>Namecheap, Cloudflare o GoDaddy — cualquiera sirve, USD 10-15 por año. Elegí un <code>.com</code>
+        corto y fácil de dictar por teléfono.</p>
+    </div></div>
+    <div class="step rv"><div class="n">4</div><div>
+      <h3>Delegá los DNS y listo</h3>
+      <p>En Vercel: <b>Settings → Domains → Add</b>, escribí tu dominio. Vercel te muestra exactamente
+        qué configurar en el proveedor donde lo compraste — dos caminos:</p>
+      <ul>
+        <li><b>Camino fácil:</b> cambiar los <b>nameservers</b> del dominio por los de Vercel (los copia
+          y pega el panel). Vercel maneja todo desde ahí.</li>
+        <li><b>Camino manual:</b> agregar el registro <b>A</b> y el <b>CNAME</b> que Vercel te indica en
+          el panel de DNS del proveedor.</li>
+      </ul>
+      <p>La propagación puede tardar de minutos a unas horas — si no anda al instante, <b>no toques
+        nada</b>: esperá y volvé a probar. El HTTPS se activa solo.</p>
+    </div></div>
+    <div class="pull rv">Artifact para validar → Vercel para publicar → <span>tu dominio</span> para
+      crecer.</div>
+  </div>
+</section>
+
+<!-- ============ CHECKLIST ============ -->
+<section class="blk" id="checklist">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">08</span><h2>Checklist final antes de compartir el link</h2></div>
+    <div class="check rv" id="cl">
+      <h3>La página está lista si tildás todo.</h3>
+      <p class="hint">Los ticks se guardan en este navegador.</p>
+      <label><input type="checkbox" data-k="w1"><span>El titular del hero dice el beneficio, no el nombre del negocio.</span></label>
+      <label><input type="checkbox" data-k="w2"><span>En un celular real, título + botón se ven sin scrollear.</span></label>
+      <label><input type="checkbox" data-k="w3"><span>Hay UNA sola acción posible; ningún link saca a la gente de la página.</span></label>
+      <label><input type="checkbox" data-k="w4"><span>El precio está claro, sin sorpresas.</span></label>
+      <label><input type="checkbox" data-k="w5"><span>Toda la prueba social es real (testimonios, números, fotos).</span></label>
+      <label><input type="checkbox" data-k="w6"><span>El botón lleva al link de Mercado Pago y el pago se probó de punta a punta.</span></label>
+      <label><input type="checkbox" data-k="w7"><span>Ningún token o clave secreta quedó en el código.</span></label>
+      <label><input type="checkbox" data-k="w8"><span>El copy suena a humano leído en voz alta.</span></label>
+      <label><input type="checkbox" data-k="w9"><span>La página carga instantánea (sin librerías de más).</span></label>
+      <label><input type="checkbox" data-k="w10"><span>Title y meta description puestos; se ve bien compartida por WhatsApp.</span></label>
+      <label><input type="checkbox" data-k="w11"><span>Espacio para Meta Pixel / GTM listo en el head (y pegado si ya hay cuenta).</span></label>
+      <label><input type="checkbox" data-k="w12"><span>Deployada en Vercel con el dominio propio andando en HTTPS.</span></label>
+      <div class="score" id="cl-score"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AYUDA ============ -->
+<section class="blk" id="ayuda">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">09</span><h2>¿Trabado en algo? Para eso estamos</h2></div>
+    <div class="help rv">
+      <p><b>Si tenés cualquier duda</b> — un prompt que no sale, Mercado Pago que no conecta, DNS que no
+        propaga — escribí a <a href="mailto:amir@amirgomez.com">amir@amirgomez.com</a> o mandá mensaje
+        directo por el canal del equipo. <b>Como equipo nos dedicamos a enseñarle al resto</b>: ninguna
+        pregunta es demasiado básica, y lo que te trabó a vos seguro le sirve al próximo.</p>
+      <p style="margin-bottom:0">Si armaste algo con esta guía, compartilo en el canal — los mejores
+        ejemplos se suman como casos a este training.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b style="color:var(--ink)">A+ Growth</b> — Training interno · <a href="mailto:amir@amirgomez.com">amir@amirgomez.com</a></div>
+    <div class="private">Material interno — no compartir fuera del equipo · No indexado</div>
+  </div>
+</footer>
+
+<script>
+var bar = document.getElementById('progress');
+addEventListener('scroll', function(){
+  var h = document.documentElement;
+  bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+}, { passive: true });
+
+var rio = ('IntersectionObserver' in window) ? new IntersectionObserver(function(es){
+  es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }) : null;
+document.querySelectorAll('.rv').forEach(function(el){ rio ? rio.observe(el) : el.classList.add('in'); });
+
+var navLinks = document.querySelectorAll('.secnav a');
+var so = ('IntersectionObserver' in window) ? new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if (!e.isIntersecting) return;
+    navLinks.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id); });
+  });
+}, { rootMargin: '-25% 0px -65% 0px' }) : null;
+if (so) document.querySelectorAll('section.blk').forEach(function(s){ so.observe(s); });
+
+/* Tabs de región de pagos */
+document.querySelectorAll('.tab').forEach(function(t){
+  t.addEventListener('click', function(){
+    document.querySelectorAll('.tab').forEach(function(x){ x.classList.toggle('on', x === t); });
+    document.querySelectorAll('.pane').forEach(function(p){ p.classList.toggle('on', p.id === 'pane-' + t.getAttribute('data-pane')); });
+  });
+});
+
+/* Copiar prompts */
+document.querySelectorAll('button[data-copy]').forEach(function(b){
+  b.addEventListener('click', function(){
+    var el = document.getElementById(b.getAttribute('data-copy'));
+    navigator.clipboard.writeText(el.innerText).then(function(){
+      var t = b.textContent; b.textContent = 'Copiado ✓';
+      setTimeout(function(){ b.textContent = t; }, 1600);
+    });
+  });
+});
+
+/* Checklist persistente */
+(function(){
+  var boxes = document.querySelectorAll('#cl input[type="checkbox"]');
+  var KEY = 'aplus-web-claude-checklist';
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch(e) {}
+  function score(){
+    var on = Array.prototype.filter.call(boxes, function(b){ return b.checked; }).length;
+    document.getElementById('cl-score').textContent = on === boxes.length
+      ? '12/12 — publicala y compartí el link en el canal.' : on + '/' + boxes.length + ' tildados.';
+  }
+  boxes.forEach(function(b){
+    b.checked = !!saved[b.getAttribute('data-k')];
+    b.addEventListener('change', function(){
+      saved[b.getAttribute('data-k')] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch(e) {}
+      score();
+    });
+  });
+  score();
+})();
+</script>
+</body>
+</html>

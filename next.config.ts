@@ -79,6 +79,7 @@ const nextConfig: NextConfig = {
       // Training long-form: URLs limpias hacia los estáticos de /public
       { source: '/long-form-training', destination: '/long-form-training.html' },
       { source: '/long-form-training-es', destination: '/long-form-training-es.html' },
+      { source: '/interno-web-claude', destination: '/interno-web-claude.html' },
       {
         source: '/clients/:client',
         destination: '/clients/:client.html'
