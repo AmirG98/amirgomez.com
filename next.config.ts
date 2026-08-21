@@ -3,13 +3,6 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // 301 de posts duplicados hacia la versión que conservamos.
   // Consolida la señal de SEO en una sola URL por tema.
-  async rewrites() {
-    return [
-      // Training long-form: URLs limpias hacia los estáticos de /public
-      { source: '/long-form-training', destination: '/long-form-training.html' },
-      { source: '/long-form-training-es', destination: '/long-form-training-es.html' },
-    ];
-  },
   async redirects() {
     return [
       // URL vieja del training (compartida antes del renombre)
@@ -83,6 +76,9 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return [
+      // Training long-form: URLs limpias hacia los estáticos de /public
+      { source: '/long-form-training', destination: '/long-form-training.html' },
+      { source: '/long-form-training-es', destination: '/long-form-training-es.html' },
       {
         source: '/clients/:client',
         destination: '/clients/:client.html'
