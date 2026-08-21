@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A+ Growth · Interno — Web completa con Claude + Mercado Pago</title>
+<title>A+ Growth · Interno — Web completa con Claude + pagos online</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -152,10 +152,13 @@
       <div class="rule"></div>
       <div class="tag">Training interno · Nº 2</div>
     </div>
-    <p class="kicker rv">Claude · Webs · Mercado Pago</p>
+    <p class="kicker rv">Claude · Webs · Pagos online</p>
     <h1 class="rv">Una web completa, con pagos, <em>conversando con Claude</em>.</h1>
-    <p class="sub rv">De cero a una página publicada que <b>cobra con Mercado Pago</b>, sin escribir
-      código: el trabajo de verdad es <b>promptear bien</b>. Esta guía te lleva de punta a punta —
+    <p class="sub rv">De cero a una página publicada que <b>cobra online con el método de pago que
+      mejor le quede a tu región</b> — Mercado Pago, Stripe, PayPal y más (mirá la
+      <a href="#pagos" style="color:var(--orange);font-weight:700;text-decoration:none">sección de
+      pagos por país</a> para elegir el tuyo). Sin escribir código: el trabajo de verdad es
+      <b>promptear bien</b>. Esta guía te lleva de punta a punta —
       qué preparar, qué pedirle a Claude (y qué no), el prompt maestro listo para copiar, y cómo
       pasar del dominio de Claude a tu propio dominio en Vercel.</p>
   </div>
@@ -180,15 +183,15 @@
   <div class="wrap">
     <div class="sec-head rv"><span class="no">01</span><h2>La idea: esto es más simple de lo que parece</h2></div>
     <p class="rv">Hace dos años, publicar una web que cobra online era un proyecto: programador, diseñador,
-      pasarela de pagos, hosting. Hoy es <b>una conversación</b>. Claude escribe todo el código; Mercado
-      Pago te da el botón de cobro; Vercel la publica gratis. El único talento que hace la diferencia es
+      pasarela de pagos, hosting. Hoy es <b>una conversación</b>. Claude escribe todo el código; la
+      pasarela de tu región te da el botón de cobro; Vercel la publica gratis. El único talento que hace la diferencia es
       <b>saber pedir</b> — y eso es exactamente lo que enseña esta guía.</p>
     <p class="rv">El flujo completo tiene 5 etapas, y ninguna requiere saber programar:</p>
     <ol class="rv">
       <li><b>Preparar el brief</b> — juntar la información del negocio (15 min).</li>
       <li><b>Promptear a Claude</b> — con el prompt maestro de esta guía (5 min).</li>
       <li><b>Iterar</b> — afinar la página por partes, como con un diseñador (30–60 min).</li>
-      <li><b>Conectar Mercado Pago</b> — un link de pago pegado en el botón (10 min).</li>
+      <li><b>Conectar el pago</b> — un link de pago pegado en el botón; elegí la pasarela según tu región en la <a href="#pagos" style="color:var(--orange)">sección 06</a> (10 min).</li>
       <li><b>Publicar</b> — primero en el dominio de Claude para revisar; después Vercel + dominio propio (30 min).</li>
     </ol>
     <div class="pull rv">Una tarde de trabajo. El 80% del resultado se decide en el <span>prompt</span>,
@@ -215,7 +218,7 @@
     <p class="rv">También dejá creadas estas dos cuentas (gratis las dos):</p>
     <ul class="rv">
       <li><b>claude.ai</b> — con un plan que incluya artifacts/código (los pagos de A+ ya lo tienen).</li>
-      <li><b>Mercado Pago</b> — cuenta de vendedor verificada, para generar el link de pago.</li>
+      <li><b>Tu pasarela de pagos</b> — cuenta de vendedor creada (Mercado Pago, Stripe, PayPal… según tu región; la <a href="#pagos" style="color:var(--orange)">sección 06</a> te ayuda a decidir cuál te queda mejor).</li>
     </ul>
     <div class="note rv"><b>Por qué insistimos tanto acá:</b> el 90% de las páginas flojas que vimos no
       fallaron por Claude — fallaron por un brief de dos líneas. Basura entra, basura sale.</div>
@@ -309,7 +312,7 @@ ESTRUCTURA (en este orden)
 REQUISITOS TÉCNICOS
 - Mobile-first: diseñala para celular primero; en desktop que escale bien.
 - Velocidad: sin librerías externas, sin frameworks; imágenes con lazy loading; el archivo debe abrir instantáneo.
-- El botón de pago apunta a mi link de Mercado Pago: <b>[PEGAR-LINK-DE-PAGO]</b> (si todavía no lo tengo, dejá el href como "#" con un comentario).
+- El botón de pago apunta a mi link de pago (Mercado Pago / Stripe / PayPal, según mi región): <b>[PEGAR-LINK-DE-PAGO]</b> (si todavía no lo tengo, dejá el href como "#" con un comentario).
 - SEO básico: title y meta description con el beneficio; open graph para que se vea bien al compartir por WhatsApp.
 - Dejame comentado en el head un espacio claro para pegar después el Meta Pixel y GTM.
 - Accesible: contraste correcto, botones grandes en mobile, textos legibles.
