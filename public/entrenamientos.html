@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A+Growth Academy — Portal de entrenamientos</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F2EFEA; --card: #FAF8F5; --ink: #2E2C28; --ink-2: #55524D; --muted: #8A8781;
+    --orange: #E04E10; --orange-soft: #F0956A; --hair: #DDD8CF; --dark: #14120F;
+    --ok: #1E7A4A;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --serif: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+    --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink-2); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 26px; }
+  .wrap-read { max-width: 880px; margin: 0 auto; padding: 0 26px; }
+  ::selection { background: var(--orange); color: #fff; }
+  a { color: var(--orange); }
+  button { font-family: inherit; }
+  :focus-visible { outline: 3px solid var(--orange-soft); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+
+  /* Banda interna */
+  .internal { background: var(--dark); color: #B8B3AB; font-size: 12.5px; letter-spacing: 0.04em; }
+  .internal .wrap { display: flex; align-items: center; gap: 10px; padding-top: 10px; padding-bottom: 10px; flex-wrap: wrap; }
+  .internal b { color: var(--orange-soft); text-transform: uppercase; letter-spacing: 0.14em; font-size: 11px; }
+
+  header.mast { position: relative; overflow: hidden; padding: 46px 0 38px; }
+  header.mast::after { content: ""; position: absolute; right: -180px; top: -180px; width: 480px; height: 480px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(224,78,16,0.16) 0%, rgba(224,78,16,0) 70%); filter: blur(30px); pointer-events: none; }
+  .head-row { display: flex; align-items: center; gap: 18px; margin-bottom: 38px; }
+  .wordmark { font-size: 21px; font-weight: 800; color: var(--ink); white-space: nowrap; }
+  .wordmark span { color: var(--orange); }
+  .head-row .rule { flex: 1; height: 1px; background: var(--ink); }
+  .head-row .tag { font-size: 11.5px; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; white-space: nowrap; }
+  .kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
+  h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(34px, 5.6vw, 56px); color: var(--ink); letter-spacing: -0.015em; line-height: 1.05; text-wrap: balance; }
+  h1 em { font-style: italic; color: var(--orange); }
+  .sub { margin-top: 16px; font-size: 16.5px; max-width: 58ch; text-wrap: pretty; }
+  .sub b { color: var(--ink); }
+
+  /* Stats del dashboard */
+  .stats { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 28px; }
+  .stat .n { font-family: var(--serif); font-weight: 600; font-size: 30px; color: var(--ink); line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .stat .n span { color: var(--orange); }
+  .stat .l { font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+  /* Controles: búsqueda + filtros */
+  .controls { position: sticky; top: 0; z-index: 20; background: rgba(242,239,234,0.93); backdrop-filter: blur(10px);
+    border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+  .controls .wrap { display: flex; gap: 10px; align-items: center; padding-top: 10px; padding-bottom: 10px; flex-wrap: wrap; }
+  .search { flex: 1 1 240px; min-width: 200px; position: relative; }
+  .search input { width: 100%; min-height: 42px; padding: 8px 14px 8px 38px; font-size: 14.5px; font-family: inherit; color: var(--ink);
+    background: var(--card); border: 1px solid var(--hair); border-radius: 999px; }
+  .search input:focus-visible { outline: 2px solid var(--orange); border-color: var(--orange); }
+  .search svg { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; stroke: var(--muted); }
+  .chips { display: flex; gap: 4px; overflow-x: auto; }
+  .chips button { flex: none; font-size: 12px; font-weight: 600; color: var(--ink-2); background: none; border: 0; cursor: pointer;
+    padding: 7px 13px; border-radius: 999px; transition: all .15s; }
+  .chips button:hover { color: var(--orange); }
+  .chips button.on { background: var(--ink); color: var(--paper); }
+
+  /* Grid de trainings */
+  section.deck { padding: 44px 0 10px; }
+  .deck-head { display: flex; align-items: baseline; gap: 16px; border-bottom: 1px solid var(--ink); padding-bottom: 12px; margin-bottom: 22px; }
+  .deck-head .no { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 17px; color: var(--orange); }
+  .deck-head h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(22px, 3.4vw, 32px); color: var(--ink); letter-spacing: -0.01em; }
+  .deck-head .count { margin-left: auto; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; margin-bottom: 26px; }
+  .tcard { display: flex; flex-direction: column; gap: 10px; background: var(--card); border: 1px solid var(--hair); border-radius: 14px;
+    padding: 20px 22px 18px; text-decoration: none; color: var(--ink-2); transition: transform .18s cubic-bezier(.2,.7,.2,1), box-shadow .18s, border-color .18s; }
+  .tcard:hover { transform: translateY(-3px); border-color: var(--orange-soft); box-shadow: 0 10px 28px rgba(46,44,40,0.08); }
+  .tcard .top { display: flex; align-items: center; gap: 8px; }
+  .tcard .cat { font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); }
+  .tcard .lvl { margin-left: auto; font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+    border: 1px solid var(--hair); border-radius: 999px; padding: 2px 9px; white-space: nowrap; }
+  .tcard h3 { font-family: var(--serif); font-weight: 600; font-size: 20px; color: var(--ink); line-height: 1.25; text-wrap: balance; }
+  .tcard p { font-size: 13.5px; flex: 1; }
+  .tcard .meta { display: flex; align-items: center; gap: 12px; font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
+  .tcard .bar { flex: 1; height: 4px; background: var(--hair); border-radius: 99px; overflow: hidden; }
+  .tcard .bar i { display: block; height: 100%; background: var(--orange); border-radius: 99px; transition: width .3s; }
+  .tcard .done-badge { color: var(--ok); font-weight: 700; }
+  .tcard.ext .cat { color: var(--ink-2); }
+  .empty { padding: 30px 0 50px; font-size: 15px; color: var(--muted); font-style: italic; }
+
+  /* Vista de training */
+  .crumb { display: inline-flex; align-items: center; gap: 8px; margin: 26px 0 0; font-size: 13px; font-weight: 600; color: var(--ink-2);
+    text-decoration: none; border: 1px solid var(--hair); background: var(--card); border-radius: 999px; padding: 8px 16px; }
+  .crumb:hover { color: var(--orange); border-color: var(--orange-soft); }
+  .tmeta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 18px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  .tmeta b { color: var(--ink); font-weight: 600; }
+
+  nav.secnav { position: sticky; top: 0; z-index: 20; background: rgba(242,239,234,0.93); backdrop-filter: blur(10px);
+    border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+  nav.secnav .wrap-read { display: flex; gap: 4px; overflow-x: auto; padding-top: 9px; padding-bottom: 9px; }
+  nav.secnav a { flex: none; font-size: 12px; font-weight: 600; color: var(--ink-2); text-decoration: none; padding: 7px 13px; border-radius: 999px; transition: all .15s; }
+  nav.secnav a:hover { color: var(--orange); }
+
+  section.blk { padding: 54px 0 8px; }
+  .sec-head { display: flex; align-items: baseline; gap: 16px; border-bottom: 1px solid var(--ink); padding-bottom: 14px; margin-bottom: 20px; }
+  .sec-head .no { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 18px; color: var(--orange); }
+  .sec-head h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(24px, 3.6vw, 34px); color: var(--ink); letter-spacing: -0.01em; text-wrap: balance; }
+  .blk p { margin-bottom: 14px; font-size: 15.5px; max-width: 70ch; text-wrap: pretty; }
+  .blk p b, .blk li b { color: var(--ink); }
+  .blk ul, .blk ol { margin: 0 0 16px 20px; }
+  .blk li { margin-bottom: 8px; font-size: 15px; }
+  .blk code { font-family: var(--mono); font-size: 0.9em; background: #E9E5DD; padding: 1px 6px; border-radius: 5px; color: var(--ink); }
+  .pull { font-family: var(--serif); font-weight: 500; font-size: clamp(19px, 2.8vw, 24px); line-height: 1.4; color: var(--ink);
+    border-left: 3px solid var(--orange); padding: 6px 0 6px 22px; margin: 24px 0; max-width: 36ch; text-wrap: pretty; }
+  .pull span { color: var(--orange); }
+  .note { border-left: 3px solid var(--orange); background: rgba(224,78,16,0.06); padding: 14px 18px; margin: 20px 0; font-size: 14px; max-width: 760px; }
+  .note b { color: var(--ink); }
+  .ej { background: var(--card); border: 1px solid var(--hair); border-radius: 10px; padding: 12px 16px; margin: 12px 0 16px; font-size: 13.5px; max-width: 760px; }
+  .ej b { color: var(--orange); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+
+  /* Checklist */
+  .check { background: var(--dark); border-radius: 16px; padding: 30px 28px; margin: 40px 0 10px; color: #B8B3AB; }
+  .check h3 { font-family: var(--serif); font-weight: 600; font-size: 24px; color: #F2EFEA; margin-bottom: 4px; }
+  .check .hint { font-size: 12.5px; color: #7A756D; margin-bottom: 18px; }
+  .check label { display: flex; gap: 12px; align-items: flex-start; padding: 9px 0; border-bottom: 1px solid #26231F; font-size: 14.5px; cursor: pointer; }
+  .check label:last-of-type { border-bottom: 0; }
+  .check input { margin-top: 4px; width: 16px; height: 16px; accent-color: var(--orange); flex: none; }
+  .check input:checked + span { color: #6E6A63; text-decoration: line-through; }
+  .check .done-msg { display: none; margin-top: 16px; font-weight: 700; color: var(--orange-soft); }
+  .check.all .done-msg { display: block; }
+
+  /* Box de dudas */
+  .ask { background: var(--card); border: 1px solid var(--hair); border-radius: 16px; padding: 28px; margin: 34px 0 70px; }
+  .ask h3 { font-family: var(--serif); font-weight: 600; font-size: 24px; color: var(--ink); margin-bottom: 4px; }
+  .ask .hint { font-size: 13px; color: var(--muted); margin-bottom: 16px; max-width: 62ch; }
+  .ask textarea { width: 100%; min-height: 96px; resize: vertical; padding: 12px 14px; font-size: 15px; font-family: inherit; line-height: 1.55;
+    color: var(--ink); background: #fff; border: 1px solid var(--hair); border-radius: 10px; }
+  .ask textarea:focus-visible { outline: 2px solid var(--orange); border-color: var(--orange); }
+  .ask .row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; align-items: center; }
+  .ask .go { min-height: 44px; padding: 0 22px; border: 0; border-radius: 999px; background: var(--orange); color: #fff;
+    font-size: 14px; font-weight: 700; cursor: pointer; }
+  .ask .go:hover { background: #C64510; }
+  .ask .alt { min-height: 44px; padding: 0 18px; border: 1px solid var(--hair); border-radius: 999px; background: none; color: var(--ink-2);
+    font-size: 13.5px; font-weight: 600; cursor: pointer; }
+  .ask .alt:hover { color: var(--orange); border-color: var(--orange-soft); }
+  .ask .copied { font-size: 13px; font-weight: 700; color: var(--ok); opacity: 0; transition: opacity .2s; }
+  .ask .copied.show { opacity: 1; }
+
+  /* Chat embebido */
+  .chat { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+  .msg { max-width: 85%; padding: 10px 14px; border-radius: 14px; font-size: 14.5px; line-height: 1.55; white-space: normal; }
+  .msg.u { align-self: flex-end; background: var(--dark); color: #F2EFEA; border-bottom-right-radius: 4px; }
+  .msg.a { align-self: flex-start; background: #fff; border: 1px solid var(--hair); color: var(--ink-2); border-bottom-left-radius: 4px; }
+  .msg.a b { color: var(--ink); }
+  .msg.a .who { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 4px; }
+  .msg.a ul { margin: 6px 0 6px 18px; }
+  .msg.a li { margin-bottom: 4px; }
+  .msg.err { background: rgba(179,52,27,0.07); border: 1px solid rgba(179,52,27,0.3); color: var(--ink-2); }
+  .msg.think { color: var(--muted); font-style: italic; }
+  .ask .fb { margin-top: 12px; padding: 12px 16px; border: 1px dashed var(--hair); border-radius: 10px; font-size: 13.5px; }
+  .ask .fb p { margin-bottom: 10px; }
+  .ask .go:disabled { opacity: .5; cursor: default; }
+
+  footer.foot { border-top: 1px solid var(--hair); padding: 26px 0 40px; font-size: 12.5px; color: var(--muted); }
+  footer.foot .wrap { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  footer.foot b { color: var(--ink); }
+
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+<div class="internal">
+  <div class="wrap"><b>Material interno</b><span>A+ Growth Academy — biblioteca de entrenamientos del equipo. No compartir fuera de la agencia.</span></div>
+</div>
+
+<!-- ====== VISTA: DASHBOARD ====== -->
+<div id="view-home">
+  <header class="mast">
+    <div class="wrap">
+      <div class="head-row">
+        <div class="wordmark">A<span>+</span>Growth</div>
+        <div class="rule"></div>
+        <div class="tag">Academy · Interno</div>
+      </div>
+      <div class="kicker">Portal de entrenamientos</div>
+      <h1>Todo lo que hacemos, <em>entrenado</em>.</h1>
+      <p class="sub">Un training por cada cosa que ofrecemos como agencia: <b>Google Ads, Meta Ads, Email, CRO, Analytics, Estrategia y las herramientas con las que operamos</b>.
+      Elegí un área, completá la checklist al final de cada training y usá el box de dudas si algo no cierra.</p>
+      <div class="stats">
+        <div class="stat"><div class="n" id="stat-total">—</div><div class="l">Trainings</div></div>
+        <div class="stat"><div class="n" id="stat-areas">—</div><div class="l">Áreas</div></div>
+        <div class="stat"><div class="n"><span id="stat-done">0</span></div><div class="l">Completados por vos</div></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="controls">
+    <div class="wrap">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+        <input id="q" type="search" placeholder="Buscar un training… (ej: retargeting, GA4, flows)" aria-label="Buscar training">
+      </div>
+      <div class="chips" id="chips" role="tablist" aria-label="Filtrar por área"></div>
+    </div>
+  </div>
+
+  <section class="deck">
+    <div class="wrap">
+      <div class="deck-head"><span class="no">a.</span><h2>Trainings</h2><span class="count" id="count"></span></div>
+      <div class="grid" id="grid"></div>
+      <p class="empty hidden" id="empty">Nada con ese filtro. Probá con otra palabra o limpiá la búsqueda.</p>
+
+      <div class="deck-head"><span class="no">b.</span><h2>Biblioteca original</h2><span class="count">3 piezas</span></div>
+      <div class="grid" id="grid-legacy"></div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap"><b>A+Growth Academy</b><span>·</span><span>El progreso y las checklists se guardan solo en tu navegador.</span></div>
+  </footer>
+</div>
+
+<!-- ====== VISTA: TRAINING ====== -->
+<div id="view-training" class="hidden">
+  <div class="wrap-read"><a class="crumb" href="#" id="back">&larr; Volver al dashboard</a></div>
+  <header class="mast" style="padding-top:26px">
+    <div class="wrap-read">
+      <div class="kicker" id="t-cat"></div>
+      <h1 id="t-title"></h1>
+      <p class="sub" id="t-sub"></p>
+      <div class="tmeta" id="t-meta"></div>
+    </div>
+  </header>
+  <nav class="secnav"><div class="wrap-read" id="t-nav"></div></nav>
+  <main class="wrap-read" id="t-body"></main>
+</div>
+<script>
+'use strict';
+const TRAININGS = [];
+const chatThreads = {}; // historial de chat por training (solo en memoria, por visita)
+const CATS = {
+  'google-ads': 'Google Ads',
+  'meta-ads': 'Meta Ads',
+  'email': 'Email Marketing',
+  'cro': 'CRO',
+  'analytics': 'Analytics',
+  'estrategia': 'Estrategia',
+  'herramientas': 'Herramientas'
+};
+const LEGACY = [
+  { title: 'Long-Form que Retiene y Convierte', cat: 'Contenido · ES', desc: 'Cómo estructurar tutoriales, videos largos y piezas paso a paso para que la gente llegue al final.', url: 'https://amirgomez.com/long-form-training-es.html' },
+  { title: 'Long-Form That Retains and Converts', cat: 'Contenido · EN', desc: 'Versión en inglés del training de long-form: retención, ritmo y conversión en piezas largas.', url: 'https://amirgomez.com/long-form-training.html' },
+  { title: 'Web completa con Claude + pagos online', cat: 'Interno · Web', desc: 'El proceso interno para levantar una web completa con Claude, incluyendo cobros online.', url: 'https://amirgomez.com/interno-web-claude.html' }
+];
+
+TRAININGS.push(
+{
+  slug: 'estructura-cuentas-google-ads',
+  cat: 'google-ads', level: 'Básico', dur: '25 min',
+  title: 'Estructura de cuentas que <em>escala</em>',
+  desc: 'Cómo armamos una cuenta de Google Ads desde cero: campañas por intención, no por producto, con presupuesto concentrado donde hay señal.',
+  secs: [
+    { nav: 'Por qué importa', h: 'La estructura decide el techo de la cuenta', html: `
+      <p>La mayoría de las cuentas que auditamos no fallan por pujas ni por anuncios: fallan porque la estructura fragmenta el presupuesto y el algoritmo nunca junta señal suficiente para aprender. Una campaña con 3 conversiones por semana no optimiza nada.</p>
+      <p class="pull">Menos campañas con más datos le ganan <span>siempre</span> a muchas campañas anémicas.</p>
+      <p>Nuestra regla interna: <b>cada campaña tiene que poder generar 30+ conversiones por mes</b> con su presupuesto asignado. Si no llega, se consolida con otra.</p>` },
+    { nav: 'Estructura base', h: 'La estructura base de A+ Growth', html: `
+      <p>Para un cliente nuevo de lead gen o e-commerce arrancamos casi siempre con lo mismo:</p>
+      <ul>
+        <li><b>1 campaña Search de marca</b> — protege el nombre, CPA bajísimo, presupuesto chico.</li>
+        <li><b>1–2 campañas Search de intención alta</b> — agrupadas por tema/intención (no por producto), keywords que ya piden la solución.</li>
+        <li><b>1 Performance Max o Shopping</b> (e-commerce) — con feed limpio y exclusión de marca.</li>
+        <li><b>1 campaña de remarketing</b> — recién cuando hay tráfico suficiente.</li>
+      </ul>
+      <div class="ej"><b>Ejemplo</b>Clínica dental: Marca / "implantes + urgencias" (alta intención) / "limpieza + ortodoncia" (media) — no una campaña por cada tratamiento del menú.</div>` },
+    { nav: 'Ad groups', h: 'Ad groups y concordancia: simple gana', html: `
+      <p>Dentro de cada campaña: <b>ad groups temáticos de 5–15 keywords</b>, mezcla de concordancia de frase y exacta. Amplia solo con smart bidding maduro y negativas al día.</p>
+      <ul>
+        <li>Un ad group = una intención = un anuncio RSA bien escrito que responde a esa intención.</li>
+        <li>Lista de negativas compartida a nivel cuenta desde el día 1 (gratis, "curso", "empleo", competidores que no queremos).</li>
+        <li>Revisión semanal de términos de búsqueda las primeras 4 semanas; después quincenal.</li>
+      </ul>` },
+    { nav: 'Presupuesto', h: 'Cómo repartimos el presupuesto', html: `
+      <p>Regla 70/20/10: <b>70%</b> a lo que ya convierte, <b>20%</b> a expansión de lo que da señales, <b>10%</b> a apuestas nuevas. Nunca repartimos en partes iguales "para probar todo".</p>
+      <div class="note"><b>Cuidado:</b> si el presupuesto del cliente es chico (&lt; $1.500/mes), menos campañas todavía: marca + 1 campaña de intención alta. Punto.</div>` },
+    { nav: 'Errores', h: 'Errores que vemos en auditorías', html: `
+      <ul>
+        <li>Una campaña por producto con $5/día cada una → ninguna aprende.</li>
+        <li>Marca y genéricas mezcladas → el CPA promedio miente.</li>
+        <li>Sin exclusiones entre PMax y Search → PMax canibaliza la marca.</li>
+        <li>Keywords en amplia sin negativas → presupuesto quemado en basura.</li>
+        <li>Estructura heredada intocada "porque siempre estuvo así".</li>
+      </ul>` }
+  ],
+  check: [
+    'Mapeé las intenciones de búsqueda del cliente antes de crear campañas',
+    'Cada campaña puede generar 30+ conversiones/mes con su presupuesto',
+    'Campaña de marca separada de las genéricas',
+    'Lista de negativas a nivel cuenta creada desde el día 1',
+    'Exclusiones de marca aplicadas en PMax/Shopping',
+    'Presupuesto repartido 70/20/10, no en partes iguales',
+    'Revisión de términos de búsqueda agendada (semanal el primer mes)'
+  ]
+},
+{
+  slug: 'keyword-research-google-ads',
+  cat: 'google-ads', level: 'Intermedio', dur: '30 min',
+  title: 'Keyword research por <em>intención</em>, no por volumen',
+  desc: 'El proceso que usamos para encontrar las keywords que traen clientes (no visitas): intención comercial primero, volumen después.',
+  secs: [
+    { nav: 'El filtro', h: 'El filtro de intención antes que nada', html: `
+      <p>Toda keyword cae en uno de cuatro cajones, y el cajón define si la compramos:</p>
+      <ul>
+        <li><b>Transaccional</b> ("contratar", "precio", "cerca de mí", "urgente") → compramos siempre.</li>
+        <li><b>Comercial-comparativa</b> ("mejor X", "X vs Y", "opiniones") → compramos con landing comparativa.</li>
+        <li><b>Informacional</b> ("qué es", "cómo funciona") → NO en Search; eso es contenido/SEO.</li>
+        <li><b>Navegacional de terceros</b> (marcas competidoras) → solo con estrategia explícita y presupuesto aparte.</li>
+      </ul>
+      <p class="pull">Volumen alto con intención baja es la forma más cara de <span>no vender nada</span>.</p>` },
+    { nav: 'Fuentes', h: 'De dónde sacamos las keywords', html: `
+      <ol>
+        <li><b>El cliente</b>: ¿cómo describen sus clientes el problema en llamadas? Pedimos 5 grabaciones o emails reales.</li>
+        <li><b>Términos de búsqueda</b> de campañas previas (si existen): oro puro, ya pagado.</li>
+        <li><b>Keyword Planner</b> para volumen y CPC estimado — al final, para dimensionar, no para descubrir.</li>
+        <li><b>Autocompletar + "búsquedas relacionadas"</b> en incógnito, y lo que rankean los competidores.</li>
+      </ol>
+      <div class="ej"><b>Ejemplo</b>Un cliente de reformas decía "remodelación integral"; sus clientes buscaban "arreglar cocina vieja". La segunda convierte 3x más barato.</div>` },
+    { nav: 'Agrupar', h: 'Agrupar por tema, dimensionar por CPC', html: `
+      <p>Agrupamos en temas de intención homogénea (mismo anuncio, misma landing). Después cruzamos volumen × CPC × tasa estimada para priorizar: <b>empezá por los grupos donde el cliente puede ser competitivo hoy</b>, no por los de más volumen.</p>
+      <div class="note"><b>Regla:</b> si el CPC estimado × 30 clicks supera el ticket del cliente, ese grupo no entra hasta mejorar la conversión de la landing.</div>` },
+    { nav: 'Negativas', h: 'El research de negativas es research', html: `
+      <p>Por cada hora de research de keywords, media hora de negativas. Armamos tres listas: <b>universales</b> (gratis, curso, PDF, empleo), <b>de industria</b> (DIY, "cómo hacer yo mismo"), y <b>del cliente</b> (servicios que no ofrece, zonas que no cubre).</p>` }
+  ],
+  check: [
+    'Clasifiqué cada keyword candidata por intención (transaccional / comparativa / info)',
+    'Escuché o leí conversaciones reales de clientes del negocio',
+    'Revisé términos de búsqueda históricos si la cuenta ya corría',
+    'Descarté keywords donde el CPC hace imposible el ROI con el ticket actual',
+    'Armé las 3 listas de negativas (universal, industria, cliente)',
+    'Cada grupo de keywords tiene su anuncio y landing asignados',
+    'Prioricé por competitividad real, no por volumen bruto'
+  ]
+},
+{
+  slug: 'smart-bidding-presupuestos',
+  cat: 'google-ads', level: 'Avanzado', dur: '30 min',
+  title: 'Smart bidding y presupuesto sin <em>romper</em> el aprendizaje',
+  desc: 'Cuándo pasar a tCPA/tROAS, cómo mover presupuestos sin resetear el algoritmo y qué mirar cuando el rendimiento se cae.',
+  secs: [
+    { nav: 'Escalera', h: 'La escalera de estrategias de puja', html: `
+      <p>No arrancamos con tCPA en una cuenta sin datos. La escalera que seguimos:</p>
+      <ol>
+        <li><b>Maximizar clicks</b> (con CPC máx.) las primeras 2–3 semanas: comprar datos.</li>
+        <li><b>Maximizar conversiones</b> sin objetivo cuando hay ~15–20 conversiones en 30 días.</li>
+        <li><b>tCPA / tROAS</b> cuando hay 30–50 conversiones en 30 días y el CPA real es estable.</li>
+      </ol>
+      <p>El objetivo inicial de tCPA se fija en el <b>CPA real de los últimos 30 días</b>, no en el que el cliente sueña. Después se aprieta 10–15% por vez, cada 2+ semanas.</p>` },
+    { nav: 'Cambios', h: 'Cómo hacer cambios sin resetear el aprendizaje', html: `
+      <ul>
+        <li>Presupuesto: movimientos de <b>máximo ±20% por vez</b>, esperando 4–7 días entre cambios.</li>
+        <li>Objetivo de tCPA/tROAS: ±10–15% por vez.</li>
+        <li>Nunca cambiar puja + presupuesto + anuncios el mismo día: si algo se rompe no sabés qué fue.</li>
+        <li>Cambios grandes de una vez solo cuando la campaña ya está rota y no hay nada que proteger.</li>
+      </ul>
+      <p class="pull">El algoritmo aguanta cambios chicos y frecuentes; los <span>volantazos</span> lo devuelven a aprendizaje.</p>` },
+    { nav: 'Diagnóstico', h: 'Cuando el rendimiento se cae: orden de diagnóstico', html: `
+      <ol>
+        <li><b>¿Cambió el tracking?</b> (la causa #1 real) — revisar conversiones en GA4 vs. Ads.</li>
+        <li><b>¿Cambió la landing o el stock/precio?</b> — preguntar al cliente antes de tocar la cuenta.</li>
+        <li><b>¿Subió la competencia?</b> — informe de subastas, CPC promedio.</li>
+        <li><b>¿Estacionalidad?</b> — comparar contra el mismo período del año pasado, no contra la semana pasada.</li>
+        <li>Recién después, tocar pujas.</li>
+      </ol>
+      <div class="note"><b>Regla de oro:</b> ante una caída, primero 48 horas de diagnóstico sin tocar nada. Tocar a ciegas convierte una mala semana en un mal mes.</div>` },
+    { nav: 'Reporting', h: 'Qué le contamos al cliente', html: `
+      <p>Al cliente le hablamos de <b>CPA, volumen y calidad de leads</b>, no de "el algoritmo está aprendiendo". Si apretamos un objetivo, avisamos que el volumen puede bajar unos días. Sin sorpresas: cada cambio grande queda anotado en el log de la cuenta con fecha.</p>` }
+  ],
+  check: [
+    'La campaña cumple el mínimo de conversiones antes de pasar a tCPA/tROAS',
+    'El objetivo inicial salió del CPA real de 30 días, no del deseado',
+    'Mis cambios de presupuesto no superan ±20% por vez',
+    'Dejo pasar 4–7 días entre cambios en la misma campaña',
+    'Ante una caída, revisé tracking y landing antes de tocar pujas',
+    'Cada cambio grande queda registrado con fecha en el log de la cuenta',
+    'El cliente sabe qué esperar después de cada ajuste de objetivo'
+  ]
+},
+{
+  slug: 'auditoria-google-ads',
+  cat: 'google-ads', level: 'Intermedio', dur: '35 min',
+  title: 'Auditoría de una cuenta <em>nueva</em> en 90 minutos',
+  desc: 'El checklist de auditoría que corremos cuando entra un cliente con cuenta existente: qué mirar, en qué orden y cómo convertirlo en plan.',
+  secs: [
+    { nav: 'Antes de abrir', h: 'Antes de abrir la cuenta', html: `
+      <p>Una auditoría sin contexto de negocio es un reporte genérico. Antes de mirar campañas necesitamos: <b>ticket promedio, margen, CPA objetivo real, zonas que cubre, capacidad</b> (¿pueden atender más leads?) y qué pasó con agencias anteriores.</p>` },
+    { nav: 'Los 5 niveles', h: 'Los 5 niveles de la auditoría, en orden', html: `
+      <ol>
+        <li><b>Tracking</b>: ¿las conversiones que optimizan son reales? ¿Duplicadas? ¿Cuenta "page views" como conversión? El 40% de las cuentas que auditamos optimizaba sobre datos falsos.</li>
+        <li><b>Estructura</b>: fragmentación, marca mezclada, campañas sin presupuesto viable.</li>
+        <li><b>Segmentación</b>: ubicaciones ("presencia o interés" mal configurado), horarios, dispositivos, idioma.</li>
+        <li><b>Términos de búsqueda</b>: % del gasto en búsquedas irrelevantes en los últimos 90 días — el número más contundente para el cliente.</li>
+        <li><b>Anuncios y landings</b>: RSAs completos, mensajes vs. intención, velocidad y coherencia de la landing.</li>
+      </ol>
+      <p class="pull">Tracking primero: todo lo demás se decide con <span>esos</span> datos.</p>` },
+    { nav: 'Números clave', h: 'Los números que siempre calculamos', html: `
+      <ul>
+        <li><b>% de gasto desperdiciado</b> (términos irrelevantes + zonas fuera de cobertura + horarios muertos).</li>
+        <li><b>CPA real por campaña</b> con conversiones limpias, recalculado.</li>
+        <li><b>Share de marca</b>: qué parte de "los resultados" es gente que ya los buscaba.</li>
+        <li><b>Impression share perdido por presupuesto</b> en las campañas que sí convierten.</li>
+      </ul>
+      <div class="ej"><b>Ejemplo</b>Auditoría típica: "El 31% del gasto de 90 días fue a búsquedas irrelevantes ($4.200). Solo con negativas y ubicaciones recuperamos ese presupuesto."</div>` },
+    { nav: 'Entregable', h: 'Del hallazgo al plan (el entregable)', html: `
+      <p>La auditoría se entrega como <b>3 quick wins (semana 1), 3 cambios estructurales (mes 1) y el plan de medición</b>. Cada punto con impacto estimado en dinero. Nunca entregamos una lista de 40 hallazgos sin priorizar: eso paraliza al cliente.</p>` }
+  ],
+  check: [
+    'Tengo ticket, margen y CPA objetivo del cliente antes de auditar',
+    'Verifiqué qué acciones cuentan como conversión y si son reales',
+    'Calculé el % de gasto desperdiciado en 90 días, en dinero',
+    'Separé el rendimiento de marca del de genéricas',
+    'Revisé configuración de ubicaciones, horarios e idiomas',
+    'Cada hallazgo tiene impacto estimado en dinero',
+    'El entregable es 3+3 acciones priorizadas, no una lista infinita'
+  ]
+},
+{
+  slug: 'estructura-meta-ads',
+  cat: 'meta-ads', level: 'Básico', dur: '25 min',
+  title: 'Estructura de campañas en Meta: <em>simple</em> y con señal',
+  desc: 'Cómo estructuramos Meta Ads hoy: campañas consolidadas, Advantage+ con criterio y la cuenta pensada para alimentar al algoritmo, no para pelearle.',
+  secs: [
+    { nav: 'El principio', h: 'Consolidación: el principio que ordena todo', html: `
+      <p>Meta funciona con la misma lógica que Google: <b>el ad set necesita ~50 conversiones por semana</b> para salir de aprendizaje y optimizar en serio. Cada vez que fragmentás audiencias, dividís esa señal.</p>
+      <p class="pull">La época de 20 ad sets por interés <span>ya fue</span>. Hoy gana quien consolida.</p>
+      <p>Estructura base para la mayoría de los clientes: <b>1 campaña de prospecting</b> (amplia o Advantage+), <b>1 de remarketing</b> (solo si el volumen lo justifica), y <b>1 de testing de creativos</b> con presupuesto acotado.</p>` },
+    { nav: 'Advantage+', h: 'Advantage+ y audiencias amplias: cuándo sí', html: `
+      <ul>
+        <li><b>E-commerce con píxel maduro</b> (500+ compras/mes de historial): Advantage+ Shopping casi siempre gana. Empezar ahí.</li>
+        <li><b>Lead gen o píxel nuevo</b>: campaña manual con audiencia amplia + 2–3 intereses gruesos como acelerador inicial.</li>
+        <li><b>Nichos legales/restringidos</b> (vivienda, crédito, empleo): categorías especiales cambian todo; revisar antes de prometer segmentación.</li>
+      </ul>
+      <div class="note"><b>Regla interna:</b> la segmentación fina hoy se hace con el creativo, no con la audiencia. El video correcto encuentra a su gente.</div>` },
+    { nav: 'Presupuesto', h: 'CBO, ABO y cuánto poner', html: `
+      <p><b>CBO en prospecting</b> (que Meta reparta), <b>ABO en testing</b> (para forzar gasto parejo entre creativos). Presupuesto mínimo viable por ad set: el CPA objetivo × 50 ÷ 7 por día; si no llega, menos ad sets.</p>
+      <div class="ej"><b>Ejemplo</b>CPA objetivo $40 → $40×50/7 ≈ $285/día por ad set para salir de aprendizaje en una semana. Con $100/día: un solo ad set, sin excepciones.</div>` },
+    { nav: 'Nomenclatura', h: 'Nomenclatura y orden de cuenta', html: `
+      <p>Todo se llama igual en todas las cuentas: <code>[Objetivo] [Audiencia] [Fecha]</code> — ej. <code>PROS-Amplia-2026-08</code>. Sin esto, el reporting cruzado entre clientes es imposible y el que hereda la cuenta pierde un día entendiéndola.</p>` }
+  ],
+  check: [
+    'Mi estructura tiene 3 campañas o menos por objetivo de negocio',
+    'Cada ad set tiene presupuesto para ~50 conversiones/semana',
+    'Elegí Advantage+ o manual según madurez del píxel, no por moda',
+    'Verifiqué si el cliente cae en categoría especial de anuncios',
+    'CBO en prospecting, ABO en testing de creativos',
+    'La nomenclatura sigue el estándar interno de la agencia',
+    'Remarketing separado solo si el volumen de tráfico lo justifica'
+  ]
+}
+);
+
+TRAININGS.push(
+{
+  slug: 'creativos-meta-testing',
+  cat: 'meta-ads', level: 'Intermedio', dur: '30 min',
+  title: 'Creativos que convierten y cómo <em>testearlos</em>',
+  desc: 'El creativo es el 80% del resultado en Meta. Nuestro sistema para producir, testear y renovar creativos sin quemar la cuenta ni al equipo.',
+  secs: [
+    { nav: 'Jerarquía', h: 'La jerarquía del creativo', html: `
+      <p>En orden de impacto: <b>1) el gancho de los primeros 2 segundos, 2) el ángulo del mensaje, 3) el formato, 4) todo lo demás</b>. Un ángulo nuevo mueve más que diez variaciones de color del mismo anuncio.</p>
+      <ul>
+        <li><b>Ángulos</b> = razones distintas de compra: precio, tiempo, estatus, miedo a equivocarse, prueba social. Mantenemos una matriz de ángulos por cliente.</li>
+        <li><b>Formatos</b> que hoy rinden: UGC hablado a cámara, demo del producto, testimonial con resultado, "3 errores que…", antes/después (donde la política lo permita).</li>
+      </ul>
+      <p class="pull">Variar el ángulo es testear; variar el fondo es <span>procrastinar</span>.</p>` },
+    { nav: 'Bilingüe', h: 'Creativo bilingüe: nuestra ventaja', html: `
+      <p>Para clientes que atienden mercado hispano en EE.UU., el creativo en español <b>no es una traducción</b>: cambia el ángulo (confianza y recomendación pesan más), el casting de la voz y hasta la música. Testeamos español nativo vs. inglés en ad sets separados para poder leer el resultado por idioma.</p>
+      <div class="ej"><b>Ejemplo</b>Cliente de seguros: el mismo video traducido rindió 40% peor que uno grabado en español con testimonio de un cliente hispano real. La comunidad detecta el doblaje al instante.</div>` },
+    { nav: 'Protocolo', h: 'El protocolo de testing', html: `
+      <ol>
+        <li>Campaña de testing con ABO, <b>3–5 creativos nuevos por ronda</b>, misma audiencia amplia.</li>
+        <li>Presupuesto por creativo: suficiente para ~2.000–3.000 impresiones y decisión en 3–5 días.</li>
+        <li>Métrica de corte: <b>CPA o costo por resultado</b>; hook rate (3 seg / impresiones) y CTR como diagnóstico, nunca como veredicto.</li>
+        <li>Los ganadores se gradúan a la campaña principal; los perdedores se anotan (qué ángulo/formato falló y por qué creemos que falló).</li>
+      </ol>` },
+    { nav: 'Fatiga', h: 'Fatiga: detectarla y renovar a tiempo', html: `
+      <p>Señales de fatiga: frecuencia &gt; 3–4 en prospecting, CPM subiendo con CTR bajando, CPA arrastrándose una semana. La respuesta no es apagar: es <b>tener la siguiente ronda de creativos lista antes de necesitarla</b>. Ritmo mínimo por cliente activo: una ronda nueva cada 2–3 semanas.</p>
+      <div class="note"><b>Proceso interno:</b> cada cliente tiene un backlog de ángulos en su doc de creativos. Cuando el backlog baja de 5 ideas, se agenda sesión de brainstorming. Nunca esperamos a que el creativo muera para pensar el próximo.</div>` }
+  ],
+  check: [
+    'Tengo la matriz de ángulos del cliente actualizada',
+    'Cada ronda de testing prueba ángulos distintos, no cosméticos',
+    'Testeo en ABO con audiencia amplia y presupuesto parejo',
+    'Corto por CPA/costo por resultado, no por CTR solo',
+    'Para mercado hispano: creativo nativo, no traducido',
+    'Documenté qué perdió y por qué en el doc del cliente',
+    'La próxima ronda de creativos está lista antes de que fatigue la actual'
+  ]
+},
+{
+  slug: 'retargeting-audiencias-meta',
+  cat: 'meta-ads', level: 'Intermedio', dur: '25 min',
+  title: 'Retargeting y audiencias que <em>suman</em> (no que duplican)',
+  desc: 'Cuándo el remarketing agrega ventas de verdad, cómo armarlo por temperatura y cómo evitar pagarle a Meta por conversiones que iban a pasar igual.',
+  secs: [
+    { nav: 'La verdad', h: 'La verdad incómoda del retargeting', html: `
+      <p>Con Advantage+ y audiencias amplias, Meta <b>ya hace remarketing solo</b>: la campaña de prospecting re-impacta a quien visitó. Una campaña de retargeting aparte solo se justifica cuando:</p>
+      <ul>
+        <li>Hay <b>volumen real</b> (5.000+ visitantes/mes al sitio), y</li>
+        <li>Queremos un <b>mensaje distinto</b> por etapa (objeciones, prueba social, oferta), no el mismo anuncio más veces.</li>
+      </ul>
+      <p class="pull">Retargeting sin mensaje propio es pagar dos veces por la <span>misma</span> persona.</p>` },
+    { nav: 'Temperaturas', h: 'Audiencias por temperatura', html: `
+      <ul>
+        <li><b>Caliente (7–14 días)</b>: carrito abandonado, inició checkout, vio página de precios → oferta directa, urgencia honesta, respuesta a objeciones.</li>
+        <li><b>Tibia (30–60 días)</b>: visitó el sitio, interactuó con IG/FB, vio 50%+ de un video → prueba social, casos, testimonial.</li>
+        <li><b>Fría re-enganchable (180 días)</b>: compradores pasados para recompra o cross-sell (e-commerce), leads viejos para reactivación.</li>
+      </ul>
+      <div class="ej"><b>Ejemplo</b>E-commerce de suplementos: carrito abandonado ve testimonio + envío gratis; comprador de hace 60 días ve el recordatorio de recompra. Mensajes distintos, no "10% OFF" para todos.</div>` },
+    { nav: 'Exclusiones', h: 'Exclusiones: la mitad del trabajo', html: `
+      <p>Toda campaña de retargeting excluye <b>compradores recientes</b> (salvo cross-sell deliberado) y toda campaña de prospecting excluye a las audiencias del retargeting si el presupuesto es chico. Revisamos solapamiento en el inspector de audiencias cuando los CPM de remarketing explotan.</p>` },
+    { nav: 'Medición', h: 'Cómo medir si suma de verdad', html: `
+      <p>El ROAS de retargeting siempre parece espectacular porque cosecha demanda que el prospecting sembró. Lo evaluamos por <b>incrementalidad práctica</b>: ¿bajó la conversión total cuando lo pausamos dos semanas? Si apagarlo no movió nada, ese presupuesto vuelve a prospecting.</p>
+      <div class="note"><b>Regla interna:</b> el retargeting nunca supera el 20–30% del presupuesto total. Si el cliente pide más "porque el ROAS es mejor", explicamos el sesgo con este training.</div>` }
+  ],
+  check: [
+    'Confirmé que hay volumen suficiente antes de separar retargeting',
+    'Cada temperatura tiene su propio mensaje (no el mismo anuncio)',
+    'Excluí compradores recientes de las campañas de venta',
+    'Revisé el solapamiento entre prospecting y retargeting',
+    'El retargeting está por debajo del 30% del presupuesto total',
+    'Programé un test de pausa para validar incrementalidad',
+    'Expliqué al cliente por qué el ROAS de retargeting está inflado'
+  ]
+},
+{
+  slug: 'escalado-meta-roas',
+  cat: 'meta-ads', level: 'Avanzado', dur: '30 min',
+  title: 'Escalar en Meta sin <em>matar</em> el ROAS',
+  desc: 'Escalado vertical y horizontal: cuánto subir, cuándo, y por qué el creativo —no el presupuesto— es el verdadero límite de escala.',
+  secs: [
+    { nav: 'Cuándo', h: 'Cuándo una cuenta está lista para escalar', html: `
+      <ul>
+        <li>CPA/ROAS estable <b>2–3 semanas seguidas</b> (no un buen fin de semana).</li>
+        <li>Ad sets fuera de aprendizaje.</li>
+        <li>El cliente aguanta la operación: stock, atención de leads, cash flow para el gap entre gasto y cobro.</li>
+      </ul>
+      <div class="note"><b>Primero preguntá:</b> ¿el cliente puede atender el doble de leads? Escalar ads con operación saturada solo compra leads ignorados y un cliente enojado.</div>` },
+    { nav: 'Vertical', h: 'Escalado vertical: subir presupuesto', html: `
+      <p>Subimos <b>20% cada 3–4 días</b> mientras el CPA aguante dentro del rango acordado (definimos con el cliente un CPA máximo aceptable ANTES de escalar, no durante). Si el CPA se pasa del rango dos mediciones seguidas, volvemos un escalón y dejamos estabilizar una semana.</p>
+      <p class="pull">Duplicar presupuesto de golpe es la forma más rápida de volver a <span>aprendizaje</span>.</p>` },
+    { nav: 'Horizontal', h: 'Escalado horizontal: más superficies', html: `
+      <ol>
+        <li><b>Más creativos ganadores</b> en la misma campaña (el más barato y el que casi nadie hace primero).</li>
+        <li><b>Nuevos ángulos</b> para audiencias que el actual no engancha.</li>
+        <li><b>Nuevos mercados</b>: el segmento hispano en EE.UU. suele ser nuestro as — mismo producto, creativo nativo en español, CPMs más bajos y menos competencia.</li>
+        <li>Recién al final: nuevas plataformas (Google, TikTok) cuando Meta muestra rendimientos decrecientes reales.</li>
+      </ol>` },
+    { nav: 'El límite', h: 'El límite real es el creativo', html: `
+      <p>A mayor presupuesto, mayor consumo de audiencia por creativo y más rápida la fatiga. Regla práctica: <b>por cada duplicación del presupuesto, duplicá el ritmo de producción de creativos</b>. Si el cliente no puede producir más creativo (ni con nuestro apoyo), ese es el techo de escala honesto — decirlo antes de que el ROAS lo diga solo.</p>` }
+  ],
+  check: [
+    'CPA/ROAS estable 2–3 semanas antes de escalar',
+    'Acordé con el cliente el CPA máximo aceptable por escrito',
+    'Confirmé capacidad operativa (stock / atención de leads)',
+    'Subo presupuesto máximo 20% cada 3–4 días',
+    'Tengo plan de escalado horizontal además del vertical',
+    'Evalué el mercado hispano como vía de escala',
+    'El ritmo de producción de creativos acompaña el presupuesto'
+  ]
+},
+{
+  slug: 'flows-email-esenciales',
+  cat: 'email', level: 'Básico', dur: '30 min',
+  title: 'Los 5 flows que instalamos <em>siempre</em>',
+  desc: 'Las automatizaciones que montamos en todo cliente antes de hablar de campañas: bienvenida, carrito, post-compra, winback y lead nurture.',
+  secs: [
+    { nav: 'Por qué flows', h: 'Flows antes que campañas', html: `
+      <p>Las campañas puntuales dependen de que alguien las escriba cada semana. Los flows trabajan solos, se disparan en el momento de máxima intención y suelen generar <b>el 30–50% del revenue de email</b> con una fracción del esfuerzo. Por eso todo onboarding de email arranca instalando estos cinco, en este orden.</p>
+      <p class="pull">Primero lo que funciona <span>dormido</span>; después lo que hay que despertar cada semana.</p>` },
+    { nav: 'Los 5', h: 'Los 5 flows, uno por uno', html: `
+      <ol>
+        <li><b>Bienvenida</b> (3–4 emails): entrega del lead magnet o descuento, historia de la marca, prueba social, primer empujón a compra. El email 1 sale en &lt; 5 minutos del registro: es el open rate más alto que vas a tener jamás.</li>
+        <li><b>Carrito abandonado</b> (3 emails: 1h / 24h / 72h): recordatorio simple → objeciones + prueba social → incentivo si el margen lo permite. Nunca arrancamos con descuento: entrena a abandonar.</li>
+        <li><b>Post-compra</b> (2–3): confirmación con expectativas claras, cómo aprovechar el producto, pedido de reseña a los 7–14 días. Acá se fabrica la recompra.</li>
+        <li><b>Winback</b> (2–3): a los 60–90 días sin comprar/abrir. "Te extrañamos" + mejor oferta → última llamada → limpieza de lista.</li>
+        <li><b>Lead nurture</b> (servicios/B2B, 4–6 emails): educación por el problema, casos, objeciones, CTA a llamada. Sustituye al vendedor que hace seguimiento.</li>
+      </ol>` },
+    { nav: 'Detalles', h: 'Detalles que separan un flow amateur de uno pro', html: `
+      <ul>
+        <li>Filtros de salida: <b>quien compra sale del carrito abandonado al instante</b>. Nada grita amateur como un "¿te olvidaste algo?" post-compra.</li>
+        <li>Cada flow con un objetivo y una métrica: placed order rate en carrito, review rate en post-compra.</li>
+        <li>Idioma: si el cliente atiende mercado hispano, flows en el idioma del suscriptor desde el registro (propiedad de idioma en el form).</li>
+      </ul>
+      <div class="ej"><b>Ejemplo</b>Cliente e-commerce: solo instalar bienvenida + carrito con la secuencia estándar sumó ~18% de revenue por email en 60 días, sin una sola campaña puntual.</div>` },
+    { nav: 'Medir', h: 'Cómo los medimos y reportamos', html: `
+      <p>Reportamos <b>revenue por flow, por email dentro del flow, y revenue por receptor</b> (RPR) — no open rates sueltos. Un flow se toca cuando su RPR cae o cuando un email interno claramente no aporta. Revisión trimestral: reordenar, reescribir el eslabón débil, testear un asunto por vez.</p>` }
+  ],
+  check: [
+    'Los 5 flows están instalados (o descartados con razón escrita)',
+    'El email de bienvenida sale en menos de 5 minutos del registro',
+    'Carrito abandonado no arranca con descuento',
+    'Filtros de salida configurados en todos los flows',
+    'Los flows respetan el idioma del suscriptor',
+    'Cada flow tiene métrica objetivo definida',
+    'Reporto revenue por flow y RPR, no solo aperturas'
+  ]
+},
+{
+  slug: 'segmentacion-crecimiento-lista',
+  cat: 'email', level: 'Intermedio', dur: '25 min',
+  title: 'Segmentación y crecimiento de lista sin <em>humo</em>',
+  desc: 'Cómo hacemos crecer listas con suscriptores que compran, y los 4 segmentos que usamos de verdad (de los 40 posibles).',
+  secs: [
+    { nav: 'Crecimiento', h: 'Crecer la lista con gente que compra', html: `
+      <ul>
+        <li><b>Popup con oferta real</b> (descuento, envío, guía útil) con delay o exit-intent: 3–6% de conversión de tráfico es lo sano. Un popup al segundo cero convierte más… en suscriptores que nunca abren.</li>
+        <li><b>Lead magnets con intención</b>: la guía "cómo elegir X" atrae compradores; el sorteo del iPhone atrae cazadores de sorteos que arruinan la deliverability.</li>
+        <li><b>Checkout y post-compra</b>: el opt-in más valioso y el más olvidado.</li>
+        <li>Los quizzes (como los que usamos en nuestro propio sitio) capturan email + datos de segmentación en un solo paso: es el patrón que más replicamos en clientes.</li>
+      </ul>
+      <p class="pull">Una lista de 5.000 que compra vale más que una de 50.000 que <span>borra</span>.</p>` },
+    { nav: '4 segmentos', h: 'Los 4 segmentos que usamos siempre', html: `
+      <ol>
+        <li><b>Engaged 30/60/90</b>: abrió o clickeó en la ventana. Define a quién le mandamos campañas (y protege la deliverability).</li>
+        <li><b>Clientes vs. no-clientes</b>: mensajes y ofertas distintas; a un cliente no se le vende como a un extraño.</li>
+        <li><b>VIP</b> (top 10–20% por gasto o frecuencia): acceso anticipado, sin descuentos agresivos — no los necesitan.</li>
+        <li><b>Por idioma/mercado</b> (ES/EN cuando aplica): campañas nativas por segmento, no el mismo email dos veces.</li>
+      </ol>
+      <div class="note"><b>Anti-patrón:</b> 30 segmentos creados "por si acaso" que nadie usa. Si un segmento no cambia qué email recibe alguien, no existe.</div>` },
+    { nav: 'Higiene', h: 'Higiene de lista: podar para crecer', html: `
+      <p>Sunset policy trimestral: quien no abre/clickea en 90–120 días entra al flow de winback; si no reacciona, se suprime. Duele ver bajar el número; el cliente ve subir aperturas, entregabilidad y revenue. Ese es el trade que hay que saber explicar.</p>` }
+  ],
+  check: [
+    'El popup tiene oferta real y convierte 3%+ del tráfico',
+    'El lead magnet atrae compradores, no curiosos',
+    'Capturo idioma/preferencias en el momento del registro',
+    'Los 4 segmentos base están creados y en uso real',
+    'Las campañas van a engaged, no a toda la lista',
+    'Sunset policy activa y explicada al cliente',
+    'Cada segmento existente cambia algo en la práctica'
+  ]
+}
+);
+
+TRAININGS.push(
+{
+  slug: 'deliverability-copy-email',
+  cat: 'email', level: 'Avanzado', dur: '30 min',
+  title: 'Deliverability y copy: llegar al inbox y <em>mover</em> al click',
+  desc: 'Lo técnico mínimo para no caer en spam (SPF, DKIM, DMARC, reputación) y el formato de copy que usamos en todos los emails de la agencia.',
+  secs: [
+    { nav: 'Técnico', h: 'Lo técnico no negociable', html: `
+      <ol>
+        <li><b>SPF, DKIM y DMARC configurados</b> en el dominio de envío. Desde los requisitos de Gmail/Yahoo de 2024, sin esto directamente no jugás. Se verifica en el onboarding, antes del primer envío.</li>
+        <li><b>Dominio o subdominio de envío dedicado</b> (ej. mail.cliente.com) para separar reputación de marketing de la transaccional.</li>
+        <li><b>Warm-up</b> en listas frías o dominio nuevo: arrancar por los más engaged e ir ampliando por semanas; nunca 50.000 emails el día uno.</li>
+        <li><b>Tasa de spam &lt; 0.1%</b> (Google Postmaster): pasado 0.3% empieza el pozo del que cuesta meses salir.</li>
+      </ol>
+      <p class="pull">La mejor campaña del mundo, en la carpeta de spam, vale <span>cero</span>.</p>` },
+    { nav: 'Reputación', h: 'Qué construye (y destruye) reputación', html: `
+      <ul>
+        <li>Construye: enviar a engaged, volumen estable, respuestas de los suscriptores, bajas fáciles.</li>
+        <li>Destruye: listas compradas (nunca, sin excepción), picos de volumen, imágenes gigantes con poco texto, seguir mandando a quien no abre hace 6 meses.</li>
+        <li>El botón de "unsubscribe" visible es tu amigo: la alternativa a una baja es una marca de spam.</li>
+      </ul>` },
+    { nav: 'Copy', h: 'El formato de copy de la agencia', html: `
+      <p>Todos nuestros emails siguen la misma anatomía:</p>
+      <ol>
+        <li><b>Asunto</b>: 6–9 palabras, específico, sin mayúsculas gritadas ni "GRATIS!!!". Curiosidad honesta o beneficio directo. El preheader complementa, no repite.</li>
+        <li><b>Primera línea</b>: sigue al asunto sin preámbulo ("Hola, te escribo porque…" está prohibido).</li>
+        <li><b>Cuerpo</b>: una idea por email, párrafos de 1–3 líneas, tono de persona a persona. Texto &gt; imagen: los emails que parecen carta rinden mejor que los flyers.</li>
+        <li><b>Un CTA</b>, repetido máximo dos veces, en imperativo y específico ("Reservá tu llamada de 15 min", no "Más info").</li>
+      </ol>
+      <div class="ej"><b>Ejemplo</b>Asunto: "Tu carrito guarda 2 cosas (una se está por agotar)" — específico, honesto solo si es verdad, y sin una sola palabra de spam.</div>` },
+    { nav: 'Testing', h: 'Qué testeamos (y qué no)', html: `
+      <p>Testeamos <b>una variable por envío</b>: el asunto (impacta apertura) o el CTA/oferta (impacta click y venta). No testeamos colores de botón con listas de 3.000: no hay muestra que dé significancia. Guardamos cada resultado en el doc del cliente: los aprendizajes de asuntos se acumulan y valen oro a los 6 meses.</p>` }
+  ],
+  check: [
+    'SPF, DKIM y DMARC verificados antes del primer envío',
+    'Dominio/subdominio de envío dedicado configurado',
+    'Postmaster Tools monitoreado, spam rate < 0.1%',
+    'Plan de warm-up aplicado en listas o dominios nuevos',
+    'Asuntos específicos sin palabras de spam',
+    'Un solo CTA por email, en imperativo',
+    'Cada test A/B queda documentado en el doc del cliente'
+  ]
+},
+{
+  slug: 'anatomia-landing-convierte',
+  cat: 'cro', level: 'Básico', dur: '30 min',
+  title: 'Anatomía de una landing que <em>convierte</em>',
+  desc: 'Los bloques que tiene toda landing que armamos, en orden, y el criterio de mensaje-por-sección para que el tráfico pago no se desperdicie.',
+  secs: [
+    { nav: 'Regla madre', h: 'La regla madre: coincidencia de mensaje', html: `
+      <p>La landing convierte cuando <b>continúa la conversación que empezó el anuncio</b>. Mismo lenguaje, misma promesa, misma oferta. Si el anuncio dice "implantes dentales en 24h" y la landing abre con "Bienvenido a Clínica Sonrisa", perdiste la mitad del tráfico en el primer segundo.</p>
+      <p class="pull">El usuario no lee tu landing: la <span>escanea</span> buscando confirmar que está en el lugar correcto.</p>` },
+    { nav: 'Bloques', h: 'Los bloques, en orden', html: `
+      <ol>
+        <li><b>Hero</b>: titular con el beneficio principal (el resultado, no el servicio), subtítulo con el cómo, CTA visible sin scroll, y una imagen que muestre el resultado o el producto en uso — no un stock de gente dándose la mano.</li>
+        <li><b>Prueba social temprana</b>: logos, número de clientes, rating. Antes de pedir nada.</li>
+        <li><b>Problema → solución</b>: nombrar el dolor con las palabras del cliente (las de las llamadas reales, ver training de keyword research).</li>
+        <li><b>Cómo funciona</b>: 3 pasos máximo. La gente no compra lo que no entiende.</li>
+        <li><b>Testimonios con detalle</b>: nombre, foto, resultado concreto. "Excelente servicio" no es un testimonio, es relleno.</li>
+        <li><b>Objeciones/FAQ</b>: precio, tiempo, riesgo, "¿sirve para mi caso?".</li>
+        <li><b>CTA final + garantía o reductor de riesgo</b>.</li>
+      </ol>` },
+    { nav: 'Formulario', h: 'El formulario: donde se gana o pierde todo', html: `
+      <ul>
+        <li>Pedir <b>lo mínimo para poder responder</b>: cada campo extra baja conversión (~y sube calidad; es un dial, no un dogma — se decide con el cliente según su capacidad de filtrar leads).</li>
+        <li>El botón dice qué pasa después: "Pedir mi presupuesto", no "Enviar".</li>
+        <li>Debajo del botón: qué va a pasar y cuándo ("Te llamamos en menos de 2 horas hábiles").</li>
+        <li>Móvil primero: 70%+ del tráfico pago es móvil. El formulario se prueba con el pulgar, no con el mouse.</li>
+      </ul>
+      <div class="ej"><b>Ejemplo</b>Pasar de 7 campos a 4 (nombre, teléfono, servicio, zona) en un cliente de home services: +62% de leads con la misma calidad, porque el filtrado real lo hacía la llamada.</div>` },
+    { nav: 'Velocidad', h: 'Velocidad y fricción invisible', html: `
+      <p>Menos de 3 segundos de carga en móvil o estás pagando clicks que rebotan antes de ver nada. Lo que más pesa: imágenes sin comprimir, scripts de chat/heatmaps apilados, fuentes de más. Y la fricción invisible: popups al aterrizar sobre tráfico pago, autoplay con sonido, menús que distraen hacia páginas sin conversión — en landings de campaña, el menú directamente se saca.</p>` }
+  ],
+  check: [
+    'El titular de la landing repite la promesa del anuncio',
+    'El beneficio principal se entiende en 5 segundos sin scroll',
+    'Prueba social visible antes del primer formulario',
+    'Los testimonios tienen nombre y resultado concreto',
+    'El formulario pide lo mínimo acordado con el cliente',
+    'El botón describe qué pasa después',
+    'Carga < 3 seg en móvil y sin menú que fugue tráfico'
+  ]
+},
+{
+  slug: 'ab-testing-riguroso',
+  cat: 'cro', level: 'Avanzado', dur: '30 min',
+  title: 'A/B testing <em>riguroso</em> (o mejor no testear)',
+  desc: 'Cómo decidimos qué testear, cuánto correr un test y cómo evitar los falsos ganadores que después no se ven en la caja.',
+  secs: [
+    { nav: 'Cuándo', h: 'Cuándo un test tiene sentido (y cuándo no)', html: `
+      <p>Un A/B test necesita muestra. Regla rápida: con menos de <b>~300 conversiones por variante al mes</b>, un test de cambios sutiles va a tardar una eternidad o mentir. En sitios chicos no se testea el color del botón: se hacen <b>cambios grandes secuenciales</b> (rediseño del hero, oferta nueva) midiendo antes/después con períodos comparables.</p>
+      <p class="pull">Sin muestra, el test no es ciencia: es una <span>moneda</span> cara.</p>` },
+    { nav: 'Priorizar', h: 'Qué testear primero: la jerarquía del impacto', html: `
+      <ol>
+        <li><b>La oferta</b> (qué recibís, a qué precio, con qué riesgo) — mueve montañas.</li>
+        <li><b>El titular / la promesa</b> del hero.</li>
+        <li><b>El formulario</b> (campos, pasos, textos).</li>
+        <li><b>Layout y prueba social</b>.</li>
+        <li>Colores, microcopy, detalles — al final, si sobra tráfico.</li>
+      </ol>
+      <p>Priorizamos con ICE simplificado (Impacto × Confianza × Facilidad) en el backlog de CRO de cada cliente. Toda hipótesis se escribe: "Creemos que [cambio] va a [efecto] porque [evidencia]".</p>` },
+    { nav: 'Ejecución', h: 'Reglas de ejecución', html: `
+      <ul>
+        <li>Duración mínima: <b>2 ciclos de negocio completos</b> (2 semanas típicamente), aunque el ganador "aparezca" el día 3. Los primeros días mienten siempre.</li>
+        <li>Significancia del 95% Y volumen mínimo cumplido — las dos cosas, no una.</li>
+        <li>Un test por página por vez; nada de cambiar el anuncio a mitad del test.</li>
+        <li>Métrica primaria definida antes de arrancar (leads calificados, no clicks al botón). Si ganás en clicks y perdés en ventas, perdiste.</li>
+      </ul>
+      <div class="note"><b>Falso ganador típico:</b> el test se corta el día 4 con "99% de significancia" sobre 40 conversiones. A las tres semanas la mejora desapareció. La significancia con muestras chicas es ruido vestido de traje.</div>` },
+    { nav: 'Registro', h: 'El registro de aprendizajes', html: `
+      <p>Cada test terminado se anota en el doc de CRO del cliente: hipótesis, variantes (con screenshot), resultado, decisión. Los tests perdedores valen tanto como los ganadores: nos ahorran repetir el error en el próximo cliente del mismo rubro. Este registro es de los activos más valiosos que construimos como agencia.</p>` }
+  ],
+  check: [
+    'Verifiqué la muestra disponible antes de proponer un test',
+    'La hipótesis está escrita con su evidencia',
+    'La métrica primaria es de negocio (lead calificado / venta)',
+    'El test corre 2 ciclos completos aunque "ya haya ganador"',
+    'Significancia 95% + volumen mínimo, las dos condiciones',
+    'No toqué anuncios ni tráfico durante el test',
+    'El resultado quedó en el registro de aprendizajes del cliente'
+  ]
+},
+{
+  slug: 'analisis-funnel-friccion',
+  cat: 'cro', level: 'Intermedio', dur: '25 min',
+  title: 'Análisis de funnel: encontrar la <em>fuga</em> antes de opinar',
+  desc: 'Cómo localizamos dónde se pierde la gente (datos primero, opiniones después) usando GA4, grabaciones de sesión y los números del cliente.',
+  secs: [
+    { nav: 'El mapa', h: 'Dibujar el funnel real, no el ideal', html: `
+      <p>Antes de optimizar nada, dibujamos el funnel completo con números reales en cada paso: <b>impresión → click → landing → inicio de formulario/carrito → envío/checkout → venta cerrada</b>. En servicios, el funnel sigue después del lead: contactado → agendado → asistió → cerró. La fuga suele estar donde el marketing ya no mira.</p>
+      <div class="ej"><b>Ejemplo</b>Cliente con "problema de conversión de landing": la landing convertía 9% (sana). El 60% de los leads no eran contactados en las primeras 24 horas. El problema era el proceso comercial, no la página — y eso cambió toda la propuesta.</div>` },
+    { nav: 'Benchmarks', h: 'Contra qué comparar cada paso', html: `
+      <ul>
+        <li>Landing de lead gen con tráfico pago: <b>5–15%</b> según ticket e industria.</li>
+        <li>E-commerce sesión→compra: <b>1.5–3.5%</b>; checkout iniciado→completado: <b>40–60%</b>.</li>
+        <li>Inicio de formulario→envío: <b>60%+</b>; menos que eso, el formulario es el sospechoso.</li>
+      </ul>
+      <p>Los benchmarks sirven para elegir <b>dónde mirar primero</b>, no como promesa al cliente.</p>` },
+    { nav: 'Herramientas', h: 'Las tres lentes', html: `
+      <ol>
+        <li><b>GA4 (funnel exploration)</b>: dónde caen, segmentado por dispositivo y fuente. Un funnel que muere solo en móvil-Meta cuenta otra historia que uno que muere en todos lados.</li>
+        <li><b>Grabaciones y heatmaps</b> (Clarity/Hotjar): 20–30 sesiones del paso que fuga. Ver a la gente pelearse con un select roto en iPhone vale más que mil dashboards.</li>
+        <li><b>Los números del cliente</b>: velocidad de respuesta a leads, tasa de show-up, cierre por vendedor. Pedirlos siempre.</li>
+      </ol>` },
+    { nav: 'Priorizar', h: 'De la fuga al plan', html: `
+      <p>La fuga que se ataca primero es la que combina <b>mayor volumen perdido × más abajo en el funnel × más fácil de arreglar</b>. Recuperar 10% en checkout vale más que 10% más de clicks — la mejora al fondo del funnel multiplica todo lo que viene arriba. El hallazgo se presenta al cliente en dinero: "acá se pierden $X por mes".</p>` }
+  ],
+  check: [
+    'Dibujé el funnel completo con números reales por paso',
+    'Incluí los pasos post-lead (contacto, agenda, cierre)',
+    'Segmenté por dispositivo y fuente de tráfico',
+    'Vi 20+ grabaciones de sesión del paso con fuga',
+    'Comparé cada paso contra benchmarks de la industria',
+    'Prioricé la fuga por volumen × posición × facilidad',
+    'El hallazgo está expresado en dinero perdido por mes'
+  ]
+},
+{
+  slug: 'ga4-tracking-conversiones',
+  cat: 'analytics', level: 'Básico', dur: '35 min',
+  title: 'GA4 y tracking: si no se mide, <em>no pasó</em>',
+  desc: 'El setup de medición estándar de la agencia: GA4 + GTM + conversiones importadas, verificado antes de gastar un dólar en ads.',
+  secs: [
+    { nav: 'El estándar', h: 'El stack estándar en todo cliente', html: `
+      <ol>
+        <li><b>GTM</b> como capa única de tags: nada de pixels hardcodeados regados por el sitio.</li>
+        <li><b>GA4</b> con eventos clave marcados como conversión (lead, purchase, llamada, agenda).</li>
+        <li><b>Conversiones de Ads importadas desde GA4 o con tag propio</b> — pero UNA sola fuente por acción: doble tag = doble conteo = optimizar sobre mentiras.</li>
+        <li><b>Pixel + Conversions API</b> en Meta (la API ya no es opcional con iOS y adblockers).</li>
+        <li><b>UTMs con convención única</b> de la agencia en todo link pago, de email y social.</li>
+      </ol>
+      <p class="pull">Primero medimos, después gastamos. <span>Nunca</span> al revés.</p>` },
+    { nav: 'Eventos', h: 'Qué eventos configuramos (y cuáles no)', html: `
+      <p>Solo eventos que representan valor de negocio o pasos del funnel: <b>generate_lead, purchase, begin_checkout, form_start, click_llamada, agenda</b>. No llenamos GA4 de "scroll 25%" y "hover en el logo": el ruido esconde la señal y las conversiones basura arruinan el smart bidding.</p>
+      <div class="note"><b>La trampa clásica:</b> contar la visita a /gracias como conversión sin filtrar recargas ni tráfico directo a esa URL. Mejor: evento disparado por el envío real del formulario.</div>` },
+    { nav: 'Verificación', h: 'El protocolo de verificación', html: `
+      <ol>
+        <li>Enviar un lead de prueba real (nombre "TEST APG") desde móvil e incógnito.</li>
+        <li>Verlo aparecer en GA4 (DebugView), en el CRM del cliente y en la plataforma de ads.</li>
+        <li>Chequear que NO aparece dos veces.</li>
+        <li>Comparar durante la primera semana: leads reales del CRM vs. conversiones reportadas — divergencia &gt; 15% se investiga.</li>
+      </ol>` },
+    { nav: 'Llamadas', h: 'Llamadas y conversiones offline', html: `
+      <p>En negocios de servicio, la mitad de los leads llama. Sin tracking de llamadas (número dinámico o al menos evento de click en el número), el reporting subestima todo y el cliente cree que "las ads no andan". Para ventas que se cierran por teléfono a días del click: importación de conversiones offline con GCLID desde el CRM — se configura en el onboarding, no "más adelante".</p>` }
+  ],
+  check: [
+    'Todo el tracking pasa por GTM, sin pixels sueltos',
+    'Cada acción de valor tiene UNA sola fuente de conversión',
+    'Conversions API activa además del pixel de Meta',
+    'Hice el lead de prueba y lo vi en las 3 puntas sin duplicar',
+    'Los clicks a teléfono/WhatsApp se miden como evento',
+    'UTMs con la convención de la agencia en todos los canales',
+    'Compararé CRM vs. plataformas en la primera semana'
+  ]
+}
+);
+
+TRAININGS.push(
+{
+  slug: 'dashboards-reporting-clientes',
+  cat: 'analytics', level: 'Intermedio', dur: '25 min',
+  title: 'Dashboards y reporting que el cliente <em>entiende</em>',
+  desc: 'Cómo armamos el dashboard mensual: pocas métricas atadas a plata, narrativa de qué hicimos y qué sigue, y cero vanity metrics.',
+  secs: [
+    { nav: 'Principio', h: 'El reporte responde tres preguntas', html: `
+      <p>Todo reporte mensual de A+ Growth responde, en este orden: <b>1) ¿Cuánta plata generó esto? 2) ¿Qué hicimos y qué aprendimos? 3) ¿Qué vamos a hacer el mes que viene?</b> Si el reporte no responde las tres en la primera pantalla, está mal armado.</p>
+      <p class="pull">El cliente no compra impresiones: compra <span>resultados</span> que puede contar en el banco.</p>` },
+    { nav: 'Métricas', h: 'Las métricas por servicio (y las prohibidas)', html: `
+      <ul>
+        <li><b>Ads</b>: inversión, leads/ventas, CPA o ROAS, y la tendencia contra los 3 meses previos.</li>
+        <li><b>Email</b>: revenue atribuido, % del revenue total, crecimiento de lista engaged.</li>
+        <li><b>CRO</b>: tests corridos, ganadores, impacto estimado en dinero.</li>
+        <li><b>Prohibidas como titulares</b>: impresiones, alcance, "engagement", CTR sin contexto. Pueden ir en el anexo para diagnóstico; nunca como logro.</li>
+      </ul>
+      <div class="note"><b>Regla:</b> cada métrica del dashboard tiene que poder terminar la frase "…y eso importa porque". Si no la termina, sale del dashboard.</div>` },
+    { nav: 'Estructura', h: 'Estructura del dashboard (Looker Studio)', html: `
+      <ol>
+        <li><b>Página 1 — Resumen ejecutivo</b>: 4–6 números grandes con comparativa, 3 bullets de qué pasó, 3 de qué sigue. Es lo único que el dueño va a mirar.</li>
+        <li><b>Página 2 — Por canal</b>: detalle de cada servicio activo con su tendencia.</li>
+        <li><b>Página 3 — Anexo técnico</b>: para el que quiere profundidad (y para nosotros mismos).</li>
+      </ol>
+      <p>Fuentes conectadas directo (Ads, GA4, plataforma de email) — nada de copiar números a mano un viernes a las 19h: se rompe, y un número roto en un reporte destruye seis meses de confianza.</p>` },
+    { nav: 'Narrativa', h: 'La llamada mensual: el reporte es la excusa', html: `
+      <p>El dashboard se manda 24h antes de la llamada mensual. En la llamada no se lee el dashboard: se cuenta la historia (qué probamos, qué aprendimos, dónde vamos) y se piden las dos cosas que siempre necesitamos del cliente: feedback de calidad de leads y novedades del negocio que cambien la estrategia. Cerrar siempre con los próximos pasos acordados por escrito.</p>` }
+  ],
+  check: [
+    'La página 1 responde las tres preguntas sin scroll',
+    'Toda métrica titular está atada a dinero o leads',
+    'Cero vanity metrics como logros',
+    'Fuentes conectadas en vivo, sin números a mano',
+    'Comparativa contra los 3 meses previos visible',
+    'El reporte llega 24h antes de la llamada',
+    'La llamada termina con próximos pasos por escrito'
+  ]
+},
+{
+  slug: 'atribucion-multicanal',
+  cat: 'analytics', level: 'Avanzado', dur: '30 min',
+  title: 'Atribución multi-canal sin <em>autoengaño</em>',
+  desc: 'Por qué las plataformas se pelean por la misma venta, qué modelo usamos para decidir presupuesto y cómo explicárselo al cliente sin perderlo.',
+  secs: [
+    { nav: 'El problema', h: 'Por qué los números nunca cierran', html: `
+      <p>Meta dice 30 ventas, Google dice 25, y el cliente vendió 40 en total. Nadie miente: <b>cada plataforma se atribuye toda conversión que tocó</b>, con ventanas distintas (Meta cuenta view-through; GA4 es last-click no directo por defecto). Sumar los reportes de plataforma es contar la misma venta dos o tres veces.</p>
+      <p class="pull">Las plataformas son <span>abogados</span> de sí mismas, no jueces.</p>` },
+    { nav: 'Nuestro modelo', h: 'Cómo lo resolvemos en la práctica', html: `
+      <ol>
+        <li><b>La verdad de negocio</b>: ventas/leads totales del CRM o la plataforma de e-commerce. Contra eso se mide todo.</li>
+        <li><b>GA4 como árbitro comparativo</b>: mismo criterio para todos los canales — no como verdad absoluta, sino como vara pareja.</li>
+        <li><b>Plataformas para optimizar DENTRO del canal</b>: Meta Ads Manager sirve para comparar campañas de Meta entre sí, no contra Google.</li>
+        <li><b>Blended CAC/MER como métrica reina</b>: inversión total ÷ ventas totales. No se puede trampear y es lo que el dueño siente en la caja.</li>
+      </ol>
+      <div class="ej"><b>Ejemplo</b>Cliente con ROAS 5 en Meta "espectacular": el MER total era 2.1 y venía cayendo. Meta se estaba atribuyendo la marca y el email. Recortamos remarketing redundante, el MER subió a 2.8 con el mismo revenue.</div>` },
+    { nav: 'Incrementalidad', h: 'Pruebas de incrementalidad caseras', html: `
+      <p>Para dudas grandes ("¿la campaña de marca suma o cosecha?"), la prueba más honesta a nuestra escala es <b>apagar y medir</b>: pausar el canal/campaña 2 semanas en mercados o períodos comparables y mirar la venta total. Duele proponerlo, pero un test de dos semanas evita años de presupuesto mal asignado.</p>` },
+    { nav: 'Cliente', h: 'Cómo explicarlo al cliente', html: `
+      <p>Al cliente le mostramos <b>un solo número reina (MER/CAC blended) + la tendencia por canal según GA4</b>, y le explicamos una vez (con este training si hace falta) por qué los reportes de plataforma inflan. Cuando el cliente entiende esto deja de pedir "el ROAS de cada plataforma" y empieza a decidir con nosotros sobre números reales — es una de las conversaciones que más confianza construye.</p>` }
+  ],
+  check: [
+    'Reporto contra ventas totales del CRM/tienda, no suma de plataformas',
+    'Uso GA4 como vara comparativa entre canales',
+    'El MER/CAC blended está en la página 1 del reporte',
+    'Uso métricas de plataforma solo para optimizar dentro del canal',
+    'Identifiqué dónde hay doble atribución en la cuenta',
+    'Propuse test de incrementalidad donde había dudas grandes',
+    'El cliente tuvo la charla de atribución al menos una vez'
+  ]
+},
+{
+  slug: 'onboarding-cliente-30-dias',
+  cat: 'estrategia', level: 'Básico', dur: '30 min',
+  title: 'Onboarding de cliente: los primeros <em>30 días</em>',
+  desc: 'El proceso estándar desde la firma hasta el primer reporte: accesos, kickoff, quick wins y las expectativas que definen si la relación dura.',
+  secs: [
+    { nav: 'Semana 1', h: 'Semana 1: accesos y kickoff', html: `
+      <ol>
+        <li><b>Checklist de accesos el día 1</b>: Ads (con niveles correctos, nunca contraseñas compartidas), GA4, GTM, Meta Business, plataforma de email, CMS, CRM. Perseguir accesos es la causa #1 de arranques lentos.</li>
+        <li><b>Llamada de kickoff</b> con el decisor presente: números del negocio (ticket, margen, LTV, capacidad), historia con agencias anteriores (qué falló y por qué), definición de qué es un lead bueno, y el CPA/ROAS con el que el negocio es rentable — calculado juntos, en la llamada.</li>
+        <li><b>Expectativas por escrito</b>: qué vamos a hacer el mes 1, qué resultados son razonables y cuándo, canales de comunicación y tiempos de respuesta.</li>
+      </ol>
+      <p class="pull">Un cliente que sabe qué esperar en el día 30 no entra en pánico el día <span>15</span>.</p>` },
+    { nav: 'Semana 2', h: 'Semana 2: auditoría y medición', html: `
+      <p>Corre la <b>auditoría completa</b> (ver trainings de auditoría por canal) y se instala el <b>tracking estándar</b> antes de tocar campañas. Si hay presupuesto corriendo con errores graves, se aplican solo los frenos obvios (negativas, ubicaciones, conversiones falsas) — la reestructura espera a tener datos limpios.</p>` },
+    { nav: 'Semanas 3–4', h: 'Semanas 3–4: quick wins y estructura', html: `
+      <ul>
+        <li>Ejecutar los <b>3 quick wins</b> de la auditoría — el cliente necesita ver movimiento el primer mes.</li>
+        <li>Lanzar la estructura nueva o los flows base según el servicio contratado.</li>
+        <li>Primer reporte al día 30: qué encontramos, qué hicimos, qué esperamos del mes 2. Aunque los resultados todavía no exploten, la sensación de control sí tiene que estar.</li>
+      </ul>
+      <div class="note"><b>Regla interna:</b> ningún cliente pasa el día 30 sin haber recibido algo tangible: un hallazgo en dinero, un quick win aplicado o un activo nuevo (flow, landing, dashboard).</div>` },
+    { nav: 'Señales', h: 'Señales de alerta tempranas', html: `
+      <p>Detectarlas el mes 1 ahorra un despido el mes 4: el decisor no aparece en las llamadas, no entregan accesos o feedback de leads, cambian el objetivo cada semana, o esperan resultados garantizados "como les prometió la agencia anterior". Cada una se conversa de frente apenas aparece — y se documenta.</p>` }
+  ],
+  check: [
+    'Todos los accesos recibidos con la checklist estándar',
+    'Kickoff hecho con el decisor y números reales del negocio',
+    'CPA/ROAS rentable calculado junto al cliente',
+    'Expectativas del mes 1 enviadas por escrito',
+    'Tracking instalado y verificado antes de reestructurar',
+    'Los 3 quick wins ejecutados antes del día 30',
+    'Primer reporte entregado el día 30 con próximos pasos'
+  ]
+},
+{
+  slug: 'marketing-mercado-hispano',
+  cat: 'estrategia', level: 'Intermedio', dur: '30 min',
+  title: 'Marketing al mercado <em>hispano</em> en EE.UU.',
+  desc: 'Nuestra especialidad diferencial: cómo ayudamos a clientes a capturar el mercado hispano — cultura, idioma, canales y los errores del "solo traducir".',
+  secs: [
+    { nav: 'Oportunidad', h: 'Por qué es nuestra bandera', html: `
+      <p>El mercado hispano en EE.UU. supera los <b>60 millones de personas y $3+ billones (trillions) de poder de compra</b>, y la mayoría de los negocios locales lo atiende mal o no lo atiende. Para nuestros clientes eso significa: CPMs y CPCs más bajos, menos competencia en subastas en español, y una lealtad de cliente que en el mercado general ya casi no existe.</p>
+      <p class="pull">No es un nicho: es el mercado que la competencia de tu cliente <span>ignora</span>.</p>` },
+    { nav: 'Cultura', h: 'Cultura antes que idioma', html: `
+      <ul>
+        <li><b>La confianza es el driver #1</b>: recomendación, testimonios de gente real de la comunidad, presencia consistente. El hispano compra donde siente que lo tratan como persona.</li>
+        <li><b>La familia decide</b>: los mensajes que incluyen a la familia (no al individuo aspiracional) rinden mejor en la mayoría de las categorías.</li>
+        <li><b>Bilingüe real</b>: segunda generación mezcla idiomas; el español neutro sirve, el español robótico de traductor no. Y hay categorías (finanzas, salud, legal) donde el español es decisivo aunque el cliente hable inglés: en temas sensibles la gente vuelve a su idioma de confianza.</li>
+      </ul>
+      <div class="ej"><b>Ejemplo</b>Para un cliente de servicios legales, la campaña en español con testimonio de una familia real duplicó la tasa de conversión de la versión en inglés con el mismo presupuesto — y los leads llegaban pidiendo "hablar con la persona del video".</div>` },
+    { nav: 'Canales', h: 'Canales y tácticas que usamos', html: `
+      <ol>
+        <li><b>Search en español</b>: keywords en español + anuncios + landing en español. Mandar búsqueda en español a landing en inglés es tirar el click.</li>
+        <li><b>Meta con creativo nativo</b> (ver training de creativos): UGC en español, casting de la comunidad real del cliente.</li>
+        <li><b>WhatsApp como canal de conversión</b>: en muchos rubros el hispano no llena formularios, escribe. Botón de WhatsApp medido como conversión.</li>
+        <li><b>Email bilingüe</b> segmentado por idioma de preferencia desde el registro.</li>
+      </ol>` },
+    { nav: 'Operación', h: 'Preparar al cliente para atender en español', html: `
+      <p>La campaña en español fracasa si atienden el teléfono solo en inglés. Antes de lanzar verificamos: ¿quién atiende llamadas/WhatsApp en español? ¿La experiencia post-click (formularios, contratos, seguimiento) existe en español? Si no, lo resolvemos con el cliente primero — es parte de la consultoría, no un extra.</p>` }
+  ],
+  check: [
+    'Evalué el potencial hispano del mercado del cliente con datos locales',
+    'La propuesta va más allá de traducir: ángulos culturales propios',
+    'Search en español apunta a landing en español',
+    'Los creativos usan gente y voz de la comunidad real',
+    'WhatsApp habilitado y medido donde el rubro lo pide',
+    'El cliente puede atender en español de punta a punta',
+    'Los resultados se reportan segmentados por mercado ES/EN'
+  ]
+},
+{
+  slug: 'roadmap-crecimiento-trimestral',
+  cat: 'estrategia', level: 'Avanzado', dur: '30 min',
+  title: 'Roadmap de crecimiento <em>trimestral</em>',
+  desc: 'Cómo convertimos "queremos crecer" en un plan de 90 días con foco: diagnóstico, la palanca del trimestre, y el ritmo de ejecución semanal.',
+  secs: [
+    { nav: 'Diagnóstico', h: 'Diagnóstico: dónde está el techo hoy', html: `
+      <p>Todo negocio tiene UN cuello de botella dominante por vez: adquisición (no entra suficiente gente), conversión (entra pero no compra), o retención/LTV (compra una vez y no vuelve). El diagnóstico sale de los números del funnel (ver training de análisis de funnel) y define <b>la palanca del trimestre</b>. Crecer es elegir: tres prioridades son ninguna.</p>
+      <p class="pull">Un trimestre, <span>una</span> palanca. Lo demás es mantenimiento.</p>` },
+    { nav: 'Metas', h: 'Metas que se pueden operar', html: `
+      <ul>
+        <li>La meta trimestral es un número de negocio: "de 80 a 120 leads calificados/mes con CPA ≤ $45", no "mejorar la presencia digital".</li>
+        <li>Se descompone en 2–3 <b>iniciativas</b> con dueño y fecha (ej: reestructura de Google Ads, landing nueva de servicio estrella, flows de email).</li>
+        <li>Cada iniciativa tiene su métrica adelantada semanal — no esperamos al día 90 para saber si vamos bien.</li>
+      </ul>
+      <div class="ej"><b>Ejemplo</b>Palanca del trimestre: conversión. Iniciativas: landing nueva del servicio principal (semana 1–3), test de oferta (4–7), velocidad de respuesta a leads con el cliente (todo el trimestre). Meta: conversión de landing del 6% al 9%.</div>` },
+    { nav: 'Ritmo', h: 'El ritmo: semanal ejecuta, mensual corrige, trimestral decide', html: `
+      <ol>
+        <li><b>Semanal (interno, 15 min)</b>: métricas adelantadas de cada iniciativa, bloqueos, siguiente paso.</li>
+        <li><b>Mensual (con cliente)</b>: reporte + ajustes tácticos dentro del plan. El plan no se reescribe cada mes por una semana mala.</li>
+        <li><b>Trimestral (con cliente)</b>: retro honesta — ¿movimos la palanca? — y elección de la palanca siguiente. Acá sí se decide en grande.</li>
+      </ol>
+      <div class="note"><b>Disciplina anti-brillo:</b> toda idea nueva a mitad de trimestre (del cliente o nuestra) va al backlog del trimestre siguiente, salvo que supere a una iniciativa activa en impacto claro. El roadmap protege el foco de todos.</div>` },
+    { nav: 'Upsell', h: 'El roadmap como motor de la relación', html: `
+      <p>El roadmap trimestral es también nuestra herramienta comercial más honesta: cuando la palanca siguiente requiere un servicio que el cliente no contrató (CRO, email, mercado hispano), la propuesta sale del diagnóstico compartido, no de una lista de precios. Así se venden servicios que el cliente ya entendió que necesita.</p>` }
+  ],
+  check: [
+    'El diagnóstico identifica UNA palanca dominante del trimestre',
+    'La meta trimestral es un número de negocio verificable',
+    'Cada iniciativa tiene dueño, fecha y métrica adelantada',
+    'Ritual semanal interno de 15 min agendado',
+    'Las ideas nuevas van al backlog, no al trimestre en curso',
+    'La retro trimestral evalúa la palanca, no solo las tareas',
+    'Los upsells salen del diagnóstico compartido con el cliente'
+  ]
+}
+);
+
+TRAININGS.push(
+{
+  slug: 'gohighlevel-completo',
+  cat: 'herramientas', level: 'Completo', dur: '75 min',
+  title: 'GoHighLevel de <em>punta a punta</em>',
+  desc: 'El training maestro de GHL: qué hace cada módulo, cómo se conectan entre sí y cómo lo operamos en A+ Growth — de CRM y workflows a Voice AI, pagos y snapshots.',
+  secs: [
+    { nav: 'Panorama', h: 'Qué es GHL y cómo está organizado', html: `
+      <p>GoHighLevel es la plataforma todo-en-uno que usamos para operar clientes: CRM, mensajería, automatización, funnels, calendarios, pagos, reputación, cursos y AI en un solo lugar. Su gracia no es que cada módulo sea el mejor del mercado — es que <b>todos comparten el mismo contacto y las mismas automatizaciones</b>: un lead que llena un formulario puede recibir SMS, agendar, pagar y dejar reseña sin salir del sistema.</p>
+      <p>La jerarquía tiene dos niveles y confundirlos es el error #1 del que empieza:</p>
+      <ul>
+        <li><b>Cuenta de agencia (Agency view)</b>: donde vivimos nosotros. Administra sub-cuentas, snapshots, facturación, white label y configuración global.</li>
+        <li><b>Sub-cuentas (Location / Sub-account)</b>: una por cliente. Todo lo operativo (contactos, workflows, funnels, calendarios) vive acá, aislado del resto.</li>
+      </ul>
+      <div class="note"><b>Planes 2026:</b> Starter $97/mes (hasta 3 sub-cuentas), Unlimited $297/mes (sub-cuentas ilimitadas + white label + API) y Agency/SaaS Pro $497/mes (agrega SaaS mode con rebilling). El AI Employee se contrata aparte: ~$97/mes por sub-cuenta con todo el paquete de AI.</div>
+      <p class="pull">Un solo sistema donde el lead entra, se nutre, agenda, paga y <span>reseña</span>.</p>` },
+
+    { nav: 'CRM', h: 'CRM y contactos: la base de todo', html: `
+      <p>Todo en GHL cuelga del <b>contacto</b>. Cada contacto tiene: datos, actividad completa (mensajes, llamadas, citas, pagos), tags, campos custom y las automatizaciones en las que está metido.</p>
+      <ul>
+        <li><b>Tags</b>: etiquetas libres para segmentar y disparar workflows. Nuestra convención: <code>fuente-*</code> (origen), <code>estado-*</code> (etapa), <code>interes-*</code> (servicio). Sin convención, a los 3 meses la cuenta es un basurero de 200 tags.</li>
+        <li><b>Custom fields</b>: datos estructurados (presupuesto, zona, idioma). Se usan en personalización de mensajes con merge tags tipo <code>{{contact.first_name}}</code>.</li>
+        <li><b>Smart lists</b>: vistas filtradas guardadas (ej: "leads sin respuesta 48h", "clientes activos ES"). Son la forma de trabajar listas sin exportar nada.</li>
+        <li><b>DND (Do Not Disturb)</b>: por canal (SMS, email, llamadas). Respetarlo no es opcional: es compliance.</li>
+        <li><b>Bulk actions</b>: importar CSV, taguear en masa, meter una lista entera a un workflow.</li>
+      </ul>
+      <div class="ej"><b>Ejemplo</b>Lead de Meta con formulario en español → entra con tags <code>fuente-meta</code> + <code>idioma-es</code>; todos los mensajes automáticos le salen en español y el reporte por fuente sale solo.</div>` },
+
+    { nav: 'Conversaciones', h: 'Conversations: el inbox unificado', html: `
+      <p>La pestaña Conversations junta <b>todos los canales en un solo hilo por contacto</b>: SMS, email, llamadas y voicemails, WhatsApp, DMs de Facebook e Instagram, chat de Google Business Profile y el webchat del sitio. Quien atiende ve el historial completo sin preguntar "¿quién sos?".</p>
+      <ul>
+        <li><b>Missed Call Text-Back</b>: llamada perdida → SMS automático al instante ("Vimos tu llamada, ¿en qué te ayudamos?"). La función con mejor ROI-por-minuto-de-setup de toda la plataforma; se activa en todo cliente con teléfono.</li>
+        <li><b>Snippets</b>: respuestas guardadas para el equipo (precios, direcciones, FAQ) — consistencia y velocidad.</li>
+        <li><b>Asignación</b>: conversaciones asignables a usuarios; con round-robin si hay equipo de ventas.</li>
+        <li><b>Webchat widget</b>: se instala en el sitio del cliente y convierte visitas en conversaciones por SMS (el visitante deja su número y la charla sigue en su teléfono — no se pierde al cerrar la pestaña).</li>
+      </ul>
+      <p class="pull">Velocidad de respuesta es conversión: el inbox unificado existe para responder en <span>minutos</span>, no en días.</p>` },
+
+    { nav: 'Pipelines', h: 'Pipelines y oportunidades', html: `
+      <p>Los <b>pipelines</b> son los tableros de venta: columnas (stages) por las que se mueve cada <b>oportunidad</b> (un contacto con un negocio en juego y un valor en dólares). Un contacto puede tener varias oportunidades (dos servicios, dos sedes).</p>
+      <ul>
+        <li>Pipeline estándar nuestro para lead gen: <b>Nuevo → Contactado → Agendado → Asistió → Propuesta → Ganado / Perdido</b>. Menos etapas es más: cada etapa debe implicar una acción distinta.</li>
+        <li><b>El movimiento entre etapas dispara workflows</b>: pasar a "Agendado" manda recordatorios; caer en "Perdido" activa nurture de largo plazo con la razón de pérdida.</li>
+        <li>El valor por oportunidad alimenta el reporting: pipeline value, tasa de cierre por fuente, revenue atribuido por campaña.</li>
+      </ul>
+      <div class="note"><b>Regla interna:</b> las etapas las mueve la automatización siempre que se pueda (formulario → Nuevo; cita creada → Agendado; pago → Ganado). Lo manual se olvida, y un pipeline desactualizado es peor que ninguno.</div>` },
+
+    { nav: 'Calendarios', h: 'Calendarios y agendamiento', html: `
+      <p>El módulo de calendarios reemplaza a Calendly, conectado al CRM: cada cita crea/actualiza el contacto y puede mover el pipeline.</p>
+      <ul>
+        <li><b>Tipos</b>: personal, round-robin (reparte entre el equipo), colectivo (varios asistentes), de servicio (para negocios con turnos), y clase/grupo.</li>
+        <li>Sincroniza con <b>Google/Outlook</b> en dos vías y detecta conflictos.</li>
+        <li><b>Recordatorios y confirmaciones</b> por SMS + email como workflow: confirmación inmediata, recordatorio 24h, recordatorio 1h, y pedido de reagenda al no-show. Este combo solo baja los no-shows 30–50% y es parte de nuestro snapshot estándar.</li>
+        <li>Formulario previo a la cita (calificación), buffer entre citas, límites diarios, y <b>pago para reservar</b> (señas) si el cliente lo necesita.</li>
+      </ul>
+      <div class="ej"><b>Ejemplo</b>Cliente clínica: calendario de servicio por tratamiento, round-robin entre 3 doctores, seña de $25 al reservar y secuencia anti no-show. Resultado típico: agenda llena y 15% menos huecos.</div>` },
+
+    { nav: 'Workflows', h: 'Workflows: el corazón de la plataforma', html: `
+      <p>Los <b>workflows</b> son el motor de automatización: todo lo demás existe para alimentarlos. Un workflow = <b>trigger</b> (qué lo dispara) + <b>acciones</b> (qué hace) + lógica.</p>
+      <ul>
+        <li><b>Triggers típicos</b>: formulario enviado, cita creada/cancelada, tag agregado, etapa de pipeline cambiada, llamada perdida, pago recibido, cumpleaños, reseña recibida, respuesta de contacto.</li>
+        <li><b>Acciones</b>: enviar SMS/email/WhatsApp/voicemail drop, esperar (wait), if/else por condiciones, mover pipeline, agregar tag, notificar al equipo interno, asignar usuario, webhook a otras apps, y acciones de AI (clasificar respuesta, generar texto, decidir rama).</li>
+        <li><b>Goals</b>: si el contacto cumple el objetivo (agendó, pagó), sale de la secuencia solo — nadie recibe "¿agendamos?" después de agendar.</li>
+        <li><b>Los 6 workflows que instalamos en TODO cliente</b>: 1) respuesta instantánea a lead nuevo (&lt;1 min, el más importante de todos), 2) missed call text-back, 3) secuencia de citas + anti no-show, 4) nurture de leads fríos (30–90 días), 5) pedido de reseñas post-servicio, 6) notificación interna de lead caliente.</li>
+      </ul>
+      <p class="pull">GHL sin workflows es un CRM caro. Con workflows es un <span>empleado</span> que no duerme.</p>
+      <div class="note"><b>Higiene:</b> nombrar todo con la convención <code>[Área] Nombre — versión</code>, probar cada workflow con un contacto de prueba antes de activarlo, y documentar en el doc del cliente qué hace cada uno. Un workflow que nadie entiende es una bomba de tiempo.</div>` },
+
+    { nav: 'Funnels y webs', h: 'Funnels, sitios, formularios y quizzes', html: `
+      <p>El builder de páginas hace <b>funnels</b> (secuencias landing → upsell → gracias), <b>sitios completos</b> y <b>blogs</b>, con dominios propios y SSL incluido. No reemplaza a una web premium hecha a medida, pero para landings de campaña es rápido y queda todo medido dentro del sistema.</p>
+      <ul>
+        <li><b>Forms y surveys</b>: formularios embebibles con lógica condicional; cada envío crea contacto y dispara workflows.</li>
+        <li><b>Quizzes</b>: como los que usamos en nuestro propio sitio — capturan email + datos de segmentación en un paso. Patrón replicable en clientes.</li>
+        <li>Todo lo que armamos sigue el training de <b>anatomía de landing</b>: coincidencia de mensaje con el anuncio, prueba social temprana, formulario mínimo.</li>
+        <li>A/B testing de páginas nativo y plantillas por industria para arrancar rápido.</li>
+      </ul>` },
+
+    { nav: 'Email y SMS', h: 'Email, SMS y compliance (A2P 10DLC)', html: `
+      <p>Campañas de email y SMS masivas viven en Marketing: builder de emails, plantillas, programación, RSS para blogs y estadísticas por envío. Todo lo del training de <b>deliverability</b> aplica acá igual: dominio de envío dedicado, warm-up, listas engaged.</p>
+      <ul>
+        <li><b>LC Email / LC Phone</b>: la mensajería nativa de GHL (sin cuentas Twilio/Mailgun aparte). Se paga por uso y se puede rebillear al cliente con margen.</li>
+        <li><b>A2P 10DLC</b>: en EE.UU. todo SMS comercial requiere registrar marca y campaña ante los carriers. Sin registro aprobado los SMS se filtran o directamente no salen. <b>Es lo primero que se tramita en el onboarding</b> (tarda días), con casos de uso y ejemplos de mensajes reales del cliente.</li>
+        <li>SMS: siempre con opt-out ("Responde STOP para salir"), horario razonable y valor real. Un SMS spameado quema el número y la marca del cliente.</li>
+      </ul>
+      <div class="note"><b>Cuidado:</b> nunca importar una lista comprada ni mandar SMS masivo a contactos sin consentimiento registrado. Además de inútil, es ilegal (TCPA) y las multas son por mensaje.</div>` },
+
+    { nav: 'Reputación', h: 'Reputación y Social Planner', html: `
+      <p><b>Reputation Management</b> automatiza el activo local más rentable: las reseñas de Google/Facebook.</p>
+      <ul>
+        <li>Workflow post-servicio: pedido de reseña por SMS con el link directo → recordatorio a los 3 días si no la dejó.</li>
+        <li><b>Reviews AI</b>: responde reseñas automáticamente con tono configurable (respuesta directa para 4–5 estrellas; borrador para aprobar en negativas — las malas las respondemos con criterio humano).</li>
+        <li>Widget de reseñas embebible en el sitio y monitoreo de rating en el dashboard.</li>
+      </ul>
+      <p><b>Social Planner</b> programa publicaciones en Facebook, Instagram, Google Business Profile, LinkedIn, TikTok y X desde un solo calendario, con Content AI para borradores. Para clientes con gestión de redes, reemplaza herramientas tipo Hootsuite.</p>` },
+
+    { nav: 'Pagos', h: 'Pagos, facturas y documentos', html: `
+      <p>GHL cobra por el cliente conectando <b>Stripe/PayPal/Authorize.net</b>:</p>
+      <ul>
+        <li><b>Invoices</b>: facturas one-off o recurrentes, con recordatorio automático de pago pendiente.</li>
+        <li><b>Documents & Contracts</b>: propuestas y contratos con firma electrónica — y al firmar se puede disparar el cobro y el workflow de onboarding en un solo paso.</li>
+        <li><b>Productos y suscripciones</b>: checkout en funnels, order bumps, upsells 1-click, cupones.</li>
+        <li><b>Text-to-pay</b>: link de pago por SMS desde la conversación — brutal para servicios que cierran por teléfono.</li>
+        <li>Cada pago actualiza el contacto y el pipeline: la atribución llega hasta el dólar cobrado, no hasta el lead.</li>
+      </ul>
+      <div class="ej"><b>Ejemplo</b>Flujo completo sin tocar nada: propuesta enviada desde el pipeline → cliente firma → se cobra el anticipo → tag <code>cliente-activo</code> → arranca el workflow de onboarding y la serie de reseñas queda agendada para el post-servicio.</div>` },
+
+    { nav: 'Cursos y portal', h: 'Cursos, comunidades y client portal', html: `
+      <p>Para clientes con productos educativos (o para nuestra propia academia):</p>
+      <ul>
+        <li><b>Memberships/Courses</b>: cursos con módulos, video hosting incluido, drip de contenido, quizzes de evaluación y certificados. Acceso gratis o pago (integrado con productos).</li>
+        <li><b>Communities</b>: comunidades tipo Skool con canales, gamificación y — desde 2026 — <b>audio/video en vivo con calidad de estudio</b> dentro de la comunidad.</li>
+        <li><b>Client Portal</b>: un solo login para el usuario final donde ve sus cursos, comunidad, facturas y citas — con la marca del cliente.</li>
+      </ul>
+      <p>Modelo que se repite en clientes de servicios: capturar leads con un mini-curso gratis en Memberships y nutrir hacia la venta del servicio principal.</p>` },
+
+    { nav: 'AI Employee', h: 'La capa de AI: el "empleado" digital', html: `
+      <p>El paquete <b>AI Employee</b> (~$97/mes por sub-cuenta) agrupa toda la AI de la plataforma. Qué hace cada pieza:</p>
+      <ul>
+        <li><b>Conversation AI</b>: bot entrenado con la info del negocio que responde SMS, webchat y DMs, califica y <b>agenda citas solo</b>. Modo "sugerencia" (borrador para el humano) o "auto-pilot". Arrancamos siempre en sugerencia 1–2 semanas y pasamos a auto cuando las respuestas son sólidas.</li>
+        <li><b>Voice AI</b>: recepcionista telefónica con AI — atiende llamadas entrantes, responde FAQs, toma datos y agenda. 19+ idiomas y cientos de voces; para nuestros clientes el combo <b>inglés + español nativo</b> es oro: nadie más contesta el teléfono en español a las 9pm.</li>
+        <li><b>Content AI</b>: genera copy de emails, posts, blogs e imágenes dentro de los builders.</li>
+        <li><b>Funnel/Website AI</b>: arma páginas completas desde un prompt — útil como borrador, siempre pasa por nuestra revisión de landing.</li>
+        <li><b>Reviews AI</b>: respuestas automáticas de reseñas (ver sección de reputación).</li>
+        <li><b>Workflow AI</b>: acciones de AI dentro de workflows — clasificar la intención de una respuesta, extraer datos, decidir ramas, redactar.</li>
+        <li><b>Agent Studio + Ask AI</b>: builder visual para agentes custom multi-paso (califican, agendan, ejecutan acciones de CRM) y un asistente interno con tareas programadas y memoria persistente.</li>
+      </ul>
+      <p class="pull">La AI de GHL no reemplaza la estrategia: reemplaza al humano que <span>no</span> contestaba.</p>
+      <div class="note"><b>Regla interna:</b> toda AI de cara al cliente final se lanza con: base de conocimiento cargada y verificada, respuestas de prueba revisadas por nosotros, escalado a humano configurado (palabra clave o intención de queja) y revisión semanal de transcripts el primer mes.</div>` },
+
+    { nav: 'Nivel agencia', h: 'Snapshots, white label y SaaS mode', html: `
+      <p>Lo que hace de GHL un negocio para la agencia, no solo una herramienta:</p>
+      <ul>
+        <li><b>Snapshots</b>: fotos completas de una sub-cuenta (workflows, funnels, calendarios, pipelines, campañas) aplicables a cuentas nuevas. <b>Nuestro snapshot por industria es nuestro activo</b>: onboarding de un cliente nuevo en horas en vez de semanas. Se versiona y se mejora con cada cliente.</li>
+        <li><b>White label</b> (plan Unlimited+): la plataforma con nuestro dominio y marca — el cliente ve "A+ Growth", no GoHighLevel. Incluye app móvil white-label (costo extra).</li>
+        <li><b>SaaS mode</b> (plan Pro): revender GHL como software propio con planes y precios nuestros, rebilling automático de SMS/email/AI con margen, y upgrade/downgrade self-service. Es el modelo "el cliente paga la herramienta aunque pause los ads" — retención e ingreso recurrente.</li>
+        <li><b>Marketplace e integraciones</b>: apps de terceros, webhooks nativos, API abierta (y MCP para conectar agentes de AI externos). Integraciones nativas 2026: HubSpot, Klaviyo, Shopify con OAuth 1-click, QuickBooks.</li>
+        <li><b>Affiliate Manager</b>: programa de afiliados para clientes que venden cursos o SaaS.</li>
+      </ul>` },
+
+    { nav: 'Cómo lo usamos', h: 'Cómo lo operamos en A+ Growth (el estándar)', html: `
+      <p>Para que 20 sub-cuentas no sean 20 mundos distintos, todo cliente en GHL sigue el mismo estándar:</p>
+      <ol>
+        <li><b>Alta desde snapshot</b> de su industria — nunca desde cero.</li>
+        <li><b>Onboarding técnico</b>: dominio + email de envío verificados, A2P 10DLC tramitado el día 1, teléfono con missed call text-back, tracking conectado (ver training de GA4).</li>
+        <li><b>Los 6 workflows base</b> activados y probados con contacto de prueba.</li>
+        <li><b>Convenciones</b>: tags <code>fuente-/estado-/interes-</code>, workflows <code>[Área] Nombre — v1</code>, un pipeline principal por negocio.</li>
+        <li><b>Bilingüe</b>: campos de idioma desde el primer formulario; secuencias ES/EN separadas (ver training de mercado hispano).</li>
+        <li><b>Revisión mensual</b>: transcripts de AI, tasas de los workflows (respuesta, agendado, no-show, reseñas) al dashboard del cliente.</li>
+      </ol>
+      <p>Con esto, GHL deja de ser "el software" y pasa a ser la infraestructura donde corren todos los demás trainings de este portal: los leads de Ads caen acá, el email vive acá, las reseñas se piden acá y el reporte sale de acá.</p>` }
+  ],
+  check: [
+    'Entiendo la diferencia agencia vs. sub-cuenta y dónde vive cada cosa',
+    'Sé crear un contacto con tags y campos según la convención interna',
+    'Configuré missed call text-back en una cuenta real',
+    'Armé un pipeline con etapas movidas por automatización',
+    'Monté un calendario con secuencia anti no-show completa',
+    'Construí y probé los 6 workflows base con un contacto de prueba',
+    'Publiqué una landing con formulario que dispara workflow',
+    'Tramité (o verifiqué) el registro A2P 10DLC del cliente',
+    'Activé el pedido de reseñas post-servicio',
+    'Configuré Conversation AI en modo sugerencia y revisé sus respuestas',
+    'Sé aplicar un snapshot y qué incluye el nuestro',
+    'Puedo explicar al cliente qué es text-to-pay y documents con firma'
+  ]
+}
+);
+
+/* ---------- Persistencia (best-effort: si localStorage no está, todo sigue funcionando) ---------- */
+function loadState(slug) {
+  try { return JSON.parse(localStorage.getItem('apg-academy:' + slug)) || []; } catch (e) { return []; }
+}
+function saveState(slug, arr) {
+  try { localStorage.setItem('apg-academy:' + slug, JSON.stringify(arr)); } catch (e) { /* modo incógnito, etc. */ }
+}
+function progressOf(t) {
+  const st = loadState(t.slug);
+  const done = t.check.filter((_, i) => st[i]).length;
+  return Math.round(100 * done / t.check.length);
+}
+
+function esc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+/* ---------- Dashboard ---------- */
+let activeCat = 'todos';
+const $ = (id) => document.getElementById(id);
+
+function renderChips() {
+  const chips = [['todos', 'Todos']].concat(Object.entries(CATS));
+  $('chips').innerHTML = chips.map(([k, v]) =>
+    '<button role="tab" data-cat="' + k + '" class="' + (k === activeCat ? 'on' : '') + '" aria-selected="' + (k === activeCat) + '">' + v + '</button>'
+  ).join('');
+}
+
+function cardHTML(t) {
+  const p = progressOf(t);
+  const meta = p >= 100
+    ? '<span class="done-badge">&#10003; Completado</span>'
+    : '<span>' + t.dur + '</span><span class="bar"><i style="width:' + p + '%"></i></span><span>' + p + '%</span>';
+  return '<a class="tcard" href="#t/' + t.slug + '">' +
+    '<div class="top"><span class="cat">' + CATS[t.cat] + '</span><span class="lvl">' + t.level + '</span></div>' +
+    '<h3>' + t.title + '</h3><p>' + t.desc + '</p>' +
+    '<div class="meta">' + meta + '</div></a>';
+}
+
+function renderGrid() {
+  const q = ($('q').value || '').trim().toLowerCase();
+  const list = TRAININGS.filter(t => {
+    const inCat = activeCat === 'todos' || t.cat === activeCat;
+    const hay = (t.title + ' ' + t.desc + ' ' + CATS[t.cat]).toLowerCase();
+    return inCat && (!q || hay.indexOf(q) !== -1);
+  });
+  $('grid').innerHTML = list.map(cardHTML).join('');
+  $('empty').classList.toggle('hidden', list.length > 0);
+  $('count').textContent = list.length + ' de ' + TRAININGS.length;
+  $('stat-total').textContent = TRAININGS.length + LEGACY.length;
+  $('stat-areas').textContent = Object.keys(CATS).length;
+  $('stat-done').textContent = TRAININGS.filter(t => progressOf(t) >= 100).length;
+}
+
+function renderLegacy() {
+  $('grid-legacy').innerHTML = LEGACY.map(l =>
+    '<a class="tcard ext" href="' + l.url + '" target="_blank" rel="noopener">' +
+    '<div class="top"><span class="cat">' + l.cat + '</span><span class="lvl">Original</span></div>' +
+    '<h3>' + l.title + '</h3><p>' + l.desc + '</p>' +
+    '<div class="meta"><span>Abre en pesta&ntilde;a nueva &nearr;</span></div></a>'
+  ).join('');
+}
+
+/* ---------- Vista de training ---------- */
+function renderTraining(t) {
+  $('t-cat').textContent = CATS[t.cat] + ' · Training interno';
+  $('t-title').innerHTML = t.title;
+  $('t-sub').innerHTML = t.desc;
+  $('t-meta').innerHTML = '<span>Nivel: <b>' + t.level + '</b></span><span>Duraci&oacute;n: <b>' + t.dur + '</b></span><span>' + t.secs.length + ' secciones + checklist</span>';
+  $('t-nav').innerHTML = t.secs.map((s, i) => '<a href="#t/' + t.slug + '/s' + i + '" data-sec="s' + i + '">' + (i + 1) + '. ' + s.nav + '</a>').join('') +
+    '<a href="#t/' + t.slug + '/checklist" data-sec="checklist">Checklist</a><a href="#t/' + t.slug + '/dudas" data-sec="dudas">Dudas</a>';
+
+  const st = loadState(t.slug);
+  let html = t.secs.map((s, i) =>
+    '<section class="blk" id="s' + i + '"><div class="sec-head"><span class="no">' + String(i + 1).padStart(2, '0') + '</span><h2>' + s.h + '</h2></div>' + s.html + '</section>'
+  ).join('');
+
+  html += '<div class="check" id="checklist"><h3>Checklist de aplicaci&oacute;n</h3>' +
+    '<p class="hint">Marc&aacute; cada punto cuando lo hayas aplicado en una cuenta real. Tu progreso queda guardado en este navegador.</p>' +
+    t.check.map((c, i) => '<label><input type="checkbox" data-i="' + i + '" ' + (st[i] ? 'checked' : '') + '><span>' + c + '</span></label>').join('') +
+    '<p class="done-msg">&#10003; Training completado. Aparece marcado en tu dashboard.</p></div>';
+
+  html += '<div class="ask" id="dudas"><h3>&iquest;Dudas sobre este entrenamiento?</h3>' +
+    '<p class="hint">Preguntale a Claude ac&aacute; mismo: conoce el temario de este training y responde seg&uacute;n c&oacute;mo operamos en la agencia. Si es algo de un cliente puntual, sumale el contexto del cliente en tu pregunta.</p>' +
+    '<div class="chat" id="chat-thread"></div>' +
+    '<textarea id="ask-q" placeholder="Ej: &iquest;C&oacute;mo aplico esto si el cliente tiene un presupuesto de $1.500/mes y dos ubicaciones?"></textarea>' +
+    '<div class="row"><button class="go" id="ask-go">Preguntar</button>' +
+    '<button class="alt" id="ask-copy">Copiar prompt</button>' +
+    '<span class="copied" id="ask-ok">Copiado &#10003;</span></div>' +
+    '<div class="fb hidden" id="ask-fb"><p id="ask-fb-msg"></p>' +
+    '<div class="row" style="margin-top:0"><button class="alt" id="fb-open">Abrir en Claude &nearr;</button></div></div></div>';
+
+  $('t-body').innerHTML = html;
+
+  const box = $('t-body').querySelector('.check');
+  const syncDone = () => {
+    const cur = loadState(t.slug);
+    box.classList.toggle('all', t.check.every((_, i) => cur[i]));
+  };
+  syncDone();
+  box.addEventListener('change', (e) => {
+    const i = Number(e.target.getAttribute('data-i'));
+    const cur = loadState(t.slug);
+    cur[i] = e.target.checked;
+    saveState(t.slug, cur);
+    syncDone();
+  });
+
+  const plainTitle = t.title.replace(/<[^>]*>/g, '');
+  const temario = t.secs.map(s => s.nav).join('; ');
+  const resumen = t.desc.replace(/<[^>]*>/g, '');
+  const thread = chatThreads[t.slug] || (chatThreads[t.slug] = []);
+
+  const buildPrompt = (q0) => {
+    const q = q0 || ($('ask-q').value || '').trim() || 'Explicame los puntos clave y dame un ejemplo aplicado a un cliente real de la agencia.';
+    return 'Sos un formador senior del equipo de A+ Growth, una agencia de marketing digital (Google Ads, Meta Ads, email marketing, CRO, analytics y estrategia).\n\n' +
+      'Acabo de hacer el training interno "' + plainTitle + '" (área: ' + CATS[t.cat] + ', nivel ' + t.level + '). Temario: ' +
+      temario + '.\n\nResumen del training: ' + resumen + '\n\n' +
+      'Mi duda es la siguiente, respondeme de forma práctica y accionable, coherente con ese temario:\n\n' + q;
+  };
+
+  // Formato liviano para las respuestas: negritas, bullets y párrafos.
+  const renderAnswer = (raw) => {
+    const lines = esc(raw).replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>').split('\n');
+    let out = '', inList = false;
+    for (const ln of lines) {
+      const m = ln.match(/^\s*[-*•]\s+(.*)/);
+      if (m) { if (!inList) { out += '<ul>'; inList = true; } out += '<li>' + m[1] + '</li>'; }
+      else { if (inList) { out += '</ul>'; inList = false; } if (ln.trim()) out += '<p>' + ln + '</p>'; }
+    }
+    if (inList) out += '</ul>';
+    return out;
+  };
+
+  const box2 = $('chat-thread');
+  const addMsg = (cls, html2) => {
+    const d = document.createElement('div');
+    d.className = 'msg ' + cls;
+    d.innerHTML = html2;
+    box2.appendChild(d);
+    d.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    return d;
+  };
+  // Repintar historial si vuelve al training en la misma visita
+  thread.forEach(m => addMsg(m.role === 'user' ? 'u' : 'a',
+    m.role === 'user' ? esc(m.content) : '<span class="who">Claude &middot; A+Growth Academy</span>' + renderAnswer(m.content)));
+
+  let lastQuestion = '';
+  const showFallback = (msg) => {
+    $('ask-fb-msg').innerHTML = msg;
+    $('ask-fb').classList.remove('hidden');
+  };
+
+  const send = async () => {
+    const q = ($('ask-q').value || '').trim();
+    if (!q || $('ask-go').disabled) return;
+    lastQuestion = q;
+    $('ask-q').value = '';
+    $('ask-go').disabled = true;
+    $('ask-fb').classList.add('hidden');
+    addMsg('u', esc(q));
+    const thinking = addMsg('a think', 'Claude est&aacute; pensando&hellip;');
+    try {
+      const res = await fetch('/api/academy-chat', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          question: q, title: plainTitle, area: CATS[t.cat], level: t.level,
+          temario: temario, resumen: resumen, history: thread.slice(-10)
+        })
+      });
+      const data = await res.json().catch(() => ({}));
+      thinking.remove();
+      if (res.ok && data.answer) {
+        thread.push({ role: 'user', content: q }, { role: 'assistant', content: data.answer });
+        addMsg('a', '<span class="who">Claude &middot; A+Growth Academy</span>' + renderAnswer(data.answer));
+      } else if (res.status === 503) {
+        addMsg('err', 'El chat todav&iacute;a no tiene la API key configurada en el servidor.');
+        showFallback('Mientras tanto, pod&eacute;s abrir tu pregunta en Claude con todo el contexto del training:');
+      } else {
+        addMsg('err', 'No pude obtener respuesta (' + (data.error || res.status) + '). Prob&aacute; de nuevo en un momento.');
+        showFallback('Si sigue fallando, abr&iacute; tu pregunta en Claude con el contexto del training:');
+      }
+    } catch (e) {
+      thinking.remove();
+      addMsg('err', 'El chat embebido no est&aacute; disponible en esta vista.');
+      showFallback('Abr&iacute; tu pregunta en Claude con todo el contexto del training:');
+    }
+    $('ask-go').disabled = false;
+    $('ask-q').focus();
+  };
+
+  $('ask-go').addEventListener('click', send);
+  $('ask-q').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); }
+  });
+  $('fb-open').addEventListener('click', () => {
+    window.open('https://claude.ai/new?q=' + encodeURIComponent(buildPrompt(lastQuestion)), '_blank', 'noopener');
+  });
+  $('ask-copy').addEventListener('click', () => {
+    const p = buildPrompt(lastQuestion);
+    const ok = () => { $('ask-ok').classList.add('show'); setTimeout(() => $('ask-ok').classList.remove('show'), 1800); };
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(p).then(ok, ok); }
+    else { ok(); }
+  });
+}
+
+/* ---------- Router por hash ---------- */
+function route() {
+  const h = location.hash || '';
+  const m = h.match(/^#t\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?/);
+  const t = m && TRAININGS.find(x => x.slug === m[1]);
+  if (t) {
+    $('view-home').classList.add('hidden');
+    $('view-training').classList.remove('hidden');
+    if ($('t-body').getAttribute('data-slug') !== t.slug) {
+      renderTraining(t);
+      $('t-body').setAttribute('data-slug', t.slug);
+    }
+    document.title = t.title.replace(/<[^>]*>/g, '') + ' — A+Growth Academy';
+    if (m[2]) {
+      const el = document.getElementById(m[2]);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  } else {
+    $('view-training').classList.add('hidden');
+    $('view-home').classList.remove('hidden');
+    $('t-body').removeAttribute('data-slug');
+    document.title = 'A+Growth Academy — Portal de entrenamientos';
+    renderGrid();
+  }
+}
+
+/* ---------- Init ---------- */
+$('back').addEventListener('click', (e) => { e.preventDefault(); location.hash = ''; });
+$('q').addEventListener('input', renderGrid);
+$('chips').addEventListener('click', (e) => {
+  const b = e.target.closest('button[data-cat]');
+  if (!b) return;
+  activeCat = b.getAttribute('data-cat');
+  renderChips();
+  renderGrid();
+});
+renderChips();
+renderLegacy();
+route();
+window.addEventListener('hashchange', route);
+</script>
+</body>
+</html>

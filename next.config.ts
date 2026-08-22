@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
     return [
       // URL vieja del training (compartida antes del renombre)
       { source: '/training-long-form.html', destination: '/long-form-training-es', permanent: false },
+      // Portal de entrenamientos: canonizar sin .html
+      { source: '/entrenamientos.html', destination: '/entrenamientos', permanent: false },
       {
         source: '/blog/marketing-attribution-models-guide-2026',
         destination: '/blog/marketing-attribution-models-guide-2026-284',
@@ -80,6 +82,7 @@ const nextConfig: NextConfig = {
       { source: '/long-form-training', destination: '/long-form-training.html' },
       { source: '/long-form-training-es', destination: '/long-form-training-es.html' },
       { source: '/interno-web-claude', destination: '/interno-web-claude.html' },
+      { source: '/entrenamientos', destination: '/entrenamientos.html' },
       {
         source: '/clients/:client',
         destination: '/clients/:client.html'
