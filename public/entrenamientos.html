@@ -175,11 +175,11 @@
       </div>
       <div class="kicker">Portal de entrenamientos</div>
       <h1>Todo lo que hacemos, <em>entrenado</em>.</h1>
-      <p class="sub">Un training por cada cosa que ofrecemos como agencia: <b>Google Ads, Meta Ads, Email, CRO, Analytics y Estrategia</b>.
+      <p class="sub">Un training por cada cosa que ofrecemos como agencia: <b>Google Ads, Meta Ads, Email, CRO, Analytics, Estrategia y las herramientas con las que operamos</b>.
       Elegí un área, completá la checklist al final de cada training y usá el box de dudas si algo no cierra.</p>
       <div class="stats">
         <div class="stat"><div class="n" id="stat-total">—</div><div class="l">Trainings</div></div>
-        <div class="stat"><div class="n">6</div><div class="l">Áreas de servicio</div></div>
+        <div class="stat"><div class="n" id="stat-areas">—</div><div class="l">Áreas</div></div>
         <div class="stat"><div class="n"><span id="stat-done">0</span></div><div class="l">Completados por vos</div></div>
       </div>
     </div>
@@ -234,7 +234,8 @@ const CATS = {
   'email': 'Email Marketing',
   'cro': 'CRO',
   'analytics': 'Analytics',
-  'estrategia': 'Estrategia'
+  'estrategia': 'Estrategia',
+  'herramientas': 'Herramientas'
 };
 const LEGACY = [
   { title: 'Long-Form que Retiene y Convierte', cat: 'Contenido · ES', desc: 'Cómo estructurar tutoriales, videos largos y piezas paso a paso para que la gente llegue al final.', url: 'https://amirgomez.com/long-form-training-es.html' },
@@ -1007,6 +1008,174 @@ TRAININGS.push(
 }
 );
 
+TRAININGS.push(
+{
+  slug: 'gohighlevel-completo',
+  cat: 'herramientas', level: 'Completo', dur: '75 min',
+  title: 'GoHighLevel de <em>punta a punta</em>',
+  desc: 'El training maestro de GHL: qué hace cada módulo, cómo se conectan entre sí y cómo lo operamos en A+ Growth — de CRM y workflows a Voice AI, pagos y snapshots.',
+  secs: [
+    { nav: 'Panorama', h: 'Qué es GHL y cómo está organizado', html: `
+      <p>GoHighLevel es la plataforma todo-en-uno que usamos para operar clientes: CRM, mensajería, automatización, funnels, calendarios, pagos, reputación, cursos y AI en un solo lugar. Su gracia no es que cada módulo sea el mejor del mercado — es que <b>todos comparten el mismo contacto y las mismas automatizaciones</b>: un lead que llena un formulario puede recibir SMS, agendar, pagar y dejar reseña sin salir del sistema.</p>
+      <p>La jerarquía tiene dos niveles y confundirlos es el error #1 del que empieza:</p>
+      <ul>
+        <li><b>Cuenta de agencia (Agency view)</b>: donde vivimos nosotros. Administra sub-cuentas, snapshots, facturación, white label y configuración global.</li>
+        <li><b>Sub-cuentas (Location / Sub-account)</b>: una por cliente. Todo lo operativo (contactos, workflows, funnels, calendarios) vive acá, aislado del resto.</li>
+      </ul>
+      <div class="note"><b>Planes 2026:</b> Starter $97/mes (hasta 3 sub-cuentas), Unlimited $297/mes (sub-cuentas ilimitadas + white label + API) y Agency/SaaS Pro $497/mes (agrega SaaS mode con rebilling). El AI Employee se contrata aparte: ~$97/mes por sub-cuenta con todo el paquete de AI.</div>
+      <p class="pull">Un solo sistema donde el lead entra, se nutre, agenda, paga y <span>reseña</span>.</p>` },
+
+    { nav: 'CRM', h: 'CRM y contactos: la base de todo', html: `
+      <p>Todo en GHL cuelga del <b>contacto</b>. Cada contacto tiene: datos, actividad completa (mensajes, llamadas, citas, pagos), tags, campos custom y las automatizaciones en las que está metido.</p>
+      <ul>
+        <li><b>Tags</b>: etiquetas libres para segmentar y disparar workflows. Nuestra convención: <code>fuente-*</code> (origen), <code>estado-*</code> (etapa), <code>interes-*</code> (servicio). Sin convención, a los 3 meses la cuenta es un basurero de 200 tags.</li>
+        <li><b>Custom fields</b>: datos estructurados (presupuesto, zona, idioma). Se usan en personalización de mensajes con merge tags tipo <code>{{contact.first_name}}</code>.</li>
+        <li><b>Smart lists</b>: vistas filtradas guardadas (ej: "leads sin respuesta 48h", "clientes activos ES"). Son la forma de trabajar listas sin exportar nada.</li>
+        <li><b>DND (Do Not Disturb)</b>: por canal (SMS, email, llamadas). Respetarlo no es opcional: es compliance.</li>
+        <li><b>Bulk actions</b>: importar CSV, taguear en masa, meter una lista entera a un workflow.</li>
+      </ul>
+      <div class="ej"><b>Ejemplo</b>Lead de Meta con formulario en español → entra con tags <code>fuente-meta</code> + <code>idioma-es</code>; todos los mensajes automáticos le salen en español y el reporte por fuente sale solo.</div>` },
+
+    { nav: 'Conversaciones', h: 'Conversations: el inbox unificado', html: `
+      <p>La pestaña Conversations junta <b>todos los canales en un solo hilo por contacto</b>: SMS, email, llamadas y voicemails, WhatsApp, DMs de Facebook e Instagram, chat de Google Business Profile y el webchat del sitio. Quien atiende ve el historial completo sin preguntar "¿quién sos?".</p>
+      <ul>
+        <li><b>Missed Call Text-Back</b>: llamada perdida → SMS automático al instante ("Vimos tu llamada, ¿en qué te ayudamos?"). La función con mejor ROI-por-minuto-de-setup de toda la plataforma; se activa en todo cliente con teléfono.</li>
+        <li><b>Snippets</b>: respuestas guardadas para el equipo (precios, direcciones, FAQ) — consistencia y velocidad.</li>
+        <li><b>Asignación</b>: conversaciones asignables a usuarios; con round-robin si hay equipo de ventas.</li>
+        <li><b>Webchat widget</b>: se instala en el sitio del cliente y convierte visitas en conversaciones por SMS (el visitante deja su número y la charla sigue en su teléfono — no se pierde al cerrar la pestaña).</li>
+      </ul>
+      <p class="pull">Velocidad de respuesta es conversión: el inbox unificado existe para responder en <span>minutos</span>, no en días.</p>` },
+
+    { nav: 'Pipelines', h: 'Pipelines y oportunidades', html: `
+      <p>Los <b>pipelines</b> son los tableros de venta: columnas (stages) por las que se mueve cada <b>oportunidad</b> (un contacto con un negocio en juego y un valor en dólares). Un contacto puede tener varias oportunidades (dos servicios, dos sedes).</p>
+      <ul>
+        <li>Pipeline estándar nuestro para lead gen: <b>Nuevo → Contactado → Agendado → Asistió → Propuesta → Ganado / Perdido</b>. Menos etapas es más: cada etapa debe implicar una acción distinta.</li>
+        <li><b>El movimiento entre etapas dispara workflows</b>: pasar a "Agendado" manda recordatorios; caer en "Perdido" activa nurture de largo plazo con la razón de pérdida.</li>
+        <li>El valor por oportunidad alimenta el reporting: pipeline value, tasa de cierre por fuente, revenue atribuido por campaña.</li>
+      </ul>
+      <div class="note"><b>Regla interna:</b> las etapas las mueve la automatización siempre que se pueda (formulario → Nuevo; cita creada → Agendado; pago → Ganado). Lo manual se olvida, y un pipeline desactualizado es peor que ninguno.</div>` },
+
+    { nav: 'Calendarios', h: 'Calendarios y agendamiento', html: `
+      <p>El módulo de calendarios reemplaza a Calendly, conectado al CRM: cada cita crea/actualiza el contacto y puede mover el pipeline.</p>
+      <ul>
+        <li><b>Tipos</b>: personal, round-robin (reparte entre el equipo), colectivo (varios asistentes), de servicio (para negocios con turnos), y clase/grupo.</li>
+        <li>Sincroniza con <b>Google/Outlook</b> en dos vías y detecta conflictos.</li>
+        <li><b>Recordatorios y confirmaciones</b> por SMS + email como workflow: confirmación inmediata, recordatorio 24h, recordatorio 1h, y pedido de reagenda al no-show. Este combo solo baja los no-shows 30–50% y es parte de nuestro snapshot estándar.</li>
+        <li>Formulario previo a la cita (calificación), buffer entre citas, límites diarios, y <b>pago para reservar</b> (señas) si el cliente lo necesita.</li>
+      </ul>
+      <div class="ej"><b>Ejemplo</b>Cliente clínica: calendario de servicio por tratamiento, round-robin entre 3 doctores, seña de $25 al reservar y secuencia anti no-show. Resultado típico: agenda llena y 15% menos huecos.</div>` },
+
+    { nav: 'Workflows', h: 'Workflows: el corazón de la plataforma', html: `
+      <p>Los <b>workflows</b> son el motor de automatización: todo lo demás existe para alimentarlos. Un workflow = <b>trigger</b> (qué lo dispara) + <b>acciones</b> (qué hace) + lógica.</p>
+      <ul>
+        <li><b>Triggers típicos</b>: formulario enviado, cita creada/cancelada, tag agregado, etapa de pipeline cambiada, llamada perdida, pago recibido, cumpleaños, reseña recibida, respuesta de contacto.</li>
+        <li><b>Acciones</b>: enviar SMS/email/WhatsApp/voicemail drop, esperar (wait), if/else por condiciones, mover pipeline, agregar tag, notificar al equipo interno, asignar usuario, webhook a otras apps, y acciones de AI (clasificar respuesta, generar texto, decidir rama).</li>
+        <li><b>Goals</b>: si el contacto cumple el objetivo (agendó, pagó), sale de la secuencia solo — nadie recibe "¿agendamos?" después de agendar.</li>
+        <li><b>Los 6 workflows que instalamos en TODO cliente</b>: 1) respuesta instantánea a lead nuevo (&lt;1 min, el más importante de todos), 2) missed call text-back, 3) secuencia de citas + anti no-show, 4) nurture de leads fríos (30–90 días), 5) pedido de reseñas post-servicio, 6) notificación interna de lead caliente.</li>
+      </ul>
+      <p class="pull">GHL sin workflows es un CRM caro. Con workflows es un <span>empleado</span> que no duerme.</p>
+      <div class="note"><b>Higiene:</b> nombrar todo con la convención <code>[Área] Nombre — versión</code>, probar cada workflow con un contacto de prueba antes de activarlo, y documentar en el doc del cliente qué hace cada uno. Un workflow que nadie entiende es una bomba de tiempo.</div>` },
+
+    { nav: 'Funnels y webs', h: 'Funnels, sitios, formularios y quizzes', html: `
+      <p>El builder de páginas hace <b>funnels</b> (secuencias landing → upsell → gracias), <b>sitios completos</b> y <b>blogs</b>, con dominios propios y SSL incluido. No reemplaza a una web premium hecha a medida, pero para landings de campaña es rápido y queda todo medido dentro del sistema.</p>
+      <ul>
+        <li><b>Forms y surveys</b>: formularios embebibles con lógica condicional; cada envío crea contacto y dispara workflows.</li>
+        <li><b>Quizzes</b>: como los que usamos en nuestro propio sitio — capturan email + datos de segmentación en un paso. Patrón replicable en clientes.</li>
+        <li>Todo lo que armamos sigue el training de <b>anatomía de landing</b>: coincidencia de mensaje con el anuncio, prueba social temprana, formulario mínimo.</li>
+        <li>A/B testing de páginas nativo y plantillas por industria para arrancar rápido.</li>
+      </ul>` },
+
+    { nav: 'Email y SMS', h: 'Email, SMS y compliance (A2P 10DLC)', html: `
+      <p>Campañas de email y SMS masivas viven en Marketing: builder de emails, plantillas, programación, RSS para blogs y estadísticas por envío. Todo lo del training de <b>deliverability</b> aplica acá igual: dominio de envío dedicado, warm-up, listas engaged.</p>
+      <ul>
+        <li><b>LC Email / LC Phone</b>: la mensajería nativa de GHL (sin cuentas Twilio/Mailgun aparte). Se paga por uso y se puede rebillear al cliente con margen.</li>
+        <li><b>A2P 10DLC</b>: en EE.UU. todo SMS comercial requiere registrar marca y campaña ante los carriers. Sin registro aprobado los SMS se filtran o directamente no salen. <b>Es lo primero que se tramita en el onboarding</b> (tarda días), con casos de uso y ejemplos de mensajes reales del cliente.</li>
+        <li>SMS: siempre con opt-out ("Responde STOP para salir"), horario razonable y valor real. Un SMS spameado quema el número y la marca del cliente.</li>
+      </ul>
+      <div class="note"><b>Cuidado:</b> nunca importar una lista comprada ni mandar SMS masivo a contactos sin consentimiento registrado. Además de inútil, es ilegal (TCPA) y las multas son por mensaje.</div>` },
+
+    { nav: 'Reputación', h: 'Reputación y Social Planner', html: `
+      <p><b>Reputation Management</b> automatiza el activo local más rentable: las reseñas de Google/Facebook.</p>
+      <ul>
+        <li>Workflow post-servicio: pedido de reseña por SMS con el link directo → recordatorio a los 3 días si no la dejó.</li>
+        <li><b>Reviews AI</b>: responde reseñas automáticamente con tono configurable (respuesta directa para 4–5 estrellas; borrador para aprobar en negativas — las malas las respondemos con criterio humano).</li>
+        <li>Widget de reseñas embebible en el sitio y monitoreo de rating en el dashboard.</li>
+      </ul>
+      <p><b>Social Planner</b> programa publicaciones en Facebook, Instagram, Google Business Profile, LinkedIn, TikTok y X desde un solo calendario, con Content AI para borradores. Para clientes con gestión de redes, reemplaza herramientas tipo Hootsuite.</p>` },
+
+    { nav: 'Pagos', h: 'Pagos, facturas y documentos', html: `
+      <p>GHL cobra por el cliente conectando <b>Stripe/PayPal/Authorize.net</b>:</p>
+      <ul>
+        <li><b>Invoices</b>: facturas one-off o recurrentes, con recordatorio automático de pago pendiente.</li>
+        <li><b>Documents & Contracts</b>: propuestas y contratos con firma electrónica — y al firmar se puede disparar el cobro y el workflow de onboarding en un solo paso.</li>
+        <li><b>Productos y suscripciones</b>: checkout en funnels, order bumps, upsells 1-click, cupones.</li>
+        <li><b>Text-to-pay</b>: link de pago por SMS desde la conversación — brutal para servicios que cierran por teléfono.</li>
+        <li>Cada pago actualiza el contacto y el pipeline: la atribución llega hasta el dólar cobrado, no hasta el lead.</li>
+      </ul>
+      <div class="ej"><b>Ejemplo</b>Flujo completo sin tocar nada: propuesta enviada desde el pipeline → cliente firma → se cobra el anticipo → tag <code>cliente-activo</code> → arranca el workflow de onboarding y la serie de reseñas queda agendada para el post-servicio.</div>` },
+
+    { nav: 'Cursos y portal', h: 'Cursos, comunidades y client portal', html: `
+      <p>Para clientes con productos educativos (o para nuestra propia academia):</p>
+      <ul>
+        <li><b>Memberships/Courses</b>: cursos con módulos, video hosting incluido, drip de contenido, quizzes de evaluación y certificados. Acceso gratis o pago (integrado con productos).</li>
+        <li><b>Communities</b>: comunidades tipo Skool con canales, gamificación y — desde 2026 — <b>audio/video en vivo con calidad de estudio</b> dentro de la comunidad.</li>
+        <li><b>Client Portal</b>: un solo login para el usuario final donde ve sus cursos, comunidad, facturas y citas — con la marca del cliente.</li>
+      </ul>
+      <p>Modelo que se repite en clientes de servicios: capturar leads con un mini-curso gratis en Memberships y nutrir hacia la venta del servicio principal.</p>` },
+
+    { nav: 'AI Employee', h: 'La capa de AI: el "empleado" digital', html: `
+      <p>El paquete <b>AI Employee</b> (~$97/mes por sub-cuenta) agrupa toda la AI de la plataforma. Qué hace cada pieza:</p>
+      <ul>
+        <li><b>Conversation AI</b>: bot entrenado con la info del negocio que responde SMS, webchat y DMs, califica y <b>agenda citas solo</b>. Modo "sugerencia" (borrador para el humano) o "auto-pilot". Arrancamos siempre en sugerencia 1–2 semanas y pasamos a auto cuando las respuestas son sólidas.</li>
+        <li><b>Voice AI</b>: recepcionista telefónica con AI — atiende llamadas entrantes, responde FAQs, toma datos y agenda. 19+ idiomas y cientos de voces; para nuestros clientes el combo <b>inglés + español nativo</b> es oro: nadie más contesta el teléfono en español a las 9pm.</li>
+        <li><b>Content AI</b>: genera copy de emails, posts, blogs e imágenes dentro de los builders.</li>
+        <li><b>Funnel/Website AI</b>: arma páginas completas desde un prompt — útil como borrador, siempre pasa por nuestra revisión de landing.</li>
+        <li><b>Reviews AI</b>: respuestas automáticas de reseñas (ver sección de reputación).</li>
+        <li><b>Workflow AI</b>: acciones de AI dentro de workflows — clasificar la intención de una respuesta, extraer datos, decidir ramas, redactar.</li>
+        <li><b>Agent Studio + Ask AI</b>: builder visual para agentes custom multi-paso (califican, agendan, ejecutan acciones de CRM) y un asistente interno con tareas programadas y memoria persistente.</li>
+      </ul>
+      <p class="pull">La AI de GHL no reemplaza la estrategia: reemplaza al humano que <span>no</span> contestaba.</p>
+      <div class="note"><b>Regla interna:</b> toda AI de cara al cliente final se lanza con: base de conocimiento cargada y verificada, respuestas de prueba revisadas por nosotros, escalado a humano configurado (palabra clave o intención de queja) y revisión semanal de transcripts el primer mes.</div>` },
+
+    { nav: 'Nivel agencia', h: 'Snapshots, white label y SaaS mode', html: `
+      <p>Lo que hace de GHL un negocio para la agencia, no solo una herramienta:</p>
+      <ul>
+        <li><b>Snapshots</b>: fotos completas de una sub-cuenta (workflows, funnels, calendarios, pipelines, campañas) aplicables a cuentas nuevas. <b>Nuestro snapshot por industria es nuestro activo</b>: onboarding de un cliente nuevo en horas en vez de semanas. Se versiona y se mejora con cada cliente.</li>
+        <li><b>White label</b> (plan Unlimited+): la plataforma con nuestro dominio y marca — el cliente ve "A+ Growth", no GoHighLevel. Incluye app móvil white-label (costo extra).</li>
+        <li><b>SaaS mode</b> (plan Pro): revender GHL como software propio con planes y precios nuestros, rebilling automático de SMS/email/AI con margen, y upgrade/downgrade self-service. Es el modelo "el cliente paga la herramienta aunque pause los ads" — retención e ingreso recurrente.</li>
+        <li><b>Marketplace e integraciones</b>: apps de terceros, webhooks nativos, API abierta (y MCP para conectar agentes de AI externos). Integraciones nativas 2026: HubSpot, Klaviyo, Shopify con OAuth 1-click, QuickBooks.</li>
+        <li><b>Affiliate Manager</b>: programa de afiliados para clientes que venden cursos o SaaS.</li>
+      </ul>` },
+
+    { nav: 'Cómo lo usamos', h: 'Cómo lo operamos en A+ Growth (el estándar)', html: `
+      <p>Para que 20 sub-cuentas no sean 20 mundos distintos, todo cliente en GHL sigue el mismo estándar:</p>
+      <ol>
+        <li><b>Alta desde snapshot</b> de su industria — nunca desde cero.</li>
+        <li><b>Onboarding técnico</b>: dominio + email de envío verificados, A2P 10DLC tramitado el día 1, teléfono con missed call text-back, tracking conectado (ver training de GA4).</li>
+        <li><b>Los 6 workflows base</b> activados y probados con contacto de prueba.</li>
+        <li><b>Convenciones</b>: tags <code>fuente-/estado-/interes-</code>, workflows <code>[Área] Nombre — v1</code>, un pipeline principal por negocio.</li>
+        <li><b>Bilingüe</b>: campos de idioma desde el primer formulario; secuencias ES/EN separadas (ver training de mercado hispano).</li>
+        <li><b>Revisión mensual</b>: transcripts de AI, tasas de los workflows (respuesta, agendado, no-show, reseñas) al dashboard del cliente.</li>
+      </ol>
+      <p>Con esto, GHL deja de ser "el software" y pasa a ser la infraestructura donde corren todos los demás trainings de este portal: los leads de Ads caen acá, el email vive acá, las reseñas se piden acá y el reporte sale de acá.</p>` }
+  ],
+  check: [
+    'Entiendo la diferencia agencia vs. sub-cuenta y dónde vive cada cosa',
+    'Sé crear un contacto con tags y campos según la convención interna',
+    'Configuré missed call text-back en una cuenta real',
+    'Armé un pipeline con etapas movidas por automatización',
+    'Monté un calendario con secuencia anti no-show completa',
+    'Construí y probé los 6 workflows base con un contacto de prueba',
+    'Publiqué una landing con formulario que dispara workflow',
+    'Tramité (o verifiqué) el registro A2P 10DLC del cliente',
+    'Activé el pedido de reseñas post-servicio',
+    'Configuré Conversation AI en modo sugerencia y revisé sus respuestas',
+    'Sé aplicar un snapshot y qué incluye el nuestro',
+    'Puedo explicar al cliente qué es text-to-pay y documents con firma'
+  ]
+}
+);
+
 /* ---------- Persistencia (best-effort: si localStorage no está, todo sigue funcionando) ---------- */
 function loadState(slug) {
   try { return JSON.parse(localStorage.getItem('apg-academy:' + slug)) || []; } catch (e) { return []; }
@@ -1057,6 +1226,7 @@ function renderGrid() {
   $('empty').classList.toggle('hidden', list.length > 0);
   $('count').textContent = list.length + ' de ' + TRAININGS.length;
   $('stat-total').textContent = TRAININGS.length + LEGACY.length;
+  $('stat-areas').textContent = Object.keys(CATS).length;
   $('stat-done').textContent = TRAININGS.filter(t => progressOf(t) >= 100).length;
 }
 
