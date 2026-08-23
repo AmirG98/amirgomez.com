@@ -62,44 +62,44 @@ CONTACTOS
 Rodrigo Díaz (producto y decisión técnica), María Alejandra Díaz (administración y branding), Marcos (front end, React).`,
   },
   domic: {
-    idioma: 'English',
-    contexto: `BUSINESS
-Domic Experiences: high-end home automation and integrated control systems (lighting, climate, security, audio, automation behind a single interface). Over 300 projects across eight years in Latin America, now expanding into the United States from Miami. Team of 50+.
+    idioma: 'español rioplatense (voseo)',
+    contexto: `NEGOCIO
+Domic Experiences: domótica de alta gama y sistemas de control integrados (iluminación, climatización, seguridad, audio y automatización detrás de una sola interfaz). Más de 300 proyectos en ocho años en Latinoamérica, ahora expandiéndose a Estados Unidos desde Miami. Equipo de más de 50 personas.
 
-AUDIENCES
-Homeowners, corporate offices, and luxury multi-residential developments. They do not buy the same way.
+PÚBLICOS
+Dueños de casa, oficinas corporativas y desarrollos multiresidenciales de lujo. No compran de la misma manera.
 
-WHAT MAKES DOMIC DIFFERENT
-The philosophy is giving the client back control through a transparent process: people decide what their system actually needs, informed, instead of being sold products they never asked for. Selling the way of living, not the equipment. The technical sale stays separate from the technical execution.
+QUÉ HACE DIFERENTE A DOMIC
+La filosofía es devolverle el control al cliente mediante un proceso transparente: la gente decide qué necesita realmente su sistema, informada, en lugar de que le vendan productos que nunca pidió. Se vende la forma de vivir, no el equipamiento. La venta técnica se mantiene separada de la ejecución técnica.
 
-THE PROBLEM BEING SOLVED
-Quoting is expensive and slow when the prospect is not qualified. Technical time gets spent on projects that were never viable. The fix is filtering investment expectations at the first interaction.
+EL PROBLEMA QUE SE RESUELVE
+Cotizar es caro y lento cuando el prospecto no califica. El tiempo técnico se gasta en proyectos que nunca fueron viables. La solución es filtrar las expectativas de inversión desde la primera interacción.
 
-HOW THE OFFER WORKS
-A budget calculator lets the visitor shape their own scope and see cost move with their priorities. In the demo, a 10,000 sqft Miami Beach project went from USD 846,000 to USD 344,000 by adjusting priorities. Then a USD 7,000 engineering service gets the design paid for before execution begins. Internally the estimate works off roughly 2% of property value, but that reasoning is never shown to the visitor because it anchors perception and turns away leads that would have qualified.
+CÓMO FUNCIONA LA OFERTA
+Una calculadora de presupuesto permite que el visitante arme su propio alcance y vea el costo moverse según sus prioridades. En la demo, un proyecto de 10.000 sqft en Miami Beach pasó de USD 846.000 a USD 344.000 ajustando prioridades. Después, un servicio de ingeniería de USD 7.000 hace que el diseño se cobre antes de empezar la ejecución. Internamente la estimación trabaja sobre aproximadamente el 2% del valor de la propiedad, pero ese razonamiento nunca se le muestra al visitante porque sesga la percepción y espanta leads que habrían calificado.
 
-PHASES
-1. Foundation (in progress): shared Drive folder (done), proposal and access documents (done), brand voice questionnaire (waiting on Domic), action plan document (in progress), platform accesses (waiting on Domic).
-2. Setup (next): budget calculator refinement, CRM setup on GoHighLevel, landing pages (one path for homeowners, one for architects and developers), site audit, content production.
-3. Performance (after setup): Meta and Google campaigns, LinkedIn for B2B, reporting cadence.
+FASES
+1. Cimientos (en curso): carpeta compartida de Drive (hecho), propuesta y documentos de acceso (hecho), cuestionario de voz de marca (espera a Domic), documento de plan de acción (en curso), accesos a plataformas (espera a Domic).
+2. Setup (próximo): refinamiento de la calculadora, CRM en GoHighLevel, landing pages (un camino para dueños de casa, otro para arquitectos y desarrolladores), auditoría del sitio, producción de contenido.
+3. Performance (después del setup): campañas en Meta y Google, LinkedIn para B2B, cadencia de reportes.
 
-FUNNEL BEING BUILT
-Ad (investment range asked upfront) → Calculator (visitor shapes scope) → Qualified call → Engineering service.
+EL EMBUDO QUE SE ESTÁ CONSTRUYENDO
+Anuncio (rango de inversión preguntado de entrada) → Calculadora (el visitante arma su alcance) → Llamada calificada → Servicio de ingeniería.
 
-AUDIENCE MESSAGING
-Homeowners get the experience of living in the house, through Meta and Google. Architects and developers get how straightforward Domic is to work with and the technical differentiators, through LinkedIn.
+MENSAJES POR PÚBLICO
+A los dueños de casa se les habla de la experiencia de vivir la casa, por Meta y Google. A arquitectos y desarrolladores, de lo simple que es trabajar con Domic y los diferenciales técnicos, por LinkedIn.
 
-METRICS
-The one that matters: qualified sales calls, not traffic. Also cost per qualified call, calculator completions, engineering services sold, spend by channel.
+MÉTRICAS
+La que manda: llamadas de venta calificadas, no tráfico. También costo por llamada calificada, calculadoras completadas, servicios de ingeniería vendidos, inversión por canal.
 
-WORKING RHYTHM
-Weekly written update, working call every two weeks (30 to 45 minutes), monthly performance report, dashboard always current, direct line for anything urgent.
+RITMO DE TRABAJO
+Update escrito semanal, llamada de trabajo cada dos semanas (30 a 45 minutos), reporte de resultados mensual, panel siempre al día, línea directa para lo urgente.
 
-STATUS AS OF AUGUST 23, 2026
-Onboarding phase. No campaigns running, no performance numbers yet.
+ESTADO AL 23 DE AGOSTO DE 2026
+Fase de onboarding. Sin campañas corriendo, sin números de performance todavía.
 
-CONTACTS
-Pablo Lukin (commercial direction), Agustín Bancalari (partner, architect, strategic services: project management, quoting, finance).`,
+CONTACTOS
+Pablo Lukin (dirección comercial), Agustín Bancalari (socio, arquitecto, servicios estratégicos: gestión de proyectos, cotización y finanzas).`,
   },
 };
 
