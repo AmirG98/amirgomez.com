@@ -6,6 +6,7 @@ export const CLIENT_PASSWORDS: Record<string, string> = {
   'human-at-scale': 'HAS2226',
   'domic': 'DOMIC2226',
   'casafight': 'CASA2226',
+  'qhu': 'QHU2226',
 };
 
 // Clave maestra interna de A+Growth (env AGROWTH_MASTER_KEY, nunca en el repo).

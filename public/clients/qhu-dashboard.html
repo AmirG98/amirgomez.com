@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QHU — Dashboard</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --noche: #0F1633; --noche-2: #1A2350; --tinta: #14192E; --tinta-2: #565E7D; --tinta-3: #8E95AD;
+    --papel: #F7F8FC; --panel: #FFFFFF; --linea: #E2E5F0;
+    --indigo: #4338F0; --indigo-soft: #EEEDFE; --indigo-deep: #2A21B8;
+    --ok: #17886B; --ok-soft: #E7F5F1; --alerta: #B45309; --alerta-soft: #FDF3E7;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--papel); color: var(--tinta); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 1080px; margin: 0 auto; padding: 0 0 76px; }
+
+  /* Hero oscuro, como la landing de referencia */
+  .hero { background: var(--noche); color: #fff; padding: 44px 28px 40px; }
+  .hero-in { max-width: 1024px; margin: 0 auto; }
+  .marca { font-size: 22px; font-weight: 800; letter-spacing: 0.18em; }
+  h1 { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; margin-top: 22px; }
+  h1 span { color: #7B74FF; }
+  .sub { font-size: 14.5px; color: #B9BEDC; margin-top: 8px; max-width: 62ch; }
+  .meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+  .chip { font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 11px; background: rgba(255,255,255,.09); color: #C9CDEA; }
+  .chip.on { background: var(--indigo); color: #fff; }
+
+  .body { padding: 0 28px; }
+  .body-in { max-width: 1024px; margin: 0 auto; }
+
+  section { margin-top: 40px; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; }
+  .sec-head h2 { font-size: 11.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tinta-2); }
+  .sec-head .note { font-size: 12px; color: var(--tinta-3); margin-left: auto; }
+  .sec-rule { height: 2px; background: linear-gradient(90deg, var(--indigo) 0%, rgba(67,56,240,.08) 100%); margin-bottom: 20px; }
+
+  /* Fases */
+  .fases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 8px; }
+  .fase { background: var(--panel); border: 1px solid var(--linea); padding: 16px 18px; }
+  .fase.activa { border-color: var(--indigo); box-shadow: 0 0 0 1px var(--indigo); }
+  .fase .n { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; color: var(--indigo); }
+  .fase h3 { font-size: 16px; font-weight: 700; margin: 6px 0 4px; }
+  .fase p { font-size: 12.5px; color: var(--tinta-2); }
+  .fase .est { display: inline-block; font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; margin-top: 10px; }
+  .est.curso { background: var(--indigo-soft); color: var(--indigo-deep); }
+  .est.espera { background: var(--alerta-soft); color: var(--alerta); }
+  .est.prox { background: #F0F1F6; color: var(--tinta-3); }
+
+  /* Checklist */
+  .items { background: var(--panel); border: 1px solid var(--linea); }
+  .item { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 13px 18px; border-bottom: 1px solid var(--linea); align-items: start; }
+  .item:last-child { border-bottom: none; }
+  .item .t { font-size: 14.5px; font-weight: 500; }
+  .item .d { font-size: 12.5px; color: var(--tinta-2); margin-top: 3px; }
+  .tag { font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 9px; white-space: nowrap; }
+  .tag.ok { background: var(--ok-soft); color: var(--ok); }
+  .tag.curso { background: var(--indigo-soft); color: var(--indigo-deep); }
+  .tag.espera { background: var(--alerta-soft); color: var(--alerta); }
+  .tag.prox { background: #F0F1F6; color: var(--tinta-3); }
+
+  /* KPIs */
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .kpi { background: var(--panel); border: 1px solid var(--linea); border-top: 3px solid var(--indigo); padding: 16px 18px; }
+  .kpi .label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tinta-3); }
+  .kpi .value { font-size: 26px; font-weight: 800; margin-top: 6px; letter-spacing: -0.02em; }
+  .kpi .value.vacio { font-size: 20px; font-weight: 400; color: var(--tinta-3); }
+  .kpi .foot { font-size: 12px; color: var(--tinta-2); margin-top: 4px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th { text-align: left; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tinta-3); padding: 10px 12px; border-bottom: 2px solid var(--linea); }
+  td { padding: 11px 12px; border-bottom: 1px solid var(--linea); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  .tbl { background: var(--panel); border: 1px solid var(--linea); overflow-x: auto; }
+  .vacio { color: var(--tinta-3); font-style: italic; }
+
+  /* Embudo */
+  .embudo { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .paso { background: var(--panel); border: 1px solid var(--linea); padding: 16px; position: relative; }
+  .paso .n { font-size: 10px; font-weight: 700; color: var(--indigo); letter-spacing: 0.14em; }
+  .paso h4 { font-size: 14.5px; font-weight: 700; margin: 7px 0 5px; }
+  .paso p { font-size: 12.5px; color: var(--tinta-2); }
+
+  .nota { background: var(--indigo-soft); border-left: 3px solid var(--indigo); padding: 14px 18px; font-size: 13.5px; color: var(--tinta-2); margin-top: 16px; }
+  .nota b { color: var(--tinta); font-weight: 700; }
+
+  footer { text-align: center; margin-top: 52px; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tinta-3); }
+
+  @media (max-width: 880px) {
+    .fases, .kpis, .embudo { grid-template-columns: repeat(2, 1fr); }
+    h1 { font-size: 24px; }
+    .item { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <div class="hero-in">
+      <div class="marca">QHU</div>
+      <h1>Lanzamiento al mercado: <span>dashboard</span></h1>
+      <p class="sub">El estado de cada pieza del lanzamiento, qué está en marcha y qué falta para salir. Se actualiza a medida que avanza cada fase.</p>
+      <div class="meta">
+        <span class="chip on">Fase de setup</span>
+        <span class="chip">Actualizado 23 de agosto de 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="body"><div class="body-in">
+
+    <!-- ============ FASES ============ -->
+    <section>
+      <div class="sec-head">
+        <h2>Dónde estamos</h2>
+        <span class="note">Setup de 4 a 6 semanas, hasta 8 si se amplía el alcance</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="fases">
+        <div class="fase activa">
+          <div class="n">FASE 01</div>
+          <h3>Setup</h3>
+          <p>Guía de marca, contenido de la landing, redes y tracking. Todo lo que tiene que existir antes de gastar el primer peso en pauta.</p>
+          <span class="est curso">En curso</span>
+        </div>
+        <div class="fase">
+          <div class="n">FASE 02</div>
+          <h3>Lanzamiento</h3>
+          <p>Primeras campañas en Meta y Google con presupuesto reforzado, entre cinco y diez conceptos publicitarios en paralelo.</p>
+          <span class="est prox">Al terminar el setup</span>
+        </div>
+        <div class="fase">
+          <div class="n">FASE 03</div>
+          <h3>Crecimiento</h3>
+          <p>Optimización mensual sobre lo que funcionó, escalando lo que trae empresas adheridas y usuarios activos.</p>
+          <span class="est prox">Después del lanzamiento</span>
+        </div>
+      </div>
+      <div class="nota">
+        <b>El setup arranca dos semanas antes de que la plataforma esté lista.</b> Es el margen necesario para llegar al lanzamiento con contenido producido y campañas armadas, en lugar de empezar a crear el día que el producto sale. La fecha estimada de la plataforma es mediados de agosto.
+      </div>
+    </section>
+
+    <!-- ============ CHECKLIST DE SETUP ============ -->
+    <section>
+      <div class="sec-head">
+        <h2>Checklist del setup</h2>
+        <span class="note">Lo que espera de QHU está marcado</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="items">
+        <div class="item">
+          <div>
+            <div class="t">Materiales de marca</div>
+            <div class="d">La identidad actual, para revisarla y ver si hace falta ajustarla antes de producir contenido.</div>
+          </div>
+          <span class="tag espera">Espera a QHU</span>
+        </div>
+        <div class="item">
+          <div>
+            <div class="t">Diseños de QR y calcomanías</div>
+            <div class="d">Parte del kit de bienvenida para las primeras empresas adheridas. El equipo de branding los tiene en proceso.</div>
+          </div>
+          <span class="tag espera">Espera a QHU</span>
+        </div>
+        <div class="item">
+          <div>
+            <div class="t">Fecha de inicio confirmada</div>
+            <div class="d">Depende de cuándo esté disponible la landing, que es el recurso que ancla todo lo demás.</div>
+          </div>
+          <span class="tag espera">Espera a QHU</span>
+        </div>
+        <div class="item">
+          <div>
+            <div class="t">Comunicación de la landing</div>
+            <div class="d">Qué comunicar y cómo en el front con el buscador de patente: propuesta de valor, beneficios, casos de uso y preguntas frecuentes. El desarrollo es de QHU, el contenido es nuestro.</div>
+          </div>
+          <span class="tag curso">Nuestro</span>
+        </div>
+        <div class="item">
+          <div>
+            <div class="t">Definición de posicionamiento y audiencias</div>
+            <div class="d">Dos públicos con mensajes distintos: talleres y concesionarias por un lado, dueños de vehículos por el otro.</div>
+          </div>
+          <span class="tag curso">Nuestro</span>
+        </div>
+        <div class="item">
+          <div>
+            <div class="t">Producción de contenido</div>
+            <div class="d">Estáticos y video. El foco está en explicar, porque es una categoría que la gente todavía no sabe que existe.</div>
+          </div>
+          <span class="tag curso">Nuestro</span>
+        </div>
+        <div class="item">
+          <div>
+            <div class="t">Redes sociales</div>
+            <div class="d">Instagram, Facebook y LinkedIn armadas y con estética definida.</div>
+          </div>
+          <span class="tag prox">Próximo</span>
+        </div>
+        <div class="item">
+          <div>
+            <div class="t">Tracking y analítica</div>
+            <div class="d">Reunión específica para plataformas publicitarias, permisos, medio de pago y medición.</div>
+          </div>
+          <span class="tag prox">Próximo</span>
+        </div>
+        <div class="item">
+          <div>
+            <div class="t">Proceso de ventas documentado</div>
+            <div class="d">Qué pasa cuando entra un taller: alta, validación telefónica y kit de bienvenida. Hace falta para que el contenido prepare bien a quien llega.</div>
+          </div>
+          <span class="tag espera">Espera a QHU</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EMBUDO ============ -->
+    <section>
+      <div class="sec-head">
+        <h2>El embudo</h2>
+        <span class="note">El buscador de patente es la puerta de entrada</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="embudo">
+        <div class="paso">
+          <div class="n">01</div>
+          <h4>Anuncio</h4>
+          <p>Mensajes distintos para talleres y para dueños de vehículos, sobre la misma promesa de transparencia.</p>
+        </div>
+        <div class="paso">
+          <div class="n">02</div>
+          <h4>Buscador</h4>
+          <p>Pone la patente y ve su vehículo. Si no hay historial, recibe el plan de mantenimiento del fabricante.</p>
+        </div>
+        <div class="paso">
+          <div class="n">03</div>
+          <h4>Registro</h4>
+          <p>El usuario se registra gratis. La empresa entra por un proceso guiado, no por un formulario.</p>
+        </div>
+        <div class="paso">
+          <div class="n">04</div>
+          <h4>Validación</h4>
+          <p>Contacto telefónico personalizado con cada empresa, para confirmar que es real y generar confianza.</p>
+        </div>
+      </div>
+      <div class="nota">
+        <b>La métrica que define el lanzamiento son las empresas adheridas.</b> El usuario particular llega gratis y se queda por el historial, pero el círculo se cierra cuando hay suficientes talleres cargando servicios. Por eso la pauta se mide en empresas registradas y validadas, no en tráfico al buscador.
+      </div>
+    </section>
+
+    <!-- ============ CANALES ============ -->
+    <section>
+      <div class="sec-head">
+        <h2>Canales</h2>
+        <span class="note">Alcance nacional</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="tbl">
+        <table>
+          <thead>
+            <tr><th>Canal</th><th>Para qué</th><th>A quién</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Meta Ads</b></td>
+              <td>Reconocimiento y registros. Es el canal de volumen.</td>
+              <td>Talleres y dueños de vehículos</td>
+            </tr>
+            <tr>
+              <td><b>Google Ads</b></td>
+              <td>Captar a quien ya está buscando verificar un vehículo.</td>
+              <td>Compradores con intención</td>
+            </tr>
+            <tr>
+              <td><b>LinkedIn</b></td>
+              <td>Llegar a concesionarias y dar seriedad a la plataforma.</td>
+              <td>Profesionales del sector</td>
+            </tr>
+            <tr>
+              <td><b>SEO y contenido</b></td>
+              <td>Educar sobre una categoría que todavía no existe en la cabeza del usuario.</td>
+              <td>Tráfico orgánico</td>
+            </tr>
+            <tr>
+              <td><b>Prensa y podcasts</b></td>
+              <td>Autoridad a bajo costo. Medios chicos del rubro alcanzan para dar a conocer.</td>
+              <td>Fuente secundaria</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="nota">
+        <b>Sobre el universo a alcanzar.</b> Se estiman unos 40.000 talleres en el país. A los costos actuales de Meta, ese universo es alcanzable sin un presupuesto enorme, y por eso la primera etapa se trata de encontrar qué mensaje funciona antes de escalar la inversión.
+      </div>
+    </section>
+
+    <!-- ============ NÚMEROS ============ -->
+    <section>
+      <div class="sec-head">
+        <h2>Resultados</h2>
+        <span class="note">Empiezan con el lanzamiento</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="kpis">
+        <div class="kpi">
+          <div class="label">Empresas adheridas</div>
+          <div class="value vacio">Sin datos</div>
+          <div class="foot">Validadas por teléfono</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Usuarios registrados</div>
+          <div class="value vacio">Sin datos</div>
+          <div class="foot">Particulares</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Inversión en pauta</div>
+          <div class="value vacio">Sin datos</div>
+          <div class="foot">Meta + Google</div>
+        </div>
+        <div class="kpi">
+          <div class="label">Costo por registro</div>
+          <div class="value vacio">Sin datos</div>
+          <div class="foot">Empresa y usuario por separado</div>
+        </div>
+      </div>
+      <div class="tbl" style="margin-top:12px">
+        <table>
+          <thead>
+            <tr><th>Canal</th><th>Inversión</th><th>Registros</th><th>Empresas</th><th>Costo por empresa</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Meta Ads</td><td class="vacio">No iniciado</td><td class="vacio">—</td><td class="vacio">—</td><td class="vacio">—</td></tr>
+            <tr><td>Google Ads</td><td class="vacio">No iniciado</td><td class="vacio">—</td><td class="vacio">—</td><td class="vacio">—</td></tr>
+            <tr><td>LinkedIn</td><td class="vacio">No iniciado</td><td class="vacio">—</td><td class="vacio">—</td><td class="vacio">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>QHU</footer>
+  </div></div>
+</div>
+</body>
+</html>
