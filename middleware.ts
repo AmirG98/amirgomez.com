@@ -80,6 +80,13 @@ export function middleware(req: NextRequest) {
   if (section === 'reports' && date) return NextResponse.rewrite(new URL(`/clients/${client}-report-${date}.html`, req.url));
   if (section === 'reports') return NextResponse.rewrite(new URL(`/clients/${client}.html`, req.url));
   if (req.nextUrl.pathname.endsWith('.html')) return NextResponse.next();
+  // Clientes con una sola sección: la raíz sirve el dashboard directamente,
+  // así no hay que mantener un hub duplicado con un único tile.
+  const SOLO_DASHBOARD = ['domic', 'casafight'];
+  if (SOLO_DASHBOARD.includes(client)) {
+    return NextResponse.rewrite(new URL(`/clients/${client}-dashboard.html`, req.url));
+  }
+
   return NextResponse.rewrite(new URL(`/clients/${client}-hub.html`, req.url));
 }
 

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casafight — Dashboard</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --tinta: #111111; --tinta-2: #4D4A47; --tinta-3: #8A8681;
+    --crema: #F4F2ED; --panel: #FFFFFF; --linea: #E0DCD4;
+    --azul: #352DBB; --azul-soft: #E8E6F8;
+    --magenta: #D454B2; --magenta-soft: #FBEDF6;
+    --ok: #2E7D52; --alerta: #C2410C;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--crema); color: var(--tinta); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 1060px; margin: 0 auto; padding: 44px 24px 76px; }
+
+  header { text-align: center; margin-bottom: 40px; }
+  .logo { height: 46px; width: auto; }
+  h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.02em; margin-top: 18px; }
+  .sub { font-size: 14.5px; color: var(--tinta-2); margin-top: 8px; max-width: 58ch; margin-inline: auto; }
+  .updated { display: inline-block; margin-top: 14px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--azul); background: var(--azul-soft); padding: 5px 12px; }
+
+  section { margin-top: 44px; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; }
+  .sec-head h2 { font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+  .sec-head .note { font-size: 12px; color: var(--tinta-3); margin-left: auto; }
+  .sec-rule { height: 3px; background: linear-gradient(90deg, var(--azul) 0%, var(--magenta) 100%); margin-bottom: 20px; }
+
+  /* KPIs */
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .kpi { background: var(--panel); border: 1px solid var(--linea); padding: 18px; }
+  .kpi .label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tinta-3); }
+  .kpi .value { font-size: 28px; font-weight: 800; margin-top: 6px; letter-spacing: -0.02em; }
+  .kpi .value.vacio { color: var(--tinta-3); font-weight: 400; font-size: 22px; }
+  .kpi .foot { font-size: 12px; color: var(--tinta-2); margin-top: 4px; }
+  .kpi.azul { border-top: 3px solid var(--azul); }
+  .kpi.magenta { border-top: 3px solid var(--magenta); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th { text-align: left; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tinta-3); padding: 10px 12px; border-bottom: 2px solid var(--linea); }
+  td { padding: 11px 12px; border-bottom: 1px solid var(--linea); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  .tbl { background: var(--panel); border: 1px solid var(--linea); overflow-x: auto; }
+  .vacio { color: var(--tinta-3); font-style: italic; }
+
+  /* Tablero */
+  .board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; align-items: start; }
+  .col { background: var(--panel); border: 1px solid var(--linea); padding: 14px; }
+  .col > h3 { font-size: 10.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--tinta-2); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--linea); }
+  .item { padding: 11px 0; border-bottom: 1px solid var(--linea); }
+  .item:last-child { border-bottom: none; }
+  .item .t { font-size: 14px; font-weight: 500; }
+  .item .m { font-size: 12.5px; color: var(--tinta-2); margin-top: 3px; }
+  .tag { display: inline-block; font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; margin-top: 7px; }
+  .tag.ok { background: #E6F4EC; color: var(--ok); }
+  .tag.curso { background: var(--azul-soft); color: var(--azul); }
+  .tag.espera { background: #FDEEE4; color: var(--alerta); }
+  .tag.prox { background: var(--magenta-soft); color: var(--magenta); }
+
+  /* Calendario comercial */
+  .fechas { display: grid; gap: 8px; }
+  .fecha { display: grid; grid-template-columns: 120px 1fr; gap: 14px; background: var(--panel); border: 1px solid var(--linea); border-left: 3px solid var(--magenta); padding: 11px 14px; }
+  .fecha .cuando { font-size: 12.5px; font-weight: 700; color: var(--azul); }
+  .fecha .que { font-size: 13.5px; }
+  .fecha .que small { display: block; color: var(--tinta-2); font-size: 12px; margin-top: 2px; }
+
+  .nota { background: var(--azul-soft); border-left: 3px solid var(--azul); padding: 14px 18px; font-size: 13.5px; color: var(--tinta-2); margin-top: 16px; }
+  .nota b { color: var(--tinta); font-weight: 700; }
+
+  footer { text-align: center; margin-top: 52px; font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--tinta-3); }
+
+  @media (max-width: 860px) {
+    .kpis { grid-template-columns: repeat(2, 1fr); }
+    .board { grid-template-columns: 1fr; }
+    .fecha { grid-template-columns: 92px 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <img class="logo" src="https://acdn-us.mitiendanube.com/stores/006/471/699/themes/common/logo-641374067-1761592253-6c05fa98bddb4063ea9d92d80eb92db21761592253-640-0.webp" alt="Casafight">
+    <h1>Dashboard</h1>
+    <p class="sub">Todo lo que está en movimiento en un solo lugar: campañas, contenido, ventas y el calendario comercial.</p>
+    <div class="updated">Actualizado 23 de agosto de 2026</div>
+  </header>
+
+  <!-- ============ NÚMEROS ============ -->
+  <section>
+    <div class="sec-head">
+      <h2>Números del período</h2>
+      <span class="note">Pendiente de carga</span>
+    </div>
+    <div class="sec-rule"></div>
+    <div class="kpis">
+      <div class="kpi azul">
+        <div class="label">Inversión en ads</div>
+        <div class="value vacio">Sin cargar</div>
+        <div class="foot">Meta + otros canales</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Ventas atribuidas</div>
+        <div class="value vacio">Sin cargar</div>
+        <div class="foot">Desde campañas</div>
+      </div>
+      <div class="kpi">
+        <div class="label">ROAS</div>
+        <div class="value vacio">Sin cargar</div>
+        <div class="foot">Retorno sobre la inversión</div>
+      </div>
+      <div class="kpi magenta">
+        <div class="label">Ticket promedio</div>
+        <div class="value vacio">Sin cargar</div>
+        <div class="foot">Por orden</div>
+      </div>
+    </div>
+    <div class="nota">
+      <b>Esta sección se completa con los datos reales.</b> La estructura ya está armada para que, apenas tengamos el acceso a Meta Ads y a la tienda, los números entren acá sin rehacer nada. Mientras tanto queda visible qué se va a medir, que es la mitad del trabajo de decidir qué mirar.
+    </div>
+  </section>
+
+  <!-- ============ CAMPAÑAS ============ -->
+  <section>
+    <div class="sec-head">
+      <h2>Campañas</h2>
+      <span class="note">Estado por campaña</span>
+    </div>
+    <div class="sec-rule"></div>
+    <div class="tbl">
+      <table>
+        <thead>
+          <tr><th>Campaña</th><th>Objetivo</th><th>Inversión</th><th>Resultado</th><th>Estado</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Día del Niño</b></td>
+            <td>Ventas · primera ronda</td>
+            <td class="vacio">Sin cargar</td>
+            <td class="vacio">Sin cargar</td>
+            <td>Primera ronda entregada</td>
+          </tr>
+          <tr>
+            <td><b>Siempre activa</b></td>
+            <td>Catálogo general</td>
+            <td class="vacio">Sin cargar</td>
+            <td class="vacio">Sin cargar</td>
+            <td class="vacio">A definir</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ TABLERO ============ -->
+  <section>
+    <div class="sec-head">
+      <h2>En qué estamos</h2>
+      <span class="note">Lo que espera respuesta está marcado</span>
+    </div>
+    <div class="sec-rule"></div>
+    <div class="board">
+      <div class="col">
+        <h3>Hecho</h3>
+        <div class="item">
+          <div class="t">Primera ronda de ads · Día del Niño</div>
+          <div class="m">Piezas entregadas y disponibles en la carpeta compartida.</div>
+          <span class="tag ok">Entregado</span>
+        </div>
+        <div class="item">
+          <div class="t">Carpeta de UGC crudo</div>
+          <div class="m">Material en bruto cargado, listo para editar en piezas.</div>
+          <span class="tag ok">Entregado</span>
+        </div>
+      </div>
+
+      <div class="col">
+        <h3>En curso</h3>
+        <div class="item">
+          <div class="t">Edición del UGC</div>
+          <div class="m">Convertir el material crudo en piezas listas para pauta y para redes.</div>
+          <span class="tag curso">Nuestro</span>
+        </div>
+        <div class="item">
+          <div class="t">Accesos a Meta Ads y tienda</div>
+          <div class="m">Necesarios para medir inversión, ventas atribuidas y ROAS.</div>
+          <span class="tag espera">Falta acceso</span>
+        </div>
+      </div>
+
+      <div class="col">
+        <h3>Próximo</h3>
+        <div class="item">
+          <div class="t">Segunda ronda de creativos</div>
+          <div class="m">Sobre lo que haya funcionado en la primera.</div>
+          <span class="tag prox">A definir</span>
+        </div>
+        <div class="item">
+          <div class="t">Campaña siempre activa</div>
+          <div class="m">Catálogo general corriendo de fondo entre fechas comerciales.</div>
+          <span class="tag prox">A definir</span>
+        </div>
+        <div class="item">
+          <div class="t">Plan de fechas comerciales</div>
+          <div class="m">Anticipar cada fecha con creativos y presupuesto definidos antes, no encima.</div>
+          <span class="tag prox">A definir</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CALENDARIO ============ -->
+  <section>
+    <div class="sec-head">
+      <h2>Calendario comercial</h2>
+      <span class="note">Las fechas que mueven la aguja</span>
+    </div>
+    <div class="sec-rule"></div>
+    <div class="fechas">
+      <div class="fecha">
+        <div class="cuando">Octubre</div>
+        <div class="que">Día de la Madre<small>Juegos para regalar, combos y accesorios de moda</small></div>
+      </div>
+      <div class="fecha">
+        <div class="cuando">Noviembre</div>
+        <div class="que">Black Friday<small>La fecha de mayor volumen del año en e-commerce</small></div>
+      </div>
+      <div class="fecha">
+        <div class="cuando">Diciembre</div>
+        <div class="que">Navidad y Fin de Año<small>Regalos y juegos para previas y reuniones</small></div>
+      </div>
+      <div class="fecha">
+        <div class="cuando">Enero</div>
+        <div class="que">Verano<small>Juegos para vacaciones y encuentros al aire libre</small></div>
+      </div>
+    </div>
+    <div class="nota">
+      <b>Cada fecha necesita su preparación.</b> Los creativos, el presupuesto y la oferta se definen antes de que llegue la fecha, no durante. La primera ronda del Día del Niño sirve de referencia para saber con cuánta anticipación conviene arrancar.
+    </div>
+  </section>
+
+  <footer>Casafight</footer>
+</div>
+</body>
+</html>
