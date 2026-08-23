@@ -10,6 +10,7 @@ import { CLIENT_PASSWORDS, isClientAuthorized, isMasterAuthorized } from './lib/
 //   /clients/<cliente>/transcripts        → reuniones (public/clients/<cliente>-transcripts.html)
 //   /clients/<cliente>/context            → contexto vivo (public/clients/<cliente>-context.html)
 //   /clients/<cliente>/dashboard          → dashboard (public/clients/<cliente>-dashboard.html)
+//   /clients/<cliente>/masterplan         → master plan (public/clients/<cliente>-masterplan.html)
 function buyerOk(req: NextRequest): boolean {
   const key = process.env.AGROWTH_BUYER_KEY;
   const cookie = req.cookies.get('agrowth_buyer')?.value;
@@ -39,7 +40,7 @@ export function middleware(req: NextRequest) {
   }
 
   const match = req.nextUrl.pathname.match(
-    /^\/clients\/([^/]+?)(?:\.html)?(?:\/(approvals|reports|ideas|transcripts|context|budgets|dashboard)(?:\/(\d{4}-\d{2}-\d{2}))?)?\/?$/
+    /^\/clients\/([^/]+?)(?:\.html)?(?:\/(approvals|reports|ideas|transcripts|context|budgets|dashboard|masterplan)(?:\/(\d{4}-\d{2}-\d{2}))?)?\/?$/
   );
   if (!match) return NextResponse.next();
 
@@ -56,10 +57,11 @@ export function middleware(req: NextRequest) {
     client.endsWith('-transcripts') ||
     client.endsWith('-context') ||
     client.endsWith('-dashboard') ||
+    client.endsWith('-masterplan') ||
     client.endsWith('-budgets') ||
     /-report-\d{4}-\d{2}-\d{2}$/.test(client)
   ) {
-    const base = client.replace(/-(hub|approvals|ideas|transcripts|context|budgets|dashboard|report-\d{4}-\d{2}-\d{2})$/, '');
+    const base = client.replace(/-(hub|approvals|ideas|transcripts|context|budgets|dashboard|masterplan|report-\d{4}-\d{2}-\d{2})$/, '');
     return NextResponse.rewrite(new URL(`/clients/${base}-login.html`, req.url));
   }
 
@@ -76,6 +78,7 @@ export function middleware(req: NextRequest) {
   if (section === 'transcripts') return NextResponse.rewrite(new URL(`/clients/${client}-transcripts.html`, req.url));
   if (section === 'context') return NextResponse.rewrite(new URL(`/clients/${client}-context.html`, req.url));
   if (section === 'dashboard') return NextResponse.rewrite(new URL(`/clients/${client}-dashboard.html`, req.url));
+  if (section === 'masterplan') return NextResponse.rewrite(new URL(`/clients/${client}-masterplan.html`, req.url));
   if (section === 'budgets') return NextResponse.rewrite(new URL(`/clients/${client}-budgets.html`, req.url));
   if (section === 'reports' && date) return NextResponse.rewrite(new URL(`/clients/${client}-report-${date}.html`, req.url));
   if (section === 'reports') return NextResponse.rewrite(new URL(`/clients/${client}.html`, req.url));

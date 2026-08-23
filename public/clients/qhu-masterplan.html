@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QHU — Master Plan</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --noche: #0F1633; --tinta: #14192E; --tinta-2: #565E7D; --tinta-3: #8E95AD;
+    --papel: #F7F8FC; --panel: #FFFFFF; --linea: #E2E5F0;
+    --indigo: #4338F0; --indigo-soft: #EEEDFE; --indigo-deep: #2A21B8;
+    --ok: #17886B; --ok-soft: #E7F5F1;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--papel); color: var(--tinta); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 1080px; margin: 0 auto; padding: 0 0 76px; }
+
+  .hero { background: var(--noche); color: #fff; padding: 44px 28px 40px; }
+  .hero-in { max-width: 1024px; margin: 0 auto; }
+  .marca { font-size: 22px; font-weight: 800; letter-spacing: 0.18em; }
+  h1 { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; margin-top: 22px; }
+  h1 span { color: #7B74FF; }
+  .sub { font-size: 14.5px; color: #B9BEDC; margin-top: 8px; max-width: 64ch; }
+  .backlink { display: inline-block; margin-top: 18px; font-size: 12.5px; color: #9B94FF; text-decoration: none; letter-spacing: 0.04em; }
+  .backlink:hover { text-decoration: underline; }
+
+  .body { padding: 0 28px; }
+  .body-in { max-width: 1024px; margin: 0 auto; }
+
+  section { margin-top: 44px; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; }
+  .sec-head h2 { font-size: 11.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tinta-2); }
+  .sec-head .note { font-size: 12px; color: var(--tinta-3); margin-left: auto; }
+  .sec-rule { height: 2px; background: linear-gradient(90deg, var(--indigo) 0%, rgba(67,56,240,.08) 100%); margin-bottom: 20px; }
+
+  .lede { font-size: 16px; color: var(--tinta-2); max-width: 72ch; }
+  .lede b { color: var(--tinta); font-weight: 600; }
+
+  /* Objetivo */
+  .obj { background: var(--noche); color: #fff; padding: 26px 30px; }
+  .obj .k { font-size: 10.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #7B74FF; }
+  .obj h3 { font-size: 22px; font-weight: 700; margin: 8px 0 10px; letter-spacing: -0.01em; }
+  .obj p { font-size: 14px; color: #B9BEDC; max-width: 68ch; }
+
+  /* Motor: piezas encadenadas */
+  .motor { display: grid; gap: 14px; }
+  .pieza { background: var(--panel); border: 1px solid var(--linea); padding: 20px 22px; position: relative; }
+  .pieza::after { content: '↓'; position: absolute; left: 50%; bottom: -18px; transform: translateX(-50%); color: var(--indigo); font-size: 15px; font-weight: 700; z-index: 1; }
+  .pieza:last-child::after { display: none; }
+  .pieza .n { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; color: #fff; background: var(--indigo); padding: 3px 9px; }
+  .pieza h3 { font-size: 17px; font-weight: 700; margin: 10px 0 6px; }
+  .pieza p { font-size: 13.5px; color: var(--tinta-2); max-width: 76ch; }
+  .pieza .rol { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--linea); font-size: 12.5px; color: var(--tinta-2); }
+  .pieza .rol b { color: var(--indigo-deep); font-weight: 700; }
+
+  /* Tabla */
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th { text-align: left; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tinta-3); padding: 10px 12px; border-bottom: 2px solid var(--linea); }
+  td { padding: 11px 12px; border-bottom: 1px solid var(--linea); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  .tbl { background: var(--panel); border: 1px solid var(--linea); overflow-x: auto; }
+
+  /* Horizonte */
+  .horiz { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .h-card { background: var(--panel); border: 1px solid var(--linea); border-top: 3px solid var(--indigo); padding: 18px 20px; }
+  .h-card .w { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--indigo-deep); }
+  .h-card h4 { font-size: 15.5px; font-weight: 700; margin: 7px 0 6px; }
+  .h-card ul { list-style: none; margin-top: 8px; }
+  .h-card li { font-size: 12.5px; color: var(--tinta-2); padding-left: 14px; position: relative; margin-bottom: 5px; }
+  .h-card li::before { content: '·'; position: absolute; left: 3px; color: var(--indigo); font-weight: 700; }
+
+  .nota { background: var(--indigo-soft); border-left: 3px solid var(--indigo); padding: 14px 18px; font-size: 13.5px; color: var(--tinta-2); margin-top: 16px; }
+  .nota b { color: var(--tinta); font-weight: 700; }
+
+  /* Chat */
+  .chat { background: var(--panel); border: 1px solid var(--linea); }
+  .chat-head { padding: 18px 22px; border-bottom: 1px solid var(--linea); }
+  .chat-head h3 { font-size: 16px; font-weight: 700; }
+  .chat-head p { font-size: 12.5px; color: var(--tinta-2); margin-top: 5px; max-width: 70ch; }
+  .chat-log { padding: 8px 22px; max-height: 460px; overflow-y: auto; }
+  .chat-log:empty { display: none; }
+  .msg { padding: 14px 0; border-bottom: 1px solid var(--linea); }
+  .msg:last-child { border-bottom: none; }
+  .msg .who { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tinta-3); margin-bottom: 5px; }
+  .msg.me .who { color: var(--tinta-2); }
+  .msg.ai .who { color: var(--indigo-deep); }
+  .msg .txt { font-size: 14px; color: var(--tinta); white-space: pre-wrap; }
+  .msg.me .txt { color: var(--tinta-2); }
+  .chat-in { display: flex; gap: 10px; padding: 16px 22px; border-top: 1px solid var(--linea); }
+  .chat-in input { flex: 1; font-family: var(--sans); font-size: 14.5px; padding: 11px 14px; border: 1px solid var(--linea); background: var(--papel); color: var(--tinta); outline: none; }
+  .chat-in input:focus { border-color: var(--indigo); }
+  .chat-in button { font-family: var(--sans); font-size: 11.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; background: var(--indigo); color: #fff; border: none; padding: 11px 22px; cursor: pointer; }
+  .chat-in button:hover { background: var(--indigo-deep); }
+  .chat-in button:disabled { opacity: .5; cursor: default; }
+  .sugerencias { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 22px 16px; }
+  .sug { font-size: 12.5px; color: var(--indigo-deep); background: var(--indigo-soft); border: none; padding: 7px 12px; cursor: pointer; font-family: var(--sans); text-align: left; }
+  .sug:hover { background: #E3E1FC; }
+  .aviso { padding: 12px 22px; font-size: 12px; color: var(--tinta-3); border-top: 1px solid var(--linea); }
+
+  footer { text-align: center; margin-top: 52px; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tinta-3); }
+
+  @media (max-width: 880px) {
+    .horiz { grid-template-columns: 1fr; }
+    h1 { font-size: 24px; }
+    .chat-in { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <div class="hero-in">
+      <div class="marca">QHU</div>
+      <h1>Master <span>Plan</span></h1>
+      <p class="sub">Cómo llegamos al objetivo: qué hace cada pieza, cómo se conectan entre sí y en qué orden. Al final podés preguntarle lo que quieras al plan.</p>
+      <a class="backlink" href="/clients/qhu">← Volver al dashboard</a>
+    </div>
+  </div>
+
+  <div class="body"><div class="body-in">
+
+    <!-- OBJETIVO -->
+    <section>
+      <div class="obj">
+        <div class="k">El objetivo</div>
+        <h3>Que los talleres se suscriban porque sus clientes se lo piden</h3>
+        <p>No vender la plataforma taller por taller, sino construir la demanda que hace que suscribirse sea la respuesta obvia. Todo lo que sigue existe para que ese momento ocurra en el mostrador, lo más seguido posible.</p>
+      </div>
+    </section>
+
+    <!-- EL MOTOR -->
+    <section>
+      <div class="sec-head">
+        <h2>El motor</h2>
+        <span class="note">Cada pieza alimenta a la siguiente</span>
+      </div>
+      <div class="sec-rule"></div>
+      <p class="lede" style="margin-bottom:22px">El plan no es una lista de tácticas sueltas: es una cadena donde cada eslabón existe porque habilita al que viene después. <b>Si uno falla, los siguientes no compensan.</b></p>
+
+      <div class="motor">
+        <div class="pieza">
+          <div class="n">01</div>
+          <h3>Elegir los talleres objetivo</h3>
+          <p>Una lista corta, elegida a mano, de los talleres que queremos sumar primero. No es una segmentación de pauta: es una decisión comercial sobre dónde conviene concentrar el esfuerzo.</p>
+          <div class="rol"><b>Por qué va primero:</b> sin esta lista no hay sobre qué segmentar geográficamente, y sin segmentación geográfica toda la mecánica se cae. Es la pieza que ordena el resto.</div>
+        </div>
+
+        <div class="pieza">
+          <div class="n">02</div>
+          <h3>Contenido que explica la categoría</h3>
+          <p>Videos breves y piezas estáticas que responden qué es esto y para qué sirve. Educativo antes que promocional, porque nadie busca lo que no sabe que existe.</p>
+          <div class="rol"><b>Qué habilita:</b> es la materia prima de la pauta. Sin contenido que explique, cualquier anuncio queda pidiendo una acción que el usuario no entiende.</div>
+        </div>
+
+        <div class="pieza">
+          <div class="n">03</div>
+          <h3>Pauta a usuarios en esas zonas</h3>
+          <p>Meta y Google apuntando a dueños de vehículos que viven o circulan cerca de los talleres del paso 1. Entre cinco y diez conceptos distintos en paralelo, evaluados a los tres o cuatro días.</p>
+          <div class="rol"><b>Qué produce:</b> gente que entra al buscador, prueba con su patente y entiende el valor sin pagar nada. La conversión acá no es una venta, es comprensión.</div>
+        </div>
+
+        <div class="pieza">
+          <div class="n">04</div>
+          <h3>El buscador convierte curiosidad en intención</h3>
+          <p>Poner la patente y ver el vehículo es la demostración más corta posible del producto. Si no hay historial, el plan de mantenimiento del fabricante ya entrega algo útil.</p>
+          <div class="rol"><b>Por qué funciona:</b> no pide registro, no pide datos, no pide nada. Elimina toda la fricción entre el anuncio y el momento en que la persona entiende para qué sirve QHU.</div>
+        </div>
+
+        <div class="pieza">
+          <div class="n">05</div>
+          <h3>El usuario lo pide en el mostrador</h3>
+          <p>Ese es el momento que todo lo anterior busca provocar. El usuario lleva el auto al taller de siempre y pregunta si le pueden cargar el service.</p>
+          <div class="rol"><b>Qué cambia:</b> el taller deja de escuchar una propuesta comercial y empieza a escuchar un pedido de su cliente. La suscripción pasa de ser un gasto a evaluar a ser una respuesta.</div>
+        </div>
+
+        <div class="pieza">
+          <div class="n">06</div>
+          <h3>El taller se suscribe y se queda</h3>
+          <p>Se registra, pasa la validación telefónica y empieza a cargar servicios. El vehículo queda asociado a su taller, y esa relación sobrevive al cambio de dueño.</p>
+          <div class="rol"><b>Dónde cierra el círculo:</b> cada taller adherido carga historiales que hacen más útil la plataforma para el próximo usuario, que a su vez presiona a otro taller. A partir de acá el motor empieza a girar solo.</div>
+        </div>
+      </div>
+
+      <div class="nota">
+        <b>Dónde se puede romper.</b> La pieza más frágil es la 5: que el usuario efectivamente lo pida. Por eso la primera ola no busca volumen sino concentración. Diez mil usuarios repartidos por todo el país no le mueven la aguja a ningún taller; doscientos en el radio de un lubricentro, sí.
+      </div>
+    </section>
+
+    <!-- COMO SE MIDE -->
+    <section>
+      <div class="sec-head">
+        <h2>Cómo sabemos si funciona</h2>
+        <span class="note">Cada pieza tiene su señal</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="tbl">
+        <table>
+          <thead>
+            <tr><th>Pieza</th><th>Señal de que va bien</th><th>Señal de alarma</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Contenido</b></td>
+              <td>La gente mira los videos completos y comenta preguntando cómo funciona.</td>
+              <td>Buen alcance con retención baja: el mensaje no está explicando.</td>
+            </tr>
+            <tr>
+              <td><b>Pauta</b></td>
+              <td>Costo por consulta al buscador bajando a medida que optimizamos.</td>
+              <td>Clicks caros o tráfico que entra y se va sin probar una patente.</td>
+            </tr>
+            <tr>
+              <td><b>Buscador</b></td>
+              <td>Alto porcentaje de visitantes que ingresa una patente.</td>
+              <td>Llegan y no lo usan: el buscador no se entiende o no se ve.</td>
+            </tr>
+            <tr>
+              <td><b>Presión al taller</b></td>
+              <td>Talleres que se registran solos, sin que nadie los haya contactado.</td>
+              <td>Muchos usuarios en la zona y ningún taller entrando.</td>
+            </tr>
+            <tr>
+              <td><b>Retención</b></td>
+              <td>Talleres cargando servicios de forma sostenida.</td>
+              <td>Talleres suscriptos que no cargan nada: es una baja anticipada.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="nota">
+        <b>La cuenta que ordena todo.</b> Un taller paga entre $60.000 y $70.000 por mes. Cuando sepamos cuánto cuesta sumar uno, sabremos en cuántos meses se recupera la inversión y cuánto conviene escalar. Hasta que tengamos ese número, cada peso de pauta es aprendizaje, no rendimiento.
+      </div>
+    </section>
+
+    <!-- HORIZONTE -->
+    <section>
+      <div class="sec-head">
+        <h2>El horizonte</h2>
+        <span class="note">Qué esperar en cada tramo</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="horiz">
+        <div class="h-card">
+          <div class="w">Primeras semanas</div>
+          <h4>Preparar</h4>
+          <ul>
+            <li>Lista de talleres objetivo definida</li>
+            <li>Marca revisada y contenido en producción</li>
+            <li>Comunicación de la landing lista</li>
+            <li>Tracking configurado</li>
+          </ul>
+        </div>
+        <div class="h-card">
+          <div class="w">Lanzamiento</div>
+          <h4>Aprender</h4>
+          <ul>
+            <li>Varios conceptos publicitarios corriendo a la vez</li>
+            <li>Primeras consultas al buscador</li>
+            <li>Se descarta lo que no funciona en días, no en meses</li>
+            <li>Primeros talleres entrando por pedido de clientes</li>
+          </ul>
+        </div>
+        <div class="h-card">
+          <div class="w">Después</div>
+          <h4>Escalar</h4>
+          <ul>
+            <li>Costo por taller conocido y estable</li>
+            <li>Presupuesto concentrado en lo que rinde</li>
+            <li>Segunda ola de pauta directa a talleres</li>
+            <li>Nuevas zonas con el modelo ya probado</li>
+          </ul>
+        </div>
+      </div>
+      <div class="nota">
+        <b>Sobre los plazos.</b> No ponemos fechas a los resultados porque dependen de variables que todavía no medimos. Lo que sí está definido es el orden y qué señal buscamos en cada tramo antes de pasar al siguiente.
+      </div>
+    </section>
+
+    <!-- CHAT -->
+    <section>
+      <div class="sec-head">
+        <h2>Preguntale al plan</h2>
+        <span class="note">Responde con el contexto que tiene cargado</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="chat">
+        <div class="chat-head">
+          <h3>Consultas sobre el plan</h3>
+          <p>Responde en base a lo que hablamos en reuniones y por chat, más los números que fuimos recolectando. Cuando algo no está en ese contexto, lo va a decir en vez de improvisar una respuesta.</p>
+        </div>
+        <div class="chat-log" id="log"></div>
+        <div class="sugerencias" id="sug">
+          <button class="sug" data-q="¿Por qué no le vendemos directo a los talleres desde el principio?">¿Por qué no vender directo a los talleres?</button>
+          <button class="sug" data-q="¿Cómo elegimos qué talleres van en la primera lista?">¿Cómo se eligen los primeros talleres?</button>
+          <button class="sug" data-q="¿Qué pasa si los usuarios se registran pero los talleres no se suman?">¿Y si los talleres no se suman?</button>
+          <button class="sug" data-q="¿Cuánto presupuesto de pauta hace falta para arrancar?">¿Cuánto presupuesto hace falta?</button>
+        </div>
+        <div class="chat-in">
+          <input type="text" id="q" placeholder="Escribí tu pregunta sobre el plan" autocomplete="off">
+          <button id="send">Preguntar</button>
+        </div>
+        <div class="aviso">Las respuestas salen del contexto cargado en la plataforma. Para decisiones comerciales, cambios de alcance o cualquier cosa que no esté acá, escribinos directamente.</div>
+      </div>
+    </section>
+
+    <footer>QHU · Master Plan</footer>
+  </div></div>
+</div>
+
+<script>
+(function () {
+  var log = document.getElementById('log');
+  var input = document.getElementById('q');
+  var btn = document.getElementById('send');
+  var sug = document.getElementById('sug');
+  var history = [];
+  var pensando = null;
+
+  function add(role, text) {
+    var d = document.createElement('div');
+    d.className = 'msg ' + (role === 'user' ? 'me' : 'ai');
+    var w = document.createElement('div');
+    w.className = 'who';
+    w.textContent = role === 'user' ? 'Vos' : 'Master Plan';
+    var t = document.createElement('div');
+    t.className = 'txt';
+    t.textContent = text;
+    d.appendChild(w); d.appendChild(t);
+    log.appendChild(d);
+    log.scrollTop = log.scrollHeight;
+    return d;
+  }
+
+  function preguntar(q) {
+    if (!q || q.length < 3 || pensando) return;
+    if (sug) sug.style.display = 'none';
+    add('user', q);
+    input.value = '';
+    btn.disabled = true;
+    pensando = add('assistant', 'Pensando...');
+
+    fetch('/api/master-plan/qhu', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question: q, history: history })
+    })
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+      .then(function (res) {
+        var texto;
+        if (res.ok && res.d.answer) {
+          texto = res.d.answer;
+          history.push({ role: 'user', content: q });
+          history.push({ role: 'assistant', content: texto });
+          if (history.length > 16) history = history.slice(-16);
+        } else if (res.d && res.d.error === 'ai_not_configured') {
+          texto = 'Las consultas automáticas todavía no están activas. Escribinos directamente y te respondemos.';
+        } else {
+          texto = 'No pude responder ahora mismo. Probá de nuevo en un momento, o escribinos directamente.';
+        }
+        pensando.querySelector('.txt').textContent = texto;
+        pensando = null;
+        btn.disabled = false;
+      })
+      .catch(function () {
+        pensando.querySelector('.txt').textContent = 'No pude responder ahora mismo. Escribinos directamente.';
+        pensando = null;
+        btn.disabled = false;
+      });
+  }
+
+  btn.addEventListener('click', function () { preguntar(input.value.trim()); });
+  input.addEventListener('keydown', function (e) { if (e.key === 'Enter') preguntar(input.value.trim()); });
+  Array.prototype.forEach.call(document.querySelectorAll('.sug'), function (b) {
+    b.addEventListener('click', function () { preguntar(b.getAttribute('data-q')); });
+  });
+})();
+</script>
+</body>
+</html>
