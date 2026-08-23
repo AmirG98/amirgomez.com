@@ -71,11 +71,36 @@
   .tbl { background: var(--panel); border: 1px solid var(--hairline); overflow-x: auto; }
   .pending { color: var(--ink-3); font-style: italic; }
 
+  /* Contexto */
+  .ctx { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); }
+  .ctx-card { background: var(--panel); padding: 20px 22px; }
+  .ctx-card h4 { font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--taupe-deep); margin-bottom: 8px; }
+  .ctx-card p { font-size: 13.5px; color: var(--ink-2); font-weight: 300; }
+  .ctx-card p + p { margin-top: 8px; }
+  .ctx-card strong { color: var(--ink); font-weight: 500; }
+
+  /* Ritmo de trabajo */
+  .rit { display: grid; grid-template-columns: 150px 1fr; gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); }
+  .rit > div { background: var(--panel); padding: 14px 18px; }
+  .rit .when { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--taupe-deep); }
+  .rit .what { font-size: 13.5px; color: var(--ink-2); font-weight: 300; }
+  .rit .what b { color: var(--ink); font-weight: 500; }
+
+  /* Metricas */
+  .met { display: grid; gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); }
+  .met-row { background: var(--panel); padding: 15px 20px; display: grid; grid-template-columns: 1fr 1.4fr; gap: 20px; }
+  .met-row .k { font-size: 14px; font-weight: 400; }
+  .met-row .k small { display: block; font-size: 12px; color: var(--taupe-deep); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 3px; }
+  .met-row .v { font-size: 13px; color: var(--ink-2); font-weight: 300; }
+
   footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--hairline); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); }
 
   @media (max-width: 820px) {
     .funnel { grid-template-columns: repeat(2, 1fr); }
     .step { grid-template-columns: 1fr; }
+    .ctx { grid-template-columns: 1fr; }
+    .rit { grid-template-columns: 1fr; }
+    .met-row { grid-template-columns: 1fr; gap: 6px; }
     h1 { font-size: 27px; }
   }
 </style>
@@ -92,6 +117,39 @@
       <span>Updated Aug 23, 2026</span>
     </div>
   </header>
+
+  <!-- ============ CONTEXTO ============ -->
+  <section>
+    <div class="sec-head">
+      <h2>What we understand so far</h2>
+      <span class="note">Tell us where this is wrong</span>
+    </div>
+    <div class="ctx">
+      <div class="ctx-card">
+        <h4>The business</h4>
+        <p>High-end home automation and integrated control: lighting, climate, security, audio and automation behind a single interface. Over 300 projects across eight years in Latin America, now expanding into the United States from Miami.</p>
+        <p>Three audiences that do not buy the same way: <strong>homeowners, corporate offices and luxury multi-residential developments.</strong></p>
+      </div>
+      <div class="ctx-card">
+        <h4>What makes Domic different</h4>
+        <p>The philosophy is giving the client back control through a transparent process. People decide what their system actually needs, informed, instead of being sold products they never asked for.</p>
+        <p><strong>Selling the way of living, not the equipment.</strong> The technical sale stays separate from the technical execution.</p>
+      </div>
+      <div class="ctx-card">
+        <h4>The problem to solve</h4>
+        <p>Quoting is expensive and slow when the person on the other side is not qualified. Technical time gets spent on projects that were never viable.</p>
+        <p>The fix is <strong>filtering investment expectations at the very first interaction</strong>, before anyone books an engineer's afternoon.</p>
+      </div>
+      <div class="ctx-card">
+        <h4>How the offer is structured</h4>
+        <p>The calculator lets a visitor shape their own scope and watch the cost move with their priorities. In the demo, a 10,000 sqft project in Miami Beach went from USD 846,000 to USD 344,000 by adjusting what mattered.</p>
+        <p>From there, the <strong>USD 7,000 engineering service</strong> is what gets the design work paid for before execution starts.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <b>One thing we will not put in front of the visitor.</b> The internal estimate works off roughly 2% of the property value, and that reasoning stays behind the scenes. Showing it anchors the visitor's perception before the conversation happens, and turns away leads that would have qualified with the right handling.
+    </div>
+  </section>
 
   <!-- ============ ONBOARDING ============ -->
   <section>
@@ -288,6 +346,66 @@
           </tr>
         </tbody>
       </table>
+    </div>
+  </section>
+
+  <!-- ============ RITMO DE TRABAJO ============ -->
+  <section>
+    <div class="sec-head">
+      <h2>How we work together</h2>
+      <span class="note">So nothing depends on remembering to ask</span>
+    </div>
+    <div class="rit">
+      <div class="when">Weekly</div>
+      <div class="what"><b>Written update.</b> What moved, what is blocked and what is coming. Sent even on quiet weeks, because silence is the thing that makes engagements feel adrift.</div>
+
+      <div class="when">Every two weeks</div>
+      <div class="what"><b>Working call, 30 to 45 minutes.</b> We walk through results, decide what to change and agree on the next two weeks. Once campaigns are running, this is where budget decisions get made.</div>
+
+      <div class="when">Monthly</div>
+      <div class="what"><b>Performance report.</b> Spend by channel, what it produced, what we learned and what changes because of it. Written to be read in five minutes.</div>
+
+      <div class="when">This dashboard</div>
+      <div class="what"><b>Always current.</b> Every item above shows its real state, including what is waiting on your side. You should never have to ask where something stands.</div>
+
+      <div class="when">Anytime</div>
+      <div class="what"><b>Direct line.</b> Anything urgent goes straight to us, no ticket, no queue.</div>
+    </div>
+    <div class="callout">
+      <b>What we need from you to keep this rhythm.</b> Two things, and both are small: feedback on lead quality once calls start coming in, since we cannot see what happens on your side of the phone, and a decision on anything marked as waiting here. Everything else is on us.
+    </div>
+  </section>
+
+  <!-- ============ COMO MEDIMOS ============ -->
+  <section>
+    <div class="sec-head">
+      <h2>How results get measured</h2>
+      <span class="note">Qualified calls, not traffic</span>
+    </div>
+    <div class="met">
+      <div class="met-row">
+        <div class="k">Qualified sales calls<small>The number that matters</small></div>
+        <div class="v">People whose investment range already matches what Domic does, booked and showing up. A thousand visitors who cannot afford the service are worth less than ten who can.</div>
+      </div>
+      <div class="met-row">
+        <div class="k">Cost per qualified call<small>Efficiency</small></div>
+        <div class="v">Total media spend divided by calls that were worth having. This is what tells us whether to scale a channel or shut it off.</div>
+      </div>
+      <div class="met-row">
+        <div class="k">Calculator completions<small>Intent</small></div>
+        <div class="v">Visitors who went far enough to shape their own scope. A strong signal even when they do not book right away.</div>
+      </div>
+      <div class="met-row">
+        <div class="k">Engineering services sold<small>Revenue</small></div>
+        <div class="v">The USD 7,000 step. The closest thing to a true return figure, and the one that tells us the funnel is doing its job end to end.</div>
+      </div>
+      <div class="met-row">
+        <div class="k">Spend by channel<small>Transparency</small></div>
+        <div class="v">Every dollar, split by platform, with what it produced next to it. Reported whether the number is good or bad.</div>
+      </div>
+    </div>
+    <div class="callout">
+      <b>What we will not report as a win.</b> Impressions, reach, followers and click-through rates on their own. They are useful for diagnosing a campaign, and we will show them when they explain something, but they are not results. If a month goes badly, the report will say so.
     </div>
   </section>
 

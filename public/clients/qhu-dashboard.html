@@ -89,12 +89,38 @@
   .nota { background: var(--indigo-soft); border-left: 3px solid var(--indigo); padding: 14px 18px; font-size: 13.5px; color: var(--tinta-2); margin-top: 16px; }
   .nota b { color: var(--tinta); font-weight: 700; }
 
+  /* Contexto */
+  .ctx { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .ctx-card { background: var(--panel); border: 1px solid var(--linea); border-left: 3px solid var(--indigo); padding: 18px 20px; }
+  .ctx-card h4 { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--indigo-deep); margin-bottom: 8px; }
+  .ctx-card p { font-size: 13.5px; color: var(--tinta-2); }
+  .ctx-card p + p { margin-top: 8px; }
+  .ctx-card strong { color: var(--tinta); font-weight: 600; }
+
+  /* Ritmo */
+  .rit { background: var(--panel); border: 1px solid var(--linea); }
+  .rit-row { display: grid; grid-template-columns: 160px 1fr; gap: 18px; padding: 14px 20px; border-bottom: 1px solid var(--linea); }
+  .rit-row:last-child { border-bottom: none; }
+  .rit-row .when { font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--indigo-deep); }
+  .rit-row .what { font-size: 13.5px; color: var(--tinta-2); }
+  .rit-row .what b { color: var(--tinta); font-weight: 600; }
+
+  /* Metricas */
+  .met { background: var(--panel); border: 1px solid var(--linea); }
+  .met-row { display: grid; grid-template-columns: 1fr 1.4fr; gap: 20px; padding: 15px 20px; border-bottom: 1px solid var(--linea); }
+  .met-row:last-child { border-bottom: none; }
+  .met-row .k { font-size: 14px; font-weight: 600; }
+  .met-row .k small { display: block; font-size: 10.5px; color: var(--indigo-deep); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 3px; }
+  .met-row .v { font-size: 13px; color: var(--tinta-2); }
+
   footer { text-align: center; margin-top: 52px; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tinta-3); }
 
   @media (max-width: 880px) {
     .fases, .kpis, .embudo { grid-template-columns: repeat(2, 1fr); }
     h1 { font-size: 24px; }
     .item { grid-template-columns: 1fr; }
+    .ctx { grid-template-columns: 1fr; }
+    .rit-row, .met-row { grid-template-columns: 1fr; gap: 6px; }
   }
 </style>
 </head>
@@ -114,6 +140,37 @@
   </div>
 
   <div class="body"><div class="body-in">
+
+    <!-- ============ CONTEXTO ============ -->
+    <section>
+      <div class="sec-head">
+        <h2>Lo que entendemos hasta ac&aacute;</h2>
+        <span class="note">Si algo est&aacute; mal, correg&iacute;nos</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="ctx">
+        <div class="ctx-card">
+          <h4>El problema</h4>
+          <p>Hoy no hay forma de verificar qu&eacute; le hicieron a un veh&iacute;culo. No se sabe si le bajaron el kilometraje para venderlo m&aacute;s caro, ni qu&eacute; mantenimiento tuvo.</p>
+          <p>El historial vive en papeles, en la memoria del due&ntilde;o, o directamente <strong>se pierde.</strong></p>
+        </div>
+        <div class="ctx-card">
+          <h4>Qu&eacute; hace QHU</h4>
+          <p>Digitaliza el historial de servicios de cualquier veh&iacute;culo: autos, motos, camiones y lanchas. Arranca por C&oacute;rdoba Capital con alcance nacional.</p>
+          <p>El front del sitio <strong>es</strong> la landing: un buscador donde cualquiera pone una patente, gratis y sin registrarse, y ve el veh&iacute;culo. Si no hay historial cargado, devuelve el plan de mantenimiento del fabricante.</p>
+        </div>
+        <div class="ctx-card">
+          <h4>Qui&eacute;n paga</h4>
+          <p><strong>Gratis para el usuario. El taller paga la suscripci&oacute;n mensual.</strong></p>
+          <p>Por eso la adquisici&oacute;n no arranca por el taller: primero se genera demanda de usuarios en sus zonas, para que sean los clientes quienes pidan el registro en el mostrador.</p>
+        </div>
+        <div class="ctx-card">
+          <h4>La dificultad real</h4>
+          <p>Es una categor&iacute;a que no existe en la cabeza del usuario. Nadie busca un historial digital de su auto porque no sabe que puede existir.</p>
+          <p>Por eso el contenido es <strong>educativo antes que promocional</strong>, y por eso el buscador gratuito es la mejor herramienta de adquisici&oacute;n: da una raz&oacute;n para entrar sin pedir nada a cambio.</p>
+        </div>
+      </div>
+    </section>
 
     <!-- ============ FASES ============ -->
     <section>
@@ -340,6 +397,78 @@
       </div>
       <div class="nota">
         <b>Sobre el universo a alcanzar.</b> Se estiman unos 40.000 talleres en el país. A los costos actuales de Meta, ese universo es alcanzable sin un presupuesto enorme, y por eso la primera etapa se trata de encontrar qué mensaje funciona antes de escalar la inversión.
+      </div>
+    </section>
+
+    <!-- ============ RITMO ============ -->
+    <section>
+      <div class="sec-head">
+        <h2>C&oacute;mo trabajamos</h2>
+        <span class="note">Para que nunca haya que preguntar en qu&eacute; anda algo</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="rit">
+        <div class="rit-row">
+          <div class="when">Semanal</div>
+          <div class="what"><b>Update escrito.</b> Qu&eacute; avanz&oacute;, qu&eacute; est&aacute; trabado y qu&eacute; viene. Se manda igual en las semanas tranquilas, porque el silencio es lo que hace que un proyecto se sienta a la deriva.</div>
+        </div>
+        <div class="rit-row">
+          <div class="when">Cada dos semanas</div>
+          <div class="what"><b>Llamada de trabajo, 30 a 45 minutos.</b> Repasamos resultados, decidimos qu&eacute; cambiar y acordamos las pr&oacute;ximas dos semanas. Cuando las campa&ntilde;as est&eacute;n corriendo, ac&aacute; se deciden los ajustes de presupuesto.</div>
+        </div>
+        <div class="rit-row">
+          <div class="when">Mensual</div>
+          <div class="what"><b>Reporte de resultados.</b> Inversi&oacute;n por canal, qu&eacute; produjo cada peso, qu&eacute; aprendimos y qu&eacute; cambia por eso. Escrito para leerse en cinco minutos.</div>
+        </div>
+        <div class="rit-row">
+          <div class="when">Este dashboard</div>
+          <div class="what"><b>Siempre al d&iacute;a.</b> Cada item de arriba muestra su estado real, incluido lo que espera respuesta de ustedes.</div>
+        </div>
+        <div class="rit-row">
+          <div class="when">Cuando haga falta</div>
+          <div class="what"><b>L&iacute;nea directa.</b> Lo urgente va directo, sin ticket ni intermediarios.</div>
+        </div>
+      </div>
+      <div class="nota">
+        <b>Qu&eacute; necesitamos de ustedes.</b> Feedback sobre la calidad de los talleres que llegan, porque no vemos qu&eacute; pasa en la validaci&oacute;n telef&oacute;nica, y una definici&oacute;n sobre lo que figura como pendiente ac&aacute;. El resto corre por nuestra cuenta.
+      </div>
+    </section>
+
+    <!-- ============ COMO MEDIMOS ============ -->
+    <section>
+      <div class="sec-head">
+        <h2>C&oacute;mo se mide</h2>
+        <span class="note">Talleres suscriptos, no visitas</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="met">
+        <div class="met-row">
+          <div class="k">Talleres suscriptos<small>La m&eacute;trica que manda</small></div>
+          <div class="v">Talleres que pasaron la validaci&oacute;n y est&aacute;n pagando. Es lo &uacute;nico que representa ingreso real, y por eso ordena todas las decisiones de pauta.</div>
+        </div>
+        <div class="met-row">
+          <div class="k">Costo por taller sumado<small>Eficiencia</small></div>
+          <div class="v">Inversi&oacute;n total dividida por talleres que se suscribieron. Comparado contra los $60.000 a $70.000 mensuales, dice en cu&aacute;ntos meses se recupera cada peso invertido.</div>
+        </div>
+        <div class="met-row">
+          <div class="k">Usuarios registrados por zona<small>La palanca</small></div>
+          <div class="v">Se mide por zona, no en total, porque el objetivo no es volumen: es masa cr&iacute;tica cerca de los talleres que queremos sumar.</div>
+        </div>
+        <div class="met-row">
+          <div class="k">Consultas al buscador<small>Se&ntilde;al temprana</small></div>
+          <div class="v">Patentes consultadas. Es lo primero que se mueve cuando un mensaje funciona, mucho antes de que se traduzca en registros.</div>
+        </div>
+        <div class="met-row">
+          <div class="k">Servicios cargados por taller<small>Adopci&oacute;n</small></div>
+          <div class="v">Un taller que se suscribe pero no carga services es una baja esperando. Este n&uacute;mero anticipa el churn antes de que ocurra.</div>
+        </div>
+        <div class="met-row">
+          <div class="k">Inversi&oacute;n por canal<small>Transparencia</small></div>
+          <div class="v">Cada peso, separado por plataforma, con lo que produjo al lado. Se reporta igual cuando el n&uacute;mero es malo.</div>
+        </div>
+      </div>
+      <div class="nota">
+        <b>Lo que no vamos a reportar como resultado.</b> Impresiones, alcance, seguidores y CTR por s&iacute; solos. Sirven para diagnosticar una campa&ntilde;a y los vamos a mostrar cuando expliquen algo, pero no son resultados. Si un mes sale mal, el reporte lo va a decir.
       </div>
     </section>
 
