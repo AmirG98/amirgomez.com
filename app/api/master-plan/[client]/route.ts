@@ -21,6 +21,40 @@ function authorized(req: NextRequest, client: string): boolean {
 // Contexto por cliente. Es lo que el asistente sabe: nada más que esto,
 // más lo que el propio Master Plan muestra en pantalla.
 const CONTEXTO: Record<string, { idioma: string; contexto: string }> = {
+  'human-at-scale': {
+    idioma: 'English (US). Chase is a native English speaker; never reply in Spanish.',
+    contexto: `BUSINESS
+Human at Scale, founded by Chase Damiano. Operations consulting for accounting firms in the US. Core thesis: the owner is the bottleneck. The firm cannot grow past what the owner personally touches.
+Main offer: an Operations Audit. How work actually flows, where the money is actually made, and what the tech stack does for the team versus to it. The deliverable is a prioritized roadmap with sequencing, success metrics and expected return.
+ICP: owners and operators of US accounting firms. Firms that are too small are disqualified rather than nurtured.
+
+PARTNERSHIP
+Signed with Gusto to run eight of their partner firms through the Operations Audit. Firms are Gusto-nominated only. Language guardrails: never "exclusive", "official" or "Gusto's operations partner"; no implication that firms can apply; no client names or Gusto data.
+
+CHANNELS AND WHAT EACH IS FOR
+Ops Notes newsletter, every other Friday. Written by Chase. This is the authority engine.
+LinkedIn: Chase's own posts plus paid amplification of the best performing content.
+Meta: traffic to the Operations Assessment, moving to native lead forms.
+Webinars: partner communities such as The Collaboration Room. Treated as content assets first and lead sources second.
+Podcasts: guesting strategy, not sponsorship. Priority order is Unofficial QuickBooks Accountants, then The Accounting Podcast, then Oh My Fraud.
+Case studies: two published, Quadrant and FinClarity. Eight more exist from previous work but are not accounting firms, so they stay unpublished until ICP case studies exist.
+
+SPEND TO DATE (Jul 24 to Aug 20, 2026)
+Total 178.11 USD. LinkedIn 106.39 with 105 engagements at 1.01 each, 3.4 percent click-through rate. Meta 71.72 with 167 landing page views at 0.43 each, 1.64 percent click-through rate.
+Attributed leads: zero. Not because the traffic failed, but because the Meta pixel and the CRM connection are not in place. Until that is fixed every channel reports cost per click and none report cost per lead.
+
+THE CENTRAL CONSTRAINT
+Installing the pixel and connecting the CRM is the top priority. It blocks spend decisions, the funnel view, and any honest read on what content is producing. It costs nothing but the work.
+
+HOW THE PIECES FIT
+Content builds authority. Authority makes webinars and podcasts say yes. Those produce recordings. Recordings become clips and newsletter issues, which feed the content engine again. Paid amplifies whatever already works organically rather than replacing it. The Operations Assessment is where interest becomes a measurable action, and the Audit is where it becomes revenue.
+
+WORKING AGREEMENTS
+Nothing Chase writes gets rewritten by AI. Grammar and formatting only. Everything published is manually reviewed before it goes out, including checking that tags render and links resolve.
+
+WHAT IS OPEN RIGHT NOW
+Meta pixel and CRM connection. The custom tracker replacing the spreadsheet. The "Welcome, choose your path" email. Pivot to native lead forms on Meta with LinkedIn dropped to a minimum. Nurture campaigns for people who took the Operations Assessment. A quality checklist for anything published.`,
+  },
   qhu: {
     idioma: 'español rioplatense (voseo)',
     contexto: `NEGOCIO
