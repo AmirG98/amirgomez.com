@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { isClientAuthorized, isMasterAuthorized } from '../../../../lib/client-auth';
+import { isClientAuthorized } from '../../../../lib/client-auth';
 
 // Cuestionario de voz de marca, completable desde el portal del cliente.
 //
@@ -104,13 +104,11 @@ export async function PUT(req: NextRequest, ctx: { params: Promise<{ client: str
   return NextResponse.json({ ok: true, count: Object.keys(doc.answers).length });
 }
 
-// Resetea el cuestionario (respuestas y estado de enviado). Solo master:
-// sirve para limpiar pruebas o volver a empezar de cero.
+// Resetea el cuestionario (respuestas y estado de enviado). Sirve para limpiar
+// pruebas o volver a empezar. Requiere la clave del portal, igual que el resto.
 export async function DELETE(req: NextRequest, ctx: { params: Promise<{ client: string }> }) {
   const { client } = await ctx.params;
-  if (!isMasterAuthorized(req.cookies.get('agrowth_master')?.value)) {
-    return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
-  }
+  if (!authorized(req, client)) return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
   const cfg = storageConfig();
   if (!cfg) return NextResponse.json({ error: 'storage_not_configured' }, { status: 503 });
 

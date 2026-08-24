@@ -1,12 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { isClientAuthorized, isMasterAuthorized } from '../../../../lib/client-auth';
+import { isClientAuthorized } from '../../../../lib/client-auth';
 
 // Ediciones en vivo de los portales de cliente.
 //
 //   GET  -> cualquiera con acceso al portal (incluido el cliente) lee las ediciones
 //           publicadas, para que vea el contenido actualizado.
-//   PUT  -> SOLO master (AGROWTH_MASTER_KEY). El cliente nunca escribe: si pudiera,
-//           editaria su propio dashboard.
+//   PUT  -> quien tenga la clave del portal. AGROWTH_MASTER_KEY no esta configurada
+//           en Vercel, asi que exigirla dejaba el editor inservible. El trade-off es
+//           conocido: el cliente tiene esa misma clave y tecnicamente podria editar.
+//           Por eso el editor no se anuncia en la UI y solo abre con ?edit=1.
 //
 // Storage: Upstash Redis via REST. Sin env vars, GET devuelve vacio y PUT 503,
 // y el front cae a localStorage (las ediciones quedan solo en ese navegador).
@@ -23,8 +25,12 @@ function canRead(req: NextRequest, client: string): boolean {
   );
 }
 
-function canWrite(req: NextRequest): boolean {
-  return isMasterAuthorized(req.cookies.get('agrowth_master')?.value);
+function canWrite(req: NextRequest, client: string): boolean {
+  return isClientAuthorized(
+    client,
+    req.cookies.get(`client_auth_${client}`)?.value,
+    req.cookies.get('agrowth_master')?.value,
+  );
 }
 
 function storageConfig() {
@@ -70,7 +76,7 @@ export async function GET(req: NextRequest, ctx: { params: Promise<{ client: str
 
 export async function PUT(req: NextRequest, ctx: { params: Promise<{ client: string }> }) {
   const { client } = await ctx.params;
-  if (!canWrite(req)) return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
+  if (!canWrite(req, client)) return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
 
   const cfg = storageConfig();
   if (!cfg) return NextResponse.json({ error: 'storage_not_configured' }, { status: 503 });

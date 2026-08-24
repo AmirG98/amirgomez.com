@@ -1,7 +1,8 @@
 /* Editor en vivo de los portales de cliente.
  *
- * Se activa con Alt+E (o ?edit=1) y solo funciona con la cookie agrowth_master:
- * el cliente puede abrir el modo pero el guardado le va a devolver 401.
+ * Se activa SOLO con ?edit=1 en la URL. No hay atajo de teclado a proposito:
+ * publicar usa la misma clave del portal que tiene el cliente, asi que la
+ * proteccion real es que el modo no se descubra por accidente.
  *
  * Como funciona: a cada nodo de texto editable se le asigna una clave estable
  * (seccion + indice + tag). Se guarda {clave: texto} y al cargar la pagina se
@@ -141,7 +142,7 @@
       body: JSON.stringify({ edits: merged }),
     })
       .then(function (r) {
-        if (r.status === 401) throw new Error('Sin permiso: hace falta la clave maestra.');
+        if (r.status === 401) throw new Error('Sin permiso: entra al portal con su clave primero.');
         if (r.status === 503) throw new Error('Guardado local: falta configurar el storage.');
         if (!r.ok) throw new Error('No se pudo publicar.');
         return r.json();
@@ -189,10 +190,6 @@
       .catch(function () {});
 
     document.addEventListener('input', onInput, true);
-    document.addEventListener('keydown', function (e) {
-      if (e.altKey && (e.key === 'e' || e.key === 'E')) { e.preventDefault(); setMode(!on); }
-    });
-
     if (/[?&]edit=1/.test(location.search)) setMode(true);
   }
 
