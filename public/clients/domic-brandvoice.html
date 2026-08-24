@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domic Experiences · Voz de marca</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #000000; --ink-2: #4A4A4A; --ink-3: #8C8C8C;
+    --paper: #F8F8F8; --panel: #FFFFFF; --hairline: #E2E0DC;
+    --taupe: #9B8D7A; --taupe-soft: #F0EDE7; --taupe-deep: #7A6E5D;
+    --ok: #5A7A5E; --warn: #A8895A;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.6; font-weight: 300; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 1040px; margin: 0 auto; padding: 56px 28px 80px; }
+
+  header { margin-bottom: 46px; }
+  .brand { font-size: 13px; font-weight: 500; letter-spacing: 0.34em; text-transform: uppercase; color: var(--ink); }
+  .brand span { color: var(--taupe); }
+  h1 { font-size: 34px; font-weight: 300; letter-spacing: -0.015em; margin-top: 26px; }
+  .sub { font-size: 15px; color: var(--ink-2); margin-top: 10px; max-width: 62ch; font-weight: 300; }
+  .meta { display: flex; gap: 22px; margin-top: 22px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); }
+
+  section { margin-top: 52px; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; border-bottom: 1px solid var(--hairline); padding-bottom: 10px; margin-bottom: 22px; }
+  .sec-head h2 { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); }
+  .sec-head .note { font-size: 12px; color: var(--ink-3); margin-left: auto; font-weight: 300; }
+
+  /* Progreso del onboarding */
+  .progress { display: flex; gap: 3px; margin-bottom: 26px; }
+  .progress span { flex: 1; height: 3px; background: var(--hairline); }
+  .progress span.on { background: var(--taupe); }
+  .progress-label { font-size: 12px; color: var(--ink-2); margin-bottom: 10px; }
+
+  .phase { margin-bottom: 30px; }
+  .phase-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
+  .phase-num { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: var(--taupe); }
+  .phase-head h3 { font-size: 18px; font-weight: 400; }
+  .phase-head .when { margin-left: auto; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); }
+
+  .steps { display: grid; gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); }
+  .step { background: var(--panel); padding: 14px 18px; display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: start; }
+  .step .t { font-size: 14.5px; font-weight: 400; }
+  .step .d { font-size: 13px; color: var(--ink-2); margin-top: 3px; }
+  .st { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 9px; white-space: nowrap; }
+  .st.done { background: #EDF2ED; color: var(--ok); }
+  .st.now { background: var(--taupe-soft); color: var(--taupe-deep); }
+  .st.wait { background: #F7F1E7; color: var(--warn); }
+  .st.next { background: #F2F2F2; color: var(--ink-3); }
+
+  .callout { background: var(--taupe-soft); border-left: 2px solid var(--taupe); padding: 16px 20px; font-size: 14px; color: var(--ink-2); margin-top: 20px; }
+  .callout b { font-weight: 600; color: var(--ink); }
+
+  /* Funnel */
+  .funnel { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .stage { background: var(--panel); border: 1px solid var(--hairline); padding: 18px; }
+  .stage .n { font-size: 10px; font-weight: 600; letter-spacing: 0.16em; color: var(--taupe); }
+  .stage h4 { font-size: 15px; font-weight: 400; margin: 8px 0 6px; }
+  .stage p { font-size: 12.5px; color: var(--ink-2); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th { text-align: left; font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); padding: 9px 12px; border-bottom: 1px solid var(--hairline); }
+  td { padding: 12px; border-bottom: 1px solid var(--hairline); vertical-align: top; font-weight: 300; }
+  tr:last-child td { border-bottom: none; }
+  .tbl { background: var(--panel); border: 1px solid var(--hairline); overflow-x: auto; }
+  .pending { color: var(--ink-3); font-style: italic; }
+
+  /* Contexto */
+  .ctx { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); }
+  .ctx-card { background: var(--panel); padding: 20px 22px; }
+  .ctx-card h4 { font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--taupe-deep); margin-bottom: 8px; }
+  .ctx-card p { font-size: 13.5px; color: var(--ink-2); font-weight: 300; }
+  .ctx-card p + p { margin-top: 8px; }
+  .ctx-card strong { color: var(--ink); font-weight: 500; }
+
+  /* Ritmo de trabajo */
+  .rit { display: grid; grid-template-columns: 150px 1fr; gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); }
+  .rit > div { background: var(--panel); padding: 14px 18px; }
+  .rit .when { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--taupe-deep); }
+  .rit .what { font-size: 13.5px; color: var(--ink-2); font-weight: 300; }
+  .rit .what b { color: var(--ink); font-weight: 500; }
+
+  /* Metricas */
+  .met { display: grid; gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); }
+  .met-row { background: var(--panel); padding: 15px 20px; display: grid; grid-template-columns: 1fr 1.4fr; gap: 20px; }
+  .met-row .k { font-size: 14px; font-weight: 400; }
+  .met-row .k small { display: block; font-size: 12px; color: var(--taupe-deep); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 3px; }
+  .met-row .v { font-size: 13px; color: var(--ink-2); font-weight: 300; }
+
+  .mp { display: block; background: var(--ink); color: #fff; padding: 24px 28px; text-decoration: none; margin-top: 34px; transition: opacity .2s; }
+  .mp:hover { opacity: .9; }
+  .mp .k { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); }
+  .mp h3 { font-size: 20px; font-weight: 300; margin: 8px 0 6px; }
+  .mp p { font-size: 13.5px; color: #C4C0B8; max-width: 70ch; font-weight: 300; }
+  .mp .go { display: inline-block; margin-top: 13px; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--taupe); }
+
+  footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--hairline); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); }
+
+  @media (max-width: 820px) {
+    .funnel { grid-template-columns: repeat(2, 1fr); }
+    .step { grid-template-columns: 1fr; }
+    .ctx { grid-template-columns: 1fr; }
+    .rit { grid-template-columns: 1fr; }
+    .met-row { grid-template-columns: 1fr; gap: 6px; }
+    h1 { font-size: 27px; }
+  }
+
+  /* --- Mockups --- */
+  .mk-tabs { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 18px; }
+  .mk-tabs button { font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 0.04em; padding: 8px 15px; background: var(--panel); border: 1px solid var(--hairline); color: var(--ink-2); cursor: pointer; }
+  .mk-tabs button.on { background: var(--taupe); border-color: var(--taupe); color: #fff; }
+  .mk-set { display: none; } .mk-set.on { display: block; }
+  .mk-lede { font-size: 13.5px; color: var(--ink-2); max-width: 78ch; margin-bottom: 16px; font-weight: 300; }
+  .mk-lede b { color: var(--ink); font-weight: 500; }
+
+  .mk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .mk { position: relative; display: block; width: 100%; border: 0; padding: 0; margin: 0; background: none; cursor: zoom-in; overflow: hidden; font-family: var(--sans); text-align: left; }
+  .mk img { display: block; width: 100%; height: 240px; object-fit: cover; transition: transform .35s ease; }
+  .mk:hover img { transform: scale(1.03); }
+  .mk .cap { position: absolute; left: 0; right: 0; bottom: 0; display: block; padding: 26px 13px 11px; background: linear-gradient(to top, rgba(0,0,0,.72), transparent); color: #fff; }
+  .mk .cap .t { display: block; font-size: 12.5px; font-weight: 500; letter-spacing: 0.02em; }
+  .mk .cap .s { display: block; font-size: 11px; opacity: .78; margin-top: 1px; font-weight: 300; }
+
+  /* Descargas y links externos */
+  .dl { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 500; color: var(--taupe-deep); text-decoration: none; border-bottom: 1px solid var(--hairline); padding-bottom: 2px; }
+  .dl:hover { border-bottom-color: var(--taupe); }
+  .dl .tag { font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; background: var(--taupe-soft); color: var(--taupe-deep); padding: 2px 6px; }
+  .step .dl { margin-top: 8px; font-size: 12px; }
+
+  /* Lightbox */
+  .lb { position: fixed; inset: 0; background: rgba(0,0,0,.93); display: none; align-items: center; justify-content: center; z-index: 90; padding: 24px; }
+  .lb.on { display: flex; }
+  .lb img { max-width: 100%; max-height: 84vh; object-fit: contain; }
+  .lb .x { position: absolute; top: 18px; right: 24px; font-size: 30px; color: #fff; background: none; border: 0; cursor: pointer; line-height: 1; opacity: .8; }
+  .lb .nav { position: absolute; top: 50%; transform: translateY(-50%); font-size: 34px; color: #fff; background: none; border: 0; cursor: pointer; padding: 12px 18px; opacity: .65; }
+  .lb .nav:hover { opacity: 1; }
+  .lb .prev { left: 8px; } .lb .next { right: 8px; }
+  .lb .meta { position: absolute; bottom: 22px; left: 0; right: 0; text-align: center; color: #fff; font-size: 12.5px; font-weight: 300; letter-spacing: 0.04em; }
+
+  @media (max-width: 900px) { .mk-grid { grid-template-columns: repeat(2, 1fr); } .mk img { height: 190px; } }
+  @media (max-width: 560px) { .mk-grid { grid-template-columns: 1fr; } .mk img { height: 220px; } }
+
+  /* --- Cuestionario --- */
+  .bv-bar { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 14px; background: var(--paper); padding: 13px 0; border-bottom: 1px solid var(--hairline); margin-bottom: 26px; }
+  .bv-bar .prog { flex: 1; height: 6px; background: var(--hairline); }
+  .bv-bar .prog i { display: block; height: 100%; background: var(--taupe); width: 0; transition: width .25s; }
+  .bv-bar .cnt { font-size: 12.5px; font-weight: 500; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .bv-bar .saved { font-size: 12px; color: var(--ink-3); white-space: nowrap; }
+  .bv-block { margin-bottom: 34px; }
+  .bv-block > .bh { border-bottom: 1px solid var(--hairline); padding-bottom: 9px; margin-bottom: 6px; }
+  .bv-block > .bh .n { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--taupe-deep); }
+  .bv-block > .bh h3 { font-size: 17px; font-weight: 400; margin-top: 5px; }
+  .bv-block > .bh p { font-size: 13px; color: var(--ink-2); margin-top: 6px; font-weight: 300; max-width: 76ch; }
+  .q { padding: 18px 0; border-bottom: 1px solid var(--hairline); }
+  .q:last-child { border-bottom: none; }
+  .q label { display: block; font-size: 14px; color: var(--ink); margin-bottom: 9px; font-weight: 400; }
+  .q label .num { color: var(--taupe-deep); font-weight: 600; margin-right: 7px; }
+  .q textarea { width: 100%; font-family: var(--sans); font-size: 14px; line-height: 1.55; color: var(--ink); background: var(--panel); border: 1px solid var(--hairline); padding: 11px 13px; resize: vertical; min-height: 62px; outline: none; }
+  .q textarea:focus { border-color: var(--taupe); }
+  .q.done label .num::after { content: ' ✓'; color: var(--ok); }
+  .bv-send { border: 1px solid var(--hairline); padding: 22px 24px; margin-top: 10px; background: var(--panel); }
+  .bv-send h3 { font-size: 16px; font-weight: 400; margin-bottom: 6px; }
+  .bv-send p { font-size: 13px; color: var(--ink-2); font-weight: 300; max-width: 72ch; }
+  .bv-send .row { display: flex; align-items: center; gap: 14px; margin-top: 16px; flex-wrap: wrap; }
+  .bv-send button { font-family: var(--sans); font-size: 12.5px; font-weight: 500; letter-spacing: 0.06em; padding: 11px 24px; background: var(--taupe); color: #fff; border: 1px solid var(--taupe); cursor: pointer; }
+  .bv-send button:hover { background: var(--taupe-deep); border-color: var(--taupe-deep); }
+  .bv-send button:disabled { opacity: .45; cursor: default; }
+  .bv-send .msg { font-size: 12.5px; color: var(--ink-2); }
+  .bv-send .msg.ok { color: var(--ok); }
+  .bv-sent { background: var(--taupe-soft); border-left: 3px solid var(--taupe); padding: 15px 19px; font-size: 13.5px; color: var(--ink-2); margin-bottom: 24px; display: none; }
+  .bv-sent.on { display: block; }
+  .bv-sent b { color: var(--ink); font-weight: 500; }
+</style>
+</head>
+<body data-client="domic" data-page="brandvoice">
+<div class="page">
+
+  <header>
+    <div class="brand">DOMIC<span>&nbsp;·&nbsp;</span>EXPERIENCES</div>
+    <h1>Voz de marca</h1>
+    <p class="sub">Treinta y dos preguntas para capturar c&oacute;mo habla Domic. No hay respuestas correctas: lo que sirve es c&oacute;mo lo dir&iacute;an ustedes, con sus palabras. Se guarda solo a medida que escriben.</p>
+    <div class="meta">
+      <span>Fase de onboarding</span>
+      <span>Actualizado 23 ago 2026</span>
+    </div>
+  </header>
+  <div class="bv-sent" id="bvSent">
+    <b>Ya nos lo enviaron.</b> Podés seguir editando y volver a enviarlo si quieren cambiar algo: nos llega la versión nueva.
+  </div>
+
+  <div class="bv-bar">
+    <span class="cnt" id="bvCnt">0 de 32</span>
+    <span class="prog"><i id="bvProg"></i></span>
+    <span class="saved" id="bvSaved"></span>
+  </div>
+
+  <p class="mk-lede" style="margin-bottom:26px;">
+    Responder de corrido, sin pulir. Una frase alcanza en la mayoría de los casos, y si algo no aplica se saltea.
+    Lo más útil son los ejemplos concretos: una frase que le dijeron a un cliente, algo que un competidor dice y les molesta,
+    una objeción que escuchan siempre. <b>Se guarda solo</b>, así que pueden cerrar y retomar cuando quieran.
+  </p>
+
+  <div class="bv-block"><div class="bh"><div class="n">Bloque 01</div><h3>Qui&eacute;nes son</h3></div><div class="q" data-q="q01"><label for="q01"><span class="num">1.</span>Si tuvieran que explicarle a alguien qu&eacute; hace Domic sin usar la palabra "dom&oacute;tica" ni "automatizaci&oacute;n", &iquest;qu&eacute; dir&iacute;an?</label><textarea id="q01" name="q01" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q02"><label for="q02"><span class="num">2.</span>&iquest;Qu&eacute; hac&iacute;an antes de Domic que explica por qu&eacute; Domic es as&iacute; y no de otra manera?</label><textarea id="q02" name="q02" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q03"><label for="q03"><span class="num">3.</span>&iquest;Cu&aacute;l fue el proyecto del que m&aacute;s orgullosos est&aacute;n, y por qu&eacute; ese y no otro?</label><textarea id="q03" name="q03" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q04"><label for="q04"><span class="num">4.</span>&iquest;Hay algo que les hayan pedido y hayan dicho que no? &iquest;Por qu&eacute;?</label><textarea id="q04" name="q04" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q05"><label for="q05"><span class="num">5.</span>Si Domic desapareciera ma&ntilde;ana, &iquest;qu&eacute; perder&iacute;a el mercado que nadie m&aacute;s est&aacute; ofreciendo?</label><textarea id="q05" name="q05" rows="2" placeholder="Escribí acá…"></textarea></div></div><div class="bv-block"><div class="bh"><div class="n">Bloque 02</div><h3>El cliente</h3></div><div class="q" data-q="q06"><label for="q06"><span class="num">6.</span>Describan al cliente ideal como si le estuvieran contando a un amigo qui&eacute;n es: no el perfil demogr&aacute;fico, la persona.</label><textarea id="q06" name="q06" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q07"><label for="q07"><span class="num">7.</span>&iquest;Qu&eacute; est&aacute; sintiendo ese cliente en el momento exacto en que los contacta por primera vez?</label><textarea id="q07" name="q07" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q08"><label for="q08"><span class="num">8.</span>&iquest;Cu&aacute;l es el miedo que no dice en voz alta cuando eval&uacute;a un proyecto de este tama&ntilde;o?</label><textarea id="q08" name="q08" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q09"><label for="q09"><span class="num">9.</span>&iquest;Qu&eacute; objeci&oacute;n escuchan una y otra vez? &iquest;C&oacute;mo la responden hoy?</label><textarea id="q09" name="q09" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q10"><label for="q10"><span class="num">10.</span>&iquest;Hay un tipo de cliente con el que prefieren no trabajar? &iquest;C&oacute;mo se dan cuenta temprano?</label><textarea id="q10" name="q10" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q11"><label for="q11"><span class="num">11.</span>Cuando un proyecto sale muy bien, &iquest;qu&eacute; suele decir el cliente al final? Si tienen la frase textual, mejor.</label><textarea id="q11" name="q11" rows="2" placeholder="Escribí acá…"></textarea></div></div><div class="bv-block"><div class="bh"><div class="n">Bloque 03</div><h3>El diferencial</h3><p>Pablo fue claro en que lo que distingue a Domic es devolverle el poder al cliente mediante procesos transparentes. Estas preguntas buscan aterrizar eso en frases usables.</p></div><div class="q" data-q="q12"><label for="q12"><span class="num">12.</span>&iquest;Qu&eacute; hace un integrador com&uacute;n que ustedes se niegan a hacer?</label><textarea id="q12" name="q12" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q13"><label for="q13"><span class="num">13.</span>&iquest;En qu&eacute; momento del proceso el cliente se da cuenta de que Domic trabaja distinto?</label><textarea id="q13" name="q13" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q14"><label for="q14"><span class="num">14.</span>&iquest;C&oacute;mo le explican a alguien que la venta t&eacute;cnica y la ejecuci&oacute;n t&eacute;cnica son cosas separadas, sin que suene a tecnicismo?</label><textarea id="q14" name="q14" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q15"><label for="q15"><span class="num">15.</span>La calculadora de presupuesto: &iquest;qu&eacute; quieren que sienta el cliente cuando ve el costo moverse seg&uacute;n sus prioridades?</label><textarea id="q15" name="q15" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q16"><label for="q16"><span class="num">16.</span>&iquest;Qu&eacute; frase de la competencia les hace ruido cada vez que la leen?</label><textarea id="q16" name="q16" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q17"><label for="q17"><span class="num">17.</span>Si tuvieran que defender el servicio de ingenier&iacute;a de USD 7.000 ante alguien que dice "&iquest;por qu&eacute; pago por un dise&ntilde;o?", &iquest;qu&eacute; le contestan?</label><textarea id="q17" name="q17" rows="2" placeholder="Escribí acá…"></textarea></div></div><div class="bv-block"><div class="bh"><div class="n">Bloque 04</div><h3>C&oacute;mo suena Domic</h3></div><div class="q" data-q="q18"><label for="q18"><span class="num">18.</span>Elijan tres adjetivos que describan c&oacute;mo deber&iacute;a sonar Domic. Y tres que definitivamente no.</label><textarea id="q18" name="q18" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q19"><label for="q19"><span class="num">19.</span>&iquest;Domic habla de "usted", de "vos" o de "t&uacute;"? &iquest;Cambia seg&uacute;n el pa&iacute;s?</label><textarea id="q19" name="q19" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q20"><label for="q20"><span class="num">20.</span>&iquest;Hay palabras del rubro que prefieren evitar? &iquest;Cu&aacute;les y por qu&eacute;?</label><textarea id="q20" name="q20" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q21"><label for="q21"><span class="num">21.</span>&iquest;Hay palabras que s&iacute; quieren que aparezcan siempre?</label><textarea id="q21" name="q21" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q22"><label for="q22"><span class="num">22.</span>Una marca de cualquier rubro que admiren por c&oacute;mo comunica: &iquest;cu&aacute;l es y qu&eacute; le copiar&iacute;an?</label><textarea id="q22" name="q22" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q23"><label for="q23"><span class="num">23.</span>Una marca del rubro que comunique mal: &iquest;qu&eacute; hace exactamente que no quieren repetir?</label><textarea id="q23" name="q23" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q24"><label for="q24"><span class="num">24.</span>&iquest;Domic hace chistes? &iquest;Es formal? &iquest;D&oacute;nde est&aacute; el l&iacute;mite entre cercano y poco serio?</label><textarea id="q24" name="q24" rows="2" placeholder="Escribí acá…"></textarea></div></div><div class="bv-block"><div class="bh"><div class="n">Bloque 05</div><h3>El mensaje seg&uacute;n con qui&eacute;n se habla</h3><p>Domic le habla a dos p&uacute;blicos distintos y el mensaje no puede ser el mismo.</p></div><div class="q" data-q="q25"><label for="q25"><span class="num">25.</span>A un due&ntilde;o de casa: &iquest;qu&eacute; es lo primero que tiene que entender?</label><textarea id="q25" name="q25" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q26"><label for="q26"><span class="num">26.</span>A un arquitecto o desarrollador: &iquest;qu&eacute; los convence de trabajar con ustedes en lugar de con el integrador de siempre?</label><textarea id="q26" name="q26" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q27"><label for="q27"><span class="num">27.</span>&iquest;Hay algo que le dir&iacute;an a un arquitecto que nunca le dir&iacute;an a un due&ntilde;o de casa, o al rev&eacute;s?</label><textarea id="q27" name="q27" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q28"><label for="q28"><span class="num">28.</span>El sitio de Domic est&aacute; en ingl&eacute;s porque venden en Estados Unidos. &iquest;C&oacute;mo cambia la voz entre ingl&eacute;s y espa&ntilde;ol, si es que cambia?</label><textarea id="q28" name="q28" rows="2" placeholder="Escribí acá…"></textarea></div></div><div class="bv-block"><div class="bh"><div class="n">Bloque 06</div><h3>L&iacute;mites</h3></div><div class="q" data-q="q29"><label for="q29"><span class="num">29.</span>&iquest;Qu&eacute; cosa, dicha en un anuncio de Domic, los har&iacute;a pedir que lo bajen de inmediato?</label><textarea id="q29" name="q29" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q30"><label for="q30"><span class="num">30.</span>&iquest;Hay temas, im&aacute;genes o situaciones que no quieren asociar a la marca?</label><textarea id="q30" name="q30" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q31"><label for="q31"><span class="num">31.</span>Sobre precios: &iquest;se hablan abiertamente, se sugieren rangos, o no se mencionan nunca?</label><textarea id="q31" name="q31" rows="2" placeholder="Escribí acá…"></textarea></div><div class="q" data-q="q32"><label for="q32"><span class="num">32.</span>&iquest;Qu&eacute; tan lejos pueden ir con una promesa? &iquest;Prefieren prometer poco y cumplir, o mostrar el techo de lo que se puede lograr?</label><textarea id="q32" name="q32" rows="2" placeholder="Escribí acá…"></textarea></div></div>
+
+  <div class="bv-send">
+    <h3>Cuando terminen</h3>
+    <p>No hace falta responder las treinta. Con lo que tengan, mandenlo y nosotros pedimos lo que falte. Al enviar nos llega un aviso y lo revisamos.</p>
+    <div class="row">
+      <button id="bvSubmit">Enviar el cuestionario</button>
+      <span class="msg" id="bvMsg"></span>
+    </div>
+  </div>
+
+  <a class="dl" href="/clients/docs/domic-cuestionario-voz-de-marca.pdf" target="_blank" rel="noopener" style="margin-top:22px;">
+    <span class="tag">PDF</span> Descargarlo para responder en papel o en Word
+  </a>
+
+  <footer>Domic Experiences &middot; Voz de marca</footer>
+</div>
+
+<script>
+(function () {
+  var API = '/api/brand-voice/domic';
+  var LS = 'brandvoice:domic';
+  var TOTAL = 32;
+  var areas = Array.prototype.slice.call(document.querySelectorAll('.q textarea'));
+  var cnt = document.getElementById('bvCnt');
+  var prog = document.getElementById('bvProg');
+  var saved = document.getElementById('bvSaved');
+  var msg = document.getElementById('bvMsg');
+  var timer = null;
+
+  function collect() {
+    var a = {};
+    areas.forEach(function (t) { var v = t.value.trim(); if (v) a[t.id] = v; });
+    return a;
+  }
+
+  function questions() {
+    var q = {};
+    document.querySelectorAll('.q').forEach(function (d) {
+      var l = d.querySelector('label');
+      q[d.getAttribute('data-q')] = l ? l.textContent.replace(/^\s*\d+\.\s*/, '') : '';
+    });
+    return q;
+  }
+
+  function tally() {
+    var n = 0;
+    areas.forEach(function (t) {
+      var has = t.value.trim().length > 0;
+      t.closest('.q').classList.toggle('done', has);
+      if (has) n++;
+    });
+    cnt.textContent = n + ' de ' + TOTAL;
+    prog.style.width = (n / TOTAL * 100) + '%';
+    return n;
+  }
+
+  function autosave() {
+    var answers = collect();
+    try { localStorage.setItem(LS, JSON.stringify(answers)); } catch (e) {}
+    saved.textContent = 'Guardando…';
+    fetch(API, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ answers: answers })
+    })
+      .then(function (r) { saved.textContent = r.ok ? 'Guardado' : 'Guardado en este navegador'; })
+      .catch(function () { saved.textContent = 'Guardado en este navegador'; });
+  }
+
+  function fill(answers) {
+    if (!answers) return;
+    areas.forEach(function (t) { if (answers[t.id]) t.value = answers[t.id]; });
+    tally();
+  }
+
+  areas.forEach(function (t) {
+    t.addEventListener('input', function () {
+      tally();
+      clearTimeout(timer);
+      timer = setTimeout(autosave, 1200);
+    });
+  });
+
+  document.getElementById('bvSubmit').addEventListener('click', function () {
+    var n = tally();
+    if (!n) { msg.textContent = 'Todavía no hay ninguna respuesta.'; return; }
+    var btn = this;
+    btn.disabled = true;
+    msg.className = 'msg';
+    msg.textContent = 'Enviando…';
+    fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ answers: collect(), questions: questions() })
+    })
+      .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
+      .then(function () {
+        msg.className = 'msg ok';
+        msg.textContent = 'Enviado. Ya nos llegó, gracias.';
+        document.getElementById('bvSent').classList.add('on');
+        btn.disabled = false;
+      })
+      .catch(function () {
+        msg.textContent = 'No se pudo enviar. Está guardado: probá de nuevo en un momento.';
+        btn.disabled = false;
+      });
+  });
+
+  var local = null;
+  try { local = JSON.parse(localStorage.getItem(LS)); } catch (e) {}
+  fill(local);
+
+  fetch(API, { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      if (d && d.doc && d.doc.answers) {
+        fill(d.doc.answers);
+        if (d.doc.submittedAt) document.getElementById('bvSent').classList.add('on');
+      }
+    })
+    .catch(function () {});
+
+  tally();
+})();
+</script>
+<script src="/clients/portal-edit.js" defer></script>
+</body>
+</html>

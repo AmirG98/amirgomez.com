@@ -110,6 +110,41 @@
     .met-row { grid-template-columns: 1fr; gap: 6px; }
     h1 { font-size: 27px; }
   }
+
+  /* --- Mockups --- */
+  .mk-tabs { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 18px; }
+  .mk-tabs button { font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 0.04em; padding: 8px 15px; background: var(--panel); border: 1px solid var(--hairline); color: var(--ink-2); cursor: pointer; }
+  .mk-tabs button.on { background: var(--taupe); border-color: var(--taupe); color: #fff; }
+  .mk-set { display: none; } .mk-set.on { display: block; }
+  .mk-lede { font-size: 13.5px; color: var(--ink-2); max-width: 78ch; margin-bottom: 16px; font-weight: 300; }
+  .mk-lede b { color: var(--ink); font-weight: 500; }
+
+  .mk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .mk { position: relative; display: block; width: 100%; border: 0; padding: 0; margin: 0; background: none; cursor: zoom-in; overflow: hidden; font-family: var(--sans); text-align: left; }
+  .mk img { display: block; width: 100%; height: 240px; object-fit: cover; transition: transform .35s ease; }
+  .mk:hover img { transform: scale(1.03); }
+  .mk .cap { position: absolute; left: 0; right: 0; bottom: 0; display: block; padding: 26px 13px 11px; background: linear-gradient(to top, rgba(0,0,0,.72), transparent); color: #fff; }
+  .mk .cap .t { display: block; font-size: 12.5px; font-weight: 500; letter-spacing: 0.02em; }
+  .mk .cap .s { display: block; font-size: 11px; opacity: .78; margin-top: 1px; font-weight: 300; }
+
+  /* Descargas y links externos */
+  .dl { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 500; color: var(--taupe-deep); text-decoration: none; border-bottom: 1px solid var(--hairline); padding-bottom: 2px; }
+  .dl:hover { border-bottom-color: var(--taupe); }
+  .dl .tag { font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; background: var(--taupe-soft); color: var(--taupe-deep); padding: 2px 6px; }
+  .step .dl { margin-top: 8px; font-size: 12px; }
+
+  /* Lightbox */
+  .lb { position: fixed; inset: 0; background: rgba(0,0,0,.93); display: none; align-items: center; justify-content: center; z-index: 90; padding: 24px; }
+  .lb.on { display: flex; }
+  .lb img { max-width: 100%; max-height: 84vh; object-fit: contain; }
+  .lb .x { position: absolute; top: 18px; right: 24px; font-size: 30px; color: #fff; background: none; border: 0; cursor: pointer; line-height: 1; opacity: .8; }
+  .lb .nav { position: absolute; top: 50%; transform: translateY(-50%); font-size: 34px; color: #fff; background: none; border: 0; cursor: pointer; padding: 12px 18px; opacity: .65; }
+  .lb .nav:hover { opacity: 1; }
+  .lb .prev { left: 8px; } .lb .next { right: 8px; }
+  .lb .meta { position: absolute; bottom: 22px; left: 0; right: 0; text-align: center; color: #fff; font-size: 12.5px; font-weight: 300; letter-spacing: 0.04em; }
+
+  @media (max-width: 900px) { .mk-grid { grid-template-columns: repeat(2, 1fr); } .mk img { height: 190px; } }
+  @media (max-width: 560px) { .mk-grid { grid-template-columns: 1fr; } .mk img { height: 220px; } }
 </style>
 </head>
 <body data-client="domic" data-page="dashboard">
@@ -161,8 +196,8 @@
         <div class="step">
           <div>
             <div class="t">Cuestionario de voz de marca</div>
-            <div class="d">Treinta preguntas para capturar cómo habla Domic, qué se niega a decir y la filosofía detrás de la oferta. Es lo que evita que los mensajes suenen como los de cualquier otro integrador.</div>
-            <a class="dl" href="/clients/docs/domic-cuestionario-voz-de-marca.pdf" target="_blank" rel="noopener"><span class="tag">PDF</span> Descargar el cuestionario</a>
+            <div class="d">Treinta y dos preguntas para capturar cómo habla Domic, qué se niega a decir y la filosofía detrás de la oferta. Es lo que evita que los mensajes suenen como los de cualquier otro integrador.</div>
+            <a class="dl" href="/clients/domic/brandvoice"><span class="tag">ABRIR</span> Completar el cuestionario acá</a>
           </div>
           <span class="st wait">Espera a Domic</span>
         </div>

@@ -40,7 +40,7 @@ export function middleware(req: NextRequest) {
   }
 
   const match = req.nextUrl.pathname.match(
-    /^\/clients\/([^/]+?)(?:\.html)?(?:\/(approvals|reports|ideas|transcripts|context|budgets|dashboard|masterplan|frameworks|qa)(?:\/(\d{4}-\d{2}-\d{2}))?)?\/?$/
+    /^\/clients\/([^/]+?)(?:\.html)?(?:\/(approvals|reports|ideas|transcripts|context|budgets|dashboard|masterplan|frameworks|qa|brandvoice)(?:\/(\d{4}-\d{2}-\d{2}))?)?\/?$/
   );
   if (!match) return NextResponse.next();
 
@@ -60,10 +60,11 @@ export function middleware(req: NextRequest) {
     client.endsWith('-masterplan') ||
     client.endsWith('-frameworks') ||
     client.endsWith('-qa') ||
+    client.endsWith('-brandvoice') ||
     client.endsWith('-budgets') ||
     /-report-\d{4}-\d{2}-\d{2}$/.test(client)
   ) {
-    const base = client.replace(/-(hub|approvals|ideas|transcripts|context|budgets|dashboard|masterplan|frameworks|qa|report-\d{4}-\d{2}-\d{2})$/, '');
+    const base = client.replace(/-(hub|approvals|ideas|transcripts|context|budgets|dashboard|masterplan|frameworks|qa|brandvoice|report-\d{4}-\d{2}-\d{2})$/, '');
     return NextResponse.rewrite(new URL(`/clients/${base}-login.html`, req.url));
   }
 
@@ -83,6 +84,7 @@ export function middleware(req: NextRequest) {
   if (section === 'masterplan') return NextResponse.rewrite(new URL(`/clients/${client}-masterplan.html`, req.url));
   if (section === 'frameworks') return NextResponse.rewrite(new URL(`/clients/${client}-frameworks.html`, req.url));
   if (section === 'qa') return NextResponse.rewrite(new URL(`/clients/${client}-qa.html`, req.url));
+  if (section === 'brandvoice') return NextResponse.rewrite(new URL(`/clients/${client}-brandvoice.html`, req.url));
   if (section === 'budgets') return NextResponse.rewrite(new URL(`/clients/${client}-budgets.html`, req.url));
   if (section === 'reports' && date) return NextResponse.rewrite(new URL(`/clients/${client}-report-${date}.html`, req.url));
   if (section === 'reports') return NextResponse.rewrite(new URL(`/clients/${client}.html`, req.url));
