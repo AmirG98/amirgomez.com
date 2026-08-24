@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { isClientAuthorized } from '../../../../lib/client-auth';
+import { isClientAuthorized, isMasterAuthorized } from '../../../../lib/client-auth';
 
 // Cuestionario de voz de marca, completable desde el portal del cliente.
 //
@@ -102,6 +102,24 @@ export async function PUT(req: NextRequest, ctx: { params: Promise<{ client: str
   if (!res.ok) return NextResponse.json({ error: 'storage_error' }, { status: 502 });
 
   return NextResponse.json({ ok: true, count: Object.keys(doc.answers).length });
+}
+
+// Resetea el cuestionario (respuestas y estado de enviado). Solo master:
+// sirve para limpiar pruebas o volver a empezar de cero.
+export async function DELETE(req: NextRequest, ctx: { params: Promise<{ client: string }> }) {
+  const { client } = await ctx.params;
+  if (!isMasterAuthorized(req.cookies.get('agrowth_master')?.value)) {
+    return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
+  }
+  const cfg = storageConfig();
+  if (!cfg) return NextResponse.json({ error: 'storage_not_configured' }, { status: 503 });
+
+  const res = await fetch(`${cfg.url}/del/${encodeURIComponent(key(client))}`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${cfg.token}` },
+  });
+  if (!res.ok) return NextResponse.json({ error: 'storage_error' }, { status: 502 });
+  return NextResponse.json({ ok: true, reset: true });
 }
 
 export async function POST(req: NextRequest, ctx: { params: Promise<{ client: string }> }) {
