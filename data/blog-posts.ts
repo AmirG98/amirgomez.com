@@ -85448,6 +85448,367 @@ Wedding Venue Leads' 2026 benchmark guide recommends venues allocate 5 to 10% of
 
 At $40 to $150 per lead against a $15,000-plus average booking value, a wedding venue can profitably outbid most other advertisers on Google — so the actionable move is to stop optimizing the campaign for cost per click or cost per lead alone, and instead build conversion tracking down to cost per booked tour and cost per signed contract, since a $150 lead that closes is cheaper, in the metric that matters, than a $15 directory lead that never tours.`
   },
+  {
+    id: "548",
+    title: "What Is the Minimum Ad Budget for Yelp Ads in 2026?",
+    slug: "yelp-ads-minimum-budget-2026",
+    excerpt: "Yelp Ads has a $150/month self-serve minimum (about $5/day) in 2026, but Yelp recommends $300-$1,000/month to generate meaningful leads on its CPC model.",
+    featuredImage: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-24",
+    category: "Advertising Strategy",
+    tags: ["Yelp Ads", "Local Advertising", "PPC Budgeting", "Small Business Marketing", "Ad Spend", "CPC Advertising"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Yelp Ads Minimum Budget 2026: $150/Month Explained",
+      metaDescription: "Yelp Ads' self-serve minimum is $150 per month (about $5/day) in 2026. Yelp recommends $300-$1,000/month for real results under its CPC pricing model.",
+      keywords: ["Yelp Ads minimum budget", "Yelp advertising cost 2026", "Yelp Ads pricing", "Yelp CPC advertising", "how much does Yelp advertising cost", "Yelp Ads for business"]
+    },
+    content: `Yelp Ads has a self-serve minimum of $150 per month, equal to roughly $5 per day, for local business accounts running campaigns directly through Yelp's ad platform in 2026. That figure is the technical floor, but Yelp itself points advertisers toward a $300 to $1,000 per month starting range to see a meaningful number of leads, since $150 buys very few clicks in a competitive category. There's no long-term contract at any budget level — you can raise, lower, pause, or cancel spend at any time.
+
+## What the $150 Minimum Actually Covers
+
+Yelp Ads doesn't work like a flat monthly subscription. You set a maximum daily or monthly budget, and Yelp charges you per click on a cost-per-click (CPC) basis until that cap is reached — this is how Yelp's own support documentation describes its CPC advertising program. At the $150 per month floor:
+
+- **Daily cap:** roughly $5 per day, the published minimum average daily budget for self-serve advertisers on business.yelp.com.
+- **Click volume:** because CPC for Yelp Ads commonly runs $2 to $10 per click depending on category, market, and competition, a $150 monthly budget can translate to as few as 15 to 75 clicks for the entire month.
+- **Product scope:** the $150 figure covers Yelp Ads (the CPC product) by itself. Bundling the Upgrade Package on top of a Yelp Business Page pushes the minimum combined bill to roughly $270 per month.
+- **No fixed rate:** Yelp does not publish a set CPC. Your price per click floats with local supply and demand, so the same $150 budget buys a different number of clicks in different cities and categories.
+
+**Yelp's published $5-per-day floor is a spending cap, not a results guarantee — most businesses need two to three times that to generate a usable volume of clicks.**
+
+## Why Real Budgets Run Higher Than the Minimum
+
+Because Yelp Ads is an auction rather than a flat-rate placement, agencies that manage Yelp campaigns consistently treat the $150 floor as a testing budget, not a growth budget. Independent benchmarks converge on a few recurring tiers:
+
+- **Small local businesses:** commonly spend $300 to $500 per month.
+- **Mid-range advertisers:** typically allocate $1,000 to $2,500 per month.
+- **High-budget or multi-location advertisers:** often spend $5,000 or more per month.
+- **Home service contractors specifically:** real-world budgets tend to fall between $500 and $5,000 per month, based on industry-specific spend breakdowns from agencies working in that vertical.
+
+These figures apply to self-serve, local-business accounts. Larger brands, multi-location advertisers, and agency-managed accounts can operate under different pricing structures that Yelp negotiates separately and doesn't publish.
+
+## How the Minimum Compares to a Working Budget
+
+The minimum-budget question is really two separate questions: what's the smallest amount Yelp will let you spend, and what's the smallest amount that actually produces results. The $150 per month, or $5 per day, figure answers the first question — it's the platform's hard floor for self-serve campaigns. The $300 to $1,000 per month range that Yelp itself suggests, and that most agencies target as a realistic starting point, answers the second. Between those two numbers is where most small businesses land once they move from testing to running an ongoing campaign.
+
+## Bottom Line
+
+If you're only testing whether Yelp Ads works for your business, start at the $150 per month self-serve minimum for two to four weeks and watch your cost-per-click and lead volume before committing more. If you're budgeting for actual results, plan for at least $300 to $500 per month from day one — the $150 technical minimum is rarely enough to generate a statistically meaningful number of clicks in most categories.`
+  },
+  {
+    id: "549",
+    title: "Quora Ads Minimum Budget in 2026",
+    slug: "quora-ads-minimum-budget-2026",
+    excerpt: "Quora Ads has a $5 minimum daily budget per campaign, $0.01 minimum CPC and $0.20 minimum CPM bids, and no account-level minimum spend — but real testing takes $50-$200/day.",
+    featuredImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-24",
+    category: "Advertising Strategy",
+    tags: ["Quora Ads", "Paid Advertising", "Ad Budgets", "B2B Advertising"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Quora Ads Minimum Budget 2026: $5/Day Explained",
+      metaDescription: "Quora Ads requires a $5 minimum daily budget per campaign with no account minimum, but real tests need $50-$200/day. See the sourced numbers and benchmarks.",
+      keywords: ["Quora Ads minimum budget", "Quora Ads cost 2026", "Quora Ads CPC", "Quora advertising pricing", "how much does Quora Ads cost"]
+    },
+    content: `Quora Ads has no platform fee and no large upfront commitment. The minimum daily budget is $5 per campaign, the minimum cost-per-click (CPC) bid is $0.01, and the minimum CPM bid (per 1,000 impressions) is $0.20, with no account-level minimum spend, setup fee, or required commitment, according to Quora's own advertiser documentation. That $5 floor is a technical minimum, not a workable test budget: most advertisers running real campaigns budget $50 to $200 per day per audience to get usable results.
+
+## What the $5 Minimum Actually Covers
+
+A single Quora Ads campaign can legally run on $5 per day. That figure is Quora's system-enforced floor, published in the platform's Budget Setting Best Practices guidance, and it applies per campaign rather than per account. There is no signup fee and no minimum total spend commitment, so you can launch a campaign, pause it, and restart it without penalty.
+
+Bidding has its own floor, separate from the daily budget. Cost-per-click bidding starts at $0.01 per click. Cost-per-1,000-impressions (CPM) bidding starts at $0.20. Both minimums come from Quora for Business's own bidding guidance for advertisers.
+
+At $5 per day, a CPC campaign only delivers a handful of clicks once the auction sets its actual price, which is nowhere near enough volume to judge whether an audience or ad angle is working.
+
+## What Advertisers Actually Budget
+
+Because the $5 floor produces too little data to be useful, marketing teams treat it as a compliance minimum, not a planning number. Guidance aimed at real advertisers consistently points to $50 to $200 per day per audience as the range needed to gather statistically meaningful performance data within a two-to-three week testing window.
+
+That range moves with the campaign's CPC. Higher-competition B2B categories bid up toward the higher end of Quora's CPC range, so a $50/day budget there buys fewer clicks than the same budget in a lower-CPC consumer category.
+
+Recommended starting points for a first Quora Ads test:
+
+- $50 to $100 per day per audience for a small business or single-product test
+- $100 to $200 per day per audience for a B2B SaaS or lead-gen campaign competing on higher-cost keywords
+- A minimum two-to-three week run before pausing or judging results, since daily swings in a small sample are not reliable signal
+
+## How Quora Ads Costs Compare
+
+Quora's CPC generally runs below LinkedIn, which commonly charges $7 to $15 per click for B2B campaigns, and below Google Search for comparable B2B keywords, which often runs $5 to $15 per click. It sits closer to Reddit Ads, which typically runs $1 to $3 per click. That lower per-click cost is a big part of why Quora's $5/day minimum is usable at all: a dollar buys more clicks on Quora than it does on higher-CPC platforms, even though the stated daily minimum is similar across most self-serve ad platforms.
+
+## Bottom Line
+
+Budget $50 to $100 per day per audience for at least two to three weeks before judging a Quora Ads test — the $5/day platform minimum will technically run, but it will not generate enough clicks to tell you whether the campaign actually works.`
+  },
+  {
+    id: "550",
+    title: "Appliance Repair Cost Per Lead on Google Ads (2026)",
+    slug: "appliance-repair-cost-per-lead-google-ads-2026",
+    excerpt: "Appliance repair companies pay $30-$75 per lead on Google Search Ads in 2026, or $12-$30 via Local Services Ads. Here's what drives the difference, backed by 2026 industry data.",
+    featuredImage: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-24",
+    category: "Google Ads",
+    tags: ["Google Ads", "Local Services Ads", "Home Services Marketing", "Cost Per Lead"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Appliance Repair Cost Per Lead on Google Ads (2026)",
+      metaDescription: "Appliance repair Google Ads leads cost $30-$75 via Search Ads or $12-$30 via Local Services Ads in 2026. See sourced benchmarks and what moves your cost per lead.",
+      keywords: ["appliance repair cost per lead", "appliance repair Google Ads cost", "Google Local Services Ads appliance repair", "appliance repair PPC cost 2026", "cost per lead home services"]
+    },
+    content: `Appliance repair companies running Google Ads search campaigns in 2026 typically pay between $30 and $75 per lead, with the national average landing around $42 to $51. Google Local Services Ads (LSA) run cheaper for the same trade, averaging roughly $12 to $30 per lead since you only pay when a customer contacts you directly through the platform. Where you fall in that range depends heavily on your metro area and campaign quality.
+
+## What Your Cost Per Lead Depends On
+
+Four factors move appliance repair lead costs more than anything else.
+
+- **Search Ads vs Local Services Ads.** Traditional Search campaigns bid on keywords and charge per click, so you pay even for clicks that do not convert. LSAs charge only when a verified customer contacts you, which is why they consistently price lower per lead.
+- **Metro size and local competition.** Dense, high-income metros like Dallas, Phoenix, and Atlanta push costs toward $50 to $90 per lead. Smaller or less-saturated markets often run $20 to $50.
+- **Keyword intent.** Emergency and same-day repair terms convert well but cost more per click than generic "appliance repair" searches. Brand and appliance-specific terms (washer repair, refrigerator repair) tend to convert cheaper than broad category terms.
+- **Landing page and call-tracking setup.** A dedicated landing page with a clear phone number and quote form typically converts at a meaningfully higher rate than sending clicks to a generic homepage, which lowers cost per lead even at a fixed cost per click.
+
+## Sourced Cost Benchmarks for 2026
+
+99calls tracked appliance repair Google Ads accounts nationally in 2026 and found average lead costs of $37 to $55, with top-performing campaigns (top 10%) reaching $29 to $34 per lead and highly competitive markets exceeding $60. The same report found appliance repair cost per click dropped 24% over two years, from $13.58 to $10.28, and overall lead costs are down roughly 13% since 2024.
+
+There is no appliance-repair-specific line item in WordStream's 2026 Google Ads Benchmarks report, so the closest matching category is Home & Home Improvement, which WordStream tracked across more than 13,000 search campaigns from April 2025 to March 2026. That broader category averaged an $8.33 cost per click and a $90.92 cost per lead. Treat this as a ceiling reference for home-improvement-adjacent trades generally, not an appliance-repair-specific number, since it also includes higher-ticket categories like remodeling and roofing that pull the average up.
+
+On the Local Services Ads side, Searchlight Digital's 2026 trade-by-trade cost analysis put appliance repair LSA leads at $12 to $30, and found home services LSA leads averaged about $53 nationally versus roughly $149 for non-branded Google Search Ads in the same period.
+
+## Search Ads vs Local Services Ads
+
+- **Search Ads:** More control over targeting and messaging, higher cost per lead ($30-$75), and you pay for clicks whether or not they convert.
+- **Local Services Ads:** Pay-per-lead pricing ($12-$30), a Google Guaranteed badge that builds trust, but less control over ad copy and which searches trigger your listing.
+- **Most agencies run both.** LSAs cover bottom-of-funnel "repair near me" demand cheaply, while Search Ads capture broader and branded terms LSAs do not reach.
+
+## Bottom Line
+
+**Local Services Ads typically deliver appliance repair leads at roughly half to a third the cost of traditional Search Ads.**
+
+If you are choosing where to put your first ad dollar, start with a Local Services Ads profile before scaling a Search campaign, then measure cost per booked job (not just cost per lead) once both channels have at least 30 days of data to compare fairly.`
+  },
+  {
+    id: "551",
+    title: "Pool Service Cost Per Lead on Google Ads (2026)",
+    slug: "pool-service-cost-per-lead-google-ads-2026",
+    excerpt: "In 2026, pool service and pool builder businesses pay roughly $35 to $180 per Google Ads lead, with service calls at the low end and new-construction leads at the high end.",
+    featuredImage: "https://images.unsplash.com/photo-1611944212129-29977ae1398c?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-24",
+    category: "Google Ads",
+    tags: ["Google Ads", "Pool Service Marketing", "Lead Generation", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Pool Service Cost Per Lead on Google Ads (2026)",
+      metaDescription: "See real 2026 benchmark data on what pool service and pool builder businesses pay per lead on Google Ads and Local Services Ads, sourced from industry reports.",
+      keywords: ["pool service cost per lead", "pool builder google ads cost", "google ads cost per lead 2026", "local services ads pool service", "pool company ppc benchmarks"]
+    },
+    content: `A pool service or pool builder business running Google Ads in 2026 typically pays between $35 and $180 per lead. Local Services Ads and service-and-maintenance search campaigns land in the $35-$75 range, while search campaigns built around new pool construction or installation run $60-$180 per lead, because that traffic converts into far higher-value jobs. For context, Google's broader Home & Home Improvement category — the closest published benchmark, since pool service and construction aren't broken out on their own — averages a $90.92 cost per lead on an $8.33 cost per click in WordStream's 2026 Google Ads Benchmarks report.
+
+## What Determines the Cost of a Pool Lead
+
+Three factors move the number more than anything else:
+
+- **Search intent.** "Pool cleaning near me" and "pool repair" keywords cost less per click and per lead than "inground pool installation" or "custom pool builder," because build-intent traffic is scarcer and every competing builder is bidding hard for it.
+- **Ad format.** Local Services Ads charge per verified lead — a call or message Google itself screens — while standard Search campaigns charge per click whether or not that visitor converts, so LSA costs usually come in lower and more predictable.
+- **Market and season.** Builders in competitive metros pay noticeably more; pool-specific data puts California LSA leads at $65-$120 and Florida at $70-$140, and costs climb further heading into peak pool-buying season.
+
+## Search Ads vs. Local Services Ads
+
+Most pool companies see a real gap between the two formats. Search campaigns for pool service and maintenance keywords typically produce leads at $35-$55, while the same intent through Local Services Ads runs $20-$40 per lead. Zooming out, a February 2026 Local Services Ads benchmark from SearchLight Digital, built from $6.72 million in observed ad spend and 126,650 tracked leads across 888 home-service contractors, put the blended average at $53 per lead — electrical came in cheapest at $39, HVAC at $51, and plumbing at $57, which brackets where pool service tends to land.
+
+Construction is a different story. Google Ads leads for build-intent pool keywords run $60-$150, and one 2026 industry analysis pegs the average fully-loaded cost per lead for pool construction campaigns at $125-$180 once account management and testing are factored in. Search CPCs for pool-building keywords specifically climbed sharply too, according to a Web Tonic report citing M.Wolf Media data — up 46% year-over-year to a $5.81 average CPC in 2026 — which is pushing per-lead costs higher across the category.
+
+## Pool Service vs. Pool Construction: The Real Spread
+
+**Pool construction leads cost two to three times more than pool service leads because a single build is worth tens of thousands of dollars, while a season of maintenance work is worth a few hundred.**
+
+That value gap is exactly why bidding is so much more aggressive on build-intent keywords, and why a pool builder chasing installation leads should plan around $100-$180 per lead, not the $35-$55 a service-only competitor pays for cleaning and repair calls.
+
+## Bottom Line
+
+Don't set one blended cost-per-lead target for the whole business. Split the campaign structure and budget by intent: run Local Services Ads for service and maintenance calls, where $35-$75 per lead is realistic, and run a separate Search campaign for build-intent keywords, where $100-$180 per lead is the honest number to plan a 2026 budget around.`
+  },
+  {
+    id: "552",
+    title: "What a Funeral Home Lead Costs on Google Ads in 2026",
+    slug: "funeral-home-cost-per-lead-google-ads-2026",
+    excerpt: "Funeral homes and cremation businesses running Google Ads in 2026 typically pay $35 to $70 per at-need lead, with tight geo-targeting and campaign segmentation driving the cost toward the low end.",
+    featuredImage: "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f4?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-24",
+    category: "Google Ads",
+    tags: ["Google Ads", "Funeral Marketing", "Cost Per Lead", "Local Services Ads"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Funeral Home Cost Per Lead on Google Ads (2026)",
+      metaDescription: "Funeral home and cremation Google Ads leads cost $35-$70 in 2026, depending on geo-targeting and campaign structure. See the sourced benchmarks and what moves the price.",
+      keywords: ["funeral home cost per lead", "cremation Google Ads cost", "funeral home Google Ads", "funeral home PPC cost", "Local Services Ads funeral home"]
+    },
+    content: `A funeral home or cremation business running Google Ads in 2026 should budget $35 to $70 per lead for at-need search campaigns. Tightly geo-targeted, well-optimized accounts land at the low end, $35 to $45 per lead, while broadly targeted or poorly structured campaigns push past $70. Google Ads has no dedicated funeral or death-care industry category in its own benchmark data, so these figures come from funeral-marketing agencies reporting on live client campaigns rather than a single official rate card.
+
+## What Drives the Cost Per Lead
+
+Four variables move the number more than anything else:
+
+- **Geo-targeting radius.** Death care is hyper-local. Campaigns targeting a tight service radius around the funeral home consistently beat campaigns targeting an entire metro area, because impressions stop wasting budget on searchers too far away to ever call.
+- **Keyword intent.** "Cremation services near me" and "funeral home [city]" are expensive because the searcher needs a decision today, but that same urgency drives strong conversion rates, which is what keeps the effective cost per lead reasonable despite a high cost per click.
+- **Market size and competition.** Larger metro areas with more funeral homes bidding on the same terms push costs higher than smaller or less competitive markets — one local-market analysis of a smaller metro found $45-$100 per lead with a 5-8% conversion rate, running below larger-metro averages.
+- **Campaign structure.** Running at-need and preneed messaging through the same campaign, with the same keywords and ad copy, drags down performance for both and inflates blended cost per lead.
+
+## At-Need vs. Preneed Campaigns
+
+At-need search campaigns, families searching because someone has just died, are the expensive end of the range, since Google prices in the immediacy and near-certain conversion of that intent. Funeral marketing agencies specifically recommend separating at-need search campaigns from preneed (pre-planning) awareness campaigns, since the two have different keywords, different ad copy, and different economics. Segmenting them, rather than blending both into one generic campaign, is what lets a funeral home hit the $35 to $45 range instead of drifting toward $70-plus.
+
+**Funeral home leads that are tightly geo-targeted and properly segmented by intent routinely cost less than what most industries pay per lead on Google Ads overall.**
+
+## Local Services Ads vs. Traditional Search Ads
+
+Many funeral homes now run Google Local Services Ads (LSAs) alongside or instead of standard Search campaigns. LSAs bill per qualified lead or call rather than per click, which removes the guesswork of translating click volume into cost per lead: you set a weekly budget and pay only when a prospective family actually contacts you through the ad. Traditional Search campaigns, by contrast, charge per click regardless of whether that click turns into a call, so their real cost per lead has to be calculated after the fact by dividing total spend by conversions. Agencies serving the funeral industry generally advise checking average lead costs in the specific service area before setting an LSA budget, since a small-town funeral home and a competitive metro-area chapel will see meaningfully different numbers even within the same $35 to $70 band.
+
+## Bottom Line
+
+Before setting a Google Ads budget, split at-need and preneed into separate campaigns and tighten the geo-targeting radius to the actual service area rather than the full metro, since those two changes are what separate a $35 to $45 cost per lead from a $70-plus one. If cost per lead still runs high after that, test Local Services Ads against standard Search so spend is tied directly to qualified calls rather than clicks.`
+  },
+  {
+    id: "553",
+    title: "How to Track Offline Conversions in Google Ads (2026)",
+    slug: "offline-conversion-import-google-ads-2026",
+    excerpt: "Offline conversion import, now most often run through its upgraded form enhanced conversions for leads, uploads a GCLID or hashed customer data back into Google Ads so in-store, phone-closed, and delayed sales get matched to the ad click that started them.",
+    featuredImage: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-24",
+    category: "Marketing Technology",
+    tags: ["Google Ads", "Conversion Tracking", "PPC", "Offline Conversions"],
+    featured: false,
+    readingTime: 4,
+    seo: {
+      metaTitle: "Track Offline Conversions in Google Ads (2026 Guide)",
+      metaDescription: "How offline conversion import and enhanced conversions for leads work in Google Ads: GCLID capture, required fields, upload windows, and the June 2026 API deadline.",
+      keywords: ["offline conversion import", "enhanced conversions for leads", "Google Ads GCLID", "offline conversion tracking Google Ads", "Google Ads Data Manager"]
+    },
+    content: `In 2026, you track offline conversions in Google Ads through offline conversion import, now most commonly implemented as its upgraded version, enhanced conversions for leads, which uploads a conversion record tied to a Google Click ID (GCLID) or hashed customer data (email, phone) so a sale that closes in-store, over the phone, or weeks after a form fill gets matched back to the ad click that generated the lead. This is a data-import feature for events that finish offline, distinct from call conversion tracking (which measures calls placed through your ads) and store-visit conversions (which estimates physical foot traffic from location history, not a confirmed sale).
+
+## How It Actually Works
+
+- **The click gets an ID.** Every ad click Google Ads serves can carry a GCLID appended to the landing page URL.
+- **Your lead form captures it.** A hidden form field (or the Google tag or Google Tag Manager) reads the gclid parameter, or your form captures hashed first-party data like email and phone at the moment of lead submission, per Google's enhanced conversions for leads documentation.
+- **The sale happens later, offline.** Days or weeks pass while a rep closes the deal by phone, in a showroom, or in-store.
+- **You upload the result.** You send Google Ads a record with the conversion action name, the conversion timestamp, the value, and either the GCLID or the hashed user data captured at lead time.
+- **Google Ads matches and attributes.** The upload is matched to the original click, or to a signed-in Google user via the hashed data, and folded back into reporting and Smart Bidding signals.
+
+## What You Need Before You Upload
+
+- **A GCLID or user-provided data.** Google requires each conversion event to include a conversion timestamp plus at least one of GCLID, user-provided data (hashed email or phone), or a BRAID.
+- **An import-type conversion action.** Create one in Google Ads whose name matches your uploaded Conversion Name value exactly, including case.
+- **A timezone declaration.** Offline conversion files need a Parameters row declaring the timezone all conversion timestamps are interpreted in.
+- **Hashed PII, not raw PII.** Enhanced conversions for leads requires email and phone data to be hashed before it's sent.
+
+## Upload Methods and Timing Windows
+
+- **Data Manager** is Google's current recommended path — a point-and-click interface inside Google Ads that no longer requires changes to your CRM or website code.
+- **Google Tag Manager or the Google tag** can also capture and forward user-provided data automatically.
+- **Manual upload** via spreadsheet or the Google Ads API is still supported for now, but not for much longer.
+
+**Google is blocking offline conversion import and enhanced conversions for leads uploads through the Google Ads API starting June 15, 2026, pushing all upload traffic to the Data Manager API instead.**
+
+- **90-day window for GCLID-based imports.** A standard offline conversion tied to a GCLID must be uploaded within 90 days of the click.
+- **63-day window for enhanced conversions for leads.** Conversions matched by hashed user data must be uploaded within 63 days of the associated last click or they won't import.
+
+## Why It's Not the Same as Call or Store-Visit Tracking
+
+Offline conversion import is the umbrella mechanism for any conversion that starts with an ad interaction and finishes off-platform. Within that umbrella, Google Ads treats a few event types differently: call conversions use a separate upload type built specifically for tracking outcomes of calls placed through your ad's call extension or forwarding number, and store-visit conversions are a separate, advanced feature that estimates physical foot traffic using aggregated location history rather than reporting a confirmed sale value. If what you're trying to report is a closed deal, a signed contract, or an in-store purchase amount, offline conversion import through GCLID or enhanced conversions for leads is the correct tool, not those two.
+
+## Bottom Line
+
+If you generate leads through Google Ads and close them later by phone or in person, set up enhanced conversions for leads through Data Manager now: it replaces manual GCLID spreadsheet uploads with hashed first-party data matching, and it's the path Google is steering all offline conversion tracking toward before the June 15, 2026 API cutoff.`
+  },
+  {
+    id: "554",
+    title: "What's a Good ACOS for Amazon Sponsored Products in 2026?",
+    slug: "amazon-sponsored-products-good-acos-benchmark-2026",
+    excerpt: "A good ACOS for Amazon Sponsored Products in 2026 is 15-25% at the campaign level and 25-40% account-wide, but the number that actually matters is the one below your product's profit margin.",
+    featuredImage: "https://images.unsplash.com/photo-1611262588019-db6cc2032da3?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-24",
+    category: "Platform Comparisons",
+    tags: ["Amazon Ads", "PPC Benchmarks", "Sponsored Products", "ACOS"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Good ACOS for Amazon Sponsored Products in 2026",
+      metaDescription: "What's a good ACOS for Amazon Sponsored Products in 2026? See sourced benchmark ranges, break-even ACOS math, and ACOS by category.",
+      keywords: ["good ACOS Amazon", "Amazon Sponsored Products ACOS benchmark", "average ACOS 2026", "break-even ACOS Amazon", "ACOS by category Amazon PPC"]
+    },
+    content: `A good ACOS for Amazon Sponsored Products in 2026 sits between 15% and 25% at the campaign level, with full-account averages closer to 25% to 40% once branded defense, discovery, and top-of-funnel spend get blended in. There is no single good number, though: the only ACOS that actually keeps you profitable is one below your product's margin, so the right target shifts by category and by how thin your margins run.
+
+## How ACOS Relates to Break-Even and Margin
+
+ACOS and profit margin are two sides of the same equation. The standard break-even framework defines break-even ACOS as Pre-Ad Profit Per Unit divided by Sale Price, multiplied by 100, and that number is, by definition, equal to your product's profit margin before ad spend. If a $50 product carries a 30% margin after COGS and fees, its break-even ACOS is 30%: spend more than that on ads and every ad-attributed sale loses money; spend less and the campaign adds profit on top of your organic sales.
+
+**Break-even ACOS equals your profit margin, not a number pulled off a benchmark chart.**
+
+That's why a 20% ACOS can be excellent on a 35%-margin product and a loss-maker on a 15%-margin one. Before comparing yourself to any published benchmark, calculate your own break-even ceiling first, then treat industry ranges below as a sanity check, not a target to hit blindly.
+
+## Sourced Benchmark Ranges
+
+Once you know your break-even ceiling, current industry data gives a useful floor and ceiling for what's realistic to chase in 2026:
+
+- **Sponsored Products specifically** typically runs 15% to 25% ACOS, alongside a 0.3% to 0.7% click-through rate and a 10% to 18% conversion rate, per Autron's 2026 Amazon advertising benchmark analysis.
+- **Account-wide averages** (blending Sponsored Products, Sponsored Brands, and Sponsored Display) land closer to 25% to 40% in 2026, with a cross-category mean in the low-to-mid 30s percent, per benchmark data compiled by Autron and Ad Badger.
+- **Ad Badger's** tracked seller data put average ACOS around 29% to 32% over the period studied, month to month, with the same report noting that accounts running consistently under roughly 28% are outperforming the market, while accounts consistently above 40% usually have a structural issue such as a bloated keyword list, poor targeting match, or margins too thin to support the bids needed to compete.
+
+## ACOS by Category
+
+Category matters because it drives organic conversion rate and return rate, and both move ACOS independently of how well a campaign is actually managed. Category benchmark data compiled by Autron and Eightx for 2026 shows a wide spread:
+
+- **Food & Grocery and Books** run lowest, generally in the low-to-mid 20s percent, reflecting high repeat-purchase conversion and low return rates.
+- **Electronics** tends to run 10% to 20%.
+- **Supplements** cluster around 15% to 25%.
+- **Home goods** typically run 25% to 35%.
+- **Clothing & Apparel** runs highest, commonly 40% and into the 50s, largely because high return rates erode the net sales that ACOS is calculated against.
+
+If your category isn't near the low end of these ranges, that isn't automatically a problem. A 35% ACOS in apparel can be healthier than a 20% ACOS in electronics, depending on each product's actual margin after returns and fees.
+
+## Bottom Line
+
+Skip the search for a universal good ACOS. Calculate your product's break-even ACOS (pre-ad profit per unit divided by sale price), compare that number to where your category typically lands using the ranges above, and set your campaign target a few points under break-even so ad spend is adding profit rather than just covering it.`
+  },
 ];
 
 export const blogCategories = [
