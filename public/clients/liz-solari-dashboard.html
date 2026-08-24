@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Lis Solari &middot; Panel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --noche: #0E1A33; --noche-2: #1B2C4F; --tinta: #16203A; --tinta-2: #55607A; --tinta-3: #8A93A8;
+    --papel: #FBFAF7; --panel: #FFFFFF; --linea: #E7E3D9;
+    --oro: #C4A265; --oro-soft: #F6F0E2; --oro-deep: #9A7C42;
+    --ok: #4F7A5B; --ok-soft: #EAF2EC; --alerta: #A8763E; --alerta-soft: #FAF1E6;
+    --sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --serif: 'Cardo', Georgia, 'Times New Roman', serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--papel); color: var(--tinta); font-size: 15px; line-height: 1.6; font-weight: 300; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 1180px; margin: 0 auto; }
+
+  .hero { background: var(--noche); color: #fff; padding: 52px 30px 46px; position: relative; overflow: hidden; }
+  .hero::after { content: ''; position: absolute; right: -80px; top: -80px; width: 320px; height: 320px; border-radius: 50%; background: radial-gradient(circle, rgba(196,162,101,.22), transparent 68%); }
+  .hero-in { max-width: 1120px; margin: 0 auto; position: relative; z-index: 1; }
+  .marca { font-family: var(--serif); font-size: 12px; letter-spacing: 0.42em; text-transform: uppercase; color: var(--oro); }
+  .hero h1 { font-family: var(--serif); font-size: 34px; font-weight: 400; line-height: 1.22; margin-top: 14px; letter-spacing: -0.01em; }
+  .hero h1 span { color: var(--oro); font-style: italic; }
+  .hero .sub { font-size: 14px; color: #C3CADA; margin-top: 12px; max-width: 68ch; font-weight: 300; }
+  .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 22px; }
+  .chip { font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 6px 12px; background: rgba(255,255,255,.09); color: #C9CFE0; }
+  .chip.on { background: var(--oro); color: var(--noche); }
+
+  .body { padding: 0 30px 60px; }
+  .body-in { max-width: 1120px; margin: 0 auto; }
+  section { margin-top: 46px; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 15px; }
+  .sec-head h2 { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--tinta-2); }
+  .sec-head .note { font-size: 12px; color: var(--tinta-3); margin-left: auto; }
+  .sec-rule { height: 2px; background: linear-gradient(90deg, var(--oro) 0%, rgba(196,162,101,.08) 100%); margin-bottom: 22px; }
+
+  .lede { font-size: 14.5px; color: var(--tinta-2); max-width: 82ch; margin-bottom: 20px; }
+  .lede b { color: var(--tinta); font-weight: 500; }
+
+  /* Snapshot */
+  .snap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .s { background: var(--panel); border: 1px solid var(--linea); border-top: 3px solid var(--oro); padding: 16px 18px; }
+  .s .k { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--tinta-3); }
+  .s .v { font-family: var(--serif); font-size: 25px; margin-top: 6px; }
+  .s .f { font-size: 12px; color: var(--tinta-2); margin-top: 3px; }
+
+  /* Fases */
+  .fases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .fase { background: var(--panel); border: 1px solid var(--linea); padding: 16px 18px; }
+  .fase.hecha { border-color: var(--ok); }
+  .fase.activa { border-color: var(--oro); box-shadow: 0 0 0 1px var(--oro); }
+  .fase .n { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; color: var(--oro-deep); }
+  .fase h3 { font-family: var(--serif); font-size: 17px; font-weight: 400; margin: 6px 0 6px; }
+  .fase p { font-size: 12.5px; color: var(--tinta-2); }
+  .fase .est { display: inline-block; font-size: 9.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; margin-top: 10px; }
+  .est.ok { background: var(--ok-soft); color: var(--ok); }
+  .est.curso { background: var(--oro-soft); color: var(--oro-deep); }
+  .est.prox { background: #F1F0EC; color: var(--tinta-3); }
+
+  /* Items */
+  .items { background: var(--panel); border: 1px solid var(--linea); }
+  .item { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 14px 20px; border-bottom: 1px solid var(--linea); align-items: start; }
+  .item:last-child { border-bottom: none; }
+  .item .t { font-size: 14.5px; font-weight: 400; }
+  .item .d { font-size: 12.5px; color: var(--tinta-2); margin-top: 3px; max-width: 88ch; }
+  .tag { font-size: 9.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 9px; white-space: nowrap; }
+  .tag.ok { background: var(--ok-soft); color: var(--ok); }
+  .tag.curso { background: var(--oro-soft); color: var(--oro-deep); }
+  .tag.espera { background: var(--alerta-soft); color: var(--alerta); }
+  .tag.prox { background: #F1F0EC; color: var(--tinta-3); }
+
+  /* Tablas */
+  table { width: 100%; border-collapse: collapse; background: var(--panel); }
+  th { text-align: left; font-size: 10px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: var(--tinta-3); padding: 11px 14px; border-bottom: 2px solid var(--linea); }
+  td { padding: 12px 14px; border-bottom: 1px solid var(--linea); vertical-align: top; font-size: 13.5px; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  tr:last-child td { border-bottom: none; }
+  .tbl { border: 1px solid var(--linea); overflow-x: auto; }
+
+  /* Identidad */
+  .ident { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .id-card { background: var(--panel); border: 1px solid var(--linea); padding: 18px 20px; }
+  .id-card h4 { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oro-deep); margin-bottom: 10px; }
+  .id-card p { font-size: 13px; color: var(--tinta-2); }
+  .swatch { display: flex; gap: 7px; margin-bottom: 10px; }
+  .swatch i { width: 34px; height: 34px; display: block; }
+  .type-demo { font-family: var(--serif); font-size: 21px; color: var(--tinta); margin-bottom: 3px; }
+  .type-demo.p { font-family: var(--sans); font-size: 14px; font-weight: 500; }
+
+  .nota { background: var(--oro-soft); border-left: 3px solid var(--oro); padding: 15px 19px; font-size: 13.5px; color: var(--tinta-2); margin-top: 18px; }
+  .nota b { color: var(--tinta); font-weight: 500; }
+  .warn { background: var(--alerta-soft); border-left: 3px solid var(--alerta); padding: 15px 19px; font-size: 13.5px; color: var(--tinta-2); margin-top: 18px; }
+  .warn b { color: var(--tinta); font-weight: 500; }
+
+  /* Timeline */
+  .tl { border-left: 2px solid var(--linea); padding-left: 22px; margin-left: 6px; }
+  .tl-item { position: relative; padding-bottom: 20px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before { content: ''; position: absolute; left: -28px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background: var(--oro); }
+  .tl-item .when { font-size: 10px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: var(--oro-deep); }
+  .tl-item h4 { font-family: var(--serif); font-size: 16px; font-weight: 400; margin: 4px 0 4px; }
+  .tl-item p { font-size: 13px; color: var(--tinta-2); max-width: 86ch; }
+
+  footer { text-align: center; margin-top: 54px; font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--tinta-3); }
+
+  @media (max-width: 900px) {
+    .snap, .fases, .ident { grid-template-columns: repeat(2, 1fr); }
+    .hero h1 { font-size: 26px; }
+    .item { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) { .snap, .fases, .ident { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body data-client="liz-solari" data-page="dashboard">
+<div class="page">
+
+  <div class="hero">
+    <div class="hero-in">
+      <div class="marca">Lis Solari</div>
+      <h1>Presencia digital: <span>panel de proyecto</span></h1>
+      <p class="sub">Todo lo que se viene trabajando desde enero, en un solo lugar: qué está hecho, qué está en curso, qué espera definición y con qué números.</p>
+      <div class="meta">
+        <span class="chip on">Workshop en venta</span>
+        <span class="chip">Actualizado 24 de agosto de 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="body"><div class="body-in">
+
+    <!-- ============ SNAPSHOT ============ -->
+    <section style="margin-top:38px;">
+      <div class="sec-head">
+        <h2>Dónde estamos</h2>
+        <span class="note">Enero a agosto de 2026</span>
+      </div>
+      <div class="sec-rule"></div>
+
+      <p class="lede">
+        El proyecto arrancó como <b>sitio web y presencia digital</b> y hoy tiene tres frentes abiertos: la web publicada, el workshop <b>Reset Interior</b> vendiéndose con pauta, y el contenido de Instagram con calendario propio. Lo que falta cerrar no es producción: son <b>tres decisiones</b> que quedaron sin resolver y frenan lo que sigue.
+      </p>
+
+      <div class="snap">
+        <div class="s"><div class="k">Reuniones</div><div class="v">8</div><div class="f">De enero a agosto</div></div>
+        <div class="s"><div class="k">Workshop</div><div class="v">$90.000</div><div class="f">Reset Interior, 21 días</div></div>
+        <div class="s"><div class="k">Pauta invertida</div><div class="v">US$663</div><div class="f">Meta, campaña del workshop</div></div>
+        <div class="s"><div class="k">Decisiones abiertas</div><div class="v">3</div><div class="f">Nombre, logo, atribución</div></div>
+      </div>
+    </section>
+
+    <!-- ============ FASES ============ -->
+    <section>
+      <div class="sec-head">
+        <h2>El recorrido</h2>
+        <span class="note">Cada fase se apoya en la anterior</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="fases">
+        <div class="fase hecha">
+          <div class="n">FASE 01</div>
+          <h3>Identidad</h3>
+          <p>Marca personal sobre lisolari.net, paleta, tipografías y dirección de logo.</p>
+          <span class="est ok">Cerrada</span>
+        </div>
+        <div class="fase hecha">
+          <div class="n">FASE 02</div>
+          <h3>Sitio</h3>
+          <p>Arquitectura por páginas, textos, blog y e-commerce para vender el libro.</p>
+          <span class="est ok">Publicado</span>
+        </div>
+        <div class="fase activa">
+          <div class="n">FASE 03</div>
+          <h3>Producto y venta</h3>
+          <p>Reset Interior con entrega automatizada, pauta en Meta y contenido orgánico.</p>
+          <span class="est curso">En curso</span>
+        </div>
+        <div class="fase">
+          <div class="n">FASE 04</div>
+          <h3>Escala</h3>
+          <p>Subir tráfico y ventas del workshop, sumar productos y arrancar redes orgánico.</p>
+          <span class="est prox">Sigue</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DECISIONES ABIERTAS ============ -->
+    <section>
+      <div class="sec-head">
+        <h2>Lo que espera definición</h2>
+        <span class="note">Frena lo que viene después</span>
+      </div>
+      <div class="sec-rule"></div>
+
+      <div class="items">
+        <div class="item">
+          <div>
+            <div class="t">El nombre del universo de redes</div>
+            <div class="d">En febrero se barajaron <b>Faro de luz</b>, <b>Renacer</b> y <b>Reconectar</b>. La decisión quedó en pausa para no hacer perder tiempo al equipo, y no se volvió a tocar. Sin ese nombre, la cuenta de contenido espiritual sigue sin identidad propia y todo cuelga del nombre personal.</div>
+          </div>
+          <span class="tag espera">Espera a Liz</span>
+        </div>
+        <div class="item">
+          <div>
+            <div class="t">La versión final del logo</div>
+            <div class="d">El concepto está elegido: <b>llama más ojo</b>, como símbolo de enseñanza compartida. Se probaron variantes sobre las bases v01 y v05 (vela en la "i", ojo dentro de la "O", trazo más fino). Cuál quedó no está registrado en ninguna nota.</div>
+          </div>
+          <span class="tag espera">Confirmar</span>
+        </div>
+        <div class="item">
+          <div>
+            <div class="t">Atribución y modelo de cobro con Sintientes</div>
+            <div class="d">Quedó abierto si el cobro es fijo o porcentual, y cómo atribuir las ventas que llegan desde la comunicación de la ONG. Se señaló el riesgo del modelo de precios de Cora.</div>
+          </div>
+          <span class="tag espera">A conversar</span>
+        </div>
+        <div class="item">
+          <div>
+            <div class="t">Redes orgánico</div>
+            <div class="d">Está dentro del servicio pero todavía no arrancó, y por eso no se cobró. Es la parte que sostiene el crecimiento cuando la pauta se apaga.</div>
+          </div>
+          <span class="tag espera">A conversar</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCTOS ============ -->
+    <section>
+      <div class="sec-head">
+        <h2>Los productos</h2>
+        <span class="note">Precios cerrados en mayo</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Producto</th><th>Qué es</th><th class="num">Precio</th><th>Estado</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Meditaciones gratuitas</td>
+              <td>Tres meditaciones a cambio de datos. Es la puerta de entrada.</td>
+              <td class="num">Gratis</td><td>Activo</td>
+            </tr>
+            <tr>
+              <td>Ebook + audiolibro</td>
+              <td>Meditaciones para un viaje interior, en digital.</td>
+              <td class="num">$20.000</td><td>Definido</td>
+            </tr>
+            <tr>
+              <td>Libro físico + audiolibro</td>
+              <td>El físico incluye el audiolibro. Envío a cargo del comprador.</td>
+              <td class="num">$30.000</td><td>Definido</td>
+            </tr>
+            <tr>
+              <td><b>Reset Interior</b></td>
+              <td>21 días. Tres técnicas, un audio por semana en duración progresiva, tres meditaciones semanales, journaling y rituales.</td>
+              <td class="num"><b>$90.000</b></td><td>En venta</td>
+            </tr>
+            <tr>
+              <td>Retiros</td>
+              <td>En la web como "cuatro caminos para reconectarte", hasta un retiro de cinco días.</td>
+              <td class="num">Variable</td><td>Sin segmentar</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="nota">
+        <b>Por qué el workshop se entrega en PDF y no en una plataforma.</b> La decisión fue deliberada: PDF brandeado con links privados de YouTube, porque asiste mucha gente mayor y la prioridad es que sea ultra simple. Al comprar por Mercado Pago, el PDF llega automáticamente.
+      </div>
+    </section>
+
+    <!-- ============ IDENTIDAD ============ -->
+    <section>
+      <div class="sec-head">
+        <h2>Identidad visual</h2>
+        <span class="note">Cerrada en mayo</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="ident">
+        <div class="id-card">
+          <h4>Paleta</h4>
+          <div class="swatch">
+            <i style="background:#C4A265"></i><i style="background:#0E1A33"></i><i style="background:#F6F0E2"></i><i style="background:#FBFAF7;border:1px solid #E7E3D9"></i>
+          </div>
+          <p>Dorado y azul profundo. En abril se probó turquesa y en mayo se volvió atrás: el azul se leyó más elegante y con mejor legibilidad.</p>
+        </div>
+        <div class="id-card">
+          <h4>Tipografías</h4>
+          <div class="type-demo">Cardo, para leer</div>
+          <div class="type-demo p">Poppins, para los botones</div>
+          <p style="margin-top:8px;">Français para el nombre, Poppins para llamados a la acción y Cardo como terciaria y cuerpo de texto.</p>
+        </div>
+        <div class="id-card">
+          <h4>Logo</h4>
+          <p><b>Llama más ojo</b>, como símbolo de enseñanza compartida. Se exploraron la vela en la letra "i" y el ojo dentro de la "O".</p>
+          <p style="margin-top:8px;color:var(--alerta);">Falta confirmar cuál variante quedó.</p>
+        </div>
+      </div>
+      <div class="nota">
+        <b>La referencia.</b> Lorna Byrne, por la estructura simple y el orden de la home: quién es primero, después la oferta espiritual, después los testimonios y los próximos eventos.
+      </div>
+    </section>
+
+    <!-- ============ CONTENIDO ============ -->
+    <section>
+      <div class="sec-head">
+        <h2>Contenido y canales</h2>
+        <span class="note">Ritmo acordado</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="items">
+        <div class="item">
+          <div>
+            <div class="t">Instagram: 3 publicaciones por semana, 90% reels</div>
+            <div class="d">Pilares: espiritualidad, conciencia, naturaleza y amor por los animales, con la alimentación vegana como anclaje. Liz propone en el grupo, se revisa y se publica.</div>
+          </div>
+          <span class="tag curso">Corriendo</span>
+        </div>
+        <div class="item">
+          <div>
+            <div class="t">Dos citas del libro por semana</div>
+            <div class="d">Liz manda las frases y Pilar las convierte en placas o videos animados. La estética guía es "la mano con flores", aprobada en junio.</div>
+          </div>
+          <span class="tag curso">Corriendo</span>
+        </div>
+        <div class="item">
+          <div>
+            <div class="t">Falso podcast</div>
+            <div class="d">Grabar en casa de Liz respondiendo preguntas en conversación. Veinte minutos de grabación rinden alrededor de diez semanas de contenido.</div>
+          </div>
+          <span class="tag prox">Por grabar</span>
+        </div>
+        <div class="item">
+          <div>
+            <div class="t">Meta Ads</div>
+            <div class="d">Campaña del workshop corriendo en cuenta en dólares. Primera vuelta destinada a probar que hay demanda, antes de escalar.</div>
+          </div>
+          <span class="tag curso">Activa</span>
+        </div>
+        <div class="item">
+          <div>
+            <div class="t">Redes orgánico</div>
+            <div class="d">Contratado dentro del servicio pero sin arrancar. Es lo que sostiene el crecimiento cuando la pauta se apaga.</div>
+          </div>
+          <span class="tag espera">Sin arrancar</span>
+        </div>
+      </div>
+      <div class="nota">
+        <b>El stack.</b> Mercado Pago para cobrar con entrega automática, Meta Ads en dólares, ManyChat para automatizar Instagram, Metricool para programar (lo usa Facu), WordPress con e-commerce, y YouTube para meditaciones y audiolibros porque sigue sonando con la pantalla cerrada.
+      </div>
+    </section>
+
+    <!-- ============ ESTADO COMERCIAL ============ -->
+    <section>
+      <div class="sec-head">
+        <h2>Estado de cuenta</h2>
+        <span class="note">Detallado el 12 de agosto</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Concepto</th><th>Detalle</th><th class="num">Monto</th></tr></thead>
+          <tbody>
+            <tr><td>Sitio</td><td>Desarrollo completo</td><td class="num">US$ 1.650</td></tr>
+            <tr><td>Servicio</td><td>Dos meses a US$ 750: workshop, pauta y embudo de ventas</td><td class="num">US$ 1.500</td></tr>
+            <tr><td>Entregado</td><td>Pagos recibidos hasta la fecha</td><td class="num">&minus; US$ 3.000</td></tr>
+            <tr><td><b>Saldo de honorarios</b></td><td></td><td class="num"><b>US$ 150</b></td></tr>
+            <tr><td>Meta Ads</td><td>Adelantado con tarjeta de Amir, campaña del workshop</td><td class="num">US$ 663</td></tr>
+            <tr><td>ManyChat</td><td>Adelantado con tarjeta de Amir</td><td class="num">US$ 39</td></tr>
+            <tr><td><b>Total pendiente</b></td><td></td><td class="num"><b>US$ 852</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="nota">
+        <b>Por qué se cobraron dos meses y no más.</b> El sitio tomó más tiempo del planificado originalmente y redes orgánico todavía no arrancó, así que se facturó solamente el manejo del workshop, la pauta y el embudo de ventas.
+      </div>
+      <div class="warn">
+        <b>ManyChat sigue con la tarjeta de Amir.</b> Hay que cambiarla por la de Liz en la configuración de pagos de la cuenta.
+      </div>
+    </section>
+
+    <!-- ============ HISTORIAL ============ -->
+    <section>
+      <div class="sec-head">
+        <h2>Cómo llegamos hasta acá</h2>
+        <span class="note">Ocho reuniones</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="tl">
+        <div class="tl-item">
+          <div class="when">30 de enero</div>
+          <h4>Onboarding</h4>
+          <p>Marca personal contra marca de empresa. Se acordó un punto medio que permita sumar otros profesionales bajo curaduría, para que el negocio no dependa solo de ella.</p>
+        </div>
+        <div class="tl-item">
+          <div class="when">18 de febrero</div>
+          <h4>Kickoff</h4>
+          <p>Se define lisolari.net, la referencia de Lorna Byrne, la paleta azul y dorado, y el funnel de meditaciones. Queda pausada la decisión del nombre de redes.</p>
+        </div>
+        <div class="tl-item">
+          <div class="when">11 de marzo</div>
+          <h4>Estructura del sitio</h4>
+          <p>Arquitectura página por página, tono en tercera persona para la bio y primera para venta, más blog y e-commerce en WordPress.</p>
+        </div>
+        <div class="tl-item">
+          <div class="when">31 de marzo</div>
+          <h4>Sync workshop</h4>
+          <p>Nace Reset Interior con precio y estructura de 21 días. Se descartó $60.000 por demasiado accesible.</p>
+        </div>
+        <div class="tl-item">
+          <div class="when">24 de abril</div>
+          <h4>Revisión web</h4>
+          <p>Dirección aprobada, Cardo confirmada, y por primera vez la estrategia de Instagram: reels, ManyChat, falso podcast.</p>
+        </div>
+        <div class="tl-item">
+          <div class="when">15 de mayo</div>
+          <h4>Sitio y logo</h4>
+          <p>Vuelta al azul profundo, fuentes definitivas, precios del libro y concepto de logo. Se pospuso la gala del Four Seasons.</p>
+        </div>
+        <div class="tl-item">
+          <div class="when">12 de junio</div>
+          <h4>Lanzamiento</h4>
+          <p>PDF del taller aprobado, calendario de contenido, Metricool, y la capa de performance encendida con Meta Ads y entrega automatizada.</p>
+        </div>
+        <div class="tl-item">
+          <div class="when">11 de agosto</div>
+          <h4>Marketing</h4>
+          <p>Sin notas registradas. El detalle de gastos y el plan del workshop se enviaron por mail al día siguiente.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ POSPUESTO ============ -->
+    <section>
+      <div class="sec-head">
+        <h2>En pausa</h2>
+        <span class="note">Decidido, no olvidado</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="items">
+        <div class="item">
+          <div>
+            <div class="t">Gala benéfica de Sintientes</div>
+            <div class="d">Pet friendly en el Four Seasons, prevista para el 23 de septiembre. Cubierto de $120.000 a $130.000 por persona, diez millones en pantallas y mapping, meta de 70 a 80 mil dólares con quince sponsors de cinco mil. Se concluyó que no se consiguen sponsors en cuatro meses con el mundial y el contexto económico: <b>se pospone a abril o mayo de 2027</b> y se prioriza voluntariado corporativo.</div>
+          </div>
+          <span class="tag prox">2027</span>
+        </div>
+        <div class="item">
+          <div>
+            <div class="t">Avatar de IA</div>
+            <div class="d">Se desaconsejó en marzo por la calidad de la tecnología y se retomó con entusiasmo en abril. No volvió a mencionarse, así que su estado quedó sin definir.</div>
+          </div>
+          <span class="tag prox">Sin definir</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="warn">
+      <b>Sobre este panel.</b> Se armó con las notas de las reuniones, el calendario y los mails. Las conversaciones de WhatsApp no están incluidas, así que si hay decisiones que se tomaron por ahí, faltan acá.
+    </div>
+
+    <footer>Lis Solari</footer>
+  </div></div>
+</div>
+<script src="/clients/portal-edit.js" defer></script>
+</body>
+</html>
