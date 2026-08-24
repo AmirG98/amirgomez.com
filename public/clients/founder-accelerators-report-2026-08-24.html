@@ -20,6 +20,14 @@
   body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.6; font-size: 15.5px; -webkit-font-smoothing: antialiased; }
   .page { max-width: 880px; margin: 0 auto; padding: 48px 24px 64px; }
   .num { font-variant-numeric: tabular-nums; }
+  .summary { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 26px; margin-bottom: 34px; }
+  .summary .sm-eyebrow { font-family: var(--display); font-weight: 700; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); }
+  .summary h2 { font-family: var(--display); font-weight: 700; font-size: 17px; color: #fff; margin: 6px 0 14px; }
+  .summary ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .summary li { font-size: 13.5px; color: var(--ink-2); padding-left: 14px; border-left: 2px solid var(--good); }
+  .summary li b { color: var(--ink); font-weight: 600; }
+  .summary li.rojo { border-left-color: #ff6b6b; }
+  .summary li.rojo b { color: #ff8b8b; }
   header.hero { text-align: center; margin-bottom: 36px; }
   .rule { width: 56px; height: 2px; background: linear-gradient(90deg, var(--amber), var(--orange)); margin: 26px auto 22px; }
   .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--amber); }
@@ -117,6 +125,18 @@
     <span class="hl">Reuniones agendadas <b>2</b></span>
     <span>Clicks al Brain <b>1,599 · $0.34</b></span>
     <span>Visitas de perfil <b>426</b></span>
+  </div>
+
+  <div class="summary rv">
+    <span class="sm-eyebrow">Summary</span>
+    <h2>Lo más importante de la semana</h2>
+    <ul>
+      <li><b>2 reuniones agendadas desde Meta.</b> Una con perfil calificado, a validar en la llamada. Se agendó una tercera que se descartó por spam.</li>
+      <li><b>El píxel por fin registra conversiones:</b> 2 Qualified Leads a $189.71 c/u + 1 lead web. Primera referencia real de costo por lead calificado.</li>
+      <li><b>Social Proof confirmó con presupuesto real:</b> LPV de $1.13 a $0.83, CPC $0.27. Los ads nuevos de agosto debutan a $1.27 por LPV.</li>
+      <li class="rojo"><b>El AI Brain todavía no generó compras.</b> El tráfico llega barato pero no convierte: la versión B de la landing sale hoy-mañana. El VSL nuevo ya está publicado.</li>
+      <li><b>Videos: salen de edición en menos de 2 días.</b> Mientras Ignacio produce los nuevos desde los scripts, probamos ads de social proof de otras personas que atravesaron el 1:1.</li>
+    </ul>
   </div>
 
   <section id="leads" style="margin-top:0;">
