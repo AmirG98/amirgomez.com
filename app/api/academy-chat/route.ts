@@ -20,6 +20,7 @@ export async function POST(req: NextRequest) {
     level?: string;
     temario?: string;
     resumen?: string;
+    audience?: string;
     history?: ChatTurn[];
   };
   try {
@@ -37,8 +38,23 @@ export async function POST(req: NextRequest) {
     .slice(-10)
     .map((t) => ({ role: t.role, content: t.content.slice(0, 4000) }));
 
-  const system =
-    'Sos un formador senior de A+ Growth, una agencia de marketing digital (Google Ads, Meta Ads, email marketing, CRO, analytics, estrategia y operación sobre GoHighLevel) con especialidad en el mercado hispano de EE.UU. ' +
+  // El portal de clientes (/entrenamientos-clientes) manda audience:'client'.
+  // Ahí el que pregunta es el cliente, no el equipo: cambia la voz y no se
+  // habla de procesos internos de la agencia.
+  const isClient = body.audience === 'client';
+
+  const system = isClient
+    ? 'Sos un especialista de A+ Growth, la agencia de marketing que acompaña a quien te escribe. ' +
+      'Un cliente acaba de leer una guía que le compartimos y te consulta una duda concreta sobre cómo aplicarla. ' +
+      `Guía: "${String(body.title || '').slice(0, 200)}" · Área: ${String(body.area || '').slice(0, 100)}. ` +
+      `Temario: ${String(body.temario || '').slice(0, 1500)}. ` +
+      `Resumen: ${String(body.resumen || '').slice(0, 600)}. ` +
+      'Respondé en el mismo idioma en que te escriben (si es español, español rioplatense con voseo). ' +
+      'Práctico y concreto, párrafos cortos y bullets cuando sumen. Nada de jerga de agencia ni de procesos internos nuestros. ' +
+      'Si la duda excede lo que cubre la guía o depende de decisiones del proyecto, decilo con claridad y sugerí que lo hablen con el equipo. ' +
+      'Nunca prometas resultados, plazos ni números que no estén en la guía. ' +
+      'Si la pregunta no tiene que ver con la guía, redirigila con amabilidad.'
+    : 'Sos un formador senior de A+ Growth, una agencia de marketing digital (Google Ads, Meta Ads, email marketing, CRO, analytics, estrategia y operación sobre GoHighLevel) con especialidad en el mercado hispano de EE.UU. ' +
     'Un miembro del equipo acaba de estudiar un training interno y te pregunta dudas sobre cómo operamos. ' +
     `Training: "${String(body.title || '').slice(0, 200)}" · Área: ${String(body.area || '').slice(0, 100)} · Nivel: ${String(body.level || '').slice(0, 50)}. ` +
     `Temario: ${String(body.temario || '').slice(0, 1500)}. ` +

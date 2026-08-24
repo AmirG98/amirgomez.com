@@ -1189,6 +1189,121 @@ TRAININGS.push(
     'Sé aplicar un snapshot y qué incluye el nuestro',
     'Puedo explicar al cliente qué es text-to-pay y documents con firma'
   ]
+},
+{
+  slug: 'whatsapp-api-business-manager',
+  cat: 'herramientas', level: 'Intermedio', dur: '35 min',
+  title: 'WhatsApp API: del <em>Business Manager</em> al primer envío',
+  desc: 'El circuito completo para dejar a un cliente enviando notificaciones por WhatsApp: portafolio de negocios, verificación, app de desarrollador, alta del número, token permanente y plantillas.',
+  secs: [
+    { nav: 'Antes de tocar nada', h: 'Tres cosas que definen si el trámite sale o se rehace', html: `
+      <p>Este proceso tiene varios pasos y casi todos son reversibles. Tres no lo son tanto, y son los que más seguido obligan a empezar de cero.</p>
+      <ul>
+        <li><b>El número no puede tener WhatsApp instalado.</b> Un número que hoy usa WhatsApp normal o WhatsApp Business (la app del celular) no se puede registrar en la API hasta borrarlo de esa app. Y una vez conectado, ese número deja de poder usarse en WhatsApp Messenger.</li>
+        <li><b>Fuera de la ventana de 24 horas solo se envían plantillas aprobadas.</b> No se le puede escribir libremente a alguien que no escribió primero. Toda notificación tiene que estar cargada y aprobada por Meta <i>antes</i>.</li>
+        <li><b>Hace falta consentimiento previo del usuario.</b> La política de WhatsApp exige que la persona haya dado su número y haya aceptado recibir mensajes.</li>
+      </ul>
+      <p class="pull">La línea nueva se consigue <span>antes</span> de arrancar, no cuando el sistema la pide.</p>
+      <div class="note"><b>Regla práctica:</b> pedile al cliente una línea exclusiva para esto y que no le instale la app nunca. Es la diferencia entre un alta de 20 minutos y una semana de idas y vueltas.</div>` },
+    { nav: 'Portafolio', h: 'Paso 1: crear el portafolio de negocios', html: `
+      <p>El portafolio de negocios (antes Business Manager) es el contenedor de todo: cuenta publicitaria, páginas, cuenta de WhatsApp y permisos del equipo.</p>
+      <ul>
+        <li>Entrar a <b>business.facebook.com</b> con la cuenta personal de Facebook de quien administra. Meta pide una cuenta personal como punto de entrada, pero no expone datos personales al público.</li>
+        <li><b>Crear una cuenta</b> → nombre del negocio, nombre de la persona y correo laboral. Usar un correo del dominio del cliente, no uno personal.</li>
+        <li>Confirmar el correo y cargar dirección, teléfono y sitio web.</li>
+      </ul>
+      <div class="note"><b>Cuidado:</b> esos datos son los que después se revisan en la verificación, así que tienen que coincidir con los datos reales y públicos de la empresa.</div>
+      <div class="ej"><b>Accesos</b>Sumá un segundo administrador desde el principio (Configuración del negocio → Usuarios → Personas). Si queda una sola persona con acceso y esa persona no está, recuperar el control es lento.</div>` },
+    { nav: 'Verificación', h: 'Paso 2: verificar el negocio (arrancalo ya)', html: `
+      <p>La verificación confirma ante Meta que la empresa es real. No es opcional si se quiere volumen: define el techo de envío.</p>
+      <ul>
+        <li><b>Sin verificar:</b> 250 destinatarios por día y 250 plantillas.</li>
+        <li><b>Verificado:</b> 2.000 destinatarios por día y hasta 6.000 plantillas.</li>
+      </ul>
+      <p>Se hace en <b>Configuración del negocio → Centro de seguridad → Iniciar verificación</b>. Suele pedir documentación que acredite la existencia legal (constancia de inscripción, estatuto) y algo que confirme domicilio o teléfono, como una factura de servicios a nombre de la empresa.</p>
+      <p class="pull">Este es el paso que <span>no</span> depende de nosotros: los tiempos los define Meta.</p>
+      <div class="note"><b>Por eso va temprano:</b> arrancá la verificación en paralelo con el resto de la configuración, no al final. El nombre en los papeles tiene que coincidir exactamente con el nombre cargado en el portafolio.</div>` },
+    { nav: 'App de desarrollador', h: 'Paso 3: la cuenta de desarrollador y la app', html: `
+      <p>Para usar la API hace falta una app en el panel de desarrolladores. Es un trámite de minutos y suele ser lo que más intimida al cliente, sin razón.</p>
+      <ul>
+        <li>Entrar a <b>developers.facebook.com</b> → <b>Comenzar</b>. Se registra con la misma cuenta personal de Facebook.</li>
+        <li><b>Mis apps</b> → <b>Crear app</b>. Nombre interno (el usuario final no lo ve) y correo de contacto.</li>
+        <li>Caso de uso: <b>Conectar con clientes a través de WhatsApp</b>.</li>
+        <li>Seleccionar el portafolio de negocios del paso 1 y crear.</li>
+      </ul>
+      <p>Después, dentro de la app: producto <b>WhatsApp</b> → <b>Empezar a usar la API</b> → seleccionar o crear la <b>cuenta de WhatsApp Business (WABA)</b>. Guardá el identificador de esa cuenta, se usa más adelante.</p>
+      <div class="ej"><b>Número de prueba</b>Meta entrega uno gratis: envía hasta a 5 destinatarios cargados a mano y trae una plantilla de ejemplo aprobada. Sirve para confirmar que todo funciona antes de poner el número real.</div>` },
+    { nav: 'Número real', h: 'Paso 4: registrar el número del cliente', html: `
+      <p>El número de prueba no sirve para operar. Requisitos del número real: que pueda recibir SMS o llamada, que no esté activo en WhatsApp, y que sea de la empresa. Se recomienda celular; una línea fija funciona pero conviene validarla por llamada.</p>
+      <ul>
+        <li><b>Agregar número de teléfono</b> en la configuración de WhatsApp de la app.</li>
+        <li><b>Nombre para mostrar:</b> es lo que ve el usuario en el chat. Tiene que ser el nombre real de la marca y cumplir las normas de Meta (nada de frases genéricas ni promociones). Meta lo revisa.</li>
+        <li>Categoría del negocio, descripción breve, y validación por SMS o llamada.</li>
+        <li><b>PIN de verificación en dos pasos</b>, de 6 dígitos. Meta lo exige al registrar.</li>
+      </ul>
+      <div class="note"><b>Guardá el PIN donde el equipo lo encuentre.</b> Sin ese PIN no se puede volver a registrar el número, y recuperarlo es un trámite aparte.</div>` },
+    { nav: 'Token', h: 'Paso 5: el token permanente', html: `
+      <p>El token que aparece por defecto en la pantalla de configuración <b>vence en 24 horas</b>. Sirve para probar, no para producción. El definitivo se genera con un usuario del sistema.</p>
+      <ul>
+        <li><b>business.facebook.com → Configuración del negocio → Usuarios → Usuarios del sistema.</b></li>
+        <li><b>Agregar</b>, nombre (ej. "API Notificaciones"), rol de administrador.</li>
+        <li><b>Agregar activos:</b> la app con control total y la cuenta de WhatsApp Business con control total.</li>
+        <li><b>Generar nuevo token</b> → seleccionar la app → marcar los tres permisos: <b>whatsapp_business_messaging</b>, <b>whatsapp_business_management</b> y <b>business_management</b>.</li>
+      </ul>
+      <div class="note"><b>Meta muestra el token una sola vez.</b> Da acceso a enviar mensajes en nombre del cliente, así que se trata como una contraseña: no va por chat, no va en un mail y no se sube a ningún repositorio.</div>` },
+    { nav: 'Plantillas', h: 'Paso 6: las plantillas definen qué se puede enviar', html: `
+      <p>Se cargan en <b>WhatsApp Manager → Herramientas de la cuenta → Plantillas de mensajes → Crear plantilla</b>. La revisión suele resolverse dentro de las 24 horas.</p>
+      <ul>
+        <li><b>Utilidad.</b> Se dispara por una acción del usuario o algo que ya pasó: una confirmación, un recordatorio. Es la más barata y la que menos se rechaza.</li>
+        <li><b>Marketing.</b> Promociones, novedades, reactivación. La más cara, la que más se rechaza, y con límites por usuario.</li>
+        <li><b>Autenticación.</b> Códigos de verificación de identidad.</li>
+      </ul>
+      <p class="pull">Si una notificación de utilidad se escribe con tono promocional, Meta la <span>reclasifica</span> como marketing y pasa a costar más.</p>
+      <div class="ej"><b>Bien escrita (utilidad)</b>"Hola {{1}}, registramos el service de tu {{2}}. Ya podés ver el historial completo desde tu patente." Sin ofertas, sin invitación a comprar: solo el hecho concreto.</div>` },
+    { nav: 'Límites', h: 'Cómo escalan los límites de envío', html: `
+      <p>El límite es la cantidad de usuarios distintos a los que se puede escribir en 24 horas, fuera de una conversación abierta. Los escalones: <b>250 → 2.000 → 10.000 → 100.000 → sin límite</b>.</p>
+      <ul>
+        <li><b>De 250 a 2.000:</b> verificando el negocio, o enviando 2.000 mensajes a usuarios distintos en 30 días con plantillas de buena calidad.</li>
+        <li><b>De ahí en adelante:</b> sube solo, cuando la calidad se mantiene alta y en los 7 días previos se usó al menos la mitad del límite actual. El aumento se aplica dentro de las 6 horas.</li>
+      </ul>
+      <p>La calidad la determinan los usuarios: si bloquean o reportan, baja, y con ella el límite. Por eso conviene ser conservador al principio y enviar solo lo que la gente espera recibir.</p>` },
+    { nav: 'Consentimiento', h: 'La regla que no se puede saltear', html: `
+      <p>Antes de escribirle a alguien, la persona tiene que haber dado su número y aceptado recibir mensajes. <b>No alcanza con tener el número</b> porque el cliente lo cargó en su sistema.</p>
+      <ul>
+        <li>Se puede pedir donde sea (sitio, formulario, QR), siempre que quede claro que se van a recibir mensajes de esa marca por WhatsApp.</li>
+        <li>Conviene pedir consentimiento separado para notificaciones de servicio y para promociones: son categorías distintas.</li>
+        <li>Si la persona pide dejar de recibir, hay que respetarlo de inmediato y sacarla de la lista.</li>
+        <li>Registrá cuándo y dónde aceptó cada usuario, por si Meta lo pregunta.</li>
+      </ul>
+      <div class="note"><b>Tiene implicancia de producto, no solo de marketing.</b> El opt in suele necesitar una casilla en el flujo de registro, así que conviene levantarlo con el equipo de desarrollo del cliente antes de que ese flujo esté cerrado.</div>` },
+    { nav: 'Orden de ejecución', h: 'El orden en que conviene hacerlo', html: `
+      <ul>
+        <li>Conseguir la línea nueva, sin WhatsApp instalado.</li>
+        <li>Crear el portafolio de negocios y sumar un segundo administrador.</li>
+        <li><b>Iniciar la verificación del negocio</b>, que es lo que más demora.</li>
+        <li>Crear la cuenta de desarrollador y la app.</li>
+        <li>Conectar WhatsApp y probar con el número de prueba.</li>
+        <li>Registrar el número real y guardar el PIN.</li>
+        <li>Generar el token permanente con usuario del sistema.</li>
+        <li>Cargar las primeras plantillas de utilidad y esperar aprobación.</li>
+        <li>Sumar la casilla de consentimiento en el registro del usuario.</li>
+      </ul>
+      <div class="ej"><b>Qué le decimos al cliente</b>Los pasos 2 y 8 dependen de Meta, no de nosotros ni de ellos. Aclararlo de entrada evita que una demora de revisión se lea como una demora del proyecto.</div>` }
+  ],
+  check: [
+    'Conseguí una línea nueva, sin WhatsApp ni WhatsApp Business instalado',
+    'Creé el portafolio de negocios con los datos reales de la empresa',
+    'Sumé un segundo administrador al portafolio',
+    'Inicié la verificación del negocio (temprano, en paralelo)',
+    'Creé la app de desarrollador con el caso de uso de WhatsApp',
+    'Probé el envío con el número de prueba antes de registrar el real',
+    'Registré el número real y guardé el PIN de 6 dígitos en lugar seguro',
+    'Generé el token permanente con usuario del sistema y los 3 permisos',
+    'Guardé el token como credencial, fuera de chats y repositorios',
+    'Cargué las primeras plantillas de utilidad (no marketing)',
+    'Definí dónde y cómo se pide el consentimiento del usuario',
+    'Le expliqué al cliente qué plazos dependen de Meta'
+  ]
 }
 );
 

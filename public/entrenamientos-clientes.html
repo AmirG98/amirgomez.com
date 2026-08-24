@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A+Growth — Guías y entrenamientos para clientes</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F2EFEA; --card: #FAF8F5; --ink: #2E2C28; --ink-2: #55524D; --muted: #8A8781;
+    --orange: #E04E10; --orange-soft: #F0956A; --hair: #DDD8CF; --dark: #14120F;
+    --ok: #1E7A4A;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --serif: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+    --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink-2); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 26px; }
+  .wrap-read { max-width: 880px; margin: 0 auto; padding: 0 26px; }
+  ::selection { background: var(--orange); color: #fff; }
+  a { color: var(--orange); }
+  button { font-family: inherit; }
+  :focus-visible { outline: 3px solid var(--orange-soft); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+
+  /* Banda interna */
+  .internal { background: var(--dark); color: #B8B3AB; font-size: 12.5px; letter-spacing: 0.04em; }
+  .internal .wrap { display: flex; align-items: center; gap: 10px; padding-top: 10px; padding-bottom: 10px; flex-wrap: wrap; }
+  .internal b { color: var(--orange-soft); text-transform: uppercase; letter-spacing: 0.14em; font-size: 11px; }
+
+  header.mast { position: relative; overflow: hidden; padding: 46px 0 38px; }
+  header.mast::after { content: ""; position: absolute; right: -180px; top: -180px; width: 480px; height: 480px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(224,78,16,0.16) 0%, rgba(224,78,16,0) 70%); filter: blur(30px); pointer-events: none; }
+  .head-row { display: flex; align-items: center; gap: 18px; margin-bottom: 38px; }
+  .wordmark { font-size: 21px; font-weight: 800; color: var(--ink); white-space: nowrap; }
+  .wordmark span { color: var(--orange); }
+  .head-row .rule { flex: 1; height: 1px; background: var(--ink); }
+  .head-row .tag { font-size: 11.5px; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; white-space: nowrap; }
+  .kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
+  h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(34px, 5.6vw, 56px); color: var(--ink); letter-spacing: -0.015em; line-height: 1.05; text-wrap: balance; }
+  h1 em { font-style: italic; color: var(--orange); }
+  .sub { margin-top: 16px; font-size: 16.5px; max-width: 58ch; text-wrap: pretty; }
+  .sub b { color: var(--ink); }
+
+  /* Stats del dashboard */
+  .stats { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 28px; }
+  .stat .n { font-family: var(--serif); font-weight: 600; font-size: 30px; color: var(--ink); line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .stat .n span { color: var(--orange); }
+  .stat .l { font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+  /* Controles: búsqueda + filtros */
+  .controls { position: sticky; top: 0; z-index: 20; background: rgba(242,239,234,0.93); backdrop-filter: blur(10px);
+    border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+  .controls .wrap { display: flex; gap: 10px; align-items: center; padding-top: 10px; padding-bottom: 10px; flex-wrap: wrap; }
+  .search { flex: 1 1 240px; min-width: 200px; position: relative; }
+  .search input { width: 100%; min-height: 42px; padding: 8px 14px 8px 38px; font-size: 14.5px; font-family: inherit; color: var(--ink);
+    background: var(--card); border: 1px solid var(--hair); border-radius: 999px; }
+  .search input:focus-visible { outline: 2px solid var(--orange); border-color: var(--orange); }
+  .search svg { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; stroke: var(--muted); }
+  .chips { display: flex; gap: 4px; overflow-x: auto; }
+  .chips button { flex: none; font-size: 12px; font-weight: 600; color: var(--ink-2); background: none; border: 0; cursor: pointer;
+    padding: 7px 13px; border-radius: 999px; transition: all .15s; }
+  .chips button:hover { color: var(--orange); }
+  .chips button.on { background: var(--ink); color: var(--paper); }
+
+  /* Grid de trainings */
+  section.deck { padding: 44px 0 10px; }
+  .deck-head { display: flex; align-items: baseline; gap: 16px; border-bottom: 1px solid var(--ink); padding-bottom: 12px; margin-bottom: 22px; }
+  .deck-head .no { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 17px; color: var(--orange); }
+  .deck-head h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(22px, 3.4vw, 32px); color: var(--ink); letter-spacing: -0.01em; }
+  .deck-head .count { margin-left: auto; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; margin-bottom: 26px; }
+  .tcard { display: flex; flex-direction: column; gap: 10px; background: var(--card); border: 1px solid var(--hair); border-radius: 14px;
+    padding: 20px 22px 18px; text-decoration: none; color: var(--ink-2); transition: transform .18s cubic-bezier(.2,.7,.2,1), box-shadow .18s, border-color .18s; }
+  .tcard:hover { transform: translateY(-3px); border-color: var(--orange-soft); box-shadow: 0 10px 28px rgba(46,44,40,0.08); }
+  .tcard .top { display: flex; align-items: center; gap: 8px; }
+  .tcard .cat { font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); }
+  .tcard .lvl { margin-left: auto; font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+    border: 1px solid var(--hair); border-radius: 999px; padding: 2px 9px; white-space: nowrap; }
+  .tcard h3 { font-family: var(--serif); font-weight: 600; font-size: 20px; color: var(--ink); line-height: 1.25; text-wrap: balance; }
+  .tcard p { font-size: 13.5px; flex: 1; }
+  .tcard .meta { display: flex; align-items: center; gap: 12px; font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
+  .tcard .bar { flex: 1; height: 4px; background: var(--hair); border-radius: 99px; overflow: hidden; }
+  .tcard .bar i { display: block; height: 100%; background: var(--orange); border-radius: 99px; transition: width .3s; }
+  .tcard .done-badge { color: var(--ok); font-weight: 700; }
+  .tcard.ext .cat { color: var(--ink-2); }
+  .empty { padding: 30px 0 50px; font-size: 15px; color: var(--muted); font-style: italic; }
+
+  /* Vista de training */
+  .crumb { display: inline-flex; align-items: center; gap: 8px; margin: 26px 0 0; font-size: 13px; font-weight: 600; color: var(--ink-2);
+    text-decoration: none; border: 1px solid var(--hair); background: var(--card); border-radius: 999px; padding: 8px 16px; }
+  .crumb:hover { color: var(--orange); border-color: var(--orange-soft); }
+  .tmeta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 18px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  .tmeta b { color: var(--ink); font-weight: 600; }
+
+  nav.secnav { position: sticky; top: 0; z-index: 20; background: rgba(242,239,234,0.93); backdrop-filter: blur(10px);
+    border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); }
+  nav.secnav .wrap-read { display: flex; gap: 4px; overflow-x: auto; padding-top: 9px; padding-bottom: 9px; }
+  nav.secnav a { flex: none; font-size: 12px; font-weight: 600; color: var(--ink-2); text-decoration: none; padding: 7px 13px; border-radius: 999px; transition: all .15s; }
+  nav.secnav a:hover { color: var(--orange); }
+
+  section.blk { padding: 54px 0 8px; }
+  .sec-head { display: flex; align-items: baseline; gap: 16px; border-bottom: 1px solid var(--ink); padding-bottom: 14px; margin-bottom: 20px; }
+  .sec-head .no { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 18px; color: var(--orange); }
+  .sec-head h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(24px, 3.6vw, 34px); color: var(--ink); letter-spacing: -0.01em; text-wrap: balance; }
+  .blk p { margin-bottom: 14px; font-size: 15.5px; max-width: 70ch; text-wrap: pretty; }
+  .blk p b, .blk li b { color: var(--ink); }
+  .blk ul, .blk ol { margin: 0 0 16px 20px; }
+  .blk li { margin-bottom: 8px; font-size: 15px; }
+  .blk code { font-family: var(--mono); font-size: 0.9em; background: #E9E5DD; padding: 1px 6px; border-radius: 5px; color: var(--ink); }
+  .pull { font-family: var(--serif); font-weight: 500; font-size: clamp(19px, 2.8vw, 24px); line-height: 1.4; color: var(--ink);
+    border-left: 3px solid var(--orange); padding: 6px 0 6px 22px; margin: 24px 0; max-width: 36ch; text-wrap: pretty; }
+  .pull span { color: var(--orange); }
+  .note { border-left: 3px solid var(--orange); background: rgba(224,78,16,0.06); padding: 14px 18px; margin: 20px 0; font-size: 14px; max-width: 760px; }
+  .note b { color: var(--ink); }
+  .ej { background: var(--card); border: 1px solid var(--hair); border-radius: 10px; padding: 12px 16px; margin: 12px 0 16px; font-size: 13.5px; max-width: 760px; }
+  .ej b { color: var(--orange); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+
+  /* Checklist */
+  .check { background: var(--dark); border-radius: 16px; padding: 30px 28px; margin: 40px 0 10px; color: #B8B3AB; }
+  .check h3 { font-family: var(--serif); font-weight: 600; font-size: 24px; color: #F2EFEA; margin-bottom: 4px; }
+  .check .hint { font-size: 12.5px; color: #7A756D; margin-bottom: 18px; }
+  .check label { display: flex; gap: 12px; align-items: flex-start; padding: 9px 0; border-bottom: 1px solid #26231F; font-size: 14.5px; cursor: pointer; }
+  .check label:last-of-type { border-bottom: 0; }
+  .check input { margin-top: 4px; width: 16px; height: 16px; accent-color: var(--orange); flex: none; }
+  .check input:checked + span { color: #6E6A63; text-decoration: line-through; }
+  .check .done-msg { display: none; margin-top: 16px; font-weight: 700; color: var(--orange-soft); }
+  .check.all .done-msg { display: block; }
+
+  /* Box de dudas */
+  .ask { background: var(--card); border: 1px solid var(--hair); border-radius: 16px; padding: 28px; margin: 34px 0 70px; }
+  .ask h3 { font-family: var(--serif); font-weight: 600; font-size: 24px; color: var(--ink); margin-bottom: 4px; }
+  .ask .hint { font-size: 13px; color: var(--muted); margin-bottom: 16px; max-width: 62ch; }
+  .ask textarea { width: 100%; min-height: 96px; resize: vertical; padding: 12px 14px; font-size: 15px; font-family: inherit; line-height: 1.55;
+    color: var(--ink); background: #fff; border: 1px solid var(--hair); border-radius: 10px; }
+  .ask textarea:focus-visible { outline: 2px solid var(--orange); border-color: var(--orange); }
+  .ask .row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; align-items: center; }
+  .ask .go { min-height: 44px; padding: 0 22px; border: 0; border-radius: 999px; background: var(--orange); color: #fff;
+    font-size: 14px; font-weight: 700; cursor: pointer; }
+  .ask .go:hover { background: #C64510; }
+  .ask .alt { min-height: 44px; padding: 0 18px; border: 1px solid var(--hair); border-radius: 999px; background: none; color: var(--ink-2);
+    font-size: 13.5px; font-weight: 600; cursor: pointer; }
+  .ask .alt:hover { color: var(--orange); border-color: var(--orange-soft); }
+  .ask .copied { font-size: 13px; font-weight: 700; color: var(--ok); opacity: 0; transition: opacity .2s; }
+  .ask .copied.show { opacity: 1; }
+
+  /* Chat embebido */
+  .chat { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+  .msg { max-width: 85%; padding: 10px 14px; border-radius: 14px; font-size: 14.5px; line-height: 1.55; white-space: normal; }
+  .msg.u { align-self: flex-end; background: var(--dark); color: #F2EFEA; border-bottom-right-radius: 4px; }
+  .msg.a { align-self: flex-start; background: #fff; border: 1px solid var(--hair); color: var(--ink-2); border-bottom-left-radius: 4px; }
+  .msg.a b { color: var(--ink); }
+  .msg.a .who { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 4px; }
+  .msg.a ul { margin: 6px 0 6px 18px; }
+  .msg.a li { margin-bottom: 4px; }
+  .msg.err { background: rgba(179,52,27,0.07); border: 1px solid rgba(179,52,27,0.3); color: var(--ink-2); }
+  .msg.think { color: var(--muted); font-style: italic; }
+  .ask .fb { margin-top: 12px; padding: 12px 16px; border: 1px dashed var(--hair); border-radius: 10px; font-size: 13.5px; }
+  .ask .fb p { margin-bottom: 10px; }
+  .ask .go:disabled { opacity: .5; cursor: default; }
+
+  footer.foot { border-top: 1px solid var(--hair); padding: 26px 0 40px; font-size: 12.5px; color: var(--muted); }
+  footer.foot .wrap { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  footer.foot b { color: var(--ink); }
+
+  .hidden { display: none !important; }
+
+  /* Bloque de proximas guias */
+  .soon { margin-top: 44px; padding: 28px 30px; border: 1px dashed var(--hair); border-radius: 16px; background: rgba(255,255,255,0.45); }
+  .soon h3 { font-family: var(--serif); font-weight: 600; font-size: 22px; color: var(--ink); margin-bottom: 8px; }
+  .soon p { font-size: 14.5px; color: var(--ink-2); max-width: 68ch; }
+  .soon ul { margin: 14px 0 0 18px; }
+  .soon li { font-size: 14.5px; color: var(--ink-2); margin-bottom: 7px; }
+  .soon .ask-more { margin-top: 16px; font-weight: 600; color: var(--ink); }
+</style>
+
+</head>
+<body>
+
+<!-- ====== VISTA: DASHBOARD ====== -->
+<div id="view-home">
+  <header class="mast">
+    <div class="wrap">
+      <div class="head-row">
+        <div class="wordmark">A<span>+</span>Growth</div>
+        <div class="rule"></div>
+        <div class="tag">Guías para clientes</div>
+      </div>
+      <div class="kicker">Biblioteca de entrenamientos</div>
+      <h1>Las guías que <em>compartimos</em> con vos.</h1>
+      <p class="sub">Material práctico de las cosas que aparecen una y otra vez en los proyectos: <b>configuraciones técnicas, grabación de video, contenido y buenas prácticas de canal</b>.
+      Cada guía es paso a paso, con una checklist al final para chequear que no quedó nada suelto.</p>
+      <div class="stats">
+        <div class="stat"><div class="n" id="stat-total">—</div><div class="l">Guías publicadas</div></div>
+        <div class="stat"><div class="n" id="stat-areas">—</div><div class="l">Áreas</div></div>
+        <div class="stat"><div class="n"><span id="stat-done">0</span></div><div class="l">Completadas por vos</div></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="controls">
+    <div class="wrap">
+      <div class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+        <input id="q" type="search" placeholder="Buscar una guía… (ej: WhatsApp, VSL, cámara)" aria-label="Buscar guía">
+      </div>
+      <div class="chips" id="chips" role="tablist" aria-label="Filtrar por área"></div>
+    </div>
+  </div>
+
+  <section class="deck">
+    <div class="wrap">
+      <div class="deck-head"><span class="no">a.</span><h2>Guías</h2><span class="count" id="count"></span></div>
+      <div class="grid" id="grid"></div>
+      <p class="empty hidden" id="empty">Nada con ese filtro. Probá con otra palabra o limpiá la búsqueda.</p>
+
+      <div class="deck-head"><span class="no">b.</span><h2>Contenido y video</h2><span class="count">2 piezas</span></div>
+      <div class="grid" id="grid-legacy"></div>
+
+      <div class="soon">
+        <h3>En preparación</h3>
+        <p>Vamos sumando guías a medida que se vuelven útiles para más de un proyecto. Estas están en curso:</p>
+        <ul>
+          <li>Google Business Profile: alta, categorías y reseñas</li>
+          <li>Cómo leer un reporte de campañas sin perderse en métricas</li>
+          <li>Qué pedirle a un editor de video para que el material rinda</li>
+          <li>Landing pages: qué revisar antes de mandar tráfico</li>
+        </ul>
+        <p class="ask-more">¿Hay algo que te sirva tener escrito? Decinos y lo sumamos a la lista.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap"><b>A+Growth</b><span>·</span><span>El progreso y las checklists se guardan solo en tu navegador.</span></div>
+  </footer>
+</div>
+
+<!-- ====== VISTA: TRAINING ====== -->
+<div id="view-training" class="hidden">
+  <div class="wrap-read"><a class="crumb" href="#" id="back">&larr; Volver a las guías</a></div>
+  <header class="mast" style="padding-top:26px">
+    <div class="wrap-read">
+      <div class="kicker" id="t-cat"></div>
+      <h1 id="t-title"></h1>
+      <p class="sub" id="t-sub"></p>
+      <div class="tmeta" id="t-meta"></div>
+    </div>
+  </header>
+  <nav class="secnav"><div class="wrap-read" id="t-nav"></div></nav>
+  <main class="wrap-read" id="t-body"></main>
+</div>
+<script>
+'use strict';
+const TRAININGS = [];
+const chatThreads = {};
+const CATS = {
+  'whatsapp': 'WhatsApp',
+  'video': 'Video y VSL'
+};
+const LEGACY = [
+  { title: 'Long-Form que Retiene y Convierte', cat: 'Contenido · ES', desc: 'Cómo estructurar tutoriales, videos largos y piezas paso a paso para que la gente llegue al final.', url: 'https://amirgomez.com/long-form-training-es.html' },
+  { title: 'Long-Form That Retains and Converts', cat: 'Contenido · EN', desc: 'Versión en inglés del training de long-form: retención, ritmo y conversión en piezas largas.', url: 'https://amirgomez.com/long-form-training.html' }
+
+];
+
+TRAININGS.push(
+{
+  slug: 'whatsapp-api-business-manager',
+  cat: 'whatsapp', level: 'Intermedio', dur: '35 min',
+  title: 'WhatsApp API: del <em>Business Manager</em> al primer envío',
+  desc: 'El circuito completo para empezar a enviar notificaciones por WhatsApp: portafolio de negocios, verificación, app de desarrollador, alta del número, token permanente y plantillas.',
+  secs: [
+    { nav: 'Antes de tocar nada', h: 'Tres cosas que definen si el trámite sale o se rehace', html: `
+      <p>Este proceso tiene varios pasos y casi todos son reversibles. Tres no lo son tanto, y son los que más seguido obligan a empezar de cero.</p>
+      <ul>
+        <li><b>El número no puede tener WhatsApp instalado.</b> Un número que hoy usa WhatsApp normal o WhatsApp Business (la app del celular) no se puede registrar en la API hasta borrarlo de esa app. Y una vez conectado, ese número deja de poder usarse en WhatsApp Messenger.</li>
+        <li><b>Fuera de la ventana de 24 horas solo se envían plantillas aprobadas.</b> No se le puede escribir libremente a alguien que no escribió primero. Toda notificación tiene que estar cargada y aprobada por Meta <i>antes</i>.</li>
+        <li><b>Hace falta consentimiento previo del usuario.</b> La política de WhatsApp exige que la persona haya dado su número y haya aceptado recibir mensajes.</li>
+      </ul>
+      <p class="pull">La línea nueva se consigue <span>antes</span> de arrancar, no cuando el sistema la pide.</p>
+      <div class="note"><b>Regla práctica:</b> conseguí una línea exclusiva para esto y no le instales la app nunca. Es la diferencia entre un alta de 20 minutos y una semana de idas y vueltas.</div>` },
+    { nav: 'Portafolio', h: 'Paso 1: crear el portafolio de negocios', html: `
+      <p>El portafolio de negocios (antes Business Manager) es el contenedor de todo: cuenta publicitaria, páginas, cuenta de WhatsApp y permisos del equipo.</p>
+      <ul>
+        <li>Entrar a <b>business.facebook.com</b> con la cuenta personal de Facebook de quien administra. Meta pide una cuenta personal como punto de entrada, pero no expone datos personales al público.</li>
+        <li><b>Crear una cuenta</b> → nombre del negocio, nombre de la persona y correo laboral. Usar un correo del dominio de la empresa, no uno personal.</li>
+        <li>Confirmar el correo y cargar dirección, teléfono y sitio web.</li>
+      </ul>
+      <div class="note"><b>Cuidado:</b> esos datos son los que después se revisan en la verificación, así que tienen que coincidir con los datos reales y públicos de tu empresa.</div>
+      <div class="ej"><b>Accesos</b>Sumá un segundo administrador desde el principio (Configuración del negocio → Usuarios → Personas). Si queda una sola persona con acceso y esa persona no está, recuperar el control es lento.</div>` },
+    { nav: 'Verificación', h: 'Paso 2: verificar el negocio (arrancalo ya)', html: `
+      <p>La verificación confirma ante Meta que la empresa es real. No es opcional si se quiere volumen: define el techo de envío.</p>
+      <ul>
+        <li><b>Sin verificar:</b> 250 destinatarios por día y 250 plantillas.</li>
+        <li><b>Verificado:</b> 2.000 destinatarios por día y hasta 6.000 plantillas.</li>
+      </ul>
+      <p>Se hace en <b>Configuración del negocio → Centro de seguridad → Iniciar verificación</b>. Suele pedir documentación que acredite la existencia legal (constancia de inscripción, estatuto) y algo que confirme domicilio o teléfono, como una factura de servicios a nombre de la empresa.</p>
+      <p class="pull">Este es el paso que <span>no</span> depende de nosotros: los tiempos los define Meta.</p>
+      <div class="note"><b>Por eso va temprano:</b> arrancá la verificación en paralelo con el resto de la configuración, no al final. El nombre en los papeles tiene que coincidir exactamente con el nombre cargado en el portafolio.</div>` },
+    { nav: 'App de desarrollador', h: 'Paso 3: la cuenta de desarrollador y la app', html: `
+      <p>Para usar la API hace falta una app en el panel de desarrolladores. Es un trámite de minutos y suele ser el paso que más intimida, sin razón.</p>
+      <ul>
+        <li>Entrar a <b>developers.facebook.com</b> → <b>Comenzar</b>. Se registra con la misma cuenta personal de Facebook.</li>
+        <li><b>Mis apps</b> → <b>Crear app</b>. Nombre interno (el usuario final no lo ve) y correo de contacto.</li>
+        <li>Caso de uso: <b>Conectar con clientes a través de WhatsApp</b>.</li>
+        <li>Seleccionar el portafolio de negocios del paso 1 y crear.</li>
+      </ul>
+      <p>Después, dentro de la app: producto <b>WhatsApp</b> → <b>Empezar a usar la API</b> → seleccionar o crear la <b>cuenta de WhatsApp Business (WABA)</b>. Guardá el identificador de esa cuenta, se usa más adelante.</p>
+      <div class="ej"><b>Número de prueba</b>Meta entrega uno gratis: envía hasta a 5 destinatarios cargados a mano y trae una plantilla de ejemplo aprobada. Sirve para confirmar que todo funciona antes de poner el número real.</div>` },
+    { nav: 'Número real', h: 'Paso 4: registrar el número real', html: `
+      <p>El número de prueba no sirve para operar. Requisitos del número real: que pueda recibir SMS o llamada, que no esté activo en WhatsApp, y que sea de tu empresa. Se recomienda celular; una línea fija funciona pero conviene validarla por llamada.</p>
+      <ul>
+        <li><b>Agregar número de teléfono</b> en la configuración de WhatsApp de la app.</li>
+        <li><b>Nombre para mostrar:</b> es lo que ve el usuario en el chat. Tiene que ser el nombre real de la marca y cumplir las normas de Meta (nada de frases genéricas ni promociones). Meta lo revisa.</li>
+        <li>Categoría del negocio, descripción breve, y validación por SMS o llamada.</li>
+        <li><b>PIN de verificación en dos pasos</b>, de 6 dígitos. Meta lo exige al registrar.</li>
+      </ul>
+      <div class="note"><b>Guardá el PIN donde el equipo lo encuentre.</b> Sin ese PIN no se puede volver a registrar el número, y recuperarlo es un trámite aparte.</div>` },
+    { nav: 'Token', h: 'Paso 5: el token permanente', html: `
+      <p>El token que aparece por defecto en la pantalla de configuración <b>vence en 24 horas</b>. Sirve para probar, no para producción. El definitivo se genera con un usuario del sistema.</p>
+      <ul>
+        <li><b>business.facebook.com → Configuración del negocio → Usuarios → Usuarios del sistema.</b></li>
+        <li><b>Agregar</b>, nombre (ej. "API Notificaciones"), rol de administrador.</li>
+        <li><b>Agregar activos:</b> la app con control total y la cuenta de WhatsApp Business con control total.</li>
+        <li><b>Generar nuevo token</b> → seleccionar la app → marcar los tres permisos: <b>whatsapp_business_messaging</b>, <b>whatsapp_business_management</b> y <b>business_management</b>.</li>
+      </ul>
+      <div class="note"><b>Meta muestra el token una sola vez.</b> Da acceso a enviar mensajes en nombre de tu empresa, así que se trata como una contraseña: no va por chat, no va en un mail y no se sube a ningún repositorio.</div>` },
+    { nav: 'Plantillas', h: 'Paso 6: las plantillas definen qué se puede enviar', html: `
+      <p>Se cargan en <b>WhatsApp Manager → Herramientas de la cuenta → Plantillas de mensajes → Crear plantilla</b>. La revisión suele resolverse dentro de las 24 horas.</p>
+      <ul>
+        <li><b>Utilidad.</b> Se dispara por una acción del usuario o algo que ya pasó: una confirmación, un recordatorio. Es la más barata y la que menos se rechaza.</li>
+        <li><b>Marketing.</b> Promociones, novedades, reactivación. La más cara, la que más se rechaza, y con límites por usuario.</li>
+        <li><b>Autenticación.</b> Códigos de verificación de identidad.</li>
+      </ul>
+      <p class="pull">Si una notificación de utilidad se escribe con tono promocional, Meta la <span>reclasifica</span> como marketing y pasa a costar más.</p>
+      <div class="ej"><b>Bien escrita (utilidad)</b>"Hola {{1}}, registramos el service de tu {{2}}. Ya podés ver el historial completo desde tu patente." Sin ofertas, sin invitación a comprar: solo el hecho concreto.</div>` },
+    { nav: 'Límites', h: 'Cómo escalan los límites de envío', html: `
+      <p>El límite es la cantidad de usuarios distintos a los que se puede escribir en 24 horas, fuera de una conversación abierta. Los escalones: <b>250 → 2.000 → 10.000 → 100.000 → sin límite</b>.</p>
+      <ul>
+        <li><b>De 250 a 2.000:</b> verificando el negocio, o enviando 2.000 mensajes a usuarios distintos en 30 días con plantillas de buena calidad.</li>
+        <li><b>De ahí en adelante:</b> sube solo, cuando la calidad se mantiene alta y en los 7 días previos se usó al menos la mitad del límite actual. El aumento se aplica dentro de las 6 horas.</li>
+      </ul>
+      <p>La calidad la determinan los usuarios: si bloquean o reportan, baja, y con ella el límite. Por eso conviene ser conservador al principio y enviar solo lo que la gente espera recibir.</p>` },
+    { nav: 'Consentimiento', h: 'La regla que no se puede saltear', html: `
+      <p>Antes de escribirle a alguien, la persona tiene que haber dado su número y aceptado recibir mensajes. <b>No alcanza con tener el número</b> porque el cliente lo cargó en su sistema.</p>
+      <ul>
+        <li>Se puede pedir donde sea (sitio, formulario, QR), siempre que quede claro que se van a recibir mensajes de esa marca por WhatsApp.</li>
+        <li>Conviene pedir consentimiento separado para notificaciones de servicio y para promociones: son categorías distintas.</li>
+        <li>Si la persona pide dejar de recibir, hay que respetarlo de inmediato y sacarla de la lista.</li>
+        <li>Registrá cuándo y dónde aceptó cada usuario, por si Meta lo pregunta.</li>
+      </ul>
+      <div class="note"><b>Tiene implicancia de producto, no solo de marketing.</b> El opt in suele necesitar una casilla en el flujo de registro, así que conviene resolverlo con el equipo de desarrollo antes de que ese flujo esté cerrado.</div>` },
+    { nav: 'Orden de ejecución', h: 'El orden en que conviene hacerlo', html: `
+      <ul>
+        <li>Conseguir la línea nueva, sin WhatsApp instalado.</li>
+        <li>Crear el portafolio de negocios y sumar un segundo administrador.</li>
+        <li><b>Iniciar la verificación del negocio</b>, que es lo que más demora.</li>
+        <li>Crear la cuenta de desarrollador y la app.</li>
+        <li>Conectar WhatsApp y probar con el número de prueba.</li>
+        <li>Registrar el número real y guardar el PIN.</li>
+        <li>Generar el token permanente con usuario del sistema.</li>
+        <li>Cargar las primeras plantillas de utilidad y esperar aprobación.</li>
+        <li>Sumar la casilla de consentimiento en el registro del usuario.</li>
+      </ul>
+      <div class="ej"><b>Sobre los plazos</b>Los pasos 2 y 8 dependen de la revisión de Meta, no de ustedes ni de nosotros. Conviene tenerlo presente para no leer una demora de revisión como una demora del proyecto.</div>` }
+  ],
+  check: [
+    'Conseguimos una línea nueva, sin WhatsApp ni WhatsApp Business instalado',
+    'Creamos el portafolio de negocios con los datos reales de la empresa',
+    'Sumamos un segundo administrador al portafolio',
+    'Iniciamos la verificación del negocio (temprano, en paralelo)',
+    'Creamos la app de desarrollador con el caso de uso de WhatsApp',
+    'Probamos el envío con el número de prueba antes de registrar el real',
+    'Registramos el número real y guardamos el PIN de 6 dígitos en lugar seguro',
+    'Generamos el token permanente con usuario del sistema y los 3 permisos',
+    'Guardamos el token como credencial, fuera de chats y repositorios',
+    'Cargamos las primeras plantillas de utilidad (no marketing)',
+    'Definimos dónde y cómo se pide el consentimiento del usuario',
+    'Sabemos qué plazos dependen de la revisión de Meta'
+  ]
+},
+{
+  slug: 'vsl-webinar-grabacion',
+  cat: 'video', level: 'Práctico', dur: '20 min',
+  title: 'Cómo grabar un <em>VSL</em> o webinar que retiene',
+  desc: 'Estructura, tono, cámara, luz y audio para grabar una pieza de venta en video que la gente termine de ver. La referencia para revisar antes de cada grabación.',
+  secs: [
+    { nav: 'Duración y estructura', h: 'Duración ideal y cómo ordenar el contenido', html: `
+      <p>Entre <b>5 y 15 minutos</b> es el punto donde mejor funcionan la retención y el interés. Más corto se queda sin sustancia, más largo empieza a perder gente antes de la oferta.</p>
+      <p>Lo que define si se quedan pasa en el <b>primer minuto</b>. En esos 60 segundos hay que cubrir tres cosas:</p>
+      <ul>
+        <li><b>Cuál es el problema.</b> Nombralo tal como lo viviría la persona.</li>
+        <li><b>Qué resultado prometés.</b> Concreto, no una idea vaga de mejora.</li>
+        <li><b>Por qué vos.</b> Qué te hace la persona indicada para explicarlo.</li>
+      </ul>
+      <p class="pull">Nada de intros largas ni reflexiones personales: <span>al grano</span> desde el primer segundo.</p>
+      <p>Después, dividí el contenido en secciones claras y avisá en voz alta cuándo cambiás de una a otra: "primero…", "ahora…", "esta es la parte más importante…". Esa señalización verbal es lo que evita que la gente se pierda.</p>
+      <div class="ej"><b>Cada 3 a 5 minutos</b>Reseteá la atención con una pregunta, un ejemplo rápido o una afirmación fuerte. Sin esos anclajes la atención se cae aunque el contenido sea bueno.</div>` },
+    { nav: 'Tono y ritmo', h: 'Tono y ritmo: conversado, no locutado', html: `
+      <p>El objetivo es sonar <b>seguro y conversacional</b>, no meterse en una "voz de presentador". Esa voz formal genera distancia justo cuando querés cercanía.</p>
+      <ul>
+        <li>Hablá un <b>10 a 15% más rápido</b> que en una conversación normal, pero pausá a propósito después de cada punto importante.</li>
+        <li>Usá frases <b>más cortas</b> que en una presentación en vivo. En video, las frases largas se pierden.</li>
+        <li>Variá la cadencia: un poco más rápido en ejemplos e historias, más lento en las conclusiones.</li>
+      </ul>
+      <div class="note"><b>Si te trabás:</b> pausá y volvé a empezar la frase. No pidas disculpas ni lo señales, en la edición no se nota. Pedir perdón sí se nota.</div>` },
+    { nav: 'Energía', h: 'Energía y presencia frente a cámara', html: `
+      <p>La energía se escucha antes de que se entienda el contenido. Cuatro cosas la mueven de inmediato:</p>
+      <ul>
+        <li><b>Sonreí antes de grabar.</b> Cambia el tono de voz al instante, incluso si después no sonreís todo el tiempo.</li>
+        <li><b>Grabá parado</b> si podés, o sentado derecho con los pies apoyados. Mejora la energía y el control de la respiración.</li>
+        <li><b>Usá las manos</b>, aunque queden fuera de cuadro. Hace que suenes más dinámico.</li>
+        <li><b>Trabajá con bullets, no con guion cerrado.</b> El guion palabra por palabra es la causa más común del tono monótono.</li>
+      </ul>
+      <p class="pull">Grabá como si le hablaras a <span>un</span> cliente inteligente, no a una audiencia.</p>` },
+    { nav: 'Guion o notas', h: 'Guion contra notas: nunca leer párrafos', html: `
+      <p>Leer párrafos completos se nota siempre, en la mirada y en el ritmo. En lugar de eso:</p>
+      <ul>
+        <li>Bullets, no oraciones completas.</li>
+        <li>Palabras clave en negrita para engancharte de un vistazo.</li>
+        <li>Prompts cortos que te recuerden la idea, no que te la dicten.</li>
+      </ul>
+      <div class="note"><b>Dónde van las notas:</b> a la altura de los ojos y cerca de la cámara, para que la mirada quede natural. Notas abajo, en el teclado, delatan la lectura en cada frase.</div>` },
+    { nav: 'Cámara', h: 'Cómo poner la cámara', html: `
+      <ul>
+        <li>Cámara <b>a la altura de los ojos</b>. Ni contrapicado ni desde arriba.</li>
+        <li>Mirá <b>directo al lente</b> en los puntos importantes, no a tu propia imagen en pantalla.</li>
+        <li>Fondo limpio y sin desorden.</li>
+        <li>Encuadre de <b>medio pecho para arriba</b>, con un poco de aire sobre la cabeza.</li>
+      </ul>` },
+    { nav: 'Luz', h: 'Luz, con o sin equipo', html: `
+      <p><b>Si tenés luces:</b> una luz principal a 45 grados de la cara, apenas por encima de la altura de los ojos. Evitá las luces cenitales fuertes, que generan sombra bajo los ojos.</p>
+      <p><b>Si no tenés luces:</b></p>
+      <ul>
+        <li>Ponete <b>de frente a una ventana</b>, nunca de espaldas.</li>
+        <li>Grabá con luz de día cuando puedas.</li>
+        <li>Sumá una lámpara de escritorio detrás de la cámara, con foco cálido, para suavizar sombras.</li>
+        <li>Evitá mezclar temperaturas: luz de día más luz amarilla de techo queda mal.</li>
+      </ul>` },
+    { nav: 'Audio', h: 'Audio: importa más que la imagen', html: `
+      <p>La gente perdona una imagen mediocre; un audio malo hace que cierren el video. Si hay que elegir dónde poner el esfuerzo, va acá.</p>
+      <ul>
+        <li>Auriculares o un micrófono externo simple, si tenés.</li>
+        <li>Grabá en una sala <b>blanda</b>: cortinas, sillón o alfombra bajan el eco.</li>
+        <li><b>Hacé una prueba de 10 segundos y escuchala</b> antes de grabar en serio.</li>
+      </ul>
+      <div class="note"><b>Esa prueba de 10 segundos</b> es el paso que más veces salva una grabación entera. Un zumbido o un eco que no detectaste se descubre recién al editar, cuando ya no hay vuelta atrás.</div>` },
+    { nav: 'Distracciones', h: 'Cortar las distracciones', html: `
+      <ul>
+        <li>Notificaciones de Slack, mail y calendario <b>apagadas</b>.</li>
+        <li>Teléfono en No molestar.</li>
+        <li>Pestañas y apps que no uses, cerradas.</li>
+      </ul>
+      <p>No es solo por el ruido: una notificación en mitad de una idea te obliga a rehacer la toma completa.</p>` },
+    { nav: 'Mentalidad', h: 'Con qué cabeza grabar', html: `
+      <p>No estás "grabando un webinar". Estás <b>capturando una buena explicación una sola vez</b> para que después escale a mucha gente sin que tengas que repetirla.</p>
+      <p class="pull">Las imperfecciones chicas se leen como <span>humanas</span>, no como poco profesionales.</p>
+      <p>Esa es la diferencia entre grabar diez tomas buscando la perfecta y grabar dos que suenan a persona real explicando algo que domina.</p>` },
+    { nav: 'Checklist final', h: 'Antes de apretar grabar', html: `
+      <ul>
+        <li>Agua cerca</li>
+        <li>Notas visibles a la altura de los ojos</li>
+        <li>Notificaciones apagadas</li>
+        <li>Cámara encuadrada y luz resuelta</li>
+        <li>Audio probado</li>
+        <li>Una respiración profunda</li>
+        <li>Grabar y entrar directo al valor</li>
+      </ul>` }
+  ],
+  check: [
+    'La pieza dura entre 5 y 15 minutos',
+    'En los primeros 60 segundos digo problema, resultado y por qué yo',
+    'El contenido está dividido en secciones que anuncio en voz alta',
+    'Cada 3 a 5 minutos hay una pregunta, un ejemplo o una afirmación fuerte',
+    'Trabajo con bullets, no con guion palabra por palabra',
+    'Las notas están a la altura de los ojos, cerca de la cámara',
+    'La cámara está a la altura de los ojos y el encuadre es de medio pecho',
+    'La luz viene de adelante, sin mezclar temperaturas',
+    'Hice una prueba de audio de 10 segundos y la escuché',
+    'Notificaciones apagadas y teléfono en No molestar'
+  ]
+},
+{
+  slug: 'vsl-webinar-recording',
+  cat: 'video', level: 'Practical', dur: '20 min',
+  title: 'How to record a <em>VSL</em> or webinar that holds attention',
+  desc: 'Structure, tone, camera, lighting and audio for recording a video sales piece people actually finish. The reference to review before every recording.',
+  secs: [
+    { nav: 'Length & structure', h: 'Ideal length and how to order the content', html: `
+      <p><b>5 to 15 minutes</b> is the sweet spot for completion and engagement. Shorter tends to feel thin; longer starts losing people before the offer.</p>
+      <p>What decides whether they stay happens in the <b>first minute</b>. Cover three things in those 60 seconds:</p>
+      <ul>
+        <li><b>State the problem.</b> Name it the way the viewer would actually experience it.</li>
+        <li><b>Promise the outcome.</b> Concrete, not a vague notion of improvement.</li>
+        <li><b>Explain why you.</b> What makes you the right person to guide them.</li>
+      </ul>
+      <p class="pull">No long or introspective intros: get <span>straight</span> to the point.</p>
+      <p>Then break the content into clear sections and signpost them out loud: "first…", "next…", "this is the most important part…". That verbal signposting is what keeps people oriented.</p>
+      <div class="ej"><b>Every 3 to 5 minutes</b>Reset attention with a question, a quick example, or a bold statement. Without those anchors attention drops even when the content is good.</div>` },
+    { nav: 'Tone & pacing', h: 'Tone and pacing: conversational, not announcer', html: `
+      <p>Aim for <b>confident and conversational</b>, not a formal "presenter voice." That formal voice creates distance exactly where you want closeness.</p>
+      <ul>
+        <li>Speak <b>10 to 15% faster</b> than normal conversation, but pause intentionally after key points.</li>
+        <li>Use <b>shorter sentences</b> than you would live. On video, long sentences get lost.</li>
+        <li>Vary your cadence: slightly faster for examples and stories, slower for key takeaways.</li>
+      </ul>
+      <div class="note"><b>If you stumble:</b> pause and restart the sentence. Don't apologize or flag it. The stumble disappears in the edit; the apology doesn't.</div>` },
+    { nav: 'Energy', h: 'Energy and delivery on camera', html: `
+      <p>Energy comes across before the content does. Four things move it immediately:</p>
+      <ul>
+        <li><b>Smile before hitting record.</b> It improves vocal tone instantly, even if you don't smile throughout.</li>
+        <li><b>Stand if you can</b>, or sit upright with feet planted. Better energy and breath control.</li>
+        <li><b>Use your hands</b>, even off camera. It makes you sound more dynamic.</li>
+        <li><b>Work from bullet points, not a full script.</b> A word-for-word script is the most common cause of a monotone read.</li>
+      </ul>
+      <p class="pull">Record as if you're speaking to <span>one</span> smart client, not a large audience.</p>` },
+    { nav: 'Script vs notes', h: 'Script versus notes: never read paragraphs', html: `
+      <p>Reading full paragraphs always shows, in the eyes and in the rhythm. Instead:</p>
+      <ul>
+        <li>Bullet points, not full sentences.</li>
+        <li>Bolded keywords you can catch at a glance.</li>
+        <li>Short prompts that remind you of the idea rather than dictate it.</li>
+      </ul>
+      <div class="note"><b>Where the notes go:</b> at eye level, close to the camera, so your gaze stays natural. Notes down by the keyboard give away the reading on every line.</div>` },
+    { nav: 'Camera', h: 'Camera setup', html: `
+      <ul>
+        <li>Camera <b>at eye level</b>. Not below, not looking down.</li>
+        <li>Look <b>directly into the lens</b> on key points, not at your own image on screen.</li>
+        <li>Clean, uncluttered background.</li>
+        <li>Frame yourself from <b>mid-chest up</b>, with a little space above your head.</li>
+      </ul>` },
+    { nav: 'Lighting', h: 'Lighting, with or without gear', html: `
+      <p><b>If you have professional lighting:</b> one key light at a 45 degree angle from your face, slightly above eye level. Avoid harsh overhead lights that create shadows under the eyes.</p>
+      <p><b>If you don't:</b></p>
+      <ul>
+        <li><b>Face a window</b>, never have it behind you.</li>
+        <li>Record during daylight when possible.</li>
+        <li>Add a table lamp behind your camera with a warm bulb to soften shadows.</li>
+        <li>Avoid mixed lighting, like daylight plus yellow overhead lights.</li>
+      </ul>` },
+    { nav: 'Audio', h: 'Audio: often more important than video', html: `
+      <p>People forgive mediocre video; bad audio makes them close the tab. If you only have effort for one, spend it here.</p>
+      <ul>
+        <li>Headphones or a simple external mic, if available.</li>
+        <li>Record in a <b>soft room</b>: curtains, a couch, or a rug reduce echo.</li>
+        <li><b>Do a 10-second test recording and listen back</b> before you start.</li>
+      </ul>
+      <div class="note"><b>That 10-second test</b> is the step that most often saves an entire recording. A hum or an echo you didn't notice only surfaces in the edit, when it's too late to fix.</div>` },
+    { nav: 'Distractions', h: 'Distraction control', html: `
+      <ul>
+        <li>Slack, email and calendar notifications <b>off</b>.</li>
+        <li>Phone on Do Not Disturb.</li>
+        <li>Close unnecessary tabs and apps.</li>
+      </ul>
+      <p>It isn't only about the noise: a notification mid-idea forces you to redo the whole take.</p>` },
+    { nav: 'Mindset', h: 'The mindset for recording', html: `
+      <p>You're not "recording a webinar." You're <b>capturing a great explanation once</b> so it can scale to many people without you repeating it.</p>
+      <p class="pull">Small imperfections feel <span>human</span> and trustworthy, not unprofessional.</p>
+      <p>That's the difference between shooting ten takes chasing a perfect one and shooting two that sound like a real person explaining something they know well.</p>` },
+    { nav: 'Final checklist', h: 'Before you hit record', html: `
+      <ul>
+        <li>Water nearby</li>
+        <li>Notes visible at eye level</li>
+        <li>Notifications off</li>
+        <li>Camera framed and lighting set</li>
+        <li>Audio tested</li>
+        <li>One deep breath</li>
+        <li>Hit record and go straight into value</li>
+      </ul>` }
+  ],
+  check: [
+    'The piece runs between 5 and 15 minutes',
+    'The first 60 seconds state the problem, the outcome and why me',
+    'Content is broken into sections I signpost out loud',
+    'Every 3 to 5 minutes there is a question, example or bold statement',
+    'I am working from bullet points, not a word-for-word script',
+    'Notes are at eye level, close to the camera',
+    'Camera is at eye level and framing is mid-chest up',
+    'Light comes from the front, without mixed temperatures',
+    'I did a 10-second audio test and listened back',
+    'Notifications off and phone on Do Not Disturb'
+  ]
+}
+);
+
+/* ---------- Persistencia (best-effort: si localStorage no está, todo sigue funcionando) ---------- */
+function loadState(slug) {
+  try { return JSON.parse(localStorage.getItem('apg-academy:' + slug)) || []; } catch (e) { return []; }
+}
+function saveState(slug, arr) {
+  try { localStorage.setItem('apg-academy:' + slug, JSON.stringify(arr)); } catch (e) { /* modo incógnito, etc. */ }
+}
+function progressOf(t) {
+  const st = loadState(t.slug);
+  const done = t.check.filter((_, i) => st[i]).length;
+  return Math.round(100 * done / t.check.length);
+}
+
+function esc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+/* ---------- Dashboard ---------- */
+let activeCat = 'todos';
+const $ = (id) => document.getElementById(id);
+
+function renderChips() {
+  const chips = [['todos', 'Todos']].concat(Object.entries(CATS));
+  $('chips').innerHTML = chips.map(([k, v]) =>
+    '<button role="tab" data-cat="' + k + '" class="' + (k === activeCat ? 'on' : '') + '" aria-selected="' + (k === activeCat) + '">' + v + '</button>'
+  ).join('');
+}
+
+function cardHTML(t) {
+  const p = progressOf(t);
+  const meta = p >= 100
+    ? '<span class="done-badge">&#10003; Completado</span>'
+    : '<span>' + t.dur + '</span><span class="bar"><i style="width:' + p + '%"></i></span><span>' + p + '%</span>';
+  return '<a class="tcard" href="#t/' + t.slug + '">' +
+    '<div class="top"><span class="cat">' + CATS[t.cat] + '</span><span class="lvl">' + t.level + '</span></div>' +
+    '<h3>' + t.title + '</h3><p>' + t.desc + '</p>' +
+    '<div class="meta">' + meta + '</div></a>';
+}
+
+function renderGrid() {
+  const q = ($('q').value || '').trim().toLowerCase();
+  const list = TRAININGS.filter(t => {
+    const inCat = activeCat === 'todos' || t.cat === activeCat;
+    const hay = (t.title + ' ' + t.desc + ' ' + CATS[t.cat]).toLowerCase();
+    return inCat && (!q || hay.indexOf(q) !== -1);
+  });
+  $('grid').innerHTML = list.map(cardHTML).join('');
+  $('empty').classList.toggle('hidden', list.length > 0);
+  $('count').textContent = list.length + ' de ' + TRAININGS.length;
+  $('stat-total').textContent = TRAININGS.length + LEGACY.length;
+  $('stat-areas').textContent = Object.keys(CATS).length;
+  $('stat-done').textContent = TRAININGS.filter(t => progressOf(t) >= 100).length;
+}
+
+function renderLegacy() {
+  $('grid-legacy').innerHTML = LEGACY.map(l =>
+    '<a class="tcard ext" href="' + l.url + '" target="_blank" rel="noopener">' +
+    '<div class="top"><span class="cat">' + l.cat + '</span><span class="lvl">Original</span></div>' +
+    '<h3>' + l.title + '</h3><p>' + l.desc + '</p>' +
+    '<div class="meta"><span>Abre en pesta&ntilde;a nueva &nearr;</span></div></a>'
+  ).join('');
+}
+
+/* ---------- Vista de training ---------- */
+function renderTraining(t) {
+  $('t-cat').textContent = CATS[t.cat] + ' · Guía A+Growth';
+  $('t-title').innerHTML = t.title;
+  $('t-sub').innerHTML = t.desc;
+  $('t-meta').innerHTML = '<span>Nivel: <b>' + t.level + '</b></span><span>Duraci&oacute;n: <b>' + t.dur + '</b></span><span>' + t.secs.length + ' secciones + checklist</span>';
+  $('t-nav').innerHTML = t.secs.map((s, i) => '<a href="#t/' + t.slug + '/s' + i + '" data-sec="s' + i + '">' + (i + 1) + '. ' + s.nav + '</a>').join('') +
+    '<a href="#t/' + t.slug + '/checklist" data-sec="checklist">Checklist</a><a href="#t/' + t.slug + '/dudas" data-sec="dudas">Dudas</a>';
+
+  const st = loadState(t.slug);
+  let html = t.secs.map((s, i) =>
+    '<section class="blk" id="s' + i + '"><div class="sec-head"><span class="no">' + String(i + 1).padStart(2, '0') + '</span><h2>' + s.h + '</h2></div>' + s.html + '</section>'
+  ).join('');
+
+  html += '<div class="check" id="checklist"><h3>Checklist de aplicaci&oacute;n</h3>' +
+    '<p class="hint">Marc&aacute; cada punto cuando lo hayas aplicado en una cuenta real. Tu progreso queda guardado en este navegador.</p>' +
+    t.check.map((c, i) => '<label><input type="checkbox" data-i="' + i + '" ' + (st[i] ? 'checked' : '') + '><span>' + c + '</span></label>').join('') +
+    '<p class="done-msg">&#10003; Training completado. Aparece marcado en tu dashboard.</p></div>';
+
+  html += '<div class="ask" id="dudas"><h3>&iquest;Dudas sobre este entrenamiento?</h3>' +
+    '<p class="hint">Preguntale a Claude ac&aacute; mismo: conoce el temario de este training y responde seg&uacute;n c&oacute;mo operamos en la agencia. Si es algo de un cliente puntual, sumale el contexto del cliente en tu pregunta.</p>' +
+    '<div class="chat" id="chat-thread"></div>' +
+    '<textarea id="ask-q" placeholder="Ej: &iquest;C&oacute;mo aplico esto si el cliente tiene un presupuesto de $1.500/mes y dos ubicaciones?"></textarea>' +
+    '<div class="row"><button class="go" id="ask-go">Preguntar</button>' +
+    '<button class="alt" id="ask-copy">Copiar prompt</button>' +
+    '<span class="copied" id="ask-ok">Copiado &#10003;</span></div>' +
+    '<div class="fb hidden" id="ask-fb"><p id="ask-fb-msg"></p>' +
+    '<div class="row" style="margin-top:0"><button class="alt" id="fb-open">Abrir en Claude &nearr;</button></div></div></div>';
+
+  $('t-body').innerHTML = html;
+
+  const box = $('t-body').querySelector('.check');
+  const syncDone = () => {
+    const cur = loadState(t.slug);
+    box.classList.toggle('all', t.check.every((_, i) => cur[i]));
+  };
+  syncDone();
+  box.addEventListener('change', (e) => {
+    const i = Number(e.target.getAttribute('data-i'));
+    const cur = loadState(t.slug);
+    cur[i] = e.target.checked;
+    saveState(t.slug, cur);
+    syncDone();
+  });
+
+  const plainTitle = t.title.replace(/<[^>]*>/g, '');
+  const temario = t.secs.map(s => s.nav).join('; ');
+  const resumen = t.desc.replace(/<[^>]*>/g, '');
+  const thread = chatThreads[t.slug] || (chatThreads[t.slug] = []);
+
+  const buildPrompt = (q0) => {
+    const q = q0 || ($('ask-q').value || '').trim() || 'Explicame los puntos clave y dame un ejemplo aplicado a un cliente real de la agencia.';
+    return 'Sos un formador senior del equipo de A+ Growth, una agencia de marketing digital (Google Ads, Meta Ads, email marketing, CRO, analytics y estrategia).\n\n' +
+      'Acabo de leer la guía "' + plainTitle + '" (área: ' + CATS[t.cat] + '). Temario: ' +
+      temario + '.\n\nResumen del training: ' + resumen + '\n\n' +
+      'Mi duda es la siguiente, respondeme de forma práctica y accionable, coherente con ese temario:\n\n' + q;
+  };
+
+  // Formato liviano para las respuestas: negritas, bullets y párrafos.
+  const renderAnswer = (raw) => {
+    const lines = esc(raw).replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>').split('\n');
+    let out = '', inList = false;
+    for (const ln of lines) {
+      const m = ln.match(/^\s*[-*•]\s+(.*)/);
+      if (m) { if (!inList) { out += '<ul>'; inList = true; } out += '<li>' + m[1] + '</li>'; }
+      else { if (inList) { out += '</ul>'; inList = false; } if (ln.trim()) out += '<p>' + ln + '</p>'; }
+    }
+    if (inList) out += '</ul>';
+    return out;
+  };
+
+  const box2 = $('chat-thread');
+  const addMsg = (cls, html2) => {
+    const d = document.createElement('div');
+    d.className = 'msg ' + cls;
+    d.innerHTML = html2;
+    box2.appendChild(d);
+    d.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    return d;
+  };
+  // Repintar historial si vuelve al training en la misma visita
+  thread.forEach(m => addMsg(m.role === 'user' ? 'u' : 'a',
+    m.role === 'user' ? esc(m.content) : '<span class="who">Claude &middot; A+Growth</span>' + renderAnswer(m.content)));
+
+  let lastQuestion = '';
+  const showFallback = (msg) => {
+    $('ask-fb-msg').innerHTML = msg;
+    $('ask-fb').classList.remove('hidden');
+  };
+
+  const send = async () => {
+    const q = ($('ask-q').value || '').trim();
+    if (!q || $('ask-go').disabled) return;
+    lastQuestion = q;
+    $('ask-q').value = '';
+    $('ask-go').disabled = true;
+    $('ask-fb').classList.add('hidden');
+    addMsg('u', esc(q));
+    const thinking = addMsg('a think', 'Claude est&aacute; pensando&hellip;');
+    try {
+      const res = await fetch('/api/academy-chat', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          question: q, title: plainTitle, area: CATS[t.cat], level: t.level,
+          temario: temario, resumen: resumen, history: thread.slice(-10),
+          audience: 'client'
+        })
+      });
+      const data = await res.json().catch(() => ({}));
+      thinking.remove();
+      if (res.ok && data.answer) {
+        thread.push({ role: 'user', content: q }, { role: 'assistant', content: data.answer });
+        addMsg('a', '<span class="who">Claude &middot; A+Growth</span>' + renderAnswer(data.answer));
+      } else if (res.status === 503) {
+        addMsg('err', 'El chat todav&iacute;a no tiene la API key configurada en el servidor.');
+        showFallback('Mientras tanto, pod&eacute;s abrir tu pregunta en Claude con todo el contexto del training:');
+      } else {
+        addMsg('err', 'No pude obtener respuesta (' + (data.error || res.status) + '). Prob&aacute; de nuevo en un momento.');
+        showFallback('Si sigue fallando, abr&iacute; tu pregunta en Claude con el contexto del training:');
+      }
+    } catch (e) {
+      thinking.remove();
+      addMsg('err', 'El chat embebido no est&aacute; disponible en esta vista.');
+      showFallback('Abr&iacute; tu pregunta en Claude con todo el contexto del training:');
+    }
+    $('ask-go').disabled = false;
+    $('ask-q').focus();
+  };
+
+  $('ask-go').addEventListener('click', send);
+  $('ask-q').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); }
+  });
+  $('fb-open').addEventListener('click', () => {
+    window.open('https://claude.ai/new?q=' + encodeURIComponent(buildPrompt(lastQuestion)), '_blank', 'noopener');
+  });
+  $('ask-copy').addEventListener('click', () => {
+    const p = buildPrompt(lastQuestion);
+    const ok = () => { $('ask-ok').classList.add('show'); setTimeout(() => $('ask-ok').classList.remove('show'), 1800); };
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(p).then(ok, ok); }
+    else { ok(); }
+  });
+}
+
+/* ---------- Router por hash ---------- */
+function route() {
+  const h = location.hash || '';
+  const m = h.match(/^#t\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?/);
+  const t = m && TRAININGS.find(x => x.slug === m[1]);
+  if (t) {
+    $('view-home').classList.add('hidden');
+    $('view-training').classList.remove('hidden');
+    if ($('t-body').getAttribute('data-slug') !== t.slug) {
+      renderTraining(t);
+      $('t-body').setAttribute('data-slug', t.slug);
+    }
+    document.title = t.title.replace(/<[^>]*>/g, '') + ' — A+Growth';
+    if (m[2]) {
+      const el = document.getElementById(m[2]);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  } else {
+    $('view-training').classList.add('hidden');
+    $('view-home').classList.remove('hidden');
+    $('t-body').removeAttribute('data-slug');
+    document.title = 'A+Growth — Guías y entrenamientos para clientes';
+    renderGrid();
+  }
+}
+
+/* ---------- Init ---------- */
+$('back').addEventListener('click', (e) => { e.preventDefault(); location.hash = ''; });
+$('q').addEventListener('input', renderGrid);
+$('chips').addEventListener('click', (e) => {
+  const b = e.target.closest('button[data-cat]');
+  if (!b) return;
+  activeCat = b.getAttribute('data-cat');
+  renderChips();
+  renderGrid();
+});
+renderChips();
+renderLegacy();
+route();
+window.addEventListener('hashchange', route);
+</script>
+</body>
+</html>
