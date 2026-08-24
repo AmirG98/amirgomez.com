@@ -40,7 +40,7 @@ export function middleware(req: NextRequest) {
   }
 
   const match = req.nextUrl.pathname.match(
-    /^\/clients\/([^/]+?)(?:\.html)?(?:\/(approvals|reports|ideas|transcripts|context|budgets|dashboard|masterplan)(?:\/(\d{4}-\d{2}-\d{2}))?)?\/?$/
+    /^\/clients\/([^/]+?)(?:\.html)?(?:\/(approvals|reports|ideas|transcripts|context|budgets|dashboard|masterplan|frameworks)(?:\/(\d{4}-\d{2}-\d{2}))?)?\/?$/
   );
   if (!match) return NextResponse.next();
 
@@ -58,10 +58,11 @@ export function middleware(req: NextRequest) {
     client.endsWith('-context') ||
     client.endsWith('-dashboard') ||
     client.endsWith('-masterplan') ||
+    client.endsWith('-frameworks') ||
     client.endsWith('-budgets') ||
     /-report-\d{4}-\d{2}-\d{2}$/.test(client)
   ) {
-    const base = client.replace(/-(hub|approvals|ideas|transcripts|context|budgets|dashboard|masterplan|report-\d{4}-\d{2}-\d{2})$/, '');
+    const base = client.replace(/-(hub|approvals|ideas|transcripts|context|budgets|dashboard|masterplan|frameworks|report-\d{4}-\d{2}-\d{2})$/, '');
     return NextResponse.rewrite(new URL(`/clients/${base}-login.html`, req.url));
   }
 
@@ -79,6 +80,7 @@ export function middleware(req: NextRequest) {
   if (section === 'context') return NextResponse.rewrite(new URL(`/clients/${client}-context.html`, req.url));
   if (section === 'dashboard') return NextResponse.rewrite(new URL(`/clients/${client}-dashboard.html`, req.url));
   if (section === 'masterplan') return NextResponse.rewrite(new URL(`/clients/${client}-masterplan.html`, req.url));
+  if (section === 'frameworks') return NextResponse.rewrite(new URL(`/clients/${client}-frameworks.html`, req.url));
   if (section === 'budgets') return NextResponse.rewrite(new URL(`/clients/${client}-budgets.html`, req.url));
   if (section === 'reports' && date) return NextResponse.rewrite(new URL(`/clients/${client}-report-${date}.html`, req.url));
   if (section === 'reports') return NextResponse.rewrite(new URL(`/clients/${client}.html`, req.url));

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Human at Scale — Frameworks</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #130D18; --ink: #1D1226; --ink-2: #6B6478; --ink-3: #9A93A6;
+    --paper: #FFFFFF; --paper-2: #F6F4F8; --hairline: #E6E1EB;
+    --accent: #8005E0; --accent-soft: #F3E8FF; --ok: #1F8A50; --warn: #B4690E;
+    --sans: 'Satoshi','Satoshi Variable',-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 1060px; margin: 0 auto; padding: 40px 24px 72px; }
+
+  header { text-align: center; margin-bottom: 34px; }
+  .logo { display: block; margin: 0 auto; }
+  .wordmark { font-weight: 300; font-size: 20px; letter-spacing: 0.52em; text-indent: 0.52em; color: var(--navy); margin-top: 10px; }
+  .wordmark-sub { font-weight: 400; font-size: 8.5px; letter-spacing: 0.6em; text-indent: 0.6em; color: var(--navy); opacity: 0.75; margin-top: 2px; }
+  h1 { font-size: 24px; font-weight: 400; margin-top: 20px; }
+  .sub { font-size: 13.5px; color: var(--ink-2); margin-top: 6px; max-width: 60ch; margin-inline: auto; }
+  .backlink { display: inline-block; margin-top: 10px; font-size: 12.5px; color: var(--accent); text-decoration: none; letter-spacing: 0.04em; }
+  .backlink:hover { text-decoration: underline; }
+
+  .updated { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); margin-top: 14px; }
+
+  section { margin-top: 40px; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; border-bottom: 1px solid var(--hairline); padding-bottom: 8px; margin-bottom: 18px; }
+  .sec-head h2 { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); }
+  .sec-head .note { font-size: 12px; color: var(--ink-3); margin-left: auto; }
+
+  /* --- Ad spend --- */
+  .spend { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .metric { background: var(--paper-2); padding: 16px 18px; }
+  .metric .label { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); }
+  .metric .value { font-size: 26px; font-weight: 700; margin-top: 6px; letter-spacing: -0.01em; }
+  .metric .foot { font-size: 12px; color: var(--ink-2); margin-top: 4px; }
+  .metric.accent { background: var(--accent-soft); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 14px; }
+  th { text-align: left; font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); padding: 8px 10px; border-bottom: 1px solid var(--hairline); }
+  td { padding: 10px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  tr:last-child td { border-bottom: none; }
+  .tbl-wrap { overflow-x: auto; }
+
+  /* --- Board --- */
+  .board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: start; }
+  .col { background: var(--paper-2); padding: 14px 14px 6px; }
+  .col > h3 { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 12px; }
+  .col > h3 .count { color: var(--accent); }
+  .item { background: #fff; border: 1px solid var(--hairline); padding: 12px 14px; margin-bottom: 10px; }
+  .item .t { font-size: 14px; line-height: 1.4; }
+  .item .m { font-size: 12px; color: var(--ink-2); margin-top: 5px; }
+  .tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 7px; margin-top: 8px; }
+  .tag.block { background: #FDF0E3; color: var(--warn); }
+  .tag.ours { background: var(--accent-soft); color: var(--accent); }
+  .tag.done { background: #E8F5EE; color: var(--ok); }
+
+  /* --- Calendario --- */
+  .events { display: grid; gap: 8px; }
+  .ev { display: grid; grid-template-columns: 130px 1fr; gap: 14px; padding: 10px 12px; border-left: 2px solid var(--hairline); background: var(--paper-2); }
+  .ev.soon { border-left-color: var(--accent); }
+  .ev .when { font-size: 12px; font-weight: 600; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+  .ev .what { font-size: 13.5px; }
+  .ev .what small { display: block; color: var(--ink-2); font-size: 12px; margin-top: 2px; }
+
+  .callout { background: var(--accent-soft); border-left: 2px solid var(--accent); padding: 12px 16px; font-size: 13.5px; margin-top: 14px; }
+  .callout b { font-weight: 700; }
+
+  footer { text-align: center; margin-top: 48px; font-size: 12px; color: var(--ink-3); }
+
+  @media (max-width: 860px) {
+    .spend { grid-template-columns: repeat(2, 1fr); }
+    .board { grid-template-columns: 1fr; }
+    .ev { grid-template-columns: 100px 1fr; }
+  }
+
+  /* --- Frameworks --- */
+  .fw-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 26px; }
+  .fw-nav a { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 14px; background: var(--paper-2); color: var(--ink-2); text-decoration: none; border: 1px solid var(--hairline); }
+  .fw-nav a:hover { border-color: var(--accent); color: var(--accent); }
+  .stage { border-left: 2px solid var(--hairline); padding-left: 22px; margin-left: 6px; }
+  .step { position: relative; padding-bottom: 26px; }
+  .step:last-child { padding-bottom: 4px; }
+  .step::before { content: ''; position: absolute; left: -28px; top: 4px; width: 10px; height: 10px; background: var(--accent); border-radius: 50%; }
+  .step .when { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+  .step h4 { font-size: 16px; font-weight: 600; margin: 5px 0 6px; }
+  .step p { font-size: 13.5px; color: var(--ink-2); max-width: 74ch; }
+  .step ul { margin: 8px 0 0 17px; }
+  .step li { font-size: 13.5px; color: var(--ink-2); margin-bottom: 5px; }
+  .step b { color: var(--ink); font-weight: 600; }
+  .callout { background: var(--accent-soft); border-left: 3px solid var(--accent); padding: 14px 18px; font-size: 13.5px; color: var(--ink-2); margin: 16px 0; }
+  .callout b { color: var(--ink); }
+  .grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .card { background: var(--paper-2); padding: 18px 20px; border-top: 3px solid var(--accent); }
+  .card h4 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .card p { font-size: 13px; color: var(--ink-2); }
+  .card .tagline { font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 8px; }
+  .card ul { margin: 8px 0 0 16px; }
+  .card li { font-size: 12.5px; color: var(--ink-2); margin-bottom: 4px; }
+  .pri { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 9px; margin-left: 8px; }
+  .pri.a { background: var(--accent-soft); color: var(--accent); }
+  .pri.b { background: #EFEDF2; color: var(--ink-2); }
+  @media (max-width: 820px) { .grid2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <svg class="logo" width="44" height="44" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M16.9798 0C26.5114 0.0251279 34.0285 7.84764 33.9378 17.1682C33.8471 26.4781 26.1901 34.0976 16.7859 34C7.50993 33.9024 -0.0785035 26.25 0.000613089 16.8463C0.0787648 7.68914 7.52151 0.0173962 16.9798 0ZM16.9875 1.70773C8.5809 1.71063 1.74118 8.51643 1.70644 16.9314C1.67171 25.5097 8.63686 32.2536 16.893 32.2932C25.2099 32.3329 32.2107 25.5899 32.231 17.0367C32.2512 8.57538 25.4009 1.72803 16.9866 1.70773H16.9875Z" fill="#130D18"/>
+      <path d="M17.0808 19.3185C20.5909 19.3611 23.6697 20.5314 26.2998 22.8674C26.8083 23.3187 27.2753 23.8135 27.7066 24.3403C28.0336 24.7394 28.0414 25.1318 27.7172 25.5396C25.7045 28.0689 23.1361 29.7273 19.9888 30.4724C19.162 30.6677 18.3235 30.7788 17.4735 30.8088C13.6508 30.945 10.325 29.7205 7.50192 27.142C7.05327 26.7322 6.64997 26.2703 6.24473 25.8151C5.89353 25.4208 5.89643 25.0177 6.2293 24.6012C8.37606 21.9154 11.1249 20.2183 14.5037 19.5611C15.3538 19.3959 16.2115 19.3195 17.0798 19.3195L17.0808 19.3185ZM17.077 21.0408C16.3553 21.033 15.6442 21.1026 14.9369 21.2302C12.5731 21.6564 10.5228 22.704 8.7755 24.3499C8.26993 24.8264 8.27475 25.5454 8.79769 26.0006C9.16337 26.3196 9.53965 26.6308 9.9362 26.9101C11.9189 28.3095 14.1332 29.0256 16.5511 29.1088C17.4079 29.1378 18.2589 29.0604 19.1031 28.9C21.4129 28.4603 23.4159 27.4252 25.1411 25.8267C25.6611 25.3444 25.6351 24.5712 25.1198 24.118C22.8168 22.0923 20.1345 21.0756 17.077 21.0408Z" fill="#130D18"/>
+      <path d="M3.21875 16.3419C3.29015 12.6104 5.34428 7.68627 10.2727 4.9193C14.9048 2.31856 20.6524 2.63942 24.9913 5.74852C27.166 7.30645 28.7609 9.33408 29.7739 11.814C30.3191 13.1477 30.6442 14.5346 30.7426 16.0258C30.6433 15.9563 30.5892 15.9176 30.5352 15.8789C30.0325 15.5204 29.5356 15.1551 29.0252 14.8081C28.8911 14.7173 28.8245 14.6148 28.7927 14.464C28.4039 12.6258 27.6281 10.9664 26.4568 9.50224C24.5532 7.12379 22.1035 5.64511 19.1067 5.0836C18.1149 4.89804 17.1134 4.84778 16.1128 4.92606C13.3264 5.14158 10.8882 6.19019 8.82541 8.08155C7.01828 9.73806 5.82574 11.7676 5.23815 14.1519C5.1793 14.3916 5.13974 14.6361 5.07895 14.8748C5.06159 14.9424 5.01528 15.0169 4.96028 15.0574C4.3862 15.4866 3.80826 15.9099 3.21971 16.3428L3.21875 16.3419Z" fill="#130D18"/>
+      <path d="M29.1541 23.4482C28.7334 22.9824 28.3311 22.5369 27.9394 22.1029C28.1227 21.6023 28.3137 21.1142 28.4806 20.6175C28.5887 20.2976 28.6996 19.9748 28.6948 19.6269C28.6871 19.046 28.4584 18.5753 27.9972 18.2303C27.1038 17.5644 26.1486 16.9991 25.1462 16.5139C23.4895 15.7127 21.7499 15.1773 19.9331 14.8922C18.648 14.6912 17.3532 14.6303 16.0584 14.7134C12.3929 14.9492 9.07777 16.1611 6.13019 18.3627C5.95845 18.4913 5.78671 18.6314 5.65453 18.7976C5.29079 19.2548 5.18079 19.7747 5.33806 20.3449C5.49919 20.9267 5.71724 21.4873 5.96328 22.0372C5.99415 22.1068 6.02503 22.1764 6.0559 22.2469C5.65453 22.706 5.25991 23.1564 4.84889 23.6251C4.76881 23.4782 4.69162 23.3458 4.62312 23.2095C3.95835 21.8893 3.50487 20.5015 3.29936 19.0354C3.25402 18.7107 3.35918 18.4458 3.59943 18.2265C4.31341 17.5751 5.06887 16.9759 5.86872 16.4327C8.15828 14.8786 10.663 13.8407 13.378 13.3168C14.1731 13.1632 14.9748 13.0656 15.7834 13.0095C16.6083 12.9515 17.4342 12.9428 18.2582 12.9892C20.4754 13.1158 22.6202 13.5894 24.6811 14.4254C26.6774 15.2353 28.499 16.3361 30.144 17.7287C30.2202 17.7935 30.2974 17.8582 30.3707 17.9269C30.556 18.0979 30.6689 18.3086 30.6419 18.5638C30.6004 18.9465 30.5579 19.3311 30.4836 19.709C30.2386 20.9499 29.8324 22.1377 29.2535 23.2636C29.2255 23.3178 29.1956 23.3699 29.1531 23.4463L29.1541 23.4482Z" fill="#130D18"/>
+    </svg>
+    <div class="wordmark">human at scale</div>
+    <div class="wordmark-sub">client portal</div>
+    <h1>Frameworks</h1>
+    <p class="sub">The repeatable plays behind the work. Each one is a sequence we run the same way every time, so results come from the process and not from how any single week went.</p>
+    <a class="backlink" href="/clients/human-at-scale">← Back to portal</a>
+    <div class="updated">Updated August 24, 2026</div>
+  </header>
+  <nav class="fw-nav">
+    <a href="#webinars">Webinar framework</a>
+    <a href="#podcasts">Podcast strategy</a>
+  </nav>
+
+  <!-- ================= WEBINARS ================= -->
+  <section id="webinars">
+    <div class="sec-head">
+      <h2>Webinar framework</h2>
+      <span class="note">Built after the Collaboration Room session</span>
+    </div>
+
+    <div class="callout">
+      <b>Why this exists.</b> The Collaboration Room webinar drew one attendee, and he was disqualified on size. The session itself was not the problem: nothing in the process was set up to fill the room or to capture value afterwards. This framework fixes both, and it assumes every webinar is a content asset first and a lead source second.
+    </div>
+
+    <div class="stage">
+      <div class="step">
+        <div class="when">4 weeks out</div>
+        <h4>Qualify the room before committing</h4>
+        <p>Before agreeing to a date, we settle three things in writing with the host.</p>
+        <ul>
+          <li><b>Who attends.</b> Firm size, role, and whether they match the ICP. One qualified owner beats forty bookkeepers.</li>
+          <li><b>What we can say.</b> Some communities have a strict no-vendor policy. If we cannot pitch, the value has to come from the recording and the follow-up.</li>
+          <li><b>What we get afterwards.</b> The attendee list, the recording, or neither. This is asked as a permission, never as an expectation.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <div class="when">3 weeks out</div>
+        <h4>Lock the promise and the title</h4>
+        <p>The title states the outcome, not the topic. "Removing the Owner Bottleneck: How to Make Your Firm Run Without You" works because a firm owner reads it and recognizes their own problem.</p>
+        <p>We also decide the single action an attendee should take, and that decision drives the whole session.</p>
+      </div>
+
+      <div class="step">
+        <div class="when">2 weeks out</div>
+        <h4>Promote on both lists</h4>
+        <ul>
+          <li>Invitation to the Ops Notes list, plus a reminder the week of.</li>
+          <li>The host's own community, coordinated with them directly so we do not duplicate messaging.</li>
+          <li>Two LinkedIn posts from Chase, framed as the problem the session solves.</li>
+        </ul>
+        <p>Registrations are tagged on the way in, so the follow-up can be segmented by source later.</p>
+      </div>
+
+      <div class="step">
+        <div class="when">During</div>
+        <h4>Make the call to action explicit</h4>
+        <p>When there is a no-vendor policy, traction has to come straight from the attendees. Chase shares his contact details out loud and puts a clear next step on screen, twice: once mid-session and once at the end.</p>
+        <div class="callout" style="margin-top:12px;">
+          <b>The rule we learned the hard way.</b> If nobody says the next step out loud, there is no next step. A recording with no call to action inside it cannot be repurposed into one later.
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="when">Within 48 hours</div>
+        <h4>Harvest the recording</h4>
+        <p>This is where a low-attendance session still pays for itself. From every recording we pull:</p>
+        <ul>
+          <li>Three to five short clips for LinkedIn, cut around the concepts Chase flags.</li>
+          <li>One Ops Notes issue, or a section of one.</li>
+          <li>A replay link for the newsletter, so people who could not attend still see it.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <div class="when">Week after</div>
+        <h4>Follow up by segment, not in bulk</h4>
+        <ul>
+          <li><b>Attended and qualified:</b> personal note from Chase.</li>
+          <li><b>Registered, did not attend:</b> replay link plus the one takeaway.</li>
+          <li><b>Attended and out of ICP:</b> added to Ops Notes, no sales follow-up. Same call the Collaboration Room attendee got.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PODCASTS ================= -->
+  <section id="podcasts">
+    <div class="sec-head">
+      <h2>Podcast strategy</h2>
+      <span class="note">Based on the shows you sent through</span>
+    </div>
+
+    <p style="font-size:13.5px;color:var(--ink-2);max-width:76ch;margin-bottom:18px;">
+      Guesting is the fastest way to borrow an audience that already trusts someone else. In accounting the shows are concentrated, the hosts are known, and the listeners are the exact people we want. Three of them are worth pursuing now.
+    </p>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="tagline">Priority one</div>
+        <h4>The Accounting Podcast <span class="pri a">Best fit</span></h4>
+        <p>Blake Oliver and David Leary. Past 500 episodes, weekly, positions itself as the largest show in the profession. Audience is accountants and bookkeepers who follow where the profession is going.</p>
+        <ul>
+          <li>Takes guests and sponsors</li>
+          <li>NASBA-approved CPE through Earmark</li>
+          <li>Angle: the owner bottleneck as an operations problem, not a staffing one</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="tagline">Priority two</div>
+        <h4>Unofficial QuickBooks Accountants <span class="pri a">Tight ICP</span></h4>
+        <p>Alicia Katz Pollock and Hector Garcia. Smaller and more specific: firms running on QuickBooks, which is most of the ICP. Guests are usually product people, so an operations angle stands out.</p>
+        <ul>
+          <li>Takes guests and sponsors</li>
+          <li>NASBA-approved CPE</li>
+          <li>Angle: what the tech stack does <i>to</i> the team rather than for it</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="tagline">Priority three</div>
+        <h4>Oh My Fraud <span class="pri b">Brand play</span></h4>
+        <p>Caleb Newquist. True crime for accountants, story-driven rather than advice-driven. Lower intent, but memorable, and it reaches the same listeners in a different mood.</p>
+        <ul>
+          <li>Takes guests and sponsors</li>
+          <li>Angle: how weak internal process makes fraud possible, which is an operations story told sideways</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="tagline">Measurement</div>
+        <h4>What we can and cannot know</h4>
+        <p>Earmark publishes download numbers through the Open Podcast Prefix Project, and accountingpodcasts.com ranks shows by downloads. That gives us a real size estimate before committing time.</p>
+        <ul>
+          <li>Ask each host for their per-episode average</li>
+          <li>Track a dedicated landing page per appearance</li>
+          <li>Judge on Ops Notes signups, not downloads</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <b>How we pitch.</b> Hosts get dozens of vendor pitches a week. The pitch leads with a specific episode idea and the evidence behind it, never with a company introduction. One idea, one paragraph on why their listeners care, one line on who Chase is. The Gusto partnership is the credibility line that makes it land.
+    </div>
+
+    <div class="callout">
+      <b>Sequencing.</b> One show at a time, starting with Unofficial QuickBooks. It is the tightest ICP match and the easiest yes, which gives us a recorded appearance to reference when pitching The Accounting Podcast. Going straight to the biggest show without a recent appearance to point at is a weaker pitch.
+    </div>
+  </section>
+
+  <footer>Human at Scale</footer>
+</div>
+</body>
+</html>

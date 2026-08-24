@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Human at Scale — Budgets</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #130D18; --ink: #1D1226; --ink-2: #6B6478; --ink-3: #9A93A6;
+    --paper: #FFFFFF; --paper-2: #F6F4F8; --hairline: #E6E1EB;
+    --accent: #8005E0; --accent-soft: #F3E8FF; --ok: #1F8A50; --warn: #B4690E;
+    --sans: 'Satoshi','Satoshi Variable',-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Helvetica,Arial,sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 1060px; margin: 0 auto; padding: 40px 24px 72px; }
+
+  header { text-align: center; margin-bottom: 34px; }
+  .logo { display: block; margin: 0 auto; }
+  .wordmark { font-weight: 300; font-size: 20px; letter-spacing: 0.52em; text-indent: 0.52em; color: var(--navy); margin-top: 10px; }
+  .wordmark-sub { font-weight: 400; font-size: 8.5px; letter-spacing: 0.6em; text-indent: 0.6em; color: var(--navy); opacity: 0.75; margin-top: 2px; }
+  h1 { font-size: 24px; font-weight: 400; margin-top: 20px; }
+  .sub { font-size: 13.5px; color: var(--ink-2); margin-top: 6px; max-width: 60ch; margin-inline: auto; }
+  .backlink { display: inline-block; margin-top: 10px; font-size: 12.5px; color: var(--accent); text-decoration: none; letter-spacing: 0.04em; }
+  .backlink:hover { text-decoration: underline; }
+
+  .updated { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); margin-top: 14px; }
+
+  section { margin-top: 40px; }
+  .sec-head { display: flex; align-items: baseline; gap: 12px; border-bottom: 1px solid var(--hairline); padding-bottom: 8px; margin-bottom: 18px; }
+  .sec-head h2 { font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); }
+  .sec-head .note { font-size: 12px; color: var(--ink-3); margin-left: auto; }
+
+  /* --- Ad spend --- */
+  .spend { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .metric { background: var(--paper-2); padding: 16px 18px; }
+  .metric .label { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); }
+  .metric .value { font-size: 26px; font-weight: 700; margin-top: 6px; letter-spacing: -0.01em; }
+  .metric .foot { font-size: 12px; color: var(--ink-2); margin-top: 4px; }
+  .metric.accent { background: var(--accent-soft); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 14px; }
+  th { text-align: left; font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); padding: 8px 10px; border-bottom: 1px solid var(--hairline); }
+  td { padding: 10px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  tr:last-child td { border-bottom: none; }
+  .tbl-wrap { overflow-x: auto; }
+
+  /* --- Board --- */
+  .board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: start; }
+  .col { background: var(--paper-2); padding: 14px 14px 6px; }
+  .col > h3 { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 12px; }
+  .col > h3 .count { color: var(--accent); }
+  .item { background: #fff; border: 1px solid var(--hairline); padding: 12px 14px; margin-bottom: 10px; }
+  .item .t { font-size: 14px; line-height: 1.4; }
+  .item .m { font-size: 12px; color: var(--ink-2); margin-top: 5px; }
+  .tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 7px; margin-top: 8px; }
+  .tag.block { background: #FDF0E3; color: var(--warn); }
+  .tag.ours { background: var(--accent-soft); color: var(--accent); }
+  .tag.done { background: #E8F5EE; color: var(--ok); }
+
+  /* --- Calendario --- */
+  .events { display: grid; gap: 8px; }
+  .ev { display: grid; grid-template-columns: 130px 1fr; gap: 14px; padding: 10px 12px; border-left: 2px solid var(--hairline); background: var(--paper-2); }
+  .ev.soon { border-left-color: var(--accent); }
+  .ev .when { font-size: 12px; font-weight: 600; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+  .ev .what { font-size: 13.5px; }
+  .ev .what small { display: block; color: var(--ink-2); font-size: 12px; margin-top: 2px; }
+
+  .callout { background: var(--accent-soft); border-left: 2px solid var(--accent); padding: 12px 16px; font-size: 13.5px; margin-top: 14px; }
+  .callout b { font-weight: 700; }
+
+  footer { text-align: center; margin-top: 48px; font-size: 12px; color: var(--ink-3); }
+
+  @media (max-width: 860px) {
+    .spend { grid-template-columns: repeat(2, 1fr); }
+    .board { grid-template-columns: 1fr; }
+    .ev { grid-template-columns: 100px 1fr; }
+  }
+
+  /* --- Budgets --- */
+  .per { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+  .per span { font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; padding: 7px 13px; background: var(--paper-2); color: var(--ink-2); border: 1px solid var(--hairline); }
+  .per span.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .bar-wrap { margin-top: 18px; }
+  .bar-row { display: grid; grid-template-columns: 150px 1fr 92px; gap: 14px; align-items: center; padding: 11px 0; border-bottom: 1px solid var(--hairline); }
+  .bar-row:last-child { border-bottom: none; }
+  .bar-row .ch { font-size: 13.5px; font-weight: 600; }
+  .bar-row .ch small { display: block; font-size: 11.5px; font-weight: 400; color: var(--ink-3); margin-top: 2px; }
+  .bar { height: 26px; background: var(--paper-2); position: relative; }
+  .bar i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--accent); }
+  .bar i.alt { background: #B47CF0; }
+  .bar-row .amt { text-align: right; font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .callout { background: var(--accent-soft); border-left: 3px solid var(--accent); padding: 14px 18px; font-size: 13.5px; color: var(--ink-2); margin: 18px 0 0; }
+  .callout b { color: var(--ink); }
+  .note-warn { background: #FDF6EC; border-left: 3px solid var(--warn); padding: 14px 18px; font-size: 13.5px; color: var(--ink-2); margin: 18px 0 0; }
+  .note-warn b { color: var(--ink); }
+  .lgnd { display: flex; gap: 16px; margin-top: 12px; font-size: 12px; color: var(--ink-3); }
+  .lgnd i { display: inline-block; width: 11px; height: 11px; margin-right: 5px; vertical-align: -1px; }
+  .lgnd i.a { background: var(--accent); } .lgnd i.b { background: #B47CF0; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <svg class="logo" width="44" height="44" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M16.9798 0C26.5114 0.0251279 34.0285 7.84764 33.9378 17.1682C33.8471 26.4781 26.1901 34.0976 16.7859 34C7.50993 33.9024 -0.0785035 26.25 0.000613089 16.8463C0.0787648 7.68914 7.52151 0.0173962 16.9798 0ZM16.9875 1.70773C8.5809 1.71063 1.74118 8.51643 1.70644 16.9314C1.67171 25.5097 8.63686 32.2536 16.893 32.2932C25.2099 32.3329 32.2107 25.5899 32.231 17.0367C32.2512 8.57538 25.4009 1.72803 16.9866 1.70773H16.9875Z" fill="#130D18"/>
+      <path d="M17.0808 19.3185C20.5909 19.3611 23.6697 20.5314 26.2998 22.8674C26.8083 23.3187 27.2753 23.8135 27.7066 24.3403C28.0336 24.7394 28.0414 25.1318 27.7172 25.5396C25.7045 28.0689 23.1361 29.7273 19.9888 30.4724C19.162 30.6677 18.3235 30.7788 17.4735 30.8088C13.6508 30.945 10.325 29.7205 7.50192 27.142C7.05327 26.7322 6.64997 26.2703 6.24473 25.8151C5.89353 25.4208 5.89643 25.0177 6.2293 24.6012C8.37606 21.9154 11.1249 20.2183 14.5037 19.5611C15.3538 19.3959 16.2115 19.3195 17.0798 19.3195L17.0808 19.3185ZM17.077 21.0408C16.3553 21.033 15.6442 21.1026 14.9369 21.2302C12.5731 21.6564 10.5228 22.704 8.7755 24.3499C8.26993 24.8264 8.27475 25.5454 8.79769 26.0006C9.16337 26.3196 9.53965 26.6308 9.9362 26.9101C11.9189 28.3095 14.1332 29.0256 16.5511 29.1088C17.4079 29.1378 18.2589 29.0604 19.1031 28.9C21.4129 28.4603 23.4159 27.4252 25.1411 25.8267C25.6611 25.3444 25.6351 24.5712 25.1198 24.118C22.8168 22.0923 20.1345 21.0756 17.077 21.0408Z" fill="#130D18"/>
+      <path d="M3.21875 16.3419C3.29015 12.6104 5.34428 7.68627 10.2727 4.9193C14.9048 2.31856 20.6524 2.63942 24.9913 5.74852C27.166 7.30645 28.7609 9.33408 29.7739 11.814C30.3191 13.1477 30.6442 14.5346 30.7426 16.0258C30.6433 15.9563 30.5892 15.9176 30.5352 15.8789C30.0325 15.5204 29.5356 15.1551 29.0252 14.8081C28.8911 14.7173 28.8245 14.6148 28.7927 14.464C28.4039 12.6258 27.6281 10.9664 26.4568 9.50224C24.5532 7.12379 22.1035 5.64511 19.1067 5.0836C18.1149 4.89804 17.1134 4.84778 16.1128 4.92606C13.3264 5.14158 10.8882 6.19019 8.82541 8.08155C7.01828 9.73806 5.82574 11.7676 5.23815 14.1519C5.1793 14.3916 5.13974 14.6361 5.07895 14.8748C5.06159 14.9424 5.01528 15.0169 4.96028 15.0574C4.3862 15.4866 3.80826 15.9099 3.21971 16.3428L3.21875 16.3419Z" fill="#130D18"/>
+      <path d="M29.1541 23.4482C28.7334 22.9824 28.3311 22.5369 27.9394 22.1029C28.1227 21.6023 28.3137 21.1142 28.4806 20.6175C28.5887 20.2976 28.6996 19.9748 28.6948 19.6269C28.6871 19.046 28.4584 18.5753 27.9972 18.2303C27.1038 17.5644 26.1486 16.9991 25.1462 16.5139C23.4895 15.7127 21.7499 15.1773 19.9331 14.8922C18.648 14.6912 17.3532 14.6303 16.0584 14.7134C12.3929 14.9492 9.07777 16.1611 6.13019 18.3627C5.95845 18.4913 5.78671 18.6314 5.65453 18.7976C5.29079 19.2548 5.18079 19.7747 5.33806 20.3449C5.49919 20.9267 5.71724 21.4873 5.96328 22.0372C5.99415 22.1068 6.02503 22.1764 6.0559 22.2469C5.65453 22.706 5.25991 23.1564 4.84889 23.6251C4.76881 23.4782 4.69162 23.3458 4.62312 23.2095C3.95835 21.8893 3.50487 20.5015 3.29936 19.0354C3.25402 18.7107 3.35918 18.4458 3.59943 18.2265C4.31341 17.5751 5.06887 16.9759 5.86872 16.4327C8.15828 14.8786 10.663 13.8407 13.378 13.3168C14.1731 13.1632 14.9748 13.0656 15.7834 13.0095C16.6083 12.9515 17.4342 12.9428 18.2582 12.9892C20.4754 13.1158 22.6202 13.5894 24.6811 14.4254C26.6774 15.2353 28.499 16.3361 30.144 17.7287C30.2202 17.7935 30.2974 17.8582 30.3707 17.9269C30.556 18.0979 30.6689 18.3086 30.6419 18.5638C30.6004 18.9465 30.5579 19.3311 30.4836 19.709C30.2386 20.9499 29.8324 22.1377 29.2535 23.2636C29.2255 23.3178 29.1956 23.3699 29.1531 23.4463L29.1541 23.4482Z" fill="#130D18"/>
+    </svg>
+    <div class="wordmark">human at scale</div>
+    <div class="wordmark-sub">client portal</div>
+    <h1>Budgets</h1>
+    <p class="sub">Total ad spend across channels, split by LinkedIn and Meta, and what each one bought. Updated with every reporting cycle.</p>
+    <a class="backlink" href="/clients/human-at-scale">← Back to portal</a>
+    <div class="updated">Updated August 24, 2026</div>
+  </header>
+  <!-- ================= TOTALS ================= -->
+  <section>
+    <div class="sec-head">
+      <h2>Spend to date</h2>
+      <span class="note">Jul 24 &ndash; Aug 20, 2026</span>
+    </div>
+
+    <div class="spend">
+      <div class="metric accent">
+        <div class="label">Total spend</div>
+        <div class="value">$178.11</div>
+        <div class="foot">Across both channels</div>
+      </div>
+      <div class="metric">
+        <div class="label">LinkedIn</div>
+        <div class="value">$106.39</div>
+        <div class="foot">60% of total &middot; 105 engagements</div>
+      </div>
+      <div class="metric">
+        <div class="label">Meta</div>
+        <div class="value">$71.72</div>
+        <div class="foot">40% of total &middot; 167 landing page views</div>
+      </div>
+      <div class="metric">
+        <div class="label">Qualified leads</div>
+        <div class="value">0</div>
+        <div class="foot">No conversion tracking in place yet</div>
+      </div>
+    </div>
+
+    <div class="bar-wrap">
+      <div class="bar-row">
+        <div class="ch">LinkedIn<small>Thought Leader v2</small></div>
+        <div class="bar"><i style="width:60%"></i></div>
+        <div class="amt">$106.39</div>
+      </div>
+      <div class="bar-row">
+        <div class="ch">Meta<small>Traffic to Ops Assessment</small></div>
+        <div class="bar"><i class="alt" style="width:40%"></i></div>
+        <div class="amt">$71.72</div>
+      </div>
+    </div>
+    <div class="lgnd"><span><i class="a"></i>LinkedIn</span><span><i class="b"></i>Meta</span></div>
+  </section>
+
+  <!-- ================= DETAIL ================= -->
+  <section>
+    <div class="sec-head">
+      <h2>What the spend bought</h2>
+      <span class="note">By campaign</span>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Channel &middot; Campaign</th><th>Spent</th><th>Impressions</th><th>Clicks</th>
+            <th>CTR</th><th>CPC</th><th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>LinkedIn &middot; Thought Leader v2</td>
+            <td class="num">$106.39</td><td class="num">3,088</td><td class="num">105</td>
+            <td class="num">3.4%</td><td class="num">$1.01</td>
+            <td>105 engagements</td>
+          </tr>
+          <tr>
+            <td>Meta &middot; Traffic to Ops Assessment</td>
+            <td class="num">$71.72</td><td class="num">10,184</td><td class="num">167</td>
+            <td class="num">1.64%</td><td class="num">$0.43</td>
+            <td>167 landing page views</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <b>Reading these numbers.</b> Both channels buy attention efficiently. A 3.4% click-through rate is strong for LinkedIn, and $0.43 per landing page view is low for a B2B accounting audience. They are doing different jobs: LinkedIn buys engagement on Chase's own content, Meta buys traffic to the Operations Assessment.
+    </div>
+
+    <div class="note-warn">
+      <b>The gap, stated plainly.</b> Neither number can be tied to a lead yet. Without the Meta pixel and the CRM connection, we see traffic arriving and lose it at the door. Until that is in place this page reports cost per click, not cost per lead, and no spend decision should be made on these figures alone. Installing the pixel is what turns this table into a real cost-per-lead view.
+    </div>
+  </section>
+
+  <!-- ================= WHAT CHANGES NEXT ================= -->
+  <section>
+    <div class="sec-head">
+      <h2>What changes next cycle</h2>
+      <span class="note">Agreed on the Aug 21 call</span>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Change</th><th>Why</th><th>Effect on spend</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pivot to native lead forms on Meta</td>
+            <td>Removes the external form as a drop-off point and captures the lead inside the platform</td>
+            <td>Same budget, measurable leads</td>
+          </tr>
+          <tr>
+            <td>LinkedIn down to a minimum</td>
+            <td>Keeps testing content while more video goes out organically</td>
+            <td>Lower LinkedIn spend</td>
+          </tr>
+          <tr>
+            <td>Meta pixel and CRM connection</td>
+            <td>Without it there is no attribution on either channel</td>
+            <td>No cost, unblocks everything above</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>Human at Scale</footer>
+</div>
+</body>
+</html>
