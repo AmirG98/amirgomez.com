@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casafight — Meeting transcripts</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #352DBB; --navy-deep: #241D8A; --ink: #111111; --ink-2: #4D4A47; --ink-3: #8A8681; --paper: #F4F2ED; --paper-2: #ECE8DF; --hairline: #E0DCD4; --gold: #D454B2; --gold-soft: #FBEDF6; --panel: #ffffff; --field: #F4F2ED; --btnink: #ffffff; --titleink: #111111; --errcol: #a33c3c; --serif: 'Inter', -apple-system, sans-serif; --sans: 'Inter', -apple-system, sans-serif; --btnfont: var(--sans); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 880px; margin: 0 auto; padding: 40px 24px 64px; }
+  header { text-align: center; margin-bottom: 28px; }
+  h1 { font-family: var(--serif); font-size: 24px; font-weight: 400; margin-top: 18px; }
+  .sub { font-size: 13.5px; color: var(--ink-2); margin-top: 6px; max-width: 58ch; margin-left: auto; margin-right: auto; }
+  .backlink { display: inline-block; margin-top: 10px; font-size: 12.5px; color: var(--gold); text-decoration: none; }
+  .backlink:hover { text-decoration: underline; }
+  #banner { display: none; max-width: 760px; margin: 0 auto 22px; font-size: 13px; color: var(--ink-2); background: var(--gold-soft); border-left: 2px solid var(--gold); padding: 10px 14px; }
+  #banner.show { display: block; }
+
+  .panel { background: var(--panel); border: 1px solid var(--hairline); border-radius: 0px; padding: 24px 26px; margin-bottom: 26px; }
+  .panel h2 { font-family: var(--serif); font-size: 17px; font-weight: 400; margin-bottom: 14px; color: var(--titleink); }
+  .panel label { display: block; font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); margin: 12px 0 5px; }
+  .panel input[type="text"], .panel input[type="date"], .panel textarea { width: 100%; font-family: var(--sans); font-size: 14.5px; padding: 10px 12px; border: 1px solid var(--hairline); background: var(--field); color: var(--ink); outline: none; border-radius: 0px; }
+  .panel textarea { min-height: 120px; resize: vertical; line-height: 1.55; }
+  .panel input:focus, .panel textarea:focus { border-color: var(--navy); }
+  .panel input::placeholder, .panel textarea::placeholder { color: var(--ink-3); }
+  .row2 { display: grid; grid-template-columns: 1fr 200px; gap: 12px; }
+  .filebar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 12px; font-size: 13px; color: var(--ink-3); }
+  .btn { font-family: var(--btnfont); font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; background: var(--navy); color: var(--btnink); border: none; border-radius: 0px; padding: 11px 24px; cursor: pointer; }
+  .btn:hover { background: var(--navy-deep); }
+  .btn.ghost { background: none; border: 1px solid var(--hairline); color: var(--ink-2); }
+  .btn.ghost:hover { border-color: var(--ink-3); }
+  .btn[disabled] { opacity: 0.5; cursor: default; }
+  #form-error { display: none; font-size: 12.5px; color: var(--errcol); margin-top: 10px; }
+  #form-error.show { display: block; }
+
+  .meeting { background: var(--panel); border: 1px solid var(--hairline); border-radius: 0px; padding: 20px 24px; margin-bottom: 14px; }
+  .meeting .head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .meeting h3 { font-family: var(--serif); font-size: 17px; font-weight: 400; color: var(--titleink); }
+  .meeting .meta { font-size: 12px; color: var(--ink-3); }
+  .meeting .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+  .meeting .actions .btn { padding: 9px 18px; font-size: 10.5px; }
+  .recap { border-left: 2px solid var(--gold); padding: 4px 0 4px 16px; margin-top: 16px; font-size: 14px; color: var(--ink-2); }
+  .recap h4 { font-family: var(--serif); font-size: 14px; font-weight: 500; color: var(--titleink); margin: 12px 0 4px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .recap h4:first-child { margin-top: 0; }
+  .recap ul { margin: 2px 0 6px 18px; }
+  .recap li { margin-top: 2px; }
+  .transcript { display: none; margin-top: 14px; max-height: 260px; overflow-y: auto; background: var(--field); border: 1px solid var(--hairline); border-radius: 0px; padding: 12px 14px; font-size: 12.5px; color: var(--ink-2); white-space: pre-wrap; }
+  .transcript.open { display: block; }
+  .spin { display: inline-block; font-size: 12.5px; color: var(--gold); }
+  .empty { text-align: center; color: var(--ink-3); font-size: 14px; padding: 30px 0; }
+  .admin-only { display: none; }
+  body.admin .admin-only { display: inline-block; }
+  footer { text-align: center; margin-top: 44px; font-size: 12px; color: var(--ink-3); }
+  footer a { color: var(--ink-3); text-decoration: none; }
+  footer a:hover { color: var(--gold); }
+  @media (max-width: 640px) { .row2 { grid-template-columns: 1fr; } }
+  h1 { font-weight: 800; letter-spacing: -0.02em; }
+  .editor h2, .card h3, .panel h2, .meeting h3, .sec h2 { font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <img src="https://acdn-us.mitiendanube.com/stores/006/471/699/themes/common/logo-641374067-1761592253-6c05fa98bddb4063ea9d92d80eb92db21761592253-640-0.webp" alt="Casafight" style="height:44px;width:auto;">
+    <h1>Meeting transcripts</h1>
+    <p class="sub">Subí o pegá la transcripción de cada reunión (Fireflies, Zoom, Meet) y generá el recap automático: resumen, decisiones, accionables y temas abiertos.</p>
+    <a class="backlink" href="/clients/casafight">← Volver al portal</a>
+  </header>
+
+  <div id="banner"></div>
+
+  <div class="panel">
+    <h2>Nueva reunión</h2>
+    <div class="row2">
+      <div>
+        <label>Título</label>
+        <input type="text" id="f-titulo" placeholder="Reunión semanal — resultados y próximos pasos">
+      </div>
+      <div>
+        <label>Fecha</label>
+        <input type="date" id="f-fecha">
+      </div>
+    </div>
+    <label>Transcripción</label>
+    <textarea id="f-text" placeholder="Pegá acá la transcripción completa…"></textarea>
+    <div class="filebar">
+      <input type="file" id="f-file" accept=".txt,.vtt,.srt,text/plain">
+      <span>o subí el archivo exportado (.txt · .vtt · .srt)</span>
+    </div>
+    <p id="form-error"></p>
+    <div style="margin-top:16px;"><button class="btn" id="f-add">Guardar reunión</button></div>
+  </div>
+
+  <div id="list"></div>
+
+  <footer>
+    Preparado por A+Growth · <a href="#" id="admin-toggle">modo admin</a>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var CLIENT = 'casafight';
+  var API = '/api/transcripts/' + CLIENT;
+  var LS_KEY = 'transcripts_' + CLIENT;
+  var mode = 'local';
+  var state = null;
+  var aiAvailable = null;
+  var isAdmin = false;
+  try { isAdmin = localStorage.getItem('approvals_' + CLIENT + '_admin') === '1'; } catch (e) {}
+
+
+  var CTX_LS = 'context_' + CLIENT;
+  var CTX_API = '/api/context/' + CLIENT;
+  var CTX_SEED = {"negocio": ["Casafight: e-commerce argentino de juegos de mesa y party games, sobre Tiendanube (casafight.com).", "La marca vende momentos sociales: previas, juntadas y reuniones de amigos. Lema: 'Nos tomamos la risa en serio'.", "Además del canal minorista hay canal mayorista."], "oferta": ["Party games y cartas para previas: Dígalo con Memes (con 4 packs de expansión), Cartas Salvajes, Desconfío, La Gran Siete, Meme Test y El Oráculo, entre otros.", "Líneas por ocasión: juegos de vínculo y conversación, juegos educativos para niños, y combos y bundles para regalar.", "Línea de moda y accesorios: anteojos, gorras, riñoneras, cinturones y joyería.", "Canal mayorista para puntos de venta."], "objetivos": ["Aumentar la frecuencia de compra escalando el contenido ganador en Meta.", "Medir inversión, ventas atribuidas y ROAS apenas estén los accesos a Meta Ads y a la tienda.", "Llegar a cada fecha comercial (Día de la Madre, Black Friday, Navidad, verano) con creativos, oferta y presupuesto definidos antes."], "canales": ["Meta Ads como canal principal, con UGC como motor creativo.", "TikTok en pausa: la cuenta fue rechazada tras arrancar campañas, apelación en curso.", "Google Ads en preparación: campañas branded y non-branded con listas de keywords ya armadas.", "Tienda online sobre Tiendanube."], "guardrails": ["Voz lúdica e irreverente en español rioplatense, nunca tono corporativo.", "Los productos hot no aparecen jamás en búsquedas, audiencias ni creatividades infantiles o familiares.", "Cada fecha comercial se prepara con anticipación, no encima de la fecha."], "aprendizajes": ["El contenido encontró la tecla en Meta después de testear más volumen: escalar sobre ese formato.", "La web convierte bien: el foco va a tráfico y frecuencia de compra; se suman reviews como refuerzo."], "equipo": ["A+Growth: ads, contenido UGC, Google Ads y estrategia.", "Casafight: aprobación de piezas, operación de la tienda y logística."]};
+  function ingestContext(m) {
+    fetch(CTX_API, { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+      .then(function (d) { return { doc: d.doc, server: true }; })
+      .catch(function () {
+        var raw = null;
+        try { raw = localStorage.getItem(CTX_LS); } catch (e) {}
+        return { doc: raw ? JSON.parse(raw) : null, server: false };
+      })
+      .then(function (res) {
+        var ctx = res.doc || CTX_SEED;
+        ctx.fuentes = ctx.fuentes || [];
+        if (ctx.fuentes.some(function (f) { return f.id === m.id; })) return;
+        fetch(CTX_API, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'ingest', titulo: m.titulo, fecha: m.fecha, transcript: m.transcript, context: ctx })
+        })
+          .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+          .then(function (d) {
+            var nc = d.context;
+            nc.fuentes = ctx.fuentes.concat([{ id: m.id, titulo: m.titulo, fecha: m.fecha }]);
+            nc.actualizado = new Date().toISOString();
+            try { localStorage.setItem(CTX_LS, JSON.stringify(nc)); } catch (e) {}
+            if (res.server) {
+              fetch(CTX_API, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(nc) }).catch(function () {});
+            }
+          }).catch(function () {});
+      });
+  }
+  function esc(s) {
+    return String(s || '').replace(/[&<>"\x27]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "\x27": '&#39;' }[c];
+    });
+  }
+  function fmtDate(d) {
+    if (!d) return 's/f';
+    var p = d.split('-');
+    return p.length === 3 ? p[2] + '/' + p[1] + '/' + p[0] : d;
+  }
+  function words(t) { return (String(t).match(/\S+/g) || []).length; }
+
+  function mdLite(md) {
+    var lines = String(md || '').split('\n');
+    var html = '', inList = false;
+    lines.forEach(function (ln) {
+      var l = ln.trim();
+      if (!l) { if (inList) { html += '</ul>'; inList = false; } return; }
+      l = esc(l).replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>');
+      if (/^##+\s/.test(l)) {
+        if (inList) { html += '</ul>'; inList = false; }
+        html += '<h4>' + l.replace(/^##+\s*/, '') + '</h4>';
+      } else if (/^[-•*]\s/.test(l)) {
+        if (!inList) { html += '<ul>'; inList = true; }
+        html += '<li>' + l.replace(/^[-•*]\s*/, '') + '</li>';
+      } else {
+        if (inList) { html += '</ul>'; inList = false; }
+        html += '<p>' + l + '</p>';
+      }
+    });
+    if (inList) html += '</ul>';
+    return html;
+  }
+
+  function cleanTranscript(text, name) {
+    if (/\.vtt$/i.test(name || '') || /^WEBVTT/.test(text)) {
+      return text.replace(/^WEBVTT.*$/m, '')
+        .replace(/^\d+$/gm, '')
+        .replace(/^[0-9:.,>\- ]+-->.*$/gm, '')
+        .replace(/\n{3,}/g, '\n\n').trim();
+    }
+    if (/\.srt$/i.test(name || '')) {
+      return text.replace(/^\d+$/gm, '').replace(/^[0-9:.,>\- ]+-->.*$/gm, '').replace(/\n{3,}/g, '\n\n').trim();
+    }
+    return text.trim();
+  }
+
+  function banner(msg) {
+    var b = document.getElementById('banner');
+    if (!msg) { b.classList.remove('show'); return; }
+    b.textContent = msg;
+    b.classList.add('show');
+  }
+
+  function render() {
+    var list = document.getElementById('list');
+    list.innerHTML = '';
+    var items = (state.meetings || []).slice().sort(function (a, b) { return (b.fecha || '').localeCompare(a.fecha || ''); });
+    if (!items.length) {
+      list.innerHTML = '<p class="empty">Todavía no hay reuniones cargadas. Subí la primera transcripción arriba.</p>';
+      return;
+    }
+    items.forEach(function (m) {
+      var el = document.createElement('div');
+      el.className = 'meeting';
+      el.setAttribute('data-id', m.id);
+      el.innerHTML =
+        '<div class="head"><h3>' + esc(m.titulo) + '</h3><span class="meta num">' + fmtDate(m.fecha) + ' · ' + words(m.transcript) + ' palabras</span></div>' +
+        (m.recap ? '<div class="recap">' + mdLite(m.recap) + '</div>' : '') +
+        '<div class="actions">' +
+          '<button class="btn" data-act="recap">' + (m.recap ? 'Regenerar recap' : 'Generar recap') + '</button>' +
+          '<button class="btn ghost" data-act="toggle">Ver transcripción</button>' +
+          '<button class="btn ghost admin-only" data-act="del" style="color:var(--errcol); border-color:var(--errcol);">Eliminar</button>' +
+          '<span class="spin" style="display:none;">Generando recap…</span>' +
+        '</div>' +
+        '<div class="transcript">' + esc(m.transcript).slice(0, 200000) + '</div>';
+      list.appendChild(el);
+    });
+  }
+
+  function persistLocal() { try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (e) {} }
+  var saveTimer = null;
+  function save() {
+    persistLocal();
+    if (mode !== 'server') return;
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(function () {
+      fetch(API, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(state) }).catch(function () {});
+    }, 400);
+  }
+  function find(id) { return (state.meetings || []).filter(function (m) { return m.id === id; })[0]; }
+
+  document.getElementById('f-file').addEventListener('change', function () {
+    var f = this.files[0];
+    if (!f) return;
+    var reader = new FileReader();
+    reader.onload = function () {
+      document.getElementById('f-text').value = cleanTranscript(String(reader.result || ''), f.name);
+      if (!document.getElementById('f-titulo').value) {
+        document.getElementById('f-titulo').value = f.name.replace(/\.(txt|vtt|srt)$/i, '');
+      }
+    };
+    reader.readAsText(f);
+  });
+
+  document.getElementById('f-add').addEventListener('click', function () {
+    var titulo = document.getElementById('f-titulo').value.trim();
+    var fecha = document.getElementById('f-fecha').value;
+    var text = document.getElementById('f-text').value.trim();
+    var err = document.getElementById('form-error');
+    if (!titulo || !text) {
+      err.textContent = !titulo ? 'Falta el título de la reunión.' : 'Falta la transcripción (pegala o subí el archivo).';
+      err.classList.add('show');
+      return;
+    }
+    err.classList.remove('show');
+    state.meetings.push({ id: 't-' + Date.now(), titulo: titulo, fecha: fecha || new Date().toISOString().slice(0, 10), transcript: text, recap: '', actualizado: new Date().toISOString() });
+    document.getElementById('f-titulo').value = ''; document.getElementById('f-text').value = ''; document.getElementById('f-file').value = '';
+    save(); render();
+  });
+
+  document.getElementById('list').addEventListener('click', function (e) {
+    var act = e.target.getAttribute && e.target.getAttribute('data-act');
+    if (!act) return;
+    var card = e.target.closest('.meeting');
+    var id = card.getAttribute('data-id');
+    var m = find(id);
+    if (act === 'toggle') {
+      card.querySelector('.transcript').classList.toggle('open');
+      e.target.textContent = card.querySelector('.transcript').classList.contains('open') ? 'Ocultar transcripción' : 'Ver transcripción';
+    }
+    if (act === 'del') {
+      if (confirm('¿Eliminar "' + m.titulo + '" y su recap?')) {
+        state.meetings = state.meetings.filter(function (x) { return x.id !== id; });
+        save(); render();
+      }
+    }
+    if (act === 'recap') {
+      if (aiAvailable === false) { alert('El recap automático se activa cuando A+Growth configure la IA (ANTHROPIC_API_KEY). Mientras tanto podés trabajar la transcripción manualmente.'); return; }
+      var btn = e.target;
+      var spin = card.querySelector('.spin');
+      btn.disabled = true; spin.style.display = 'inline-block';
+      fetch(API, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'recap', titulo: m.titulo, fecha: m.fecha, transcript: m.transcript })
+      })
+        .then(function (r) {
+          if (r.status === 503) { aiAvailable = false; throw new Error('ai_off'); }
+          if (!r.ok) throw new Error('ai_error');
+          return r.json();
+        })
+        .then(function (data) {
+          aiAvailable = true;
+          m.recap = data.recap || '';
+          m.actualizado = new Date().toISOString();
+          save(); render();
+          ingestContext(m);
+        })
+        .catch(function (er) {
+          btn.disabled = false; spin.style.display = 'none';
+          if (er.message === 'ai_off') {
+            alert('El recap automático todavía no está activo: falta configurar la IA en el servidor (ANTHROPIC_API_KEY en Vercel). La transcripción quedó guardada.');
+          } else {
+            alert('No se pudo generar el recap. Probá de nuevo en un rato.');
+          }
+        });
+    }
+  });
+
+  function applyAdmin() {
+    document.body.classList.toggle('admin', isAdmin);
+    document.getElementById('admin-toggle').textContent = isAdmin ? 'salir de modo admin' : 'modo admin';
+  }
+  document.getElementById('admin-toggle').addEventListener('click', function (e) {
+    e.preventDefault();
+    isAdmin = !isAdmin;
+    try { localStorage.setItem('approvals_' + CLIENT + '_admin', isAdmin ? '1' : '0'); } catch (e2) {}
+    applyAdmin();
+  });
+
+  function loadLocal() {
+    mode = 'local';
+    banner('Modo local: las transcripciones se guardan en este navegador. El repositorio compartido se activa próximamente.');
+    try {
+      var raw = localStorage.getItem(LS_KEY);
+      state = raw ? JSON.parse(raw) : { meetings: [] };
+    } catch (e) { state = { meetings: [] }; }
+    render(); applyAdmin();
+  }
+
+  fetch(API, { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error('nostorage'); return r.json(); })
+    .then(function (data) {
+      mode = 'server';
+      state = data.doc || { meetings: [] };
+      if (!data.doc) save();
+      render(); applyAdmin();
+    })
+    .catch(loadLocal);
+})();
+</script>
+</body>
+</html>

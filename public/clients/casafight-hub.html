@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casafight — Portal de cliente</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --tinta: #111111; --tinta-2: #4D4A47; --tinta-3: #8A8681;
+    --crema: #F4F2ED; --panel: #FFFFFF; --linea: #E0DCD4;
+    --azul: #352DBB; --azul-deep: #241D8A; --azul-soft: #E8E6F8;
+    --magenta: #D454B2; --magenta-soft: #FBEDF6;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--crema); color: var(--tinta); font-size: 15.5px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 880px; margin: 0 auto; padding: 72px 24px 64px; }
+
+  header { text-align: center; margin-bottom: 52px; }
+  .logo { height: 52px; width: auto; }
+  .rule { width: 56px; height: 3px; background: linear-gradient(90deg, var(--azul) 0%, var(--magenta) 100%); margin: 28px auto 24px; }
+  .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--azul); }
+  h1 { font-size: 27px; font-weight: 800; letter-spacing: -0.02em; margin-top: 8px; }
+  .sub { font-size: 14.5px; color: var(--tinta-2); margin-top: 6px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  a.tile { display: block; text-decoration: none; color: inherit; background: var(--panel); border: 1px solid var(--linea); padding: 30px 30px 26px; transition: border-color .25s, transform .25s, box-shadow .25s; }
+  a.tile:hover { border-color: var(--magenta); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(53,45,187,0.10); }
+  .tile .t-eyebrow { font-size: 10.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tinta-3); }
+  .tile h2 { font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: var(--tinta); margin: 10px 0 6px; }
+  .tile p { font-size: 14px; color: var(--tinta-2); min-height: 44px; }
+  .tile .go { display: inline-block; margin-top: 16px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--magenta); }
+  a.tile:hover .go { text-decoration: underline; }
+
+  footer { text-align: center; margin-top: 64px; font-size: 12px; color: var(--tinta-3); }
+
+  .rv { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+  .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="rv">
+    <img class="logo" src="https://acdn-us.mitiendanube.com/stores/006/471/699/themes/common/logo-641374067-1761592253-6c05fa98bddb4063ea9d92d80eb92db21761592253-640-0.webp" alt="Casafight">
+    <div class="rule"></div>
+    <p class="eyebrow">Portal de cliente</p>
+    <h1>Todo tu trabajo con A+Growth, en un solo lugar</h1>
+    <p class="sub">Elegí una sección para empezar.</p>
+  </header>
+
+  <div class="grid">
+    <a class="tile rv" href="/clients/casafight/dashboard">
+      <span class="t-eyebrow">Resultados</span>
+      <h2>Dashboard</h2>
+      <p>Números del período, estado de campañas, tablero de trabajo y calendario comercial.</p>
+      <span class="go">Ver dashboard →</span>
+    </a>
+    <a class="tile rv" href="/clients/casafight/approvals">
+      <span class="t-eyebrow">Colaboración</span>
+      <h2>Aprobación de recursos</h2>
+      <p>Revisá creativos, copies y piezas de UGC; aprobá o dejá feedback en cada una.</p>
+      <span class="go">Abrir tablero →</span>
+    </a>
+    <a class="tile rv" href="/clients/casafight/ideas">
+      <span class="t-eyebrow">Ideas</span>
+      <h2>Banco de ideas</h2>
+      <p>Un lugar para dejar ideas sueltas e implementarlas a futuro, con contexto, links o imágenes.</p>
+      <span class="go">Abrir banco →</span>
+    </a>
+    <a class="tile rv" href="/clients/casafight/transcripts">
+      <span class="t-eyebrow">Reuniones</span>
+      <h2>Meeting transcripts</h2>
+      <p>Subí la transcripción de cada reunión y generá su recap: decisiones, accionables y temas abiertos.</p>
+      <span class="go">Abrir reuniones →</span>
+    </a>
+    <a class="tile rv" href="/clients/casafight/context">
+      <span class="t-eyebrow">Conocimiento</span>
+      <h2>Contexto del cliente</h2>
+      <p>El documento vivo del negocio: oferta, canales, guardrails y aprendizajes. Se actualiza solo con cada reunión.</p>
+      <span class="go">Ver contexto →</span>
+    </a>
+  </div>
+
+  <footer class="rv">Preparado por A+Growth</footer>
+
+</div>
+<script>
+(function () {
+  var els = document.querySelectorAll('.rv');
+  els.forEach(function (el, i) {
+    el.style.transitionDelay = (i * 90) + 'ms';
+    requestAnimationFrame(function () { requestAnimationFrame(function () { el.classList.add('in'); }); });
+  });
+})();
+</script>
+</body>
+</html>
