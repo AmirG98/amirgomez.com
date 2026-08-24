@@ -58,6 +58,18 @@ Fase de setup USD 1.650. Marketing integral mensual USD 650. Pago 50% al inicio 
 ESTADO AL 23 DE AGOSTO DE 2026
 Fase de setup. Sin campañas corriendo, sin números de performance todavía. Pendiente de QHU: materiales de marca, diseños de QR y calcomanías, confirmación de fecha de inicio, detalle del proceso de ventas. Pendiente nuestro: contenido y comunicación de la landing, definición de posicionamiento y audiencias, producción de contenido. La plataforma estaba prevista para mediados de agosto y todavía no está publicada.
 
+PLAN DE LANZAMIENTO POR FASES (Córdoba Capital)
+Fase 1, sembrar demanda, semanas 1 a 4: definir la lista corta de 30 a 50 talleres objetivo elegidos a mano y mapear su zona de influencia; recién después sale la pauta segmentada por radio sobre esas zonas. Entre 5 y 10 conceptos creativos en paralelo, evaluados a los 3 o 4 días. Todo el tráfico va al buscador de patente. Señal que se busca: búsquedas de patente por zona y costo por búsqueda.
+Fase 2, convertir la demanda en presión, semanas 3 a 8: se superpone con la fase 1 a propósito, apenas una zona muestra volumen empieza el trabajo sobre el taller. Al usuario que buscó una patente se le muestra cómo pedir que le registren el service. Ventas contacta los talleres de las zonas activas con el dato de cuánta gente buscó su patente cerca. Sigue la validación telefónica personalizada. Señal que se busca: talleres registrados y cuántos llegaron porque un cliente se lo pidió.
+Fase 3, escalar, semana 8 en adelante: se replica el modelo sobre nuevas zonas una por una y se sube el presupuesto solo en los conceptos con costo por búsqueda sostenido. Recién acá tiene sentido abrir prensa del sector e influencers. Señal que se busca: costo por taller sumado y repetición del modelo por zona.
+Las fases se superponen a propósito: no son tramos que arrancan cuando termina el anterior.
+El plan completo está disponible en PDF dentro del Master Plan.
+
+NOTIFICACIONES POR WHATSAPP
+Entra en el plan porque el historial sirve cuando el usuario vuelve a mirarlo: WhatsApp es el canal para avisarle que le registraron un service y recordarle cuándo toca el próximo mantenimiento. La configuración la hace QHU porque requiere accesos y documentación de la empresa; A+Growth dejó una guía paso a paso en PDF dentro del Master Plan, basada en la documentación oficial de Meta.
+Datos clave de esa guía: el número que se conecte a la API no puede tener WhatsApp instalado (conviene una línea nueva sin la app). Sin verificación de negocio el límite es de 250 destinatarios por día; verificado sube a 2.000 y de ahí escala solo si la calidad se mantiene. Fuera de la ventana de 24 horas solo se pueden enviar plantillas aprobadas por Meta, y las de categoría utilidad (service registrado, recordatorio de mantenimiento) son las más baratas y las que menos se rechazan. Hace falta consentimiento previo del usuario: el momento natural para pedirlo es cuando escanea el QR del taller, lo que implica sumar una casilla al registro.
+Los tiempos de verificación y de aprobación de plantillas los define Meta, no A+Growth ni QHU.
+
 CONTACTOS
 Rodrigo Díaz (producto y decisión técnica), María Alejandra Díaz (administración y branding), Marcos (front end, React).`,
   },

@@ -74,6 +74,27 @@
   .h-card li { font-size: 12.5px; color: var(--tinta-2); padding-left: 14px; position: relative; margin-bottom: 5px; }
   .h-card li::before { content: '·'; position: absolute; left: 3px; color: var(--indigo); font-weight: 700; }
 
+  /* Plan de lanzamiento por fases */
+  .plan { background: var(--panel); border: 1px solid var(--linea); }
+  .plan-row { display: grid; grid-template-columns: 195px 1fr; gap: 20px; padding: 17px 21px; border-bottom: 1px solid var(--linea); }
+  .plan-row:last-child { border-bottom: none; }
+  .plan-row .fk { font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--indigo-deep); }
+  .plan-row .fk small { display: block; font-size: 11px; font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--tinta-3); margin-top: 3px; }
+  .plan-row .det p { font-size: 13.5px; color: var(--tinta-2); }
+  .plan-row .det p + p { margin-top: 7px; }
+  .plan-row .det b { color: var(--tinta); font-weight: 600; }
+  .plan-row .mide { display: inline-block; margin-top: 9px; font-size: 12px; color: var(--tinta-2); background: var(--indigo-soft); border-left: 2px solid var(--indigo); padding: 6px 11px; }
+  .plan-row .mide b { color: var(--indigo-deep); }
+
+  /* Guia descargable */
+  .guia { display: flex; align-items: center; gap: 16px; background: var(--panel); border: 1px solid var(--linea); border-left: 3px solid var(--indigo); padding: 17px 21px; text-decoration: none; color: inherit; transition: box-shadow .15s; }
+  .guia:hover { box-shadow: 0 6px 18px rgba(20,25,46,.07); }
+  .guia .ic { flex: none; width: 36px; height: 36px; display: grid; place-items: center; background: var(--indigo-soft); color: var(--indigo-deep); font-size: 9.5px; font-weight: 800; letter-spacing: .04em; }
+  .guia .tx { flex: 1; min-width: 0; }
+  .guia .tx .t { font-size: 14.5px; font-weight: 600; }
+  .guia .tx .d { font-size: 12.5px; color: var(--tinta-2); margin-top: 2px; }
+  .guia .arw { flex: none; font-size: 12px; font-weight: 700; letter-spacing: .08em; color: var(--indigo); }
+
   .nota { background: var(--indigo-soft); border-left: 3px solid var(--indigo); padding: 14px 18px; font-size: 13.5px; color: var(--tinta-2); margin-top: 16px; }
   .nota b { color: var(--tinta); font-weight: 700; }
 
@@ -239,6 +260,75 @@
     </section>
 
     <!-- HORIZONTE -->
+    <!-- ============ PLAN POR FASES ============ -->
+    <section>
+      <div class="sec-head">
+        <h2>El plan por fases</h2>
+        <span class="note">Lanzamiento en C&oacute;rdoba Capital</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="plan">
+        <div class="plan-row">
+          <div class="fk">Fase 1: sembrar demanda<small>Semanas 1 a 4</small></div>
+          <div class="det">
+            <p>Primero definimos la <b>lista corta de talleres objetivo</b>, entre 30 y 50 de C&oacute;rdoba Capital elegidos a mano, y mapeamos su zona de influencia. Reci&eacute;n despu&eacute;s sale la pauta, segmentada por radio sobre esas zonas.</p>
+            <p>Entre 5 y 10 conceptos creativos en paralelo, evaluados a los 3 o 4 d&iacute;as. Todo el tr&aacute;fico va al buscador de patente: sin formularios y sin fricci&oacute;n.</p>
+            <span class="mide"><b>Se&ntilde;al que buscamos:</b> b&uacute;squedas de patente por zona y costo por b&uacute;squeda</span>
+          </div>
+        </div>
+        <div class="plan-row">
+          <div class="fk">Fase 2: convertir en presi&oacute;n<small>Semanas 3 a 8</small></div>
+          <div class="det">
+            <p>Se superpone con la fase 1 a prop&oacute;sito: apenas una zona muestra volumen, empieza el trabajo sobre el taller. Al usuario que busc&oacute; una patente le mostramos c&oacute;mo pedir que le registren el service.</p>
+            <p>Ventas contacta los talleres de las zonas activas <b>con el dato de cu&aacute;nta gente busc&oacute; su patente cerca</b>. Ese n&uacute;mero es el argumento. Sigue la validaci&oacute;n telef&oacute;nica personalizada.</p>
+            <span class="mide"><b>Se&ntilde;al que buscamos:</b> talleres registrados, y cu&aacute;ntos llegaron porque un cliente se lo pidi&oacute;</span>
+          </div>
+        </div>
+        <div class="plan-row">
+          <div class="fk">Fase 3: escalar<small>Semana 8 en adelante</small></div>
+          <div class="det">
+            <p>Se replica el modelo sobre nuevas zonas, una por una, y se sube el presupuesto solo en los conceptos con costo por b&uacute;squeda sostenido.</p>
+            <p>Reci&eacute;n ac&aacute; tiene sentido abrir prensa del sector e influencers, con casos reales para mostrar. Con el modelo probado en C&oacute;rdoba, queda el molde para la siguiente ciudad.</p>
+            <span class="mide"><b>Se&ntilde;al que buscamos:</b> costo por taller sumado y repetici&oacute;n del modelo por zona</span>
+          </div>
+        </div>
+      </div>
+      <div class="nota">
+        <b>Por qu&eacute; las fases se superponen.</b> No son tres tramos que arrancan cuando termina el anterior. La fase 2 empieza en la semana 3, con la fase 1 todav&iacute;a corriendo: en cuanto una zona muestra volumen de b&uacute;squedas conviene salir a hablar con esos talleres, mientras el resto de las zonas sigue en etapa de siembra.
+      </div>
+      <a class="guia" href="/clients/docs/qhu-plan-lanzamiento.pdf" target="_blank" rel="noopener" style="margin-top:14px;">
+        <span class="ic">PDF</span>
+        <span class="tx">
+          <span class="t">El plan completo, en PDF</span>
+          <span class="d">Las tres fases en detalle, el presupuesto de pauta, los &aacute;ngulos creativos a probar y las definiciones que dependen de QHU.</span>
+        </span>
+        <span class="arw">ABRIR &rarr;</span>
+      </a>
+    </section>
+
+    <!-- ============ WHATSAPP ============ -->
+    <section>
+      <div class="sec-head">
+        <h2>Notificaciones por WhatsApp</h2>
+        <span class="note">Una pieza que depende de QHU</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="nota" style="margin-top:0;">
+        <b>Por qu&eacute; entra en el plan.</b> El historial sirve cuando el usuario vuelve a mirarlo. WhatsApp es el canal para avisarle que le registraron un service y para recordarle cu&aacute;ndo toca el pr&oacute;ximo mantenimiento: es lo que convierte una consulta suelta en una relaci&oacute;n sostenida con el taller. La configuraci&oacute;n la hace QHU porque requiere accesos y documentaci&oacute;n de la empresa, as&iacute; que dejamos el paso a paso escrito.
+      </div>
+      <a class="guia" href="/clients/docs/qhu-whatsapp-api.pdf" target="_blank" rel="noopener" style="margin-top:14px;">
+        <span class="ic">PDF</span>
+        <span class="tx">
+          <span class="t">Business Manager y WhatsApp API paso a paso</span>
+          <span class="d">Gu&iacute;a seg&uacute;n la documentaci&oacute;n oficial de Meta: portafolio de negocios, verificaci&oacute;n, cuenta de desarrollador, alta del n&uacute;mero, token permanente, plantillas y consentimiento.</span>
+        </span>
+        <span class="arw">ABRIR &rarr;</span>
+      </a>
+      <div class="nota">
+        <b>Dos cosas antes de arrancar.</b> El n&uacute;mero que se conecte a la API no puede tener WhatsApp instalado, as&iacute; que conviene conseguir una l&iacute;nea nueva y no instalarle la app. Y la verificaci&oacute;n del negocio conviene iniciarla temprano: sin verificar, el l&iacute;mite es de 250 destinatarios por d&iacute;a, y los tiempos de revisi&oacute;n los define Meta.
+      </div>
+    </section>
+
     <section>
       <div class="sec-head">
         <h2>El horizonte</h2>

@@ -113,28 +113,6 @@
   .met-row .k small { display: block; font-size: 10.5px; color: var(--indigo-deep); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 3px; }
   .met-row .v { font-size: 13px; color: var(--tinta-2); }
 
-  /* Plan de lanzamiento */
-  .plan { background: var(--panel); border: 1px solid var(--linea); }
-  .plan-row { display: grid; grid-template-columns: 190px 1fr; gap: 20px; padding: 16px 20px; border-bottom: 1px solid var(--linea); }
-  .plan-row:last-child { border-bottom: none; }
-  .plan-row .fase-k { font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--indigo-deep); }
-  .plan-row .fase-k small { display: block; font-size: 11px; font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--tinta-3); margin-top: 3px; }
-  .plan-row .det p { font-size: 13.5px; color: var(--tinta-2); }
-  .plan-row .det p + p { margin-top: 7px; }
-  .plan-row .det b { color: var(--tinta); font-weight: 600; }
-  .plan-row .mide { display: inline-block; margin-top: 9px; font-size: 12px; color: var(--tinta-2); background: var(--indigo-soft); border-left: 2px solid var(--indigo); padding: 6px 11px; }
-  .plan-row .mide b { color: var(--indigo-deep); }
-
-  /* Descarga de documentos */
-  .doc { display: flex; align-items: center; gap: 16px; background: var(--panel); border: 1px solid var(--linea); border-left: 3px solid var(--indigo); padding: 16px 20px; text-decoration: none; color: inherit; transition: border-color .15s, box-shadow .15s; }
-  .doc:hover { box-shadow: 0 1px 0 var(--linea), 0 6px 18px rgba(20,25,46,.07); }
-  .doc + .doc { margin-top: 10px; }
-  .doc .ic { flex: none; width: 34px; height: 34px; display: grid; place-items: center; background: var(--indigo-soft); color: var(--indigo-deep); font-size: 9.5px; font-weight: 800; letter-spacing: .04em; }
-  .doc .tx { flex: 1; min-width: 0; }
-  .doc .tx .t { font-size: 14.5px; font-weight: 600; }
-  .doc .tx .d { font-size: 12.5px; color: var(--tinta-2); margin-top: 2px; }
-  .doc .arw { flex: none; font-size: 12px; font-weight: 700; letter-spacing: .08em; color: var(--indigo); }
-
   .mp { display: block; background: var(--noche); color: #fff; padding: 22px 26px; text-decoration: none; margin-top: 32px; transition: background .2s; }
   .mp:hover { background: #16204A; }
   .mp .k { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #7B74FF; }
@@ -345,72 +323,6 @@
       </div>
       <div class="nota">
         <b>Por qu&eacute; el orden importa.</b> Vender una suscripci&oacute;n a un taller que nunca escuch&oacute; hablar de QHU es una venta fr&iacute;a contra un gasto mensual nuevo. Que un cliente entre y pida que le carguen el service cambia por completo la conversaci&oacute;n: el taller no est&aacute; comprando una herramienta, est&aacute; respondiendo a algo que sus clientes ya quieren. Por eso la primera ola de pauta va dirigida a usuarios en las zonas de los talleres objetivo, no a los talleres.
-      </div>
-    </section>
-
-    <!-- ============ PLAN DE LANZAMIENTO ============ -->
-    <section>
-      <div class="sec-head">
-        <h2>Plan de lanzamiento</h2>
-        <span class="note">C&oacute;rdoba Capital</span>
-      </div>
-      <div class="sec-rule"></div>
-      <div class="plan">
-        <div class="plan-row">
-          <div class="fase-k">Fase 1: sembrar demanda<small>Semanas 1 a 4</small></div>
-          <div class="det">
-            <p>Definimos la <b>lista corta de talleres objetivo</b>, entre 30 y 50 de C&oacute;rdoba Capital elegidos a mano, y mapeamos su zona de influencia. Reci&eacute;n despu&eacute;s sale la pauta, segmentada por radio sobre esas zonas.</p>
-            <p>Entre 5 y 10 conceptos creativos en paralelo, evaluados a los 3 o 4 d&iacute;as. Todo el tr&aacute;fico va al buscador de patente: sin formularios, sin fricci&oacute;n.</p>
-            <span class="mide"><b>Se mide:</b> b&uacute;squedas de patente por zona y costo por b&uacute;squeda</span>
-          </div>
-        </div>
-        <div class="plan-row">
-          <div class="fase-k">Fase 2: convertir en presi&oacute;n<small>Semanas 3 a 8</small></div>
-          <div class="det">
-            <p>Se superpone con la fase 1 a prop&oacute;sito: apenas una zona muestra volumen, empieza el trabajo sobre el taller. Al usuario que busc&oacute; una patente le mostramos c&oacute;mo pedir que le registren el service.</p>
-            <p>Ventas contacta los talleres de las zonas activas <b>con el dato de cu&aacute;nta gente busc&oacute; su patente cerca</b>. Ese n&uacute;mero es el argumento. Sigue la validaci&oacute;n telef&oacute;nica personalizada.</p>
-            <span class="mide"><b>Se mide:</b> talleres registrados, y cu&aacute;ntos llegaron porque un cliente se lo pidi&oacute;</span>
-          </div>
-        </div>
-        <div class="plan-row">
-          <div class="fase-k">Fase 3: escalar<small>Semana 8 en adelante</small></div>
-          <div class="det">
-            <p>Se replica el modelo sobre nuevas zonas, una por una, y se sube el presupuesto solo en los conceptos con costo por b&uacute;squeda sostenido.</p>
-            <p>Reci&eacute;n ac&aacute; tiene sentido abrir prensa del sector e influencers, con casos reales para mostrar. Con el modelo probado en C&oacute;rdoba, queda el molde para la siguiente ciudad.</p>
-            <span class="mide"><b>Se mide:</b> costo por taller sumado y repetici&oacute;n del modelo por zona</span>
-          </div>
-        </div>
-      </div>
-      <div class="nota">
-        <b>La categor&iacute;a no existe todav&iacute;a.</b> Nadie busca un historial digital de su auto porque no sabe que puede existir. No hay demanda para capturar, hay demanda para crear: por eso el contenido educa antes de promocionar, y por eso el anzuelo no es la suscripci&oacute;n sino poner la patente y ver qu&eacute; sabemos del veh&iacute;culo.
-      </div>
-    </section>
-
-    <!-- ============ DOCUMENTOS ============ -->
-    <section>
-      <div class="sec-head">
-        <h2>Documentos</h2>
-        <span class="note">Para descargar y compartir con el equipo</span>
-      </div>
-      <div class="sec-rule"></div>
-      <a class="doc" href="/clients/docs/qhu-plan-lanzamiento.pdf" target="_blank" rel="noopener">
-        <span class="ic">PDF</span>
-        <span class="tx">
-          <span class="t">Plan de lanzamiento C&oacute;rdoba Capital</span>
-          <span class="d">Las tres fases en detalle, el presupuesto de pauta, los &aacute;ngulos creativos a probar y las definiciones que dependen de QHU.</span>
-        </span>
-        <span class="arw">ABRIR &rarr;</span>
-      </a>
-      <a class="doc" href="/clients/docs/qhu-whatsapp-api.pdf" target="_blank" rel="noopener">
-        <span class="ic">PDF</span>
-        <span class="tx">
-          <span class="t">Business Manager y WhatsApp API paso a paso</span>
-          <span class="d">Gu&iacute;a de configuraci&oacute;n seg&uacute;n la documentaci&oacute;n oficial de Meta: portafolio de negocios, verificaci&oacute;n, cuenta de desarrollador, alta del n&uacute;mero, token permanente, plantillas y consentimiento.</span>
-        </span>
-        <span class="arw">ABRIR &rarr;</span>
-      </a>
-      <div class="nota">
-        <b>Antes de arrancar con WhatsApp:</b> el n&uacute;mero que se conecte a la API no puede tener WhatsApp instalado, as&iacute; que conviene conseguir una l&iacute;nea nueva y no instalarle la app. Y la verificaci&oacute;n del negocio conviene iniciarla temprano: sin verificar, el l&iacute;mite es de 250 destinatarios por d&iacute;a, y los tiempos de revisi&oacute;n los define Meta.
       </div>
     </section>
 
