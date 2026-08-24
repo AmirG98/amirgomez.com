@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>A+Growth &middot; Tablero del equipo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #17181C; --ink-2: #5A5F6B; --ink-3: #91969F;
+    --papel: #F7F7F5; --panel: #FFFFFF; --linea: #E4E3DF;
+    --naranja: #F97316; --naranja-soft: #FFF1E6; --naranja-deep: #C2410C;
+    --ok: #1F8A50; --ok-soft: #E9F5EE; --alerta: #B4690E; --alerta-soft: #FDF4E7;
+    --pilar: #7C3AED; --pilar-soft: #F3EDFF;
+    --agus: #0EA5E9; --agus-soft: #E7F5FD;
+    --amir: #64748B; --amir-soft: #EEF1F4;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--papel); color: var(--ink); font-size: 14px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1420px; margin: 0 auto; padding: 0 22px; }
+
+  header { background: var(--ink); color: #fff; padding: 26px 0 24px; }
+  .head-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .mark { font-size: 17px; font-weight: 700; letter-spacing: -0.02em; }
+  .mark span { color: var(--naranja); }
+  .tag-int { font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; background: rgba(255,255,255,.12); color: #C8CBD2; padding: 4px 9px; }
+  header h1 { font-size: 21px; font-weight: 600; margin-top: 14px; letter-spacing: -0.02em; }
+  header p { font-size: 13px; color: #9AA0AB; margin-top: 5px; max-width: 74ch; font-weight: 300; }
+  .out { margin-left: auto; font-size: 12px; color: #9AA0AB; text-decoration: none; }
+  .out:hover { color: #fff; }
+
+  .bar { background: var(--panel); border-bottom: 1px solid var(--linea); padding: 13px 0; position: sticky; top: 0; z-index: 30; }
+  .bar-in { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .filt { display: flex; gap: 6px; }
+  .filt button { font-family: var(--sans); font-size: 12px; font-weight: 500; padding: 7px 13px; background: var(--papel); border: 1px solid var(--linea); color: var(--ink-2); cursor: pointer; border-radius: 4px; }
+  .filt button.on { background: var(--ink); border-color: var(--ink); color: #fff; }
+  .add { margin-left: auto; display: flex; gap: 8px; }
+  .add button { font-family: var(--sans); font-size: 12.5px; font-weight: 600; padding: 8px 16px; background: var(--naranja); color: #fff; border: none; cursor: pointer; border-radius: 4px; }
+  .add button:hover { background: var(--naranja-deep); }
+  .saved { font-size: 12px; color: var(--ink-3); }
+
+  .board { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 22px 0 60px; align-items: start; }
+  .col { background: rgba(0,0,0,.022); border: 1px solid var(--linea); border-radius: 6px; min-height: 180px; }
+  .col-head { display: flex; align-items: center; gap: 8px; padding: 12px 14px; border-bottom: 1px solid var(--linea); }
+  .col-head h2 { font-size: 11px; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; color: var(--ink-2); }
+  .col-head .n { font-size: 11px; font-weight: 600; color: var(--ink-3); }
+  .col-head .dot { width: 7px; height: 7px; border-radius: 50%; }
+  .col[data-col="Por asignar"] .dot { background: var(--ink-3); }
+  .col[data-col="Haciendo"] .dot { background: var(--naranja); }
+  .col[data-col="Revisión"] .dot { background: var(--alerta); }
+  .col[data-col="Listo"] .dot { background: var(--ok); }
+  .cards { padding: 10px; display: flex; flex-direction: column; gap: 9px; min-height: 90px; }
+  .cards.over { background: var(--naranja-soft); }
+
+  .card { background: var(--panel); border: 1px solid var(--linea); border-radius: 5px; padding: 12px 13px; position: relative; cursor: grab; box-shadow: 0 1px 2px rgba(0,0,0,.03); }
+  .card:active { cursor: grabbing; }
+  .card.drag { opacity: .45; }
+  .card .who { display: inline-block; font-size: 9.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 7px; border-radius: 3px; }
+  .who.Pilar { background: var(--pilar-soft); color: var(--pilar); }
+  .who.Agustín { background: var(--agus-soft); color: var(--agus); }
+  .who.Amir { background: var(--amir-soft); color: var(--amir); }
+  .who.Equipo { background: var(--naranja-soft); color: var(--naranja-deep); }
+  .card h3 { font-size: 13.5px; font-weight: 500; margin: 8px 0 0; line-height: 1.4; }
+  .card .cli { font-size: 11px; color: var(--ink-3); margin-top: 4px; }
+  .card .nota { font-size: 12px; color: var(--ink-2); margin-top: 7px; font-weight: 300; }
+  .card .foot { display: flex; align-items: center; gap: 8px; margin-top: 10px; padding-top: 9px; border-top: 1px solid var(--linea); }
+  .card .when { font-size: 10.5px; color: var(--ink-3); }
+  .card .acts { margin-left: auto; display: flex; gap: 8px; }
+  .card .acts button { font-family: var(--sans); font-size: 10.5px; font-weight: 500; background: none; border: none; color: var(--ink-3); cursor: pointer; padding: 0; }
+  .card .acts button:hover { color: var(--naranja-deep); }
+  .card .acts button.del:hover { color: #B3341B; }
+  .card.urg { border-left: 3px solid #B3341B; }
+  .card .flag { position: absolute; top: 11px; right: 12px; font-size: 9.5px; font-weight: 700; letter-spacing: .06em; color: #B3341B; }
+
+  .empty { font-size: 12px; color: var(--ink-3); text-align: center; padding: 16px 8px; font-weight: 300; }
+
+  /* Modal */
+  .modal { position: fixed; inset: 0; background: rgba(23,24,28,.55); display: none; align-items: center; justify-content: center; z-index: 60; padding: 20px; }
+  .modal.on { display: flex; }
+  .sheet { background: var(--panel); border-radius: 8px; width: 100%; max-width: 480px; padding: 24px 26px; }
+  .sheet h3 { font-size: 17px; font-weight: 600; margin-bottom: 16px; }
+  .fld { margin-bottom: 13px; }
+  .fld label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 5px; }
+  .fld input, .fld select, .fld textarea { width: 100%; font-family: var(--sans); font-size: 14px; padding: 9px 11px; border: 1px solid var(--linea); border-radius: 4px; background: var(--papel); color: var(--ink); outline: none; }
+  .fld input:focus, .fld select:focus, .fld textarea:focus { border-color: var(--naranja); }
+  .fld textarea { resize: vertical; min-height: 62px; }
+  .fld.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+  .chk { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-2); }
+  .chk input { width: 15px; height: 15px; accent-color: #B3341B; }
+  .sheet-foot { display: flex; gap: 9px; margin-top: 20px; }
+  .sheet-foot button { font-family: var(--sans); font-size: 13px; font-weight: 600; padding: 10px 20px; border-radius: 4px; cursor: pointer; border: 1px solid var(--linea); background: var(--panel); color: var(--ink-2); }
+  .sheet-foot .go { background: var(--naranja); border-color: var(--naranja); color: #fff; margin-left: auto; }
+  .sheet-foot .go:hover { background: var(--naranja-deep); }
+
+  .banner { background: var(--alerta-soft); border-bottom: 1px solid #F0DFC0; padding: 9px 0; font-size: 12.5px; color: var(--alerta); display: none; }
+  .banner.show { display: block; }
+
+  @media (max-width: 1000px) { .board { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 620px) { .board { grid-template-columns: 1fr; } .add { width: 100%; margin-left: 0; } }
+</style>
+</head>
+<body>
+
+<div class="banner" id="banner"><div class="wrap">Sin conexión al servidor: los cambios quedan guardados solo en este navegador.</div></div>
+
+<header>
+  <div class="wrap">
+    <div class="head-row">
+      <span class="mark">A<span>+</span>Growth</span>
+      <span class="tag-int">Interno</span>
+      <a class="out" href="#" id="salir">Salir</a>
+    </div>
+    <h1>Tablero del equipo</h1>
+    <p>Las tareas asignadas a cada uno. Arrastrá una tarjeta para cambiarla de estado, o usá los botones de la tarjeta. Se guarda solo y lo ven los tres.</p>
+  </div>
+</header>
+
+<div class="bar">
+  <div class="wrap bar-in">
+    <div class="filt" id="filt">
+      <button class="on" data-p="todos">Todos</button>
+      <button data-p="Pilar">Pilar</button>
+      <button data-p="Agustín">Agustín</button>
+      <button data-p="Amir">Amir</button>
+    </div>
+    <span class="saved" id="saved"></span>
+    <div class="add">
+      <button id="nueva">+ Nueva tarea</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="board" id="board"></div>
+</div>
+
+<div class="modal" id="modal">
+  <div class="sheet">
+    <h3 id="m-title">Nueva tarea</h3>
+    <div class="fld">
+      <label for="f-tit">Qué hay que hacer</label>
+      <input id="f-tit" type="text" placeholder="Editar los 5 anuncios de Urban">
+    </div>
+    <div class="fld row2">
+      <div>
+        <label for="f-quien">Para quién</label>
+        <select id="f-quien">
+          <option>Pilar</option>
+          <option>Agustín</option>
+          <option>Amir</option>
+          <option>Equipo</option>
+        </select>
+      </div>
+      <div>
+        <label for="f-cli">Cliente</label>
+        <select id="f-cli">
+          <option>Sin cliente</option>
+          <option>Urban USA</option>
+          <option>Founder Accelerator</option>
+          <option>Human at Scale</option>
+          <option>Domic</option>
+          <option>QHU</option>
+          <option>Casafight</option>
+          <option>Liz Solari</option>
+          <option>Sintientes</option>
+          <option>Disker</option>
+          <option>Giant Partners</option>
+          <option>Interno</option>
+        </select>
+      </div>
+    </div>
+    <div class="fld">
+      <label for="f-nota">Detalle (opcional)</label>
+      <textarea id="f-nota" placeholder="Contexto, link al material, qué se espera de vuelta"></textarea>
+    </div>
+    <div class="fld">
+      <label class="chk"><input type="checkbox" id="f-urg"> Es urgente</label>
+    </div>
+    <div class="sheet-foot">
+      <button id="m-borrar" style="display:none;color:#B3341B;">Borrar</button>
+      <button id="m-cancel">Cancelar</button>
+      <button class="go" id="m-ok">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var COLS = ['Por asignar', 'Haciendo', 'Revisión', 'Listo'];
+  var API = '/api/team-board';
+  var LS = 'agrowth-teamboard';
+
+  var state = { cards: [] };
+  var filtro = 'todos';
+  var editId = null;
+  var modo = 'server';
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function cuando(iso) {
+    if (!iso) return '';
+    var d = new Date(iso), ms = Date.now() - d.getTime(), m = Math.round(ms / 60000);
+    if (m < 1) return 'recién';
+    if (m < 60) return 'hace ' + m + ' min';
+    var h = Math.round(m / 60);
+    if (h < 24) return 'hace ' + h + ' h';
+    var dd = Math.round(h / 24);
+    return dd === 1 ? 'ayer' : 'hace ' + dd + ' días';
+  }
+
+  function seed() {
+    var t = new Date().toISOString();
+    return { cards: [
+      { id: 't1', titulo: 'Editar los videos de los scripts del workshop', quien: 'Pilar', cliente: 'Liz Solari', nota: 'Los guiones ya están en el doc. Faltan las piezas para tener más contenido que probar en pauta.', urgente: false, columna: 'Por asignar', actualizado: t },
+      { id: 't2', titulo: 'Placas de brokerage para los ads', quien: 'Pilar', cliente: 'Urban USA', nota: 'Lucila pidió cambiar las imágenes del proyecto 1534: usar el depto en Ritz Sunny Isles y proyectos en pre construcción.', urgente: false, columna: 'Haciendo', actualizado: t },
+      { id: 't3', titulo: 'Capacitar a Facu en Metricool', quien: 'Amir', cliente: 'Liz Solari', nota: 'Quedó pendiente de la reunión de junio.', urgente: false, columna: 'Por asignar', actualizado: t }
+    ] };
+  }
+
+  function guardar() {
+    try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {}
+    if (modo !== 'server') return;
+    var s = document.getElementById('saved');
+    s.textContent = 'Guardando…';
+    fetch(API, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(state) })
+      .then(function (r) { s.textContent = r.ok ? 'Guardado' : 'Guardado local'; })
+      .catch(function () { s.textContent = 'Guardado local'; });
+  }
+
+  function render() {
+    var board = document.getElementById('board');
+    board.innerHTML = '';
+    COLS.forEach(function (col) {
+      var cards = state.cards.filter(function (c) {
+        return c.columna === col && (filtro === 'todos' || c.quien === filtro);
+      });
+      var d = document.createElement('div');
+      d.className = 'col';
+      d.setAttribute('data-col', col);
+      d.innerHTML =
+        '<div class="col-head"><span class="dot"></span><h2>' + esc(col) + '</h2>' +
+        '<span class="n">' + cards.length + '</span></div>' +
+        '<div class="cards" data-col="' + esc(col) + '"></div>';
+      board.appendChild(d);
+
+      var wrap = d.querySelector('.cards');
+      if (!cards.length) {
+        wrap.innerHTML = '<div class="empty">Nada acá</div>';
+        return;
+      }
+      cards.forEach(function (c) {
+        var el = document.createElement('div');
+        el.className = 'card' + (c.urgente ? ' urg' : '');
+        el.setAttribute('draggable', 'true');
+        el.setAttribute('data-id', c.id);
+        var i = COLS.indexOf(col);
+        el.innerHTML =
+          (c.urgente ? '<span class="flag">URGENTE</span>' : '') +
+          '<span class="who ' + esc(c.quien) + '">' + esc(c.quien) + '</span>' +
+          '<h3>' + esc(c.titulo) + '</h3>' +
+          (c.cliente && c.cliente !== 'Sin cliente' ? '<div class="cli">' + esc(c.cliente) + '</div>' : '') +
+          (c.nota ? '<p class="nota">' + esc(c.nota) + '</p>' : '') +
+          '<div class="foot"><span class="when">' + cuando(c.actualizado) + '</span>' +
+          '<span class="acts">' +
+            (i > 0 ? '<button data-act="prev">&larr;</button>' : '') +
+            (i < COLS.length - 1 ? '<button data-act="next">&rarr;</button>' : '') +
+            '<button data-act="edit">Editar</button>' +
+          '</span></div>';
+        wrap.appendChild(el);
+      });
+    });
+    wireDrag();
+  }
+
+  function mover(id, col) {
+    var c = state.cards.filter(function (x) { return x.id === id; })[0];
+    if (!c || c.columna === col) return;
+    c.columna = col;
+    c.actualizado = new Date().toISOString();
+    render(); guardar();
+  }
+
+  function wireDrag() {
+    var dragId = null;
+    Array.prototype.forEach.call(document.querySelectorAll('.card'), function (el) {
+      el.addEventListener('dragstart', function (e) {
+        dragId = el.getAttribute('data-id');
+        el.classList.add('drag');
+        try { e.dataTransfer.setData('text/plain', dragId); } catch (err) {}
+        e.dataTransfer.effectAllowed = 'move';
+      });
+      el.addEventListener('dragend', function () { el.classList.remove('drag'); dragId = null; });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.cards'), function (z) {
+      z.addEventListener('dragover', function (e) { e.preventDefault(); z.classList.add('over'); });
+      z.addEventListener('dragleave', function () { z.classList.remove('over'); });
+      z.addEventListener('drop', function (e) {
+        e.preventDefault(); z.classList.remove('over');
+        var id = dragId;
+        try { id = e.dataTransfer.getData('text/plain') || dragId; } catch (err) {}
+        if (id) mover(id, z.getAttribute('data-col'));
+      });
+    });
+  }
+
+  // Acciones de tarjeta
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('.acts button');
+    if (b) {
+      var card = b.closest('.card');
+      var id = card.getAttribute('data-id');
+      var c = state.cards.filter(function (x) { return x.id === id; })[0];
+      if (!c) return;
+      var act = b.getAttribute('data-act');
+      var i = COLS.indexOf(c.columna);
+      if (act === 'next' && i < COLS.length - 1) mover(id, COLS[i + 1]);
+      if (act === 'prev' && i > 0) mover(id, COLS[i - 1]);
+      if (act === 'edit') abrir(c);
+      return;
+    }
+    var f = e.target.closest('#filt button');
+    if (f) {
+      Array.prototype.forEach.call(document.querySelectorAll('#filt button'), function (x) { x.classList.remove('on'); });
+      f.classList.add('on');
+      filtro = f.getAttribute('data-p');
+      render();
+    }
+  });
+
+  // Modal
+  var modal = document.getElementById('modal');
+  function abrir(c) {
+    editId = c ? c.id : null;
+    document.getElementById('m-title').textContent = c ? 'Editar tarea' : 'Nueva tarea';
+    document.getElementById('f-tit').value = c ? c.titulo : '';
+    document.getElementById('f-quien').value = c ? c.quien : 'Pilar';
+    document.getElementById('f-cli').value = c ? (c.cliente || 'Sin cliente') : 'Sin cliente';
+    document.getElementById('f-nota').value = c ? (c.nota || '') : '';
+    document.getElementById('f-urg').checked = c ? !!c.urgente : false;
+    document.getElementById('m-borrar').style.display = c ? 'block' : 'none';
+    modal.classList.add('on');
+    document.getElementById('f-tit').focus();
+  }
+  function cerrar() { modal.classList.remove('on'); editId = null; }
+
+  document.getElementById('nueva').addEventListener('click', function () { abrir(null); });
+  document.getElementById('m-cancel').addEventListener('click', cerrar);
+  modal.addEventListener('click', function (e) { if (e.target === modal) cerrar(); });
+
+  document.getElementById('m-ok').addEventListener('click', function () {
+    var tit = document.getElementById('f-tit').value.trim();
+    if (!tit) { document.getElementById('f-tit').focus(); return; }
+    var datos = {
+      titulo: tit,
+      quien: document.getElementById('f-quien').value,
+      cliente: document.getElementById('f-cli').value,
+      nota: document.getElementById('f-nota').value.trim(),
+      urgente: document.getElementById('f-urg').checked,
+      actualizado: new Date().toISOString()
+    };
+    if (editId) {
+      var c = state.cards.filter(function (x) { return x.id === editId; })[0];
+      if (c) for (var k in datos) c[k] = datos[k];
+    } else {
+      datos.id = 't' + Date.now();
+      datos.columna = 'Por asignar';
+      state.cards.unshift(datos);
+    }
+    cerrar(); render(); guardar();
+  });
+
+  document.getElementById('m-borrar').addEventListener('click', function () {
+    if (!editId) return;
+    state.cards = state.cards.filter(function (x) { return x.id !== editId; });
+    cerrar(); render(); guardar();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('on')) cerrar();
+  });
+
+  document.getElementById('salir').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.cookie = 'agrowth_team=; path=/; max-age=0';
+    location.reload();
+  });
+
+  // Carga
+  function local() {
+    modo = 'local';
+    document.getElementById('banner').classList.add('show');
+    try {
+      var raw = localStorage.getItem(LS);
+      state = raw ? JSON.parse(raw) : seed();
+    } catch (e) { state = seed(); }
+    render();
+  }
+
+  fetch(API, { cache: 'no-store' })
+    .then(function (r) {
+      if (r.status === 401) { location.href = '/hq/equipo'; throw new Error('auth'); }
+      if (!r.ok) throw new Error('storage');
+      return r.json();
+    })
+    .then(function (d) {
+      state = (d.state && d.state.cards) ? d.state : seed();
+      render();
+      if (!d.state) guardar();
+    })
+    .catch(function (err) { if (err.message !== 'auth') local(); });
+})();
+</script>
+</body>
+</html>

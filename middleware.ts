@@ -27,6 +27,18 @@ export function middleware(req: NextRequest) {
     return NextResponse.rewrite(new URL('/hq-budgets-login.html', req.url));
   }
 
+  // Tablero del equipo: /hq/equipo con clave compartida (env AGROWTH_TEAM_KEY,
+  // default EQUIPO2226). Lo usan Pilar, Agustin y Amir.
+  if (req.nextUrl.pathname === '/hq/equipo' || req.nextUrl.pathname === '/hq/equipo/') {
+    const team = req.cookies.get('agrowth_team')?.value;
+    const expected = process.env.AGROWTH_TEAM_KEY || 'EQUIPO2226';
+    const master = req.cookies.get('agrowth_master')?.value;
+    if ((team && team === expected) || isMasterAuthorized(master)) {
+      return NextResponse.rewrite(new URL('/hq-equipo.html', req.url));
+    }
+    return NextResponse.rewrite(new URL('/hq-equipo-login.html', req.url));
+  }
+
   // HQ interno de A+Growth: /hq con clave maestra (env AGROWTH_MASTER_KEY).
   if (req.nextUrl.pathname === '/hq' || req.nextUrl.pathname === '/hq.html' || req.nextUrl.pathname === '/hq/'
       || req.nextUrl.pathname === '/hq-budgets.html') {
@@ -100,5 +112,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/clients/:path*', '/hq', '/hq.html', '/hq/', '/hq/budgets', '/hq/budgets/', '/hq-budgets.html'],
+  matcher: ['/clients/:path*', '/hq', '/hq.html', '/hq/', '/hq/equipo', '/hq/equipo/', '/hq/budgets', '/hq/budgets/', '/hq-budgets.html'],
 };
