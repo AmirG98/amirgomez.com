@@ -129,6 +129,9 @@
     .ctx { grid-template-columns: 1fr; }
     .rit-row, .met-row { grid-template-columns: 1fr; gap: 6px; }
   }
+  .dl { display: inline-flex; align-items: center; gap: 7px; margin-top: 8px; font-size: 12px; font-weight: 500; color: var(--indigo-deep); text-decoration: none; border-bottom: 1px solid var(--linea); padding-bottom: 2px; }
+  .dl:hover { border-bottom-color: var(--indigo); }
+  .dl .tag2 { font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; background: var(--indigo-soft); color: var(--indigo-deep); padding: 2px 6px; }
 </style>
 </head>
 <body data-client="qhu" data-page="dashboard">
@@ -228,8 +231,17 @@
       <div class="items">
         <div class="item">
           <div>
+            <div class="t">Contrato firmado</div>
+            <div class="d">Complet&aacute;s tus datos, le&eacute;s el contrato y lo firm&aacute;s ah&iacute; mismo. Te llega una copia por mail.</div>
+            <a class="dl" href="/clients/qhu/contrato"><span class="tag2">FIRMAR</span> Completar y firmar el contrato</a>
+          </div>
+          <span class="tag espera">Espera a QHU</span>
+        </div>
+        <div class="item">
+          <div>
             <div class="t">Materiales de marca</div>
             <div class="d">La identidad actual, para revisarla y ver si hace falta ajustarla antes de producir contenido.</div>
+            <a class="dl" href="/clients/qhu/marca"><span class="tag2">ABRIR</span> Dejar el manual de marca y los assets</a>
           </div>
           <span class="tag espera">Espera a QHU</span>
         </div>

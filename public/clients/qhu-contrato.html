@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>QHU &middot; Contrato</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #14192E; --ink-2: #565E7D; --ink-3: #8E95AD;
+    --papel: #F7F8FC; --panel: #FFFFFF; --hairline: #E2E5F0;
+    --taupe: #4338F0; --taupe-soft: #EEEDFE; --taupe-deep: #2A21B8;
+    --ok: #17886B; --ok-soft: #E7F5F1; --alerta: #B45309; --alerta-soft: #FDF3E7;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--papel); color: var(--ink); font-size: 15px; line-height: 1.6; font-weight: 300; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 860px; margin: 0 auto; padding: 0 26px 70px; }
+
+  header { text-align: center; padding: 46px 0 32px; }
+  .marca { font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--taupe-deep); }
+  header h1 { font-size: 27px; font-weight: 300; margin-top: 13px; letter-spacing: -0.01em; }
+  header .sub { font-size: 14px; color: var(--ink-2); margin-top: 9px; max-width: 62ch; margin-inline: auto; }
+  .back { display: inline-block; margin-top: 12px; font-size: 12.5px; color: var(--taupe-deep); text-decoration: none; }
+
+  .paso { background: var(--panel); border: 1px solid var(--hairline); margin-bottom: 14px; }
+  .paso-h { display: flex; align-items: center; gap: 11px; padding: 15px 20px; border-bottom: 1px solid var(--hairline); }
+  .paso-h .n { width: 22px; height: 22px; border-radius: 50%; background: var(--taupe); color: #fff; font-size: 11px; font-weight: 600; display: grid; place-items: center; flex: none; }
+  .paso-h h2 { font-size: 15px; font-weight: 500; }
+  .paso-h .est { margin-left: auto; font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+  .paso-b { padding: 20px; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .fld { margin-bottom: 14px; }
+  .fld.full { grid-column: 1 / -1; }
+  .fld label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 6px; }
+  .fld input { width: 100%; font-family: var(--sans); font-size: 14.5px; padding: 10px 12px; border: 1px solid var(--hairline); background: var(--papel); color: var(--ink); outline: none; }
+  .fld input:focus { border-color: var(--taupe); background: var(--panel); }
+  .fld .hint { font-size: 11.5px; color: var(--ink-3); margin-top: 5px; }
+  .fld input.err { border-color: #B3341B; }
+
+  .doc { background: var(--panel); border: 1px solid var(--hairline); padding: 34px 38px; max-height: 460px; overflow-y: auto; font-size: 13.5px; line-height: 1.72; color: var(--ink-2); }
+  .doc h3 { font-size: 15px; font-weight: 600; color: var(--ink); margin: 22px 0 9px; }
+  .doc h3:first-child { margin-top: 0; }
+  .doc p { margin-bottom: 11px; }
+  .doc b { color: var(--ink); font-weight: 500; }
+  .doc .tit { text-align: center; font-size: 16px; font-weight: 500; color: var(--ink); letter-spacing: 0.02em; margin-bottom: 26px; }
+  .doc ul { margin: 0 0 12px 20px; }
+  .doc li { margin-bottom: 6px; }
+  .doc .leido { text-align: center; font-size: 12px; color: var(--ink-3); padding: 14px 0 4px; }
+
+  .sig-wrap { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; }
+  .sig-box { flex: 1; min-width: 280px; }
+  canvas { width: 100%; height: 170px; border: 1px dashed var(--hairline); background: var(--panel); touch-action: none; cursor: crosshair; display: block; }
+  canvas.hasink { border-style: solid; border-color: var(--taupe); }
+  .sig-tools { display: flex; align-items: center; gap: 12px; margin-top: 9px; }
+  .sig-tools button { font-family: var(--sans); font-size: 12px; background: none; border: none; color: var(--ink-3); cursor: pointer; padding: 0; }
+  .sig-tools button:hover { color: var(--taupe-deep); }
+  .sig-tools .lbl { font-size: 11.5px; color: var(--ink-3); margin-left: auto; }
+
+  .chk { display: flex; gap: 10px; align-items: flex-start; margin-top: 18px; font-size: 13.5px; color: var(--ink-2); cursor: pointer; }
+  .chk input { margin-top: 3px; width: 16px; height: 16px; accent-color: var(--taupe); flex: none; }
+
+  .go { display: block; width: 100%; font-family: var(--sans); font-size: 14px; font-weight: 500; letter-spacing: 0.04em; padding: 14px; background: var(--taupe); color: #fff; border: none; cursor: pointer; margin-top: 18px; }
+  .go:hover { background: var(--taupe-deep); }
+  .go:disabled { opacity: .4; cursor: default; }
+  .msg { font-size: 13px; color: var(--ink-2); margin-top: 12px; text-align: center; }
+  .msg.err { color: #B3341B; }
+
+  .nota { background: var(--taupe-soft); border-left: 3px solid var(--taupe); padding: 14px 18px; font-size: 13px; color: var(--ink-2); margin-top: 16px; }
+  .nota b { color: var(--ink); font-weight: 500; }
+  .warn { background: var(--alerta-soft); border-left: 3px solid var(--alerta); padding: 14px 18px; font-size: 13px; color: var(--ink-2); margin-bottom: 16px; }
+  .warn b { color: var(--ink); font-weight: 500; }
+
+  .firmado { display: none; background: var(--ok-soft); border: 1px solid #CFE0D2; padding: 26px 30px; text-align: center; }
+  .firmado.on { display: block; }
+  .firmado h2 { font-size: 19px; font-weight: 400; color: var(--ok); margin-bottom: 8px; }
+  .firmado p { font-size: 13.5px; color: var(--ink-2); }
+  .firmado .datos { display: inline-block; text-align: left; margin-top: 18px; font-size: 12.5px; color: var(--ink-2); }
+  .firmado .datos div { margin-bottom: 4px; }
+  .firmado .datos span { color: var(--ink-3); display: inline-block; min-width: 92px; }
+  .firmado .hash { font-family: ui-monospace, Menlo, monospace; font-size: 10.5px; word-break: break-all; max-width: 420px; }
+  .firmado .acts { margin-top: 20px; }
+  .firmado .acts button { font-family: var(--sans); font-size: 13px; padding: 10px 22px; background: var(--panel); border: 1px solid var(--hairline); color: var(--ink-2); cursor: pointer; }
+
+  .oculto { display: none !important; }
+  footer { text-align: center; margin-top: 44px; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3); }
+
+  @media print {
+    body { background: #fff; }
+    .paso-h, .no-print, header .back, footer { display: none !important; }
+    .doc { max-height: none; overflow: visible; border: none; padding: 0; }
+    .paso { border: none; }
+  }
+  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } .doc { padding: 22px; } }
+</style>
+</head>
+<body data-client="qhu" data-page="contrato">
+<div class="page">
+
+  <header>
+    <div class="marca">QHU</div>
+    <h1>Contrato de prestación de servicios</h1>
+    <p class="sub">Completá los datos, leé el contrato y firmalo acá mismo. Te llega una copia por mail apenas lo firmes.</p>
+    <a class="back" href="/clients/qhu">&larr; Volver al panel</a>
+  </header>
+
+  <!-- YA FIRMADO -->
+  <div class="firmado" id="yaFirmado">
+    <h2>Contrato firmado</h2>
+    <p>Ya está. Te mandamos una copia por mail y queda registrado acá.</p>
+    <div class="datos" id="datosFirma"></div>
+    <div class="acts"><button onclick="window.print()">Imprimir o guardar en PDF</button></div>
+  </div>
+
+  <div id="flujo">
+    <!-- PASO 1 -->
+    <div class="paso">
+      <div class="paso-h"><span class="n">1</span><h2>Tus datos</h2><span class="est" id="est1">A completar</span></div>
+      <div class="paso-b">
+        <div class="grid">
+          <div class="fld full">
+            <label for="f-razon">Razón social o nombre de la empresa</label>
+            <input id="f-razon" type="text" placeholder="QHU S.A.S.">
+          </div>
+          <div class="fld">
+            <label for="f-rep">Representante legal</label>
+            <input id="f-rep" type="text" placeholder="Nombre y apellido de quien firma">
+          </div>
+          <div class="fld">
+            <label for="f-doc">Documento o identificación fiscal</label>
+            <input id="f-doc" type="text" placeholder="CUIT o DNI">
+          </div>
+          <div class="fld full">
+            <label for="f-dom">Domicilio</label>
+            <input id="f-dom" type="text" placeholder="Calle, número, ciudad, país">
+          </div>
+          <div class="fld">
+            <label for="f-mail">Email</label>
+            <input id="f-mail" type="email" placeholder="Ahí llega la copia firmada">
+          </div>
+          <div class="fld">
+            <label for="f-tel">Teléfono (opcional)</label>
+            <input id="f-tel" type="text" placeholder="+54 351 000 0000">
+          </div>
+          <div class="fld full">
+            <label for="f-ciudad">Ciudad donde se firma</label>
+            <input id="f-ciudad" type="text" placeholder="Córdoba">
+          </div>
+        </div>
+        <div class="nota">
+          <b>Los datos se guardan solos.</b> Si tenés que buscar el número de identificación fiscal, cerrá y volvé cuando lo tengas: no se pierde nada.
+        </div>
+      </div>
+    </div>
+
+    <!-- PASO 2 -->
+    <div class="paso">
+      <div class="paso-h"><span class="n">2</span><h2>El contrato</h2><span class="est" id="est2">Completá tus datos</span></div>
+      <div class="paso-b">
+        <div class="doc" id="doc"></div>
+      </div>
+    </div>
+
+    <!-- PASO 3 -->
+    <div class="paso">
+      <div class="paso-h"><span class="n">3</span><h2>Firma</h2><span class="est" id="est3">Al final</span></div>
+      <div class="paso-b">
+        <div class="warn">
+          <b>Sobre esta firma.</b> Al firmar acá dejás constancia de tu conformidad, con fecha, dirección IP y una huella digital del texto exacto que firmaste. Sirve como acuerdo entre las partes. No es una firma digital certificada de las que emite un organismo oficial: si necesitás ese nivel, decinos y lo hacemos con un proveedor formal.
+        </div>
+        <div class="sig-wrap">
+          <div class="sig-box">
+            <canvas id="pad"></canvas>
+            <div class="sig-tools">
+              <button id="limpiar" type="button">Borrar y firmar de nuevo</button>
+              <span class="lbl">Firmá con el mouse o con el dedo</span>
+            </div>
+          </div>
+          <div class="sig-box">
+            <div class="fld">
+              <label for="f-firmante">Aclaración</label>
+              <input id="f-firmante" type="text" placeholder="Nombre completo de quien firma">
+              <div class="hint">Se muestra debajo de la firma, como en papel.</div>
+            </div>
+            <label class="chk">
+              <input type="checkbox" id="f-acepto">
+              <span>Leí el contrato completo, estoy de acuerdo con sus términos y tengo facultades para firmarlo en nombre de la empresa.</span>
+            </label>
+          </div>
+        </div>
+        <button class="go" id="firmar" disabled>Firmar el contrato</button>
+        <div class="msg" id="msg"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>QHU</footer>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var CLIENTE = 'qhu';
+  var API = '/api/contrato/' + CLIENTE;
+  var LS = 'contrato:' + CLIENTE;
+
+  var F = {
+    razon: document.getElementById('f-razon'),
+    rep: document.getElementById('f-rep'),
+    doc: document.getElementById('f-doc'),
+    dom: document.getElementById('f-dom'),
+    mail: document.getElementById('f-mail'),
+    tel: document.getElementById('f-tel'),
+    ciudad: document.getElementById('f-ciudad')
+  };
+  var firmante = document.getElementById('f-firmante');
+  var acepto = document.getElementById('f-acepto');
+  var btn = document.getElementById('firmar');
+  var msg = document.getElementById('msg');
+  var timer = null;
+  var hayTrazo = false;
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function datos() {
+    return {
+      razonSocial: F.razon.value.trim(),
+      representante: F.rep.value.trim(),
+      documento: F.doc.value.trim(),
+      domicilio: F.dom.value.trim(),
+      email: F.mail.value.trim(),
+      telefono: F.tel.value.trim(),
+      ciudad: F.ciudad.value.trim()
+    };
+  }
+
+  function completo(d) {
+    return !!(d.razonSocial && d.representante && d.documento && d.domicilio && d.email);
+  }
+
+  var MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+
+  function contrato(d) {
+    var hoy = new Date();
+    var v = function (x, ph) { return x ? esc(x) : '<b style="color:#A8895A">' + ph + '</b>'; };
+    return '' +
+      '<div class="tit">CONTRATO DE PRESTACIÓN DE SERVICIOS DE MARKETING DIGITAL</div>' +
+
+      '<h3>1. Partes intervinientes</h3>' +
+      '<p>Entre los suscritos, por una parte <b>' + v(d.razonSocial, '[razón social]') + '</b>, en adelante ' +
+      '&ldquo;LA CLIENTE&rdquo;, con domicilio en ' + v(d.domicilio, '[domicilio]') + ', identificación ' +
+      v(d.documento, '[documento]') + ', representada por ' + v(d.representante, '[representante]') + '; ' +
+      'y por otra parte <b>Amir Gabriel Gómez</b>, en adelante &ldquo;EL PRESTADOR&rdquo;, con domicilio en ' +
+      'Fleming 392, Villa Carlos Paz, Córdoba, Argentina, celebran el presente Contrato de Prestación de ' +
+      'Servicios de Marketing Digital, que se regirá por las siguientes cláusulas y condiciones.</p>' +
+
+      '<h3>2. Objeto del contrato</h3>' +
+      '<p>EL PRESTADOR se obliga a prestar a LA CLIENTE los servicios de consultoría y ejecución de marketing ' +
+      'digital, con el objetivo de diseñar una estrategia integral para su marca. Los servicios comprenden el ' +
+      'desarrollo y optimización de la presencia web, la implementación de herramientas de captación de leads, ' +
+      'la creación de contenidos estratégicos y la gestión de campañas publicitarias digitales. El detalle ' +
+      'completo de los servicios se encuentra especificado en el Anexo I, que forma parte integral e inseparable ' +
+      'del presente contrato.</p>' +
+
+      '<h3>3. Duración del contrato</h3>' +
+      '<p>El presente contrato tendrá una duración mínima correspondiente a la finalización de la fase de setup, ' +
+      'estimada entre cuatro (4) y seis (6) semanas contadas a partir de la fecha de inicio acordada entre las ' +
+      'partes. El inicio efectivo del proyecto quedará sujeto a la recepción del pago inicial y a la entrega por ' +
+      'parte de LA CLIENTE de todos los materiales y accesos necesarios.</p>' +
+      '<p>Una vez completada esa fase, el contrato podrá ser renovado o extendido mediante acuerdo expreso de ' +
+      'ambas partes para la ejecución de las fases subsiguientes.</p>' +
+
+      '<h3>4. Precio y forma de pago</h3>' +
+      '<p>Los montos, la moneda y el cronograma de pagos son los establecidos en la propuesta comercial aceptada ' +
+      'por LA CLIENTE, que se incorpora como Anexo I. Los pagos mensuales de fases subsiguientes deberán ser ' +
+      'efectuados entre el día 1 y el día 10 de cada mes, por adelantado.</p>' +
+      '<p>La inversión publicitaria (pauta) no está incluida en los honorarios y corre por cuenta de LA CLIENTE, ' +
+      'que la abona directamente en las plataformas con su propio medio de pago.</p>' +
+
+      '<h3>5. Obligaciones de las partes</h3>' +
+      '<p><b>EL PRESTADOR se compromete a:</b></p>' +
+      '<ul>' +
+      '<li>Cumplir con los servicios descritos en el Anexo I en los plazos y condiciones acordadas, manteniendo los estándares de calidad profesional esperados.</li>' +
+      '<li>Mantener una comunicación fluida, informando periódicamente sobre avances, decisiones estratégicas y cualquier eventualidad.</li>' +
+      '<li>Realizar hasta dos (2) rondas de revisión sobre los entregables principales.</li>' +
+      '<li>Brindar asesoramiento profesional en las decisiones estratégicas relacionadas con el proyecto.</li>' +
+      '</ul>' +
+      '<p><b>LA CLIENTE se compromete a:</b></p>' +
+      '<ul>' +
+      '<li>Proporcionar en tiempo y forma la información, materiales, contenidos y accesos necesarios para la correcta ejecución de los servicios.</li>' +
+      '<li>Realizar los pagos en la forma y plazos convenidos.</li>' +
+      '<li>Brindar feedback y aprobaciones en los tiempos requeridos. La demora en las aprobaciones podrá extender los plazos de entrega sin responsabilidad para EL PRESTADOR.</li>' +
+      '<li>Designar una persona de contacto responsable de la comunicación.</li>' +
+      '</ul>' +
+
+      '<h3>6. Propiedad intelectual y accesos</h3>' +
+      '<p>Cumplidas las obligaciones de pago, EL PRESTADOR cede a LA CLIENTE la totalidad de los derechos de ' +
+      'propiedad intelectual sobre los entregables desarrollados específicamente para el proyecto.</p>' +
+      '<p><b>Cláusula especial de accesos:</b> las partes acuerdan expresamente que todos los accesos a ' +
+      'plataformas, cuentas, herramientas, hosting, dominios, gestores de contenido y cualquier otra herramienta ' +
+      'digital utilizada o creada en el marco del proyecto quedarán en poder exclusivo de LA CLIENTE. ' +
+      'EL PRESTADOR se compromete a transferir de manera completa y documentada todos los accesos y credenciales ' +
+      'al finalizar la relación.</p>' +
+      '<p>EL PRESTADOR conservará el derecho de utilizar el proyecto como parte de su portafolio profesional, ' +
+      'salvo oposición expresa y por escrito de LA CLIENTE.</p>' +
+
+      '<h3>7. Confidencialidad</h3>' +
+      '<p>Las partes se comprometen a guardar la más estricta confidencialidad sobre toda información sensible, ' +
+      'estratégica, comercial o personal a la que accedan en virtud del presente contrato, incluyendo datos ' +
+      'personales, información financiera, estrategias de marketing y bases de datos de clientes.</p>' +
+      '<p>Ninguna de las partes podrá revelar dicha información a terceros sin consentimiento previo y por ' +
+      'escrito de la otra, salvo obligación legal. Esta obligación permanece vigente después de finalizado el contrato.</p>' +
+
+      '<h3>8. Terminación del contrato</h3>' +
+      '<p>Cualquiera de las partes podrá dar por terminado el contrato de manera anticipada mediante notificación ' +
+      'fehaciente por escrito con una antelación mínima de treinta (30) días corridos.</p>' +
+      '<p>En caso de terminación anticipada por decisión unilateral de LA CLIENTE, no habrá lugar a reembolso por ' +
+      'los montos ya abonados, quedando en su poder los entregables desarrollados hasta ese momento. Si la ' +
+      'terminación es motivada por incumplimiento grave de EL PRESTADOR, las partes acordarán de buena fe una ' +
+      'compensación justa y proporcional.</p>' +
+      '<p>Constituyen causales de terminación inmediata sin preaviso: el incumplimiento grave de las obligaciones ' +
+      'contractuales, la declaración de quiebra o concurso de cualquiera de las partes, o la violación de la ' +
+      'cláusula de confidencialidad.</p>' +
+
+      '<h3>9. Jurisdicción y ley aplicable</h3>' +
+      '<p>Para cualquier controversia derivada de la interpretación, ejecución o cumplimiento del presente ' +
+      'contrato, las partes se someten expresamente a la jurisdicción de los Tribunales Ordinarios de la Ciudad ' +
+      'de Córdoba, Argentina, renunciando a cualquier otro fuero. El contrato se rige por las leyes de la ' +
+      'República Argentina.</p>' +
+
+      '<h3>10. Disposiciones generales</h3>' +
+      '<ul>' +
+      '<li>Cualquier modificación deberá ser realizada por escrito y aceptada por ambas partes para tener validez.</li>' +
+      '<li>La invalidez de cualquier cláusula no afectará la validez del resto de las disposiciones.</li>' +
+      '<li>Las notificaciones se realizarán a los domicilios indicados o a las direcciones de correo electrónico que las partes se comuniquen.</li>' +
+      '<li>Las partes aceptan la firma electrónica del presente contrato como expresión válida de su consentimiento.</li>' +
+      '</ul>' +
+
+      '<h3>Conformidad</h3>' +
+      '<p>En prueba de conformidad, las partes suscriben el presente contrato en la Ciudad de ' +
+      v(d.ciudad, '[ciudad]') + ', a los ' + hoy.getDate() + ' días del mes de ' + MESES[hoy.getMonth()] +
+      ' de ' + hoy.getFullYear() + '.</p>' +
+      '<div class="leido">Fin del contrato</div>';
+  }
+
+  function pintar() {
+    var d = datos();
+    document.getElementById('doc').innerHTML = contrato(d);
+    var ok = completo(d);
+    document.getElementById('est1').textContent = ok ? 'Completo' : 'A completar';
+    document.getElementById('est2').textContent = ok ? 'Listo para leer' : 'Completá tus datos';
+    revisar();
+  }
+
+  function revisar() {
+    var ok = completo(datos()) && hayTrazo && firmante.value.trim() && acepto.checked;
+    btn.disabled = !ok;
+    document.getElementById('est3').textContent = ok ? 'Listo para firmar' : 'Al final';
+  }
+
+  function guardar() {
+    var d = datos();
+    try { localStorage.setItem(LS, JSON.stringify(d)); } catch (e) {}
+    fetch(API, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ datos: d }) })
+      .catch(function () {});
+  }
+
+  Object.keys(F).forEach(function (k) {
+    F[k].addEventListener('input', function () {
+      pintar();
+      clearTimeout(timer);
+      timer = setTimeout(guardar, 1200);
+    });
+  });
+  firmante.addEventListener('input', revisar);
+  acepto.addEventListener('change', revisar);
+
+  // --- Pad de firma ---
+  var pad = document.getElementById('pad');
+  var ctx = pad.getContext('2d');
+  var dibujando = false;
+
+  function medir() {
+    var r = pad.getBoundingClientRect();
+    var dpr = window.devicePixelRatio || 1;
+    var img = hayTrazo ? pad.toDataURL() : null;
+    pad.width = r.width * dpr;
+    pad.height = r.height * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.strokeStyle = '#1a1a1a';
+    if (img) {
+      var i = new Image();
+      i.onload = function () { ctx.drawImage(i, 0, 0, r.width, r.height); };
+      i.src = img;
+    }
+  }
+  medir();
+  window.addEventListener('resize', medir);
+
+  function pos(e) {
+    var r = pad.getBoundingClientRect();
+    var p = e.touches ? e.touches[0] : e;
+    return { x: p.clientX - r.left, y: p.clientY - r.top };
+  }
+  function arranca(e) {
+    e.preventDefault();
+    dibujando = true;
+    var p = pos(e);
+    ctx.beginPath();
+    ctx.moveTo(p.x, p.y);
+  }
+  function mueve(e) {
+    if (!dibujando) return;
+    e.preventDefault();
+    var p = pos(e);
+    ctx.lineTo(p.x, p.y);
+    ctx.stroke();
+    if (!hayTrazo) { hayTrazo = true; pad.classList.add('hasink'); revisar(); }
+  }
+  function corta() { dibujando = false; }
+
+  pad.addEventListener('mousedown', arranca);
+  pad.addEventListener('mousemove', mueve);
+  window.addEventListener('mouseup', corta);
+  pad.addEventListener('touchstart', arranca, { passive: false });
+  pad.addEventListener('touchmove', mueve, { passive: false });
+  pad.addEventListener('touchend', corta);
+
+  document.getElementById('limpiar').addEventListener('click', function () {
+    ctx.clearRect(0, 0, pad.width, pad.height);
+    hayTrazo = false;
+    pad.classList.remove('hasink');
+    revisar();
+  });
+
+  // --- Firmar ---
+  btn.addEventListener('click', function () {
+    btn.disabled = true;
+    msg.className = 'msg';
+    msg.textContent = 'Registrando la firma…';
+    var texto = document.getElementById('doc').innerText;
+    fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        datos: datos(),
+        firma: pad.toDataURL('image/png'),
+        nombre: firmante.value.trim(),
+        texto: texto
+      })
+    })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (res) {
+        if (!res.ok) throw new Error(res.j.error || 'error');
+        mostrarFirmado({ nombre: firmante.value.trim(), fecha: res.j.fecha, hash: res.j.hash }, datos(), res.j.mailed);
+      })
+      .catch(function (err) {
+        msg.className = 'msg err';
+        msg.textContent = err.message === 'ya_firmado'
+          ? 'Este contrato ya estaba firmado. Recargá la página.'
+          : 'No se pudo registrar la firma. Probá de nuevo en un momento.';
+        btn.disabled = false;
+      });
+  });
+
+  function mostrarFirmado(firma, d, mailed) {
+    document.getElementById('flujo').classList.add('oculto');
+    var box = document.getElementById('yaFirmado');
+    var f = new Date(firma.fecha);
+    document.getElementById('datosFirma').innerHTML =
+      '<div><span>Firmó</span> ' + esc(firma.nombre) + '</div>' +
+      '<div><span>Empresa</span> ' + esc(d.razonSocial) + '</div>' +
+      '<div><span>Fecha</span> ' + f.toLocaleString('es-AR') + '</div>' +
+      '<div><span>Huella</span> <span class="hash">' + esc(firma.hash || '') + '</span></div>';
+    if (mailed === false) {
+      box.querySelector('p').textContent = 'Quedó registrado acá. El envío del mail falló, así que guardá una copia con el botón de abajo.';
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // --- Carga inicial ---
+  try {
+    var local = JSON.parse(localStorage.getItem(LS));
+    if (local) Object.keys(F).forEach(function (k) {
+      var map = { razon: 'razonSocial', rep: 'representante', doc: 'documento', dom: 'domicilio', mail: 'email', tel: 'telefono', ciudad: 'ciudad' };
+      if (local[map[k]]) F[k].value = local[map[k]];
+    });
+  } catch (e) {}
+  pintar();
+
+  fetch(API, { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (res) {
+      if (!res || !res.doc) return;
+      var d = res.doc.datos || {};
+      var map = { razon: 'razonSocial', rep: 'representante', doc: 'documento', dom: 'domicilio', mail: 'email', tel: 'telefono', ciudad: 'ciudad' };
+      Object.keys(F).forEach(function (k) { if (d[map[k]]) F[k].value = d[map[k]]; });
+      pintar();
+      if (res.doc.firma) {
+        mostrarFirmado({ nombre: res.doc.firma.nombre, fecha: res.doc.firma.fecha, hash: res.doc.firma.hash }, d, true);
+      }
+    })
+    .catch(function () {});
+})();
+</script>
+<script src="/clients/portal-edit.js" defer></script>
+</body>
+</html>
