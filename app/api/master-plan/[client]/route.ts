@@ -20,9 +20,12 @@ function authorized(req: NextRequest, client: string): boolean {
 
 // Contexto por cliente. Es lo que el asistente sabe: nada más que esto,
 // más lo que el propio Master Plan muestra en pantalla.
-const CONTEXTO: Record<string, { idioma: string; contexto: string }> = {
+// `agencia` existe porque no todos los portales van con la marca de A+Growth:
+// el de Human at Scale esta brandeado como OutDo, que es quien factura ahi.
+const CONTEXTO: Record<string, { idioma: string; contexto: string; agencia?: string }> = {
   'human-at-scale': {
     idioma: 'English (US). Chase is a native English speaker; never reply in Spanish.',
+    agencia: 'OutDo',
     contexto: `BUSINESS
 Human at Scale, founded by Chase Damiano. Operations consulting for accounting firms in the US. Core thesis: the owner is the bottleneck. The firm cannot grow past what the owner personally touches.
 Main offer: an Operations Audit. How work actually flows, where the money is actually made, and what the tech stack does for the team versus to it. The deliverable is a prioritized roadmap with sequencing, success metrics and expected return.
@@ -178,7 +181,7 @@ export async function POST(req: NextRequest, ctx: { params: Promise<{ client: st
   // Cuando no alcanza para una conclusión, lo dice y deriva al equipo. Nunca
   // inventa números, promesas ni fechas.
   const system =
-    `You are the Master Plan assistant inside the private client portal of A+Growth, a growth marketing agency. ` +
+    `You are the Master Plan assistant inside the private client portal of ${cfg.agencia || 'A+Growth'}, a growth marketing agency. ` +
     `You answer questions from the client about their marketing plan.\n\n` +
     `LANGUAGE: answer in ${cfg.idioma}. Always.\n\n` +
     `WHAT YOU KNOW\n${cfg.contexto}\n\n` +
