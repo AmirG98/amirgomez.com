@@ -195,8 +195,8 @@
 <!-- ============ 03 · WEBS & LANDINGS ============ -->
 <section class="disc" id="webs">
   <div class="wrap">
-    <div class="sec-head rv"><span class="no">03</span><h2>Webs &amp; Landings We've Built</h2><span class="count">7 live</span></div>
-    <p class="sec-intro rv">These previews are <b>the real sites, live</b> — not screenshots. Click any of them to open the full experience.</p>
+    <div class="sec-head rv"><span class="no">03</span><h2>Webs &amp; Landings We've Built</h2><span class="count">11 live</span></div>
+    <p class="sec-intro rv">Most previews are <b>the real sites, live</b> — not screenshots (a few block embedding, so you get a capture). Click any of them to open the full experience.</p>
 
     <div class="subgroup rv">Full websites</div>
     <div class="live-grid" id="live-webs"></div>
@@ -287,7 +287,11 @@ var WEBS = [
   { url:'https://www.founderaccelerators.com/', name:'Founder Accelerators', what:'Full website — premium coaching for founders' },
   { url:'https://lizsolari.net/', name:'Liz Solari', what:'Full website — personal brand' },
   { url:'https://via.tools/', name:'Via Tools', what:'Full website — product' },
-  { url:'https://www.wolfgyms.com/franchise', name:'Wolf Gyms', what:'Franchise site', star:'Featuring Dave Bautista' }
+  { url:'https://www.wolfgyms.com/franchise', name:'Wolf Gyms', what:'Franchise site', star:'Featuring Dave Bautista' },
+  { url:'https://urban-usa.com', name:'Urban Real Estate', what:'Full website — brokerage & property management (Miami)' },
+  { url:'https://trailervalet.com/', name:'Trailer Valet', what:'E-commerce — trailer moving hardware (USA)', img:'case-studies/web-trailervalet.jpg' },
+  { url:'https://www.ttmotosmiami.com/', name:'TT Motos Miami', what:'E-commerce — electric motos & e-bikes (Miami)', img:'case-studies/web-ttmotos.jpg' },
+  { url:'https://casafight.com', name:'Casafight', what:'E-commerce — party games brand (Argentina)', img:'case-studies/web-casafight.jpg' }
 ];
 var VSLS = [
   { url:'https://www.founderaccelerators.com/blueprint-call-es', name:'Founder Accelerators — Blueprint Call', what:'VSL landing (Spanish market)' },
@@ -330,7 +334,9 @@ function liveCard(s){
   a.className = 'live rv';
   a.href = s.url; a.target = '_blank'; a.rel = 'noopener';
   var host = s.url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
-  var inner = s.noframe
+  var inner = s.img
+    ? '<img class="fallback" loading="lazy" src="' + s.img + '" alt="' + esc(s.name) + '">'
+    : s.noframe
     ? '<img class="fallback" loading="lazy" src="https://image.thum.io/get/width/1200/crop/900/' + s.url + '" alt="' + esc(s.name) + '">'
     : '<iframe data-src="' + s.url + '" title="' + esc(s.name) + '" loading="lazy" tabindex="-1" scrolling="no"></iframe>';
   a.innerHTML = '<div class="bar"><i></i><i></i><i></i><span class="url">' + esc(host) + '</span><span class="go">Open live ↗</span></div>' +
