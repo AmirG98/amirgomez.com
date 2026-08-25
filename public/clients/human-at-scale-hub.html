@@ -48,9 +48,12 @@
   .tile .wip { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; background: #FDF6EC; color: #B4690E; padding: 3px 7px; margin-left: 8px; vertical-align: middle; }
   .cobrand { display: flex; align-items: center; justify-content: center; gap: 11px; margin-top: 9px; }
   .cobrand .x { font-size: 12px; color: var(--ink-3); font-weight: 300; }
-  .outdo { display: inline-flex; align-items: center; background: #9B8DEC; color: #FBF6E4; font-family: var(--sans); font-weight: 800; font-size: 12.5px; letter-spacing: 0.02em; padding: 5px 11px; border-radius: 3px; }
-  .outdo i { font-style: normal; }
-  .outdo .arrow { display: inline-block; transform: translateY(-0.5px); }
+  .outdo { display: inline-flex; align-items: center; gap: 1px; background: #9B8DEC; padding: 7px 13px; border-radius: 4px; }
+  .outdo b { font-family: var(--sans); font-weight: 800; font-size: 14px; line-height: 1; letter-spacing: -0.01em; color: #FDF7E3; }
+  .outdo i { width: 0; height: 0; border-top: 7px solid transparent; border-bottom: 7px solid transparent; border-left: 8px solid #FDF7E3; margin: 0 1px 0 2px; }
+  .tile.soon { opacity: .5; pointer-events: none; position: relative; }
+  .tile.soon .go { visibility: hidden; }
+  .tile.soon .lock { position: absolute; right: 18px; top: 18px; font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; background: #F0EFF2; color: #8A8F99; padding: 3px 8px; }
 </style>
 </head>
 <body data-client="human-at-scale" data-page="hub">
@@ -61,7 +64,7 @@
     <div class="cobrand">
       <span class="wordmark-sub" style="margin-top:0;">human at scale</span>
       <span class="x">&times;</span>
-      <span class="outdo"><i>OUT</i><i class="arrow">&#10148;</i><i>O</i></span>
+      <span class="outdo"><b>OUT</b><i></i><b>O</b></span>
     </div>
     <div class="rule"></div>
     <p class="eyebrow">Client Portal</p>
@@ -76,66 +79,66 @@
       <p>Performance report with metrics, funnel and action plan.</p>
       <span class="go">View report →</span>
     </a>
-    <a class="tile rv" href="/clients/human-at-scale/masterplan">
-      <span class="t-eyebrow">The plan</span>
+    <div class="tile rv soon">
+      <span class="lock">Soon</span><span class="t-eyebrow">The plan</span>
       <h2>Master Plan <span class="wip">In progress</span></h2>
       <p>How every piece connects: what each channel is for, why they are sequenced this way, and what has to be true next. Ask it questions.</p>
       <span class="go">Open master plan →</span>
-    </a>
-    <a class="tile rv" href="/clients/human-at-scale/tareas">
-      <span class="t-eyebrow">Right now</span>
+    </div>
+    <div class="tile rv soon">
+      <span class="lock">Soon</span><span class="t-eyebrow">Right now</span>
       <h2>In progress</h2>
       <p>What we are actively working on this week, what is waiting on you, and what is already done. Updated as things move.</p>
       <span class="go">See the list →</span>
-    </a>
+    </div>
     <a class="tile rv" href="/clients/human-at-scale/qa">
       <span class="t-eyebrow">Process</span>
       <h2>Publishing QA</h2>
       <p>The checks that run before anything goes out. Built from the misses we are not repeating.</p>
       <span class="go">Open checklist →</span>
     </a>
-    <a class="tile rv" href="/clients/human-at-scale/frameworks">
-      <span class="t-eyebrow">How we work</span>
+    <div class="tile rv soon">
+      <span class="lock">Soon</span><span class="t-eyebrow">How we work</span>
       <h2>Frameworks</h2>
       <p>The repeatable plays: how we run webinars end to end, and the podcast strategy with the shows worth pursuing.</p>
       <span class="go">Open frameworks →</span>
-    </a>
-    <a class="tile rv" href="/clients/human-at-scale/budgets">
-      <span class="t-eyebrow">Spend</span>
+    </div>
+    <div class="tile rv soon">
+      <span class="lock">Soon</span><span class="t-eyebrow">Spend</span>
       <h2>Budgets <span class="wip">In progress</span></h2>
       <p>Total ad spend across channels, split by LinkedIn and Meta, and what each one bought.</p>
       <span class="go">View spend →</span>
-    </a>
-    <a class="tile rv" href="/clients/human-at-scale/approvals">
-      <span class="t-eyebrow">Collaboration</span>
+    </div>
+    <div class="tile rv soon">
+      <span class="lock">Soon</span><span class="t-eyebrow">Collaboration</span>
       <h2>Asset Approvals</h2>
       <p>Review creatives, copy and landing pages. Approve or leave feedback on each piece.</p>
       <span class="go">Open board →</span>
-    </a>
+    </div>
     <a class="tile rv" href="/clients/human-at-scale/ideas">
       <span class="t-eyebrow">Ideas</span>
       <h2>Idea Bank</h2>
       <p>A place to capture ideas as they come up and act on them later. Add yours with the button. Each one can carry context, a link or an image. When an idea gets put into practice, move it to Applied.</p>
       <span class="go">Open bank →</span>
     </a>
-    <a class="tile rv" href="/clients/human-at-scale/transcripts">
-      <span class="t-eyebrow">Meetings</span>
+    <div class="tile rv soon">
+      <span class="lock">Soon</span><span class="t-eyebrow">Meetings</span>
       <h2>Meeting Transcripts</h2>
       <p>Upload each meeting transcript and get its recap: decisions, action items and open questions.</p>
       <span class="go">Open transcripts →</span>
-    </a>
+    </div>
     <a class="tile rv" href="/clients/human-at-scale/context">
       <span class="t-eyebrow">Knowledge</span>
       <h2>Client Context</h2>
       <p>A living document of the business: goals, channels, guardrails and learnings. It updates itself after every meeting.</p>
       <span class="go">View context →</span>
     </a>
-    <a class="tile rv" href="/clients/human-at-scale/dashboard">
-      <span class="t-eyebrow">Metrics</span>
+    <div class="tile rv soon">
+      <span class="lock">Soon</span><span class="t-eyebrow">Metrics</span>
       <h2>Dashboard</h2>
       <p>Ad spend by channel, what is done, what is moving and what is coming.</p>
       <span class="go">Open dashboard →</span>
-    </a>
+    </div>
   </div>
 
   <footer class="rv">Human at Scale</footer>
