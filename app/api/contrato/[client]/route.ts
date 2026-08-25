@@ -121,6 +121,23 @@ export async function PUT(req: NextRequest, ctx: { params: Promise<{ client: str
   return NextResponse.json({ ok: true });
 }
 
+// Anula el contrato firmado y vuelve todo a cero. Hace falta porque un
+// contrato firmado no se puede editar: si se firmo por error, o cambian los
+// terminos, la unica salida es anularlo y volver a generarlo.
+export async function DELETE(req: NextRequest, ctx: { params: Promise<{ client: string }> }) {
+  const { client } = await ctx.params;
+  if (!authorized(req, client)) return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
+  const cfg = storageConfig();
+  if (!cfg) return NextResponse.json({ error: 'storage_not_configured' }, { status: 503 });
+
+  const res = await fetch(`${cfg.url}/del/${encodeURIComponent(key(client))}`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${cfg.token}` },
+  });
+  if (!res.ok) return NextResponse.json({ error: 'storage_error' }, { status: 502 });
+  return NextResponse.json({ ok: true, anulado: true });
+}
+
 export async function POST(req: NextRequest, ctx: { params: Promise<{ client: string }> }) {
   const { client } = await ctx.params;
   if (!authorized(req, client)) return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
