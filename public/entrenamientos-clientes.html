@@ -263,6 +263,7 @@
 const TRAININGS = [];
 const chatThreads = {};
 const CATS = {
+  'accesos': 'Accesos y setup',
   'whatsapp': 'WhatsApp',
   'video': 'Video y VSL'
 };
@@ -273,6 +274,201 @@ const LEGACY = [
 ];
 
 TRAININGS.push(
+{
+  slug: 'meta-business-portfolio',
+  cat: 'accesos', level: 'Básico', dur: '15 min',
+  title: 'Meta: crear el <em>portafolio</em> o usar el que ya tenés',
+  desc: 'Cómo tener un portafolio comercial de Meta a nombre de tu empresa, y cómo darnos acceso sin entregarnos tus contraseñas.',
+  secs: [
+    { nav: 'Antes de empezar', h: 'Dos cosas que conviene saber primero', html: `
+      <p>El <b>portafolio comercial</b> (antes se llamaba Business Manager) es el contenedor donde viven la página de Facebook, la cuenta de Instagram, la cuenta publicitaria y el pixel. Sin él no se puede pautar de forma ordenada.</p>
+      <ul>
+        <li><b>Es probable que ya tengas uno.</b> Si alguna vez alguien pautó para ustedes, seguramente existe. Antes de crear uno nuevo, revisá: entrá a business.facebook.com y fijate en el menú de arriba a la izquierda.</li>
+        <li><b>Hace falta un perfil personal de Facebook</b> para entrar. Meta lo usa solo para identificar a la persona que administra: no se muestra públicamente ni se mezcla con tu perfil.</li>
+      </ul>
+      <p class="pull">Cada activo pertenece a <span>un solo</span> portafolio. Por eso conviene resolver cuál es el bueno antes de empezar a cargar cosas.</p>
+      <div class="note"><b>Límite a tener en cuenta:</b> una misma persona puede crear hasta dos portafolios comerciales. No hay límite en cuántos puede pertenecer, así que si ya usaste los dos, la salida es que otra persona del equipo lo cree.</div>` },
+    { nav: 'Crearlo', h: 'Si no tenés uno: crearlo', html: `
+      <ul>
+        <li>Entrar a <b>business.facebook.com</b> e iniciar sesión con el perfil personal de Facebook.</li>
+        <li>Hacer clic en el menú desplegable que está debajo de <b>Inicio</b>, arriba a la izquierda.</li>
+        <li><b>Crear portfolio comercial.</b></li>
+        <li>Poner el nombre. <b>Tiene que coincidir con el nombre público de la empresa</b>, porque se ve en Meta, y no puede llevar caracteres especiales.</li>
+        <li>Cargar nombre, apellido y el <b>correo del negocio</b>. Ese mail es por el que Meta se comunica; no lo ven los clientes.</li>
+        <li><b>Crear</b>, y confirmar la dirección desde el mail que llega.</li>
+      </ul>
+      <div class="note"><b>Si es una cuenta nueva, esperá restricciones al principio.</b> Meta limita algunas funciones publicitarias en portafolios recién creados hasta verificar que el anunciante es legítimo. Es normal y se destraba con el uso.</div>` },
+    { nav: 'Encontrar el ID', h: 'Encontrar el identificador del portafolio', html: `
+      <p>Para darnos acceso vas a necesitar un número: el <b>identificador del portafolio</b>. Es lo único que tenés que pasarnos.</p>
+      <ul>
+        <li>En Meta Business Suite, entrar a la <b>configuración del portafolio</b>.</li>
+        <li>El identificador aparece ahí, en la información del negocio.</li>
+      </ul>
+      <p>Nosotros te vamos a pasar el nuestro para que puedas cargarlo, así que en la práctica se intercambian dos números y nada más.</p>` },
+    { nav: 'Darnos acceso', h: 'Darnos acceso como socio', html: `
+      <p>Esta es la parte importante: <b>no hace falta que nos pases usuario ni contraseña</b>. Meta tiene un mecanismo hecho para esto, donde ustedes siguen siendo dueños de todo y nosotros trabajamos con permisos.</p>
+      <ul>
+        <li>Ir a la <b>configuración del portafolio</b> en Meta Business Suite.</li>
+        <li>En el menú de la izquierda, sección <b>Usuarios</b>, entrar a <b>Socios</b>.</li>
+        <li><b>Agregar</b>, y después <b>Otorgar a un socio acceso a tus activos</b>.</li>
+        <li>Cargar <b>nuestro identificador de portafolio</b> y seguir.</li>
+        <li>Elegir qué activos compartir y con qué nivel de acceso.</li>
+        <li><b>Asignar activos.</b></li>
+      </ul>
+      <div class="note"><b>Si no aparece la opción "Socios"</b>, es que la persona que está mirando no tiene control total del portafolio. Solo alguien con control total puede compartir activos.</div>
+      <div class="ej"><b>Qué necesitamos normalmente</b>La cuenta publicitaria, la página de Facebook, la cuenta de Instagram y el pixel. Si preferís empezar con menos, se puede: siempre se agrega después.</div>` },
+    { nav: 'Control total o parcial', h: 'Qué nivel de acceso dar', html: `
+      <ul>
+        <li><b>Control total:</b> podemos administrar todo lo de ese activo. Aun así <b>no podemos compartirlo con nadie más</b>: solo el dueño del activo puede hacerlo.</li>
+        <li><b>Acceso parcial:</b> permisos para tareas puntuales, como crear contenido, administrar anuncios o responder mensajes.</li>
+      </ul>
+      <p class="pull">En cualquiera de los dos casos, <span>ustedes siguen siendo los dueños</span>. El acceso se saca cuando quieran, sin perder nada.</p>
+      <div class="note"><b>Nuestra recomendación:</b> control total sobre la cuenta publicitaria y el pixel, que es donde trabajamos a diario, y parcial sobre el resto. Si preferís parcial en todo, funciona igual, solo que cada permiso nuevo hay que pedirlo.</div>` },
+    { nav: 'Seguridad', h: 'Antes de terminar: dos pasos', html: `
+      <p>Meta pide tener activada la <b>autenticación en dos pasos</b> en el portafolio antes de poder agregar socios. Si no la tenés, activala primero.</p>
+      <p>Es lo que evita que alguien entre con una contraseña filtrada. En cuentas publicitarias con medio de pago cargado, no es un detalle menor.</p>
+      <div class="ej"><b>Sobre aprobaciones</b>Si hay más de una persona con control total del portafolio, es posible que otra tenga que aprobar el acceso que nos diste. Si te aparece como pendiente, es eso.</div>` }
+  ],
+  check: [
+    'Verifiqué si ya existía un portafolio comercial antes de crear uno nuevo',
+    'El nombre del portafolio coincide con el nombre público de la empresa',
+    'Confirmé el correo del negocio desde el mail que llegó',
+    'Activé la autenticación en dos pasos',
+    'Encontré el identificador del portafolio y se lo pasé al equipo',
+    'Agregué a A+Growth como socio con el identificador que nos dieron',
+    'Compartí la cuenta publicitaria, la página, Instagram y el pixel',
+    'Verifiqué que el acceso figure como activo y no pendiente de aprobación'
+  ]
+},
+{
+  slug: 'meta-cuenta-publicitaria',
+  cat: 'accesos', level: 'Básico', dur: '12 min',
+  title: 'Meta: la cuenta <em>publicitaria</em> y el medio de pago',
+  desc: 'Cómo crear la cuenta desde la que se paga la pauta, cargar la tarjeta y entender por qué conviene que la titularidad sea de ustedes.',
+  secs: [
+    { nav: 'Por qué a nombre de ustedes', h: 'La cuenta publicitaria va a nombre de ustedes', html: `
+      <p>Se puede pautar desde la cuenta de la agencia, pero no lo recomendamos, y conviene entender por qué antes de decidir.</p>
+      <ul>
+        <li><b>El historial es un activo.</b> Meta aprende de cada campaña. Ese aprendizaje queda en la cuenta, no en quien la opera.</li>
+        <li><b>Si un día dejamos de trabajar juntos</b>, la cuenta y su historial se quedan con ustedes. No hay que empezar de cero.</li>
+        <li><b>El pixel acumula datos</b> asociados a esa cuenta. Cambiar de cuenta es perder señal de conversión.</li>
+      </ul>
+      <p class="pull">Ustedes son dueños de la cuenta y del medio de pago. Nosotros la operamos con permisos, que se sacan cuando quieran.</p>` },
+    { nav: 'Crearla', h: 'Crear la cuenta publicitaria', html: `
+      <ul>
+        <li>En la <b>configuración del portafolio comercial</b>, ir a <b>Cuentas</b> y después <b>Cuentas publicitarias</b>.</li>
+        <li><b>Agregar</b>, y elegir <b>Crear una cuenta publicitaria nueva</b>.</li>
+        <li>Poner un nombre reconocible. Si va a haber más de una, que se distingan solas.</li>
+        <li>Elegir <b>zona horaria y moneda</b>.</li>
+      </ul>
+      <div class="note"><b>La zona horaria y la moneda no se pueden cambiar después.</b> Es lo único irreversible de este paso: si te equivocás, hay que crear otra cuenta. Elegí la moneda en la que realmente vas a pagar.</div>` },
+    { nav: 'El medio de pago', h: 'Cargar la tarjeta', html: `
+      <ul>
+        <li>En la configuración de la cuenta publicitaria, entrar a <b>Configuración de pagos</b>.</li>
+        <li><b>Agregar medio de pago</b> y cargar la tarjeta.</li>
+      </ul>
+      <div class="note"><b>La tarjeta la cargan ustedes, no nosotros.</b> Nunca vamos a pedirte los datos de una tarjeta por chat ni por mail. Si alguna vez recibís un pedido así en nuestro nombre, no es nuestro.</div>
+      <p>Si en algún momento adelantamos pauta con una tarjeta nuestra, queda documentado con los comprobantes y se factura aparte. Es una excepción, no la forma de trabajar.</p>` },
+    { nav: 'Límite de gasto', h: 'Poner un límite de gasto de la cuenta', html: `
+      <p>Es opcional pero conviene, sobre todo al principio: un techo que la cuenta no puede pasar sin que alguien lo levante a mano.</p>
+      <ul>
+        <li>En <b>Configuración de pagos</b>, buscar <b>límite de gasto de la cuenta</b>.</li>
+        <li>Poner el monto acordado para el mes.</li>
+      </ul>
+      <p>Sirve como red de seguridad para las dos partes: nosotros trabajamos tranquilos y ustedes tienen la certeza de que un error de configuración no puede vaciar una tarjeta.</p>` }
+  ],
+  check: [
+    'Creé la cuenta publicitaria dentro del portafolio de la empresa',
+    'Elegí bien la zona horaria y la moneda, sabiendo que no se cambian',
+    'Cargué el medio de pago con nuestra propia tarjeta',
+    'Definí un límite de gasto de la cuenta',
+    'Compartí la cuenta publicitaria con A+Growth desde Socios'
+  ]
+},
+{
+  slug: 'gohighlevel-acceso',
+  cat: 'accesos', level: 'Básico', dur: '10 min',
+  title: 'GoHighLevel: tu <em>subcuenta</em> y los accesos',
+  desc: 'Qué es la subcuenta donde vive tu CRM, cómo entrar por primera vez y cómo sumar gente de tu equipo sin darles acceso a todo.',
+  secs: [
+    { nav: 'Qué es', h: 'Qué es GoHighLevel y qué parte es tuya', html: `
+      <p>GoHighLevel es la plataforma donde viven el <b>CRM, los formularios, las landing pages, los mails automatizados y el seguimiento de cada lead</b>. Es donde se ve qué pasó con cada persona que dejó sus datos.</p>
+      <p>Nosotros tenemos una cuenta de agencia, y dentro de ella cada cliente tiene su <b>subcuenta</b>. La tuya es un espacio separado: nadie más ve tus contactos ni tus campañas.</p>
+      <p class="pull">No tenés que contratar nada: la subcuenta <span>ya está incluida</span> en el servicio.</p>` },
+    { nav: 'Entrar', h: 'Entrar por primera vez', html: `
+      <ul>
+        <li>Te va a llegar una <b>invitación por mail</b> desde la plataforma.</li>
+        <li>Al aceptarla, creás tu contraseña y ya entrás a tu subcuenta.</li>
+        <li>Si no llega, revisá spam. Suele caer ahí la primera vez.</li>
+      </ul>
+      <div class="note"><b>Un detalle que confunde:</b> el mail de invitación llega desde el dominio de la plataforma, no del nuestro. Si el remitente no dice A+Growth, no está mal.</div>` },
+    { nav: 'Sumar gente', h: 'Sumar a alguien de tu equipo', html: `
+      <p>Si querés que alguien más entre, por ejemplo quien atiende los mensajes o hace seguimiento de los leads, se agrega así:</p>
+      <ul>
+        <li>En <b>Settings</b>, dentro de tu subcuenta, entrar a <b>My Staff</b>.</li>
+        <li><b>Add Employee</b> y cargar nombre, mail y teléfono.</li>
+        <li>Elegir el rol: <b>Admin</b> ve y configura todo dentro de la subcuenta; <b>User</b> tiene acceso acotado.</li>
+        <li>Guardar. Le llega la invitación por mail.</li>
+      </ul>
+      <div class="ej"><b>Cuál conviene</b>Para alguien que solo responde mensajes y hace seguimiento, <b>User</b> alcanza. Admin conviene reservarlo para quien realmente necesita cambiar configuraciones.</div>` },
+    { nav: 'Qué mirar', h: 'Las tres pantallas que te van a servir', html: `
+      <ul>
+        <li><b>Conversations.</b> Todos los mensajes en un solo lugar, sin importar por dónde entraron.</li>
+        <li><b>Contacts.</b> Cada persona que dejó sus datos, con su historial completo.</li>
+        <li><b>Opportunities.</b> El embudo: en qué etapa está cada lead y cuáles se están enfriando.</li>
+      </ul>
+      <p>El resto lo configuramos nosotros. No hace falta que aprendas la plataforma entera: con estas tres pantallas ves lo que importa.</p>` }
+  ],
+  check: [
+    'Acepté la invitación y entré a la subcuenta',
+    'Guardé la contraseña en un lugar seguro',
+    'Sumé a la gente de mi equipo que necesita acceso, con el rol que corresponde',
+    'Sé dónde ver las conversaciones, los contactos y el embudo'
+  ]
+},
+{
+  slug: 'accesos-analytics-sitio',
+  cat: 'accesos', level: 'Básico', dur: '12 min',
+  title: 'Analytics, Google Ads y el <em>admin del sitio</em>',
+  desc: 'Los tres accesos que faltan para poder medir: qué es cada uno, por qué lo pedimos y cómo darlo sin compartir contraseñas.',
+  secs: [
+    { nav: 'Google Analytics', h: 'Google Analytics', html: `
+      <p>Es donde se ve qué hace la gente cuando llega al sitio: de dónde viene, qué páginas mira, dónde abandona. Sin esto la pauta se optimiza a ciegas.</p>
+      <ul>
+        <li>En <b>analytics.google.com</b>, entrar a <b>Administrar</b>, abajo a la izquierda.</li>
+        <li>En la columna de <b>Propiedad</b>, ir a <b>Gestión de accesos a la propiedad</b>.</li>
+        <li>Con el <b>+</b> arriba a la derecha, <b>Agregar usuarios</b>.</li>
+        <li>Cargar nuestro mail y darle rol de <b>Editor</b>.</li>
+      </ul>
+      <div class="note"><b>Si no sabés si tenés Analytics instalado</b>, decínoslo y lo verificamos. Es común que esté puesto y nadie lo mire, o que esté a nombre de quien hizo el sitio hace años.</div>` },
+    { nav: 'Google Ads', h: 'Google Ads', html: `
+      <p>Solo aplica si vamos a pautar en Google. Igual que en Meta, la cuenta queda a nombre de ustedes y nosotros la operamos.</p>
+      <ul>
+        <li>Necesitamos el <b>identificador de la cuenta</b>, que son diez dígitos y aparece arriba a la derecha.</li>
+        <li>Con ese número les mandamos una <b>solicitud de acceso</b> desde nuestra cuenta de administrador.</li>
+        <li>Ustedes la aceptan desde <b>Herramientas</b>, <b>Acceso y seguridad</b>, en la pestaña de <b>Administradores</b>.</li>
+      </ul>
+      <p class="pull">Así nunca se comparte una contraseña: se vinculan dos cuentas y listo.</p>` },
+    { nav: 'El sitio', h: 'El administrador del sitio', html: `
+      <p>Lo necesitamos para instalar los códigos de seguimiento (el pixel de Meta y Analytics) y para tocar las páginas donde cae la pauta.</p>
+      <ul>
+        <li><b>WordPress:</b> un usuario con rol de <b>Administrador</b>, creado a nuestro nombre.</li>
+        <li><b>Webflow, Squarespace o similar:</b> una invitación de colaborador desde el panel.</li>
+        <li><b>Si lo maneja un desarrollador externo</b>, alcanza con ponernos en contacto: coordinamos directamente con esa persona.</li>
+      </ul>
+      <div class="note"><b>Preferimos un usuario propio antes que la contraseña del dueño.</b> Queda registro de quién hizo cada cambio, y el día que dejamos de trabajar juntos se borra ese usuario y listo, sin tener que cambiar contraseñas.</div>` },
+    { nav: 'La regla', h: 'La regla que aplica a todo esto', html: `
+      <p>En ninguno de estos accesos hace falta darnos una contraseña. Todas las plataformas serias tienen un mecanismo para dar permisos a un tercero.</p>
+      <p class="pull">Si alguna vez alguien te pide una contraseña <span>en nuestro nombre</span>, no somos nosotros.</p>
+      <div class="ej"><b>Qué pasa si dejamos de trabajar juntos</b>Se revocan los accesos desde cada plataforma y se termina. Ustedes conservan las cuentas, el historial, los contactos y los datos. Nada de eso vive del lado nuestro.</div>` }
+  ],
+  check: [
+    'Di acceso de Editor en Google Analytics',
+    'Pasé el identificador de Google Ads y acepté la solicitud de acceso',
+    'Creé un usuario administrador del sitio a nombre de la agencia',
+    'Verifiqué que no compartí ninguna contraseña personal en el proceso'
+  ]
+},
 {
   slug: 'whatsapp-api-business-manager',
   cat: 'whatsapp', level: 'Intermedio', dur: '35 min',
