@@ -82,6 +82,18 @@
     .ev { grid-template-columns: 100px 1fr; }
   }
 
+  .pipe { background: var(--paper); border: 1px solid var(--hairline); }
+  .pipe-row { display: grid; grid-template-columns: 120px 1fr auto; gap: 16px; padding: 14px 18px; border-bottom: 1px solid var(--hairline); align-items: center; }
+  .pipe-row:last-child { border-bottom: none; }
+  .pipe-row.now { background: #FDF6EC; }
+  .pipe-row .fecha { font-size: 12px; font-weight: 600; color: var(--ink-2); }
+  .pipe-row .fecha small { display: block; font-size: 10.5px; font-weight: 400; color: var(--ink-3); }
+  .pipe-row .qué { font-size: 13.5px; }
+  .pipe-row .qué small { display: block; font-size: 12px; color: var(--ink-2); margin-top: 2px; }
+  .pipe-row .st { font-size: 9.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; padding: 3px 8px; white-space: nowrap; }
+  .st.hecho { background: #E8F5EE; color: var(--ok); }
+  .st.ya { background: #FBEAE5; color: #B3341B; }
+  .st.viene { background: var(--accent-soft); color: var(--accent); }
   /* --- Frameworks --- */
   .fw-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 26px; }
   .fw-nav a { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 14px; background: var(--paper-2); color: var(--ink-2); text-decoration: none; border: 1px solid var(--hairline); }
@@ -124,7 +136,8 @@
   </header>
   <nav class="fw-nav">
     <a href="#webinars">Webinar framework</a>
-    <a href="#podcasts">Podcast strategy</a>
+    <a href="#podcasts">Podcast ads</a>
+    <a href="#pipeline">What is booked</a>
   </nav>
 
   <!-- ================= WEBINARS ================= -->
@@ -146,7 +159,8 @@
         <ul>
           <li><b>Who attends.</b> Firm size, role, and whether they match the ICP. One qualified owner beats forty bookkeepers.</li>
           <li><b>What we can say.</b> Some communities have a strict no-vendor policy. If we cannot pitch, the value has to come from the recording and the follow-up.</li>
-          <li><b>What we get afterwards.</b> The attendee list, the recording, or neither. This is asked as a permission, never as an expectation.</li>
+          <li><b>What we get afterwards.</b> The attendee list, the recording, or neither. <b>Asked as a permission, never as an expectation.</b> What we say to a host reflects on you, so the relationship comes before the asset. The Collaboration Room said no to the list and that was a fine answer.</li>
+          <li><b>If there is no list, the capture is the Operations Assessment</b> plus your direct email, said out loud. That plan B needs to exist before the session, not after.</li>
         </ul>
       </div>
 
@@ -171,18 +185,19 @@
       <div class="step">
         <div class="when">During</div>
         <h4>Make the call to action explicit</h4>
-        <p>When there is a no-vendor policy, traction has to come straight from the attendees. Chase shares his contact details out loud and puts a clear next step on screen, twice: once mid-session and once at the end.</p>
+        <p>When there is a no-vendor policy, traction has to come straight from the attendees: your direct email and the Operations Assessment, said out loud and left on screen.</p>
+        <p style="margin-top:8px;">The other thing that earns its place here is the <b>closing poll</b>. Asking whether they want an Operations Audit qualifies the room live, and the answers come back with the attendee file. That is who gets contacted first.</p>
         <div class="callout" style="margin-top:12px;">
           <b>The rule we learned the hard way.</b> If nobody says the next step out loud, there is no next step. A recording with no call to action inside it cannot be repurposed into one later.
         </div>
       </div>
 
       <div class="step">
-        <div class="when">Within 48 hours</div>
-        <h4>Harvest the recording</h4>
-        <p>This is where a low-attendance session still pays for itself. From every recording we pull:</p>
+        <div class="when">Within 24 hours</div>
+        <h4>List into the funnel, then harvest the recording</h4>
+        <p>Any attendee list goes into the funnel <b>within one day</b>, which is the standard you set. Then, from every recording:</p>
         <ul>
-          <li>Three to five short clips for LinkedIn, cut around the concepts Chase flags.</li>
+          <li>Short clips for LinkedIn, cut around the concepts you flag when you hand over the long form.</li>
           <li>One Ops Notes issue, or a section of one.</li>
           <li>A replay link for the newsletter, so people who could not attend still see it.</li>
         </ul>
@@ -195,6 +210,7 @@
           <li><b>Attended and qualified:</b> personal note from Chase.</li>
           <li><b>Registered, did not attend:</b> replay link plus the one takeaway.</li>
           <li><b>Attended and out of ICP:</b> added to Ops Notes, no sales follow-up. Same call the Collaboration Room attendee got.</li>
+          <li><b>When there is a co-host, split the list first.</b> Levvy worked because it was divided by who reaches out: you alone, Jeanne alone, or both. The host has their own interest in those leads and agreeing that upfront avoids two people emailing the same person.</li>
         </ul>
       </div>
     </div>
@@ -203,65 +219,109 @@
   <!-- ================= PODCASTS ================= -->
   <section id="podcasts">
     <div class="sec-head">
-      <h2>Podcast strategy</h2>
-      <span class="note">Based on the shows you sent through</span>
+      <h2>Podcast ads</h2>
+      <span class="note">Reading the 2025 placements you shared</span>
     </div>
 
-    <p style="font-size:13.5px;color:var(--ink-2);max-width:76ch;margin-bottom:18px;">
-      Guesting is the fastest way to borrow an audience that already trusts someone else. In accounting the shows are concentrated, the hosts are known, and the listeners are the exact people we want. Three of them are worth pursuing now.
+    <p style="font-size:13.5px;color:var(--ink-2);max-width:78ch;margin-bottom:18px;">
+      You have already bought ads across three accounting shows. The open question is not which show to approach, it is <b>where to put the next dollar and how to know whether it worked</b>. Below is what the placement data says and what we would need to answer that properly.
     </p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Show</th><th>Episodes</th><th>Slots</th><th>What stands out</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>The Accounting Podcast</b></td>
+            <td class="num">6</td>
+            <td>E441 D &middot; E442 D &middot; <b>E446 A</b> &middot; E447 C &middot; E449 C &middot; E450 C</td>
+            <td>The only A slot across all three shows, and the heaviest rotation. Largest audience in the profession.</td>
+          </tr>
+          <tr>
+            <td><b>Oh My Fraud</b></td>
+            <td class="num">2</td>
+            <td>E85 C &middot; E86 C</td>
+            <td>Story-driven rather than advice-driven. Same listeners, different mindset.</td>
+          </tr>
+          <tr>
+            <td><b>Unofficial QuickBooks Accountants</b></td>
+            <td class="num">2</td>
+            <td>E88 C &middot; E89 C</td>
+            <td>Tightest match to firms running on QuickBooks, which is most of the ICP.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <b>What we cannot tell yet, and it is the thing that matters.</b> Six episodes on one show versus two on the others is a spend decision that should be justified by results, and right now nothing connects a placement to a signup or a call. Before buying the next flight we want one dedicated landing page per show, so a listener who types the URL is attributable. Without that we are comparing shows on downloads, which measures the show and not the ad.
+    </div>
 
     <div class="grid2">
       <div class="card">
-        <div class="tagline">Priority one</div>
-        <h4>The Accounting Podcast <span class="pri a">Best fit</span></h4>
-        <p>Blake Oliver and David Leary. Past 500 episodes, weekly, positions itself as the largest show in the profession. Audience is accountants and bookkeepers who follow where the profession is going.</p>
-        <ul>
-          <li>Takes guests and sponsors</li>
-          <li>NASBA-approved CPE through Earmark</li>
-          <li>Angle: the owner bottleneck as an operations problem, not a staffing one</li>
-        </ul>
+        <div class="tagline">Question one</div>
+        <h4>Did the A slot outperform the C slots?</h4>
+        <p>E446 is the only A placement. If it moved more than the C slots on the same show, slot position is worth paying up for and that changes how the next buy is structured.</p>
       </div>
-
       <div class="card">
-        <div class="tagline">Priority two</div>
-        <h4>Unofficial QuickBooks Accountants <span class="pri a">Tight ICP</span></h4>
-        <p>Alicia Katz Pollock and Hector Garcia. Smaller and more specific: firms running on QuickBooks, which is most of the ICP. Guests are usually product people, so an operations angle stands out.</p>
-        <ul>
-          <li>Takes guests and sponsors</li>
-          <li>NASBA-approved CPE</li>
-          <li>Angle: what the tech stack does <i>to</i> the team rather than for it</li>
-        </ul>
+        <div class="tagline">Question two</div>
+        <h4>Depth or spread?</h4>
+        <p>Six episodes on one show builds familiarity; two each across three shows buys reach. Which one worked is answerable once attribution exists, and it decides the shape of the next flight.</p>
       </div>
-
-      <div class="card">
-        <div class="tagline">Priority three</div>
-        <h4>Oh My Fraud <span class="pri b">Brand play</span></h4>
-        <p>Caleb Newquist. True crime for accountants, story-driven rather than advice-driven. Lower intent, but memorable, and it reaches the same listeners in a different mood.</p>
-        <ul>
-          <li>Takes guests and sponsors</li>
-          <li>Angle: how weak internal process makes fraud possible, which is an operations story told sideways</li>
-        </ul>
-      </div>
-
       <div class="card">
         <div class="tagline">Measurement</div>
-        <h4>What we can and cannot know</h4>
-        <p>Earmark publishes download numbers through the Open Podcast Prefix Project, and accountingpodcasts.com ranks shows by downloads. That gives us a real size estimate before committing time.</p>
-        <ul>
-          <li>Ask each host for their per-episode average</li>
-          <li>Track a dedicated landing page per appearance</li>
-          <li>Judge on Ops Notes signups, not downloads</li>
-        </ul>
+        <h4>The data is already public</h4>
+        <p>Earmark publishes download numbers through the Open Podcast Prefix Project, and op3.dev has open analytics. We do not need to ask the hosts for their numbers, which is useful leverage when negotiating rates.</p>
+      </div>
+      <div class="card">
+        <div class="tagline">The other lever</div>
+        <h4>Guesting, if you want it</h4>
+        <p>All three take guests. An appearance costs time instead of budget and lasts longer than an ad read. You have not raised it, so we are not assuming it is on the table: say the word and we work up an angle for each show.</p>
       </div>
     </div>
 
     <div class="callout">
-      <b>How we pitch.</b> Hosts get dozens of vendor pitches a week. The pitch leads with a specific episode idea and the evidence behind it, never with a company introduction. One idea, one paragraph on why their listeners care, one line on who Chase is. The Gusto partnership is the credibility line that makes it land.
+      <b>What we would do next.</b> One landing page per show before any new spend, so the next flight is measurable. Then judge on Ops Notes signups and assessment starts rather than downloads. If you have the results from the 2025 flights in a form we can look at, send them over and we work backwards from what already happened.
+    </div>
+  </section>
+
+  <!-- ================= PIPELINE ================= -->
+  <section id="pipeline">
+    <div class="sec-head">
+      <h2>What is booked</h2>
+      <span class="note">From your July calendar</span>
+    </div>
+
+    <div class="pipe">
+      <div class="pipe-row">
+        <div class="fecha">Aug 21<small>Done</small></div>
+        <div class="qué">The Collaboration Room<small>One attendee, disqualified on size. The recording is the asset.</small></div>
+        <span class="st hecho">Ran</span>
+      </div>
+      <div class="pipe-row now">
+        <div class="fecha">Aug 26<small>Tomorrow</small></div>
+        <div class="qué">TaxProMarketer &middot; How to Grow and Sustain a More Profitable Accounting Firm<small>Nothing prepared yet. Needs the CTA and the capture decided today.</small></div>
+        <span class="st ya">Now</span>
+      </div>
+      <div class="pipe-row">
+        <div class="fecha">Sep 24<small>Date may move</small></div>
+        <div class="qué">Bend accounting event<small>In person.</small></div>
+        <span class="st viene">Ahead</span>
+      </div>
+      <div class="pipe-row">
+        <div class="fecha">Sep / Oct<small>No date</small></div>
+        <div class="qué">Second CPA Academy webinar<small>The only paid one, and the only one that produced volume: 200+ signups.</small></div>
+        <span class="st viene">Ahead</span>
+      </div>
+      <div class="pipe-row">
+        <div class="fecha">Oct 26&ndash;28<small>Confirmed</small></div>
+        <div class="qué">Intuit Connect &middot; Six Metrics, Not Fifty<small>Speaking engagement.</small></div>
+        <span class="st viene">Ahead</span>
+      </div>
     </div>
 
     <div class="callout">
-      <b>Sequencing.</b> One show at a time, starting with Unofficial QuickBooks. It is the tightest ICP match and the easiest yes, which gives us a recorded appearance to reference when pitching The Accounting Podcast. Going straight to the biggest show without a recent appearance to point at is a weaker pitch.
+      <b>What the attendance curve says.</b> CPA Academy brought 200+ signups and was the only paid one. Levvy 30, Resound 20 with four or five actually attending, The Collaboration Room one. The pattern is not that webinars stopped working, it is that <b>free slots in someone else's community do not fill a room</b>. That is worth weighing before committing to the next unpaid one.
     </div>
   </section>
 
