@@ -54,6 +54,9 @@
   .tile.soon { opacity: .5; pointer-events: none; position: relative; }
   .tile.soon .go { visibility: hidden; }
   .tile.soon .lock { position: absolute; right: 18px; top: 18px; font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; background: #F0EFF2; color: #8A8F99; padding: 3px 8px; }
+  .divider { grid-column: 1 / -1; display: flex; align-items: center; gap: 14px; margin: 14px 0 2px; }
+  .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--hairline); }
+  .divider span { font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); }
 </style>
 </head>
 <body data-client="human-at-scale" data-page="hub">
@@ -73,12 +76,32 @@
   </header>
 
   <div class="grid">
+    <a class="tile rv" href="/clients/human-at-scale/qa">
+      <span class="t-eyebrow">Process</span>
+      <h2>Publishing QA</h2>
+      <p>The checks that run before anything goes out. Built from the misses we are not repeating.</p>
+      <span class="go">Open checklist →</span>
+    </a>
     <a class="tile rv" href="/clients/human-at-scale/reports">
       <span class="t-eyebrow">Results</span>
       <h2>Reports</h2>
       <p>Performance report with metrics, funnel and action plan.</p>
       <span class="go">View report →</span>
     </a>
+    <a class="tile rv" href="/clients/human-at-scale/context">
+      <span class="t-eyebrow">Knowledge</span>
+      <h2>Client Context</h2>
+      <p>A living document of the business: goals, channels, guardrails and learnings. It updates itself after every meeting.</p>
+      <span class="go">View context →</span>
+    </a>
+    <a class="tile rv" href="/clients/human-at-scale/ideas">
+      <span class="t-eyebrow">Ideas</span>
+      <h2>Idea Bank</h2>
+      <p>A place to capture ideas as they come up and act on them later. Add yours with the button. Each one can carry context, a link or an image. When an idea gets put into practice, move it to Applied.</p>
+      <span class="go">Open bank →</span>
+    </a>
+    
+    <div class="divider"><span>In progress</span></div>
     <div class="tile rv soon">
       <span class="lock">Soon</span><span class="t-eyebrow">The plan</span>
       <h2>Master Plan <span class="wip">In progress</span></h2>
@@ -91,12 +114,6 @@
       <p>What we are actively working on this week, what is waiting on you, and what is already done. Updated as things move.</p>
       <span class="go">See the list →</span>
     </div>
-    <a class="tile rv" href="/clients/human-at-scale/qa">
-      <span class="t-eyebrow">Process</span>
-      <h2>Publishing QA</h2>
-      <p>The checks that run before anything goes out. Built from the misses we are not repeating.</p>
-      <span class="go">Open checklist →</span>
-    </a>
     <div class="tile rv soon">
       <span class="lock">Soon</span><span class="t-eyebrow">How we work</span>
       <h2>Frameworks</h2>
@@ -115,24 +132,12 @@
       <p>Review creatives, copy and landing pages. Approve or leave feedback on each piece.</p>
       <span class="go">Open board →</span>
     </div>
-    <a class="tile rv" href="/clients/human-at-scale/ideas">
-      <span class="t-eyebrow">Ideas</span>
-      <h2>Idea Bank</h2>
-      <p>A place to capture ideas as they come up and act on them later. Add yours with the button. Each one can carry context, a link or an image. When an idea gets put into practice, move it to Applied.</p>
-      <span class="go">Open bank →</span>
-    </a>
     <div class="tile rv soon">
       <span class="lock">Soon</span><span class="t-eyebrow">Meetings</span>
       <h2>Meeting Transcripts</h2>
       <p>Upload each meeting transcript and get its recap: decisions, action items and open questions.</p>
       <span class="go">Open transcripts →</span>
     </div>
-    <a class="tile rv" href="/clients/human-at-scale/context">
-      <span class="t-eyebrow">Knowledge</span>
-      <h2>Client Context</h2>
-      <p>A living document of the business: goals, channels, guardrails and learnings. It updates itself after every meeting.</p>
-      <span class="go">View context →</span>
-    </a>
     <div class="tile rv soon">
       <span class="lock">Soon</span><span class="t-eyebrow">Metrics</span>
       <h2>Dashboard</h2>
