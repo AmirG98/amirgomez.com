@@ -177,8 +177,8 @@
 <!-- ============ 01 · PAID ============ -->
 <section class="disc" id="paid">
   <div class="wrap">
-    <div class="sec-head rv"><span class="no">01</span><h2>Paid Acquisition</h2><span class="count">3 cases</span></div>
-    <p class="sec-intro rv">Meta, Google and Microsoft — creative volume, structure and relentless testing, always measured against <b>business results, not vanity metrics</b>.</p>
+    <div class="sec-head rv"><span class="no">01</span><h2>Paid Acquisition</h2><span class="count">4 cases</span></div>
+    <p class="sec-intro rv">Meta, Google, Microsoft and programmatic DSPs — creative volume, structure and relentless testing, always measured against <b>business results, not vanity metrics</b>.</p>
     <div id="paid-cases"></div>
   </div>
 </section>
@@ -259,14 +259,17 @@ var CASES = [
     metric:'Now at <span>~5,000 clicks/month</span> — 53.8K clicks and <span>2.5M impressions</span> over 16 months',
     img:'case-studies/aurora-circ.jpg' },
 
-  { sec:'paid', layout:'split', title:'UGC (+AI)', domain:'meta ads manager', channels:['Paid Social','UGC'], vertical:'Legal · USA',
-    desc:'We explored and launched 20x more UGC content volume than previously existed for a US legal company.',
-    metric:'ROAS grew from <span>2x to 7x</span>',
-    img:'case-studies/ugc-ai.jpg' },
   { sec:'paid', layout:'split', title:'LeadGen B2C', domain:'meta ads manager', channels:['Paid Social'], vertical:'Home decor · USA',
     desc:'The complete funnel for a $335,000/year social campaign for a leading US home-decor brand.',
     metric:'Over <span>63,000 leads</span> at an average CPL of <span>$4.5</span>',
     img:'case-studies/leadgen-b2c.jpg' },
+  { sec:'paid', layout:'split', title:'UGC (+AI)', domain:'meta ads manager', channels:['Paid Social','UGC'], vertical:'Legal · USA',
+    desc:'We explored and launched 20x more UGC content volume than previously existed for a US legal company.',
+    metric:'ROAS grew from <span>2x to 7x</span>',
+    img:'case-studies/ugc-ai.jpg' },
+  { sec:'paid', layout:'stack', title:'Programmatic at Scale', domain:'programmatic dsp', channels:['Programmatic'], vertical:'Luxury automotive · Multinational',
+    desc:'Programmatic brand campaigns for high-end automotive brands: strategic placements combined with custom audience data and cold email.',
+    metric:'<span>-11% CPM</span> at a scale of <span>1 billion impressions per month</span>' },
   { sec:'paid', layout:'split', title:'PPC B2B', domain:'google ads', channels:['PPC'], vertical:'Advertising agency · USA',
     desc:'Inherited Google Ads and Microsoft Ads accounts with a +15% YoY goal; a year and a half of funnel work inside PPC platforms.',
     metric:'Channel revenue <span>3.7x</span> (2022–2024) · ROI doubled, <span>1.74 → 3.76</span>',
@@ -320,10 +323,12 @@ function esc(s){ return String(s||'').replace(/[&<>"]/g, function(c){ return {'&
       '<span class="chip v">' + esc(c.vertical) + '</span></div>' +
       '<h3>' + esc(c.title) + '</h3><p class="desc">' + esc(c.desc) + '</p>' +
       '<div class="metric">' + c.metric + '</div></div>';
-    var shot = '<div class="shotwrap rv"><figure class="shot" data-img="' + c.img + '" data-cap="' + esc(c.title) + ' — ' + esc(c.vertical) + '">' +
-      '<div class="bar"><i></i><i></i><i></i><span class="url">' + esc(c.domain) + '</span></div>' +
-      '<img loading="lazy" src="' + c.img + '" alt="' + esc(c.title) + ' results"></figure></div>';
-    el.innerHTML = c.layout === 'split' ? '<div class="cols">' + txt + shot + '</div>' : txt + shot;
+    var shot = c.img
+      ? '<div class="shotwrap rv"><figure class="shot" data-img="' + c.img + '" data-cap="' + esc(c.title) + ' — ' + esc(c.vertical) + '">' +
+        '<div class="bar"><i></i><i></i><i></i><span class="url">' + esc(c.domain) + '</span></div>' +
+        '<img loading="lazy" src="' + c.img + '" alt="' + esc(c.title) + ' results"></figure></div>'
+      : '';
+    el.innerHTML = (c.layout === 'split' && c.img) ? '<div class="cols">' + txt + shot + '</div>' : txt + shot;
     host.appendChild(el);
   });
 })();
