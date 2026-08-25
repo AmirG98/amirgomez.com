@@ -387,42 +387,66 @@ TRAININGS.push(
 },
 {
   slug: 'gohighlevel-acceso',
-  cat: 'accesos', level: 'Básico', dur: '10 min',
-  title: 'GoHighLevel: tu <em>subcuenta</em> y los accesos',
-  desc: 'Qué es la subcuenta donde vive tu CRM, cómo entrar por primera vez y cómo sumar gente de tu equipo sin darles acceso a todo.',
+  cat: 'accesos', level: 'Básico', dur: '15 min',
+  title: 'GoHighLevel: crear la cuenta y darnos <em>acceso</em>',
+  desc: 'La cuenta de GoHighLevel la contratan y la abren ustedes. Acá está cómo crearla, qué plan conviene, y cómo sumarnos como administradores para que podamos trabajar.',
   secs: [
-    { nav: 'Qué es', h: 'Qué es GoHighLevel y qué parte es tuya', html: `
-      <p>GoHighLevel es la plataforma donde viven el <b>CRM, los formularios, las landing pages, los mails automatizados y el seguimiento de cada lead</b>. Es donde se ve qué pasó con cada persona que dejó sus datos.</p>
-      <p>Nosotros tenemos una cuenta de agencia, y dentro de ella cada cliente tiene su <b>subcuenta</b>. La tuya es un espacio separado: nadie más ve tus contactos ni tus campañas.</p>
-      <p class="pull">No tenés que contratar nada: la subcuenta <span>ya está incluida</span> en el servicio.</p>` },
-    { nav: 'Entrar', h: 'Entrar por primera vez', html: `
+    { nav: 'Empecemos por acá', h: 'La cuenta es de ustedes, no nuestra', html: `
+      <p>GoHighLevel es la plataforma donde van a vivir el <b>CRM, los formularios, las landing pages, los mails automatizados y el seguimiento de cada lead</b>. Es donde se ve qué pasó con cada persona que dejó sus datos.</p>
+      <p class="pull"><span>La contratan ustedes</span>, con su tarjeta y a nombre de la empresa. No está incluida en nuestro servicio.</p>
+      <p>Puede sonar a un paso de más, pero es lo que conviene:</p>
       <ul>
-        <li>Te va a llegar una <b>invitación por mail</b> desde la plataforma.</li>
-        <li>Al aceptarla, creás tu contraseña y ya entrás a tu subcuenta.</li>
-        <li>Si no llega, revisá spam. Suele caer ahí la primera vez.</li>
+        <li><b>Los contactos son suyos.</b> Cada lead que entra queda en una cuenta que ustedes controlan, no en la nuestra.</li>
+        <li><b>Si dejamos de trabajar juntos, no se muda nada.</b> Se nos saca el acceso y la operación sigue igual, con la misma base y las mismas automatizaciones.</li>
+        <li><b>No dependen de nuestra facturación.</b> La cuenta no se cae si cambia algo de nuestro lado.</li>
       </ul>
-      <div class="note"><b>Un detalle que confunde:</b> el mail de invitación llega desde el dominio de la plataforma, no del nuestro. Si el remitente no dice A+Growth, no está mal.</div>` },
-    { nav: 'Sumar gente', h: 'Sumar a alguien de tu equipo', html: `
-      <p>Si querés que alguien más entre, por ejemplo quien atiende los mensajes o hace seguimiento de los leads, se agrega así:</p>
+      <div class="note"><b>Lo que sí ponemos nosotros:</b> la configuración. Embudos, formularios, automatizaciones, etiquetas y reportes los armamos y los mantenemos. Ustedes ponen la cuenta y el acceso; el trabajo adentro es nuestro.</div>` },
+    { nav: 'Crear la cuenta', h: 'Crear la cuenta', html: `
       <ul>
-        <li>En <b>Settings</b>, dentro de tu subcuenta, entrar a <b>My Staff</b>.</li>
-        <li><b>Add Employee</b> y cargar nombre, mail y teléfono.</li>
-        <li>Elegir el rol: <b>Admin</b> ve y configura todo dentro de la subcuenta; <b>User</b> tiene acceso acotado.</li>
-        <li>Guardar. Le llega la invitación por mail.</li>
+        <li>Entrar a <b>gohighlevel.com</b> y elegir un plan.</li>
+        <li>Cargar los datos de la empresa y el medio de pago.</li>
+        <li>Confirmar el mail y definir la contraseña.</li>
       </ul>
-      <div class="ej"><b>Cuál conviene</b>Para alguien que solo responde mensajes y hace seguimiento, <b>User</b> alcanza. Admin conviene reservarlo para quien realmente necesita cambiar configuraciones.</div>` },
-    { nav: 'Qué mirar', h: 'Las tres pantallas que te van a servir', html: `
+      <div class="ej"><b>Qué plan alcanza</b>Para un negocio que va a usar la plataforma para sí mismo, el plan de entrada alcanza. Los planes más caros son para agencias que revenden la herramienta a sus propios clientes, que no es el caso.</div>
+      <div class="note"><b>Antes de contratar, avisanos.</b> Los planes y los nombres cambian seguido, y a veces hay prueba gratuita. Te confirmamos cuál conviene según lo que vayamos a armar, así no pagás de más ni te quedás corto.</div>` },
+    { nav: 'Sumarnos', h: 'Sumarnos como administradores', html: `
+      <p>Una vez creada la cuenta, este es el paso que nos habilita a trabajar. <b>No hace falta que nos pases tu contraseña</b>: se nos crea un usuario propio.</p>
+      <ul>
+        <li>Dentro de tu cuenta, ir a <b>Settings</b> en el menú de la izquierda.</li>
+        <li>Entrar a <b>My Staff</b>.</li>
+        <li><b>Add Employee</b>, o el botón de agregar usuario.</li>
+        <li>Cargar nombre, apellido y <b>el mail que te pasemos</b>.</li>
+        <li>En el rol, elegir <b>Admin</b>.</li>
+        <li>Guardar. Nos llega la invitación por mail y desde ahí entramos.</li>
+      </ul>
+      <div class="note"><b>Tiene que ser Admin, no User.</b> Con rol User no se pueden crear automatizaciones, formularios ni embudos, que es justamente lo que vamos a armar. Si nos das User, vamos a tener que pedirte que lo cambies.</div>` },
+    { nav: 'Tu equipo', h: 'Sumar gente de tu equipo', html: `
+      <p>Mismo lugar, distinto rol. Si alguien de tu equipo va a responder mensajes o hacer seguimiento de leads, se agrega igual pero con permisos más acotados.</p>
+      <ul>
+        <li><b>Settings</b>, <b>My Staff</b>, <b>Add Employee</b>.</li>
+        <li>Cargar los datos y elegir el rol.</li>
+      </ul>
+      <ul>
+        <li><b>Admin:</b> ve y configura todo dentro de la cuenta. Para quien realmente administra.</li>
+        <li><b>User:</b> acceso acotado. Alcanza para quien solo atiende conversaciones y hace seguimiento.</li>
+      </ul>
+      <div class="ej"><b>Criterio simple</b>Si la persona no va a tocar configuraciones, dale User. Siempre se puede subir después; bajar el permiso una vez que alguien se acostumbró a tener todo es más incómodo.</div>` },
+    { nav: 'Qué vas a mirar', h: 'Las tres pantallas que te van a servir', html: `
       <ul>
         <li><b>Conversations.</b> Todos los mensajes en un solo lugar, sin importar por dónde entraron.</li>
         <li><b>Contacts.</b> Cada persona que dejó sus datos, con su historial completo.</li>
         <li><b>Opportunities.</b> El embudo: en qué etapa está cada lead y cuáles se están enfriando.</li>
       </ul>
-      <p>El resto lo configuramos nosotros. No hace falta que aprendas la plataforma entera: con estas tres pantallas ves lo que importa.</p>` }
+      <p>El resto lo configuramos nosotros. No hace falta que aprendas la plataforma entera: con estas tres pantallas ves lo que importa.</p>
+      <div class="note"><b>Si algo no cierra, preguntanos antes de tocarlo.</b> Las automatizaciones están encadenadas: desactivar una porque parece que no hace nada suele romper otras tres más adelante.</div>` }
   ],
   check: [
-    'Acepté la invitación y entré a la subcuenta',
-    'Guardé la contraseña en un lugar seguro',
-    'Sumé a la gente de mi equipo que necesita acceso, con el rol que corresponde',
+    'Consulté con el equipo qué plan conviene antes de contratar',
+    'Creé la cuenta a nombre de la empresa y con nuestro medio de pago',
+    'Guardé la contraseña en un lugar seguro y compartido',
+    'Agregué a A+Growth desde Settings, My Staff, con rol Admin',
+    'Verifiqué que el rol sea Admin y no User',
+    'Sumé a la gente de mi equipo con el rol que corresponde',
     'Sé dónde ver las conversaciones, los contactos y el embudo'
   ]
 },
