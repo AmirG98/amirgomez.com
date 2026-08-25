@@ -92,7 +92,7 @@ const nextConfig: NextConfig = {
         destination: '/case-studies.html'
       },
       {
-        source: '/services',
+        source: '/what-we-do',
         destination: '/services.html'
       }
     ];
