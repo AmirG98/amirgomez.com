@@ -102,6 +102,10 @@ const nextConfig: NextConfig = {
       {
         source: '/casos',
         destination: '/casos.html'
+      },
+      {
+        source: '/proposal/personal',
+        destination: '/proposal-personal.html'
       }
     ];
   },
