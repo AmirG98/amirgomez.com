@@ -99,6 +99,11 @@
   .win { background: #EDF6F1; border-left: 3px solid var(--ok); padding: 15px 19px; font-size: 13.5px; color: var(--tinta-2); margin-top: 12px; }
   .win b { color: var(--tinta); font-weight: 600; }
   @media (max-width: 780px) { .curva { grid-template-columns: 1fr; } }
+  .ag-notas .fila { display: flex; align-items: center; gap: 12px; margin-top: 9px; }
+  .ag-notas button { font-family: var(--sans); font-size: 12.5px; font-weight: 600; letter-spacing: 0.04em; padding: 9px 20px; background: var(--azul); color: #fff; border: none; cursor: pointer; }
+  .ag-notas button:hover { background: #2A2497; }
+  .ag-notas .est { font-size: 12px; color: var(--tinta-3); }
+  .ag-notas .est.ok { color: var(--ok); }
   /* --- Agenda de la reunión --- */
   .agenda { background: var(--panel); border: 1px solid var(--linea); border-left: 3px solid var(--azul); padding: 26px 30px; }
   .agenda .head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
@@ -141,13 +146,17 @@
       <label class="ag-item"><input type="checkbox"><span><b>La curva de compras:</b> arrancamos bien, se estancó, y ahora hay señales nuevas<small>El estancamiento probablemente vino por exceso de retargeting. Las campañas nuevas con el contenido en test ya empiezan a mover, y es sobre eso que hay que escalar.</small></span></label>
       <label class="ag-item"><input type="checkbox"><span><b>El algoritmo necesita ciclos para aprender</b><small>Cada vez que se cambia el contenido vuelve a empezar. Escalar algo que ya genera compras es más rápido que buscar un ángulo nuevo desde cero.</small></span></label>
       <label class="ag-item"><input type="checkbox"><span><b>Decidir sobre la cuenta publicitaria</b><small>Levantar el límite de la línea de crédito de Meta o abrir una nueva a nombre de Casa Fight. Sin techo no se puede subir presupuesto aunque las campañas funcionen.</small></span></label>
-      <label class="ag-item"><input type="checkbox"><span>Ángulos nuevos de contenido, fuera de lo que hacen los influencers<small>Tomando como referencia lo que hacen En Palabras y Con El Kora. Las piezas están en Drive para aprobar.</small></span></label>
+      <label class="ag-item"><input type="checkbox"><span>Ángulos nuevos de contenido, fuera de lo que hacen los influencers<small>Tomando como referencia lo que hacen En Palabras y Con El Kora. Ya están aprobadas y listas para salir.</small></span></label>
       <label class="ag-item"><input type="checkbox"><span>Los reviews de la web ya están sumados y ayudan mucho<small>Es lo que da confianza a alguien que llega de un anuncio sin conocer la marca.</small></span></label>
       <label class="ag-item"><input type="checkbox"><span>Más tráfico a las páginas de combos<small>Suben el ticket promedio y son mejor puerta de entrada que un producto suelto para quien todavía no sabe cuál juego quiere.</small></span></label>
       <label class="ag-item"><input type="checkbox"><span>Apelación de la cuenta de TikTok<small>Rechazada tras arrancar campañas, sin razones claras. Sin novedades todavía.</small></span></label>
       <div class="ag-notas">
         <div class="l">Notas de la reunión</div>
         <textarea id="ag-notas" placeholder="Lo que salga de la charla"></textarea>
+        <div class="fila">
+          <button type="button" id="ag-guardar">Guardar</button>
+          <span class="est" id="ag-est"></span>
+        </div>
       </div>
     </div>
   </section>
@@ -156,33 +165,33 @@
   <section>
     <div class="sec-head">
       <h2>Números del período</h2>
-      <span class="note">25 jul – 23 ago 2026</span>
+      <span class="note">25 jul – 25 ago 2026</span>
     </div>
     <div class="sec-rule"></div>
     <div class="kpis">
       <div class="kpi azul">
         <div class="label">Inversión en ads</div>
-        <div class="value">$634.463</div>
+        <div class="value">$710.000</div>
         <div class="foot">Meta Ads · ARS</div>
       </div>
       <div class="kpi">
         <div class="label">Ventas</div>
-        <div class="value">15</div>
-        <div class="foot">$710.137 en revenue · ticket prom. $47.342</div>
+        <div class="value">18</div>
+        <div class="foot">$863.137 en revenue · ticket prom. $47.952</div>
       </div>
       <div class="kpi">
         <div class="label">CPA</div>
-        <div class="value">$42.298</div>
+        <div class="value">$39.444</div>
         <div class="foot">Por venta, atribución total a Meta</div>
       </div>
       <div class="kpi magenta">
         <div class="label">ROAS</div>
-        <div class="value">1,12x</div>
+        <div class="value">1,22x</div>
         <div class="foot">Revenue / inversión</div>
       </div>
     </div>
     <div class="nota">
-      <b>Objetivo de mejora.</b> Cortar el CPA al menos a un tercio: de $42.298 a la zona de $14.000 por venta, para que cada campaña genere más profit. El camino: concentrar presupuesto en el formato ganador, escalar los videos UGC nuevos y mejorar la eficiencia de Google Ads, que ya está corriendo.
+      <b>Objetivo de mejora.</b> Cortar el CPA al menos a un tercio: de $39.444 a la zona de $13.000 por venta, para que cada campaña genere más profit. El camino: concentrar presupuesto en el formato ganador, escalar los videos UGC nuevos y mejorar la eficiencia de Google Ads, que ya está corriendo.
     </div>
   </section>
 
@@ -258,6 +267,11 @@
           <span class="tag ok">Resuelto</span>
         </div>
         <div class="item">
+          <div class="t">Ángulos nuevos de contenido</div>
+          <div class="m">Ángulos que no estaban en el contenido de influencers, tomando como referencia lo que hacen En Palabras y Con El Kora. Aprobados y listos para salir.</div>
+          <span class="tag ok">Aprobado</span>
+        </div>
+        <div class="item">
           <div class="t">Reviews en la web</div>
           <div class="m">Se sumaron y ayudan mucho: es lo que da confianza a quien llega de un anuncio sin conocer la marca.</div>
           <span class="tag ok">Sumado</span>
@@ -271,11 +285,6 @@
 
       <div class="col">
         <h3>En curso</h3>
-        <div class="item">
-          <div class="t">Ángulos nuevos de contenido</div>
-          <div class="m">Estamos probando ángulos que no estaban en el contenido de influencers, tomando como referencia lo que hacen En Palabras y Con El Kora. Las piezas están en Drive para aprobar.</div>
-          <span class="tag espera">De ustedes</span>
-        </div>
         <div class="item">
           <div class="t">Aprobación de los videos UGC</div>
           <div class="m">Las piezas nuevas están en el tablero de aprobaciones, con el link de Drive.</div>
@@ -371,8 +380,22 @@
       }));
     } catch (e) {}
   }
+  var est = document.getElementById('ag-est');
+  var btn = document.getElementById('ag-guardar');
+
+  function aviso(txt, ok) {
+    if (!est) return;
+    est.textContent = txt;
+    est.className = 'est' + (ok ? ' ok' : '');
+    if (ok) setTimeout(function () { if (est.textContent === txt) est.textContent = ''; }, 3000);
+  }
+
   boxes.forEach(function (b) { b.addEventListener('change', save); });
-  if (notas) notas.addEventListener('input', save);
+  if (notas) {
+    // Autoguardado igual, para que no se pierda nada si cierran sin apretar.
+    notas.addEventListener('input', function () { save(); aviso('Sin guardar', false); });
+  }
+  if (btn) btn.addEventListener('click', function () { save(); aviso('Guardado', true); });
 })();
 </script>
 </body>
