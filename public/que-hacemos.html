@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A+ Growth — Qué Hacemos</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F2EFEA; --card: #FAF8F5; --ink: #2E2C28; --ink-2: #55524D; --muted: #8A8781;
+    --orange: #E04E10; --orange-soft: #F0956A; --hair: #DDD8CF; --dark: #14120F;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --serif: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink-2); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  ::selection { background: var(--orange); color: #fff; }
+
+  .rv { opacity: 0; transform: translateY(26px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+  .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .rv { opacity: 1; transform: none; transition: none; } }
+
+  header { position: relative; overflow: hidden; padding: 56px 0 60px; }
+  header::after { content: ""; position: absolute; right: -180px; top: -180px; width: 520px; height: 520px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(224,78,16,0.18) 0%, rgba(224,78,16,0) 70%); filter: blur(30px); pointer-events: none; }
+  .head-row { display: flex; align-items: center; gap: 20px; margin-bottom: 52px; }
+  .wordmark { font-size: 23px; font-weight: 800; color: var(--ink); letter-spacing: -0.01em; white-space: nowrap; }
+  .wordmark span { color: var(--orange); }
+  .head-row .rule { flex: 1; height: 1px; background: var(--ink); }
+  .head-row .tag { font-size: 12px; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; white-space: nowrap; }
+  h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(44px, 7vw, 76px); color: var(--ink); letter-spacing: -0.015em; line-height: 1.02; max-width: 16ch; text-wrap: balance; }
+  h1 em { font-style: italic; color: var(--orange); }
+  .sub { margin-top: 20px; font-size: 17.5px; max-width: 60ch; text-wrap: pretty; }
+  .sub b { color: var(--ink); }
+  .stats { display: flex; gap: 52px; flex-wrap: wrap; margin-top: 38px; }
+  .stat .n { font-family: var(--serif); font-size: 34px; font-weight: 600; color: var(--orange); letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+  .stat .d { font-size: 13px; color: var(--ink-2); margin-top: 2px; }
+
+  section.disc { padding: 72px 0 20px; }
+  .sec-head { display: flex; align-items: baseline; gap: 18px; border-bottom: 1px solid var(--ink); padding-bottom: 18px; margin-bottom: 26px; }
+  .sec-head .no { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 20px; color: var(--orange); }
+  .sec-head h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(30px, 4.4vw, 46px); color: var(--ink); letter-spacing: -0.01em; }
+  .sec-intro { font-size: 15.5px; max-width: 74ch; text-wrap: pretty; margin-bottom: 10px; }
+  .sec-intro b { color: var(--ink); }
+
+  /* What we do grid */
+  .do-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; padding: 24px 0 10px; }
+  .do { background: var(--card); border: 1px solid var(--hair); border-radius: 12px; padding: 24px 24px 22px;
+    box-shadow: 0 2px 6px rgba(30,28,24,.04); transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s; }
+  .do:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -22px rgba(224,78,16,.22); }
+  .do .k { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--orange); }
+  .do h3 { font-size: 16.5px; font-weight: 700; color: var(--ink); margin: 6px 0 6px; }
+  .do p { font-size: 13.5px; }
+
+  /* How we work */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; padding: 24px 0 10px; }
+  .step { border-left: 2px solid var(--orange); padding: 4px 0 4px 20px; }
+  .step .n { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--orange); }
+  .step h3 { font-size: 16px; font-weight: 700; color: var(--ink); margin: 4px 0 6px; }
+  .step p { font-size: 13.5px; }
+
+  /* Packages */
+  .packs { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 22px; padding: 28px 0 10px; align-items: stretch; }
+  .pack { background: var(--card); border: 1px solid var(--hair); border-radius: 14px; padding: 30px 28px 26px; display: flex; flex-direction: column;
+    box-shadow: 0 2px 6px rgba(30,28,24,.05), 0 20px 50px -22px rgba(30,28,24,.14); transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s; }
+  .pack:hover { transform: translateY(-5px); box-shadow: 0 4px 10px rgba(30,28,24,.06), 0 36px 80px -24px rgba(224,78,16,.26); }
+  .pack.hl { background: var(--dark); border-color: var(--dark); }
+  .pack.hl h3, .pack.hl .price { color: #F5F1EA; }
+  .pack.hl li, .pack.hl .for { color: #B9B3A9; }
+  .pack.hl li::before { color: var(--orange-soft); }
+  .pack .badge { align-self: flex-start; font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); background: rgba(224,78,16,0.1); padding: 4px 12px; border-radius: 999px; margin-bottom: 14px; }
+  .pack.hl .badge { background: rgba(240,149,106,0.16); color: var(--orange-soft); }
+  .pack h3 { font-family: var(--serif); font-weight: 600; font-size: 25px; color: var(--ink); letter-spacing: -0.01em; }
+  .pack .for { font-size: 13px; margin-top: 4px; }
+  .pack ul { list-style: none; margin: 18px 0 20px; display: grid; gap: 9px; }
+  .pack li { font-size: 13.5px; padding-left: 20px; position: relative; }
+  .pack li::before { content: "→"; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
+  .pack .price { margin-top: auto; font-family: var(--serif); font-weight: 600; font-size: 21px; color: var(--ink); border-top: 1px solid var(--hair); padding-top: 16px; }
+  .pack.hl .price { border-color: rgba(255,255,255,0.14); }
+  .pack .price small { display: block; font-family: var(--sans); font-weight: 400; font-size: 12px; color: var(--muted); margin-top: 3px; }
+  .packs-note { font-size: 12.5px; color: var(--muted); padding: 14px 0 8px; max-width: 70ch; }
+
+  /* Case studies band */
+  .band { margin: 84px 0 0; background: var(--dark); border-radius: 18px; padding: 54px 48px; position: relative; overflow: hidden; }
+  .band::after { content: ""; position: absolute; right: -140px; bottom: -160px; width: 420px; height: 420px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(224,78,16,0.35) 0%, rgba(224,78,16,0) 70%); filter: blur(24px); pointer-events: none; }
+  .band h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(28px, 4vw, 42px); color: #F5F1EA; letter-spacing: -0.01em; max-width: 22ch; text-wrap: balance; }
+  .band h2 em { font-style: italic; color: var(--orange-soft); }
+  .band .proof { display: flex; gap: 44px; flex-wrap: wrap; margin: 26px 0 30px; }
+  .band .proof .p .n { font-family: var(--serif); font-size: 27px; font-weight: 600; color: var(--orange-soft); }
+  .band .proof .p .d { font-size: 12.5px; color: #B9B3A9; margin-top: 2px; }
+  .cta { display: inline-block; font-size: 13.5px; font-weight: 700; letter-spacing: 0.06em; color: var(--dark); background: #F5F1EA; text-decoration: none; padding: 14px 28px; border-radius: 999px; transition: transform .2s, background .2s; }
+  .cta:hover { transform: translateY(-2px); background: #fff; }
+
+  footer { border-top: 1px solid var(--hair); margin-top: 80px; padding: 26px 0 44px; font-size: 13px; color: var(--muted); }
+  footer a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--hair); }
+  footer a:hover { color: var(--orange); border-color: var(--orange); }
+  footer .private { margin-top: 6px; }
+
+  @media (max-width: 720px) { .band { padding: 40px 28px; } .stats { gap: 32px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="head-row rv">
+      <div class="wordmark">A<span>+</span> Growth</div>
+      <div class="rule"></div>
+      <div class="tag">Qué hacemos</div>
+    </div>
+    <h1 class="rv">Growth, de <em>punta a punta.</em></h1>
+    <p class="sub rv">A+ Growth es un equipo de performance marketing. Planificamos, construimos y operamos el sistema de adquisición completo: <b>los ads, los funnels, el contenido y las páginas donde aterrizan</b>, y reportamos todo en un portal de cliente en vivo que podés abrir cualquier día de la semana.</p>
+    <div class="stats rv">
+      <div class="stat"><div class="n">$125M+</div><div class="d">Revenue generado para clientes</div></div>
+      <div class="stat"><div class="n">$20M+</div><div class="d">Inversión publicitaria administrada</div></div>
+      <div class="stat"><div class="n">170+</div><div class="d">Clientes en múltiples verticales</div></div>
+    </div>
+  </div>
+</header>
+
+<section class="disc" id="what">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">01</span><h2>Qué Hacemos</h2></div>
+    <p class="sec-intro rv">Un solo equipo en todo el funnel, para que nada se pierda entre "la agencia de ads" y "los de la web".</p>
+    <div class="do-grid">
+      <div class="do rv"><span class="k">Adquirir</span><h3>Paid Social</h3><p>Meta ads con testeo creativo estructurado: hooks, ángulos y social proof, escalando lo que convierte, no lo que queda lindo.</p></div>
+      <div class="do rv"><span class="k">Adquirir</span><h3>Google Ads &amp; PPC</h3><p>Search y Shopping sobre una arquitectura real de keywords: branded, non-branded y negativas que mantienen la inversión limpia.</p></div>
+      <div class="do rv"><span class="k">Componer</span><h3>SEO &amp; GEO</h3><p>Visibilidad orgánica en Google y dentro de las respuestas de la IA. Optimizamos para ser la fuente que la IA cita, no un link azul más.</p></div>
+      <div class="do rv"><span class="k">Convertir</span><h3>Funnels &amp; VSL</h3><p>Landings, VSLs y funnels de webinar hechos para un solo trabajo: dar play, mirar, agendar o comprar.</p></div>
+      <div class="do rv"><span class="k">Convertir</span><h3>Creatividad &amp; UGC</h3><p>Creativos short-form y pipelines de UGC: guiones, hooks, edición y ciclos de iteración medidos contra la cuenta.</p></div>
+      <div class="do rv"><span class="k">Retener</span><h3>Email &amp; Lifecycle</h3><p>Newsletters, flows de nurturing y automatización de CRM (GoHighLevel y compañía) para que los leads se vuelvan reuniones y los compradores vuelvan.</p></div>
+      <div class="do rv"><span class="k">Base</span><h3>Webs &amp; Landings</h3><p>Sitios completos y e-commerce que cargan rápido, convierten y se mantienen fáciles de actualizar.</p></div>
+      <div class="do rv"><span class="k">Visibilidad</span><h3>Portal de Cliente en Vivo</h3><p>Cada cliente tiene su portal: reportes, tablero de aprobaciones, banco de ideas, recaps de reuniones y un documento de contexto vivo. Sin caja negra.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="disc" id="how">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">02</span><h2>Cómo Trabajamos</h2></div>
+    <div class="steps">
+      <div class="step rv"><div class="n">i.</div><h3>Auditoría y base</h3><p>Abrimos las cuentas, el funnel y la data, encontramos por dónde se pierde plata, y arreglamos el tracking primero para que cada decisión posterior corra sobre números reales.</p></div>
+      <div class="step rv"><div class="n">ii.</div><h3>Un plan de 90 días</h3><p>Un orden de construcción concreto con responsables y fechas, no un deck de estrategia vago. Lo ves, lo aprobás, lo ejecutamos.</p></div>
+      <div class="step rv"><div class="n">iii.</div><h3>Cadencia semanal</h3><p>Revisiones semanales cortas sobre un reporte en vivo, decisiones registradas, y un portal donde aprobás creativos y dejás ideas cuando quieras.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="disc" id="packages">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">03</span><h2>Paquetes de Servicio</h2></div>
+    <p class="sec-intro rv">Tres formas de trabajar con nosotros. Todos los proyectos incluyen el portal de cliente en vivo, reporte semanal y un responsable con nombre y apellido de nuestro lado.</p>
+    <div class="packs">
+      <div class="pack rv">
+        <span class="badge">Adquirir</span>
+        <h3>Paid Media Engine</h3>
+        <p class="for">Para marcas que necesitan demanda calificada ahora, en Meta y Google.</p>
+        <ul>
+          <li>Arquitectura de campañas, audiencias y pujas</li>
+          <li>Sistema de testeo creativo (hooks, ángulos, UGC)</li>
+          <li>Alineación de landing: lo que el ad promete, la página lo cumple</li>
+          <li>Optimización semanal y reporte en vivo</li>
+        </ul>
+        <div class="price">USD 1,700–2,200/mes<small>Escala con la inversión y el volumen creativo</small></div>
+      </div>
+      <div class="pack hl rv">
+        <span class="badge">El más completo</span>
+        <h3>Full-Funnel Growth</h3>
+        <p class="for">Para negocios que quieren un solo equipo a cargo de todo el sistema.</p>
+        <ul>
+          <li>Todo lo del Paid Media Engine</li>
+          <li>Funnels, VSLs y landings construidos e iterados</li>
+          <li>Email y flows de lifecycle</li>
+          <li>Actualizaciones web y trabajo de conversión incluidos</li>
+          <li>Plan de crecimiento mensual revisado juntos</li>
+        </ul>
+        <div class="price">USD 2,300–3,500/mes<small>Según los canales y campañas en el alcance</small></div>
+      </div>
+      <div class="pack rv">
+        <span class="badge">Componer</span>
+        <h3>SEO &amp; GEO</h3>
+        <p class="for">Para marcas que quieren visibilidad que compone mientras los ads corren.</p>
+        <ul>
+          <li>Base técnica y arquitectura del sitio</li>
+          <li>Motor de contenido apuntado a lo que los compradores realmente buscan</li>
+          <li>GEO: optimizado para ser citado en las respuestas de la IA</li>
+          <li>Reporte mensual de Search Console, números honestos</li>
+        </ul>
+        <div class="price">Desde USD 1,800/mes<small>Más un setup inicial único · mínimo 6 meses</small></div>
+      </div>
+    </div>
+    <p class="packs-note rv">No sabés cuál encaja? Mandanos tu sitio y tu objetivo y te decimos por dónde arrancaríamos, incluida la respuesta honesta si es "todavía no con nosotros".</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="band rv" id="proof">
+    <h2>Preferimos mostrar <em>resultados</em> antes que promesas.</h2>
+    <div class="proof">
+      <div class="p"><div class="n">2x → 7x</div><div class="d">de ROAS con un empuje de 20x en volumen de UGC</div></div>
+      <div class="p"><div class="n">5.3x</div><div class="d">de tracción orgánica en un año (SEO)</div></div>
+      <div class="p"><div class="n">63,000+</div><div class="d">leads a un CPL promedio de $4.5</div></div>
+      <div class="p"><div class="n">$50 → $5</div><div class="d">de costo por lead B2B calificado</div></div>
+    </div>
+    <a class="cta" href="/casos">Ver los casos de éxito →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div><b style="color:var(--ink)">Amir Gomez</b> — Founder, A+ Growth · <a href="https://www.weareaplus.net">weareaplus.net</a> · <a href="mailto:amir@amirgomez.com">amir@amirgomez.com</a></div>
+    <div class="private">Página privada: se comparte por invitación, no está indexada.</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>

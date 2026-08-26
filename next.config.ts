@@ -94,6 +94,14 @@ const nextConfig: NextConfig = {
       {
         source: '/what-we-do',
         destination: '/services.html'
+      },
+      {
+        source: '/que-hacemos',
+        destination: '/que-hacemos.html'
+      },
+      {
+        source: '/casos',
+        destination: '/casos.html'
       }
     ];
   },
