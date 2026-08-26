@@ -109,7 +109,7 @@ export function middleware(req: NextRequest) {
   if (req.nextUrl.pathname.endsWith('.html')) return NextResponse.next();
   // Clientes con una sola sección: la raíz sirve el dashboard directamente,
   // así no hay que mantener un hub duplicado con un único tile.
-  const SOLO_DASHBOARD = ['domic', 'qhu', 'casafight', 'liz-solari'];
+  const SOLO_DASHBOARD = ['domic', 'qhu', 'liz-solari'];
   if (SOLO_DASHBOARD.includes(client)) {
     return NextResponse.rewrite(new URL(`/clients/${client}-dashboard.html`, req.url));
   }

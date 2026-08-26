@@ -99,6 +99,24 @@
   .win { background: #EDF6F1; border-left: 3px solid var(--ok); padding: 15px 19px; font-size: 13.5px; color: var(--tinta-2); margin-top: 12px; }
   .win b { color: var(--tinta); font-weight: 600; }
   @media (max-width: 780px) { .curva { grid-template-columns: 1fr; } }
+  /* --- Agenda de la reunión --- */
+  .agenda { background: var(--panel); border: 1px solid var(--linea); border-left: 3px solid var(--azul); padding: 26px 30px; }
+  .agenda .head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  .agenda h3 { font-size: 19px; font-weight: 600; }
+  .agenda .date { font-size: 13px; color: var(--azul); font-weight: 600; letter-spacing: 0.05em; }
+  .agenda .hint { font-size: 12.5px; color: var(--tinta-3); margin-bottom: 12px; }
+  .ag-item { display: flex; align-items: flex-start; gap: 13px; padding: 14px 0; border-bottom: 1px solid var(--linea); cursor: pointer; }
+  .ag-item:last-of-type { border-bottom: none; }
+  .ag-item input { margin-top: 3px; width: 16px; height: 16px; accent-color: var(--azul); flex: none; }
+  .ag-item span { font-size: 14px; color: var(--tinta-2); }
+  .ag-item span b { color: var(--tinta); font-weight: 600; }
+  .ag-item span small { display: block; font-size: 12.5px; color: var(--tinta-3); margin-top: 3px; }
+  .ag-item input:checked + span { color: var(--tinta-3); }
+  .ag-item input:checked + span b { color: var(--tinta-3); }
+  .ag-notas { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--linea); }
+  .ag-notas .l { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tinta-3); margin-bottom: 7px; }
+  .ag-notas textarea { width: 100%; font-family: var(--sans); font-size: 13.5px; padding: 11px 13px; border: 1px solid var(--linea); background: var(--crema); color: var(--tinta); outline: none; resize: vertical; min-height: 70px; }
+  .ag-notas textarea:focus { border-color: var(--azul); background: var(--panel); }
 </style>
 </head>
 <body data-client="casafight" data-page="dashboard">
@@ -112,56 +130,24 @@
     <div style="margin-top:14px;"><a href="/clients/casafight" style="font-size:12.5px; color:var(--azul); text-decoration:none;">← Volver al portal</a></div>
   </header>
 
-  <!-- ============ LECTURA ============ -->
+  <!-- ============ AGENDA ============ -->
   <section>
-    <div class="sec-head">
-      <h2>Cómo venimos</h2>
-      <span class="note">Lectura al 26 de agosto</span>
-    </div>
-
-    <div class="lect">
-      <p>
-        Arrancamos con un nivel de compras positivo, después se estancó, y ahora estamos viendo señales
-        buenas de las campañas nuevas con el contenido que estamos testeando. Es el recorrido normal de
-        una cuenta que arranca: <b>el algoritmo necesita ciclos para entender qué genera compras</b>, y
-        cada vez que se cambia el contenido vuelve a aprender.
-      </p>
-
-      <div class="curva">
-        <div class="fase-c buena">
-          <div class="et">Al principio</div>
-          <h4>Compras desde el arranque</h4>
-          <p>Buen nivel inicial. La demanda existe y el producto se vende.</p>
-        </div>
-        <div class="fase-c mala">
-          <div class="et">Después</div>
-          <h4>Se estancó</h4>
-          <p>Probable saturación por exceso de retargeting: siempre a la misma gente, que ya vio todo.</p>
-        </div>
-        <div class="fase-c ahora">
-          <div class="et">Ahora</div>
-          <h4>Señales nuevas</h4>
-          <p>Las campañas con el contenido nuevo empiezan a mover. Es sobre eso que hay que escalar.</p>
-        </div>
+    <div class="agenda">
+      <div class="head">
+        <h3>Para conversar</h3>
+        <span class="date">26 &middot; 08 &middot; 2026</span>
       </div>
-
-      <p>
-        Lo que sigue no es cambiar todo otra vez, sino <b>dejar correr lo que está dando señal y subirle
-        presupuesto</b>. Escalar algo que ya genera compras es más rápido que buscar un ángulo nuevo desde cero,
-        pero necesita que el algoritmo tenga volumen para aprender.
-      </p>
-
-      <div class="dec">
-        <b>Hay que decidir sobre la cuenta publicitaria.</b> Para escalar necesitamos más techo del que da
-        hoy la línea de crédito de Meta. Las opciones son levantar el límite de la línea actual o abrir una
-        nueva a nombre de Casa Fight. Es la definición que más condiciona el ritmo: sin techo, no se puede
-        subir presupuesto aunque las campañas estén funcionando.
-      </div>
-
-      <div class="win">
-        <b>Los reviews en la web ayudan mucho.</b> Vimos que se sumaron y es de las cosas que más mueven la
-        aguja en confianza: alguien que llega de un anuncio y no conoce la marca necesita ver que otros ya
-        compraron. Cuantos más haya, mejor convierte todo lo demás.
+      <p class="hint">Marcá cada punto a medida que se trata.</p>
+      <label class="ag-item"><input type="checkbox"><span><b>La curva de compras:</b> arrancamos bien, se estancó, y ahora hay señales nuevas<small>El estancamiento probablemente vino por exceso de retargeting. Las campañas nuevas con el contenido en test ya empiezan a mover, y es sobre eso que hay que escalar.</small></span></label>
+      <label class="ag-item"><input type="checkbox"><span><b>El algoritmo necesita ciclos para aprender</b><small>Cada vez que se cambia el contenido vuelve a empezar. Escalar algo que ya genera compras es más rápido que buscar un ángulo nuevo desde cero.</small></span></label>
+      <label class="ag-item"><input type="checkbox"><span><b>Decidir sobre la cuenta publicitaria</b><small>Levantar el límite de la línea de crédito de Meta o abrir una nueva a nombre de Casa Fight. Sin techo no se puede subir presupuesto aunque las campañas funcionen.</small></span></label>
+      <label class="ag-item"><input type="checkbox"><span>Ángulos nuevos de contenido, fuera de lo que hacen los influencers<small>Tomando como referencia lo que hacen En Palabras y Con El Kora. Las piezas están en Drive para aprobar.</small></span></label>
+      <label class="ag-item"><input type="checkbox"><span>Los reviews de la web ya están sumados y ayudan mucho<small>Es lo que da confianza a alguien que llega de un anuncio sin conocer la marca.</small></span></label>
+      <label class="ag-item"><input type="checkbox"><span>Más tráfico a las páginas de combos<small>Suben el ticket promedio y son mejor puerta de entrada que un producto suelto para quien todavía no sabe cuál juego quiere.</small></span></label>
+      <label class="ag-item"><input type="checkbox"><span>Apelación de la cuenta de TikTok<small>Rechazada tras arrancar campañas, sin razones claras. Sin novedades todavía.</small></span></label>
+      <div class="ag-notas">
+        <div class="l">Notas de la reunión</div>
+        <textarea id="ag-notas" placeholder="Lo que salga de la charla"></textarea>
       </div>
     </div>
   </section>
@@ -310,6 +296,11 @@
           <div class="m">Las campañas ya corren; el foco ahora es mejorar su eficiencia.</div>
           <span class="tag curso">Nuestro</span>
         </div>
+        <div class="item">
+          <div class="t">Más tráfico a los Combos</div>
+          <div class="m">Estamos llevando gente a las páginas de combos en lugar de a productos sueltos. Suben el ticket promedio y son la mejor entrada para alguien que llega por un anuncio y todavía no sabe cuál juego quiere.</div>
+          <span class="tag curso">Nuestro</span>
+        </div>
       </div>
 
       <div class="col">
@@ -361,5 +352,28 @@
   <footer>Casafight</footer>
 </div>
 <script src="/clients/portal-edit.js" defer></script>
+
+<script>
+(function () {
+  var K = 'casafight-agenda';
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.ag-item input'));
+  var notas = document.getElementById('ag-notas');
+  try {
+    var st = JSON.parse(localStorage.getItem(K)) || {};
+    boxes.forEach(function (b, i) { b.checked = !!(st.c && st.c[i]); });
+    if (st.n && notas) notas.value = st.n;
+  } catch (e) {}
+  function save() {
+    try {
+      localStorage.setItem(K, JSON.stringify({
+        c: boxes.map(function (b) { return b.checked ? 1 : 0; }),
+        n: notas ? notas.value : ''
+      }));
+    } catch (e) {}
+  }
+  boxes.forEach(function (b) { b.addEventListener('change', save); });
+  if (notas) notas.addEventListener('input', save);
+})();
+</script>
 </body>
 </html>
