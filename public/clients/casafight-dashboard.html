@@ -81,6 +81,24 @@
     .board { grid-template-columns: 1fr; }
     .fecha { grid-template-columns: 92px 1fr; }
   }
+  /* --- Lectura del período --- */
+  .lect { background: var(--panel); border: 1px solid var(--linea); border-left: 3px solid var(--azul); padding: 22px 26px; }
+  .lect p { font-size: 14px; color: var(--tinta-2); max-width: 84ch; }
+  .lect p + p { margin-top: 11px; }
+  .lect b { color: var(--tinta); font-weight: 600; }
+  .curva { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 18px 0; }
+  .fase-c { background: var(--crema); padding: 14px 16px; border-top: 3px solid var(--linea); }
+  .fase-c.buena { border-top-color: var(--ok); }
+  .fase-c.mala { border-top-color: var(--alerta); }
+  .fase-c.ahora { border-top-color: var(--azul); }
+  .fase-c .et { font-size: 10px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--tinta-3); }
+  .fase-c h4 { font-size: 14.5px; font-weight: 600; margin: 5px 0 5px; }
+  .fase-c p { font-size: 12.5px; color: var(--tinta-2); }
+  .dec { background: #FDF4EC; border-left: 3px solid var(--alerta); padding: 15px 19px; font-size: 13.5px; color: var(--tinta-2); margin-top: 16px; }
+  .dec b { color: var(--tinta); font-weight: 600; }
+  .win { background: #EDF6F1; border-left: 3px solid var(--ok); padding: 15px 19px; font-size: 13.5px; color: var(--tinta-2); margin-top: 12px; }
+  .win b { color: var(--tinta); font-weight: 600; }
+  @media (max-width: 780px) { .curva { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body data-client="casafight" data-page="dashboard">
@@ -90,9 +108,63 @@
     <img class="logo" src="https://acdn-us.mitiendanube.com/stores/006/471/699/themes/common/logo-641374067-1761592253-6c05fa98bddb4063ea9d92d80eb92db21761592253-640-0.webp" alt="Casafight">
     <h1>Dashboard</h1>
     <p class="sub">Todo lo que está en movimiento en un solo lugar: campañas, contenido, ventas y el calendario comercial.</p>
-    <div class="updated">Actualizado 24 de agosto de 2026</div>
+    <div class="updated">Actualizado 26 de agosto de 2026</div>
     <div style="margin-top:14px;"><a href="/clients/casafight" style="font-size:12.5px; color:var(--azul); text-decoration:none;">← Volver al portal</a></div>
   </header>
+
+  <!-- ============ LECTURA ============ -->
+  <section>
+    <div class="sec-head">
+      <h2>Cómo venimos</h2>
+      <span class="note">Lectura al 26 de agosto</span>
+    </div>
+
+    <div class="lect">
+      <p>
+        Arrancamos con un nivel de compras positivo, después se estancó, y ahora estamos viendo señales
+        buenas de las campañas nuevas con el contenido que estamos testeando. Es el recorrido normal de
+        una cuenta que arranca: <b>el algoritmo necesita ciclos para entender qué genera compras</b>, y
+        cada vez que se cambia el contenido vuelve a aprender.
+      </p>
+
+      <div class="curva">
+        <div class="fase-c buena">
+          <div class="et">Al principio</div>
+          <h4>Compras desde el arranque</h4>
+          <p>Buen nivel inicial. La demanda existe y el producto se vende.</p>
+        </div>
+        <div class="fase-c mala">
+          <div class="et">Después</div>
+          <h4>Se estancó</h4>
+          <p>Probable saturación por exceso de retargeting: siempre a la misma gente, que ya vio todo.</p>
+        </div>
+        <div class="fase-c ahora">
+          <div class="et">Ahora</div>
+          <h4>Señales nuevas</h4>
+          <p>Las campañas con el contenido nuevo empiezan a mover. Es sobre eso que hay que escalar.</p>
+        </div>
+      </div>
+
+      <p>
+        Lo que sigue no es cambiar todo otra vez, sino <b>dejar correr lo que está dando señal y subirle
+        presupuesto</b>. Escalar algo que ya genera compras es más rápido que buscar un ángulo nuevo desde cero,
+        pero necesita que el algoritmo tenga volumen para aprender.
+      </p>
+
+      <div class="dec">
+        <b>Hay que decidir sobre la cuenta publicitaria.</b> Para escalar necesitamos más techo del que da
+        hoy la línea de crédito de Meta. Las opciones son levantar el límite de la línea actual o abrir una
+        nueva a nombre de Casa Fight. Es la definición que más condiciona el ritmo: sin techo, no se puede
+        subir presupuesto aunque las campañas estén funcionando.
+      </div>
+
+      <div class="win">
+        <b>Los reviews en la web ayudan mucho.</b> Vimos que se sumaron y es de las cosas que más mueven la
+        aguja en confianza: alguien que llega de un anuncio y no conoce la marca necesita ver que otros ya
+        compraron. Cuantos más haya, mejor convierte todo lo demás.
+      </div>
+    </div>
+  </section>
 
   <!-- ============ NÚMEROS ============ -->
   <section>
@@ -200,6 +272,11 @@
           <span class="tag ok">Resuelto</span>
         </div>
         <div class="item">
+          <div class="t">Reviews en la web</div>
+          <div class="m">Se sumaron y ayudan mucho: es lo que da confianza a quien llega de un anuncio sin conocer la marca.</div>
+          <span class="tag ok">Sumado</span>
+        </div>
+        <div class="item">
           <div class="t">Keywords y copys de Google Ads</div>
           <div class="m">Campañas branded y non-branded con negativas, publicadas.</div>
           <span class="tag ok">Listo</span>
@@ -208,6 +285,11 @@
 
       <div class="col">
         <h3>En curso</h3>
+        <div class="item">
+          <div class="t">Ángulos nuevos de contenido</div>
+          <div class="m">Estamos probando ángulos que no estaban en el contenido de influencers, tomando como referencia lo que hacen En Palabras y Con El Kora. Las piezas están en Drive para aprobar.</div>
+          <span class="tag espera">De ustedes</span>
+        </div>
         <div class="item">
           <div class="t">Aprobación de los videos UGC</div>
           <div class="m">Las piezas nuevas están en el tablero de aprobaciones, con el link de Drive.</div>
@@ -226,11 +308,6 @@
         <div class="item">
           <div class="t">Optimización de Google Ads</div>
           <div class="m">Las campañas ya corren; el foco ahora es mejorar su eficiencia.</div>
-          <span class="tag curso">Nuestro</span>
-        </div>
-        <div class="item">
-          <div class="t">Reviews en la web</div>
-          <div class="m">Sumar reviews a la tienda para empujar la conversión.</div>
           <span class="tag curso">Nuestro</span>
         </div>
       </div>
