@@ -52,7 +52,7 @@ export function middleware(req: NextRequest) {
   }
 
   const match = req.nextUrl.pathname.match(
-    /^\/clients\/([^/]+?)(?:\.html)?(?:\/(approvals|reports|ideas|transcripts|context|budgets|dashboard|masterplan|frameworks|qa|brandvoice|contrato|marca|tareas)(?:\/(\d{4}-\d{2}-\d{2}))?)?\/?$/
+    /^\/clients\/([^/]+?)(?:\.html)?(?:\/(approvals|reports|ideas|transcripts|context|budgets|dashboard|masterplan|frameworks|qa|brandvoice|contrato|marca|tareas|trainings)(?:\/(\d{4}-\d{2}-\d{2}))?)?\/?$/
   );
   if (!match) return NextResponse.next();
 
@@ -73,13 +73,14 @@ export function middleware(req: NextRequest) {
     client.endsWith('-frameworks') ||
     client.endsWith('-qa') ||
     client.endsWith('-brandvoice') ||
+    client.endsWith('-trainings') ||
     client.endsWith('-contrato') ||
     client.endsWith('-marca') ||
     client.endsWith('-tareas') ||
     client.endsWith('-budgets') ||
     /-report-\d{4}-\d{2}-\d{2}$/.test(client)
   ) {
-    const base = client.replace(/-(hub|approvals|ideas|transcripts|context|budgets|dashboard|masterplan|frameworks|qa|brandvoice|contrato|marca|tareas|report-\d{4}-\d{2}-\d{2})$/, '');
+    const base = client.replace(/-(hub|approvals|ideas|transcripts|context|budgets|dashboard|masterplan|frameworks|qa|brandvoice|contrato|marca|tareas|trainings|report-\d{4}-\d{2}-\d{2})$/, '');
     return NextResponse.rewrite(new URL(`/clients/${base}-login.html`, req.url));
   }
 
@@ -100,6 +101,7 @@ export function middleware(req: NextRequest) {
   if (section === 'frameworks') return NextResponse.rewrite(new URL(`/clients/${client}-frameworks.html`, req.url));
   if (section === 'qa') return NextResponse.rewrite(new URL(`/clients/${client}-qa.html`, req.url));
   if (section === 'brandvoice') return NextResponse.rewrite(new URL(`/clients/${client}-brandvoice.html`, req.url));
+  if (section === 'trainings') return NextResponse.rewrite(new URL(`/clients/${client}-trainings.html`, req.url));
   if (section === 'contrato') return NextResponse.rewrite(new URL(`/clients/${client}-contrato.html`, req.url));
   if (section === 'marca') return NextResponse.rewrite(new URL(`/clients/${client}-marca.html`, req.url));
   if (section === 'tareas') return NextResponse.rewrite(new URL(`/clients/${client}-tareas.html`, req.url));
