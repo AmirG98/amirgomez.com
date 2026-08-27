@@ -140,6 +140,11 @@
   .stat-row:last-child { border-bottom: none; }
   .stat-row .lbl { color: var(--ink-2); } .stat-row .num { font-weight: 600; font-variant-numeric: tabular-nums; }
   @media (max-width: 900px) { .kpis { grid-template-columns: repeat(2,1fr); } }
+  .repnav { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 0 0 18px; font-size: 12px; }
+  .repnav .lbl { font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-right: 4px; }
+  .repnav a { text-decoration: none; color: var(--ink-2); border: 1px solid var(--hairline); padding: 6px 13px; font-weight: 600; }
+  .repnav a:hover { border-color: var(--accent); color: var(--accent); }
+  .repnav a.on { background: var(--accent); border-color: var(--accent); color: #fff; }
 </style>
 </head>
 <body data-client="human-at-scale" data-page="reports">
@@ -162,6 +167,8 @@
     <span class="arw">OPEN &rarr;</span>
   </a>
 
+
+  <div class="repnav"><span class="lbl">Reporting cycle</span><a class="on" href="/clients/human-at-scale/reports">Jul 24 – Aug 20</a><a href="/clients/human-at-scale/reports/2026-07-24">Jul 13–23</a><a href="/clients/human-at-scale/reports/2026-07-10">Jun 25 – Jul 12</a><a href="/clients/human-at-scale/reports/2026-06-26">Jun 12–25</a></div>
   <div class="rtabs" id="tabs">
     <button class="on" data-p="p-sum">Summary</button>
     <button data-p="p-li">LinkedIn ads</button>
