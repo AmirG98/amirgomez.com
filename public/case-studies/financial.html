@@ -104,6 +104,16 @@
   #lb img { width: 100%; border-radius: 10px; display: block; }
   #lb figcaption { color: #B8B3AB; font-size: 13px; padding-top: 12px; text-align: center; }
 
+  /* ---------- Nota ONG / fe ---------- */
+  .faith { margin-top: 40px; background: var(--card); border: 1px solid var(--hair); border-left: 3px solid var(--orange);
+    border-radius: 0 14px 14px 0; padding: 24px 28px; max-width: 900px; }
+  .faith .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+  .faith h3 { font-family: var(--serif); font-weight: 600; font-size: clamp(20px, 2.4vw, 25px); color: var(--ink); margin-bottom: 8px; text-wrap: balance; }
+  .faith p { font-size: 14.5px; max-width: 66ch; text-wrap: pretty; }
+  .faith p b { color: var(--ink); }
+  .faith a { color: var(--orange); font-weight: 700; text-decoration: none; }
+  .faith a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
   /* ---------- Modelo ad-VSL-conversion ---------- */
   .flow { display: flex; align-items: stretch; gap: 14px; flex-wrap: wrap; margin: 30px 0 8px; }
   .flow .f { flex: 1 1 200px; background: var(--card); border: 1px solid var(--hair); border-radius: 12px; padding: 18px 20px; position: relative; }
@@ -333,6 +343,21 @@
         </figure>
       </div>
     </article>
+
+    <div class="faith rv">
+      <div class="chips">
+        <span class="chip name">Neverthirst</span>
+        <span class="chip">Nonprofit</span>
+        <span class="chip">Faith-based</span>
+        <span class="chip attr">Amir · personal track record</span>
+      </div>
+      <h3>We have also raised money for Christian causes.</h3>
+      <p>During his collaboration with Giant Partners, Amir ran fundraising campaigns for
+        <b>Neverthirst</b>, a Christian nonprofit bringing clean water to unreached communities,
+        <b>raising more than $1 million</b>. Speaking authentically to an audience that leads with
+        faith is not theory for us. It is work we have already done, and done well.
+        <a href="https://neverthirst.org" target="_blank" rel="noopener">neverthirst.org ↗</a></p>
+    </div>
   </div>
 </section>
 
