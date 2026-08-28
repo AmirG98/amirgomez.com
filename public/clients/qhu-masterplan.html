@@ -155,6 +155,22 @@
   .jump a.on .i { background: rgba(255,255,255,.16); color: #fff; }
   section[id] { scroll-margin-top: 82px; }
 
+  /* --- Pilares de redes --- */
+  .pilares { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  .pil { position: relative; overflow: hidden; background: #fff; border: 1px solid var(--linea); border-radius: 3px; padding: 26px 28px 28px;
+    box-shadow: 0 1px 2px rgba(20,25,46,.03); transition: transform .28s cubic-bezier(.2,.7,.2,1), box-shadow .28s; }
+  .pil:hover { transform: translateY(-3px); box-shadow: 0 18px 38px -22px rgba(20,25,46,.28); }
+  .pil::before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--indigo) 0%, rgba(67,56,240,.15) 100%); }
+  .pil .pk { display: inline-flex; align-items: center; gap: 8px; font-size: 10px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--indigo-deep); }
+  .pil .pk i { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--indigo-soft); font-style: normal; font-size: 10px; }
+  .pil h4 { font-size: 19px; font-weight: 800; letter-spacing: -0.025em; margin: 12px 0 8px; }
+  .pil > p { font-size: 13.5px; color: var(--tinta-2); line-height: 1.6; }
+  .pil .rows { margin-top: 16px; padding-top: 15px; border-top: 1px solid var(--linea); display: grid; gap: 11px; }
+  .pil .r { display: grid; grid-template-columns: 82px 1fr; gap: 14px; align-items: baseline; }
+  .pil .r .rk { font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--tinta-3); }
+  .pil .r .rv2 { font-size: 12.8px; color: var(--tinta-2); line-height: 1.5; }
+  .pil .r .rv2 b { color: var(--tinta); font-weight: 600; }
+
   /* --- Presupuesto y creativos --- */
   .cols2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
   .box { background: #fff; border: 1px solid var(--linea); padding: 24px 26px; border-radius: 3px;
@@ -206,13 +222,14 @@
     <div class="jumpwrap">
       <nav class="jump" id="jump">
         <a href="#motor"><span class="i">1</span>El motor</a>
-        <a href="#senales"><span class="i">2</span>Señales</a>
-        <a href="#fases"><span class="i">3</span>Plan por fases</a>
-        <a href="#inversion"><span class="i">4</span>Inversión y método</a>
-        <a href="#angulos"><span class="i">5</span>Ángulos</a>
-        <a href="#definiciones"><span class="i">6</span>Definiciones</a>
-        <a href="#whatsapp"><span class="i">7</span>WhatsApp</a>
-        <a href="#horizonte"><span class="i">8</span>El horizonte</a>
+        <a href="#redes"><span class="i">2</span>Redes</a>
+        <a href="#senales"><span class="i">3</span>Señales</a>
+        <a href="#fases"><span class="i">4</span>Plan por fases</a>
+        <a href="#inversion"><span class="i">5</span>Inversión y método</a>
+        <a href="#angulos"><span class="i">6</span>Ángulos</a>
+        <a href="#definiciones"><span class="i">7</span>Definiciones</a>
+        <a href="#whatsapp"><span class="i">8</span>WhatsApp</a>
+        <a href="#horizonte"><span class="i">9</span>El horizonte</a>
       </nav>
     </div>
 
@@ -284,6 +301,45 @@
     </section>
 
     <!-- COMO SE MIDE -->
+
+    <!-- ============ REDES ============ -->
+    <section id="redes">
+      <div class="sec-head">
+        <h2>Redes como motor de captaci&oacute;n</h2>
+        <span class="note">Instagram y Facebook</span>
+      </div>
+      <div class="sec-rule"></div>
+      <p style="font-size:14px;color:var(--tinta-2);max-width:80ch;margin-bottom:18px;">Instagram y Facebook son <b>el motor general de captaci&oacute;n</b> de QHU: es donde vive la audiencia de due&ntilde;os de veh&iacute;culos y donde se puede segmentar por zona con la precisi&oacute;n que el modelo necesita. No trabajan un solo objetivo: sostienen <b>dos pilares</b> que se alimentan entre s&iacute;.</p>
+      <div class="pilares">
+        <div class="pil">
+          <span class="pk"><i>01</i>Pilar uno</span>
+          <h4>Reconocimiento de marca</h4>
+          <p>QHU nombra una categor&iacute;a que todav&iacute;a no existe en la cabeza de la gente. Antes de que alguien busque el servicio, tiene que entender que el problema tiene soluci&oacute;n. Este pilar construye esa idea y hace que la marca ya suene cuando el usuario llega al mostrador del taller.</p>
+          <div class="rows">
+            <div class="r"><span class="rk">Formato</span><span class="rv2">Contenido educativo y de alcance: qu&eacute; es un historial de servicios, por qu&eacute; importa al comprar usado, qu&eacute; se pierde sin &eacute;l.</span></div>
+            <div class="r"><span class="rk">Objetivo</span><span class="rv2">Alcance y recordaci&oacute;n. Se optimiza por <b>gente nueva alcanzada</b>, no por clicks.</span></div>
+            <div class="r"><span class="rk">Se&ntilde;al</span><span class="rv2">Crecimiento del alcance por zona y menciones espont&aacute;neas de la marca.</span></div>
+          </div>
+        </div>
+        <div class="pil">
+          <span class="pk"><i>02</i>Pilar dos</span>
+          <h4>Captaci&oacute;n de usuarios</h4>
+          <p>El que ya entendi&oacute; el problema tiene que hacer algo, y ese algo es una sola acci&oacute;n: poner su patente en el buscador. Sin formularios, sin registro, sin fricci&oacute;n. Cada b&uacute;squeda es una persona con un veh&iacute;culo real en una zona concreta, y ese es el dato que despu&eacute;s usa ventas para hablar con el taller.</p>
+          <div class="rows">
+            <div class="r"><span class="rk">Formato</span><span class="rv2">Piezas directas al buscador de patente, segmentadas por radio sobre las zonas de los talleres objetivo.</span></div>
+            <div class="r"><span class="rk">Objetivo</span><span class="rv2">Tr&aacute;fico y acci&oacute;n. Se optimiza por <b>costo por b&uacute;squeda de patente</b>.</span></div>
+            <div class="r"><span class="rk">Se&ntilde;al</span><span class="rv2">Volumen de b&uacute;squedas por zona y qu&eacute; porcentaje vuelve a consultar.</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="nota">
+        <b>Por qu&eacute; los dos y no uno solo.</b> Captaci&oacute;n sin reconocimiento obliga a explicar la categor&iacute;a entera dentro del anuncio, y eso encarece cada b&uacute;squeda. Reconocimiento sin captaci&oacute;n construye una marca que nadie usa. Corriendo juntos, el contenido de marca abarata la conversi&oacute;n del contenido directo: cuando la persona ya escuch&oacute; de QHU, poner la patente deja de ser un salto de fe.
+      </div>
+      <div class="nota" style="background:#fff;border-left-color:var(--tinta-3);">
+        <b>C&oacute;mo se reparte la inversi&oacute;n.</b> Al arranque el peso va a captaci&oacute;n, porque es la que devuelve se&ntilde;al medible en d&iacute;as y valida qu&eacute; zonas responden. El reconocimiento sube a medida que se abren zonas nuevas: ah&iacute; conviene entrar antes con marca y despu&eacute;s con el pedido de acci&oacute;n.
+      </div>
+    </section>
+
     <section id="senales">
       <div class="sec-head">
         <h2>Cómo sabemos si funciona</h2>
