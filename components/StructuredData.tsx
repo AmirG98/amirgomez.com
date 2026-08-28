@@ -9,7 +9,7 @@ export default function StructuredData() {
     "image": "https://www.amirgomez.com/amir-profile.jpg",
     "founder": {
       "@type": "Person",
-      "name": "Amir Gómez",
+      "name": "Amir Gomez",
       "jobTitle": "Founder & Growth Lead",
       "image": "https://www.amirgomez.com/amir-profile.jpg",
       "url": "https://www.amirgomez.com/about"

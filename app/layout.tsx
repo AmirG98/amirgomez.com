@@ -50,7 +50,7 @@ export const metadata: Metadata = {
         url: "/amir-profile.jpg",
         width: 800,
         height: 800,
-        alt: "Amir Gómez — A+ Growth",
+        alt: "Amir Gomez — A+ Growth",
       },
     ],
   },

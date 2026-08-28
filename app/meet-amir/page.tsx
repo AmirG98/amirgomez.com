@@ -4,7 +4,7 @@ import MeetTheTeamContent from "@/components/MeetTheTeamContent";
 export const metadata: Metadata = {
   title: "Book Your Audit Call — A+ Growth",
   description:
-    "Pick a slot for your 15-minute Meta ads audit call with Amir Gómez — free, virtual, no obligation.",
+    "Pick a slot for your 15-minute Meta ads audit call with Amir Gomez — free, virtual, no obligation.",
   robots: { index: false, follow: false },
 };
 

@@ -145,7 +145,7 @@ export default function AuditLanding() {
           <div className="col">
             <p className="eyebrow">Who&rsquo;s behind it</p>
             <h2>Audited by the person who&rsquo;d run it.</h2>
-            <p><b>Amir Gómez</b> has spent <b>10+ years</b> building paid acquisition for brands in
+            <p><b>Amir Gomez</b> has spent <b>10+ years</b> building paid acquisition for brands in
               the US (LA, Miami) and Latin America — <b>300+ funnels launched</b> across Meta ads,
               Google ads, and AI-assisted creative.</p>
             {/* Métricas reales — las mismas publicadas en el home de weareaplus.net */}
@@ -250,7 +250,7 @@ export default function AuditLanding() {
 
       <footer>
         <div className="col">
-          <span>A+ Growth — Amir Gómez</span>
+          <span>A+ Growth — Amir Gomez</span>
           <a href="https://www.weareaplus.net" target="_blank" rel="noopener">weareaplus.net</a>
           <a href="/privacy">Privacy</a>
         </div>
