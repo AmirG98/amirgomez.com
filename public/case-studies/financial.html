@@ -137,6 +137,22 @@
   @media (max-width: 860px) { .method { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 540px) { .method { grid-template-columns: 1fr; } }
 
+  /* ---------- Pricing ---------- */
+  .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; padding: 34px 0 10px; align-items: stretch; }
+  .plan { background: var(--card); border: 1px solid var(--hair); border-radius: 14px; padding: 26px 24px; display: flex; flex-direction: column; position: relative; }
+  .plan.star { border-color: var(--orange); box-shadow: 0 24px 60px -24px rgba(224,78,16,.25); }
+  .plan .badge { position: absolute; top: -11px; left: 22px; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; background: var(--orange); color: #fff; border-radius: 999px; padding: 4px 12px; }
+  .plan .kick { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); margin-bottom: 6px; }
+  .plan h3 { font-family: var(--serif); font-weight: 600; font-size: 23px; color: var(--ink); margin-bottom: 6px; }
+  .plan .for { font-size: 13.5px; margin-bottom: 14px; }
+  .plan ul { list-style: none; margin: 0 0 18px; flex: 1; }
+  .plan li { font-size: 13.5px; padding: 6px 0 6px 22px; position: relative; border-bottom: 1px solid var(--hair); }
+  .plan li:last-child { border-bottom: 0; }
+  .plan li::before { content: "✓"; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
+  .plan .price { font-family: var(--serif); font-weight: 600; font-size: 25px; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .plan .pnote { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  @media (max-width: 900px) { .plans { grid-template-columns: 1fr; } }
+
   /* ---------- Cierre + librería ---------- */
   .close { margin-top: 70px; background: var(--dark); border-radius: 16px; padding: 40px 38px; }
   .close p.main { font-family: var(--serif); font-weight: 500; font-size: clamp(20px, 2.6vw, 26px); line-height: 1.4; color: #F2EFEA; max-width: 34ch; text-wrap: pretty; }
@@ -348,6 +364,62 @@
         clean tracking, no surprises with your budget.</p></div>
       <div class="m-step"><span class="n">4</span><b>Optimization</b><p>Measure everything
         measurable, improve what the data says. Business results, not vanity metrics.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 · PRICING ============ -->
+<section class="disc" id="pricing">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">05</span><h2>Transparent pricing</h2><span class="count">3 packages</span></div>
+    <p class="sec-intro rv">The same brackets we publish for every prospect. Every engagement
+      includes the <b>live client portal, weekly reporting and a named owner</b> on our side. The
+      ad, VSL and conversion model above lives in <b>Full-Funnel Growth</b>.</p>
+
+    <div class="plans rv">
+      <div class="plan">
+        <p class="kick">Acquire</p>
+        <h3>Paid Media Engine</h3>
+        <p class="for">For brands that need qualified demand now, on Meta and Google.</p>
+        <ul>
+          <li>Campaign architecture, audiences and bidding</li>
+          <li>Creative testing system (hooks, angles, UGC)</li>
+          <li>Landing alignment: what the ad promises, the page delivers</li>
+          <li>Weekly optimization and live reporting</li>
+        </ul>
+        <div class="price">$1,700–2,200/mo</div>
+        <p class="pnote">Scales with ad spend and creative volume</p>
+      </div>
+
+      <div class="plan star">
+        <span class="badge">Most complete</span>
+        <p class="kick">Own the system</p>
+        <h3>Full-Funnel Growth</h3>
+        <p class="for">For businesses that want one team owning the whole system.</p>
+        <ul>
+          <li>Everything in Paid Media Engine</li>
+          <li>Funnels, VSLs and landing pages built and iterated</li>
+          <li>Email and lifecycle flows</li>
+          <li>Web updates and conversion work included</li>
+          <li>Monthly growth plan reviewed together</li>
+        </ul>
+        <div class="price">$2,300–3,500/mo</div>
+        <p class="pnote">Depending on channels and campaigns in scope</p>
+      </div>
+
+      <div class="plan">
+        <p class="kick">Compound</p>
+        <h3>SEO &amp; GEO</h3>
+        <p class="for">For brands that want visibility that compounds while ads run.</p>
+        <ul>
+          <li>Technical foundation and site architecture</li>
+          <li>Content engine targeting what buyers actually search</li>
+          <li>GEO: optimized to be cited inside AI answers</li>
+          <li>Monthly Search Console reporting, honest numbers</li>
+        </ul>
+        <div class="price">From $1,800/mo</div>
+        <p class="pnote">Plus one-time foundation setup · 6-month minimum</p>
+      </div>
     </div>
   </div>
 </section>
