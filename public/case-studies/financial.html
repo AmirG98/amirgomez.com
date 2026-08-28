@@ -102,6 +102,33 @@
   #lb img { width: 100%; border-radius: 10px; display: block; }
   #lb figcaption { color: #B8B3AB; font-size: 13px; padding-top: 12px; text-align: center; }
 
+  /* ---------- Modelo ad-VSL-conversion ---------- */
+  .flow { display: flex; align-items: stretch; gap: 14px; flex-wrap: wrap; margin: 30px 0 8px; }
+  .flow .f { flex: 1 1 200px; background: var(--card); border: 1px solid var(--hair); border-radius: 12px; padding: 18px 20px; position: relative; }
+  .flow .f b { display: block; color: var(--ink); font-size: 16px; margin-bottom: 4px; }
+  .flow .f p { font-size: 13.5px; }
+  .flow .f .fn { font-family: var(--serif); font-style: italic; color: var(--orange); font-size: 15px; margin-bottom: 6px; display: block; }
+  .flow .arrow { align-self: center; font-size: 22px; color: var(--orange); font-weight: 700; }
+  @media (max-width: 700px) { .flow { flex-direction: column; } .flow .arrow { transform: rotate(90deg); align-self: flex-start; margin-left: 20px; } }
+
+  .live-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 26px; padding: 26px 0 8px; }
+  .live { display: block; text-decoration: none; border-radius: 12px; overflow: hidden; background: var(--card); border: 1px solid var(--hair);
+    box-shadow: 0 2px 6px rgba(30,28,24,.05), 0 20px 50px -20px rgba(30,28,24,.16);
+    transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; }
+  .live:hover { transform: translateY(-6px); box-shadow: 0 4px 10px rgba(30,28,24,.06), 0 40px 90px -22px rgba(224,78,16,.28); }
+  .live .bar { display: flex; align-items: center; gap: 7px; background: var(--dark); padding: 9px 13px; }
+  .live .bar i { width: 9px; height: 9px; border-radius: 50%; background: #4A453E; }
+  .live .bar i:first-child { background: var(--orange); }
+  .live .bar .url { margin-left: 8px; font-size: 10.5px; color: #9A958D; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .live .bar .go { margin-left: auto; font-size: 10.5px; font-weight: 700; color: var(--orange-soft); white-space: nowrap; }
+  .live .vp { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: #fff; }
+  .live .vp iframe { position: absolute; top: 0; left: 0; width: 1440px; height: 1080px; border: 0; transform-origin: top left; pointer-events: none; background: #fff; }
+  .live .vp img.fallback { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .live .vp::after { content: ""; position: absolute; inset: 0; }
+  .live .meta { padding: 14px 16px 16px; }
+  .live .meta .name { font-weight: 700; font-size: 15px; color: var(--ink); }
+  .live .meta .what { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+
   /* ---------- Método ---------- */
   .method { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; padding: 34px 0 20px; }
   .m-step .n { width: 30px; height: 30px; border-radius: 50%; background: var(--orange); color: #fff; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
@@ -278,10 +305,38 @@
   </div>
 </section>
 
-<!-- ============ 03 · MÉTODO ============ -->
+<!-- ============ 03 · EL MODELO ============ -->
+<section class="disc" id="model">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">03</span><h2>The model we would run for you</h2><span class="count">Ad · VSL · Conversion</span></div>
+    <p class="sec-intro rv">For a considered, trust-based purchase like merchant services, the
+      structure that consistently performs is simple: <b>the ad opens the door, a VSL does the
+      explaining and the qualifying, and the conversion step arrives pre-sold.</b> The VSL can
+      also be an on-demand webinar, same mechanism with longer form. The lending case above runs
+      exactly this model.</p>
+
+    <div class="flow rv">
+      <div class="f"><span class="fn">Step 1</span><b>Meta ad</b><p>Reaches the right business
+        owner with a specific promise. Its only job is the click, not the sale.</p></div>
+      <span class="arrow">→</span>
+      <div class="f"><span class="fn">Step 2</span><b>VSL page</b><p>A focused video page that
+        explains, builds trust and filters. Or an on-demand webinar for longer arguments.</p></div>
+      <span class="arrow">→</span>
+      <div class="f"><span class="fn">Step 3</span><b>Conversion</b><p>A booked call or
+        application from someone who already understands the offer. The closer's time is
+        protected.</p></div>
+    </div>
+
+    <p class="sec-intro rv" style="margin-top:26px"><b>VSL pages we have built.</b> These previews
+      are the real pages, live. Click any of them to open the full experience.</p>
+    <div class="live-grid rv" id="live-vsl"></div>
+  </div>
+</section>
+
+<!-- ============ 04 · MÉTODO ============ -->
 <section class="disc" id="method">
   <div class="wrap">
-    <div class="sec-head rv"><span class="no">03</span><h2>How we work</h2></div>
+    <div class="sec-head rv"><span class="no">04</span><h2>How we work</h2></div>
     <p class="sec-intro rv">The same method, every account. <b>Controlled, systematic,
       measurable.</b></p>
     <div class="method rv">
@@ -331,6 +386,49 @@
     es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); } });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }) : null;
   document.querySelectorAll('.rv').forEach(function(el){ rio ? rio.observe(el) : el.classList.add('in'); });
+
+  /* VSL examples: embeds vivos escalados */
+  var VSLS = [
+    { url: 'https://go.everpresent.com/preserve-what-matters-b', name: 'EverPresent', what: 'VSL page, radically simple' },
+    { url: 'https://www.augustalawncareservices.com/franchise', name: 'Augusta Lawn Care', what: 'VSL page, long-form franchise pitch', noframe: true },
+    { url: 'https://www.founderaccelerators.com/blueprint-call-es', name: 'Founder Accelerators', what: 'VSL page, Spanish market' }
+  ];
+  function esc(x){ return String(x||'').replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  VSLS.forEach(function(v){
+    var a = document.createElement('a');
+    a.className = 'live rv';
+    a.href = v.url; a.target = '_blank'; a.rel = 'noopener';
+    var host = v.url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+    var inner = v.noframe
+      ? '<img class="fallback" loading="lazy" src="https://image.thum.io/get/width/1200/crop/900/' + v.url + '" alt="' + esc(v.name) + '">'
+      : '<iframe data-src="' + v.url + '" title="' + esc(v.name) + '" loading="lazy" tabindex="-1" scrolling="no"></iframe>';
+    a.innerHTML = '<div class="bar"><i></i><i></i><i></i><span class="url">' + esc(host) + '</span><span class="go">Open live ↗</span></div>' +
+      '<div class="vp">' + inner + '</div>' +
+      '<div class="meta"><div class="name">' + esc(v.name) + '</div><div class="what">' + esc(v.what) + '</div></div>';
+    document.getElementById('live-vsl').appendChild(a);
+    rio && rio.observe(a);
+  });
+  function scaleFrames(){
+    document.querySelectorAll('.live .vp iframe').forEach(function(f){
+      var vp = f.parentElement, sc = vp.clientWidth / 1440;
+      f.style.transform = 'scale(' + sc + ')';
+      f.style.height = Math.ceil(vp.clientHeight / sc) + 'px';
+    });
+  }
+  window.addEventListener('resize', scaleFrames);
+  var lio = ('IntersectionObserver' in window) ? new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if (!e.isIntersecting) return;
+      var f = e.target.querySelector('iframe[data-src]');
+      if (f) { f.src = f.getAttribute('data-src'); f.removeAttribute('data-src'); }
+      lio.unobserve(e.target);
+      scaleFrames();
+    });
+  }, { rootMargin: '400px' }) : null;
+  document.querySelectorAll('.live').forEach(function(el){ lio ? lio.observe(el) : (function(){
+    var f = el.querySelector('iframe[data-src]'); if (f) f.src = f.getAttribute('data-src');
+  })(); });
+  scaleFrames();
 
   var lb = document.getElementById('lb');
   document.addEventListener('click', function(e){
