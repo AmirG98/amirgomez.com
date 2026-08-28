@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies | A+ Growth</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0d0c; --surface: #161513; --line: #292723;
+    --ink: #f2efe9; --txt: #a29e96; --accent: #e85c1f; --accent-soft: #f3a26e;
+    --serif: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--txt); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .col { max-width: 680px; margin: 0 auto; padding: 0 22px; }
+  ::selection { background: var(--accent); color: #fff; }
+
+  .rv { opacity: 0; transform: translateY(22px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+  .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } }
+
+  .topbar { border-bottom: 1px solid var(--line); }
+  .topbar .col { display: flex; align-items: center; justify-content: space-between; padding: 18px 22px; }
+  .wordmark { font-weight: 700; font-size: 17px; color: var(--ink); }
+  .wordmark span { color: var(--accent); }
+  .topbar .tag { font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; }
+
+  .hero { padding: 52px 0 46px; }
+  .prep { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent);
+    border: 1px solid rgba(232,92,31,0.35); border-radius: 999px; padding: 7px 16px; margin-bottom: 22px; }
+  h1 { font-family: var(--serif); font-weight: 550; font-size: clamp(32px, 8vw, 48px); line-height: 1.1; letter-spacing: -0.015em; color: var(--ink); text-wrap: balance; }
+  h1 em { font-style: italic; color: var(--accent); }
+  .sub { margin-top: 18px; font-size: 16.5px; max-width: 34em; text-wrap: pretty; }
+  .sub b { color: var(--ink); font-weight: 600; }
+
+  section { padding: 44px 0 0; }
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  h2 { font-family: var(--serif); font-weight: 550; font-size: clamp(23px, 5.6vw, 30px); line-height: 1.18; color: var(--ink); letter-spacing: -0.01em; text-wrap: balance; }
+
+  /* Quién maneja la cuenta */
+  .who-card { margin-top: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: flex; gap: 18px; align-items: flex-start; flex-wrap: wrap; }
+  .who-card img { width: 84px; height: 84px; border-radius: 12px; object-fit: cover; flex: none; }
+  .who-card .wc-body { flex: 1; min-width: 240px; }
+  .who-card h3 { font-size: 17px; font-weight: 700; color: var(--ink); }
+  .who-card .role { font-size: 12.5px; color: var(--accent-soft); margin-bottom: 8px; }
+  .who-card p { font-size: 14.5px; }
+  .who-card p b { color: var(--ink); }
+  .who-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+  .ws { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 12px; text-align: center; }
+  .ws .n { font-family: var(--serif); font-size: 22px; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .ws .d { font-size: 11.5px; margin-top: 2px; }
+  @media (max-width: 480px) { .who-stats { grid-template-columns: 1fr 1fr; } .who-stats .ws:last-child { grid-column: 1 / -1; } }
+
+  /* Casos */
+  .fitnote { margin-top: 16px; border-left: 3px solid var(--accent); background: rgba(232,92,31,0.08); border-radius: 0 12px 12px 0; padding: 14px 18px; font-size: 14px; }
+  .fitnote b { color: var(--ink); }
+  .case { margin-top: 26px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 24px 22px; }
+  .case .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+  .chip { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 11px; border-radius: 999px; background: rgba(232,92,31,0.1); color: var(--accent-soft); }
+  .chip.attr { background: transparent; border: 1px solid var(--line); color: var(--txt); }
+  .case h3 { font-family: var(--serif); font-weight: 550; font-size: 21px; color: var(--ink); margin-bottom: 12px; text-wrap: balance; }
+  .case .row { margin-bottom: 10px; font-size: 14.5px; }
+  .case .row b { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 3px; }
+  .case .metric { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); font-family: var(--serif); font-size: clamp(19px, 4.6vw, 23px); line-height: 1.35; color: var(--ink); text-wrap: pretty; }
+  .case .metric span { color: var(--accent); }
+
+  /* Cómo trabajamos */
+  .method { margin-top: 20px; display: grid; gap: 12px; }
+  .m-step { display: flex; gap: 14px; align-items: flex-start; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .m-step .n { flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+  .m-step p { font-size: 14px; }
+  .m-step b { color: var(--ink); }
+
+  /* Cierre suave */
+  .close { margin: 52px 0 0; border-top: 1px solid var(--line); padding-top: 36px; }
+  .close p { font-size: 15.5px; max-width: 36em; text-wrap: pretty; }
+  .close p b { color: var(--ink); }
+  .close .sig { margin-top: 20px; font-size: 13.5px; }
+  .close .sig a { color: var(--accent-soft); text-decoration: none; }
+  .close .sig a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  footer { margin-top: 56px; border-top: 1px solid var(--line); }
+  footer .col { padding: 20px 22px 32px; font-size: 12px; display: flex; flex-wrap: wrap; gap: 6px 14px; }
+  .private { letter-spacing: 0.06em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="col">
+    <span class="wordmark">A<span>+</span> Growth</span>
+    <span class="tag">Case Studies</span>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="col">
+    <span class="prep rv">Prepared for David McDaniel · ProLife Payments</span>
+    <h1 class="rv">Controlled, measurable growth for businesses that <em>sell on trust</em>.</h1>
+    <p class="sub rv">Selected work relevant to how ProLife Payments actually acquires customers:
+      considered decisions, high-ticket relationships, and leads that a person closes later.
+      Every account here is run <b>personally by Amir Gómez</b>, with a specialist team behind the
+      execution.</p>
+  </div>
+</header>
+
+<main>
+  <section aria-label="Who runs your account">
+    <div class="col">
+      <p class="eyebrow rv">Who runs your account</p>
+      <h2 class="rv">An operator, not a hand-off.</h2>
+      <div class="who-card rv">
+        <img src="/amir-profile.jpg" alt="Amir Gómez">
+        <div class="wc-body">
+          <h3>Amir Gómez</h3>
+          <p class="role">Founder, A+ Growth</p>
+          <p>10+ years running paid acquisition across Meta, Google, Microsoft and programmatic.
+            <b>Amir builds the strategy and stays inside the ad account</b>, supported by a team of
+            specialists for creative, funnels and analytics. You always know who is making the
+            decisions on your budget, and why.</p>
+        </div>
+      </div>
+      <div class="who-stats rv">
+        <div class="ws"><div class="n">10+</div><div class="d">years in paid acquisition</div></div>
+        <div class="ws"><div class="n">300+</div><div class="d">funnels launched</div></div>
+        <div class="ws"><div class="n">4</div><div class="d">ad platforms mastered</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Case studies">
+    <div class="col">
+      <p class="eyebrow rv">Selected work</p>
+      <h2 class="rv">Three cases that match your buyer.</h2>
+      <div class="fitnote rv"><b>A note on fit:</b> none of these are payments companies, and we
+        will not pretend otherwise. They share the shape of your buyer: a considered, high-ticket
+        decision where an ad generates a qualified lead and a person closes it later. The mechanism
+        is the craft. The industry is the input.</div>
+
+      <article class="case rv">
+        <div class="chips">
+          <span class="chip">Financial services</span>
+          <span class="chip">B2B / B2C lending</span>
+          <span class="chip attr">Amir · personal track record</span>
+        </div>
+        <h3>High-ticket lending deals from a webinar funnel</h3>
+        <p class="row"><b>Challenge</b>Reach brokers and borrowers considering large lending
+          decisions, where nobody buys from a click and every deal closes through a conversation.</p>
+        <p class="row"><b>What was done</b>A campaign Amir personally led: complete funnel built
+          around on-demand webinars, qualifying the lead before any human time is spent. Currently
+          active.</p>
+        <p class="metric"><span>5 new deals</span> worth <span>$1M+ in margin</span>, from
+          <span>$2,744</span> in ad spend.</p>
+      </article>
+
+      <article class="case rv">
+        <div class="chips">
+          <span class="chip">B2B services</span>
+          <span class="chip">Lead generation</span>
+          <span class="chip attr">A+ Growth client work</span>
+        </div>
+        <h3>Qualified B2B leads at one tenth of the cost</h3>
+        <p class="row"><b>Challenge</b>A marketing and data agency in California needed qualified
+          ICP leads at a cost that made outbound meetings viable, not just form fills.</p>
+        <p class="row"><b>What was done</b>We built the funnel end to end, lead magnet included,
+          turning cold audiences into booked meetings. Tooling let us iterate ad creative 12x more
+          frequently than before.</p>
+        <p class="metric">Cost per qualified ICP lead reduced from <span>$50 to $5</span>, with the
+          best ads reaching <span>$2.20 per lead</span>.</p>
+      </article>
+
+      <article class="case rv">
+        <div class="chips">
+          <span class="chip">B2B</span>
+          <span class="chip">Google + Microsoft Ads</span>
+          <span class="chip attr">A+ Growth client work</span>
+        </div>
+        <h3>A methodical rebuild of an inherited PPC program</h3>
+        <p class="row"><b>Challenge</b>We inherited Google Ads and Microsoft Ads accounts for a US
+          advertising agency with a +15% year-over-year revenue target and no clean structure to
+          build on.</p>
+        <p class="row"><b>What was done</b>Eighteen months of systematic funnel work inside the PPC
+          platforms, separating volume strategies at the top of the funnel from conversion
+          strategies at the bottom. No dramatic swings, controlled iteration.</p>
+        <p class="metric">Channel revenue <span>3.7x</span> from 2022 to 2024. Return on ad spend
+          doubled, <span>1.74 to 3.76</span>.</p>
+      </article>
+    </div>
+  </section>
+
+  <section aria-label="How we work">
+    <div class="col">
+      <p class="eyebrow rv">How we work</p>
+      <h2 class="rv">The same method, every account.</h2>
+      <div class="method rv">
+        <div class="m-step"><span class="n">1</span><p><b>Discovery.</b> We learn the business
+          model, the buyer and the numbers before touching anything.</p></div>
+        <div class="m-step"><span class="n">2</span><p><b>Strategy.</b> A plan matched to your
+          resources and goals, with the measurement defined up front.</p></div>
+        <div class="m-step"><span class="n">3</span><p><b>Implementation.</b> Controlled launches,
+          clean tracking, no surprises with your budget.</p></div>
+        <div class="m-step"><span class="n">4</span><p><b>Optimization.</b> Measure everything
+          measurable, improve what the data says to improve. Business results, not vanity
+          metrics.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="col">
+    <div class="close rv">
+      <p><b>The next step is the one we already discussed:</b> a small paid trial on Meta, built
+        from the ProLife Payments site, with a controlled budget and clear measurement. You see
+        exactly how we work before committing to anything.</p>
+      <p class="sig">Amir Gómez · <a href="mailto:amir@amirgomez.com">amir@amirgomez.com</a> ·
+        <a href="https://www.weareaplus.net">weareaplus.net</a></p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="col">
+    <span>A+ Growth</span>
+    <span class="private">Private page, shared by invitation. Not indexed.</span>
+  </div>
+</footer>
+
+<script>
+  var rio = ('IntersectionObserver' in window) ? new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }) : null;
+  document.querySelectorAll('.rv').forEach(function(el){ rio ? rio.observe(el) : el.classList.add('in'); });
+</script>
+</body>
+</html>

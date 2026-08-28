@@ -82,6 +82,7 @@ const nextConfig: NextConfig = {
       { source: '/long-form-training', destination: '/long-form-training.html' },
       { source: '/long-form-training-es', destination: '/long-form-training-es.html' },
       { source: '/interno-web-claude', destination: '/interno-web-claude.html' },
+      { source: '/case-studies/financial', destination: '/case-studies/financial.html' },
       { source: '/entrenamientos', destination: '/entrenamientos.html' },
       {
         source: '/clients/:client',
