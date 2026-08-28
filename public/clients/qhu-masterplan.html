@@ -130,6 +130,39 @@
     h1 { font-size: 24px; }
     .chat-in { flex-direction: column; }
   }
+  /* --- Navegacion interna --- */
+  .jump { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 30px; }
+  .jump a { font-size: 11.5px; font-weight: 600; letter-spacing: 0.04em; color: var(--tinta-2); text-decoration: none; background: #fff; border: 1px solid var(--linea); padding: 8px 14px; transition: all .2s; }
+  .jump a:hover { border-color: var(--indigo); color: var(--indigo); }
+  section[id] { scroll-margin-top: 18px; }
+
+  /* --- Presupuesto y creativos --- */
+  .cols2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .box { background: #fff; border: 1px solid var(--linea); padding: 20px 22px; }
+  .box .bk { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--indigo); }
+  .box h4 { font-size: 16px; font-weight: 700; margin: 7px 0 8px; letter-spacing: -0.01em; }
+  .box p { font-size: 13.5px; color: var(--tinta-2); }
+  .box ul { margin: 9px 0 0 17px; }
+  .box li { font-size: 13px; color: var(--tinta-2); margin-bottom: 5px; }
+  .box b { color: var(--tinta); font-weight: 600; }
+  .money { display: flex; gap: 26px; flex-wrap: wrap; margin: 4px 0 14px; }
+  .money .m .n { font-size: 25px; font-weight: 800; letter-spacing: -0.02em; color: var(--indigo); }
+  .money .m .d { font-size: 12px; color: var(--tinta-2); margin-top: 2px; }
+  .ang { display: grid; gap: 10px; margin-top: 4px; }
+  .ang-row { display: grid; grid-template-columns: 168px 1fr; gap: 18px; background: #fff; border: 1px solid var(--linea); border-left: 2px solid var(--indigo); padding: 14px 18px; }
+  .ang-row .t { font-size: 13.5px; font-weight: 700; color: var(--tinta); }
+  .ang-row .t small { display: block; font-size: 11px; font-weight: 500; color: var(--tinta-3); margin-top: 2px; }
+  .ang-row .x { font-size: 13px; color: var(--tinta-2); }
+  .ang-row .x i { font-style: normal; color: var(--indigo-deep); font-weight: 600; }
+  /* --- Definiciones pendientes --- */
+  .defs { display: grid; gap: 9px; }
+  .def { display: grid; grid-template-columns: 24px 1fr; gap: 12px; background: #fff; border: 1px solid var(--linea); padding: 13px 17px; }
+  .def .ck { font-size: 15px; color: var(--indigo); line-height: 1.2; }
+  .def .c .t { font-size: 13.5px; font-weight: 600; color: var(--tinta); }
+  .def .c .d { font-size: 12.5px; color: var(--tinta-2); margin-top: 3px; }
+  .def.bloq { border-left: 2px solid #C2410C; }
+  .def.bloq .ck { color: #C2410C; }
+  @media (max-width: 720px) { .ang-row { grid-template-columns: 1fr; gap: 6px; } }
 </style>
 </head>
 <body data-client="qhu" data-page="masterplan">
@@ -146,6 +179,17 @@
 
   <div class="body"><div class="body-in">
 
+    <nav class="jump">
+      <a href="#motor">El motor</a>
+      <a href="#senales">Cómo sabemos si funciona</a>
+      <a href="#fases">Plan por fases</a>
+      <a href="#inversion">Inversión y creativos</a>
+      <a href="#angulos">Ángulos a probar</a>
+      <a href="#definiciones">Definiciones pendientes</a>
+      <a href="#whatsapp">WhatsApp</a>
+      <a href="#horizonte">El horizonte</a>
+    </nav>
+
     <!-- OBJETIVO -->
     <section>
       <div class="obj">
@@ -156,7 +200,7 @@
     </section>
 
     <!-- EL MOTOR -->
-    <section>
+    <section id="motor">
       <div class="sec-head">
         <h2>El motor</h2>
         <span class="note">Cada pieza alimenta a la siguiente</span>
@@ -214,7 +258,7 @@
     </section>
 
     <!-- COMO SE MIDE -->
-    <section>
+    <section id="senales">
       <div class="sec-head">
         <h2>Cómo sabemos si funciona</h2>
         <span class="note">Cada pieza tiene su señal</span>
@@ -261,7 +305,7 @@
 
     <!-- HORIZONTE -->
     <!-- ============ PLAN POR FASES ============ -->
-    <section>
+    <section id="fases">
       <div class="sec-head">
         <h2>El plan por fases</h2>
         <span class="note">Lanzamiento en C&oacute;rdoba Capital</span>
@@ -299,15 +343,94 @@
       <a class="guia" href="/clients/docs/qhu-plan-lanzamiento.pdf" target="_blank" rel="noopener" style="margin-top:14px;">
         <span class="ic">PDF</span>
         <span class="tx">
-          <span class="t">El plan completo, en PDF</span>
-          <span class="d">Las tres fases en detalle, el presupuesto de pauta, los &aacute;ngulos creativos a probar y las definiciones que dependen de QHU.</span>
+          <span class="t">La misma informaci&oacute;n en PDF</span>
+          <span class="d">Por si prefieren imprimirla o compartirla con alguien que no tenga acceso al portal. Todo el contenido est&aacute; ac&aacute; abajo tambi&eacute;n.</span>
         </span>
         <span class="arw">ABRIR &rarr;</span>
       </a>
     </section>
 
+
+    <!-- ============ INVERSION Y CREATIVOS ============ -->
+    <section id="inversion">
+      <div class="sec-head">
+        <h2>Inversi&oacute;n y m&eacute;todo</h2>
+        <span class="note">C&oacute;mo se gasta y c&oacute;mo se decide</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="money">
+        <div class="m"><div class="n">USD 30&ndash;50</div><div class="d">por d&iacute;a al arrancar, para medir</div></div>
+        <div class="m"><div class="n">USD 1.500</div><div class="d">mensual recomendado como piso</div></div>
+        <div class="m"><div class="n">5 a 10</div><div class="d">conceptos creativos en paralelo</div></div>
+        <div class="m"><div class="n">3 a 4 d&iacute;as</div><div class="d">antes de cortar o escalar cada uno</div></div>
+      </div>
+      <div class="cols2">
+        <div class="box">
+          <span class="bk">C&oacute;mo se invierte</span>
+          <h4>Primero medir, despu&eacute;s escalar</h4>
+          <p>Se arranca con presupuesto bajo para encontrar qu&eacute; concepto y qu&eacute; zona responden, y reci&eacute;n despu&eacute;s se sube donde el costo por b&uacute;squeda se sostiene. La mayor inversi&oacute;n va en los primeros dos o tres meses, que es lo normal en un lanzamiento: hay que comprar aprendizaje antes de comprar volumen.</p>
+          <ul>
+            <li><b>Segmentaci&oacute;n por radio</b> sobre las zonas de los talleres objetivo, no alcance nacional al principio.</li>
+            <li><b>Sin formularios:</b> todo el tr&aacute;fico va al buscador de patente, que es gratis y no pide registro.</li>
+            <li>El presupuesto sube por zona probada, no de golpe.</li>
+          </ul>
+        </div>
+        <div class="box">
+          <span class="bk">C&oacute;mo se produce</span>
+          <h4>Volumen antes que producci&oacute;n</h4>
+          <p>Est&aacute;ticos y video cortos, explicativos, producidos por A+Growth. Nada de superproducciones: hay que educar sobre una categor&iacute;a que la gente no conoce, y para eso importa m&aacute;s la cantidad de &aacute;ngulos probados que el brillo de cada pieza.</p>
+          <ul>
+            <li>Los conceptos se lanzan juntos y compiten entre s&iacute;.</li>
+            <li>Se eval&uacute;a a los 3 o 4 d&iacute;as: se corta lo que no responde, se refuerza lo que s&iacute;.</li>
+            <li>El ganador marca la l&iacute;nea de la siguiente tanda.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="nota">
+        <b>Lo que no entra todav&iacute;a.</b> Influencers y prensa quedan fuera del arranque: la relaci&oacute;n costo-eficiencia es variable y conviene tener casos reales antes de salir a buscarlos. Se eval&uacute;an caso por caso a partir de la fase 3, cuando ya hay resultados para mostrar.
+      </div>
+    </section>
+
+    <!-- ============ ANGULOS ============ -->
+    <section id="angulos">
+      <div class="sec-head">
+        <h2>&Aacute;ngulos a probar</h2>
+        <span class="note">Las hip&oacute;tesis de la primera tanda</span>
+      </div>
+      <div class="sec-rule"></div>
+      <p style="font-size:13.5px;color:var(--tinta-2);max-width:78ch;margin-bottom:14px;">Nadie busca "historial digital de mi auto" porque no sabe que puede existir. Por eso cada &aacute;ngulo ataca una situaci&oacute;n que la persona <b>s&iacute;</b> reconoce, y reci&eacute;n ah&iacute; aparece QHU como la respuesta.</p>
+      <div class="ang">
+        <div class="ang-row"><div class="t">Comprar usado a ciegas<small>Dolor conocido</small></div><div class="x">"&iquest;C&oacute;mo sab&eacute;s que a ese auto no le bajaron el kilometraje?" Ataca el miedo m&aacute;s concreto del mercado de usados. <i>Buscador de patente como prueba inmediata.</i></div></div>
+        <div class="ang-row"><div class="t">El historial que se perdi&oacute;<small>Situaci&oacute;n cotidiana</small></div><div class="x">Facturas en la guantera, services que nadie recuerda, el mec&aacute;nico que se mud&oacute;. <i>Muestra el problema sin nombrar la categor&iacute;a.</i></div></div>
+        <div class="ang-row"><div class="t">Vale m&aacute;s con historial<small>Beneficio econ&oacute;mico</small></div><div class="x">Un veh&iacute;culo con mantenimiento documentado se vende mejor y m&aacute;s r&aacute;pido. <i>Convierte el registro en inversi&oacute;n, no en tr&aacute;mite.</i></div></div>
+        <div class="ang-row"><div class="t">Consulta gratis<small>Sin fricci&oacute;n</small></div><div class="x">Poner la patente y ver qu&eacute; aparece, sin registro ni datos. <i>El &aacute;ngulo m&aacute;s directo al producto.</i></div></div>
+        <div class="ang-row"><div class="t">Qu&eacute; le toca a tu auto<small>Utilidad inmediata</small></div><div class="x">Si no hay historial cargado, igual devuelve el plan de mantenimiento del fabricante. <i>Entrega valor incluso cuando la base est&aacute; vac&iacute;a.</i></div></div>
+        <div class="ang-row"><div class="t">Ped&iacute;lo en tu taller<small>Cierre del circuito</small></div><div class="x">Al usuario que ya busc&oacute;: c&oacute;mo pedir que le registren el pr&oacute;ximo service. <i>Es el &aacute;ngulo que convierte demanda en presi&oacute;n sobre el taller.</i></div></div>
+      </div>
+    </section>
+
+    <!-- ============ DEFINICIONES ============ -->
+    <section id="definiciones">
+      <div class="sec-head">
+        <h2>Definiciones que dependen de QHU</h2>
+        <span class="note">Lo que necesitamos para avanzar</span>
+      </div>
+      <div class="sec-rule"></div>
+      <div class="defs">
+        <div class="def bloq"><span class="ck">&#9679;</span><div class="c"><div class="t">La lista corta de talleres objetivo</div><div class="d">Entre 30 y 50 de C&oacute;rdoba Capital, elegidos a mano. <b>Bloquea la fase 1:</b> la segmentaci&oacute;n geogr&aacute;fica se arma sobre esas zonas, as&iacute; que sin la lista la pauta no puede salir.</div></div></div>
+        <div class="def bloq"><span class="ck">&#9679;</span><div class="c"><div class="t">L&iacute;nea telef&oacute;nica nueva para WhatsApp API</div><div class="d">Sin la app de WhatsApp instalada. Es el error m&aacute;s com&uacute;n y obliga a rehacer el alta desde cero.</div></div></div>
+        <div class="def"><span class="ck">&#9675;</span><div class="c"><div class="t">Materiales de marca</div><div class="d">Logo final, paleta y tipograf&iacute;a definitiva para poder producir creativos consistentes.</div></div></div>
+        <div class="def"><span class="ck">&#9675;</span><div class="c"><div class="t">Dise&ntilde;o del QR y la calcoman&iacute;a</div><div class="d">La pieza tiene que funcionar como decoraci&oacute;n adaptable a cualquier auto y color: si parece publicidad, el due&ntilde;o no la pega y se corta el circuito.</div></div></div>
+        <div class="def"><span class="ck">&#9675;</span><div class="c"><div class="t">El proceso de ventas en detalle</div><div class="d">Qui&eacute;n contacta al taller, con qu&eacute; gui&oacute;n y en qu&eacute; momento entra la validaci&oacute;n telef&oacute;nica.</div></div></div>
+        <div class="def"><span class="ck">&#9675;</span><div class="c"><div class="t">Fecha de inicio confirmada</div><div class="d">Para amarrar el cronograma de las tres fases a fechas reales.</div></div></div>
+      </div>
+      <div class="nota">
+        <b>Por qu&eacute; estas definiciones van primero.</b> Todo el modelo depende de un orden: elegir talleres, pautar sobre sus zonas, y que el cliente entre pidiendo el registro. Saltear el primer paso convierte la pauta en alcance general, que es exactamente lo que este plan evita.
+      </div>
+    </section>
+
     <!-- ============ WHATSAPP ============ -->
-    <section>
+    <section id="whatsapp">
       <div class="sec-head">
         <h2>Notificaciones por WhatsApp</h2>
         <span class="note">Una pieza que depende de QHU</span>
@@ -337,7 +460,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="horizonte">
       <div class="sec-head">
         <h2>El horizonte</h2>
         <span class="note">Qué esperar en cada tramo</span>
