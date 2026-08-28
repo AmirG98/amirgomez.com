@@ -39,6 +39,38 @@ export async function GET(req: NextRequest, ctx: { params: Promise<{ client: str
   return NextResponse.json({ items: data.result ? JSON.parse(data.result) : [] });
 }
 
+// Borrado de una entrada puntual (por fecha ISO). Solo con clave maestra.
+export async function DELETE(req: NextRequest, ctx: { params: Promise<{ client: string }> }) {
+  const { client } = await ctx.params;
+  const master = req.cookies.get('agrowth_master')?.value;
+  const expected = process.env.AGROWTH_MASTER_KEY;
+  if (!expected || master !== expected) return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
+
+  const cfg = storageConfig();
+  if (!cfg) return NextResponse.json({ error: 'storage_not_configured' }, { status: 503 });
+
+  const fecha = req.nextUrl.searchParams.get('fecha');
+  if (!fecha) return NextResponse.json({ error: 'falta_fecha' }, { status: 400 });
+
+  const key = `feedback:${client}`;
+  const prev = await fetch(`${cfg.url}/get/${encodeURIComponent(key)}`, {
+    headers: { Authorization: `Bearer ${cfg.token}` },
+    cache: 'no-store',
+  });
+  if (!prev.ok) return NextResponse.json({ error: 'storage_error' }, { status: 502 });
+  const data = await prev.json();
+  const items = data.result ? JSON.parse(data.result) : [];
+  const quedan = items.filter((i: { fecha?: string }) => i.fecha !== fecha);
+
+  const put = await fetch(`${cfg.url}/set/${encodeURIComponent(key)}`, {
+    method: 'POST',
+    headers: { Authorization: `Bearer ${cfg.token}` },
+    body: JSON.stringify(quedan),
+  });
+  if (!put.ok) return NextResponse.json({ error: 'storage_error' }, { status: 502 });
+  return NextResponse.json({ ok: true, borradas: items.length - quedan.length });
+}
+
 export async function POST(req: NextRequest, ctx: { params: Promise<{ client: string }> }) {
   const { client } = await ctx.params;
   if (!authorized(req, client)) return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
