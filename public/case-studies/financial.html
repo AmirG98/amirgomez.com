@@ -85,6 +85,23 @@
   .case .detail .row b { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); margin-bottom: 4px; }
   @media (max-width: 860px) { .case { grid-template-columns: 1fr; gap: 22px; } }
 
+  .chip.name { background: transparent; border: 1px solid var(--ink); color: var(--ink); }
+  .case .shotwrap { grid-column: 1 / -1; }
+  .shot { background: var(--card); border: 1px solid var(--hair); border-radius: 12px; overflow: hidden; cursor: zoom-in;
+    box-shadow: 0 2px 6px rgba(30,28,24,.05), 0 24px 60px -18px rgba(30,28,24,.18);
+    transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; max-width: 900px; }
+  .shot:hover { transform: translateY(-6px); box-shadow: 0 4px 10px rgba(30,28,24,.06), 0 40px 90px -20px rgba(224,78,16,.25); }
+  .shot .bar { display: flex; align-items: center; gap: 7px; background: var(--dark); padding: 9px 13px; }
+  .shot .bar i { width: 9px; height: 9px; border-radius: 50%; background: #4A453E; }
+  .shot .bar i:first-child { background: var(--orange); }
+  .shot .bar .url { margin-left: 8px; font-size: 10.5px; letter-spacing: 0.06em; color: #9A958D; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .shot img { width: 100%; height: auto; display: block; }
+  #lb { position: fixed; inset: 0; background: rgba(20,18,15,0.9); display: none; align-items: center; justify-content: center; z-index: 50; padding: 30px; }
+  #lb.open { display: flex; }
+  #lb figure { max-width: 1240px; width: 100%; max-height: 92vh; overflow-y: auto; }
+  #lb img { width: 100%; border-radius: 10px; display: block; }
+  #lb figcaption { color: #B8B3AB; font-size: 13px; padding-top: 12px; text-align: center; }
+
   /* ---------- Método ---------- */
   .method { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; padding: 34px 0 20px; }
   .m-step .n { width: 30px; height: 30px; border-radius: 50%; background: var(--orange); color: #fff; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
@@ -170,6 +187,7 @@
     <article class="case">
       <div class="txt rv">
         <div class="chips">
+          <span class="chip name">Realty Capital Financial</span>
           <span class="chip">Financial services</span>
           <span class="chip">B2B / B2C lending</span>
           <span class="chip attr">Amir · personal track record</span>
@@ -189,11 +207,18 @@
           services: the ad does not close the deal, it produces a qualified conversation. The
           funnel's job is to protect the closer's time.</p>
       </div>
+      <div class="shotwrap rv">
+        <figure class="shot" data-img="/case-studies/webinar-vsl.jpg" data-cap="Realty Capital Financial · campaign results">
+          <div class="bar"><i></i><i></i><i></i><span class="url">meta ads manager · realty capital financial</span></div>
+          <img loading="lazy" src="/case-studies/webinar-vsl.jpg" alt="Realty Capital Financial campaign results">
+        </figure>
+      </div>
     </article>
 
     <article class="case">
       <div class="txt rv">
         <div class="chips">
+          <span class="chip name">Giant Partners</span>
           <span class="chip">B2B services</span>
           <span class="chip">Lead generation</span>
           <span class="chip attr">A+ Growth client work</span>
@@ -203,19 +228,27 @@
           ads reaching <span>$2.20 per lead</span>.</p>
       </div>
       <div class="detail rv">
-        <p class="row"><b>Challenge</b>A marketing and data agency in California needed qualified
-          ICP leads at a cost that made outbound meetings viable, not just form fills.</p>
+        <p class="row"><b>Challenge</b>Giant Partners, a marketing and data agency in California,
+          needed qualified ICP leads at a cost that made outbound meetings viable, not just form
+          fills.</p>
         <p class="row"><b>What was done</b>We built the funnel end to end, lead magnet included,
           turning cold audiences into booked meetings. Tooling let us iterate ad creative 12x more
           frequently than before.</p>
         <p class="row"><b>Why it matters to you</b>Lead quality was the metric, not lead volume.
           The 10x cost drop came from systematic iteration, not from a lucky ad.</p>
       </div>
+      <div class="shotwrap rv">
+        <figure class="shot" data-img="/case-studies/lead-magnet-b2b.jpg" data-cap="Giant Partners · lead magnet funnel and ads">
+          <div class="bar"><i></i><i></i><i></i><span class="url">meta ads manager · giant partners</span></div>
+          <img loading="lazy" src="/case-studies/lead-magnet-b2b.jpg" alt="Giant Partners lead magnet funnel results">
+        </figure>
+      </div>
     </article>
 
     <article class="case">
       <div class="txt rv">
         <div class="chips">
+          <span class="chip name">Giant Partners</span>
           <span class="chip">B2B</span>
           <span class="chip">Google + Microsoft Ads</span>
           <span class="chip attr">A+ Growth client work</span>
@@ -225,15 +258,21 @@
           doubled, <span>1.74 to 3.76</span>.</p>
       </div>
       <div class="detail rv">
-        <p class="row"><b>Challenge</b>We inherited Google Ads and Microsoft Ads accounts for a US
-          advertising agency with a +15% year-over-year revenue target and no clean structure to
-          build on.</p>
+        <p class="row"><b>Challenge</b>We inherited Giant Partners' Google Ads and Microsoft Ads
+          accounts with a +15% year-over-year revenue target and no clean structure to build
+          on.</p>
         <p class="row"><b>What was done</b>Eighteen months of systematic funnel work inside the
           PPC platforms, separating volume strategies at the top of the funnel from conversion
           strategies at the bottom. No dramatic swings, controlled iteration.</p>
         <p class="row"><b>Why it matters to you</b>This is what method looks like over time:
           compounding improvement you can audit quarter by quarter, not spikes you cannot
           explain.</p>
+      </div>
+      <div class="shotwrap rv">
+        <figure class="shot" data-img="/case-studies/ppc-b2b.jpg" data-cap="Giant Partners · PPC program, 2022 to 2024">
+          <div class="bar"><i></i><i></i><i></i><span class="url">google ads · giant partners</span></div>
+          <img loading="lazy" src="/case-studies/ppc-b2b.jpg" alt="Giant Partners PPC results 2022 to 2024">
+        </figure>
       </div>
     </article>
   </div>
@@ -278,6 +317,8 @@
   </div>
 </div>
 
+<div id="lb"><figure><img id="lb-img" src="" alt=""><figcaption id="lb-cap"></figcaption></figure></div>
+
 <footer>
   <div class="wrap">
     <div><b style="color:var(--ink)">Amir Gomez</b> · Founder, A+ Growth · <a href="https://www.weareaplus.net">weareaplus.net</a> · <a href="mailto:amir@amirgomez.com">amir@amirgomez.com</a></div>
@@ -290,6 +331,19 @@
     es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); } });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }) : null;
   document.querySelectorAll('.rv').forEach(function(el){ rio ? rio.observe(el) : el.classList.add('in'); });
+
+  var lb = document.getElementById('lb');
+  document.addEventListener('click', function(e){
+    var shot = e.target.closest('.shot');
+    if (shot) {
+      document.getElementById('lb-img').src = shot.getAttribute('data-img');
+      document.getElementById('lb-cap').textContent = shot.getAttribute('data-cap');
+      lb.classList.add('open');
+    } else if (e.target === lb || e.target.closest('#lb figure')) {
+      lb.classList.remove('open');
+    }
+  });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') lb.classList.remove('open'); });
 </script>
 </body>
 </html>
