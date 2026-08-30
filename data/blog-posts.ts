@@ -87281,6 +87281,276 @@ Because CAPI events are sent from a business's own server rather than fired auto
 
 Install the X Pixel's base code sitewide and event code on key action pages first, then add the Conversions API as a server-side layer on top rather than a replacement — that combination, not the Pixel by itself, is what keeps conversion tracking accurate as more traffic gets blocked at the browser level.`
   },
+  {
+    id: "620",
+    title: "What's the Average Cost Per Lead for Immigration Lawyers on Google Ads in 2026?",
+    slug: "immigration-lawyer-cost-per-lead-google-ads-2026",
+    excerpt: "Immigration lawyers pay roughly $50-$200 per lead on Google Ads in 2026, with specialist campaigns reporting $65-$100 CPL — well under the $131.63 average for all legal practice areas combined.",
+    featuredImage: "https://images.unsplash.com/photo-1589391886645-d51941baf7fb?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-30",
+    category: "Google Ads",
+    tags: ["Google Ads", "Legal Marketing", "Immigration Law", "Cost Per Lead", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Immigration Lawyer Cost Per Lead on Google Ads 2026",
+      metaDescription: "Immigration lawyers pay $50-$200 per lead on Google Ads in 2026, with well-run specialist campaigns reporting $65-$100 CPL and $18-$45 cost per click.",
+      keywords: ["immigration lawyer cost per lead", "immigration attorney google ads cost", "immigration law ppc benchmark 2026", "google ads for immigration lawyers"]
+    },
+    content: `Immigration lawyers typically pay between $50 and $200 per lead on Google Ads in 2026, depending on visa type and market competition, with well-optimized specialist campaigns reporting $65-$100 per lead at 10-12% landing page conversion rates.
+
+## Why Immigration Law Is Cheaper Than Other Legal Practice Areas
+
+Immigration keywords cost $18-$45 per click, according to legal-industry PPC benchmarks — moderate compared to personal injury law, where core terms run $150-$300 or more per click. That lower cost per click is the main reason immigration lead costs land well under the $131.63 average cost per lead reported across all attorney practice areas industry-wide. Less courtroom-litigation urgency and a broader base of firms bidding on longer-tail visa and green card terms keep the auction less aggressive than practice areas built around emergency, high-stakes searches like DUI defense or personal injury.
+
+## What Changes the Price Within That Range
+
+The $50-$200 spread comes down mostly to visa type and geography. Family-based and green card renewal searches tend to sit at the lower end, since the intent is narrower and less competitive. Employment-based visa and asylum-related searches, which draw firms with larger budgets and higher case values, push costs toward the top of the range. Market size matters too — immigration hubs with dense concentrations of law firms bid the keyword pool up, while smaller metro areas with fewer competing firms can land leads closer to the $65-$100 specialist figure.
+
+## Where the Cost Per Lead Number Actually Comes From
+
+Cost per lead depends on cost per click divided by landing page conversion rate, not click cost alone. A firm paying $30 per click with a 3% conversion rate on a generic contact page ends up near $1,000 per lead — nowhere close to specialist benchmarks. Firms hitting the $65-$100 range are running dedicated landing pages built around specific visa categories, with clear next steps like a consultation booking form, and converting at double-digit rates because the page matches the exact search intent rather than sending every click to a general "contact us" page.
+
+## Practice Area Segmentation Matters More Than Total Budget
+
+A firm running one blended "immigration lawyer" campaign across family visas, employment visas, and asylum cases will see its average cost per lead sit somewhere in the middle of the $50-$200 range without ever knowing which case type is actually efficient. Splitting the account into separate campaigns by visa category — each with its own landing page and bid strategy — is what lets a firm see whether it's the $65 family-visa leads or the $180 asylum leads dragging the blended average up, and adjust budget allocation accordingly rather than cutting spend across the board.
+
+## Bottom Line
+
+Budget $50-$200 per lead for a general immigration Google Ads campaign, and treat anything consistently above that range as a signal to tighten keyword targeting or rebuild the landing page around a single visa category rather than a broad "immigration lawyer" pitch — that's the lever that gets a campaign toward the $65-$100 specialist benchmark.`
+  },
+  {
+    id: "621",
+    title: "What's the Average Cost Per Lead for Mortgage Brokers on Google Ads in 2026?",
+    slug: "mortgage-broker-cost-per-lead-google-ads-2026",
+    excerpt: "Independent mortgage brokers generate leads for roughly $30-$70 on Google Ads in 2026 with well-run search campaigns, at an average cost per click of $7.84 for mortgage-related keywords.",
+    featuredImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-30",
+    category: "Google Ads",
+    tags: ["Google Ads", "Mortgage Marketing", "Financial Services", "Cost Per Lead", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Mortgage Broker Cost Per Lead on Google Ads 2026",
+      metaDescription: "Mortgage brokers pay roughly $30-$70 per lead on well-run Google Ads campaigns in 2026, at an average $7.84 cost per click for mortgage search keywords.",
+      keywords: ["mortgage broker cost per lead", "mortgage google ads cost", "loan officer ppc benchmark 2026", "google ads for mortgage brokers"]
+    },
+    content: `Independent mortgage brokers and loan officers who run well-optimized Google Ads campaigns generate leads for $30 to $70 apiece in 2026, at an average cost per click of $7.84 for mortgage-related search keywords.
+
+## Where Mortgage Sits Inside Financial Services
+
+That $30-$70 range sits at the lower end of financial services overall, where cost per lead broadly spans $50 to $150 or more — mortgage and insurance leads typically land at the top of that broader financial-services band, which makes the $30-$70 figure specific to campaigns that are already executing well rather than a floor every advertiser hits automatically. A separate benchmark measuring search ads specifically found a $98 cost per qualified lead, a reminder that "lead" and "qualified lead" are measured differently across sources, and the gap between them matters when comparing numbers from different reports.
+
+## What Separates $30 Leads From $70+ Leads
+
+Location-based keyword modifiers — city or metro names attached to a search term — convert at 40-60% higher rates than generic, non-geographic terms like "mortgage rates" or "home loan." For brokers who serve a defined service area, that means the highest-leverage move is allocating the bulk of budget, roughly 60-70%, to geo-modified keywords rather than spreading spend across broad national terms that pull in unqualified clicks from outside the broker's licensed states.
+
+## Why Dedicated Landing Pages Matter More Here Than the Click Price
+
+At $7.84 average cost per click, the landing page conversion rate does more to move final cost per lead than shaving a dollar off the bid. A campaign sending traffic to a generic homepage instead of a purpose-built page for rate quotes, pre-approval requests, or refinance-specific searches will land well outside the $30-$70 range even at an identical cost per click, because the page isn't matched to what the searcher typed. The same logic applies to product type: a rate-shopping search should route to a page quoting current rates, not a broker's general services overview.
+
+## Seasonality and Rate Environment Shift the Baseline
+
+Search volume and competition for mortgage keywords move with the broader interest rate environment — refinance searches spike when rates drop, while purchase-related searches stay comparatively steady year-round. Brokers evaluating whether their own $45 cost per lead is "good" should compare it against recent months in a similar rate environment rather than a single annual average, since a campaign that looked efficient during a refinance boom can look worse once that search volume dries up, even with no change in how the campaign is run.
+
+## Licensing Adds a Wrinkle Most Other Verticals Don't Have
+
+Mortgage brokers are licensed state by state, which makes broad or automated geo-targeting riskier than in most other lead-gen categories — a click from a state where the broker isn't licensed is a wasted click regardless of how well the landing page converts. Building location targeting around the specific states and metros a broker is actually licensed to serve, rather than relying on Google's default radius targeting from a business address, is a smaller but meaningful factor in keeping the $30-$70 range achievable rather than diluted by unusable clicks from outside the broker's service footprint.
+
+## Bottom Line
+
+Structure Google Ads campaigns around geo-modified, intent-specific keywords — rate quotes, pre-approval, refinance by city — paired with a landing page built for that exact search, and treat $30-$70 per lead as the target for a mature campaign rather than a starting point on day one.`
+  },
+  {
+    id: "622",
+    title: "What's the Average Cost Per Click for DUI Lawyers on Google Ads in 2026?",
+    slug: "dui-lawyer-cost-per-click-google-ads-2026",
+    excerpt: "DUI lawyer keywords average $45-$120 per click on Google Ads in 2026 in major metros, with some competitive markets exceeding $200 per click during peak search hours.",
+    featuredImage: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-30",
+    category: "Google Ads",
+    tags: ["Google Ads", "Legal Marketing", "DUI Law", "Cost Per Click", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "DUI Lawyer Cost Per Click on Google Ads in 2026",
+      metaDescription: "DUI lawyer keywords cost roughly $45-$120 per click on Google Ads in 2026 in major metros, with peak-hour bids exceeding $200 in the most competitive metros.",
+      keywords: ["dui lawyer cost per click", "dui attorney google ads cost", "criminal defense ppc benchmark 2026", "google ads for dui lawyers"]
+    },
+    content: `DUI lawyer keywords average $45 to $120 per click on Google Ads in 2026 across major metropolitan markets, with bids in the most competitive cities exceeding $200 per click during peak search hours.
+
+## Why DUI Keywords Command Premium Pricing
+
+DUI searches carry the kind of urgency that drives auction prices up fast. Someone searching "DUI attorney near me" is often doing so within hours of an arrest, facing license suspension, potential job loss, and criminal penalties — that immediacy means firms are willing to bid aggressively because the searcher is close to hiring, not just researching. Alongside other high-urgency legal terms like personal injury and mesothelioma keywords, DUI consistently ranks among the most expensive clicks in the legal vertical, with average costs exceeding $50 per click and some metro areas regularly clearing $100.
+
+## What Pushes a Market Toward the Top of the Range
+
+City-specific terms like "DUI attorney [city]" or "DUI lawyer near me" routinely run $50-$150 per click in competitive metros, and pricing scales with two things: the density of firms bidding in that market and how much a single case is worth to them. A large metro with dozens of criminal defense firms competing for the same searches pushes costs toward $120-$200+, while a smaller market with fewer competing firms can land closer to the $45 floor of the range.
+
+## Budgeting Around This Cost Structure
+
+Given click prices in this range, monthly budgets for meaningful case volume generally run $2,000 to $8,000 depending on city size and local competition — a budget below that range risks running out of daily spend before generating enough clicks to produce a statistically reliable number of cases. Firms budgeting at the low end of that range should expect case volume concentrated in off-peak periods when competing bids ease off, rather than a steady daily flow.
+
+## Time of Day and Day of Week Change the Effective Price
+
+Because arrests and searches for DUI representation cluster around nights and weekends, competing firms often increase bids during those windows, pushing effective cost per click higher exactly when search volume — and case potential — is also highest. A firm relying on flat, unadjusted bids around the clock ends up either overpaying during low-intent daytime hours or getting outbid during the high-intent weekend-night window when the searches that matter most are actually happening. Dayparting bid adjustments, raising bids during known high-intent windows and pulling back elsewhere, is one of the more direct ways firms in this vertical control cost without simply lowering the overall budget.
+
+## Local Services Ads as an Alternative Cost Structure
+
+Some DUI firms shift part of their budget to Google Local Services Ads, which bill per verified lead rather than per click, as a way to avoid the volatility of a per-click auction that can spike well past $120 without warning during a competitive stretch. That trade-off comes with its own tradeoffs — LSA requires passing Google's screening and background check process, and lead volume is generally lower than a well-run search campaign — but it gives firms a second lever for controlling cost exposure beyond simply lowering search bids.
+
+## Bottom Line
+
+Expect to pay $45-$120 per click for DUI keywords in most markets, budget at least $2,000 a month to generate case volume worth evaluating, and route spend into dayparting and city-specific ad groups rather than broad, unmodified DUI terms if the goal is controlling cost in a market pushing toward the $200 end of the range.`
+  },
+  {
+    id: "623",
+    title: "What's a Good Cost Per Lead for Divorce and Family Law Attorneys on Google Ads?",
+    slug: "divorce-family-law-attorney-cost-per-lead-google-ads-2026",
+    excerpt: "Family law attorneys generate Google Ads leads for roughly $30-$60 in well-run campaigns, though child support leads run as low as $17 and custody leads cost 20% less than divorce leads.",
+    featuredImage: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-30",
+    category: "Google Ads",
+    tags: ["Google Ads", "Legal Marketing", "Family Law", "Cost Per Lead", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Divorce Attorney Cost Per Lead on Google Ads 2026",
+      metaDescription: "Family law attorneys generate Google Ads leads for roughly $30-$60 per lead in well-run campaigns, with child support leads running as cheap as $17 per lead.",
+      keywords: ["divorce attorney cost per lead", "family law google ads cost", "child custody ppc benchmark 2026", "google ads for family lawyers"]
+    },
+    content: `A realistic cost per lead for family law attorneys running well-optimized Google Ads campaigns is $30 to $60, though the number swings well outside that range depending on the specific case type behind the search.
+
+## Case Type Changes the Price More Than the Platform Does
+
+Family law isn't one keyword market — it's several stacked together, and each converts at a different price. Child support searches are the cheapest leads in the category, sometimes as low as $17 per lead, because the searches are narrower and draw less competitive bidding. Divorce leads run more expensive and are treated as the most valuable in the category, since a single divorce case frequently involves both the divorce itself and a child custody component, doubling the case value behind the click. Custody-only searches, by comparison, cost roughly 20% less per lead than divorce searches, and parental-rights cases tend to run more expensive still, while general "family attorney" and adoption queries sit toward the cheaper end alongside child support.
+
+## A Wider Estimate Worth Knowing
+
+Not every source lands in the $30-$60 band — some practitioners report spending $50 to $125 in ad dollars to generate a single call or contact-form submission, a wider range that reflects how much market, keyword mix, and landing page setup affect the final number. Firms evaluating their own campaigns against a single "good" number should treat $30-$60 as achievable for a well-run campaign rather than a guaranteed outcome, and expect the case-type mix in their ad account to shift the blended average up or down from there.
+
+## Looking Past Lead Cost to Consultation Value
+
+Because case types vary so much in value, some firms track cost per booked consultation rather than cost per lead: divorce consultations run $400-$1,000, custody consultations $500-$1,200, and high-net-worth cases $1,500-$4,000. A firm paying $60 per lead but converting only 5% of leads into booked consultations is worse off than one paying $80 per lead at a 15% booking rate — lead cost alone doesn't capture that difference, and campaigns optimized purely for the lowest cost per lead can end up pulling in the least qualified inquiries.
+
+## Why Segmenting by Case Type Is the Single Biggest Lever
+
+A firm running one blended "family law attorney" campaign across child support, custody, and divorce searches will see an average cost per lead somewhere in the middle of these ranges without knowing which case type is dragging it there. Splitting the account into case-type-specific campaigns, each with its own landing page addressing that exact situation, is what lets a firm see the $17 child-support leads and the higher-value divorce leads as separate line items rather than one blended, less actionable number.
+
+## Bottom Line
+
+Segment family law campaigns by case type rather than running one blended "family attorney" ad group — child support and general inquiries should sit in separate campaigns from divorce and custody, since bundling them together obscures which case type is actually driving the account's average cost per lead up or down.`
+  },
+  {
+    id: "624",
+    title: "What's the Average Cost Per Lead for Urgent Care Clinics on Google Ads?",
+    slug: "urgent-care-cost-per-lead-google-ads-2026",
+    excerpt: "Urgent care clinics acquire patient leads for roughly $56-$200 on Google Ads in 2026, among healthcare's lowest ranges, though costs vary sharply by metro from $90 to $260.",
+    featuredImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-30",
+    category: "Google Ads",
+    tags: ["Google Ads", "Healthcare Marketing", "Urgent Care", "Cost Per Lead", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Urgent Care Cost Per Lead on Google Ads in 2026",
+      metaDescription: "Urgent care clinics pay roughly $56 to $200 per lead on Google Ads in 2026, one of healthcare's lowest ranges, though costs vary sharply by local market.",
+      keywords: ["urgent care cost per lead", "urgent care google ads cost", "healthcare ppc benchmark 2026", "google ads for urgent care clinics"]
+    },
+    content: `Urgent care clinics acquire patient leads on Google Ads for roughly $56 to $200 in 2026, making it one of the lower cost-per-lead categories in healthcare marketing, at a cost per click of $4 to $15 for emergency and urgent care search terms.
+
+## Why Urgent Care Runs Cheaper Than Most Healthcare Specialties
+
+Healthcare search ads average $66.02 per lead across specialties broadly, and urgent care's $56 low-end figure sits right at that benchmark rather than above it — a contrast to specialties with longer sales cycles or higher-value procedures, where cost per lead climbs well past $100. Urgent care searches tend to be immediate and local ("urgent care near me," "walk-in clinic open now"), which keeps click costs at $4-$15, modest by healthcare standards, and keeps the keyword pool less crowded than procedure-driven specialties where firms bid aggressively on high-value treatments like cosmetic or elective procedures.
+
+## Geography Swings This Number More Than Almost Anything Else
+
+The same account structure and campaign setup can produce a $90 cost per lead in a market like Des Moines and a $260 cost per lead in Los Angeles — nearly a 3x spread driven entirely by local competition and media costs, not campaign quality. That gap means a clinic operator comparing their own numbers to a single national benchmark risks the wrong conclusion in either direction: a clinic in a smaller metro beating $90 might still be underperforming for that market, while a Los Angeles clinic at $200 could be performing well above average for its local auction.
+
+## Why Cost Per Lead Understates the Real Comparison
+
+Urgent care patients are episodic — they visit once for an acute issue, pay for that single encounter, and may never return, unlike specialties built around recurring visits. That makes urgent care's lower cost-per-lead figure less directly comparable to other healthcare categories on lead cost alone, since the revenue attached to each lead reflects a single visit rather than a patient relationship. A clinic evaluating whether $150 per lead is "good" needs to weigh it against the value of one encounter, not an ongoing patient lifetime value assumption borrowed from a different specialty.
+
+## What This Means for Budget Allocation Across Locations
+
+Multi-location urgent care operators running one shared national campaign risk misallocating budget if every location is judged against the same target cost per lead. A location in a high-cost metro held to the same $90 target as a smaller-market location will appear to be underperforming even when it's operating efficiently for its local auction. Setting location-specific cost per lead targets, informed by that location's actual competitive environment rather than a single company-wide number, is what keeps budget decisions tied to real performance instead of an artifact of where each clinic happens to be.
+
+## Bottom Line
+
+Benchmark urgent care campaigns against local market data, not a single national figure — a clinic in a major metro should expect a materially higher cost per lead than the $56-$90 range seen in smaller markets, and that gap reflects local competition, not campaign performance.`
+  },
+  {
+    id: "625",
+    title: "What's the Minimum Budget for Threads Ads in 2026?",
+    slug: "threads-ads-minimum-budget-2026",
+    excerpt: "Threads ads run on Meta's existing Ads Manager infrastructure at the same roughly $1/day technical minimum as Facebook and Instagram, following Meta's global rollout announced in January 2026.",
+    featuredImage: "https://images.unsplash.com/photo-1611605698335-8b1569810432?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-30",
+    category: "Advertising Strategy",
+    tags: ["Threads Ads", "Meta Ads", "Ad Budget", "Advertising Strategy", "Social Media Advertising"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Threads Ads Minimum Budget in 2026",
+      metaDescription: "Threads ads use Meta's standard roughly $1/day minimum via Ads Manager, following Meta's global rollout of advertising to Threads announced in January 2026.",
+      keywords: ["threads ads minimum budget", "threads ads cost 2026", "meta threads advertising", "how much do threads ads cost"]
+    },
+    content: `Threads ads carry the same technical minimum budget as the rest of Meta's ad platform — roughly $1 per day — because Threads ads run through Meta's existing Ads Manager infrastructure rather than a separate system with its own budget floor.
+
+## Threads Ads Are New — Here's the Timeline
+
+Meta announced on January 21, 2026 that it was rolling out advertising on Threads to all advertisers worldwide, giving marketers access to Threads' 400 million monthly active users through the same Ads Manager tools already used for Facebook and Instagram campaigns. Because Threads sits inside Meta's unified ad system rather than operating as a standalone platform, it inherited Meta's existing minimum spend rules rather than launching with placement-specific minimums of its own.
+
+## What the $1/Day Minimum Actually Buys
+
+A $1/day budget is enough to technically launch a campaign, but it isn't enough to generate meaningful optimization data — Meta's ad delivery system needs a reasonable volume of daily events to exit the learning phase and start optimizing efficiently, and a budget at the platform floor rarely produces that volume. The minimum exists to make testing accessible, not to serve as a realistic operating budget for a campaign expected to produce results, the same way a $1/day Facebook or Instagram campaign would rarely be treated as a real test of a placement's performance.
+
+## Why Early Adoption Makes Threads Worth a Slightly Bigger Test Budget
+
+Estimated cost per click on Threads currently runs $0.30 to $1.50, noticeably lower than established placements like Facebook Feed or Instagram Stories, because auction competition is still light in this early adoption phase — fewer advertisers are bidding for the same inventory. That cost advantage is likely to compress as more advertisers add Threads to their placement mix over time, which makes now a reasonable window to test the placement at a budget high enough to gather real performance data, rather than waiting until competition — and cost — normalizes toward Meta's other placements.
+
+## Setting Up a Threads Test Inside an Existing Meta Account
+
+Because Threads runs through the same Ads Manager as Facebook and Instagram, advertisers with existing Meta campaigns don't need a separate account or approval process to start testing it — Threads can typically be added as an additional placement within an existing campaign's placement settings, or isolated into its own campaign to measure performance independently. Isolating it into its own campaign, rather than lumping it into Meta's automatic placement selection, is the more reliable way to see Threads-specific cost per click and conversion data rather than a blended number across every placement Meta chooses to serve.
+
+## What to Watch Before Committing a Larger Budget
+
+Because Threads ads are still in an early rollout phase as of this writing, inventory availability and targeting options can be narrower than on Facebook or Instagram, and ad formats supported on the placement may expand over the coming months. Advertisers testing now should treat early results as directional rather than final — a strong test at today's low competition doesn't guarantee the same cost-per-click advantage will hold once more advertisers discover the placement and bidding pressure rises toward parity with Meta's more established surfaces.
+
+## Bottom Line
+
+Treat the $1/day figure as Meta's platform-wide technical floor, not a real Threads budget — allocate enough daily spend to clear the learning phase, a few multiples of your target cost-per-result, while Threads' cost-per-click advantage over Facebook and Instagram still holds, since that advantage is a function of current low competition rather than a permanent feature of the placement.`
+  },
 ];
 
 export const blogCategories = [
