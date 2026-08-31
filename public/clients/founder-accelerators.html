@@ -104,6 +104,21 @@
   @media print { body { background: #fff; color: #111; } .js .rv { opacity: 1 !important; transform: none !important; } .picker, #notes-save { display: none !important; } }
   .tbd { opacity: .5; font-style: italic; font-weight: 400 !important; letter-spacing: .01em; }
   .v.tbd { font-size: 15px !important; }
+  /* --- Presupuesto de septiembre --- */
+  .bud { display: grid; gap: 10px; margin: 18px 0 4px; }
+  .bud-row { display: grid; grid-template-columns: 1fr auto; gap: 10px 16px; align-items: baseline; padding: 13px 15px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); border-radius: 9px; }
+  .bud-row .k { font-weight: 600; font-size: 14px; }
+  .bud-row .k small { display: block; font-weight: 400; font-size: 12.5px; color: var(--tinta-3); margin-top: 3px; letter-spacing: 0; }
+  .bud-row .cap { font-family: var(--num); font-size: 19px; font-weight: 600; white-space: nowrap; }
+  .bud-row .cap small { display: block; font-size: 11.5px; font-weight: 400; color: var(--tinta-3); text-align: right; margin-top: 2px; }
+  .bud-tot { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 13px 15px; border-radius: 9px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.11); }
+  .bud-tot .k { font-weight: 700; font-size: 14px; letter-spacing: .02em; }
+  .bud-tot .cap { font-family: var(--num); font-size: 21px; font-weight: 700; }
+  .track { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 14px; }
+  .track .t { padding: 12px 14px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); border-radius: 9px; }
+  .track .t .l { font-size: 11.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--tinta-3); }
+  .track .t .v { font-family: var(--num); font-size: 18px; font-weight: 600; margin-top: 5px; }
+  .track .t .d { font-size: 12.5px; color: var(--tinta-3); margin-top: 4px; line-height: 1.45; }
 </style>
 </head>
 <body data-client="founder-accelerators" data-page="reports">
@@ -254,8 +269,59 @@
     </div>
   </section>
 
+  <section id="presupuesto">
+    <div class="sec-head rv"><span class="n">04</span><h2>Presupuesto de septiembre</h2></div>
+    <div class="sec-rule rv"></div>
+
+    <div class="flag rv">→ <b>Son techos, no objetivos de gasto.</b> El ritmo real de la última semana fue de $233.67 por día. Estos topes lo sostienen ahí sin subirlo, en línea con lo acordado de no incrementar el presupuesto hasta ver ventas. Si una campaña no justifica su techo, gasta menos.</div>
+
+    <div class="bud">
+      <div class="bud-row">
+        <div class="k">Funnel 1:1<small>Reparto interno según rendimiento: la prioridad es social proof, que hoy compra clicks a $1.09 contra $2.98.</small></div>
+        <div class="cap">$125<small>por día</small></div>
+      </div>
+      <div class="bud-row">
+        <div class="k">AI Brain<small>Sostiene el nivel actual mientras corre el split de la landing. Se revisa cuando haya señal de compra repetida.</small></div>
+        <div class="cap">$100<small>por día</small></div>
+      </div>
+      <div class="bud-row">
+        <div class="k">Visit Profile always-on<small>Distribución local de bajo costo: 469 visitas de perfil a $0.07 la semana pasada.</small></div>
+        <div class="cap">$15-20<small>por día</small></div>
+      </div>
+      <div class="bud-tot">
+        <div class="k">Techo total</div>
+        <div class="cap">$240-245<span style="font-size:12.5px;font-weight:400;color:var(--tinta-3);"> por día</span></div>
+      </div>
+    </div>
+
+    <div class="track">
+      <div class="t">
+        <div class="l">Gasto real 23-29 ago</div>
+        <div class="v">$233.67<span style="font-size:12px;font-weight:400;color:var(--tinta-3);">/día</span></div>
+        <div class="d">$1,635.67 en la semana. Es la referencia contra la que se sigue septiembre.</div>
+      </div>
+      <div class="t">
+        <div class="l">1:1 · real vs techo</div>
+        <div class="v">$130.27 / $125</div>
+        <div class="d">Apenas por encima. Se acomoda al techo reasignando hacia social proof.</div>
+      </div>
+      <div class="t">
+        <div class="l">Brain · real vs techo</div>
+        <div class="v">$98.42 / $100</div>
+        <div class="d">Ya está en el nivel del techo. Sin cambios.</div>
+      </div>
+      <div class="t">
+        <div class="l">Visit Profile · real vs techo</div>
+        <div class="v">$4.98 / $15-20</div>
+        <div class="d">Corriendo por debajo. Hay margen para sostener la distribución local.</div>
+      </div>
+    </div>
+
+    <p class="note rv">El seguimiento se hace semana a semana en este mismo reporte: cada lunes se compara el gasto real de cada campaña contra su techo. Ignacio pidió mirar el gasto total de la cuenta y no campaña por campaña, porque el 1:1 y el Brain son complementarios y un mismo lead toca las dos, así que el número que manda es el total.</p>
+  </section>
+
   <section id="pasos">
-    <div class="sec-head rv"><span class="n">04</span><h2>Próximos pasos</h2></div>
+    <div class="sec-head rv"><span class="n">05</span><h2>Próximos pasos</h2></div>
     <div class="sec-rule rv"></div>
     <ol class="steps">
       <li><span class="sn">01</span><span><b>Poner presupuesto en social proof.</b> Es tres veces más barato en CPC y cuatro veces y media en costo por visita al perfil que los creativos tradicionales del 1:1, y es el único de los dos que trajo mensajes. Hoy se lleva $136 contra $776 de la campaña que rinde peor.</span></li>
