@@ -87551,6 +87551,253 @@ Because Threads ads are still in an early rollout phase as of this writing, inve
 
 Treat the $1/day figure as Meta's platform-wide technical floor, not a real Threads budget — allocate enough daily spend to clear the learning phase, a few multiples of your target cost-per-result, while Threads' cost-per-click advantage over Facebook and Instagram still holds, since that advantage is a function of current low competition rather than a permanent feature of the placement.`
   },
+  {
+    id: "626",
+    title: "How Do You Set Up Conversion Tracking for Microsoft (Bing) Ads?",
+    slug: "microsoft-bing-ads-uet-conversion-tracking-setup-2026",
+    excerpt: "Microsoft Advertising conversion tracking runs on one account-wide UET tag placed site-wide, with separate conversion goals layered on top to define what actually counts as a conversion.",
+    featuredImage: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-31",
+    category: "Marketing Technology",
+    tags: ["Microsoft Advertising", "Bing Ads", "UET Tag", "Conversion Tracking", "PPC Setup"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Set Up Conversion Tracking for Microsoft (Bing) Ads",
+      metaDescription: "Microsoft Advertising conversion tracking uses one account-wide UET tag placed site-wide, paired with conversion goals that define what counts as a conversion.",
+      keywords: ["microsoft advertising conversion tracking", "bing ads uet tag", "universal event tracking setup", "bing ads conversion goals"]
+    },
+    content: `Microsoft (Bing) Ads conversion tracking runs on a single JavaScript tag called Universal Event Tracking, or UET — created once under Tools, then Conversion Tracking, then UET tags, placed site-wide in the page template, and paired with separate conversion goals that define which UET-recorded activity actually counts as a conversion.
+
+## How to create the UET tag
+
+Sign in to Microsoft Advertising, open Tools, go to Conversion Tracking, then UET tags, and click Create UET tag. Give the tag a descriptive name and Microsoft Advertising generates a JavaScript snippet. That snippet should be copied in full and not modified before it's installed.
+
+## Where the tag actually goes
+
+UET tags are created at the account level, meaning one tag covers an entire account rather than a single campaign or page. The snippet belongs in the head or body of a site-wide layout template, or deployed through a tag manager, so it loads exactly once on every page rather than being pasted in per page.
+
+## Conversion goals are a separate, required step
+
+A UET tag by itself only records page visits and any custom events fired on the page — it does not, on its own, count anything as a conversion. Conversion goals, configured under Tools, then Conversions, then Conversion goals, reference the UET tag and define the specific activity that should be counted: a destination URL reached, a duration or pages-per-visit threshold crossed, a specific on-page event, or an offline conversion imported later. Skipping this step is the most common setup mistake — a UET tag with zero goals attached will show traffic in reporting but will never register a single conversion, since goals are what translate raw UET signal into the account's actual conversion count.
+
+## Why one tag instead of per-campaign tags
+
+Because the base tag rarely changes once installed, almost all future tracking work happens at the goal level rather than the tag level — adding a new conversion type means creating a new goal referencing the existing tag, not installing a second tag. That's a different mental model from platforms that expect a distinct pixel per campaign or event type, and it's worth confirming before assuming a second UET tag is needed for a new conversion action.
+
+## Verifying the setup is actually working
+
+New UET tags and new conversion goals can take up to 24 hours before Microsoft Advertising starts receiving and reporting data. After that window, check the Tracking status column under Conversion goals: "Recording conversions" confirms the goal is live and working, while "Unverified," "Tag inactive," or "Inactive" means the tag isn't firing correctly on the designated URL or event. Microsoft's own UET Tag Helper browser extension can validate tag and goal firing on any given page before that 24-hour reporting gap makes a broken implementation look like a data problem.
+
+## Bottom Line
+
+Install one account-level UET tag site-wide, then build every conversion action as a separate goal referencing that tag rather than creating new tags — and don't trust reported conversion numbers until each goal shows "Recording conversions" in the status column.`
+  },
+  {
+    id: "627",
+    title: "How Do You Set Up the TikTok Events API for Conversion Tracking?",
+    slug: "tiktok-events-api-pixel-conversion-tracking-setup-2026",
+    excerpt: "TikTok conversion tracking pairs the browser-based TikTok Pixel with the server-side Events API, deduplicated by a shared event ID, since TikTok recommends running both together for full coverage.",
+    featuredImage: "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-31",
+    category: "Marketing Technology",
+    tags: ["TikTok Ads", "Events API", "TikTok Pixel", "Conversion Tracking", "Server-Side Tracking"],
+    featured: false,
+    readingTime: 4,
+    seo: {
+      metaTitle: "How to Set Up the TikTok Events API for Tracking",
+      metaDescription: "TikTok conversion tracking pairs the browser-based Pixel with the server-side Events API, deduplicated by a shared event ID, for complete conversion coverage.",
+      keywords: ["tiktok events api setup", "tiktok pixel conversion tracking", "tiktok server-side tracking", "tiktok ads conversion tracking"]
+    },
+    content: `TikTok conversion tracking works through two connected pieces run together: the browser-based TikTok Pixel, installed as base code on every page, and the server-side Events API, which sends the same events directly from an advertiser's server and is deduplicated against the Pixel using a shared event ID.
+
+## Setting up the TikTok Pixel first
+
+Under Assets, then Events, then Web Events in TikTok Ads Manager, create a new pixel and choose an install method — manual code, a partner integration, or Google Tag Manager. Deploy the base code site-wide, then configure the standard events relevant to the business: ViewContent, AddToCart, InitiateCheckout, and CompletePayment for e-commerce, or Lead for a lead-generation form submission. TikTok's own Pixel Helper browser extension verifies the pixel fires correctly on a live page — a green checkmark confirms it's working.
+
+## Adding the Events API on top
+
+Once the Pixel is live, the Events API is configured from the same pixel: Assets, then Events, then Web Events, select the pixel, and choose Set Up Events API. That generates an access token used to authenticate server-to-server calls sent to TikTok's Events API endpoint. TikTok explicitly recommends implementing the Events API alongside an existing Pixel integration rather than as a replacement for it, framing it as a way to maximize measurement performance rather than an alternative setup path.
+
+## What the server-side payload needs to include
+
+Each event sent through the Events API needs an event_name, a timestamp, the pixel_code, an event_id, a properties object carrying details like value and currency, and a user_data object carrying hashed personally identifiable information used for matching. That event_id is the field that ties a server-side event back to its browser-side counterpart.
+
+## Why deduplication matters
+
+Because the browser Pixel and the server-side Events API can both fire for the same real-world action — a completed purchase, for instance — TikTok deduplicates them using that matching event_id, so a single conversion doesn't get counted, and potentially double-attributed, twice. Sending events from both sources without matching event_ids is the most common way this setup goes wrong, inflating reported conversion volume rather than filling in gaps the Pixel alone would have missed.
+
+## Why run both instead of just one
+
+The Pixel captures real-time browser-side behavior directly, but browser-level tracking is affected by ad blockers, cookie restrictions, and users who don't complete a page load before converting. The Events API is not subject to those browser-side limits since it sends data server-to-server, which is why TikTok positions the two as complementary layers rather than either one being sufficient on its own.
+
+## Verifying the full setup
+
+Under Assets, then Events, confirm the pixel shows an Active status with recent event data flowing in, and check that events originating from the Events API appear alongside Pixel-sourced events rather than as a separate, disconnected stream.
+
+## Bottom Line
+
+Install the TikTok Pixel first and confirm it fires with Pixel Helper, then layer the Events API on top of the same pixel using a shared event_id for deduplication — treat the two as one tracking system running in parallel, not two separate setups to choose between.`
+  },
+  {
+    id: "628",
+    title: "What Is Meta's Default Attribution Window for Ads in 2026?",
+    slug: "meta-ads-default-attribution-window-2026",
+    excerpt: "Meta's current default attribution setting is 7-day click-through, 1-day engage-through, and 1-day view-through, after Meta removed the 7-day and 28-day view windows in January 2026.",
+    featuredImage: "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-31",
+    category: "Facebook Ads",
+    tags: ["Meta Ads", "Facebook Ads", "Attribution Window", "Conversion Tracking", "Ad Measurement"],
+    featured: false,
+    readingTime: 4,
+    seo: {
+      metaTitle: "Meta's Default Ad Attribution Window in 2026",
+      metaDescription: "Meta's default attribution setting is 7-day click-through, 1-day engage-through, and 1-day view-through, after the 7-day and 28-day view windows were removed in January 2026.",
+      keywords: ["meta ads attribution window", "facebook ads default attribution", "meta 7-day click attribution", "meta engage-through attribution"]
+    },
+    content: `Meta's default attribution setting, applied when an ad set uses the Website conversion location with a maximize-conversions performance goal, is 7-day click-through, 1-day engage-through, and 1-day view-through — a narrower default than in prior years, after Meta removed the longer 7-day and 28-day view-through windows from Ads Manager on January 12, 2026.
+
+## What each attribution type actually credits
+
+Click-through attribution credits a conversion when someone clicks a direct outbound link in an ad and completes the conversion action within the selected click window, one day or seven days. Engage-through attribution credits a conversion when someone interacts with the ad without clicking a link — a reaction, a comment, a share, or watching a video ad for at least five seconds — and then converts within one day. View-through attribution credits a conversion when someone is served an ad impression, takes no click or engagement action on it at all, and still converts within one day of seeing it.
+
+## The March 2026 change that split click-through and engagement
+
+Before March 2026, Meta's click-through attribution blended actual link clicks together with other engagement signals. Since that update, click-through attribution counts only actual clicks on a link — to a website, an app, a lead form, or a shop — while the new engage-through category was introduced specifically to capture the non-link interactions and video views that used to be folded into the click-through number. That reclassification alone can shift how a campaign's attributed conversions are split across categories, even with total conversion volume unchanged.
+
+## What disappeared in January 2026
+
+Meta eliminated the 7-day view and 28-day view attribution windows entirely. Advertisers who had been relying on those longer view-through windows to credit ads for influence that showed up well after the impression — common for higher-consideration purchases — lost that visibility once the options were removed, since 1-day view is now the only view-through window Meta offers.
+
+## Why this matters for campaign evaluation
+
+A campaign that looked strong under a 7-day or 28-day view-through window, because it was picking up conversions from people who saw the ad and converted later without clicking, will show fewer attributed conversions under the current 1-day-only view setting — not because performance changed, but because the measurement window shrank. Comparing this year's attributed conversion counts against last year's numbers without accounting for that structural change risks reading a measurement shift as a performance decline.
+
+## What to check in Ads Manager
+
+The attribution setting is configured per ad set, so it's worth confirming which window is actually active rather than assuming the default: 1-day click is available as a narrower alternative to 7-day click, useful for products with a short, low-consideration purchase decision where a week-long click window risks crediting the ad for conversions it had little real influence over.
+
+## Bottom Line
+
+Confirm which attribution window each ad set is actually running under rather than assuming last year's defaults still apply, and when comparing performance across a period that spans January or March 2026, treat any shift in attributed conversions as a possible measurement change first before concluding campaign performance moved.`
+  },
+  {
+    id: "629",
+    title: "Is Data-Driven Attribution the Default Model in Google Ads Now?",
+    slug: "google-ads-data-driven-attribution-default-2026",
+    excerpt: "Yes — data-driven attribution is now Google's default model for most conversion actions, after first-click, linear, time-decay, and position-based models were deprecated and auto-upgraded to it.",
+    featuredImage: "https://images.unsplash.com/photo-1611944212129-29977ae1398c?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-31",
+    category: "Google Ads",
+    tags: ["Google Ads", "Data-Driven Attribution", "Attribution Models", "Conversion Tracking", "PPC Measurement"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Is Data-Driven Attribution Google Ads' Default?",
+      metaDescription: "Data-driven attribution is now Google Ads' default model for most conversion actions, after first-click, linear, time-decay, and position-based models were deprecated.",
+      keywords: ["google ads data-driven attribution", "google ads default attribution model", "data-driven attribution vs last click", "google ads attribution models 2026"]
+    },
+    content: `Yes — data-driven attribution is now the default attribution model for most conversion actions in Google Ads, according to Google's own support documentation, and it's applied automatically rather than requiring an advertiser to opt in.
+
+## How data-driven attribution actually works
+
+Data-driven attribution uses an account's own historical conversion data to calculate each ad interaction's real contribution to a conversion path. It compares the paths of customers who converted against the paths of customers who didn't, and identifies which ad interactions show up more often in the paths that led to a conversion — crediting each interaction based on that pattern rather than applying a fixed rule like "the last click gets all the credit."
+
+## What got deprecated
+
+Google no longer supports the first-click, linear, time-decay, or position-based attribution models. Any conversion action that was previously set to use one of those retired models has been automatically upgraded to data-driven attribution rather than left without a working model. Last-click attribution is the one rule-based model Google still supports as an alternative to data-driven attribution.
+
+## The threshold that used to gate access
+
+Data-driven attribution previously required an account to clear a minimum volume of conversions and clicks before Google would make it available as an option. That minimum-conversion threshold no longer applies, which is part of why data-driven attribution could become the account-wide default rather than remaining reserved for higher-volume advertisers.
+
+## Why this changes how conversion counts should be read
+
+Because data-driven attribution redistributes credit across every ad interaction in a path rather than assigning it entirely to the last click, an account that switched from last-click to data-driven attribution, or was auto-upgraded from a now-deprecated model, can see its reported conversion counts shift across campaigns and keywords even with total account conversions unchanged. Upper-funnel keywords and campaigns that rarely got the last click, but regularly appeared earlier in a converting path, typically get credited with more conversions than they were before.
+
+## What to check in the account
+
+Conversion actions still show which attribution model is applied to them individually — it's worth confirming a given conversion action is actually running under data-driven attribution rather than assuming, since last-click remains available and some accounts may have been explicitly set to it before the deprecated models were phased out.
+
+## Why this matters for automated bidding
+
+Smart Bidding strategies like Target CPA, Target ROAS, and Maximize Conversions rely on the underlying conversion data to make bid adjustments, and data-driven attribution feeds those algorithms a more granular signal than last-click attribution does, since it reflects every ad interaction's measured contribution rather than crediting only the final touchpoint. That's part of why Google moved data-driven attribution from an opt-in feature gated behind a conversion-volume minimum to the account-wide default: it aligns the attribution layer with how automated bidding already evaluates performance internally, rather than leaving bidding algorithms and reported attribution running on two different logics.
+
+## Bottom Line
+
+Check each conversion action's attribution model directly in the account rather than assuming data-driven attribution is active by default, and when comparing this year's per-campaign conversion counts against a prior period, rule out an attribution-model change before treating a shift as a real change in campaign performance.`
+  },
+  {
+    id: "630",
+    title: "How Do You Track Conversions on Threads Ads?",
+    slug: "track-conversions-threads-ads-2026",
+    excerpt: "Threads ads use the same Meta Pixel and Conversions API already running on Facebook and Instagram — there's no separate Threads-specific pixel or tracking setup required.",
+    featuredImage: "https://images.unsplash.com/photo-1618044619888-009e412ff12a?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-08-31",
+    category: "Marketing Technology",
+    tags: ["Threads Ads", "Meta Ads", "Conversion Tracking", "Meta Pixel", "Conversions API"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "How to Track Conversions on Threads Ads",
+      metaDescription: "Threads ads use the same Meta Pixel and Conversions API already running on Facebook and Instagram, with no separate Threads-specific tracking setup required.",
+      keywords: ["threads ads conversion tracking", "threads ads meta pixel", "threads ads conversions api", "how to track threads ads"]
+    },
+    content: `Threads ads use the same Meta Pixel and Conversions API already installed for Facebook and Instagram — there's no separate Threads-specific pixel to build, and no new tracking implementation required to start running conversion-optimized campaigns on the placement.
+
+## Why Threads doesn't need its own pixel
+
+Threads ads run through the standard Meta Ads Manager, using the same ad account, the same conversion events, and the same pixel-based or SDK-based tracking infrastructure already firing on other Meta placements. Purchase, lead generation, and app promotion objectives all work on Threads through that shared setup, so an advertiser who already has the Meta Pixel or Conversions API installed and working for Facebook and Instagram campaigns is already fully set up to track Threads conversions the moment they add it as a placement.
+
+## What carries over automatically
+
+Because Threads accounts are authenticated through Instagram, audiences built from existing pixel and CRM data — Custom Audiences, Lookalike Audiences, and Advantage+ audience targeting — carry over from Facebook and Instagram without requiring new pixel data or a separate data-collection ramp-up period specific to Threads.
+
+## Where Threads performance actually shows up
+
+Even though the tracking infrastructure is unified across all three surfaces, Meta Ads Manager still reports Threads activity separately through its placement breakdown — impressions, clicks, spend, conversions, CPM, and CPC can all be viewed for Threads specifically, isolated from Facebook and Instagram performance in the same campaign. That means unified tracking doesn't mean unified reporting: an advertiser can still see exactly how Threads is performing as its own placement.
+
+## What this means for advertisers already running Meta ads
+
+For anyone already advertising on Facebook or Instagram with the Meta Pixel or Conversions API properly implemented, enabling Threads as an additional placement is a targeting and budget decision, not a new tracking project — there's no pixel installation checklist specific to Threads to work through first. The practical setup work is limited to deciding whether to include Threads in an existing Advantage+ placement campaign or run it as a dedicated placement, and then reviewing the placement breakdown once it's live to see how it's performing relative to Facebook and Instagram.
+
+## What still requires attention
+
+Because tracking is shared infrastructure, a broken or misconfigured Meta Pixel or Conversions API affects Threads reporting exactly the same way it affects Facebook and Instagram reporting — there's no separate Threads-specific failure mode to watch for, but also no separate fix. Any pixel health check already run against Facebook and Instagram covers Threads as well.
+
+## What this means for advertisers new to Meta entirely
+
+For a business setting up Meta advertising for the first time with Threads as part of the plan, the setup work is still the standard Meta Pixel or Conversions API implementation — installing the pixel base code site-wide, or connecting the Conversions API server-side, and configuring the standard events relevant to the business. There's no additional Threads-specific documentation to follow beyond that baseline implementation, since Threads was built into the existing Meta ad infrastructure from the start rather than added as a parallel system.
+
+## Bottom Line
+
+Don't look for a Threads-specific pixel or setup guide — if the Meta Pixel or Conversions API is already live and healthy on Facebook and Instagram, Threads conversion tracking is already working, and the only remaining step is checking the placement breakdown in Ads Manager to see Threads' numbers on their own.`
+  },
 ];
 
 export const blogCategories = [
