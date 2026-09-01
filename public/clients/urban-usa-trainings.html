@@ -66,6 +66,9 @@
   .t-call { background: var(--gold-soft); color: #7d6234; }
   .t-mail { background: #eceae4; color: #5c6670; }
   .t-ret { background: #ebe6f0; color: #5f5171; }
+  .who { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; padding: 3px 7px; border-radius: 3px; }
+  .w-auto { background: var(--paper-2); color: var(--ink-3); }
+  .w-vos { background: var(--navy); color: #fff; }
 
   /* scripts */
   .scr { background: var(--panel); border: 1px solid var(--hairline); padding: 18px 20px; margin-bottom: 12px; }
@@ -133,8 +136,8 @@
 
   <nav class="jump">
     <a href="#porque">Por qué importa</a>
-    <a href="#regla">La regla de 5 minutos</a>
-    <a href="#llamadas-ai">Llamadas con IA</a>
+    <a href="#regla">Dónde entra la persona</a>
+    <a href="#hablar">Cómo hablar</a>
     <a href="#secuencia">La secuencia</a>
     <a href="#segmentar">Segmentar</a>
     <a href="#guiones">Guiones</a>
@@ -167,112 +170,104 @@
 
   <!-- ============ REGLA ============ -->
   <section id="regla">
-    <div class="sec-head"><h2>La regla de 5 minutos</h2><span class="note">Qué hacer cuando entra un lead</span></div>
-    <p class="lead">El objetivo es simple: que ningún lead pase más de 5 minutos sin recibir una respuesta, y que un humano lo llame dentro de esa misma ventana. Son dos movimientos distintos y los dos tienen que pasar.</p>
+    <div class="sec-head"><h2>D&oacute;nde entra la persona</h2><span class="note">Lo que el sistema no puede hacer</span></div>
+    <p class="lead">La respuesta autom&aacute;tica ya est&aacute; corriendo: el SMS y el mail salen solos apenas entra el lead. Eso compra tiempo, no gana al cliente. Lo que decide si el lead se convierte o se enfr&iacute;a es lo que hace una persona en los minutos siguientes.</p>
+
+    <div class="callout"><b>El reparto es simple.</b> El sistema avisa que existimos. La persona abre la conversaci&oacute;n. Nadie compr&oacute; una propiedad porque le lleg&oacute; un SMS autom&aacute;tico.</div>
 
     <div class="steps">
       <div class="step">
-        <div class="when">Minuto 0 · automático</div>
-        <h3>El SMS y el mail salen solos</h3>
-        <p>Esto no depende de que alguien esté mirando la pantalla. Se configura una vez y se dispara solo apenas entra el lead.</p>
+        <div class="when">Antes de marcar · 30 segundos</div>
+        <h3>Mir&aacute; el lead antes de llamar</h3>
+        <p>Treinta segundos de contexto cambian por completo la primera frase. Es la diferencia entre "te llamo por tu consulta" y "vi que estabas mirando en Brickell".</p>
         <ul>
-          <li><b>SMS primero.</b> Es lo que se lee. Los mensajes de texto respondidos dentro de los 5 minutos generan 8 veces más interacción que el email, según Velocify.</li>
-          <li><b>Mail después,</b> con algo de sustancia: la propiedad que consultó o material relacionado.</li>
-          <li><b>Que suene a persona.</b> El automático compra tiempo, no cierra nada. Si parece robot, quema la conversación antes de que empiece.</li>
+          <li><b>Qu&eacute; propiedad consult&oacute;</b> y de d&oacute;nde vino el lead.</li>
+          <li><b>De qu&eacute; pa&iacute;s escribe.</b> La mayor&iacute;a de nuestros leads son de Colombia y Argentina: si es inversor de afuera, la conversaci&oacute;n arranca distinto que con alguien local.</li>
+          <li><b>Si ya hab&iacute;a consultado antes.</b> Repetir preguntas que ya contest&oacute; es la forma m&aacute;s r&aacute;pida de perderlo.</li>
         </ul>
       </div>
 
       <div class="step">
-        <div class="when">Minuto 1 a 5 · humano</div>
-        <h3>Llamada, sin esperar respuesta al SMS</h3>
-        <p>El error más común es esperar a que conteste el mensaje. No hay que esperar nada: el SMS avisa que existís, la llamada es la que abre la conversación.</p>
+        <div class="when">La llamada</div>
+        <h3>Llam&aacute; sin esperar que conteste el SMS</h3>
+        <p>El error m&aacute;s com&uacute;n es quedarse esperando la respuesta al mensaje autom&aacute;tico. El SMS avisa que existimos; la llamada abre la conversaci&oacute;n. Son cosas distintas y las dos tienen que pasar.</p>
         <ul>
-          <li>Si atiende, la conversación arrancó. Ese es todo el objetivo.</li>
-          <li>Si no atiende, <b>dejá mensaje de voz</b> y mandá un SMS avisando que llamaste.</li>
-          <li>Marcá desde un número local siempre que se pueda: sube muchísimo la tasa de atención.</li>
+          <li>Marc&aacute; desde un n&uacute;mero local siempre que se pueda: sube much&iacute;simo la tasa de atenci&oacute;n.</li>
+          <li>Si no atiende, <b>dej&aacute; mensaje de voz</b> y despu&eacute;s un texto tuyo, escrito por vos, avisando que llamaste.</li>
+          <li>Un solo intento no alcanza y no significa que el lead sea malo.</li>
         </ul>
       </div>
 
       <div class="step">
-        <div class="when">Minuto 5 a 60</div>
-        <h3>Segundo intento el mismo día</h3>
-        <p>Un solo intento no alcanza y no significa que el lead sea malo. Volvé a marcar dentro de la primera hora, en otro momento del día.</p>
+        <div class="when">Segundo intento</div>
+        <h3>Cambi&aacute; el horario, no repitas el mismo</h3>
+        <p>Volver a marcar a la misma hora del d&iacute;a siguiente es casi garant&iacute;a de que tampoco atienda. La gente tiene rutinas.</p>
         <ul>
-          <li>Cambiá el horario: si llamaste a las 10, probá a las 16.</li>
-          <li>Dejá registrado en el CRM cada intento, con hora. Sin eso no se puede medir nada.</li>
+          <li>Si llamaste a las 10, prob&aacute; a las 16. Si fue un martes, prob&aacute; un s&aacute;bado a la ma&ntilde;ana.</li>
+          <li>Ten&eacute; en cuenta el huso horario del pa&iacute;s desde donde escribe.</li>
+          <li>Anot&aacute; cada intento con hora en el CRM. Sin eso nadie sabe si se sigui&oacute; o no.</li>
         </ul>
       </div>
     </div>
 
-    <div class="warn"><b>Lo que no se hace.</b> No dejar el lead para "cuando termine lo que estoy haciendo". A los 30 minutos ya perdiste 21 veces las chances de calificarlo. Un lead nuevo interrumpe: es lo único que interrumpe.</div>
+    <div class="warn"><b>Lo que no se hace.</b> No dejar el lead para "cuando termine lo que estoy haciendo". A los 30 minutos ya perdiste 21 veces las chances de calificarlo. Un lead nuevo interrumpe: es lo &uacute;nico que interrumpe.</div>
   </section>
 
-  <!-- ============ LLAMADAS AI ============ -->
-  <section id="llamadas-ai">
-    <div class="sec-head"><h2>Llamadas con IA</h2><span class="note">El primer contacto, automatizado</span></div>
-    <p class="lead">Vamos a sumar un agente de voz con IA que llama a los leads nuevos apenas entran, sin esperar a que alguien est&eacute; libre. No reemplaza al agente: se ocupa del primer contacto y de los reintentos, que es justo donde hoy se pierde la mayor&iacute;a.</p>
+  <!-- ============ COMO HABLAR ============ -->
+  <section id="hablar">
+    <div class="sec-head"><h2>C&oacute;mo se lleva la conversaci&oacute;n</h2><span class="note">Buenas pr&aacute;cticas de contacto</span></div>
+    <p class="lead">Esta es la parte que ninguna automatizaci&oacute;n cubre y donde se define casi todo. No hace falta un gui&oacute;n de ventas: hace falta orden.</p>
 
     <div class="two">
       <div class="card">
-        <div class="kicker">Qu&eacute; resuelve</div>
-        <h3>El problema real no es cerrar, es atender</h3>
-        <p>En el estudio de WAV Group sobre 384 brokers, el <b>48% de las consultas de compradores nunca recibi&oacute; respuesta</b>. No es que se respondieran mal: no se respondieron nunca.</p>
+        <div class="kicker">Los primeros 20 segundos</div>
+        <h3>Deci&iacute; qui&eacute;n sos y por qu&eacute; llam&aacute;s</h3>
+        <p>La persona no reconoce el n&uacute;mero y est&aacute; decidiendo si cortar. Nombre, inmobiliaria, y el motivo concreto de la llamada.</p>
         <ul>
-          <li>Llama en <b>menos de 60 segundos</b>, a cualquier hora, tambi&eacute;n fines de semana.</li>
-          <li>No se satura: diez leads que entran juntos reciben diez llamadas.</li>
-          <li>Hace los reintentos que en la pr&aacute;ctica nadie hace.</li>
+          <li>Nombr&aacute; la propiedad o la zona que consult&oacute;: es lo que hace clic.</li>
+          <li>Pregunt&aacute; si es buen momento. Si dice que no, acord&aacute; hora y cort&aacute;.</li>
+          <li>Nada de "&iquest;c&oacute;mo and&aacute;s?" antes de decir qui&eacute;n sos.</li>
         </ul>
       </div>
       <div class="card">
-        <div class="kicker">Qu&eacute; no resuelve</div>
-        <h3>Donde la IA todav&iacute;a pierde</h3>
-        <p>Un estudio de Amity AI compar&oacute; a ciegas agentes de IA contra humanos en llamadas de venta, con 22 criterios y siete evaluadores.</p>
+        <div class="kicker">El resto de la llamada</div>
+        <h3>Preguntar m&aacute;s que hablar</h3>
+        <p>El objetivo del primer contacto no es vender. Es entender qu&eacute; busca y en qu&eacute; plazo, para saber qu&eacute; hacer despu&eacute;s.</p>
         <ul>
-          <li><b>Empata</b> con el humano en presentaci&oacute;n y en explicar el producto.</li>
-          <li><b>Pierde</b> en manejo de objeciones y en empuje de venta, sobre todo en las conversaciones dif&iacute;ciles.</li>
-          <li>Traducci&oacute;n pr&aacute;ctica: sirve para abrir y calificar, no para convencer al que duda.</li>
+          <li>Que hable la otra persona la mayor parte del tiempo.</li>
+          <li>Una pregunta por vez, y esperar la respuesta completa.</li>
+          <li>Si no sab&eacute;s algo, deci&iacute; que lo averigu&aacute;s. Inventar un dato se paga caro despu&eacute;s.</li>
         </ul>
       </div>
     </div>
 
-    <div class="callout"><b>Por eso el reparto es este:</b> la IA se queda con el primer contacto, la calificaci&oacute;n b&aacute;sica y la insistencia. El agente entra cuando hay una persona interesada del otro lado, que es donde su tiempo vale. Nadie tiene que competir con un bot por las conversaciones buenas.</div>
+    <div class="callout"><b>Las cuatro cosas que hay que sacar de la primera conversaci&oacute;n:</b> para cu&aacute;ndo, con qu&eacute; presupuesto, si es para vivir o para invertir, y si ya est&aacute; hablando con otro agente. Con esas cuatro respuestas sab&eacute;s exactamente qu&eacute; hacer. Sin ellas, todo lo que sigue es adivinar.</div>
 
     <div class="steps">
       <div class="step">
-        <div class="when">Segundo 0 a 60</div>
-        <h3>La IA llama primero</h3>
-        <p>El lead entra y el sistema marca. Velocify, sobre unos 3,5 millones de leads, midi&oacute; que llamar dentro del primer minuto multiplica la conversi&oacute;n por casi 4 frente a esperar apenas un par de minutos m&aacute;s.</p>
+        <div class="when">Siempre</div>
+        <h3>Cerr&aacute; con un pr&oacute;ximo paso concreto</h3>
+        <p>Una llamada que termina en "cualquier cosa me avis&aacute;s" es una llamada perdida. Antes de cortar tiene que quedar algo agendado, aunque sea chico.</p>
         <ul>
-          <li>Se presenta como asistente de Urban, sin fingir ser una persona.</li>
-          <li>Confirma qu&eacute; propiedad consult&oacute; y en qu&eacute; plazo est&aacute; pensando.</li>
-          <li>Si hay inter&eacute;s real, <b>pasa la llamada al agente en el momento</b> o agenda.</li>
+          <li>Una visita, una videollamada, o el env&iacute;o de tres opciones para tal d&iacute;a.</li>
+          <li><b>Con fecha y hora</b>, no "la semana que viene".</li>
+          <li>Repetilo en voz alta antes de cortar para confirmar que qued&oacute; claro.</li>
         </ul>
       </div>
 
       <div class="step">
-        <div class="when">Cuando no atiende</div>
-        <h3>Reintenta sin que nadie se acuerde</h3>
-        <p>Ac&aacute; est&aacute; la mayor ganancia. Los reintentos en horarios distintos son lo primero que se cae cuando el d&iacute;a se complica.</p>
+        <div class="when">Apenas cort&aacute;s</div>
+        <h3>Anot&aacute; antes de pasar a otra cosa</h3>
+        <p>Lo que no se escribe en el momento se pierde. Y lo que se pierde obliga a volver a preguntarlo, que es lo que hace sentir al cliente que empieza de cero cada vez.</p>
         <ul>
-          <li>Reintenta en franjas distintas durante las primeras 24 horas.</li>
-          <li>Cada intento queda registrado con hora en el CRM.</li>
-          <li>Deja el SMS y el mensaje de voz igual que en la secuencia manual.</li>
-        </ul>
-      </div>
-
-      <div class="step">
-        <div class="when">Apenas hay se&ntilde;al</div>
-        <h3>El agente toma la conversaci&oacute;n</h3>
-        <p>El traspaso es el punto cr&iacute;tico de todo el sistema. Si el lead queda esperando despu&eacute;s de hablar con la IA, el efecto es peor que no haber llamado.</p>
-        <ul>
-          <li><b>Tasaciones y vendedores:</b> traspaso inmediato, siempre. No los trabaja la IA.</li>
-          <li>El agente recibe el resumen de lo que dijo, no arranca de cero.</li>
-          <li>Si el lead pide hablar con una persona, se le pasa sin insistir.</li>
+          <li>Las cuatro respuestas, en el CRM, con las palabras que us&oacute; la persona.</li>
+          <li>El pr&oacute;ximo paso, agendado.</li>
+          <li>Un detalle personal si sali&oacute;: que se muda por trabajo, que tiene chicos, que le importa el colegio cerca. Eso es lo que hace que el pr&oacute;ximo contacto no parezca un formulario.</li>
         </ul>
       </div>
     </div>
 
-    <div class="warn"><b>Lo que vamos a medir antes de escalarlo.</b> Los n&uacute;meros de impacto que circulan sobre llamadas con IA salen casi siempre de las empresas que venden la herramienta, as&iacute; que no los tomamos como propios. Arrancamos midiendo tres cosas nuestras: cu&aacute;ntos leads efectivamente atienden, cu&aacute;ntos terminan en una conversaci&oacute;n con un agente, y cu&aacute;ntos piden hablar con una persona enseguida. Con eso decidimos, con datos de Urban y no de un folleto.</div>
+    <div class="warn"><b>Tres cosas que enfr&iacute;an un lead al toque.</b> Hablar de precio antes de entender qu&eacute; busca. Mandar veinte propiedades de golpe. Y desaparecer tres semanas y reaparecer con "&iquest;seguimos?".</div>
   </section>
 
   <!-- ============ SECUENCIA ============ -->
@@ -282,23 +277,25 @@
 
     <div class="tw">
       <table>
-        <thead><tr><th>Cuándo</th><th>Canal</th><th>Qué mandás</th></tr></thead>
+        <thead><tr><th>Cuándo</th><th>Quién</th><th>Canal</th><th>Qué pasa</th></tr></thead>
         <tbody>
-          <tr><td><b>Día 0 · minuto 0</b></td><td><span class="tag t-sms">SMS</span></td><td>Respuesta automática. Confirmás que llegó la consulta y avisás que llamás enseguida.</td></tr>
-          <tr><td><b>Día 0 · minuto 0</b></td><td><span class="tag t-mail">Mail</span></td><td>La propiedad consultada más dos o tres similares.</td></tr>
-          <tr><td><b>Día 0 · minuto 1 a 5</b></td><td><span class="tag t-call">Llamada</span></td><td>Primer intento. Si no atiende, mensaje de voz.</td></tr>
-          <tr><td><b>Día 0 · misma tarde</b></td><td><span class="tag t-call">Llamada</span></td><td>Segundo intento en otro horario.</td></tr>
-          <tr><td><b>Día 1</b></td><td><span class="tag t-sms">SMS</span></td><td>Una pregunta corta y concreta: zona o timing. Algo que se responda en cinco palabras.</td></tr>
-          <tr><td><b>Día 3</b></td><td><span class="tag t-call">Llamada</span></td><td>Tercer intento, otro horario distinto.</td></tr>
-          <tr><td><b>Día 5</b></td><td><span class="tag t-mail">Mail</span></td><td>Algo útil sin pedir nada: cómo está el mercado en la zona que le interesa.</td></tr>
-          <tr><td><b>Día 8</b></td><td><span class="tag t-sms">SMS</span></td><td>Una propiedad nueva que encaje con lo que buscaba.</td></tr>
-          <tr><td><b>Día 12</b></td><td><span class="tag t-call">Llamada</span></td><td>Cuarto intento. Muchos contestan recién acá.</td></tr>
-          <tr><td><b>Día 18</b></td><td><span class="tag t-mail">Mail</span></td><td>Caso real: una operación parecida que se cerró.</td></tr>
-          <tr><td><b>Día 25</b></td><td><span class="tag t-sms">SMS</span></td><td>Mensaje de cierre suave. "¿Seguís buscando o lo pausaste por ahora?"</td></tr>
-          <tr><td><b>Día 30 en adelante</b></td><td><span class="tag t-ret">Retargeting</span></td><td>Pasa a la lista de nutrición: queda viendo contenido de Urban sin que nadie lo llame.</td></tr>
+          <tr><td><b>Día 0 · minuto 0</b></td><td><span class="who w-auto">Sistema</span></td><td><span class="tag t-sms">SMS</span></td><td>Respuesta automática. Confirmás que llegó la consulta y avisás que llamás enseguida.</td></tr>
+          <tr><td><b>Día 0 · minuto 0</b></td><td><span class="who w-auto">Sistema</span></td><td><span class="tag t-mail">Mail</span></td><td>La propiedad consultada más dos o tres similares.</td></tr>
+          <tr><td><b>Día 0 · minuto 1 a 5</b></td><td><span class="who w-vos">Vos</span></td><td><span class="tag t-call">Llamada</span></td><td>Primer intento. Si no atiende, mensaje de voz.</td></tr>
+          <tr><td><b>Día 0 · misma tarde</b></td><td><span class="who w-vos">Vos</span></td><td><span class="tag t-call">Llamada</span></td><td>Segundo intento en otro horario.</td></tr>
+          <tr><td><b>Día 1</b></td><td><span class="who w-vos">Vos</span></td><td><span class="tag t-sms">SMS</span></td><td>Una pregunta corta y concreta: zona o timing. Algo que se responda en cinco palabras.</td></tr>
+          <tr><td><b>Día 3</b></td><td><span class="who w-vos">Vos</span></td><td><span class="tag t-call">Llamada</span></td><td>Tercer intento, otro horario distinto.</td></tr>
+          <tr><td><b>Día 5</b></td><td><span class="who w-auto">Sistema</span></td><td><span class="tag t-mail">Mail</span></td><td>Algo útil sin pedir nada: cómo está el mercado en la zona que le interesa.</td></tr>
+          <tr><td><b>Día 8</b></td><td><span class="who w-vos">Vos</span></td><td><span class="tag t-sms">SMS</span></td><td>Una propiedad nueva que encaje con lo que buscaba.</td></tr>
+          <tr><td><b>Día 12</b></td><td><span class="who w-vos">Vos</span></td><td><span class="tag t-call">Llamada</span></td><td>Cuarto intento. Muchos contestan recién acá.</td></tr>
+          <tr><td><b>Día 18</b></td><td><span class="who w-auto">Sistema</span></td><td><span class="tag t-mail">Mail</span></td><td>Caso real: una operación parecida que se cerró.</td></tr>
+          <tr><td><b>Día 25</b></td><td><span class="who w-vos">Vos</span></td><td><span class="tag t-sms">SMS</span></td><td>Mensaje de cierre suave. "¿Seguís buscando o lo pausaste por ahora?"</td></tr>
+          <tr><td><b>Día 30 en adelante</b></td><td><span class="who w-auto">Sistema</span></td><td><span class="tag t-ret">Retargeting</span></td><td>Pasa a la lista de nutrición: queda viendo contenido de Urban sin que nadie lo llame.</td></tr>
         </tbody>
       </table>
     </div>
+
+    <div class="callout" style="background:#fff;border-left-color:var(--ink-3);"><b>Lo gris ya corre solo.</b> Los toques marcados como Sistema salen automáticos y no hay que acordarse de ellos. Los marcados como Vos son los que dependen de una persona, y son exactamente los que se caen cuando el día se complica.</div>
 
     <div class="callout"><b>La pregunta de cierre suave hace el trabajo sucio.</b> "¿Seguís buscando o lo pausaste?" da permiso a decir que no, y eso es bueno: te libera la agenda. El que responde "sigo" se vuelve prioridad; el que no responde nada pasa a retargeting y deja de consumir tiempo.</div>
   </section>
@@ -339,31 +336,11 @@
   <!-- ============ GUIONES ============ -->
   <section id="guiones">
     <div class="sec-head"><h2>Guiones para copiar</h2><span class="note">Cortos y humanos</span></div>
-    <p class="lead">Ninguno de estos vende. Todos buscan lo mismo: que la persona conteste. Adaptalos con tu nombre y la zona, pero no los alargues.</p>
+    <p class="lead">Estos los escrib&iacute;s vos, no el sistema. Ninguno vende: todos buscan lo mismo, que la persona conteste. Adaptalos con tu nombre y la zona, pero no los alargues.</p>
 
-    <div class="scr">
-      <div class="lbl">Primer SMS · automático, minuto 0</div>
-      <div class="msg">Hola [Nombre], soy [Agente] de Urban Real Estate. Me llegó tu consulta por [propiedad o zona]. Te llamo en un ratito, pero si preferís escribime por acá y arrancamos.</div>
-      <div class="why">Por qué funciona: dice quién sos, por qué escribís y qué va a pasar después. Ofrece una salida fácil para el que no quiere hablar por teléfono.</div>
-    </div>
+    
 
-    <div class="scr">
-      <div class="lbl">Primer mail · automático, minuto 0</div>
-      <div class="msg">Asunto: [Nombre], sobre la propiedad que consultaste
-
-Hola [Nombre],
-
-Vi tu consulta por [propiedad o zona]. Te dejo el detalle acá abajo y te sumo dos opciones parecidas que quizás no viste.
-
-[enlaces]
-
-Si querés verlas en persona, decime qué día te queda cómodo y lo coordinamos.
-
-[Agente]
-Urban Real Estate
-[teléfono]</div>
-      <div class="why">Por qué funciona: entrega algo concreto en el primer contacto y cierra con una acción simple, sin pedir que complete nada.</div>
-    </div>
+    
 
     <div class="scr">
       <div class="lbl">Mensaje de voz · cuando no atiende</div>
@@ -417,11 +394,10 @@ Urban Real Estate
           <h4>Cuando entra un lead</h4>
           <ul>
             <li>Segundo 0 a 60: llama la IA</li>
-            <li>Minuto 0: SMS automático</li>
-            <li>Minuto 0: mail con la propiedad</li>
-            <li>Minuto 1 a 5: llamada, siempre</li>
-            <li>Sin atender: mensaje de voz más SMS</li>
-            <li>Misma tarde: segundo intento</li>
+            <li>30 segundos: mirá el lead antes de marcar</li>
+            <li>Llamá sin esperar respuesta al SMS</li>
+            <li>Sin atender: voz más un texto tuyo</li>
+            <li>Misma tarde: segundo intento, otro horario</li>
           </ul>
         </div>
         <div>
@@ -435,6 +411,16 @@ Urban Real Estate
             <li>Día 18: mail con un caso real</li>
             <li>Día 25: SMS de cierre suave</li>
             <li>Día 30: pasa a retargeting</li>
+          </ul>
+        </div>
+        <div>
+          <h4>En la llamada</h4>
+          <ul>
+            <li>Quién sos y por qué llamás, en 20 segundos</li>
+            <li>Preguntar más que hablar</li>
+            <li>Sacar las 4: cuándo, presupuesto, vivir o invertir, otro agente</li>
+            <li>Cerrar con fecha y hora, nunca "cualquier cosa avisame"</li>
+            <li>Anotar apenas cortás</li>
           </ul>
         </div>
         <div>
@@ -469,7 +455,6 @@ Urban Real Estate
         <li>Velocify: los SMS respondidos dentro de los 5 minutos generan 8 veces más interacción que el email.</li>
         <li>Velocify, sobre unos 3,5 millones de leads: llamar dentro del primer minuto multiplica la conversión frente a esperar unos minutos más.</li>
         <li>WAV Group Agent Responsiveness Study (2014, 384 brokers en 11 estados): el 48% de las consultas de compradores nunca recibió respuesta, y el tiempo promedio de respuesta fue de 917 minutos.</li>
-        <li>Amity AI Research (Kaewtawee et al., 2025), evaluación a ciegas de agentes de voz con IA contra humanos en telesales, 22 criterios y siete evaluadores: la IA iguala al humano en presentación y comunicación de producto, y queda por debajo en manejo de objeciones y empuje de venta.</li>
         <li>National Association of Realtors (NAR): el 88% de los compradores investiga online antes de contactar a un agente.</li>
       </ul>
       <p style="font-size:12.4px;color:var(--ink-3);margin-top:12px;">Todos los datos corresponden a investigación de la industria y se citan como referencia. No son resultados de Urban Real Estate ni de A+Growth.</p>
