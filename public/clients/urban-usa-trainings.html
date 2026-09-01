@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urban Real Estate · Velocidad de respuesta y seguimiento</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --navy: #2b3947; --navy-deep: #1f2b37; --ink: #26303a; --ink-2: #5c6670; --ink-3: #98a0a8; --paper: #faf9f6; --paper-2: #f3f1ec; --hairline: #e4e0d7; --gold: #a8874f; --gold-soft: #f4ede1; --panel: #ffffff; --alert: #a8434f;
+    --serif: 'Marcellus', serif; --sans: 'Inter', -apple-system, sans-serif; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 880px; margin: 0 auto; padding: 40px 24px 64px; }
+  header { text-align: center; margin-bottom: 22px; }
+  h1 { font-family: var(--serif); font-size: 26px; font-weight: 400; margin-top: 16px; }
+  .sub { font-size: 13.5px; color: var(--ink-2); margin-top: 8px; max-width: 62ch; margin-left: auto; margin-right: auto; }
+  .backlink { display: inline-block; margin-top: 10px; font-size: 12.5px; color: var(--gold); text-decoration: none; }
+  .backlink:hover { text-decoration: underline; }
+  .updated { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); margin-top: 14px; }
+
+  nav.jump { display: flex; flex-wrap: wrap; gap: 7px; justify-content: center; margin: 0 auto 30px; max-width: 720px; }
+  nav.jump a { font-size: 12px; font-weight: 500; color: var(--ink-2); text-decoration: none; background: var(--panel); border: 1px solid var(--hairline); padding: 7px 13px; border-radius: 999px; transition: all .18s; }
+  nav.jump a:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+  section { margin-bottom: 34px; scroll-margin-top: 18px; }
+  .sec-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; border-bottom: 1px solid var(--hairline); padding-bottom: 9px; margin-bottom: 16px; }
+  .sec-head h2 { font-family: var(--serif); font-size: 19px; font-weight: 400; letter-spacing: 0.01em; }
+  .sec-head .note { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); white-space: nowrap; }
+  p { margin-bottom: 12px; }
+  .lead { font-size: 15.5px; color: var(--ink-2); max-width: 76ch; }
+
+  /* stats */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(158px, 1fr)); gap: 12px; margin: 18px 0; }
+  .st { background: var(--panel); border: 1px solid var(--hairline); padding: 17px 18px; }
+  .st .n { font-family: var(--serif); font-size: 27px; color: var(--navy); line-height: 1.1; }
+  .st .l { font-size: 12.5px; color: var(--ink-2); margin-top: 6px; line-height: 1.45; }
+  .st .src { font-size: 10.5px; color: var(--ink-3); margin-top: 8px; font-style: italic; }
+
+  .gap { background: var(--navy); color: #fff; padding: 26px 28px; margin: 20px 0; }
+  .gap .big { font-family: var(--serif); font-size: 21px; line-height: 1.4; }
+  .gap .big b { color: #e8c98a; font-weight: 400; }
+  .gap .sm { font-size: 13px; color: #c3ccd4; margin-top: 12px; }
+
+  /* pasos */
+  .steps { display: grid; gap: 12px; }
+  .step { background: var(--panel); border: 1px solid var(--hairline); border-left: 3px solid var(--gold); padding: 18px 20px; }
+  .step .when { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+  .step h3 { font-family: var(--serif); font-size: 17px; font-weight: 400; margin: 7px 0 8px; }
+  .step p { font-size: 13.8px; color: var(--ink-2); margin-bottom: 8px; }
+  .step ul { margin: 8px 0 0 18px; }
+  .step li { font-size: 13.5px; color: var(--ink-2); margin-bottom: 6px; }
+  .step b { color: var(--ink); font-weight: 600; }
+
+  /* tabla */
+  .tw { overflow-x: auto; border: 1px solid var(--hairline); background: var(--panel); }
+  table { width: 100%; border-collapse: collapse; min-width: 540px; }
+  th { font-size: 10.5px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--ink-3); text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--hairline); font-weight: 600; }
+  td { font-size: 13.4px; color: var(--ink-2); padding: 11px 14px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+  tr:last-child td { border-bottom: 0; }
+  td b { color: var(--ink); font-weight: 600; }
+  .tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; }
+  .t-sms { background: #e7eef4; color: #35566f; }
+  .t-call { background: var(--gold-soft); color: #7d6234; }
+  .t-mail { background: #eceae4; color: #5c6670; }
+  .t-ret { background: #ebe6f0; color: #5f5171; }
+
+  /* scripts */
+  .scr { background: var(--panel); border: 1px solid var(--hairline); padding: 18px 20px; margin-bottom: 12px; }
+  .scr .lbl { font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 10px; }
+  .scr .msg { font-size: 14px; color: var(--ink); background: var(--paper-2); border-left: 2px solid var(--gold); padding: 13px 15px; margin-bottom: 9px; white-space: pre-line; }
+  .scr .why { font-size: 12.5px; color: var(--ink-3); }
+
+  .callout { background: var(--gold-soft); border-left: 3px solid var(--gold); padding: 14px 18px; font-size: 13.5px; color: var(--ink-2); margin: 16px 0; }
+  .callout b { color: var(--ink); }
+  .warn { background: #f7ecec; border-left: 3px solid var(--alert); padding: 14px 18px; font-size: 13.5px; color: var(--ink-2); margin: 16px 0; }
+  .warn b { color: var(--alert); }
+
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .card { background: var(--panel); border: 1px solid var(--hairline); padding: 19px 21px; }
+  .card h3 { font-family: var(--serif); font-size: 17px; font-weight: 400; margin-bottom: 4px; }
+  .card .kicker { font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+  .card p { font-size: 13.5px; color: var(--ink-2); margin: 8px 0 0; }
+  .card ul { margin: 9px 0 0 17px; }
+  .card li { font-size: 13.2px; color: var(--ink-2); margin-bottom: 5px; }
+
+  /* checklist diario */
+  .daily { background: var(--panel); border: 1px solid var(--hairline); padding: 20px 22px; }
+  .daily .row { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--hairline); }
+  .daily .row:last-child { border-bottom: 0; }
+  .daily .box { flex: none; width: 15px; height: 15px; border: 1.5px solid var(--gold); margin-top: 2px; }
+  .daily .txt { font-size: 13.6px; color: var(--ink-2); }
+  .daily .txt b { color: var(--ink); font-weight: 600; }
+
+  /* quick reference */
+  .qr { background: var(--navy); color: #fff; padding: 30px 32px; }
+  .qr h2 { font-family: var(--serif); font-size: 21px; font-weight: 400; color: #fff; margin-bottom: 4px; }
+  .qr .qsub { font-size: 12px; color: #98a8b6; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px; }
+  .qr .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .qr h4 { font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; color: #e8c98a; margin-bottom: 9px; }
+  .qr ul { margin-left: 16px; }
+  .qr li { font-size: 13.2px; color: #d8dee4; margin-bottom: 6px; }
+  .qr .rule { border-top: 1px solid rgba(255,255,255,.16); margin: 20px 0; }
+  .qr .oneline { font-family: var(--serif); font-size: 17px; color: #fff; line-height: 1.45; }
+
+  .srcs { margin-top: 34px; border-top: 1px solid var(--hairline); padding-top: 16px; }
+  .srcs h4 { font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 10px; }
+  .srcs li { font-size: 12.4px; color: var(--ink-3); margin-bottom: 5px; list-style: none; }
+  footer { text-align: center; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); margin-top: 40px; }
+
+  @media (max-width: 680px) {
+    .two, .qr .grid { grid-template-columns: 1fr; }
+    .page { padding: 28px 16px 48px; }
+  }
+  @media print {
+    nav.jump, .backlink { display: none; }
+    body { background: #fff; }
+    section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="updated" style="margin:0 0 4px;letter-spacing:.2em;">Urban Real Estate</div>
+    <h1>Velocidad de respuesta y seguimiento</h1>
+    <p class="sub">Cómo responder un lead nuevo en menos de 5 minutos y hacer seguimiento en serio. Para agentes y equipo de soporte, para aplicar hoy mismo.</p>
+    <a class="backlink" href="/clients/urban-usa">← Volver al portal</a>
+    <div class="updated">Actualizado el 28 de agosto de 2026</div>
+  </header>
+
+  <nav class="jump">
+    <a href="#porque">Por qué importa</a>
+    <a href="#regla">La regla de 5 minutos</a>
+    <a href="#secuencia">La secuencia</a>
+    <a href="#segmentar">Segmentar</a>
+    <a href="#guiones">Guiones</a>
+    <a href="#habito">Hábito diario</a>
+    <a href="#resumen">Resumen</a>
+  </nav>
+
+  <!-- ============ POR QUE ============ -->
+  <section id="porque">
+    <div class="sec-head"><h2>Por qué esto importa</h2><span class="note">El costo de tardar</span></div>
+
+    <div class="gap">
+      <div class="big">El agente promedio tarda <b>15 horas</b> en responder un lead nuevo.<br>El comprador ya eligió a otro en los primeros <b>5 minutos</b>.</div>
+      <div class="sm">917 minutos de demora promedio, según la Inman Real Estate Technology Survey. Y el 78% de los compradores termina trabajando con el primer agente que responde, según Vendasta.</div>
+    </div>
+
+    <p class="lead">Cuando alguien deja sus datos, no te está eligiendo a vos. Está levantando la mano. En ese momento suele estar mirando tres o cuatro propiedades más, y el primero que atiende el teléfono se queda con la conversación. No es el que tiene mejor propiedad ni mejor precio: es el que llegó primero.</p>
+
+    <div class="stats">
+      <div class="st"><div class="n">21x</div><div class="l">más chances de calificar un lead si respondés en 5 minutos en lugar de 30</div><div class="src">MIT / InsideSales, 1,25M de leads</div></div>
+      <div class="st"><div class="n">100x</div><div class="l">más chances de lograr contacto real respondiendo a los 5 minutos y no a los 30</div><div class="src">MIT / InsideSales</div></div>
+      <div class="st"><div class="n">78%</div><div class="l">de los compradores trabaja con el primer agente que le responde</div><div class="src">Vendasta</div></div>
+      <div class="st"><div class="n">8x</div><div class="l">cae la conversión después de apenas 5 minutos de demora</div><div class="src">InsideSales</div></div>
+    </div>
+
+    <p>Hay un dato más que cambia cómo hay que pensar la primera llamada: <b>el 88% de los compradores investiga mucho online antes de contactar a un agente</b> (NAR). O sea, cuando te escriben ya vienen informados. No están arrancando la búsqueda, están cerca de decidir. Por eso la ventana es tan corta.</p>
+
+    <div class="callout"><b>La oportunidad.</b> Si el promedio de la industria tarda 15 horas, responder en 5 minutos no te pone un poco por delante. Te pone en otra categoría. Es la ventaja más barata que existe: no cuesta pauta, no cuesta inventario, cuesta orden.</div>
+  </section>
+
+  <!-- ============ REGLA ============ -->
+  <section id="regla">
+    <div class="sec-head"><h2>La regla de 5 minutos</h2><span class="note">Qué hacer cuando entra un lead</span></div>
+    <p class="lead">El objetivo es simple: que ningún lead pase más de 5 minutos sin recibir una respuesta, y que un humano lo llame dentro de esa misma ventana. Son dos movimientos distintos y los dos tienen que pasar.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="when">Minuto 0 · automático</div>
+        <h3>El SMS y el mail salen solos</h3>
+        <p>Esto no depende de que alguien esté mirando la pantalla. Se configura una vez y se dispara solo apenas entra el lead.</p>
+        <ul>
+          <li><b>SMS primero.</b> Es lo que se lee. Los mensajes de texto respondidos dentro de los 5 minutos generan 8 veces más interacción que el email, según Velocify.</li>
+          <li><b>Mail después,</b> con algo de sustancia: la propiedad que consultó o material relacionado.</li>
+          <li><b>Que suene a persona.</b> El automático compra tiempo, no cierra nada. Si parece robot, quema la conversación antes de que empiece.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <div class="when">Minuto 1 a 5 · humano</div>
+        <h3>Llamada, sin esperar respuesta al SMS</h3>
+        <p>El error más común es esperar a que conteste el mensaje. No hay que esperar nada: el SMS avisa que existís, la llamada es la que abre la conversación.</p>
+        <ul>
+          <li>Si atiende, la conversación arrancó. Ese es todo el objetivo.</li>
+          <li>Si no atiende, <b>dejá mensaje de voz</b> y mandá un SMS avisando que llamaste.</li>
+          <li>Marcá desde un número local siempre que se pueda: sube muchísimo la tasa de atención.</li>
+        </ul>
+      </div>
+
+      <div class="step">
+        <div class="when">Minuto 5 a 60</div>
+        <h3>Segundo intento el mismo día</h3>
+        <p>Un solo intento no alcanza y no significa que el lead sea malo. Volvé a marcar dentro de la primera hora, en otro momento del día.</p>
+        <ul>
+          <li>Cambiá el horario: si llamaste a las 10, probá a las 16.</li>
+          <li>Dejá registrado en el CRM cada intento, con hora. Sin eso no se puede medir nada.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="warn"><b>Lo que no se hace.</b> No dejar el lead para "cuando termine lo que estoy haciendo". A los 30 minutos ya perdiste 21 veces las chances de calificarlo. Un lead nuevo interrumpe: es lo único que interrumpe.</div>
+  </section>
+
+  <!-- ============ SECUENCIA ============ -->
+  <section id="secuencia">
+    <div class="sec-head"><h2>La secuencia de seguimiento</h2><span class="note">De 8 a 12 contactos en 5 semanas</span></div>
+    <p class="lead">Acá se pierde la mayoría de los negocios, y no por falta de leads. La mayor parte de las operaciones se cierra entre el quinto y el duodécimo contacto, pero casi todos los agentes abandonan después del segundo. El que sigue hasta el contacto ocho juega solo.</p>
+
+    <div class="tw">
+      <table>
+        <thead><tr><th>Cuándo</th><th>Canal</th><th>Qué mandás</th></tr></thead>
+        <tbody>
+          <tr><td><b>Día 0 · minuto 0</b></td><td><span class="tag t-sms">SMS</span></td><td>Respuesta automática. Confirmás que llegó la consulta y avisás que llamás enseguida.</td></tr>
+          <tr><td><b>Día 0 · minuto 0</b></td><td><span class="tag t-mail">Mail</span></td><td>La propiedad consultada más dos o tres similares.</td></tr>
+          <tr><td><b>Día 0 · minuto 1 a 5</b></td><td><span class="tag t-call">Llamada</span></td><td>Primer intento. Si no atiende, mensaje de voz.</td></tr>
+          <tr><td><b>Día 0 · misma tarde</b></td><td><span class="tag t-call">Llamada</span></td><td>Segundo intento en otro horario.</td></tr>
+          <tr><td><b>Día 1</b></td><td><span class="tag t-sms">SMS</span></td><td>Una pregunta corta y concreta: zona o timing. Algo que se responda en cinco palabras.</td></tr>
+          <tr><td><b>Día 3</b></td><td><span class="tag t-call">Llamada</span></td><td>Tercer intento, otro horario distinto.</td></tr>
+          <tr><td><b>Día 5</b></td><td><span class="tag t-mail">Mail</span></td><td>Algo útil sin pedir nada: cómo está el mercado en la zona que le interesa.</td></tr>
+          <tr><td><b>Día 8</b></td><td><span class="tag t-sms">SMS</span></td><td>Una propiedad nueva que encaje con lo que buscaba.</td></tr>
+          <tr><td><b>Día 12</b></td><td><span class="tag t-call">Llamada</span></td><td>Cuarto intento. Muchos contestan recién acá.</td></tr>
+          <tr><td><b>Día 18</b></td><td><span class="tag t-mail">Mail</span></td><td>Caso real: una operación parecida que se cerró.</td></tr>
+          <tr><td><b>Día 25</b></td><td><span class="tag t-sms">SMS</span></td><td>Mensaje de cierre suave. "¿Seguís buscando o lo pausaste por ahora?"</td></tr>
+          <tr><td><b>Día 30 en adelante</b></td><td><span class="tag t-ret">Retargeting</span></td><td>Pasa a la lista de nutrición: queda viendo contenido de Urban sin que nadie lo llame.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout"><b>La pregunta de cierre suave hace el trabajo sucio.</b> "¿Seguís buscando o lo pausaste?" da permiso a decir que no, y eso es bueno: te libera la agenda. El que responde "sigo" se vuelve prioridad; el que no responde nada pasa a retargeting y deja de consumir tiempo.</div>
+  </section>
+
+  <!-- ============ SEGMENTAR ============ -->
+  <section id="segmentar">
+    <div class="sec-head"><h2>No todos los leads se tratan igual</h2><span class="note">Dos velocidades</span></div>
+    <p class="lead">Meter a todos en la misma secuencia hace perder los urgentes y quemar los que no tienen apuro. Lo que define el trato es qué pidió, no cuánto entusiasmo mostró.</p>
+
+    <div class="two">
+      <div class="card">
+        <div class="kicker">Prioridad alta</div>
+        <h3>Vendedores y tasaciones</h3>
+        <p>Alguien que pide una valuación de su propiedad está a semanas de tomar una decisión, y casi siempre está hablando con más de un agente al mismo tiempo.</p>
+        <ul>
+          <li><b>Llamada inmediata</b>, dentro de los 5 minutos, sin excepción.</li>
+          <li>Si no atiende, tres intentos en las primeras 24 horas.</li>
+          <li>El objetivo del primer contacto es agendar la visita, no dar el número por teléfono.</li>
+          <li>Nunca entra solo a una secuencia automática: siempre lo toma una persona.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="kicker">Horizonte largo</div>
+        <h3>Compradores sin apuro</h3>
+        <p>El que dice "estoy viendo para el año que viene" no es un mal lead, es un lead a destiempo. Tratarlo como urgente lo espanta.</p>
+        <ul>
+          <li>Respuesta rápida igual, pero el objetivo es entender el timing.</li>
+          <li>Después pasa a nutrición: contenido de valor cada dos o tres semanas.</li>
+          <li>Un contacto personal por mes alcanza y sobra.</li>
+          <li><b>Agendá el recontacto</b> para el mes que dijo. Ahí se convierte en prioridad alta.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout"><b>La pregunta que ordena todo:</b> "¿Para cuándo te gustaría estar mudado?" o, si es inversor, "¿en qué plazo estás pensando poner el capital?". La respuesta define en qué velocidad va, y se anota en el CRM apenas cuelgan.</div>
+  </section>
+
+  <!-- ============ GUIONES ============ -->
+  <section id="guiones">
+    <div class="sec-head"><h2>Guiones para copiar</h2><span class="note">Cortos y humanos</span></div>
+    <p class="lead">Ninguno de estos vende. Todos buscan lo mismo: que la persona conteste. Adaptalos con tu nombre y la zona, pero no los alargues.</p>
+
+    <div class="scr">
+      <div class="lbl">Primer SMS · automático, minuto 0</div>
+      <div class="msg">Hola [Nombre], soy [Agente] de Urban Real Estate. Me llegó tu consulta por [propiedad o zona]. Te llamo en un ratito, pero si preferís escribime por acá y arrancamos.</div>
+      <div class="why">Por qué funciona: dice quién sos, por qué escribís y qué va a pasar después. Ofrece una salida fácil para el que no quiere hablar por teléfono.</div>
+    </div>
+
+    <div class="scr">
+      <div class="lbl">Primer mail · automático, minuto 0</div>
+      <div class="msg">Asunto: [Nombre], sobre la propiedad que consultaste
+
+Hola [Nombre],
+
+Vi tu consulta por [propiedad o zona]. Te dejo el detalle acá abajo y te sumo dos opciones parecidas que quizás no viste.
+
+[enlaces]
+
+Si querés verlas en persona, decime qué día te queda cómodo y lo coordinamos.
+
+[Agente]
+Urban Real Estate
+[teléfono]</div>
+      <div class="why">Por qué funciona: entrega algo concreto en el primer contacto y cierra con una acción simple, sin pedir que complete nada.</div>
+    </div>
+
+    <div class="scr">
+      <div class="lbl">Mensaje de voz · cuando no atiende</div>
+      <div class="msg">Hola [Nombre], soy [Agente] de Urban Real Estate. Te llamaba por la consulta de [propiedad]. Te mandé también un mensaje de texto por si te queda más cómodo. Quedo atento, hablamos.</div>
+      <div class="why">Por qué funciona: menos de quince segundos, sin pitch, y avisa que hay un SMS esperando. La mayoría responde por texto, no devolviendo la llamada.</div>
+    </div>
+
+    <div class="scr">
+      <div class="lbl">SMS del día 1 · la pregunta corta</div>
+      <div class="msg">Hola [Nombre], una consulta para no hacerte perder tiempo: ¿estás mirando para mudarte pronto o todavía explorando?</div>
+      <div class="why">Por qué funciona: se responde con dos palabras y, sea cual sea la respuesta, te dice en qué velocidad va.</div>
+    </div>
+
+    <div class="scr">
+      <div class="lbl">SMS del día 25 · cierre suave</div>
+      <div class="msg">Hola [Nombre], ¿seguís en la búsqueda o lo pausaste por ahora? Cualquiera de las dos me sirve para saber si te sigo mandando cosas o te dejo tranquilo.</div>
+      <div class="why">Por qué funciona: da permiso explícito para decir que no. Es el mensaje que más respuestas genera de toda la secuencia.</div>
+    </div>
+
+    <div class="warn"><b>Tres cosas que matan la respuesta.</b> Mensajes largos, tratar de tercera persona cuando todo el resto es informal, y arrancar con "Estimado cliente". Si no parece escrito por una persona a otra, no lo contestan.</div>
+  </section>
+
+  <!-- ============ HABITO ============ -->
+  <section id="habito">
+    <div class="sec-head"><h2>El hábito diario y qué medir</h2><span class="note">Cinco minutos por día</span></div>
+    <p class="lead">Nada de esto funciona como esfuerzo heroico. Funciona como rutina corta y repetida. Esto es lo que cada agente revisa todos los días.</p>
+
+    <div class="daily">
+      <div class="row"><div class="box"></div><div class="txt"><b>Leads nuevos sin contactar.</b> Deberían ser cero. Si hay uno, se atiende antes que cualquier otra cosa del día.</div></div>
+      <div class="row"><div class="box"></div><div class="txt"><b>Seguimientos que tocan hoy.</b> Los que caen hoy según la secuencia. No se pasan para mañana.</div></div>
+      <div class="row"><div class="box"></div><div class="txt"><b>Respuestas sin contestar.</b> Alguien que contestó y quedó esperando es peor que un lead sin llamar.</div></div>
+      <div class="row"><div class="box"></div><div class="txt"><b>Recontactos agendados.</b> Los de horizonte largo que dijeron "llamame en septiembre" y septiembre llegó.</div></div>
+      <div class="row"><div class="box"></div><div class="txt"><b>Tu tiempo de respuesta de ayer.</b> Un solo número. Si subió, algo se rompió en el proceso.</div></div>
+    </div>
+
+    <div class="callout"><b>La métrica que ordena todo: tiempo promedio de respuesta.</b> No se puede mejorar lo que no se mide. Si el equipo mira un solo número por semana, que sea este. Los leads, las visitas y los cierres se mueven detrás de él.</div>
+
+    <p>Conviene mirarlo por agente y por semana, y ponerlo a la vista de todos. No como control sino como carrera: cuando el número es público, baja solo.</p>
+  </section>
+
+  <!-- ============ RESUMEN ============ -->
+  <section id="resumen">
+    <div class="sec-head"><h2>Resumen para tener a mano</h2><span class="note">Imprimir o guardar en el teléfono</span></div>
+
+    <div class="qr">
+      <h2>Velocidad de respuesta</h2>
+      <div class="qsub">Urban Real Estate · una página</div>
+
+      <div class="grid">
+        <div>
+          <h4>Cuando entra un lead</h4>
+          <ul>
+            <li>Minuto 0: SMS automático</li>
+            <li>Minuto 0: mail con la propiedad</li>
+            <li>Minuto 1 a 5: llamada, siempre</li>
+            <li>Sin atender: mensaje de voz más SMS</li>
+            <li>Misma tarde: segundo intento</li>
+          </ul>
+        </div>
+        <div>
+          <h4>La secuencia</h4>
+          <ul>
+            <li>Día 1: SMS con pregunta corta</li>
+            <li>Día 3: llamada</li>
+            <li>Día 5: mail útil</li>
+            <li>Día 8: SMS con propiedad nueva</li>
+            <li>Día 12: llamada</li>
+            <li>Día 18: mail con un caso real</li>
+            <li>Día 25: SMS de cierre suave</li>
+            <li>Día 30: pasa a retargeting</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Dos velocidades</h4>
+          <ul>
+            <li>Tasación o venta: llamada ya, tres intentos en 24 horas</li>
+            <li>Comprador sin apuro: nutrición y recontacto agendado</li>
+            <li>La pregunta: ¿para cuándo?</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Todos los días</h4>
+          <ul>
+            <li>Leads sin contactar: cero</li>
+            <li>Seguimientos de hoy: hechos</li>
+            <li>Respuestas pendientes: cero</li>
+            <li>Tu tiempo de respuesta de ayer</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rule"></div>
+      <div class="oneline">Si tardás 15 horas, competís con todos.<br>Si tardás 5 minutos, competís con casi nadie.</div>
+    </div>
+
+    <div class="srcs">
+      <h4>Fuentes</h4>
+      <ul>
+        <li>Estudio MIT / InsideSales sobre 1,25 millones de leads: 21x más chances de calificar y 100x más de lograr contacto respondiendo a los 5 minutos frente a los 30.</li>
+        <li>Inman Real Estate Technology Survey: el agente promedio tarda más de 15 horas (917 minutos) en responder un lead nuevo.</li>
+        <li>Vendasta: el 78% de los compradores trabaja con el primer agente que responde.</li>
+        <li>InsideSales: la conversión cae 8 veces después de 5 minutos de demora.</li>
+        <li>Velocify: los SMS respondidos dentro de los 5 minutos generan 8 veces más interacción que el email.</li>
+        <li>National Association of Realtors (NAR): el 88% de los compradores investiga online antes de contactar a un agente.</li>
+      </ul>
+      <p style="font-size:12.4px;color:var(--ink-3);margin-top:12px;">Todos los datos corresponden a investigación de la industria y se citan como referencia. No son resultados de Urban Real Estate ni de A+Growth.</p>
+    </div>
+  </section>
+
+  <footer>Urban Real Estate · Preparado por A+Growth</footer>
+</div>
+<script src="/portal-feedback.js" data-cliente="urban-usa" data-acento="#a8874f" data-tinta="#2b3947"></script>
+</body>
+</html>
