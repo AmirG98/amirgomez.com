@@ -16,12 +16,12 @@
   .page { max-width: 1180px; margin: 0 auto; padding: 44px 32px 72px; }
   header { text-align: center; margin-bottom: 22px; }
   h1 { font-family: var(--serif); font-size: 32px; font-weight: 400; margin-top: 16px; }
-  .sub { font-size: 13.5px; color: var(--ink-2); margin-top: 8px; max-width: 62ch; margin-left: auto; margin-right: auto; }
+  .sub { font-size: 14.5px; color: var(--ink-2); margin-top: 10px; max-width: 70ch; margin-left: auto; margin-right: auto; }
   .backlink { display: inline-block; margin-top: 10px; font-size: 12.5px; color: var(--gold); text-decoration: none; }
   .backlink:hover { text-decoration: underline; }
   .updated { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); margin-top: 14px; }
 
-  nav.jump { display: flex; flex-wrap: wrap; gap: 7px; justify-content: center; margin: 0 auto 30px; max-width: 720px; }
+  nav.jump { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 0 auto 34px; max-width: 1000px; }
   nav.jump a { font-size: 12px; font-weight: 500; color: var(--ink-2); text-decoration: none; background: var(--panel); border: 1px solid var(--hairline); padding: 7px 13px; border-radius: 999px; transition: all .18s; }
   nav.jump a:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
 
@@ -45,7 +45,8 @@
   .gap .sm { font-size: 13px; color: #c3ccd4; margin-top: 12px; }
 
   /* pasos */
-  .steps { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); align-items: start; }
+  .steps { display: flex; flex-wrap: wrap; gap: 14px; align-items: stretch; }
+  .steps > .step { flex: 1 1 330px; min-width: 300px; }
   .step { background: var(--panel); border: 1px solid var(--hairline); border-left: 3px solid var(--gold); padding: 18px 20px; }
   .step .when { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
   .step h3 { font-family: var(--serif); font-size: 17px; font-weight: 400; margin: 7px 0 8px; }
@@ -71,7 +72,8 @@
   .w-vos { background: var(--navy); color: #fff; }
 
   /* scripts */
-  .scripts { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 14px; align-items: start; }
+  .scripts { display: flex; flex-wrap: wrap; gap: 14px; align-items: stretch; }
+  .scripts > .scr { flex: 1 1 340px; min-width: 300px; }
   .scr { background: var(--panel); border: 1px solid var(--hairline); padding: 18px 20px; }
   .scr .lbl { font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 10px; }
   .scr .msg { font-size: 14px; color: var(--ink); background: var(--paper-2); border-left: 2px solid var(--gold); padding: 13px 15px; margin-bottom: 9px; white-space: pre-line; }
@@ -119,7 +121,8 @@
     .page { max-width: 860px; }
   }
   @media (max-width: 680px) {
-    .two, .qr .grid, .steps, .scripts { grid-template-columns: 1fr; }
+    .two, .qr .grid { grid-template-columns: 1fr; }
+    .steps > .step, .scripts > .scr { flex: 1 1 100%; min-width: 0; }
     .page { padding: 28px 16px 48px; }
     h1 { font-size: 26px; }
   }
