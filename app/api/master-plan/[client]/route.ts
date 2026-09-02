@@ -37,7 +37,7 @@ Signed with Gusto to run eight of their partner firms through the Operations Aud
 CHANNELS AND WHAT EACH IS FOR
 Ops Notes newsletter, every other Friday. Written by Chase. This is the authority engine.
 LinkedIn: Chase's own posts plus paid amplification. Its job is constant presence, not lead capture. Steady profile traffic compounds into the authority that makes webinar hosts and podcasts say yes, and it stops the day the spend stops. Held steady at the current level rather than cut.
-Meta: the volume and testing channel. Runs in rounds, one variable at a time. Currently rebuilding the native lead forms with pre-qualifying questions about the firm, so filtering happens at capture instead of after a call is booked.
+Meta: the volume and testing channel. Runs in rounds, one variable at a time. The attention it buys is cheap and that part works, but recent leads have not matched the ICP: firms too small to have a bottleneck worth removing, and clicks without real intent. That is why the native lead forms are being rebuilt with pre-qualifying questions about the firm, size, service mix and what is stuck, so filtering happens at capture instead of after a call is booked.
 Webinars: partner communities such as The Collaboration Room. Treated as content assets first and lead sources second.
 Podcasts: guesting strategy, not sponsorship. Priority order is Unofficial QuickBooks Accountants, then The Accounting Podcast, then Oh My Fraud.
 Case studies: two published, Quadrant and FinClarity. Eight more exist from previous work but are not accounting firms, so they stay unpublished until ICP case studies exist.
