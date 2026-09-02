@@ -42,8 +42,10 @@ Webinars: partner communities such as The Collaboration Room. Treated as content
 Podcasts: guesting strategy, not sponsorship. Priority order is Unofficial QuickBooks Accountants, then The Accounting Podcast, then Oh My Fraud.
 Case studies: two published, Quadrant and FinClarity. Eight more exist from previous work but are not accounting firms, so they stay unpublished until ICP case studies exist.
 
-SPEND TO DATE (Jul 24 to Aug 20, 2026)
-Total 178.11 USD. LinkedIn 106.39 with 105 engagements at 1.01 each, 3.4 percent click-through rate. Meta 71.72 with 167 landing page views at 0.43 each, 1.64 percent click-through rate.
+SPEND TO DATE (account totals, all campaigns)
+Total 1,547.66 USD. LinkedIn 1,290.77, which is 83 percent: 69,641 impressions, 1,562 clicks, 0.83 average cost per click. Meta 256.89 over the last 30 days, which is 17 percent.
+What each LinkedIn campaign proved: Thought Leader v2, the engagement campaign, spent 921.14 and buys clicks at 0.63. Three campaigns tried to capture newsletter signups directly and all three were paused: the website conversion version reached 2.28 per click, and LinkedIn's own native lead form reached 24.64 per click for 3 clicks total, roughly 39 times the cost of the engagement campaign. The conclusion is the account's own: on LinkedIn, buying attention works and buying signups does not.
+Meta has run three rounds. Round one sent traffic to the Operations Assessment, 155.43 spent at 0.40 per landing page view, high volume and no filtering. Round two moved capture into a native lead form with basic questions, 101.46 spent at 4.41 per lead, a named contact instead of an anonymous visit but too loose a filter. Round three, running now, adds pre-qualifying questions about the firm so people are qualified before they reach the assessment. Cost per result rises with each round and that is the intent: qualification keeps moving earlier in the funnel.
 Attributed leads: zero for that cycle, because the Meta pixel was not yet installed. The pixel went live on August 26, so conversion events are now recording and the first real cost-per-lead reads arrive with the next reporting cycle.
 
 THE CENTRAL CONSTRAINT
