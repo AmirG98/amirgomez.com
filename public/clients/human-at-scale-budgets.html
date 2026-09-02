@@ -102,6 +102,12 @@
   .lgnd { display: flex; gap: 16px; margin-top: 12px; font-size: 12px; color: var(--ink-3); }
   .lgnd i { display: inline-block; width: 11px; height: 11px; margin-right: 5px; vertical-align: -1px; }
   .lgnd i.a { background: var(--accent); } .lgnd i.b { background: #B47CF0; }
+  .roles { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 16px; margin: 20px 0 6px; }
+  .role { padding: 20px 21px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; }
+  .role .tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 4px 10px; border-radius: 5px; background: rgba(255,255,255,.09); margin-bottom: 11px; }
+  .role h3 { font-size: 17px; margin: 0 0 10px; line-height: 1.3; }
+  .role p { font-size: 14.5px; line-height: 1.62; margin: 0 0 10px; }
+  .role p.metric { font-size: 13px; padding-top: 11px; margin-top: 13px; margin-bottom: 0; border-top: 1px solid rgba(255,255,255,.09); opacity: .78; }
 </style>
 </head>
 <body data-client="human-at-scale" data-page="budgets">
@@ -222,11 +228,45 @@
     </div>
   </section>
 
+  <!-- ================= CHANNEL ROLES ================= -->
+  <section>
+    <div class="sec-head">
+      <h2>What each channel is for</h2>
+      <span class="note">Two different jobs, two different budget logics</span>
+    </div>
+
+    <p class="lede">The two channels are not competing for the same dollar. They buy different things on different timelines, and funding them the same way would waste both.</p>
+
+    <div class="roles">
+      <div class="role">
+        <span class="tag">LinkedIn</span>
+        <h3>Constant presence, compounding return</h3>
+        <p>LinkedIn is where Chase is visible as a person. The spend keeps a steady stream of the right people landing on the profile and reading the posts, and that audience does not reset when a campaign pauses. It accumulates.</p>
+        <p>This is the channel that makes a webinar host say yes and a podcast reply to the pitch. Nobody books an unknown operator. That authority is built by showing up consistently over months, and it cannot be bought back later at any price.</p>
+        <p><b>Budget logic:</b> steady and always on, at the current level. Turning it down saves very little and costs the compounding, because the profile visits stop the day the spend stops.</p>
+        <p class="metric">3.4% engagement rate at ~$1.01 CPC. Down from ~$2.60 in June, so the same money buys more than twice the attention it did at the start.</p>
+      </div>
+
+      <div class="role">
+        <span class="tag alt">Meta</span>
+        <h3>Testing rounds, sharper filtering</h3>
+        <p>Meta is the volume channel and the place where the offer gets tested. It buys cheap traffic and runs in rounds: change one variable, read the result, keep what works.</p>
+        <p>The current round is about qualification, not volume. The native lead forms are being rebuilt with pre-qualifying questions about the firm itself, so that what arrives is a named contact with context attached rather than an anonymous click.</p>
+        <p><b>Budget logic:</b> variable by round. Spend follows what the round is testing, and scales only behind a form that is proving it filters correctly.</p>
+        <p class="metric">$0.43 per landing page view at 1.64% CTR. Cheap attention, which is exactly why the filtering has to happen at the form.</p>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <b>Why this split rather than picking one.</b> If the goal were leads this quarter, everything would go to Meta. If the goal were authority in the accounting space, everything would go to LinkedIn. The engagement needs both: Meta produces measurable leads now, and LinkedIn produces the reputation that makes those leads answer the phone and that opens the doors paid traffic cannot open. Cutting LinkedIn to fund Meta trades a compounding asset for a short-term number.
+    </div>
+  </section>
+
   <!-- ================= WHAT CHANGES NEXT ================= -->
   <section>
     <div class="sec-head">
       <h2>What changes next cycle</h2>
-      <span class="note">Agreed on the Aug 21 call</span>
+      <span class="note">Current plan</span>
     </div>
 
     <div class="tbl-wrap">
@@ -236,22 +276,31 @@
         </thead>
         <tbody>
           <tr>
-            <td>Pivot to native lead forms on Meta</td>
-            <td>Removes the external form as a drop-off point and captures the lead inside the platform</td>
-            <td>Same budget, measurable leads</td>
+            <td>Pre-qualifying questions on the Meta lead forms</td>
+            <td>Asking about the firm (size, service mix, what is stuck) filters at the point of capture instead of after a call is already booked</td>
+            <td>Same budget, fewer and better leads</td>
           </tr>
           <tr>
-            <td>LinkedIn down to a minimum</td>
-            <td>Keeps testing content while more video goes out organically</td>
-            <td>Lower LinkedIn spend</td>
+            <td>LinkedIn held at the current level</td>
+            <td>Constant profile traffic is what compounds into authority and opens webinar and podcast doors. It stops the day the spend stops</td>
+            <td>Unchanged, steady</td>
           </tr>
           <tr>
-            <td>Meta pixel (installed Aug 26) + CRM connection</td>
+            <td>Meta runs in testing rounds</td>
+            <td>One variable per round, read the result, scale only behind what proves itself</td>
+            <td>Variable by round</td>
+          </tr>
+          <tr>
+            <td>Pixel (installed Aug 26) + CRM connection</td>
             <td>Pixel is live and recording; CRM wiring completes the attribution loop</td>
             <td>No cost, first cost-per-lead reads next cycle</td>
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="note-box">
+      <b>A note on the earlier plan.</b> The August 21 call landed on dropping LinkedIn to a minimum while organic video was tested. Holding it steady is the better call: LinkedIn spend is small in absolute terms, and the profile traffic it buys is the input to the authority that makes every other channel work. The testing energy belongs on Meta, where the cost per read is low enough to learn quickly.
     </div>
   </section>
 

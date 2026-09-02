@@ -36,18 +36,18 @@ Signed with Gusto to run eight of their partner firms through the Operations Aud
 
 CHANNELS AND WHAT EACH IS FOR
 Ops Notes newsletter, every other Friday. Written by Chase. This is the authority engine.
-LinkedIn: Chase's own posts plus paid amplification of the best performing content.
-Meta: traffic to the Operations Assessment, moving to native lead forms.
+LinkedIn: Chase's own posts plus paid amplification. Its job is constant presence, not lead capture. Steady profile traffic compounds into the authority that makes webinar hosts and podcasts say yes, and it stops the day the spend stops. Held steady at the current level rather than cut.
+Meta: the volume and testing channel. Runs in rounds, one variable at a time. Currently rebuilding the native lead forms with pre-qualifying questions about the firm, so filtering happens at capture instead of after a call is booked.
 Webinars: partner communities such as The Collaboration Room. Treated as content assets first and lead sources second.
 Podcasts: guesting strategy, not sponsorship. Priority order is Unofficial QuickBooks Accountants, then The Accounting Podcast, then Oh My Fraud.
 Case studies: two published, Quadrant and FinClarity. Eight more exist from previous work but are not accounting firms, so they stay unpublished until ICP case studies exist.
 
 SPEND TO DATE (Jul 24 to Aug 20, 2026)
 Total 178.11 USD. LinkedIn 106.39 with 105 engagements at 1.01 each, 3.4 percent click-through rate. Meta 71.72 with 167 landing page views at 0.43 each, 1.64 percent click-through rate.
-Attributed leads: zero. Not because the traffic failed, but because the Meta pixel and the CRM connection are not in place. Until that is fixed every channel reports cost per click and none report cost per lead.
+Attributed leads: zero for that cycle, because the Meta pixel was not yet installed. The pixel went live on August 26, so conversion events are now recording and the first real cost-per-lead reads arrive with the next reporting cycle.
 
 THE CENTRAL CONSTRAINT
-Installing the pixel and connecting the CRM is the top priority. It blocks spend decisions, the funnel view, and any honest read on what content is producing. It costs nothing but the work.
+The pixel is installed as of August 26. What remains is letting data accumulate, connecting events through to the CRM view, and switching campaign optimization from clicks to conversions. Until enough data lands, spend decisions still lack a reliable cost-per-lead number.
 
 HOW THE PIECES FIT
 Content builds authority. Authority makes webinars and podcasts say yes. Those produce recordings. Recordings become clips and newsletter issues, which feed the content engine again. Paid amplifies whatever already works organically rather than replacing it. The Operations Assessment is where interest becomes a measurable action, and the Audit is where it becomes revenue.
@@ -56,7 +56,10 @@ WORKING AGREEMENTS
 Nothing Chase writes gets rewritten by AI. Grammar and formatting only. Everything published is manually reviewed before it goes out, including checking that tags render and links resolve.
 
 WHAT IS OPEN RIGHT NOW
-Meta pixel and CRM connection. The custom tracker replacing the spreadsheet. The "Welcome, choose your path" email. Pivot to native lead forms on Meta with LinkedIn dropped to a minimum. Nurture campaigns for people who took the Operations Assessment. A quality checklist for anything published.`,
+CRM connection to complete the attribution loop. Pre-qualifying questions on the Meta lead forms. The custom tracker replacing the spreadsheet. Nurture campaigns for people who took the Operations Assessment, requested repeatedly and still not confirmed live. New pages with Makai Web for humanOS and the Operations Audit, plus dedicated Partners pages, with the copy upleveled. A repeatable process for cutting clips from long-form content.
+
+RECENTLY DONE
+Meta pixel installed August 26. Native lead forms running. Publishing QA checklist live in the portal, built after a formal escalation about content quality. The "Welcome, choose your path" email drafted and sent to Chase. Webinar framework published.`,
   },
   qhu: {
     idioma: 'español rioplatense (voseo)',
