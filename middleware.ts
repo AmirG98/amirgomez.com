@@ -52,7 +52,7 @@ export function middleware(req: NextRequest) {
   }
 
   const match = req.nextUrl.pathname.match(
-    /^\/clients\/([^/]+?)(?:\.html)?(?:\/(approvals|reports|ideas|transcripts|context|budgets|dashboard|masterplan|frameworks|qa|brandvoice|contrato|marca|tareas|trainings|voz)(?:\/(\d{4}-\d{2}-\d{2}))?)?\/?$/
+    /^\/clients\/([^/]+?)(?:\.html)?(?:\/(approvals|reports|ideas|transcripts|context|budgets|dashboard|masterplan|frameworks|qa|brandvoice|contrato|marca|tareas|trainings|voz|readme)(?:\/(\d{4}-\d{2}-\d{2}))?)?\/?$/
   );
   if (!match) return NextResponse.next();
 
@@ -81,7 +81,7 @@ export function middleware(req: NextRequest) {
     client.endsWith('-budgets') ||
     /-report-\d{4}-\d{2}-\d{2}$/.test(client)
   ) {
-    const base = client.replace(/-(hub|approvals|ideas|transcripts|context|budgets|dashboard|masterplan|frameworks|qa|brandvoice|contrato|marca|tareas|trainings|voz|report-\d{4}-\d{2}-\d{2})$/, '');
+    const base = client.replace(/-(hub|approvals|ideas|transcripts|context|budgets|dashboard|masterplan|frameworks|qa|brandvoice|contrato|marca|tareas|trainings|voz|readme|report-\d{4}-\d{2}-\d{2})$/, '');
     return NextResponse.rewrite(new URL(`/clients/${base}-login.html`, req.url));
   }
 
@@ -108,6 +108,7 @@ export function middleware(req: NextRequest) {
   if (section === 'marca') return NextResponse.rewrite(new URL(`/clients/${client}-marca.html`, req.url));
   if (section === 'tareas') return NextResponse.rewrite(new URL(`/clients/${client}-tareas.html`, req.url));
   if (section === 'budgets') return NextResponse.rewrite(new URL(`/clients/${client}-budgets.html`, req.url));
+  if (section === 'readme') return NextResponse.rewrite(new URL(`/clients/${client}-readme.html`, req.url));
   if (section === 'reports' && date) return NextResponse.rewrite(new URL(`/clients/${client}-report-${date}.html`, req.url));
   if (section === 'reports') return NextResponse.rewrite(new URL(`/clients/${client}.html`, req.url));
   if (req.nextUrl.pathname.endsWith('.html')) return NextResponse.next();
