@@ -28,7 +28,11 @@ const CONTEXTO: Record<string, { idioma: string; contexto: string; agencia?: str
     agencia: 'OutDo',
     contexto: `BUSINESS
 Human at Scale, founded by Chase Damiano. Operations consulting for accounting firms in the US. Core thesis: the owner is the bottleneck. The firm cannot grow past what the owner personally touches.
-Main offer: an Operations Audit. How work actually flows, where the money is actually made, and what the tech stack does for the team versus to it. The deliverable is a prioritized roadmap with sequencing, success metrics and expected return.
+THE OFFER LADDER
+Operations Assessment, free. A dynamic self-diagnostic where anonymous interest becomes a named contact.
+Firm Bottleneck Diagnostic, free, 30 minutes with Chase. A working session, not a pitch.
+Operations Audit, paid. How work actually flows, where the money is actually made, and what the tech stack does for the team versus to it. Diagnoses the main bottleneck and produces a sequenced roadmap for the next 60 days. Important: the Audit is the first phase of humanOS Lite, not a separate standalone product that humanOS then follows.
+humanOS, paid and ongoing, is where the roadmap gets implemented rather than handed over. Two delivery modes: humanOS fully embedded with weekly execution, where the team does the work for the firm, and humanOS Lite in two-week advisory cycles, where the firm's own team executes with guidance. Both live on the humanatscale.com/humanos page, whose CTA is Book Your Discovery Call.
 ICP: owners and operators of US accounting firms. Firms that are too small are disqualified rather than nurtured.
 
 PARTNERSHIP
@@ -58,7 +62,7 @@ WORKING AGREEMENTS
 Nothing Chase writes gets rewritten by AI. Grammar and formatting only. Everything published is manually reviewed before it goes out, including checking that tags render and links resolve.
 
 WHAT IS OPEN RIGHT NOW
-CRM connection to complete the attribution loop. Pre-qualifying questions on the Meta lead forms. The custom tracker replacing the spreadsheet. Nurture campaigns for people who took the Operations Assessment, requested repeatedly and still not confirmed live. New pages with Makai Web for humanOS and the Operations Audit, plus dedicated Partners pages, with the copy upleveled. A repeatable process for cutting clips from long-form content.
+CRM connection to complete the attribution loop. Pre-qualifying questions on the Meta lead forms. The custom tracker replacing the spreadsheet. Nurture campaigns for people who took the Operations Assessment, requested repeatedly and still not confirmed live. A dedicated page for the Operations Audit with Makai Web, with the copy upleveled from the Notion source. humanOS already has its own page covering both delivery modes; the Audit is only described inside it as the first phase of Lite, so there is nowhere to send a reader who is ready for the Audit alone. Dedicated Partners pages are also in progress. A repeatable process for cutting clips from long-form content.
 
 RECENTLY DONE
 Meta pixel installed August 26. Native lead forms running. Publishing QA checklist live in the portal, built after a formal escalation about content quality. The "Welcome, choose your path" email drafted and sent to Chase. Webinar framework published.`,
