@@ -117,6 +117,12 @@
   .rmeta { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 10px 0; margin-bottom: 10px; border-top: 1px solid rgba(255,255,255,.09); border-bottom: 1px solid rgba(255,255,255,.09); }
   .rmeta span { font-size: 12.5px; opacity: .8; }
   .rnd p.verdict { font-size: 13px; margin-bottom: 0; opacity: .8; }
+  .mplink { display: block; text-decoration: none; border: 1px solid var(--hairline); border-left: 3px solid var(--accent);
+    background: var(--paper-2); padding: 14px 18px; margin: 0 0 22px; transition: background .2s; }
+  .mplink:hover { background: var(--accent-soft, var(--paper-2)); }
+  .mp-lab { display: block; font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--accent); }
+  .mp-tx { display: block; font-size: 13.2px; color: var(--ink-2); line-height: 1.55; margin-top: 6px; max-width: 88ch; }
+  .mp-go { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-top: 8px; }
 </style>
 </head>
 <body data-client="human-at-scale" data-page="budgets">
@@ -128,8 +134,15 @@
     <h1>Budgets</h1>
     <p class="sub">Total ad spend across channels, split by LinkedIn and Meta, and what each one bought. Updated with every reporting cycle.</p>
     <a class="backlink" href="/clients/human-at-scale">← Back to portal</a>
-    <div class="updated">Updated September 2, 2026</div>
+    <div class="updated">Updated September 3, 2026</div>
   </header>
+
+  <a class="mplink" href="/clients/human-at-scale/masterplan">
+    <span class="mp-lab">Master Plan &middot; Layers one and two &middot; What the spend buys</span>
+    <span class="mp-tx">Spend splits along the plan: LinkedIn buys attention for demand creation, Meta buys captured leads for qualification. The plan is explicit that paid amplifies what already works organically rather than replacing it, and that scaling before attribution exists is the one thing not to do.</span>
+    <span class="mp-go">Open the plan &rarr;</span>
+  </a>
+
   <!-- ================= TOTALS ================= -->
   <section>
     <div class="sec-head">
