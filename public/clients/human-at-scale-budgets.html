@@ -102,6 +102,21 @@
   .lgnd { display: flex; gap: 16px; margin-top: 12px; font-size: 12px; color: var(--ink-3); }
   .lgnd i { display: inline-block; width: 11px; height: 11px; margin-right: 5px; vertical-align: -1px; }
   .lgnd i.a { background: var(--accent); } .lgnd i.b { background: #B47CF0; }
+  .roles { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 16px; margin: 20px 0 6px; }
+  .role { padding: 20px 21px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; }
+  .role .tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 4px 10px; border-radius: 5px; background: rgba(255,255,255,.09); margin-bottom: 11px; }
+  .role h3 { font-size: 17px; margin: 0 0 10px; line-height: 1.3; }
+  .role p { font-size: 14.5px; line-height: 1.62; margin: 0 0 10px; }
+  .role p.metric { font-size: 13px; padding-top: 11px; margin-top: 13px; margin-bottom: 0; border-top: 1px solid rgba(255,255,255,.09); opacity: .78; }
+  .rounds { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 14px; margin: 18px 0 16px; }
+  .rnd { padding: 18px 19px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); border-radius: 11px; }
+  .rnd.current { background: rgba(255,255,255,.055); border-color: rgba(255,255,255,.17); }
+  .rnd .rn { font-size: 10.5px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; opacity: .62; margin-bottom: 8px; }
+  .rnd h3 { font-size: 15.5px; margin: 0 0 9px; line-height: 1.32; }
+  .rnd p { font-size: 13.5px; line-height: 1.58; margin: 0 0 11px; opacity: .87; }
+  .rmeta { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 10px 0; margin-bottom: 10px; border-top: 1px solid rgba(255,255,255,.09); border-bottom: 1px solid rgba(255,255,255,.09); }
+  .rmeta span { font-size: 12.5px; opacity: .8; }
+  .rnd p.verdict { font-size: 13px; margin-bottom: 0; opacity: .8; }
 </style>
 </head>
 <body data-client="human-at-scale" data-page="budgets">
@@ -113,48 +128,48 @@
     <h1>Budgets</h1>
     <p class="sub">Total ad spend across channels, split by LinkedIn and Meta, and what each one bought. Updated with every reporting cycle.</p>
     <a class="backlink" href="/clients/human-at-scale">← Back to portal</a>
-    <div class="updated">Updated August 28, 2026</div>
+    <div class="updated">Updated September 2, 2026</div>
   </header>
   <!-- ================= TOTALS ================= -->
   <section>
     <div class="sec-head">
       <h2>Spend to date</h2>
-      <span class="note">Jul 24 &ndash; Aug 20, 2026</span>
+      <span class="note">Account totals, all campaigns</span>
     </div>
 
     <div class="spend">
       <div class="metric accent">
-        <div class="label">This cycle</div>
-        <div class="value">$178.11</div>
+        <div class="label">Total to date</div>
+        <div class="value">$1,547.66</div>
         <div class="foot">Across both channels</div>
       </div>
       <div class="metric">
         <div class="label">LinkedIn</div>
-        <div class="value">$106.39</div>
-        <div class="foot">60% of total &middot; 105 engagements</div>
+        <div class="value">$1,290.77</div>
+        <div class="foot">83% of total &middot; 1,562 clicks at $0.83</div>
       </div>
       <div class="metric">
         <div class="label">Meta</div>
-        <div class="value">$71.72</div>
-        <div class="foot">40% of total &middot; 167 landing page views</div>
+        <div class="value">$256.89</div>
+        <div class="foot">17% of total &middot; last 30 days, 3 rounds</div>
       </div>
       <div class="metric">
-        <div class="label">Qualified leads</div>
-        <div class="value">0</div>
-        <div class="foot">No conversion tracking in place yet</div>
+        <div class="label">Cost per lead</div>
+        <div class="value">$4.41</div>
+        <div class="foot">Meta native form &middot; fit is what round 3 fixes</div>
       </div>
     </div>
 
     <div class="bar-wrap">
       <div class="bar-row">
-        <div class="ch">LinkedIn<small>Thought Leader v2</small></div>
-        <div class="bar"><i style="width:60%"></i></div>
-        <div class="amt">$106.39</div>
+        <div class="ch">LinkedIn<small>Mostly Thought Leader v2</small></div>
+        <div class="bar"><i style="width:83%"></i></div>
+        <div class="amt">$1,290.77</div>
       </div>
       <div class="bar-row">
-        <div class="ch">Meta<small>Traffic to Ops Assessment</small></div>
-        <div class="bar"><i class="alt" style="width:40%"></i></div>
-        <div class="amt">$71.72</div>
+        <div class="ch">Meta<small>Three rounds on the assessment</small></div>
+        <div class="bar"><i class="alt" style="width:17%"></i></div>
+        <div class="amt">$256.89</div>
       </div>
     </div>
     <div class="lgnd"><span><i class="a"></i>LinkedIn</span><span><i class="b"></i>Meta</span></div>
@@ -164,7 +179,7 @@
   <section>
     <div class="sec-head">
       <h2>Spend history</h2>
-      <span class="note">Every cycle since the engagement started</span>
+      <span class="note">By reporting cycle &middot; figures as reported at the time</span>
     </div>
     <div class="tbl-wrap">
       <table>
@@ -178,7 +193,7 @@
         </tbody>
       </table>
     </div>
-    <div class="callout"><b>About the ~$103 cycle.</b> That figure is derived from the Jul 13–23 report, which stated spend rose 10.2% versus the prior period. The exact platform export will replace it when pulled.</div>
+    <div class="callout"><b>About the ~$103 cycle.</b> That figure is derived from the Jul 13–23 report, which stated spend rose 10.2% versus the prior period. The exact platform export will replace it when pulled. The totals above are the per-cycle figures reported at the time. The account totals at the top of this page come straight from the platforms and are the number to use for any budget decision.</div>
   </section>
 
   <!-- ================= DETAIL ================= -->
@@ -222,11 +237,87 @@
     </div>
   </section>
 
+  <!-- ================= CHANNEL ROLES ================= -->
+  <section>
+    <div class="sec-head">
+      <h2>What each channel is for</h2>
+      <span class="note">Two different jobs, two different budget logics</span>
+    </div>
+
+    <p class="lede">The two channels are not competing for the same dollar. They buy different things on different timelines, and funding them the same way would waste both.</p>
+
+    <div class="roles">
+      <div class="role">
+        <span class="tag">LinkedIn</span>
+        <h3>Constant presence, compounding return</h3>
+        <p>LinkedIn is where Chase is visible as a person. The spend keeps a steady stream of the right people landing on the profile and reading the posts, and that audience does not reset when a campaign pauses. It accumulates.</p>
+        <p>This is the channel that makes a webinar host say yes and a podcast reply to the pitch. Nobody books an unknown operator. That authority is built by showing up consistently over months, and it cannot be bought back later at any price.</p>
+        <p><b>Budget logic:</b> steady and always on, at the current level. Turning it down saves very little and costs the compounding, because the profile visits stop the day the spend stops.</p>
+        <p><b>This channel has already told us what it is good at.</b> Thought Leader v2 buys clicks at $0.63. The three campaigns that tried to capture newsletter signups directly were pulled: the website conversion version reached $2.28 per click, and LinkedIn's own native form hit $24.64, roughly 39 times the cost of the engagement campaign for 3 clicks. Buying attention here works. Buying signups here does not.</p>
+        <p class="metric">$1,290.77 spent to date across all LinkedIn campaigns: 69,641 impressions, 1,562 clicks, $0.83 average CPC. The active engagement campaign runs at $0.63.</p>
+      </div>
+
+      <div class="role">
+        <span class="tag alt">Meta</span>
+        <h3>Testing rounds, sharper filtering</h3>
+        <p>Meta is the volume channel and the place where the offer gets tested. It buys cheap traffic and runs in rounds: change one variable, read the result, keep what works.</p>
+        <p>The current round is about qualification, not volume, and that is a response to what the traffic has been producing. The forms have been bringing in leads that do not look like the ICP: firms too small to have a bottleneck worth removing, and contacts with no real intent behind the click.</p>
+        <p>So the native lead forms are being rebuilt with pre-qualifying questions about the firm itself, size, service mix and what is actually stuck. Cheap traffic with a loose form fills the pipeline with names that cost time to disqualify. The filter belongs at the point of capture, before anyone books a call.</p>
+        <p><b>Budget logic:</b> variable by round. Spend follows what the round is testing, and scales only behind a form that is proving it filters correctly.</p>
+        <p class="metric">$256.89 over the last 30 days across both campaigns, reaching 26,491 people. Traffic bought landing page views at $0.40; the native form buys leads at $4.41.</p>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <b>Why this split rather than picking one.</b> If the goal were leads this quarter, everything would go to Meta. If the goal were authority in the accounting space, everything would go to LinkedIn. The engagement needs both: Meta produces measurable leads now, and LinkedIn produces the reputation that makes those leads answer the phone and that opens the doors paid traffic cannot open. Cutting LinkedIn to fund Meta trades a compounding asset for a short-term number.
+    </div>
+  </section>
+
+  <!-- ================= META ROUNDS ================= -->
+  <section>
+    <div class="sec-head">
+      <h2>Meta, round by round</h2>
+      <span class="note">Each round changed one thing and the numbers moved</span>
+    </div>
+
+    <p class="lede">Meta has run three rounds. Each one traded volume for a better-defined contact, which is why the cost per result keeps rising and why that is the intended direction rather than a problem.</p>
+
+    <div class="rounds">
+      <div class="rnd">
+        <div class="rn">Round 1</div>
+        <h3>Traffic to the Operations Assessment</h3>
+        <p>Send cheap traffic to the assessment page and let the page do the work. No capture inside the platform.</p>
+        <div class="rmeta"><span><b>$155.43</b> spent</span><span><b>$0.40</b> per landing page view</span><span>22,084 impressions</span></div>
+        <p class="verdict">Volume worked and nothing filtered. Around 390 landing page views arrived with no way to tell who any of them were. Paused.</p>
+      </div>
+
+      <div class="rnd">
+        <div class="rn">Round 2</div>
+        <h3>Native lead form, basic questions</h3>
+        <p>Capture the lead inside Meta instead of sending it to a page. Low friction by design, with only basic fields.</p>
+        <div class="rmeta"><span><b>$101.46</b> spent</span><span><b>$4.41</b> per lead</span><span>5,744 reached</span></div>
+        <p class="verdict">Eleven times the cost per action, but the action is now a named contact rather than an anonymous visit. The problem: low friction let through firms too small to qualify and clicks with no real intent.</p>
+      </div>
+
+      <div class="rnd current">
+        <div class="rn">Round 3 · running now</div>
+        <h3>Pre-qualifying questions before the assessment</h3>
+        <p>The form asks about the firm itself, size, service mix and what is actually stuck, so the contact is qualified before they ever reach the Operations Assessment.</p>
+        <div class="rmeta"><span>In flight</span><span>Reading soon</span></div>
+        <p class="verdict">The goal is not to bring the $4.41 down. A $4.41 lead that does not fit the ICP costs more than a $12 lead that does, because the expensive part is the call, not the click.</p>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <b>How to read the rising cost per result.</b> Each round moves the qualification work earlier in the funnel. Round 1 qualified nobody and paid $0.40 a head. Round 2 qualified lightly and paid $4.41. Round 3 qualifies properly and will pay more still. The number that matters is not cost per lead, it is cost per lead worth calling, and that is the number the pixel now makes it possible to see.
+    </div>
+  </section>
+
   <!-- ================= WHAT CHANGES NEXT ================= -->
   <section>
     <div class="sec-head">
       <h2>What changes next cycle</h2>
-      <span class="note">Agreed on the Aug 21 call</span>
+      <span class="note">Current plan</span>
     </div>
 
     <div class="tbl-wrap">
@@ -236,22 +327,31 @@
         </thead>
         <tbody>
           <tr>
-            <td>Pivot to native lead forms on Meta</td>
-            <td>Removes the external form as a drop-off point and captures the lead inside the platform</td>
-            <td>Same budget, measurable leads</td>
+            <td>Pre-qualifying questions on the Meta lead forms</td>
+            <td>Recent leads have not matched the ICP: firms too small to qualify, and clicks without intent. Asking about the firm filters at capture instead of after a call is already booked</td>
+            <td>Same budget, fewer and better leads</td>
           </tr>
           <tr>
-            <td>LinkedIn down to a minimum</td>
-            <td>Keeps testing content while more video goes out organically</td>
-            <td>Lower LinkedIn spend</td>
+            <td>LinkedIn held at the current level</td>
+            <td>Constant profile traffic is what compounds into authority and opens webinar and podcast doors. It stops the day the spend stops</td>
+            <td>Unchanged, steady</td>
           </tr>
           <tr>
-            <td>Meta pixel (installed Aug 26) + CRM connection</td>
+            <td>Meta runs in testing rounds</td>
+            <td>One variable per round, read the result, scale only behind what proves itself</td>
+            <td>Variable by round</td>
+          </tr>
+          <tr>
+            <td>Pixel (installed Aug 26) + CRM connection</td>
             <td>Pixel is live and recording; CRM wiring completes the attribution loop</td>
             <td>No cost, first cost-per-lead reads next cycle</td>
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="note-box">
+      <b>A note on the earlier plan.</b> The August 21 call landed on dropping LinkedIn to a minimum while organic video was tested. Holding it steady is the better call: LinkedIn spend is small in absolute terms, and the profile traffic it buys is the input to the authority that makes every other channel work. The testing energy belongs on Meta, where the cost per read is low enough to learn quickly.
     </div>
   </section>
 

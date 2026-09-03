@@ -221,7 +221,7 @@
 <section class="disc" id="reviews" hidden>
   <div class="wrap">
     <div class="sec-head rv"><span class="no">05</span><h2>What Clients Say</h2><span class="count" id="reviews-count"></span></div>
-    <p class="sec-intro rv">Unfiltered — straight from the inbox and the group chats.</p>
+    <p class="sec-intro rv">A few of the messages received over the years, from clients and collaborators. Unedited, straight from the group chats.</p>
     <div class="reviews-grid" id="reviews-grid"></div>
   </div>
 </section>
@@ -310,7 +310,17 @@ var VSLS = [
 
 /* ---------- Reviews (capturas de clientes; agregar acá) ----------
    Formato: { img:'case-studies/reviews/archivo.jpg', source:'LinkedIn · Cliente X', cap:'texto del pie' } */
-var REVIEWS = [];
+var REVIEWS = [
+  { img:'case-studies/reviews/ted-trailer-valet.png',
+    source:'Ted · Trailer Valet',
+    cap:'Ted, Trailer Valet — on the reporting and the road ahead' },
+  { img:'case-studies/reviews/andrew-nationwide.png',
+    source:'Andrew Goodrich · Nationwide Trailers',
+    cap:'Andrew Goodrich, Nationwide Trailers — on working without marketing smoke and mirrors' },
+  { img:'case-studies/reviews/vince-programmatic.png',
+    source:'Vince Barile · Campaign Sales Rep',
+    cap:'Vince Barile, Campaign Sales Rep — on the programmatic results' }
+];
 
 function esc(s){ return String(s||'').replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
 
@@ -391,6 +401,7 @@ scaleFrames();
   sec.hidden = false;
   document.getElementById('reviews-count').textContent = REVIEWS.length + (REVIEWS.length === 1 ? ' review' : ' reviews');
   var g = document.getElementById('reviews-grid');
+  var pendientes = REVIEWS.length;
   REVIEWS.forEach(function(r){
     var f = document.createElement('figure');
     f.className = 'shot rv';
@@ -398,6 +409,13 @@ scaleFrames();
     f.setAttribute('data-cap', r.cap || r.source || '');
     f.innerHTML = '<div class="bar"><i></i><i></i><i></i><span class="url">' + esc(r.source || 'client review') + '</span></div>' +
       '<img loading="lazy" src="' + r.img + '" alt="' + esc(r.source || 'Client review') + '">';
+    // Si la captura todavia no esta subida, se quita la tarjeta en vez de
+    // mostrar una imagen rota. Si no queda ninguna, la seccion se oculta sola.
+    f.querySelector('img').addEventListener('error', function(){
+      f.remove();
+      if (--pendientes <= 0) { sec.hidden = true; if (nav) nav.style.display = 'none'; }
+      else { document.getElementById('reviews-count').textContent = pendientes + (pendientes === 1 ? ' review' : ' reviews'); }
+    });
     g.appendChild(f);
   });
 })();
