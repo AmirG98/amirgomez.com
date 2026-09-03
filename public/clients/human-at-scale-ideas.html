@@ -321,8 +321,37 @@
       state = data.doc || seed();
       if (!data.doc) save();
       render(); applyAdmin();
+      startSync();
     })
     .catch(loadLocal);
+
+  /* ---------- Sincronizacion entre personas ----------
+     Documento compartido: si otra persona edita, esta pestania se entera
+     sin recargar a mano. Nunca refresca mientras se esta editando. */
+  function startSync() {
+    var ultimo = JSON.stringify(state);
+    function refrescar() {
+      if (mode !== 'server') return;
+      if (document.querySelector('.sortable-drag, .sortable-chosen')) return;
+      if (document.querySelector('#overlay.open, #fb-overlay.open')) return;
+      var activo = document.activeElement;
+      if (activo && (/INPUT|TEXTAREA|SELECT/.test(activo.tagName) || activo.isContentEditable)) return;
+      fetch(API, { cache: 'no-store' })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) {
+          if (!data || !data.doc) return;
+          var nuevo = JSON.stringify(data.doc);
+          if (nuevo === ultimo) return;
+          ultimo = nuevo;
+          state = data.doc;
+          render(); applyAdmin();
+        })
+        .catch(function () {});
+    }
+    setInterval(refrescar, 20000);
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) refrescar(); });
+    window.addEventListener('focus', refrescar);
+  }
 })();
 </script>
 <script src="/clients/portal-edit.js" defer></script>
