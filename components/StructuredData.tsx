@@ -59,7 +59,7 @@ export default function StructuredData() {
     ],
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+54-9-3541-370209",
+      "email": "amir@amirgomez.com",
       "contactType": "customer service",
       "availableLanguage": ["English", "Spanish"]
     },
