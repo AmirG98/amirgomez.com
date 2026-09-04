@@ -84,6 +84,7 @@ const nextConfig: NextConfig = {
       { source: '/interno-web-claude', destination: '/interno-web-claude.html' },
       { source: '/case-studies/financial', destination: '/case-studies/financial.html' },
       { source: '/case-studies/product-startup', destination: '/case-studies/product-startup.html' },
+      { source: '/case-studies/partners', destination: '/case-studies/partners.html' },
       { source: '/entrenamientos', destination: '/entrenamientos.html' },
       {
         source: '/clients/:client',
