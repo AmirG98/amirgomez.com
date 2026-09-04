@@ -268,5 +268,11 @@
   </footer>
 
 </div>
+<script>
+  var rio = ('IntersectionObserver' in window) ? new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }) : null;
+  document.querySelectorAll('.rv').forEach(function(el){ rio ? rio.observe(el) : el.classList.add('in'); });
+</script>
 </body>
 </html>
