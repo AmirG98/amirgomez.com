@@ -28,7 +28,11 @@ const CONTEXTO: Record<string, { idioma: string; contexto: string; agencia?: str
     agencia: 'OutDo',
     contexto: `BUSINESS
 Human at Scale, founded by Chase Damiano. Operations consulting for accounting firms in the US. Core thesis: the owner is the bottleneck. The firm cannot grow past what the owner personally touches.
-Main offer: an Operations Audit. How work actually flows, where the money is actually made, and what the tech stack does for the team versus to it. The deliverable is a prioritized roadmap with sequencing, success metrics and expected return.
+THE OFFER LADDER
+Operations Assessment, free. A dynamic self-diagnostic where anonymous interest becomes a named contact.
+Firm Bottleneck Diagnostic, free, 30 minutes with Chase. A working session, not a pitch.
+Operations Audit, paid. How work actually flows, where the money is actually made, and what the tech stack does for the team versus to it. Diagnoses the main bottleneck and produces a sequenced roadmap for the next 60 days. Important: the Audit is the first phase of humanOS Lite, not a separate standalone product that humanOS then follows.
+humanOS, paid and ongoing, is where the roadmap gets implemented rather than handed over. Two delivery modes: humanOS fully embedded with weekly execution, where the team does the work for the firm, and humanOS Lite in two-week advisory cycles, where the firm's own team executes with guidance. Both live on the humanatscale.com/humanos page, whose CTA is Book Your Discovery Call.
 ICP: owners and operators of US accounting firms. Firms that are too small are disqualified rather than nurtured.
 
 PARTNERSHIP
@@ -48,8 +52,10 @@ What each LinkedIn campaign proved: Thought Leader v2, the engagement campaign, 
 Meta has run three rounds. Round one sent traffic to the Operations Assessment, 155.43 spent at 0.40 per landing page view, high volume and no filtering. Round two moved capture into a native lead form with basic questions, 101.46 spent at 4.41 per lead, a named contact instead of an anonymous visit but too loose a filter. Round three, running now, adds pre-qualifying questions about the firm so people are qualified before they reach the assessment. Cost per result rises with each round and that is the intent: qualification keeps moving earlier in the funnel.
 Attributed leads: zero for that cycle, because the Meta pixel was not yet installed. The pixel went live on August 26, so conversion events are now recording and the first real cost-per-lead reads arrive with the next reporting cycle.
 
-THE CENTRAL CONSTRAINT
-The pixel is installed as of August 26. What remains is letting data accumulate, connecting events through to the CRM view, and switching campaign optimization from clicks to conversions. Until enough data lands, spend decisions still lack a reliable cost-per-lead number.
+WHAT HAS TO BE TRUE NEXT
+The pixel is in and recording, so measurement is no longer the open question. Two things have to be true from here, and they run together rather than in sequence.
+One: a full quarter of the plan executed holistically, with every channel coordinated rather than run one at a time, across a quarter that already has a heavy run of webinars. Each appearance produces a recording, the recording produces clips and an Ops Notes issue, and that content makes the next appearance easier to book. The loop only compounds if the pieces run at the same time. Anything shorter than a quarter measures noise, because the channels feed each other with a lag.
+Two: lead sources beyond webinars and podcasts. Borrowed audiences are the strongest channel today and also the dependency, since both need someone else to say yes. Meta is the way to own a source outright and the open problem there is quality, not volume. Native lead forms capture cheaply, and the path from that form through to the Operations Assessment is where a raw lead becomes a qualified one. Qualifying questions belong inside the form so filtering happens at capture rather than on a booked call. The number that matters is cost per lead that fits, not cost per lead: a cheap lead from a firm too small to have a bottleneck worth removing costs more than an expensive one that does, because the expensive part is the call, not the click.
 
 HOW THE PIECES FIT
 Content builds authority. Authority makes webinars and podcasts say yes. Those produce recordings. Recordings become clips and newsletter issues, which feed the content engine again. Paid amplifies whatever already works organically rather than replacing it. The Operations Assessment is where interest becomes a measurable action, and the Audit is where it becomes revenue.
@@ -58,7 +64,7 @@ WORKING AGREEMENTS
 Nothing Chase writes gets rewritten by AI. Grammar and formatting only. Everything published is manually reviewed before it goes out, including checking that tags render and links resolve.
 
 WHAT IS OPEN RIGHT NOW
-CRM connection to complete the attribution loop. Pre-qualifying questions on the Meta lead forms. The custom tracker replacing the spreadsheet. Nurture campaigns for people who took the Operations Assessment, requested repeatedly and still not confirmed live. New pages with Makai Web for humanOS and the Operations Audit, plus dedicated Partners pages, with the copy upleveled. A repeatable process for cutting clips from long-form content.
+CRM connection to complete the attribution loop. Pre-qualifying questions on the Meta lead forms. The custom tracker replacing the spreadsheet. Nurture campaigns for people who took the Operations Assessment, requested repeatedly and still not confirmed live. A dedicated page for the Operations Audit with Makai Web, with the copy upleveled from the Notion source. humanOS already has its own page covering both delivery modes; the Audit is only described inside it as the first phase of Lite, so there is nowhere to send a reader who is ready for the Audit alone. Dedicated Partners pages are also in progress. A repeatable process for cutting clips from long-form content.
 
 RECENTLY DONE
 Meta pixel installed August 26. Native lead forms running. Publishing QA checklist live in the portal, built after a formal escalation about content quality. The "Welcome, choose your path" email drafted and sent to Chase. Webinar framework published.`,

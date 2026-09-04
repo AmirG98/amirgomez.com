@@ -140,6 +140,12 @@
   .why-box b { color: var(--ink); }
   .hard { background: #FDF6EC; border-left: 3px solid var(--warn); padding: 14px 18px; font-size: 13.5px; color: var(--ink-2); margin: 16px 0; }
   .hard b { color: var(--ink); }
+  .mplink { display: block; text-decoration: none; border: 1px solid var(--hairline); border-left: 3px solid var(--accent);
+    background: var(--paper-2); padding: 14px 18px; margin: 0 0 22px; transition: background .2s; }
+  .mplink:hover { background: var(--accent-soft, var(--paper-2)); }
+  .mp-lab { display: block; font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--accent); }
+  .mp-tx { display: block; font-size: 13.2px; color: var(--ink-2); line-height: 1.55; margin-top: 6px; max-width: 88ch; }
+  .mp-go { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-top: 8px; }
 </style>
 </head>
 <body data-client="human-at-scale" data-page="qa">
@@ -151,8 +157,15 @@
     <h1>Publishing QA</h1>
     <p class="sub">The checks that run before anything goes out. Pick the type of asset, work down the list, and nothing ships with an item unticked.</p>
     <a class="backlink" href="/clients/human-at-scale">← Back to portal</a>
-    <div class="updated">Updated August 28, 2026</div>
+    <div class="updated">Updated September 3, 2026</div>
   </header>
+
+  <a class="mplink" href="/clients/human-at-scale/masterplan">
+    <span class="mp-lab">Master Plan &middot; Layer three &middot; The operating layer</span>
+    <span class="mp-tx">The plan lists a quality checklist for anything published as part of what makes the other two layers repeatable. This is that checklist: tags render, links resolve, and nothing ships with an item unticked.</span>
+    <span class="mp-go">Open the plan &rarr;</span>
+  </a>
+
   <div class="why-box">
     <b>Why this exists.</b> Every item below traces to something that actually went wrong: an @ that published as plain text and lost the tag, an issue that reached 10 people instead of the full list, an intro pasted from a previous issue, content rewritten when it should have been edited. This is not generic best practice. It is the specific set of mistakes we are not repeating.
   </div>
