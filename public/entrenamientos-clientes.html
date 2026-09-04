@@ -267,7 +267,8 @@ const chatThreads = {};
 const CATS = {
   'accesos': 'Accesos y setup',
   'whatsapp': 'WhatsApp',
-  'video': 'Video y VSL'
+  'video': 'Video y VSL',
+  'negociacion': 'Negociación'
 };
 const LEGACY = [
   { title: 'Long-Form que Retiene y Convierte', cat: 'Contenido · ES', desc: 'Cómo estructurar tutoriales, videos largos y piezas paso a paso para que la gente llegue al final.', url: 'https://amirgomez.com/long-form-training-es.html' },
@@ -276,6 +277,127 @@ const LEGACY = [
 ];
 
 TRAININGS.push(
+{
+  slug: 'negociacion',
+  cat: 'negociacion', level: 'Todos los niveles', dur: '30 min',
+  title: 'Negociar: los principios que usan <em>los mejores del mundo</em>',
+  desc: 'Cómo negocian Chris Voss, la escuela de Harvard y Deepak Malhotra, traducido a lo que vas a decir en la próxima reunión. Al final podés contarle tu negociación al coach y armar el plan con él.',
+  secs: [
+    { nav: 'Antes que nada', h: 'Negociar no es regatear', html: `
+      <p>La imagen que casi todos tenemos de una negociación es dos personas tirando de un número hasta encontrarse en el medio. Esa es la peor versión posible: <b>partir la diferencia deja valor sobre la mesa y deja a las dos partes con la sensación de haber perdido algo</b>.</p>
+      <p class="pull"><span>Toda negociación es un intercambio de información</span> antes que un intercambio de números. El que entiende mejor la situación del otro es el que decide la forma del acuerdo.</p>
+      <p>Los tres pilares que vas a usar en todo lo que sigue:</p>
+      <ul>
+        <li><b>Intereses, no posiciones.</b> La posición es lo que la persona pide. El interés es por qué lo pide. Casi siempre hay varias formas de satisfacer un interés y una sola de satisfacer una posición.</li>
+        <li><b>Tu alternativa es tu poder.</b> No la firmeza ni el tono. Lo que podés hacer si esta negociación se cae.</li>
+        <li><b>La emoción no es ruido, es información.</b> Cuando alguien se pone difícil, casi nunca es por el número.</li>
+      </ul>
+    ` },
+
+    { nav: 'BATNA', h: 'Lo único que te da poder de verdad', html: `
+      <p><b>BATNA</b> es la mejor alternativa que tenés si no hay acuerdo. Viene de Fisher y Ury, de la escuela de Harvard, y es el concepto más importante de toda la disciplina.</p>
+      <p>Si tenés otro proveedor cotizando, otra oferta laboral o la posibilidad real de seguir como estás, negociás distinto. No porque actúes distinto, sino porque <b>ya no necesitás que esto salga</b>. Y eso se nota.</p>
+      <p class="pull"><span>Antes de cada negociación importante, escribí dos cosas:</span> qué hacés si no hay acuerdo, y qué hace el otro si no hay acuerdo.</p>
+      <ul>
+        <li><b>Mejorá tu alternativa antes de sentarte.</b> Conseguir una segunda cotización cambia más el resultado que cualquier técnica de mesa.</li>
+        <li><b>Estimá la del otro.</b> Si su alternativa es mala, tenés más margen del que creés. Si es buena, dejá de pelear por precio y buscá otras variables.</li>
+        <li><b>Nunca reveles tu límite.</b> Es lo que más se hace mal: la gente dice "puedo llegar hasta acá" y acaba de negociar contra sí misma.</li>
+      </ul>
+    ` },
+
+    { nav: 'Escuchar', h: 'Las herramientas de Chris Voss', html: `
+      <p>Chris Voss negoció secuestros para el FBI, donde no existe "partamos la diferencia". Su método parte de una idea incómoda: <b>la persona del otro lado necesita sentirse entendida antes de poder moverse</b>. No convencida. Entendida.</p>
+      <h4>Etiquetar</h4>
+      <p>Poner en palabras lo que el otro está sintiendo. No para halagarlo: para desactivarlo. Una emoción nombrada pierde fuerza.</p>
+      <p class="pull"><span>"Parece que el timing es lo que más te preocupa."</span> <span>"Da la impresión de que ya tuviste una mala experiencia con esto."</span></p>
+      <p>Se dice y después <b>te callás</b>. El silencio hace el trabajo. Si acertaste, la persona te va a explicar todo lo que hay detrás.</p>
+      <h4>Espejar</h4>
+      <p>Repetir las últimas tres palabras de lo que dijo, con tono de pregunta. Suena demasiado simple para funcionar y funciona igual: obliga a la otra persona a desarrollar.</p>
+      <h4>Buscar el "no"</h4>
+      <p>La gente se siente segura diciendo que no. Preguntar "¿es una locura si lo vemos de otra manera?" o "¿estarías en contra de revisar el plazo?" te consigue un "no" que en realidad es un sí a seguir conversando.</p>
+      <h4>Preguntas calibradas</h4>
+      <p>Abren con <b>cómo</b> o <b>qué</b>, nunca con <b>por qué</b>, que en cualquier idioma suena a acusación. La más útil de todas cuando te aprietan:</p>
+      <p class="pull"><span>"¿Cómo se supone que hago eso?"</span></p>
+      <p>Traslada el problema al otro lado sin confrontar, y muchas veces la respuesta es la solución que vos no podías proponer.</p>
+      <h4>"Así es", no "tenés razón"</h4>
+      <p>Cuando alguien dice "tenés razón", en general te quiere sacar de encima. Cuando dice <b>"así es"</b>, entendiste su situación mejor que él mismo y ahí empieza el acuerdo real.</p>
+    ` },
+
+    { nav: 'Adelantarse', h: 'Decir vos lo peor antes que el otro', html: `
+      <p>Se llama <b>auditoría de acusaciones</b>. Consiste en poner sobre la mesa, vos primero, todo lo que el otro puede estar pensando en contra tuyo.</p>
+      <p class="pull"><span>"Antes de que te muestre esto, sé lo que vas a pensar: que es caro, que ya probaste algo parecido y no funcionó, y que no tenés tiempo para arrancar otra cosa."</span></p>
+      <p>Funciona por dos razones. Le saca la munición al otro, porque ya no puede usar como objeción algo que vos dijiste primero. Y compra credibilidad: alguien que nombra sus propias debilidades suele estar diciendo la verdad sobre el resto.</p>
+      <p><b>Cómo se arma:</b> escribí las tres peores cosas que podrían pensar de tu propuesta, decilas de entrada en una sola frase, y quedate callado. La respuesta habitual es que el otro te las minimice.</p>
+    ` },
+
+    { nav: 'Agrandar la torta', h: 'Antes de repartir, buscá qué más hay', html: `
+      <p>Cuando la conversación se reduce a un solo número, alguien tiene que perder. La salida casi siempre es <b>sumar variables</b>, y ahí es donde Stuart Diamond y la escuela de Harvard coinciden: en la mayoría de las negociaciones hay mucho más en juego que el precio.</p>
+      <ul>
+        <li><b>Plazos.</b> Pagar antes o después vale plata para las dos partes.</li>
+        <li><b>Alcance.</b> Menos entregables al mismo precio, o más entregables por un compromiso más largo.</li>
+        <li><b>Duración.</b> Un descuento a cambio de doce meses en lugar de tres.</li>
+        <li><b>Riesgo.</b> Quién se hace cargo si algo sale mal suele valer más que un punto de descuento.</li>
+        <li><b>Intangibles.</b> Un testimonio, una referencia, exclusividad, visibilidad. Cuestan poco y valen mucho.</li>
+      </ul>
+      <p class="pull"><span>La pregunta que abre la torta:</span> "además del precio, ¿qué tendría que pasar para que esto sea claramente conveniente para vos?"</p>
+      <h4>Criterios objetivos</h4>
+      <p>Cuando dos posiciones chocan, la salida no es tirar más fuerte sino traer una referencia externa: precios de mercado, lo que se pagó en un caso parecido, un estándar de la industria. <b>Saca la discusión del "porque sí" y la lleva a un terreno donde ceder no es perder.</b></p>
+    ` },
+
+    { nav: 'El anclaje', h: 'Quién habla primero, y qué pasa después', html: `
+      <p>El primer número que aparece condiciona todo lo que viene, incluso cuando las dos partes saben que está inflado. Es el efecto de anclaje y está entre los sesgos mejor documentados que existen.</p>
+      <ul>
+        <li><b>Si conocés bien el mercado, anclá vos.</b> El primero fija el terreno.</li>
+        <li><b>Si no lo conocés, dejá que anclen ellos</b> y usá ese número como información sobre sus expectativas.</li>
+        <li><b>Nunca ancles con un número redondo.</b> $4.850 comunica que hubo un cálculo detrás; $5.000 comunica que hay margen.</li>
+        <li><b>Ante un ancla extrema, no contra-ancles de entrada.</b> Preguntá cómo llegaron a ese número. Casi siempre no lo pueden sostener.</li>
+      </ul>
+      <p class="pull"><span>Y la regla que más plata salva:</span> cuando digas un número, callate. El que habla después de su propia oferta se la empieza a negociar solo.</p>
+    ` },
+
+    { nav: 'Antes de entrar', h: 'La preparación que cambia el resultado', html: `
+      <p>La mayor parte de una negociación se gana antes de sentarse. Esta es la hoja mínima, y no lleva más de veinte minutos:</p>
+      <ul>
+        <li><b>Mi BATNA.</b> Qué hago concretamente si esto no cierra.</li>
+        <li><b>Su BATNA estimado.</b> Qué hacen ellos si esto no cierra.</li>
+        <li><b>Mis intereses reales.</b> No lo que voy a pedir: lo que necesito resolver.</li>
+        <li><b>Sus intereses probables.</b> Qué está tratando de conseguir la persona que tengo enfrente, incluso dentro de su propia empresa.</li>
+        <li><b>Tres variables además del precio</b> que podría mover.</li>
+        <li><b>Mi auditoría de acusaciones.</b> Las tres peores cosas que pueden pensar de mi propuesta.</li>
+        <li><b>Mi punto de salida.</b> El número o la condición donde me levanto, decidido en frío y por escrito.</li>
+      </ul>
+      <p>Ese último punto es el que más se saltea y el que más caro sale. <b>Decidido de antemano y anotado</b>, porque en la mesa, con la presión encima, se corre solo.</p>
+    ` },
+
+    { nav: 'Errores', h: 'Lo que más veces sale mal', html: `
+      <ul>
+        <li><b>Negociar contra uno mismo.</b> Hacer una oferta, no recibir respuesta, y mejorarla antes de que el otro diga nada. Si no hubo contraoferta, no hay nada que mejorar.</li>
+        <li><b>Confundir posición con interés.</b> "Necesito un 20% de descuento" puede ser en realidad "necesito que esto entre en el presupuesto de este trimestre", y eso se resuelve de otra manera.</li>
+        <li><b>Tomar la dureza como algo personal.</b> Casi siempre la persona está negociando con su propio jefe, no con vos.</li>
+        <li><b>Apurar el cierre.</b> El silencio incomoda y la gente concede para llenarlo. Aguantá el silencio.</li>
+        <li><b>Ganar la discusión y perder la relación.</b> Un acuerdo que la otra parte firma humillada se rompe en la ejecución.</li>
+      </ul>
+      <p class="pull"><span>El objetivo no es ganar la reunión.</span> Es salir con un acuerdo que las dos partes puedan sostener, y con la relación intacta para la próxima.</p>
+    ` },
+
+    { nav: 'Practicá acá', h: 'Contale tu negociación al coach', html: `
+      <p>Acá abajo hay un chat con un coach entrenado en todo lo anterior. <b>No es un buscador de respuestas: te va a hacer preguntas antes de aconsejarte</b>, igual que haría alguien que te prepara de verdad.</p>
+      <p>Contale la situación con el mayor detalle que puedas: qué estás negociando, con quién, qué pasó hasta ahora, qué alternativa real tenés y cuál es el plazo. Cuanto más concreto seas, más útil va a ser el plan.</p>
+      <p class="pull"><span>Sirve para cualquier cosa:</span> renegociar con un proveedor, cerrar un cliente, pedir un aumento, salir de un contrato, acordar con un socio.</p>
+      <p>En cada recomendación te va a decir <b>qué principio está aplicando y de quién viene</b>, para que la próxima vez no necesites preguntarle.</p>
+    ` }
+  ],
+  check: [
+    'Escribí mi BATNA antes de sentarme a negociar',
+    'Estimé cuál es la alternativa del otro lado si no hay acuerdo',
+    'Distinguí las posiciones de los intereses reales de cada parte',
+    'Preparé tres variables además del precio que puedo mover',
+    'Armé mi auditoría de acusaciones con las tres peores objeciones',
+    'Definí por escrito mi punto de salida antes de la reunión',
+    'Practiqué la situación en el chat del coach'
+  ]
+},
+
 {
   slug: 'meta-business-portfolio',
   cat: 'accesos', level: 'Básico', dur: '15 min',
@@ -981,7 +1103,7 @@ function renderTraining(t) {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({
-          question: q, title: plainTitle, area: CATS[t.cat], level: t.level,
+          question: q, title: plainTitle, area: CATS[t.cat], level: t.level, slug: t.slug,
           temario: temario, resumen: resumen, history: thread.slice(-10),
           audience: 'client'
         })
