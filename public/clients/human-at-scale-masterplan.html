@@ -159,6 +159,21 @@
   .rung .lab { font-size: 10.5px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; opacity: .6; margin-bottom: 8px; }
   .rung h3 { font-size: 15.5px; margin: 0 0 8px; line-height: 1.3; }
   .rung p { font-size: 13.5px; line-height: 1.58; margin: 0; opacity: .85; }
+
+  /* --- Lectura ejecutiva: resumen visible, detalle plegado --- */
+  .tldr { font-size: 15px; line-height: 1.6; color: var(--ink); max-width: 78ch; margin-bottom: 4px; }
+  .tldr b { font-weight: 650; }
+  details.more { margin-top: 10px; }
+  details.more > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 7px;
+    font-size: 10.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent);
+    padding: 5px 0; user-select: none; }
+  details.more > summary::-webkit-details-marker { display: none; }
+  details.more > summary::before { content: "+"; display: grid; place-items: center; width: 15px; height: 15px;
+    border: 1px solid var(--accent); border-radius: 50%; font-size: 11px; line-height: 1; }
+  details.more[open] > summary::before { content: "\2212"; }
+  details.more > summary:hover { opacity: .72; }
+  details.more .inner { padding-top: 12px; }
+  @media print { details.more { display: block; } details.more .inner { padding-top: 8px; } }
 </style>
 </head>
 <body data-client="human-at-scale" data-page="masterplan">
@@ -180,6 +195,10 @@
       <span class="note">What each one is responsible for</span>
     </div>
     <div class="sec-rule"></div>
+    <p class="tldr">Everything runs in one of three layers: <b>demand creation</b> teaches the market that the owner is the bottleneck, <b>capture and qualification</b> turns that attention into a named contact worth calling, and <b>the operating layer</b> keeps both repeatable instead of dependent on a good week.</p>
+    <details class="more">
+      <summary>Detail</summary>
+      <div class="inner">
     <p style="font-size:14.5px;color:var(--ink-2);max-width:76ch;margin-bottom:18px;">Everything in this plan sits in one of three layers, and they run in order. The first creates demand, the second captures and filters it, and the third keeps both repeatable. Read them top to bottom and the rest of this document explains how each piece fits.</p>
 
     <div class="layer">
@@ -217,6 +236,8 @@
         <li><b>Tracking</b>, which is the piece currently missing and the reason the other two layers cannot be judged fairly.</li>
       </ul>
     </div>
+      </div>
+    </details>
   </section>
 
   <section>
@@ -225,12 +246,18 @@
       <span class="note">The one outcome everything serves</span>
     </div>
     <div class="sec-rule"></div>
+    <p class="tldr">Qualified conversations with owners of US accounting firms that match the ICP. Not traffic, not followers, not registrations. A firm that is too small gets disqualified rather than nurtured.</p>
+    <details class="more">
+      <summary>Detail</summary>
+      <div class="inner">
     <p style="font-size:14.5px;color:var(--ink-2);max-width:82ch;">
       Qualified conversations with owners of US accounting firms who match the ICP. Not traffic, not followers, not registrations. A firm that is too small gets disqualified rather than nurtured, because the Audit only pays off for firms with enough complexity to have a bottleneck worth removing.
     </p>
     <div class="loop">
       <b>The thesis underneath all of it.</b> The owner is the bottleneck. That is the belief the market has to accept before the Audit makes sense to them, which is why the content teaches the idea long before it sells the service.
     </div>
+      </div>
+    </details>
   </section>
 
   <!-- ================= STORY SO FAR ================= -->
@@ -240,6 +267,10 @@
       <span class="note">Four reporting cycles, at a glance</span>
     </div>
     <div class="sec-rule"></div>
+    <p class="tldr">Four reporting cycles, about <b>$615</b> across all paid channels. Attention keeps getting cheaper and the content keeps proving itself. The missing layer was measured conversion, and the pixel now closes that gap.</p>
+    <details class="more">
+      <summary>Detail</summary>
+      <div class="inner">
     <div class="spend" style="margin-bottom:18px;">
       <div class="metric accent"><div class="label">Total invested</div><div class="value">$1,547.66</div><div class="foot">Both channels, all campaigns to date</div></div>
       <div class="metric"><div class="label">LinkedIn</div><div class="value">$1,290.77</div><div class="foot">1,562 clicks &middot; $0.83 average, $0.63 on the winner</div></div>
@@ -253,6 +284,8 @@
       <div class="ev soon"><div class="when">Jul 24 – Aug 20</div><div class="what">Meta enters the system<small>Meta launched: 167 landing page views at $0.43. LinkedIn held 3.4% engagement at ~$1 CPC. Ops Notes #7: 21% open, 6.8% click. The constraint is now conversion tracking, not attention.</small></div></div>
     </div>
     <div class="callout"><b>What the money actually taught us.</b> Both channels were asked to capture directly at some point, and both gave the same answer. On LinkedIn the engagement campaign buys clicks at $0.63, while the three attempts to capture newsletter signups were pulled, the native form among them at $24.64 per click. On Meta, cheap traffic to the assessment produced views nobody could identify, so capture moved into the platform and now runs at $4.41 per lead. The lesson holds on both: attention is bought where the audience already is, and capture belongs where intent already exists. Everything below follows from that.</div>
+      </div>
+    </details>
   </section>
 
   <!-- ================= THE ENGINE ================= -->
@@ -262,6 +295,10 @@
       <span class="note">The loop, in order</span>
     </div>
     <div class="sec-rule"></div>
+    <p class="tldr">Chase writes, publishing earns authority, authority opens doors to webinars and podcasts, those leave recordings, recordings become content again. <b>Paid does not start the loop, it amplifies it.</b></p>
+    <details class="more">
+      <summary>Detail</summary>
+      <div class="inner">
 
     <div class="flow">
       <div class="node">
@@ -289,6 +326,8 @@
     <div class="loop">
       <b>Why this order matters.</b> Paid does not start the loop, it amplifies it. Running ads against content that has not proven itself organically means paying to distribute something we do not yet know works. That is why paid follows what already works organically: we are buying reach for winners, not searching for them with budget. LinkedIn is the exception that proves the rule, because there the spend is not amplifying a single post, it is keeping a constant stream of the right people arriving at the profile.
     </div>
+      </div>
+    </details>
   </section>
 
   <!-- ================= THE OFFER ================= -->
@@ -298,6 +337,10 @@
       <span class="note">The offers everything upstream is pointing at</span>
     </div>
     <div class="sec-rule"></div>
+    <p class="tldr">Each offer answers a different readiness level, so the job of a conversation is to find which one fits rather than to sell the largest.</p>
+    <details class="more">
+      <summary>Detail</summary>
+      <div class="inner">
 
     <p style="font-size:13.5px;color:var(--ink-2);max-width:82ch;">A qualified conversation is not the goal in itself. It is the entry point to a ladder, and each rung asks for more commitment than the one before it. Knowing which rung a firm is ready for is what makes the conversation useful rather than exploratory.</p>
 
@@ -331,6 +374,8 @@
     <div class="warnbox">
       <b>Where this stands.</b> humanOS has its own page and covers both delivery modes. The Operations Audit does not have one yet: today it is described inside the humanOS page as the first phase of Lite, which works for someone already reading about humanOS but gives us nowhere to send a reader who is only ready for the Audit. That is the page being built next with Makai Web, with the copy upleveled from the Notion source rather than ported across.
     </div>
+      </div>
+    </details>
   </section>
 
   <!-- ================= THE CONSTRAINT ================= -->
@@ -340,6 +385,10 @@
       <span class="note">Sequenced, not parallel</span>
     </div>
     <div class="sec-rule"></div>
+    <p class="tldr">Two things, and they run together: <b>one</b>, a full quarter of the plan executed holistically across a period already heavy with webinars. <b>Two</b>, lead sources beyond webinars and podcasts, with Meta owning a source outright and quality as the open problem.</p>
+    <details class="more">
+      <summary>Detail</summary>
+      <div class="inner">
 
     <p style="font-size:14.5px;color:var(--ink-2);max-width:80ch;margin-bottom:18px;">
       The pixel is in and recording, so the measurement question is answered. What comes next is not another piece of tooling. Two things have to be true, and neither of them happens on its own.
@@ -376,6 +425,8 @@
     <div class="loop">
       <b>What we will not do.</b> Scale spend before attribution exists, publish case studies outside the ICP to fill space, or chase registration counts as if they were the goal. Each of those buys a number that looks like progress and is not.
     </div>
+      </div>
+    </details>
   </section>
 
 <!-- CHAT -->
