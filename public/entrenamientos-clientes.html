@@ -268,6 +268,7 @@ const CATS = {
   'accesos': 'Accesos y setup',
   'whatsapp': 'WhatsApp',
   'video': 'Video y VSL',
+  'contenido': 'Contenido',
   'negociacion': 'Negociación'
 };
 const LEGACY = [
@@ -277,6 +278,140 @@ const LEGACY = [
 ];
 
 TRAININGS.push(
+{
+  slug: 'short-form',
+  cat: 'contenido', level: 'Todos los niveles', dur: '25 min',
+  title: 'Short-form: contenido corto que <em>frena el scroll</em>',
+  desc: 'Reels, TikToks y Shorts que retienen. El primer segundo, la estructura que sostiene, por qué el bucle importa más que el like, y cómo salir de un video sin romper la retención.',
+  secs: [
+    { nav: 'La diferencia', h: 'Short-form no es long-form recortado', html: `
+      <p>Es el error más caro y el más común: agarrar un video largo, cortar los tres minutos que parecen mejores y publicarlos. <b>No funciona, y no es por el corte: es porque los dos formatos se ganan de maneras opuestas.</b></p>
+      <ul>
+        <li><b>En long-form la atención se administra.</b> La persona ya decidió quedarse; tu trabajo es sostener una promesa a lo largo del tiempo.</li>
+        <li><b>En short-form la atención se conquista de nuevo cada vez.</b> Nadie eligió tu video: apareció. Y el pulgar ya está en movimiento.</li>
+      </ul>
+      <p class="pull"><span>Long-form compite contra el aburrimiento.</span> <span>Short-form compite contra el video siguiente, que está a un centímetro de distancia.</span></p>
+      <p>De ahí sale todo lo demás: la estructura, el ritmo y hasta cómo terminás.</p>
+    ` },
+
+    { nav: 'El primer segundo', h: 'Donde se gana o se pierde todo', html: `
+      <p>La decisión de quedarse o seguir se toma antes de que termines la primera frase. Si el arranque no dice de qué se trata o no genera una pregunta, el resto del video no existe.</p>
+      <h4>Lo que funciona</h4>
+      <ul>
+        <li><b>Empezá por el final.</b> El resultado, la conclusión o la parte más fuerte va primero. El contexto viene después, si es que hace falta.</li>
+        <li><b>Movimiento desde el frame uno.</b> Una cara quieta mirando a cámara mientras carga la idea es un scroll asegurado.</li>
+        <li><b>Que la primera frase se pueda leer.</b> Buena parte de la gente mira sin sonido. Si el gancho vive solo en el audio, no existe.</li>
+        <li><b>Una sola idea.</b> Si el arranque necesita dos oraciones para entenderse, no es un arranque.</li>
+      </ul>
+      <h4>Lo que mata</h4>
+      <p class="pull"><span>"Hola, ¿cómo están? Hoy les traigo..."</span> Tres segundos sin información. Para cuando llegás al tema, la mitad ya se fue.</p>
+      <p>Lo mismo con los logos animados, la música que arranca sola y los "antes de empezar, suscribite". Todo lo que retrase el valor es una puerta de salida.</p>
+      <h4>Cuatro arranques que sirven</h4>
+      <ul>
+        <li><b>Afirmación incómoda.</b> "Estás midiendo mal tus anuncios y por eso parecen rentables."</li>
+        <li><b>Resultado primero.</b> "Bajamos el costo por lead de 50 a 5 dólares. Esto fue lo único que cambiamos."</li>
+        <li><b>Error nombrado.</b> "Si tu formulario pide teléfono en el primer paso, estás perdiendo la mitad."</li>
+        <li><b>Pregunta con tensión real.</b> No "¿querés vender más?", sino "¿por qué tus mejores leads no contestan el teléfono?"</li>
+      </ul>
+    ` },
+
+    { nav: 'La estructura', h: 'Cuatro tiempos, sin relleno', html: `
+      <p>Un short que retiene casi siempre tiene la misma forma, dure quince segundos o noventa.</p>
+      <ul>
+        <li><b>1. Gancho (0 a 2 s).</b> La idea completa, sin preámbulo.</li>
+        <li><b>2. Contexto mínimo (2 a 5 s).</b> Solo lo indispensable para que lo que sigue se entienda. Si se puede saltear, se saltea.</li>
+        <li><b>3. Desarrollo (el cuerpo).</b> Una idea por video, no tres. En cada corte tiene que haber información nueva.</li>
+        <li><b>4. Cierre.</b> El punto que hace que el video valga, y que además habilita volver a verlo.</li>
+      </ul>
+      <p class="pull"><span>La regla del corte:</span> si un plano dura más de tres segundos sin que pase nada nuevo, ahí es donde te van a abandonar.</p>
+      <h4>Tensión abierta</h4>
+      <p>El recurso más efectivo del formato: abrir algo al principio que solo se cierra al final. "El tercero es el que casi nadie hace" obliga a llegar al tercero. No es un truco barato mientras la promesa se pague de verdad.</p>
+    ` },
+
+    { nav: 'El bucle', h: 'Por qué el rewatch vale más que el like', html: `
+      <p>Las plataformas de short-form premian una cosa por encima de todas: <b>el porcentaje de reproducción</b>, y sobre todo que el video se vea más de una vez. Un video de doce segundos visto entero dos veces le gana a uno de sesenta abandonado a la mitad, aunque el segundo tenga más likes.</p>
+      <ul>
+        <li><b>Hacé el video tan corto como la idea permita.</b> No estires para llegar a un minuto: la duración óptima es la mínima que cuenta la idea completa.</li>
+        <li><b>Cerrá donde empezaste.</b> Si la última frase conecta con la primera, el video se reinicia sin que la persona lo note.</li>
+        <li><b>Densidad de información.</b> Cortar los silencios, las muletillas y las respiraciones no es prolijidad, es retención.</li>
+        <li><b>Que el final valga.</b> Un video que termina en "y bueno, eso" enseña que no vale la pena llegar al final del próximo.</li>
+      </ul>
+      <p class="pull"><span>Preguntate esto en cada pieza:</span> ¿por qué alguien volvería a verlo? Si no hay respuesta, falta trabajo.</p>
+    ` },
+
+    { nav: 'Texto y sonido', h: 'La mitad mira sin audio', html: `
+      <ul>
+        <li><b>Subtítulos siempre.</b> No es accesibilidad opcional, es la diferencia entre que se entienda o no.</li>
+        <li><b>Pocas palabras por pantalla.</b> Tres o cuatro, grandes, alto contraste. Un párrafo en pantalla no se lee.</li>
+        <li><b>Cuidado con la zona de la interfaz.</b> Los bordes y la parte de abajo quedan tapados por los botones de la app y por el copy del posteo.</li>
+        <li><b>El texto en pantalla no repite lo que decís, lo refuerza.</b> Sirve para el dato, el número o la palabra clave.</li>
+        <li><b>El audio como capa, no como base.</b> Música que acompañe, nunca que compita con la voz.</li>
+      </ul>
+    ` },
+
+    { nav: 'El CTA', h: 'Cómo pedir sin romper el video', html: `
+      <p>El error clásico es cortar el video para pedir algo. En un formato donde cualquier bajón de ritmo es una salida, un CTA mal puesto arruina la retención de toda la pieza.</p>
+      <ul>
+        <li><b>La mayoría de los shorts no debería pedir nada.</b> Su trabajo es que la próxima vez que aparezcas, se queden. Eso ya es suficiente.</li>
+        <li><b>Cuando pidas, que sea una sola cosa</b> y al final, nunca al principio.</li>
+        <li><b>Que sea la continuación natural</b> de lo que acabás de mostrar, no un salto: "esto es la versión corta, el paso a paso completo está en el link".</li>
+        <li><b>No pidas seguir, dales motivo.</b> "Seguime para más" no funciona. "Estoy publicando uno por día sobre esto" sí.</li>
+      </ul>
+      <p class="pull"><span>Regla práctica:</span> de cada cinco videos, cuatro no piden nada. El quinto se gana el derecho.</p>
+    ` },
+
+    { nav: 'Producir en serie', h: 'El volumen es parte del método', html: `
+      <p>En short-form nadie acierta pieza por pieza. El formato es estadístico: <b>de diez videos, uno o dos hacen la mayor parte del alcance</b>, y casi nunca son los que uno hubiera apostado. Por eso el objetivo no es hacer el video perfecto, es tener suficientes intentos.</p>
+      <ul>
+        <li><b>Grabá en tandas.</b> Preparar cámara, luz y cabeza cuesta más que grabar. Si armás el set, hacé seis, no uno.</li>
+        <li><b>Un banco de ganchos.</b> Anotá arranques cuando se te ocurran, no cuando toque grabar.</li>
+        <li><b>Reciclá lo que funcionó.</b> Un gancho que rindió se puede volver a usar con otro desarrollo, a las semanas.</li>
+        <li><b>Cortá rápido lo que no anda.</b> A las 48 horas ya sabés si un video prendió. No lo defiendas, hacé el siguiente.</li>
+      </ul>
+      <h4>De long-form a short-form, bien hecho</h4>
+      <p>Sí se puede reutilizar contenido largo, pero <b>no cortando: reescribiendo</b>. Buscá el momento donde decís algo completo por sí solo, y después armale un gancho nuevo adelante. El clip crudo casi nunca arranca donde tiene que arrancar.</p>
+    ` },
+
+    { nav: 'Qué mirar', h: 'Las métricas que importan', html: `
+      <ul>
+        <li><b>Retención a los 3 segundos.</b> Si cae fuerte ahí, el problema es el gancho y nada más. No sirve tocar el resto.</li>
+        <li><b>Porcentaje de reproducción completa.</b> La métrica que más pesa en la distribución.</li>
+        <li><b>Rewatches.</b> Lo que separa un video bueno de uno que explota.</li>
+        <li><b>Compartidos.</b> Valen más que los likes: un like es aprobación, un compartido es alguien poniendo su reputación.</li>
+        <li><b>Seguidores por video.</b> Dice si el contenido construye audiencia o solo entretiene.</li>
+      </ul>
+      <p class="pull"><span>La curva de retención es el mejor diagnóstico que tenés.</span> Mirá dónde cae y volvé a ese segundo exacto del video: ahí está el problema, siempre.</p>
+    ` },
+
+    { nav: 'Errores', h: 'Lo que más veces arruina un short', html: `
+      <ul>
+        <li><b>Calentar motores.</b> Saludos, presentaciones y contexto antes del valor.</li>
+        <li><b>Meter tres ideas en un video.</b> Son tres videos. Y rinden más separados.</li>
+        <li><b>Estirar para llegar al minuto.</b> La duración la decide la idea, no una meta.</li>
+        <li><b>Publicar el clip crudo del long-form</b> sin reescribir el arranque.</li>
+        <li><b>Producción alta y ritmo bajo.</b> Un video prolijo y lento pierde contra uno feo y rápido.</li>
+        <li><b>Cambiar todo a la vez</b> cuando algo no funciona. Si tocás gancho, tema y formato juntos, no sabés qué falló.</li>
+      </ul>
+    ` },
+
+    { nav: 'Preguntá acá', h: 'Traé tu video o tu idea', html: `
+      <p>Abajo hay un chat para trabajar tu contenido concreto. <b>Contale la idea del video y te ayuda a armar el gancho</b>, o pegá el guion que ya tenés y te dice dónde se va a caer la retención.</p>
+      <p>Cuanto más específico seas, más útil es: qué querés contar, para quién, en qué plataforma y cuánto dura. Si ya publicaste y no funcionó, contale qué pasó con la curva de retención.</p>
+      <p class="pull"><span>Sirve para:</span> encontrar el gancho, acortar un guion largo, decidir si una idea da para uno o tres videos, o revisar por qué un video se cayó a los cuatro segundos.</p>
+    ` }
+  ],
+  check: [
+    'Mi primer segundo dice algo concreto, sin saludo ni presentación',
+    'El gancho se entiende leyendo, sin sonido',
+    'Hay una sola idea por video',
+    'No hay ningún plano de más de tres segundos sin información nueva',
+    'El final conecta con el principio o cierra la tensión que abrí',
+    'Los subtítulos están puestos y fuera de la zona de botones',
+    'Si pedí algo, es una sola cosa y está al final',
+    'Grabé en tanda, no de a un video por vez'
+  ]
+},
+
 {
   slug: 'negociacion',
   cat: 'negociacion', level: 'Todos los niveles', dur: '30 min',
