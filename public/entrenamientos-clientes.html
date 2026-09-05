@@ -1308,7 +1308,10 @@ function renderTraining(t) {
         addMsg('err', 'El chat todav&iacute;a no tiene la API key configurada en el servidor.');
         showFallback('Mientras tanto, pod&eacute;s abrir tu pregunta en Claude con todo el contexto del training:');
       } else {
-        addMsg('err', 'No pude obtener respuesta (' + (data.error || res.status) + '). Prob&aacute; de nuevo en un momento.');
+        const conAdj = adjuntos.length > 0;
+        addMsg('err', data.error === 'ai_empty'
+          ? 'La respuesta volvi&oacute; vac&iacute;a. Prob&aacute; de nuevo' + (conAdj ? ', y si el archivo es grande, prob&aacute; con uno m&aacute;s corto.' : '.')
+          : 'No pude obtener respuesta (' + (data.error || res.status) + '). Prob&aacute; de nuevo en un momento.');
         showFallback('Si sigue fallando, abr&iacute; tu pregunta en Claude con el contexto del training:');
       }
     } catch (e) {

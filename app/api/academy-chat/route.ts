@@ -198,7 +198,12 @@ Cercano y honesto. Si el plan de la persona es malo, decíselo con claridad y ex
     .map((b: { text: string }) => b.text)
     .join('\n')
     .trim();
-  if (!answer) return NextResponse.json({ error: 'ai_empty' }, { status: 502 });
+  // Respuesta vacia: pasa de vez en cuando, sobre todo con adjuntos. En vez de
+  // devolver un error cripitco, se le explica que reintente.
+  if (!answer) {
+    const motivo = aiData?.stop_reason ? ` (${String(aiData.stop_reason).slice(0, 40)})` : '';
+    return NextResponse.json({ error: 'ai_empty', detail: `respuesta vacia${motivo}` }, { status: 502 });
+  }
 
   return NextResponse.json({ answer });
 }
