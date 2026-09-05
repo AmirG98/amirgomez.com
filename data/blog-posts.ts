@@ -88965,6 +88965,386 @@ Don't benchmark a SaaS trial against the 8% blended median without first account
 
 Sources: Kyle Poyar / ProductLed / ChartMogul, "The SaaS Conversion Report: A New Look at Free-to-Paid Conversion" (January 2026 analysis of 200 B2B software products).`
   },
+  {
+    id: "655",
+    title: "What's the Minimum Budget for Roku Ads Manager in 2026?",
+    slug: "roku-ads-manager-minimum-budget-2026",
+    excerpt: "Roku doesn't publish an official minimum, but self-serve CTV guides report Roku Ads Manager campaigns can launch with as little as $500 total in 2026.",
+    featuredImage: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-05",
+    category: "Advertising Strategy",
+    tags: ["Roku Ads", "CTV Advertising", "Connected TV", "Ad Budgets", "Streaming Advertising"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Roku Ads Manager Minimum Budget in 2026",
+      metaDescription: "Roku publishes no official minimum, but self-serve CTV guides report Roku Ads Manager campaigns can launch with as little as $500 total spend in 2026.",
+      keywords: ["roku ads minimum budget", "roku ads manager cost 2026", "connected tv advertising minimum spend", "self-serve ctv advertising budget"]
+    },
+    content: `Roku doesn't publish an official minimum budget for Roku Ads Manager, its self-serve connected TV platform, but industry guides tracking real campaign setups in 2026 report that campaigns can launch with as little as $500 in total spend — roughly $50 a day over a 10-day flight, and the lowest disclosed self-serve minimum among major CTV ad platforms.
+
+## Why There's No Official Rule, Just a Practical Floor
+
+Unlike Meta or Google Ads, which publish daily budget minimums directly in their ad platforms, Roku has never stated a hard dollar floor for Ads Manager. What exists instead comes from marketing agencies and self-serve CTV comparison guides that track what it actually takes to get a campaign live and delivering impressions — and those guides consistently land on $500 as the smallest budget that works in practice, not a number Roku itself publishes.
+
+## How Roku Ads Manager Pricing Works
+
+- **CPM range:** Roku CPMs run roughly $20 to $60 in 2026, depending on targeting precision, content category, and how competitive the time slot is
+- **Billing:** Campaigns are billed as they deliver, by credit card or invoicing, rather than charged in full upfront
+- **Flexibility:** A live campaign can be paused, extended, or have its budget changed at any point, with no long-term contract required
+- **Targeting cost:** Broad, content-genre-based targeting sits at the low end of the CPM range, while narrower audience segments (household income, purchase behavior, geographic radius) push CPMs toward the higher end
+
+## How This Compares to the Traditional CTV Ad-Buying Route
+
+Roku still sells premium, negotiated inventory through its direct sales team and through Amazon Ads for brands that want managed placements — video pre-rolls and mid-rolls bought and priced more like a traditional TV buy. That route has no small-budget entry point and is built for agency-level spend, which is exactly the gap Ads Manager was built to close: a way for a small or mid-sized advertiser to get into connected TV without going through a sales rep or committing to a large media buy.
+
+## What a $500 Test Budget Actually Buys
+
+At a $20 to $60 CPM, $500 buys somewhere between roughly 8,000 and 25,000 impressions. That's enough volume to see early signal on completion rates and site visits, though not enough to draw firm conclusions about conversion rate — most CTV media buyers treat a first $500-$1,000 flight as a delivery and creative test, then scale budget once completion rates and downstream site traffic look healthy.
+
+## Who a $500 Entry Point Actually Fits
+
+A local service business or a direct-to-consumer brand testing whether connected TV drives any measurable lift is the clearest fit for a $500 first flight — the budget is small enough that a disappointing result doesn't sting, but large enough to actually finish a flight and produce completion-rate data rather than stopping after a few hundred impressions. An advertiser who already knows CTV converts for their category and is scaling proven creative is better served skipping the $500 test tier entirely and going straight to a budget sized for meaningful weekly reach.
+
+## Bottom Line
+
+Treat $500 as a realistic entry point for testing Roku Ads Manager, not a token amount: it's the figure self-serve CTV guides consistently report as the actual minimum that gets a campaign live, it comes with no long-term contract, and it's enough spend to generate real delivery data before deciding whether to commit a larger connected TV budget.
+
+Sources: Starti Blog, "Best Self-Serve CTV Advertising Platforms in 2026"; Roku Advertising, "Getting Started with Roku Ads Manager" (Roku Self-Serve Help Center).`
+  },
+  {
+    id: "656",
+    title: "What's a Good CTR for Amazon Sponsored Ads by Category in 2026?",
+    slug: "good-ctr-amazon-sponsored-ads-by-category-2026",
+    excerpt: "A good CTR for Amazon Sponsored Ads in 2026 is around 0.59% blended, ranging from 0.70% for Toys, Art & Collectibles down to well below that for slower categories.",
+    featuredImage: "https://images.unsplash.com/photo-1611262588019-db6cc2032da3?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-05",
+    category: "Platform Comparisons",
+    tags: ["Amazon Ads", "CTR Benchmarks", "Amazon Sponsored Products", "PPC Benchmarks", "Ecommerce Marketing"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Good CTR for Amazon Ads by Category (2026)",
+      metaDescription: "A good CTR for Amazon Sponsored Ads in 2026 is around 0.59% blended across a typical account, ranging up to 0.70% for Toys, Art & Collectibles by category.",
+      keywords: ["amazon ads ctr benchmark", "amazon sponsored products ctr 2026", "good ctr amazon ads by category", "amazon ppc ctr benchmark"]
+    },
+    content: `A good click-through rate for Amazon Sponsored Ads in 2026 is around 0.59% blended across a typical seller account, but the real benchmark depends heavily on category — Toys, Art & Collectibles lead at 0.70% CTR, while other categories run well under the blended average, making a single platform-wide number a weak target on its own.
+
+## The Blended Average Hides Real Category Spread
+
+The 0.59% figure describes a typical account running a mix of ad types and products, not a fixed target every listing should hit. Category matters because it reflects how visually driven the purchase decision is and how much comparison shopping happens on the search results page before a click — categories with more browsing behavior and stronger creative differentiation tend to post higher CTR than categories bought on price or spec alone.
+
+## CTR by Ad Format
+
+- **Sponsored Products:** 0.3% to 0.7% CTR, the most common Amazon ad format and the one most sellers benchmark against first
+- **Sponsored Brands:** 0.4% to 0.9% CTR, generally higher because the format shows a logo, headline, and multiple products in one unit
+- **Sponsored Display:** 0.2% to 0.5% CTR, typically the least efficient on a last-click basis since it often serves off-Amazon or lower in the funnel
+
+## CTR by Product Category
+
+- **Toys, Art & Collectibles:** 0.70% CTR, the highest-performing category tracked
+- **Sports & Outdoors:** 0.67% CTR
+- **Electronics:** 0.62% CTR
+- **Beauty:** 0.47% CTR — comparatively strong for a category that also draws heavy organic and influencer-driven search traffic
+
+## Why Comparing Within Category Matters More Than the Average
+
+**Benchmark your own listings against your specific category, not the blended 0.59% average.** A Beauty listing running at 0.50% CTR is performing roughly in line with its category, even though that number sits below the all-category blend — while a Toys listing at the same 0.50% would be underperforming its category's 0.70% norm. Treating every listing against one flat target misreads performance in both directions.
+
+## What Drives CTR Differences Within a Category
+
+Image quality, price positioning relative to competing listings on the same results page, review count and star rating visible in the ad unit, and how well the main image communicates the product at thumbnail size all move CTR independently of bid or budget. Two listings bidding identically in the same category can post meaningfully different CTR purely from creative and listing quality differences.
+
+## Why CTR Alone Doesn't Tell the Whole Story
+
+A higher CTR isn't automatically better if it doesn't convert — Sponsored Display's lower 0.2% to 0.5% CTR range, for instance, often reflects its role serving impressions to shoppers earlier in their research than Sponsored Products does, not a weaker ad unit. Reading CTR alongside conversion rate and ACoS for the same category is what separates a genuinely underperforming listing from one that's simply operating in a lower-CTR ad format or category by design.
+
+## Bottom Line
+
+Use 0.59% as a rough sanity check for a blended Amazon Ads account, but pull the category-specific number — 0.70% for Toys, Art & Collectibles, 0.67% for Sports & Outdoors, 0.62% for Electronics, or 0.47% for Beauty — before deciding whether a specific listing's CTR is actually a problem.
+
+Sources: GoTrellis, "Amazon Ads Benchmarks by Category and Ad Type (2026 Update)"; Autron, "Amazon PPC Benchmarks by Category (2026): ACoS, CPC, CTR and Conversion Rate."`
+  },
+  {
+    id: "657",
+    title: "What's the Average Cost Per Lead for Car Dealerships on Google Ads in 2026?",
+    slug: "car-dealership-cost-per-lead-google-ads-2026",
+    excerpt: "Car dealerships pay an average of $42.95 per lead on Google Ads in 2026, though Dealers United's Q2 2026 benchmark sets a 'good' grade at under $30 per lead.",
+    featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-05",
+    category: "Google Ads",
+    tags: ["Automotive Marketing", "Car Dealerships", "Cost Per Lead", "Google Ads", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Car Dealership Cost Per Lead on Google Ads 2026",
+      metaDescription: "Car dealerships pay an average of $42.95 per lead on Google Ads in 2026, while Dealers United's Q2 2026 benchmark grades under $30 per lead as good performance.",
+      keywords: ["car dealership cost per lead google ads", "automotive google ads cpl 2026", "car dealer ppc benchmark", "google vehicle ads cost per lead"]
+    },
+    content: `Car dealerships pay an average of $42.95 per lead on Google Ads in 2026, noticeably above the $27.94 average for auto repair, service, and parts businesses in the same broader automotive category. Dealers United's Q2 2026 Standards of Excellence sets a tighter bar for what counts as strong performance: a cost per lead under $30, alongside a $1.10 to $1.20 cost per click and a 2.8% to 3% click-through rate.
+
+## Why Dealership Leads Cost More Than the Automotive Category Average
+
+The automotive industry overall averages $32.79 per lead on Google Ads, but that blended figure spans dealerships, repair shops, parts retailers, and auto services — categories with very different competition and purchase values. Dealerships sit above that blend at $42.95 because a single vehicle sale carries far higher value than a repair ticket, which pushes dealerships to bid more aggressively for the same search volume.
+
+## What Drives the Price by Search Intent
+
+- **Branded searches** (a shopper searching your dealership's name directly): $1 to $3 per click, the cheapest traffic available
+- **Competitor conquest keywords** (searching a rival dealership's name): $3 to $6 per click
+- **Model-specific searches** (a specific make and model): $4 to $8 per click
+- **Generic terms** ("car dealership near me" or similar): $8 to $15 per click
+- **Location-based queries**: can exceed $10 to $20 per click in competitive metros
+
+## Google Vehicle Ads Change the Math
+
+Well-optimized Google Vehicle Ads campaigns, which show specific inventory with photos and pricing directly in search results, typically deliver cost per lead between $25 and $45, with top-performing dealerships reaching $15 to $25 — meaningfully below both the $42.95 dealership average and Dealers United's $30 "good" threshold for standard search campaigns.
+
+## What a Below-$30 Grade Actually Requires
+
+Dealers United's Q2 2026 standard pairs the sub-$30 cost-per-lead target with a specific CPC and CTR range rather than treating cost per lead in isolation — a $1.10 to $1.20 CPC combined with 2.8% to 3% CTR is what produces that lead cost mathematically. A dealership hitting a low CPC without also hitting that CTR range typically isn't converting enough of its cheap clicks into leads to reach the $30 target.
+
+## Why Keyword Mix Matters More Than Overall Budget
+
+A dealership spending heavily on generic and location-based terms will land closer to $42.95 or higher almost regardless of budget size, simply because those keyword categories cost $8 to $20+ per click before a single lead is generated. Shifting budget mix toward branded, model-specific, and Vehicle Ads inventory — even without increasing total spend — is typically what moves a dealership's blended cost per lead down toward the sub-$30 range, rather than simply spending more on the same keyword mix.
+
+## Bottom Line
+
+Benchmark against $42.95 as the realistic dealership-wide average cost per lead on Google Ads in 2026, but treat Dealers United's sub-$30 figure as the actual target for a well-run campaign — and look at Google Vehicle Ads specifically if standard search campaigns aren't getting close to that range, since Vehicle Ads campaigns are delivering lower cost per lead for top performers.
+
+Sources: Dealers United, "Car Dealers Marketing Benchmarks for 2026" (Q2 2026 Standards of Excellence); PPC Chief, "Auto Sales Google Ads CPC: $2.41 (2026)."`
+  },
+  {
+    id: "658",
+    title: "What's a Good ROAS for Fashion and Apparel Brands on Meta Ads in 2026?",
+    slug: "good-roas-fashion-apparel-meta-ads-2026",
+    excerpt: "A good ROAS for fashion and apparel brands on Meta Ads in 2026 is around 2.18x to 2.96x for average performers, with the top 25% of brands reaching 4.4x or higher.",
+    featuredImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-05",
+    category: "Advertising Strategy",
+    tags: ["ROAS", "Fashion Ecommerce", "Apparel Marketing", "Meta Ads", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Good ROAS for Fashion Brands on Meta Ads 2026",
+      metaDescription: "A good ROAS for fashion and apparel brands on Meta Ads in 2026 runs 2.18x to 2.96x for average performers, with the top 25% of brands reaching 4.4x or higher.",
+      keywords: ["good roas fashion brands meta ads", "apparel ecommerce roas benchmark 2026", "fashion meta ads roas 2026", "clothing brand facebook ads roas"]
+    },
+    content: `A good ROAS for fashion and apparel brands on Meta Ads in 2026 falls between 2.18x and 2.96x for average-performing brands, with the median sitting at 2.18x — while the top 25% of fashion and apparel advertisers reach 4.4x or higher, a gap wide enough that median performance and top-quartile performance describe two different businesses.
+
+## Why the Median Sits Below What Many Marketers Assume Is "Good"
+
+Fashion and apparel is one of the more competitive, seasonal categories on Meta Ads, with return-rate exposure that eats into the profitability a given ROAS actually represents. A 2.18x median means half of fashion and apparel advertisers on Meta are generating less than $2.18 in revenue for every $1 spent — a number that looks low next to headline case studies, but reflects the category's real competitive intensity rather than widespread poor campaign management.
+
+## The Gap Between Average and Top-Quartile Performers
+
+- **Median performance:** 2.18x ROAS
+- **Average-performer band:** 2.18x to 2.96x ROAS
+- **Top 25% of brands:** 4.4x ROAS or higher
+
+The distance between the median and the top quartile is roughly double, which means the difference between an average fashion brand and a top-performing one on Meta isn't a small optimization gap — it typically reflects a materially different creative and offer strategy, not just better bid management.
+
+## What Separates Top-Quartile Fashion Brands From the Median
+
+Fashion and apparel ROAS on Meta is unusually sensitive to creative refresh rate and offer structure, since the category runs on visual discovery rather than direct-response intent the way search advertising does. Brands reaching the 4.4x range typically pair frequent creative rotation with a specific, time-bound offer — a seasonal drop, a limited restock, a bundle — rather than an evergreen "shop now" campaign, since apparel shoppers on Meta are more often in a browsing mindset than a searching one.
+
+## Why Return Rate Belongs in the ROAS Conversation
+
+**A 2.5x ROAS on a fashion brand with a 30% return rate is not equivalent to a 2.5x ROAS on a brand with a 10% return rate.** Apparel carries among the highest return rates of any ecommerce category, largely from fit and sizing issues, and gross ROAS calculated on initial order revenue overstates real profitability for brands with high return volume — net-of-returns ROAS is the more honest number to track internally, even though gross ROAS is what most benchmark reports, including this one, actually measure.
+
+## How This Compares to Ecommerce ROAS Benchmarks Generally
+
+Fashion and apparel's 2.18x median sits below some blended ecommerce-wide ROAS benchmarks reported elsewhere for Meta, which is consistent with fashion being one of the more heavily contested, creative-dependent categories on the platform rather than a data discrepancy — a category-specific benchmark like this one will typically read lower than a broad "ecommerce" blend that includes less competitive verticals.
+
+## Bottom Line
+
+Treat 2.18x as the realistic median to benchmark a fashion or apparel brand's Meta Ads performance against, use the 2.18x-2.96x band as the range most brands should expect to land in, and don't assume you're underperforming until you've confirmed whether your reporting is gross or net of returns — the gap to the 4.4x top-quartile figure is usually a creative and offer-structure gap, not a targeting or bidding one.
+
+Source: Adamigo, "Fashion eCommerce Meta Ads ROAS Benchmarks (2026)."`
+  },
+  {
+    id: "659",
+    title: "What's the Average Cost Per Lead for Commercial Cleaning Companies on Google Local Services Ads?",
+    slug: "commercial-cleaning-cost-per-lead-google-lsa-2026",
+    excerpt: "Commercial cleaning companies pay around $46.41 per lead on Google Local Services Ads in 2026, well below the $197-$230 typical of standard Google Search Ads.",
+    featuredImage: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-05",
+    category: "Google Ads",
+    tags: ["Commercial Cleaning Marketing", "Google Local Services Ads", "Cost Per Lead", "B2B Marketing", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Commercial Cleaning Cost Per Lead on Google LSA 2026",
+      metaDescription: "Commercial cleaning companies pay around $46.41 per lead on Google Local Services Ads in 2026, versus $197-$230 per lead on standard Google Search Ads.",
+      keywords: ["commercial cleaning cost per lead", "google local services ads cleaning 2026", "janitorial services google ads cost", "commercial cleaning ppc benchmark"]
+    },
+    content: `Commercial cleaning companies pay an average of $46.41 per charged lead on Google Local Services Ads as of September 2026 (median $46.23, typical range $36.78 to $62.17), a fraction of the $197 to $230 per lead that standard Google Search Ads campaigns typically cost for the same trade.
+
+## Why the Gap Between LSA and Standard Search Is So Large
+
+Local Services Ads charge only for leads Google verifies as genuine contact attempts, rather than charging per click the way standard Search campaigns do. That structure removes the cost of clicks that never turn into a lead — accidental clicks, comparison shoppers who never call, and bot or competitor clicks — which is the main reason LSA cost per lead lands so far below Search Ads cost per lead for the same service category.
+
+## The Full Cost Range for Commercial Cleaning
+
+- **Google Local Services Ads:** $36.78 to $62.17 typical range, $46.41 average, $46.23 median
+- **Standard Google Search Ads (higher estimate):** $197 to $230 per lead in most markets, based on 2026 campaign data
+- **Standard Google Search Ads (lower estimate from other tracked accounts):** $35 to $95 per lead, with most B2B markets landing in the $50 to $75 range
+
+The wide spread on standard Search Ads reflects how much landing page quality, keyword match strategy, and local competition affect commercial cleaning campaigns specifically — B2B cleaning contracts have high lifetime value, which pushes some operators to bid aggressively enough to land well above the $100 mark per lead.
+
+## Why the Range Is Wide Even Within LSA
+
+**A $36.78 to $62.17 spread on Local Services Ads still reflects real market-level competition, not measurement noise.** Metro areas with more commercial cleaning contractors competing for the same Local Services Ads placements push cost per lead toward the top of that range, while less saturated markets or contractors with strong review profiles land nearer the bottom.
+
+## What This Means for Budget Planning
+
+A commercial cleaning operator relying on Local Services Ads should plan around roughly $46 per lead as a baseline, adjusting up toward $62 in a competitive metro. An operator running both channels should expect Search Ads to cost several multiples more per lead than LSA — which makes LSA the more efficient first channel to scale before adding standard Search campaigns on top.
+
+## Why LSA Eligibility Requirements Matter Here
+
+Local Services Ads require a Google Guarantee background check and license/insurance verification before a commercial cleaning business can run ads at all, which is part of why the channel's lead cost stays comparatively low — the verification step filters out some of the low-quality competition that keeps standard Search Ads auctions more crowded and expensive for the same keywords.
+
+## Bottom Line
+
+Budget around $46 per lead for commercial cleaning on Google Local Services Ads as of September 2026, and treat standard Google Search Ads as a materially more expensive add-on channel rather than a like-for-like substitute — the cost gap between the two is structural, not a sign that one campaign type is being run poorly.
+
+Sources: 99 Calls, "Commercial Cleaning Contractor Google LSA Cost Per Lead" (LSA Cost Estimator, September 2026); 99 Calls, "Google Ads Lead Costs for Commercial Cleaning Services in 2026."`
+  },
+  {
+    id: "660",
+    title: "What's the Average Cost Per Lead for Tutoring and Education Companies on Google Ads in 2026?",
+    slug: "tutoring-education-cost-per-lead-google-ads-2026",
+    excerpt: "Tutoring and education companies pay an average of $77.48 per lead on Google Ads in 2026 — slightly above the $70.11 cross-industry average, per WordStream's benchmark data.",
+    featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-05",
+    category: "Google Ads",
+    tags: ["Education Marketing", "Tutoring Marketing", "Cost Per Lead", "Google Ads", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Tutoring Companies: Cost Per Lead on Google Ads 2026",
+      metaDescription: "Tutoring and education companies pay $77.48 per lead on Google Ads in 2026, slightly above the $70.11 cross-industry average, per WordStream's 2026 benchmarks.",
+      keywords: ["tutoring cost per lead google ads", "education company google ads cpl 2026", "test prep google ads benchmark", "wordstream google ads benchmarks 2026"]
+    },
+    content: `Tutoring and education companies pay an average of $77.48 per lead on Google Ads in 2026, according to WordStream's Education & Instruction industry benchmark — slightly above the $70.11 cross-industry average, though notably this figure actually decreased year over year, the first drop in that category's cost per lead in five years.
+
+## The Number Behind the Number
+
+WordStream's 2026 benchmark report tracks Education & Instruction as its own industry category alongside cost per click, which averages $6.23 for the category versus a $5.26 cross-industry average CPC. Both figures sit modestly above the blended market average, consistent with education being a moderately, not extremely, competitive vertical on Google Ads.
+
+## Why Cost Per Lead Actually Fell This Year
+
+- **A five-year trend reversal:** 2026 marks the first year-over-year decrease in education industry cost per lead that WordStream's benchmark data has recorded in five years
+- **Conversion rate improved sharply:** the category's conversion rate rose 43.87% to 13.14%, the largest conversion rate improvement of any industry WordStream tracked in 2026
+- **Lower CPL despite higher CPC:** even with cost per click ticking up, a strong enough jump in conversion rate can still push cost per lead down — which is exactly what happened in education this year
+
+## What's Driving the Conversion Rate Jump
+
+A conversion rate improvement this large, industry-wide, usually points to a structural shift rather than individual advertisers getting better at their jobs simultaneously — in education specifically, wider adoption of dedicated program-specific landing pages (rather than sending traffic to a general homepage) and faster lead response times from tutoring companies competing on speed-to-contact are the most commonly cited factors behind category-wide conversion gains like this one.
+
+## Local Services Ads as an Emerging Lower-Cost Channel
+
+Local Service Ads for local coaching and tutoring services reportedly deliver cost per lead 40% to 60% lower than standard Search campaigns for the same services, though LSA adoption in education remains limited compared to more mature LSA categories like home services and legal — meaning it's a channel with real headroom for tutoring companies willing to set it up.
+
+## Why the $77.48 Figure Understates Some Tutoring Sub-Segments
+
+WordStream's Education & Instruction category is broad, spanning K-12 tutoring, test prep, adult continuing education, and coaching businesses together — a category this wide will always average out higher-cost and lower-cost sub-segments into one number. A test prep company competing on high-value SAT or MCAT keywords should expect cost per lead above the $77.48 blended figure, while a general homework-help tutoring service in a less competitive niche may see meaningfully less.
+
+## What to Do If Your Actual Cost Per Lead Is Well Above $77
+
+Before assuming a campaign is underperforming the benchmark, check whether traffic is landing on a general homepage rather than a program-specific page — the conversion rate jump behind this year's falling CPL is tied directly to that kind of landing page specificity, and a tutoring company still sending paid traffic to a generic homepage is the most common reason for sitting well above the category average.
+
+## Bottom Line
+
+Budget around $77 per lead for a tutoring or education Google Ads campaign in 2026, expect that number to be trending down rather than up industry-wide, and consider testing Local Services Ads if your tutoring business qualifies — the reported 40% to 60% discount over standard Search is large enough to be worth the setup effort.
+
+Source: WordStream, "Google Ads Benchmarks 2026: Competitive Data & Insights for Every Industry."`
+  },
+  {
+    id: "661",
+    title: "What's a Good CTR for YouTube Ads by Industry in 2026?",
+    slug: "good-ctr-youtube-ads-by-industry-2026",
+    excerpt: "A good CTR for YouTube Ads in 2026 runs 0.5% to 1.5% overall, but it swings from 1.00% for Toys down to just 0.04% for Restaurants depending on industry.",
+    featuredImage: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-05",
+    category: "Google Ads",
+    tags: ["YouTube Ads", "CTR Benchmarks", "Google Ads", "Video Advertising", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Good CTR for YouTube Ads by Industry 2026",
+      metaDescription: "A good CTR for YouTube Ads in 2026 runs 0.5% to 1.5% overall, ranging from 1.00% for Toys down to just 0.04% for Restaurants depending on the industry.",
+      keywords: ["good ctr youtube ads", "youtube ads ctr benchmark by industry 2026", "youtube ads ctr 2026", "youtube advertising ctr by industry"]
+    },
+    content: `A good click-through rate for YouTube Ads in 2026 falls between 0.5% and 1.5% overall, with an average around 0.65% — but industry matters enormously: Toys leads at 1.00% CTR and Gaming follows at 0.90%, while Restaurants sit at just 0.04% and Household Essentials at 0.045%, a spread wide enough that a single platform average tells you almost nothing about whether your own campaign is performing.
+
+## Why the Spread Between Industries Is So Extreme
+
+YouTube ad CTR correlates strongly with how visual and discovery-driven a category's purchase decision is. Toys and Gaming both rely on visual, video-native creative that plays naturally in a video feed — a toy or game trailer is content people click toward, not away from. Restaurants and Household Essentials, by contrast, sell low-consideration, frequently-purchased products where a video ad interrupts rather than adds to what someone's watching, which depresses click-through regardless of creative quality.
+
+## CTR by Industry
+
+- **Toys:** 1.00% CTR, the strongest industry tracked
+- **Gaming:** 0.90% CTR
+- **B2B:** 0.28% CTR, the weakest among industries with meaningful volume — reflecting how few B2B purchase decisions start from a video ad impression
+- **Government and advocacy groups:** 0.07% CTR
+- **Household essentials:** 0.045% CTR
+- **Restaurants:** 0.04% CTR, the lowest tracked industry
+
+## CTR by Ad Format Matters Almost as Much as Industry
+
+- **In-feed (Discovery) ads:** the strongest paid format at 1.0% to 3.0%+ CTR, since these appear alongside organic search and browse results rather than interrupting a video
+- **TrueView in-stream ads:** around 0.8% CTR on average
+- **Shorts ads:** the weakest format at 0.1% to 0.5% CTR, consistent with how quickly viewers swipe past Shorts content generally
+
+## Why Comparing Format and Industry Together Matters
+
+**A B2B software company running Shorts ads is stacking two of the lowest-performing variables in this benchmark set at once.** A 0.28% industry baseline combined with a 0.1% to 0.5% format range means a B2B advertiser on Shorts should expect CTR near the bottom of both ranges — not because the campaign is poorly run, but because neither the industry nor the format favors high click-through in the first place. The same advertiser switching to in-feed placements would likely see a meaningfully higher CTR purely from the format change.
+
+## Why Low-CTR Industries Still Run YouTube Ads Profitably
+
+A Restaurants campaign posting 0.04% CTR isn't necessarily wasting budget — video ads in low-CTR categories are frequently bought for brand awareness and reach rather than direct click-driven response, and a restaurant chain measuring success by foot traffic lift or brand recall studies may see healthy results from a campaign whose CTR looks poor by cross-industry standards. Judging a low-CTR-industry campaign purely on click-through rate risks canceling a channel that's actually working as intended for its stated goal.
+
+## Bottom Line
+
+Don't benchmark a YouTube Ads campaign against the 0.5% to 1.5% platform-wide range without first checking where your industry and ad format land inside it — a Restaurants or Household Essentials campaign near 0.05% CTR may be performing normally for its category, while the same number for a Toys or Gaming campaign would signal a real problem.
+
+Source: MegaDigital, "YouTube Ad Benchmarks by Industry: Measure Campaigns in 2026."`
+  },
 ];
 
 export const blogCategories = [
