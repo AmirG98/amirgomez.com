@@ -103,7 +103,22 @@
   footer .private { margin-top: 6px; }
 
   @media (max-width: 720px) { .band { padding: 40px 28px; } .stats { gap: 32px; } }
+
+  /* Servicios numerados: mismo patron que la pagina de product-startup,
+     que se lee como un menu en vez de como una grilla de categorias. */
+  .svc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; padding: 30px 0 10px; }
+  .svc { background: var(--card); border: 1px solid var(--hair); border-radius: 14px; padding: 22px 24px; }
+  .svc h3 { font-size: 16.5px; font-weight: 700; color: var(--ink); margin-bottom: 6px; display: flex; align-items: baseline; gap: 10px; }
+  .svc h3 i { font-family: var(--serif); font-style: italic; color: var(--orange); font-size: 15px; }
+  .svc p { font-size: 13.5px; }
+  .svc.new { border-color: var(--orange); box-shadow: 0 20px 50px -26px rgba(224,78,16,.35); }
+  .new-badge { font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    background: var(--orange); color: #fff; border-radius: 999px; padding: 4px 10px; white-space: nowrap; }
+  .svc-note { border-left: 3px solid var(--orange); background: rgba(224,78,16,.06); padding: 16px 20px; margin-top: 22px; font-size: 14.5px; }
+  .svc-note + .svc-note { margin-top: 12px; }
 </style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-icon.png">
 </head>
 <body>
 
@@ -128,16 +143,20 @@
   <div class="wrap">
     <div class="sec-head rv"><span class="no">01</span><h2>What We Do</h2></div>
     <p class="sec-intro rv">One team across the whole funnel, so nothing gets lost between "the ads agency" and "the web people".</p>
-    <div class="do-grid">
-      <div class="do rv"><span class="k">Acquire</span><h3>Paid Social</h3><p>Meta ads with structured creative testing: hooks, angles and social proof, scaled on what converts, not what looks nice.</p></div>
-      <div class="do rv"><span class="k">Acquire</span><h3>Google Ads &amp; PPC</h3><p>Search and Shopping built on real keyword architecture: branded, non-branded and negatives that keep spend clean.</p></div>
-      <div class="do rv"><span class="k">Compound</span><h3>SEO &amp; GEO</h3><p>Organic visibility on Google and inside AI answers. We optimize to be the source AI cites, not just another blue link.</p></div>
-      <div class="do rv"><span class="k">Convert</span><h3>Funnels &amp; VSL</h3><p>Landing pages, VSLs and webinar funnels built for one job: press play, watch, book or buy.</p></div>
-      <div class="do rv"><span class="k">Convert</span><h3>Creative &amp; UGC</h3><p>Short-form ad creative and UGC pipelines: scripts, hooks, edits and iteration cycles measured against the account.</p></div>
-      <div class="do rv"><span class="k">Retain</span><h3>Email &amp; Lifecycle</h3><p>Newsletters, nurture flows and CRM automation (GoHighLevel and friends) so leads become meetings and buyers come back.</p></div>
-      <div class="do rv"><span class="k">Foundation</span><h3>Webs &amp; Landings</h3><p>Full websites and e-commerce builds that load fast, convert and stay easy to update.</p></div>
-      <div class="do rv"><span class="k">Visibility</span><h3>Live Client Portal</h3><p>Every client gets a portal: reports, approvals board, ideas bank, meeting recaps and a living context doc. No black box.</p></div>
+    <div class="svc-grid">
+      <div class="svc rv"><h3><i>01</i>Paid Social</h3><p>Meta ads with structured creative testing: hooks, angles and social proof, scaled on what converts, not on what looks nice.</p></div>
+      <div class="svc rv"><h3><i>02</i>Google Ads &amp; PPC</h3><p>Search and Shopping built on real keyword architecture: branded, non-branded and negatives that keep spend clean.</p></div>
+      <div class="svc rv"><h3><i>03</i>Creative &amp; UGC</h3><p>Short-form ad creative and UGC pipelines: scripts, hooks, edits and iteration cycles measured against the account.</p></div>
+      <div class="svc rv"><h3><i>04</i>Funnels &amp; VSL</h3><p>Landing pages, VSLs and webinar funnels built for one job: press play, watch, book or buy.</p></div>
+      <div class="svc rv"><h3><i>05</i>Webs &amp; Landings</h3><p>Full websites and e-commerce builds that load fast, convert and stay easy to update.</p></div>
+      <div class="svc rv"><h3><i>06</i>SEO &amp; GEO</h3><p>Organic visibility on Google and inside AI answers. We optimize to be the source AI cites, not just another blue link.</p></div>
+      <div class="svc rv"><h3><i>07</i>Email &amp; Lifecycle</h3><p>Newsletters, nurture flows and CRM automation on GoHighLevel and similar, so leads become meetings and buyers come back.</p></div>
+      <div class="svc rv"><h3><i>08</i>CRM Builds &amp; Integrations</h3><p>The plumbing behind the funnel: pipelines, automations and systems that actually talk to each other.</p></div>
+      <div class="svc rv"><h3><i>09</i>Influencer &amp; Affiliates</h3><p>Sourcing, negotiation and coordination, measured like a channel instead of like a favor, plus programs that keep producing after the spend stops.</p></div>
+      <div class="svc rv new"><h3><i>10</i>Live Client Portal <span class="new-badge">Included</span></h3><p>Every client gets a portal: reports, approvals board, ideas bank, meeting recaps and a living context doc. No black box.</p></div>
     </div>
+
+    <div class="svc-note rv"><b>Take it whole or in pieces.</b> Every service above can be fragmented to a specific need. If a company only wants video editing for their ads, or only wants their GEO presence built, that is a real engagement for us.</div>
   </div>
 </section>
 
