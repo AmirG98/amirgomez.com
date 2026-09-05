@@ -9,6 +9,15 @@ export const maxDuration = 60;
 
 type ChatTurn = { role: 'user' | 'assistant'; content: string };
 
+// Adjuntos del chat: imagenes (capturas de metricas, frames, propuestas) y
+// PDF (contratos, briefs). Llegan en base64 desde el navegador y se mandan
+// a la API en el mismo mensaje. No se guardan en ningun lado.
+type Adjunto = { tipo: 'image' | 'pdf'; media: string; datos: string; nombre?: string };
+
+const MEDIA_IMAGEN = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+const MAX_ADJUNTOS = 4;
+const MAX_BYTES = 5 * 1024 * 1024; // 5 MB por archivo, ya decodificado
+
 export async function POST(req: NextRequest) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return NextResponse.json({ error: 'ai_not_configured' }, { status: 503 });
@@ -20,7 +29,7 @@ export async function POST(req: NextRequest) {
     level?: string;
     temario?: string;
     resumen?: string;
-    audience?: string; slug?: string;
+    audience?: string; slug?: string; adjuntos?: unknown;
     history?: ChatTurn[];
   };
   try {
@@ -28,6 +37,18 @@ export async function POST(req: NextRequest) {
   } catch {
     return NextResponse.json({ error: 'bad_json' }, { status: 400 });
   }
+
+  const adjuntos: Adjunto[] = (Array.isArray(body.adjuntos) ? body.adjuntos : [])
+    .filter((a: unknown): a is Adjunto => {
+      if (!a || typeof a !== 'object') return false;
+      const x = a as Adjunto;
+      if (typeof x.datos !== 'string' || typeof x.media !== 'string') return false;
+      if (x.tipo === 'image') return MEDIA_IMAGEN.includes(x.media);
+      if (x.tipo === 'pdf') return x.media === 'application/pdf';
+      return false;
+    })
+    .slice(0, MAX_ADJUNTOS)
+    .filter((a) => (a.datos.length * 3) / 4 <= MAX_BYTES);
 
   const question = String(body.question || '').trim().slice(0, 2000);
   if (question.length < 3) return NextResponse.json({ error: 'question_too_short' }, { status: 400 });
@@ -136,6 +157,19 @@ Cercano y honesto. Si el plan de la persona es malo, decíselo con claridad y ex
     'Usá párrafos cortos y bullets cuando sumen; nada de relleno. Si la duda depende de datos de un cliente puntual que no tenés, decilo y pedí ese contexto. ' +
     'Si la pregunta no tiene nada que ver con el training ni con el trabajo de la agencia, redirigila con amabilidad al tema del training.';
 
+  // Con adjuntos el mensaje pasa a ser multimodal: los bloques de archivo van
+  // primero y el texto al final, que es como mejor los lee el modelo.
+  const contenidoUsuario = adjuntos.length
+    ? [
+        ...adjuntos.map((a) =>
+          a.tipo === 'image'
+            ? { type: 'image', source: { type: 'base64', media_type: a.media, data: a.datos } }
+            : { type: 'document', source: { type: 'base64', media_type: 'application/pdf', data: a.datos } },
+        ),
+        { type: 'text', text: question },
+      ]
+    : question;
+
   const aiRes = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: {
@@ -150,7 +184,7 @@ Cercano y honesto. Si el plan de la persona es malo, decíselo con claridad y ex
       // Si un pedido es rechazado por seguridad, la API lo reintenta sola en un modelo alternativo.
       fallbacks: 'default',
       system,
-      messages: [...history, { role: 'user', content: question }],
+      messages: [...history, { role: 'user', content: contenidoUsuario }],
     }),
   });
 

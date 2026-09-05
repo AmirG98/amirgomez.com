@@ -180,6 +180,16 @@
   .soon ul { margin: 14px 0 0 18px; }
   .soon li { font-size: 14.5px; color: var(--ink-2); margin-bottom: 7px; }
   .soon .ask-more { margin-top: 16px; font-weight: 600; color: var(--ink); }
+
+  .ask .adj-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .ask .adj-list:empty { margin-top: 0; }
+  .ask .adj { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; background: var(--paper-2, #f3f1ec);
+    border: 1px solid var(--hairline, #e4e0d7); border-radius: 999px; padding: 5px 6px 5px 11px; max-width: 260px; }
+  .ask .adj .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ask .adj .kd { font-size: 9.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; opacity: .55; }
+  .ask .adj button { border: 0; background: none; cursor: pointer; font-size: 15px; line-height: 1; opacity: .45; padding: 0 4px; }
+  .ask .adj button:hover { opacity: 1; }
+  .ask .adj-nota { font-size: 11.5px; opacity: .6; margin-top: 8px; }
 </style>
 
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -1157,7 +1167,10 @@ function renderTraining(t) {
     '<p class="hint">Preguntale a Claude ac&aacute; mismo: conoce el temario de este training y responde seg&uacute;n c&oacute;mo operamos en la agencia. Si es algo de un cliente puntual, sumale el contexto del cliente en tu pregunta.</p>' +
     '<div class="chat" id="chat-thread"></div>' +
     '<textarea id="ask-q" placeholder="Ej: &iquest;C&oacute;mo aplico esto si el cliente tiene un presupuesto de $1.500/mes y dos ubicaciones?"></textarea>' +
+    '<div class="adj-list" id="adj-list"></div>' +
     '<div class="row"><button class="go" id="ask-go">Preguntar</button>' +
+    '<button class="alt" id="ask-adj">Adjuntar</button>' +
+    '<input type="file" id="adj-input" accept="image/png,image/jpeg,image/gif,image/webp,application/pdf" multiple hidden>' +
     '<button class="alt" id="ask-copy">Copiar prompt</button>' +
     '<span class="copied" id="ask-ok">Copiado &#10003;</span></div>' +
     '<div class="fb hidden" id="ask-fb"><p id="ask-fb-msg"></p>' +
@@ -1224,6 +1237,43 @@ function renderTraining(t) {
     $('ask-fb').classList.remove('hidden');
   };
 
+  // --- Adjuntos: imagenes y PDF, en memoria, nunca se guardan ---
+  const adjuntos = [];
+  const MAX_ADJ = 4, MAX_MB = 5;
+  const pintarAdj = () => {
+    const cont = $('adj-list');
+    if (!cont) return;
+    cont.innerHTML = adjuntos.map((a, i) =>
+      '<span class="adj"><span class="kd">' + (a.tipo === 'pdf' ? 'PDF' : 'IMG') + '</span>' +
+      '<span class="nm">' + esc(a.nombre) + '</span>' +
+      '<button data-i="' + i + '" aria-label="Quitar">&times;</button></span>').join('') +
+      (adjuntos.length ? '<div class="adj-nota">Se env&iacute;an solo para esta consulta. No quedan guardados.</div>' : '');
+    cont.querySelectorAll('button[data-i]').forEach(b => {
+      b.addEventListener('click', () => { adjuntos.splice(+b.getAttribute('data-i'), 1); pintarAdj(); });
+    });
+  };
+  const leerArchivo = (file) => new Promise((res, rej) => {
+    const r = new FileReader();
+    r.onload = () => res(String(r.result).split(',')[1] || '');
+    r.onerror = rej;
+    r.readAsDataURL(file);
+  });
+  if ($('ask-adj')) {
+    $('ask-adj').addEventListener('click', () => $('adj-input').click());
+    $('adj-input').addEventListener('change', async (e) => {
+      for (const file of Array.from(e.target.files || [])) {
+        if (adjuntos.length >= MAX_ADJ) { addMsg('err', 'M&aacute;ximo ' + MAX_ADJ + ' archivos por consulta.'); break; }
+        if (file.size > MAX_MB * 1024 * 1024) { addMsg('err', esc(file.name) + ' pesa m&aacute;s de ' + MAX_MB + ' MB.'); continue; }
+        const esPdf = file.type === 'application/pdf';
+        try {
+          adjuntos.push({ tipo: esPdf ? 'pdf' : 'image', media: file.type, datos: await leerArchivo(file), nombre: file.name });
+        } catch (err) { addMsg('err', 'No pude leer ' + esc(file.name) + '.'); }
+      }
+      e.target.value = '';
+      pintarAdj();
+    });
+  }
+
   const send = async () => {
     const q = ($('ask-q').value || '').trim();
     if (!q || $('ask-go').disabled) return;
@@ -1231,7 +1281,11 @@ function renderTraining(t) {
     $('ask-q').value = '';
     $('ask-go').disabled = true;
     $('ask-fb').classList.add('hidden');
-    addMsg('u', esc(q));
+    const etiquetas = adjuntos.length
+      ? '<div class="adj-list">' + adjuntos.map(a =>
+          '<span class="adj"><span class="kd">' + (a.tipo === 'pdf' ? 'PDF' : 'IMG') + '</span><span class="nm">' + esc(a.nombre) + '</span></span>').join('') + '</div>'
+      : '';
+    addMsg('u', esc(q) + etiquetas);
     const thinking = addMsg('a think', 'Claude est&aacute; pensando&hellip;');
     try {
       const res = await fetch('/api/academy-chat', {
@@ -1240,6 +1294,7 @@ function renderTraining(t) {
         body: JSON.stringify({
           question: q, title: plainTitle, area: CATS[t.cat], level: t.level, slug: t.slug,
           temario: temario, resumen: resumen, history: thread.slice(-10),
+          adjuntos: adjuntos.map(a => ({ tipo: a.tipo, media: a.media, datos: a.datos })),
           audience: 'client'
         })
       });
@@ -1247,6 +1302,7 @@ function renderTraining(t) {
       thinking.remove();
       if (res.ok && data.answer) {
         thread.push({ role: 'user', content: q }, { role: 'assistant', content: data.answer });
+        adjuntos.length = 0; pintarAdj();
         addMsg('a', '<span class="who">Claude &middot; A+Growth</span>' + renderAnswer(data.answer));
       } else if (res.status === 503) {
         addMsg('err', 'El chat todav&iacute;a no tiene la API key configurada en el servidor.');
