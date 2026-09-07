@@ -89652,6 +89652,215 @@ Don't judge an ecommerce email program by campaign conversion rate alone: a 1.5%
 
 Source: Klaviyo, "2026 Email Marketing Benchmarks by Industry."`
   },
+  {
+    id: "668",
+    title: "What's the Average Cost Per Lead for Auto Glass Repair Companies on Google Local Services Ads in 2026?",
+    slug: "auto-glass-repair-cost-per-lead-google-lsa-2026",
+    excerpt: "Auto glass repair companies pay a national average of $36.23 per lead on Google Local Services Ads in 2026 — below the $53 blended average across all home-service trades.",
+    featuredImage: "https://images.unsplash.com/photo-1607082349566-187342175e2f?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-07",
+    category: "Google Ads",
+    tags: ["Google Local Services Ads", "Auto Glass Repair", "Cost Per Lead", "Automotive Marketing", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Auto Glass Repair Cost Per Lead on Google LSA 2026",
+      metaDescription: "Auto glass repair companies pay a national average of $36.23 per lead on Google Local Services Ads in 2026, rising to $50-$60 in competitive metro markets.",
+      keywords: ["auto glass repair cost per lead", "google local services ads auto glass", "auto glass ppc benchmark 2026", "LSA cost per lead by trade"]
+    },
+    content: `The national average cost per lead for auto glass repair companies on Google Local Services Ads (LSA) is $36.23 as of early 2026, according to SearchLight Digital's Google Local Service Ads Cost Per Lead by Trade report — meaningfully below the $53 blended average LSA pays across all home-service trades combined.
+
+## Where Auto Glass Falls in the Broader LSA Cost Range
+
+Most home-service trades on LSA land somewhere between $30 and $80 per lead in 2026, with high-ticket or highly competitive categories like roofing pushing toward the top of that range. SearchLight's broader benchmark, drawn from 888 contractors and $6.72M in tracked LSA spend, put the blended average at $53 per lead with a 43.9% book rate and roughly $233 in ad spend per paying customer across trades. Auto glass sitting at $36.23 puts it in the lower-to-mid tier of that spread, alongside other high-volume, lower-ticket repair categories.
+
+## Why Auto Glass Tends to Cost Less Than Other Trades
+
+Auto glass repair benefits from two things that keep LSA costs down relative to trades like roofing or HVAC: the job itself is usually well-defined (a chip, crack, or full windshield replacement) rather than requiring an in-home estimate, and a large share of jobs are insurance-covered, which shortens the decision cycle and keeps searchers moving quickly from search to booking. That combination means Google's matching system can connect searchers to LSA-verified shops efficiently, without the longer consideration period that inflates cost per lead in bigger-ticket home-improvement categories.
+
+## What Drives the Price Up in Dense Metro Markets
+
+The $36.23 figure is a national average, not a ceiling. In dense metro markets where multiple Google Guarantee-verified auto glass shops compete for the same LSA placements, cost per lead climbs toward $50 to $60. Market density, not just national demand, is the biggest swing factor for any individual shop's real cost per lead — a shop in a mid-size market with few LSA competitors will consistently see costs closer to the low $30s.
+
+## Bottom Line
+
+Budget $30-$60 per lead for auto glass repair on Google LSA depending on your market's competition level, and don't judge the channel on cost per lead alone — dispute invalid leads (wrong numbers, out-of-area contacts, spam) inside the LSA dashboard promptly, since your book rate on the leads you keep matters more than the raw per-lead price.
+
+Source: SearchLight Digital, "Google Local Service Ads Cost Per Lead by Trade (2026)."`
+  },
+  {
+    id: "669",
+    title: "What's a Good Email Open Rate for Real Estate Agents in 2026?",
+    slug: "good-email-open-rate-real-estate-agents-2026",
+    excerpt: "A good email open rate for real estate agents in 2026 is around 23.5%, per Mailchimp's industry benchmarks — but Apple Mail Privacy Protection now inflates that number for everyone.",
+    featuredImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-07",
+    category: "Email Marketing",
+    tags: ["Email Marketing", "Real Estate Marketing", "Open Rate Benchmarks", "Email Automation", "Apple Mail Privacy Protection"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Good Email Open Rate for Real Estate Agents 2026",
+      metaDescription: "A good email open rate for real estate agents in 2026 is around 23.5% per Mailchimp's benchmarks, slightly above the roughly 21% all-industry average.",
+      keywords: ["good email open rate real estate", "real estate email marketing benchmark", "mailchimp real estate open rate", "real estate agent email statistics 2026"]
+    },
+    content: `A good email open rate for real estate agents in 2026 is around 23.5%, based on Mailchimp's email marketing benchmarks by industry — slightly above the roughly 21% average Mailchimp reports across all industries combined.
+
+## Real Estate vs. the All-Industry Average
+
+Real estate's 23.5% sits in a middle tier: well below high-engagement categories like hobbies or religious organizations, but ahead of the blended all-industry figure. That gap is consistent with how real estate email typically works — most agents send to a mix of past clients, active leads, and cold prospects in one list, which pulls the blended open rate down compared to a purely opt-in newsletter audience.
+
+## Why Raw Open Rate Numbers Are Less Reliable Than They Used to Be
+
+Apple Mail Privacy Protection (MPP) automatically pre-loads a tracking pixel for any email opened in Apple Mail, whether or not a person actually looked at it. With more than half of all email opens now happening on Apple devices, that mechanism inflates every industry's reported open rate to some degree, real estate included. A campaign showing a 23-25% open rate today may represent meaningfully less real human attention than the same percentage would have a few years ago, before MPP existed.
+
+## What to Track Instead
+
+Because open rate is now a noisier signal, click-through rate is the more dependable number for real estate email specifically. Real estate emails typically see click-through rates in the 2.5% to 3.6% range — a metric MPP cannot artificially inflate, since it requires an actual click rather than a pixel load. Tracking CTR alongside opens, and watching your own list's trend line over time rather than chasing an industry benchmark number, gives a truer read on whether your emails are working.
+
+## What Actually Moves the Number
+
+The widest performance gap in the data isn't between agents — it's between email types. Generic email blasts sent to a broad, undifferentiated list produce open rates as low as 1-2%, while targeted, hyperlocal content (a new listing alert for a specific neighborhood, a market update for people who searched a specific zip code) reaches 25-40% open rates for the same sender. Segmentation, not send time or subject-line tricks, is the lever with the largest documented effect on real estate email performance.
+
+## Bottom Line
+
+Treat 23.5% as a rough floor, not a ceiling: if your real estate email list is segmented by neighborhood, price range, or buyer/seller intent rather than blasted as one list, you should expect to beat the industry average — and if you're not, click-through rate will show you that before open rate does.
+
+Source: Mailchimp, "Email Marketing Benchmarks and Statistics by Industry."`
+  },
+  {
+    id: "670",
+    title: "What's Apple Search Ads' Default Attribution Window in 2026?",
+    slug: "apple-search-ads-default-attribution-window-2026",
+    excerpt: "Apple Search Ads defaults to a 30-day click-to-install and 1-day view-to-install attribution window in 2026 — separate from and longer than SKAdNetwork's measurement window.",
+    featuredImage: "https://images.unsplash.com/photo-1611262588024-d12430b98920?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-07",
+    category: "Marketing Technology",
+    tags: ["Apple Search Ads", "Attribution Window", "App Store Marketing", "Conversion Tracking", "SKAdNetwork"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Apple Search Ads Default Attribution Window 2026",
+      metaDescription: "Apple Search Ads' default attribution window in 2026 is 30 days for click-to-install and 1 day for view-to-install conversions, per Apple's own documentation.",
+      keywords: ["apple search ads attribution window", "apple ads default attribution", "apple search ads vs skadnetwork", "app store ads conversion window 2026"]
+    },
+    content: `Apple Search Ads' default attribution window in 2026 is 30 days for click-to-install (tap-through) conversions and 1 day for view-to-install (impression) conversions. That default applies to standard, non-Pre-Order campaigns and comes directly from Apple's own Ads Help documentation on app ad attribution.
+
+## Why This Window Is Different From SKAdNetwork
+
+Apple Search Ads' 30-day window is notably longer than the measurement window third-party ad networks work under via SKAdNetwork, which historically ran on a much shorter, rolling window before Apple's newer SKAN 4 framework introduced staged windows of 0-2 days, 3-7 days, and 8-35 days for postback timing. Apple Search Ads doesn't need to route through SKAdNetwork's privacy-preserving postback system for its own attribution, because Apple already has first-party access to both the ad interaction and the resulting App Store install on-device — the same structural advantage that lets Meta or Google skip third-party cookies for their own owned-and-operated attribution.
+
+## Apple Ads Has Now Registered With AdAttributionKit Too
+
+On April 10, 2025, Apple Ads registered with AdAttributionKit (built on the SKAdNetwork foundation, versions 1-3), giving app developers a way to see Apple Search Ads sitting alongside other ad networks in the same attribution reporting pipeline. This doesn't replace Apple's own 30-day/1-day window for its first-party reporting — it's an additional, standardized layer that helps developers compare Apple Search Ads' contribution against Meta, Google, and other UA channels using a common measurement framework, since SKAN-based reporting from those other networks uses a much shorter, hours-based measurement window by comparison.
+
+## A Change Worth Watching Starting September 2026
+
+Apple began rolling out two changes to Apple Ads (AdServices) attribution starting September 1, 2026: attribution responses now include a touchpoint timestamp in addition to existing fields, and install claims are evaluated against your app's configured lookback window rather than always defaulting to the full 30-day maximum. Developers running a shorter custom lookback window as part of their measurement partner setup (Adjust, AppsFlyer, Singular, and similar) may see attributed installs from Apple Ads dip slightly after this change — not because performance changed, but because the attribution logic is now stricter about which installs actually fall inside the configured window.
+
+## Bottom Line
+
+Don't assume Apple Search Ads and your other UA channels are being measured on the same clock: confirm your mobile measurement partner's lookback window matches (or is deliberately shorter than) Apple's 30-day default before comparing Apple Search Ads performance against SKAN-reported networks side by side.
+
+Sources: Apple Ads Help, "App ad attribution overview"; Singular, "Apple Ads (formerly Apple Search Ads) Attribution Integration"; AppsFlyer, "Apple Search Ads finally joins the SKAN party."`
+  },
+  {
+    id: "671",
+    title: "What's the Average Cost Per Lead for Wedding Florists on Google Ads in 2026?",
+    slug: "wedding-florist-cost-per-lead-google-ads-2026",
+    excerpt: "Wedding-focused florists pay $75-$250 per lead on Google Ads in 2026, with clicks running $4-$15 — well above the $5.42 all-industry average CPC.",
+    featuredImage: "https://images.unsplash.com/photo-1487070183336-b863922373d4?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-07",
+    category: "Google Ads",
+    tags: ["Google Ads", "Florist Marketing", "Wedding Industry", "Cost Per Lead", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Wedding Florist Cost Per Lead on Google Ads 2026",
+      metaDescription: "Wedding-focused florists pay $75-$250 per lead on Google Ads in 2026, with cost per click running $4-$15 — well above the industry-wide $5.42 average CPC.",
+      keywords: ["wedding florist cost per lead", "florist google ads cost 2026", "wedding industry ppc benchmark", "florist cost per click google ads"]
+    },
+    content: `Wedding-focused florists pay $75 to $250 per lead on Google Ads in 2026, with cost per click for wedding-related florist keywords running $4 to $15 — well above the $5.42 all-industry average cost per click that WordStream's 2026 Google Ads benchmark report puts across every category combined.
+
+## Why Wedding Keywords Cost So Much More Than General Florist Terms
+
+Wedding florist searches carry high commercial intent and high order values, and every florist within driving distance of a given search is competing for the same limited pool of engaged couples during roughly the same planning window each year. That combination — high value per booking, a concentrated buying season, and a fixed local competitor set — is exactly the pattern that drives cost per click and cost per lead upward across any vertical, and wedding florals sit toward the expensive end of it.
+
+## What a Florist Search Campaign Looks Like Overall
+
+Beyond the wedding-specific numbers, florist keywords broadly run $4 to $15 per click, and the average cost per order across a florist's full Google Ads account (weddings plus everyday arrangements, sympathy, and events) tends to land around $20 to $60, with close rates of 40% to 60% thanks to how high-intent florist search traffic generally is. Wedding inquiries pull the per-lead cost toward the top of that range because they involve a longer sales conversation and a much higher average order value than a same-day delivery order.
+
+## Budgeting Around a Seasonal Spike
+
+Single-location florists typically budget $800 to $3,000 per month on Google Ads, but that number isn't flat across the year — expect to run 2 to 3 times that baseline during peak demand windows like the weeks around Valentine's Day and Mother's Day, when search volume and competitor bidding both spike at once. A wedding-focused florist should plan a similar seasonal curve around regional wedding season and engagement-season spikes (late fall through the December holidays, when a large share of proposals happen), rather than spreading budget evenly across the year.
+
+## Bottom Line
+
+Expect to pay several times the all-industry average CPC for wedding florist keywords specifically, and budget for it: with close rates in the 40-60% range and average wedding order values far above a standard delivery, a $150-$250 cost per lead can still be efficient — track cost per booked wedding, not cost per click, before deciding a campaign isn't working.
+
+Sources: Adwave, "Florist Advertising: 7 Channels Compared (2026)"; WordStream, "2026 Google Ads Benchmarks: Competitive Data & Insights for Every Industry."`
+  },
+  {
+    id: "672",
+    title: "What's the Average Cost Per Lead for Window Cleaning Companies on Google Local Services Ads in 2026?",
+    slug: "window-cleaning-cost-per-lead-google-lsa-2026",
+    excerpt: "Window cleaning companies pay $20-$50 per verified lead on Google Local Services Ads in 2026, below the $53 blended average across home-service trades.",
+    featuredImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-07",
+    category: "Google Ads",
+    tags: ["Google Local Services Ads", "Window Cleaning", "Cost Per Lead", "Home Services Marketing", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Window Cleaning Cost Per Lead on Google LSA 2026",
+      metaDescription: "Window cleaning companies pay $20-$50 per verified lead on Google Local Services Ads in 2026, below the $53 blended average across all home-service trades.",
+      keywords: ["window cleaning cost per lead", "google local services ads window cleaning", "window cleaning ppc benchmark 2026", "window cleaning google ads cost"]
+    },
+    content: `Window cleaning companies pay $20 to $50 per verified lead on Google Local Services Ads (LSA) in 2026 — below the $53 blended average cost per lead across all home-service trades on the platform. Because LSA runs on a pay-per-lead model, that cost is charged only for a verified call or message, not for a raw click.
+
+## LSA vs. Standard Google Search Ads for Window Cleaning
+
+Window cleaning also runs on standard Google Search Ads outside of LSA, and the two channels price out differently. Search Ads campaigns for residential window cleaning typically produce leads in the $25-$75 range, with cost per click running $3-$9 for residential search terms. LSA's $20-$50 per verified lead makes it competitive with, and often cheaper than, standard Search Ads for this trade — while also removing the work of writing ad copy, picking keywords, and building a landing page, since Google handles the matching automatically inside the Local Services directory.
+
+## Why This Trade Tends to Run Cheaper on LSA
+
+Residential window cleaning has a fairly narrow, predictable price band — most jobs run $150 to $350 — which makes it easy for Google's matching system to connect a searcher directly to a verified provider without a long back-and-forth quoting process. That simplicity is a big part of why window cleaning sits below the broader $53 LSA average: trades with wide, unpredictable price ranges (a kitchen remodel, a full roof replacement) require more consideration before a lead converts, which pushes cost per lead higher across the category.
+
+## What's Included in the Window Cleaning LSA Category
+
+Google's Window Cleaning vertical inside Local Services Ads covers more than just glass: eligible job types include window cleaning, glass and mirror cleaning, gutter cleaning, power and pressure washing, and rooftop or skylight cleaning. A provider offering several of these services under one LSA profile can capture lead volume across adjacent job types without running a separate campaign for each.
+
+## Bottom Line
+
+Budget $20-$50 per verified lead for window cleaning on Google LSA, and treat it as the default starting channel over standard Search Ads for this trade specifically — the simpler, well-defined pricing that keeps LSA costs down for window cleaning is the same reason it converts efficiently without the setup overhead of a full search campaign.
+
+Sources: The Valley Marketing Group, "Window Cleaning Google Ads Cost Per Lead 2026"; PrimeLSA, "Google Local Services Ads Eligible Categories (2026)."`
+  },
 ];
 
 export const blogCategories = [
