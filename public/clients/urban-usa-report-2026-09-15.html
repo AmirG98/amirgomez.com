@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urban Real Estate — Paid Media Report · Septiembre 2026</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  :root {
+    --navy: #2b3947;
+    --navy-deep: #1f2b37;
+    --ink: #26303a;
+    --ink-2: #5c6670;
+    --ink-3: #98a0a8;
+    --paper: #faf9f6;
+    --paper-2: #f3f1ec;
+    --hairline: #e4e0d7;
+    --gold: #a8874f;
+    --gold-soft: #f4ede1;
+    --good: #4f7a5c;
+    --warn: #a85a4f;
+    --serif: 'Marcellus', 'Times New Roman', serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.65;
+    font-size: 15.5px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .num { font-variant-numeric: tabular-nums; }
+  .eyebrow {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--gold);
+  }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    background: transparent;
+    transition: background .35s ease, border-color .35s ease;
+    border-bottom: 1px solid transparent;
+  }
+  nav.stuck { background: rgba(250,249,246,0.94); border-bottom-color: var(--hairline); backdrop-filter: blur(6px); }
+  .nav-inner {
+    max-width: 960px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    height: 54px;
+  }
+  .nav-mark { font-family: 'Jost', var(--sans); font-weight: 300; font-size: 15px; letter-spacing: 0.38em; color: var(--navy); text-decoration: none; opacity: 0; transition: opacity .35s ease; white-space: nowrap; }
+  nav.stuck .nav-mark { opacity: 1; }
+  .nav-links { display: flex; gap: 22px; overflow-x: auto; scrollbar-width: none; }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a {
+    font-size: 11.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-2); text-decoration: none; white-space: nowrap;
+    padding: 4px 0; border-bottom: 1.5px solid transparent;
+    transition: color .25s, border-color .25s;
+  }
+  .nav-links a:hover { color: var(--navy); }
+  .nav-links a.active { color: var(--navy); border-bottom-color: var(--gold); }
+  #progress {
+    position: absolute; bottom: -1px; left: 0; height: 2px; width: 0;
+    background: var(--gold); transition: width .1s linear;
+  }
+
+  .page { max-width: 960px; margin: 0 auto; padding: 0 24px 72px; }
+  section { scroll-margin-top: 76px; }
+
+  .hero { text-align: center; padding: 92px 0 64px; }
+  .hero .burst svg { display: block; margin: 0 auto 14px; }
+  .wordmark { font-family: 'Jost', var(--sans); font-weight: 300; font-size: 27px; letter-spacing: 0.52em; color: var(--navy); text-indent: 0.52em; line-height: 1.1; }
+  .wordmark-sub { font-family: 'Jost', var(--sans); font-weight: 400; font-size: 9.5px; letter-spacing: 0.6em; text-indent: 0.6em; color: var(--navy); opacity: 0.75; margin-top: 3px; }
+  .hero .rule { width: 56px; height: 1px; background: var(--gold); margin: 28px auto 26px; }
+  .hero h1 { font-family: var(--serif); font-size: 27px; font-weight: 400; color: var(--ink); letter-spacing: 0.02em; }
+  .hero .period { margin-top: 10px; font-size: 13.5px; color: var(--ink-2); letter-spacing: 0.06em; }
+  .picker { display: none; align-items: center; gap: 10px; justify-content: center; margin-top: 18px; }
+  .picker.show { display: flex; }
+  .picker label { font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); }
+  .picker select { font-family: var(--sans); font-size: 13.5px; padding: 8px 12px; background: #fffefb; color: var(--ink); border: 1px solid var(--hairline); outline: none; cursor: pointer; }
+  .picker select:focus { border-color: var(--gold); }
+
+  .kpis {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);
+    margin-bottom: 30px;
+  }
+  .kpi { padding: 30px 26px; border-left: 1px solid var(--hairline); }
+  .kpi:first-child { border-left: none; }
+  .kpi .label { font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 10px; }
+  .kpi .value { font-family: var(--serif); font-size: 42px; line-height: 1; color: var(--navy); }
+  .kpi .foot { font-size: 12.5px; color: var(--ink-2); margin-top: 10px; }
+  .kpi .foot.up { color: var(--good); }
+  .lede { max-width: 62ch; color: var(--ink-2); font-size: 16px; margin: 0 auto; text-align: center; }
+
+  .sec-head { display: flex; align-items: baseline; gap: 18px; margin: 88px 0 8px; }
+  .sec-head .n { font-family: var(--serif); font-size: 15px; color: var(--gold); letter-spacing: 0.1em; }
+  .sec-head h2 { font-family: var(--serif); font-size: 26px; font-weight: 400; color: var(--ink); letter-spacing: 0.01em; }
+  .sec-rule { height: 1px; background: var(--hairline); margin-bottom: 28px; }
+  .note { font-size: 15px; color: var(--ink-2); max-width: 68ch; margin-top: 18px; }
+  .subhead { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); margin: 30px 0 12px; }
+  .subhead:first-child { margin-top: 0; }
+
+  .spend-row { display: grid; grid-template-columns: 230px 1fr 110px; gap: 18px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--hairline); }
+  .spend-row:first-child { border-top: 1px solid var(--hairline); }
+  .spend-name { font-size: 14.5px; font-weight: 600; color: var(--ink); }
+  .spend-name small { display: block; font-weight: 400; font-size: 12.5px; color: var(--ink-3); letter-spacing: 0.02em; }
+  .bar-track { height: 4px; background: var(--paper-2); overflow: hidden; }
+  .bar { height: 100%; background: var(--navy); width: 0; transition: width 1.3s cubic-bezier(.22,.61,.36,1); }
+  .bar.gold { background: var(--gold); }
+  .bar.in { width: var(--w); }
+  .spend-amt { font-family: var(--serif); font-size: 19px; color: var(--ink); text-align: right; }
+
+  .metric-line { display: flex; flex-wrap: wrap; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+  .m { flex: 1 1 130px; padding: 20px 18px; border-left: 1px solid var(--hairline); }
+  .m:first-child { border-left: none; }
+  .m .l { font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); }
+  .m .v { font-family: var(--serif); font-size: 25px; color: var(--navy); margin-top: 6px; }
+
+  .callout { border-left: 2px solid var(--gold); padding: 6px 0 6px 20px; margin-top: 24px; font-size: 15px; color: var(--ink); max-width: 66ch; }
+  .callout b { font-weight: 600; }
+  .callout.good { border-left-color: var(--good); }
+  .callout.warn { border-left-color: var(--warn); }
+
+  .agenda-box { border: 1px solid var(--hairline); background: #fffefb; padding: 36px 40px; }
+  .agenda-box .head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
+  .agenda-box h2 { font-family: var(--serif); font-size: 25px; font-weight: 400; color: var(--ink); }
+  .agenda-box .date { font-family: var(--serif); font-size: 16px; color: var(--gold); letter-spacing: 0.06em; }
+  .agenda-hint { font-size: 13px; color: var(--ink-3); margin-bottom: 10px; }
+  .agenda-item { display: flex; align-items: flex-start; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--hairline); cursor: pointer; }
+  .agenda-item:last-of-type { border-bottom: none; }
+  .agenda-item input[type="checkbox"] {
+    appearance: none; -webkit-appearance: none; flex: none;
+    width: 20px; height: 20px; margin-top: 1px; cursor: pointer;
+    border: 1.5px solid var(--ink-3); background: #fff;
+    display: grid; place-content: center;
+    transition: background .2s, border-color .2s;
+  }
+  .agenda-item input[type="checkbox"]:checked { background: var(--gold); border-color: var(--gold); }
+  .agenda-item input[type="checkbox"]:checked::after { content: "✓"; color: #fff; font-size: 13px; font-weight: 600; line-height: 1; }
+  .agenda-item span { font-size: 15.5px; color: var(--ink); transition: color .25s; }
+  .agenda-item input:checked ~ span { color: var(--ink-3); }
+  .agenda-notes { margin-top: 22px; }
+  .agenda-notes .l { font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 8px; }
+  .agenda-notes textarea {
+    width: 100%; min-height: 96px; resize: vertical;
+    border: 1px solid var(--hairline); background: #fff;
+    padding: 14px 16px; font-family: var(--sans); font-size: 14.5px; color: var(--ink); line-height: 1.6;
+  }
+  .agenda-notes textarea:focus { outline: none; border-color: var(--gold); }
+  .agenda-notes textarea::placeholder { color: var(--ink-3); }
+  .agenda-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); background: var(--gold-soft); padding: 2px 8px; margin-left: 8px; white-space: nowrap; }
+
+  .geo { margin-top: 34px; }
+  .geo-title { font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 4px; }
+  .geo-row { display: grid; grid-template-columns: 130px 1fr 250px; gap: 18px; align-items: center; padding: 13px 0; border-bottom: 1px solid var(--hairline); }
+  .geo-row:first-of-type { border-top: 1px solid var(--hairline); }
+  .geo-name { font-size: 14.5px; font-weight: 600; color: var(--ink); }
+  .geo-stats { display: flex; gap: 8px 20px; justify-content: flex-end; flex-wrap: wrap; font-size: 13.5px; color: var(--ink-2); }
+  .geo-stats b { font-family: var(--serif); font-size: 16px; font-weight: 400; color: var(--ink); }
+
+  .winner { background: var(--navy-deep); color: #eef0ee; padding: 44px 46px; margin-bottom: 14px; position: relative; overflow: hidden; }
+  .winner .tag { font-size: 10.5px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+  .winner h3 { font-family: var(--serif); font-size: 30px; font-weight: 400; margin: 12px 0 4px; color: #fff; }
+  .winner .sub { font-size: 13.5px; color: #aab4bd; }
+  .winner .metric-line { border-color: rgba(255,255,255,0.14); margin-top: 26px; }
+  .winner .m { border-color: rgba(255,255,255,0.14); }
+  .winner .m .l { color: #8b97a2; }
+  .winner .m .v { color: #fff; }
+  .winner .share { margin-top: 26px; font-family: var(--serif); font-size: 18px; color: var(--gold); letter-spacing: 0.01em; }
+  .winner .w-burst { position: absolute; right: -40px; top: -40px; opacity: 0.08; pointer-events: none; }
+
+  .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--hairline); }
+  .duo > div { padding: 26px 28px; }
+  .duo > div + div { border-left: 1px solid var(--hairline); }
+  .duo h4 { font-family: var(--serif); font-size: 19px; font-weight: 400; color: var(--ink); }
+  .duo .sub { font-size: 12.5px; color: var(--ink-3); margin-bottom: 14px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+  .chip { font-size: 13.5px; color: var(--ink-2); }
+  .chip b { font-weight: 600; color: var(--ink); }
+  .duo.hl > div:last-child { background: var(--gold-soft); }
+  .duo.warn > div:last-child { background: #f7ece9; }
+
+  .steps { counter-reset: step; }
+  .step { display: grid; grid-template-columns: 72px 1fr; gap: 20px; padding: 26px 0; border-bottom: 1px solid var(--hairline); }
+  .step:first-child { border-top: 1px solid var(--hairline); }
+  .step::before {
+    counter-increment: step; content: "0" counter(step);
+    font-family: var(--serif); font-size: 32px; color: var(--gold); line-height: 1;
+  }
+  .step h3 { font-family: var(--serif); font-size: 19px; font-weight: 400; color: var(--ink); margin-bottom: 6px; }
+  .step p, .step li { font-size: 14.5px; color: var(--ink-2); }
+  .step ul { margin: 8px 0 0 18px; }
+  .step li { margin-top: 3px; }
+
+  .closing { background: var(--navy-deep); padding: 56px 52px; margin-top: 88px; text-align: center; }
+  .closing .eyebrow { color: var(--gold); }
+  .closing p.quote { font-family: var(--serif); font-size: 24px; line-height: 1.5; color: #fff; max-width: 34ch; margin: 18px auto 0; }
+  .closing p.body { font-size: 14.5px; color: #aab4bd; max-width: 62ch; margin: 20px auto 0; }
+  .closing .quote b { color: var(--gold); font-weight: 400; }
+
+  footer { text-align: center; padding-top: 56px; }
+  footer .burst svg { display: block; margin: 0 auto 8px; }
+  footer .fm { font-family: 'Jost', var(--sans); font-weight: 300; font-size: 13px; letter-spacing: 0.42em; text-indent: 0.42em; color: var(--navy); }
+  footer .credit { font-size: 12px; color: var(--ink-3); margin-top: 14px; letter-spacing: 0.04em; }
+
+  .js .rv { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s cubic-bezier(.22,.61,.36,1); }
+  .js .rv.in { opacity: 1; transform: none; }
+
+  @media (max-width: 680px) {
+    .spend-row { grid-template-columns: 1fr; gap: 8px; }
+    .spend-amt { text-align: left; }
+    .duo { grid-template-columns: 1fr; }
+    .duo > div + div { border-left: none; border-top: 1px solid var(--hairline); }
+    .winner { padding: 32px 26px; }
+    .closing { padding: 40px 26px; }
+    .wordmark { font-size: 22px; }
+    .kpi .value { font-size: 34px; }
+    .geo-row { grid-template-columns: 1fr; gap: 8px; }
+    .geo-stats { justify-content: flex-start; }
+    .agenda-box { padding: 26px 22px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .rv { opacity: 1; transform: none; transition: none; }
+    .bar { transition: none; }
+  }
+  @media print {
+    nav { display: none; }
+    .js .rv { opacity: 1 !important; transform: none !important; }
+    .bar { width: var(--w) !important; transition: none; }
+    body { background: #fff; }
+    section, .winner, .step, .closing { break-inside: avoid; }
+    .hero { padding-top: 40px; }
+  }
+</style>
+</head>
+<body data-client="urban-usa" data-page="report-2026-09-15">
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-mark" href="/clients/urban-usa" title="Volver al portal">URBAN</a>
+    <div class="nav-links">
+      <a href="#agenda">Agenda</a>
+      <a href="#resumen">Resumen</a>
+      <a href="#comparacion">vs semana anterior</a>
+      <a href="#inversion">Inversión</a>
+      <a href="#creativos">Creativos</a>
+      <a href="#property">Property Mgmt</a>
+      <a href="#pasos">Próximos pasos</a>
+      <a href="/clients/urban-usa/approvals" style="color: var(--gold);">Aprobaciones ↗</a>
+    </div>
+  </div>
+  <div id="progress"></div>
+</nav>
+
+<div class="page" id="top">
+
+  <header class="hero">
+    <div class="burst" data-burst="58"></div>
+    <div class="wordmark">URBAN</div>
+    <div class="wordmark-sub">REAL ESTATE</div>
+    <div class="rule"></div>
+    <p class="eyebrow">Paid media report</p>
+    <h1>Inversores mejora fuerte; Property Management necesita ajustes</h1>
+    <p class="period num">8 — 15 de septiembre de 2026 · últimos 7 días</p>
+    <div class="picker" id="picker-wrap">
+      <label for="report-picker">Reunión</label>
+      <select id="report-picker"></select>
+    </div>
+  </header>
+
+  <section id="agenda">
+    <div class="agenda-box rv">
+      <div class="head">
+        <h2>Agenda de la reunión</h2>
+        <span class="date num">15 · 09 · 2026</span>
+      </div>
+      <p class="agenda-hint">Marcá cada punto a medida que se trata.</p>
+      <label class="agenda-item"><input type="checkbox"><span>Performance de Paid Media</span></label>
+      <label class="agenda-item"><input type="checkbox"><span>Gasto — USD 441.25, prácticamente estable vs. la semana anterior</span></label>
+      <label class="agenda-item"><input type="checkbox"><span>Leads — 23 leads a CPL blended USD 19.18 (-19.5% vs. semana anterior)</span></label>
+      <label class="agenda-item"><input type="checkbox"><span>Mejor creativo — “No todos permiten Airbnb” vuelve a mejorar su eficiencia</span></label>
+      <label class="agenda-item"><input type="checkbox"><span>Próximos pasos de paid media</span></label>
+      <label class="agenda-item"><input type="checkbox"><span><b>Feedback sobre el Deal del Mes para lanzamiento</b> (énfasis en revisión y aprobación del formulario)</span></label>
+      <label class="agenda-item"><input type="checkbox"><span><b>Definir próximos pasos para el lanzamiento de Nordelta</b></span></label>
+      <label class="agenda-item"><input type="checkbox"><span><b>Feedback para comenzar a lanzar contenido en redes sociales</b></span></label>
+      <div class="agenda-notes">
+        <div class="l">Notas de la reunión</div>
+        <textarea id="agenda-notes" placeholder="¿Extras? Añadir aquí"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <section id="resumen">
+    <div class="kpis rv">
+      <div class="kpi">
+        <div class="label">Leads</div>
+        <div class="value num" data-count="23" data-fmt="int">23</div>
+        <div class="foot up">+21% vs semana anterior (19)</div>
+      </div>
+      <div class="kpi">
+        <div class="label">CPL blended</div>
+        <div class="value num" data-count="19.18" data-fmt="usd">$19.18</div>
+        <div class="foot up">-19.5% vs semana anterior ($23.84)</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Inversores · CPL</div>
+        <div class="value num" data-count="14.40" data-fmt="usd">$14.40</div>
+        <div class="foot up">18 leads &middot; -33% vs semana anterior</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Inversión total</div>
+        <div class="value num" data-count="441.25" data-fmt="usd">$441.25</div>
+        <div class="foot">USD · Meta Ads &middot; -2.6% vs semana anterior</div>
+      </div>
+    </div>
+    <p class="lede rv">Conseguimos <b>más leads con menos inversión</b> que la semana pasada. La mejora vino de Inversores, que pasó de 12 a 18 leads con el CPL bajando un 33%. Property Management, en cambio, tuvo una caída de eficiencia y es hoy la principal oportunidad de optimización.</p>
+  </section>
+
+  <section id="comparacion">
+    <div class="sec-head rv"><span class="n">·</span><h2>Comparación semanal</h2></div>
+    <div class="sec-rule rv"></div>
+    <div class="duo hl rv">
+      <div>
+        <h4>1 — 8 septiembre</h4>
+        <p class="sub">Semana anterior</p>
+        <div class="chips">
+          <span class="chip">Gasto <b>$452.99</b></span>
+          <span class="chip">Leads <b>19</b></span>
+          <span class="chip">CPL <b>$23.84</b></span>
+        </div>
+      </div>
+      <div>
+        <h4>8 — 15 septiembre</h4>
+        <p class="sub">Esta semana</p>
+        <div class="chips">
+          <span class="chip">Gasto <b>$441.25</b></span>
+          <span class="chip">Leads <b>23</b></span>
+          <span class="chip">CPL <b>$19.18</b></span>
+        </div>
+      </div>
+    </div>
+    <p class="note rv"><b>+21% más leads, -2.6% de inversión y -19.5% en CPL general.</b> Una de las mejores semanas del mes en términos de eficiencia general.</p>
+  </section>
+
+  <section id="inversion">
+    <div class="sec-head rv"><span class="n">01</span><h2>Dónde se invirtió</h2></div>
+    <div class="sec-rule rv"></div>
+    <div class="rv">
+      <div class="spend-row">
+        <div class="spend-name">Inversores <small>LATAM + Miami</small></div>
+        <div class="bar-track"><div class="bar" style="--w:100%"></div></div>
+        <div class="spend-amt num">$259.14</div>
+      </div>
+      <div class="spend-row">
+        <div class="spend-name">Property Management <small>LATAM</small></div>
+        <div class="bar-track"><div class="bar gold" style="--w:70.3%"></div></div>
+        <div class="spend-amt num">$182.11</div>
+      </div>
+    </div>
+    <p class="note rv">Comparado con la semana anterior, el nivel de inversión se mantuvo prácticamente estable. No hubo inversión de Renta en Aventura.</p>
+  </section>
+
+  <section id="campana">
+    <div class="sec-head rv"><span class="n">02</span><h2>Campaña principal de inversores</h2></div>
+    <div class="sec-rule rv"></div>
+    <div class="metric-line rv">
+      <div class="m"><div class="l">Leads</div><div class="v num">18</div></div>
+      <div class="m"><div class="l">CPL</div><div class="v num">$14.40</div></div>
+      <div class="m"><div class="l">Impresiones</div><div class="v num">12,939</div></div>
+      <div class="m"><div class="l">Reach</div><div class="v num">6,693</div></div>
+      <div class="m"><div class="l">Inversión</div><div class="v num">$259.14</div></div>
+    </div>
+    <div class="duo hl rv">
+      <div>
+        <h4>1 — 8 septiembre</h4>
+        <p class="sub">Semana anterior</p>
+        <div class="chips">
+          <span class="chip">Leads <b>12</b></span>
+          <span class="chip">CPL <b>$21.49</b></span>
+        </div>
+      </div>
+      <div>
+        <h4>8 — 15 septiembre</h4>
+        <p class="sub">Esta semana</p>
+        <div class="chips">
+          <span class="chip">Leads <b>18</b></span>
+          <span class="chip">CPL <b>$14.40</b></span>
+        </div>
+      </div>
+    </div>
+    <div class="callout good rv">Fue la principal mejora de la semana: con prácticamente el mismo presupuesto conseguimos <b>+50% más leads y -33% en CPL</b>. Una muy buena recuperación después de la suba de CPL que veníamos observando desde fines de agosto.</div>
+  </section>
+
+  <section id="creativos">
+    <div class="sec-head rv"><span class="n">03</span><h2>Creativos</h2></div>
+    <div class="sec-rule rv"></div>
+
+    <p class="subhead">Ganador claro</p>
+    <div class="winner rv">
+      <div class="w-burst" data-burst="220"></div>
+      <p class="tag">Vuelve a mejorar su eficiencia</p>
+      <h3>“No todos permiten Airbnb”</h3>
+      <p class="sub">Video · restricciones de alquiler para inversores en Miami</p>
+      <div class="metric-line">
+        <div class="m"><div class="l">Leads</div><div class="v num">17</div></div>
+        <div class="m"><div class="l">CPL</div><div class="v num">$15.16</div></div>
+        <div class="m"><div class="l">Impresiones</div><div class="v num">12,932</div></div>
+        <div class="m"><div class="l">Reach</div><div class="v num">6,693</div></div>
+      </div>
+      <p class="share num">Generó 17 de los 18 leads de Inversores (~94% de las conversiones). Confirma que el ángulo Airbnb todavía funciona — la caída de semanas anteriores no significaba que el concepto estuviera agotado.</p>
+    </div>
+
+    <p class="subhead">Segundo creativo</p>
+    <div class="metric-line rv">
+      <div class="m"><div class="l">Creativo</div><div class="v" style="font-size:17px;">“Buenos Aires vs Miami”</div></div>
+      <div class="m"><div class="l">Leads</div><div class="v num">1</div></div>
+      <div class="m"><div class="l">CPL</div><div class="v num">$1.46</div></div>
+      <div class="m"><div class="l">Inversión</div><div class="v num">$1.46</div></div>
+    </div>
+    <div class="callout rv">El número es muy atractivo, pero con solo USD 1.46 invertidos <b>no hay volumen suficiente para sacar una conclusión</b>, y el anuncio figura rechazado. La idea es crear una nueva versión aprobable y darle un test real.</div>
+  </section>
+
+  <section id="property">
+    <div class="sec-head rv"><span class="n">04</span><h2>Property Management · LATAM</h2></div>
+    <div class="sec-rule rv"></div>
+    <div class="metric-line rv">
+      <div class="m"><div class="l">Inversión</div><div class="v num">$182.11</div></div>
+      <div class="m"><div class="l">Leads</div><div class="v num">5</div></div>
+      <div class="m"><div class="l">CPL blended</div><div class="v num">$36.42</div></div>
+    </div>
+    <div class="duo warn rv">
+      <div>
+        <h4>1 — 8 septiembre</h4>
+        <p class="sub">Semana anterior</p>
+        <div class="chips">
+          <span class="chip">Leads <b>7</b></span>
+          <span class="chip">CPL <b>$27.88</b></span>
+        </div>
+      </div>
+      <div>
+        <h4>8 — 15 septiembre</h4>
+        <p class="sub">Esta semana</p>
+        <div class="chips">
+          <span class="chip">Leads <b>5</b></span>
+          <span class="chip">CPL <b>$36.42</b></span>
+        </div>
+      </div>
+    </div>
+    <p class="note rv">Caída de eficiencia respecto de la semana anterior — Property Management es hoy la campaña con mayor oportunidad de optimización.</p>
+
+    <div class="geo rv">
+      <p class="geo-title">Leads por país · semana 8-15 sept</p>
+      <div class="geo-row">
+        <div class="geo-name">Colombia</div>
+        <div class="bar-track"><div class="bar gold" style="--w:66.4%"></div></div>
+        <div class="geo-stats num"><span><b>3</b> leads</span><span>CPL <b>$19.04</b></span><span><b>$57.13</b></span></div>
+      </div>
+      <div class="geo-row">
+        <div class="geo-name">México</div>
+        <div class="bar-track"><div class="bar" style="--w:100%"></div></div>
+        <div class="geo-stats num"><span><b>2</b> leads</span><span>CPL <b>$43.00</b></span><span><b>$85.99</b></span></div>
+      </div>
+      <div class="geo-row">
+        <div class="geo-name">Paraguay</div>
+        <div class="bar-track"><div class="bar" style="--w:16.0%"></div></div>
+        <div class="geo-stats num"><span><b>0</b> leads</span><span><b>$13.74</b> invertidos</span></div>
+      </div>
+      <div class="geo-row">
+        <div class="geo-name">Chile</div>
+        <div class="bar-track"><div class="bar" style="--w:13.4%"></div></div>
+        <div class="geo-stats num"><span><b>0</b> leads</span><span><b>$11.49</b> invertidos</span></div>
+      </div>
+      <div class="geo-row">
+        <div class="geo-name">Argentina</div>
+        <div class="bar-track"><div class="bar" style="--w:9.9%"></div></div>
+        <div class="geo-stats num"><span><b>0</b> leads</span><span><b>$8.50</b> invertidos</span></div>
+      </div>
+      <div class="geo-row">
+        <div class="geo-name">Uruguay</div>
+        <div class="bar-track"><div class="bar" style="--w:6.2%"></div></div>
+        <div class="geo-stats num"><span><b>0</b> leads</span><span><b>$5.29</b> invertidos</span></div>
+      </div>
+      <div class="geo-row">
+        <div class="geo-name">Ecuador</div>
+        <div class="bar-track"><div class="bar" style="--w:0%"></div></div>
+        <div class="geo-stats num"><span>Sin inversión &middot; anuncio rechazado</span></div>
+      </div>
+    </div>
+    <div class="callout good rv"><b>Colombia es el mejor mercado:</b> generó el 60% de los leads de Property Management usando ~31% del presupuesto de la campaña (3 leads, USD 19.04 de CPL). Mejor combinación actual de volumen y eficiencia.</div>
+    <div class="callout warn rv">Entre Argentina, Uruguay, Chile y Paraguay se invirtieron <b>~USD 39 sin generar un solo lead</b>. México sigue generando volumen pero a USD 43 por lead, bastante más caro que Colombia.</div>
+  </section>
+
+  <section id="pasos">
+    <div class="sec-head rv"><span class="n">05</span><h2>Próximos pasos</h2></div>
+    <div class="sec-rule rv"></div>
+    <div class="steps">
+      <div class="step rv">
+        <div>
+          <h3>Mantener y escalar moderadamente Airbnb</h3>
+          <p>Mantenerlo activo y, si el CPL sigue cerca de USD 15, aumentar presupuesto gradualmente. Evitar subas demasiado agresivas que puedan desestabilizar la campaña.</p>
+        </div>
+      </div>
+      <div class="step rv">
+        <div>
+          <h3>Crear nuevos challengers para Inversores</h3>
+          <p>17 de 18 leads dependen de una sola pieza. Nuevas variantes sobre:</p>
+          <ul>
+            <li>Restricciones de Airbnb</li>
+            <li>Short-term rentals en Miami</li>
+            <li>Errores antes de invertir</li>
+            <li>Rentabilidad</li>
+            <li>Proyectos aptos para inversores</li>
+            <li>Comparativas Miami vs. Latinoamérica</li>
+          </ul>
+          <p>Objetivo: encontrar al menos un segundo creativo capaz de competir con Airbnb.</p>
+        </div>
+      </div>
+      <div class="step rv">
+        <div>
+          <h3>Relanzar Buenos Aires vs Miami</h3>
+          <p>Crear una nueva versión que cumpla con las políticas de Meta y testearla con presupuesto suficiente. No se busca replicar el CPL de USD 1.46 (sin volumen estadístico), sino comprobar si puede competir con el ganador.</p>
+        </div>
+      </div>
+      <div class="step rv">
+        <div>
+          <h3>Dar mayor prioridad a Colombia</h3>
+          <p>Fue claramente el mercado más eficiente de Property Management (3 leads a USD 19.04). Trasladar parte del presupuesto de los mercados sin conversiones hacia Colombia para buscar mayor volumen.</p>
+        </div>
+      </div>
+      <div class="step rv">
+        <div>
+          <h3>Revisar México</h3>
+          <p>Genera volumen pero a USD 43 por lead. En vez de apagarlo, probar nuevos hooks, copies, creativos y formularios más optimizados, buscando acercarlo al rango de USD 20–30 por lead.</p>
+        </div>
+      </div>
+      <div class="step rv">
+        <div>
+          <h3>Reducir temporalmente mercados sin leads</h3>
+          <p>Argentina, Uruguay, Chile y Paraguay consumieron presupuesto sin conversiones esta semana. Reducir su inversión temporalmente y concentrar presupuesto en los mercados con intención demostrada, sin descartarlos definitivamente.</p>
+        </div>
+      </div>
+      <div class="step rv">
+        <div>
+          <h3>Resolver Ecuador</h3>
+          <p>El anuncio continúa rechazado y no está entregando. Crear una nueva versión para volver a incluir Ecuador en el test.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cierre">
+    <div class="closing rv">
+      <p class="eyebrow">Conclusión para la meet</p>
+      <p class="quote">USD 441.25 invertidos, <b>23 leads</b> a CPL promedio de USD 19.18.</p>
+      <p class="body">Semana positiva a nivel general, mejorando considerablemente respecto de la anterior. La principal buena noticia viene de Inversores: 18 leads a USD 14.40, frente a los 12 leads a USD 21.49 de la semana pasada — "No todos permiten Airbnb" volvió a demostrar que sigue siendo el concepto ganador. El desafío está en Property Management: Colombia muestra la señal más fuerte, mientras México necesita mejorar eficiencia y varios mercados siguen consumiendo presupuesto sin conversiones. El foco para la próxima semana: mantener y escalar moderadamente Inversores, desarrollar nuevos challengers, concentrar Property Management en Colombia, y renovar creativos redistribuyendo presupuesto en los mercados menos eficientes.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="burst" data-burst="54"></div>
+    <div class="fm">URBAN</div>
+    <p class="credit">Preparado por A+Growth · Septiembre 2026</p>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  function makeBurst(size) {
+    var ns = 'http://www.w3.org/2000/svg';
+    var svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('width', size); svg.setAttribute('height', size);
+    svg.setAttribute('viewBox', '0 0 100 100');
+    svg.setAttribute('aria-hidden', 'true');
+    var cx = 50, cy = 50;
+    var lengths = [48, 24, 35, 24];
+    for (var i = 0; i < 48; i++) {
+      var a = (i * 7.5 - 90) * Math.PI / 180;
+      var r0 = 12;
+      var r1 = lengths[i % 4];
+      var line = document.createElementNS(ns, 'line');
+      line.setAttribute('x1', cx + r0 * Math.cos(a)); line.setAttribute('y1', cy + r0 * Math.sin(a));
+      line.setAttribute('x2', cx + r1 * Math.cos(a)); line.setAttribute('y2', cy + r1 * Math.sin(a));
+      line.setAttribute('stroke', 'currentColor'); line.setAttribute('stroke-width', '1');
+      svg.appendChild(line);
+    }
+    return svg;
+  }
+  document.querySelectorAll('[data-burst]').forEach(function (el) {
+    el.style.color = el.closest('.winner') ? '#ffffff' : 'var(--navy)';
+    el.appendChild(makeBurst(parseInt(el.getAttribute('data-burst'), 10)));
+  });
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var fmtInt = new Intl.NumberFormat('en-US');
+  var fmtUsd = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  function renderCount(el, val) {
+    el.textContent = el.getAttribute('data-fmt') === 'usd' ? '$' + fmtUsd.format(val) : fmtInt.format(Math.round(val));
+  }
+  function countUp(el) {
+    var target = parseFloat(el.getAttribute('data-count'));
+    if (reduced) { renderCount(el, target); return; }
+    var t0 = null, dur = 1300;
+    function tick(t) {
+      if (!t0) t0 = t;
+      var p = Math.min((t - t0) / dur, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      renderCount(el, target * e);
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  var counted = new WeakSet();
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var el = entry.target;
+      el.classList.add('in');
+      el.querySelectorAll('.bar').forEach(function (b) { b.classList.add('in'); });
+      el.querySelectorAll('[data-count]').forEach(function (c) {
+        if (!counted.has(c)) { counted.add(c); countUp(c); }
+      });
+      io.unobserve(el);
+    });
+  }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
+
+  document.querySelectorAll('section').forEach(function (sec) {
+    sec.querySelectorAll('.rv').forEach(function (el, i) { el.style.transitionDelay = (i * 70) + 'ms'; });
+  });
+
+  document.querySelectorAll('.agenda-item input[type="checkbox"]').forEach(function (cb, i) {
+    var key = 'urban-report-agenda-2026-09-15-' + i;
+    try { if (localStorage.getItem(key) === '1') cb.checked = true; } catch (e) {}
+    cb.addEventListener('change', function () {
+      try { localStorage.setItem(key, cb.checked ? '1' : '0'); } catch (e) {}
+    });
+  });
+  var notesEl = document.getElementById('agenda-notes');
+  if (notesEl) {
+    try { var saved = localStorage.getItem('urban-report-agenda-notes-2026-09-15'); if (saved) notesEl.value = saved; } catch (e) {}
+    notesEl.addEventListener('input', function () {
+      try { localStorage.setItem('urban-report-agenda-notes-2026-09-15', notesEl.value); } catch (e) {}
+    });
+  }
+
+  var REPORT_DATE = '2026-09-15';
+  fetch('/clients/urban-usa-reports.json', { cache: 'no-store' })
+    .then(function (r) { return r.json(); })
+    .then(function (list) {
+      if (!list || !list.length) return;
+      var sel = document.getElementById('report-picker');
+      list.forEach(function (rep) {
+        var o = document.createElement('option');
+        o.value = rep.date; o.textContent = rep.label;
+        if (rep.date === REPORT_DATE) o.selected = true;
+        sel.appendChild(o);
+      });
+      sel.addEventListener('change', function () {
+        window.location.href = '/clients/urban-usa/reports/' + sel.value;
+      });
+      document.getElementById('picker-wrap').classList.add('show');
+    })
+    .catch(function () {});
+
+  var nav = document.getElementById('nav');
+  var progress = document.getElementById('progress');
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+  var targets = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  function onScroll() {
+    nav.classList.toggle('stuck', window.scrollY > 320);
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+    var current = -1;
+    for (var i = 0; i < targets.length; i++) {
+      if (targets[i] && targets[i].getBoundingClientRect().top <= 120) current = i;
+    }
+    links.forEach(function (a, i) { a.classList.toggle('active', i === current); });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+<script src="/clients/portal-edit.js" defer></script>
+</body>
+</html>
