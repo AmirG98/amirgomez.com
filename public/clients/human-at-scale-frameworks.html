@@ -127,6 +127,19 @@
   .mp-lab { display: block; font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--accent); }
   .mp-tx { display: block; font-size: 13.2px; color: var(--ink-2); line-height: 1.55; margin-top: 6px; max-width: 88ch; }
   .mp-go { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-top: 8px; }
+
+  /* Calendario de eventos: una tarjeta por evento con su cuenta regresiva */
+  .ev { border: 1px solid var(--hairline); background: var(--paper); padding: 18px 20px; margin-bottom: 12px; }
+  .ev.next { border-left: 3px solid var(--accent); background: #FDF6EC; }
+  .ev-head { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 4px; }
+  .ev-head h4 { font-size: 16px; font-weight: 600; }
+  .ev-head .d { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); white-space: nowrap; }
+  .ev .kind { font-size: 12.5px; color: var(--ink-3); margin-bottom: 10px; }
+  .ev ul { margin: 0 0 0 17px; }
+  .ev li { font-size: 13.2px; color: var(--ink-2); margin-bottom: 5px; }
+  .ev li b { color: var(--ink); font-weight: 600; }
+  .ev .mine { font-size: 12.5px; color: var(--ink-3); margin-top: 9px; padding-top: 8px; border-top: 1px solid var(--hairline); }
+  .ev .mine b { color: var(--ink); }
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-icon.png">
@@ -152,6 +165,7 @@
   <nav class="fw-nav">
     <a href="#webinars">Webinar framework</a>
     <a href="#podcasts">Podcast guesting</a>
+    <a href="#calendario">The six events</a>
     <a href="#pipeline">What is booked</a>
   </nav>
 
@@ -315,6 +329,96 @@
       <b>What we do with the answers.</b> Build a short target list ranked by audience fit rather than size, a pitch angle per show built on the story you want to tell, and a plan for what happens to every recording afterwards: clips, an Ops Notes issue, and a page that gives a listener somewhere to land. The appearance is the start of the asset, not the end of it.
     </div>
 
+  </section>
+
+  <!-- ================= CALENDARIO ================= -->
+  <section id="calendario">
+    <div class="sec-head">
+      <h2>The six events, and who does what</h2>
+      <span class="note">Sep to Dec</span>
+    </div>
+
+    <div class="callout">
+      <b>The same sequence every time, so nothing gets improvised.</b> Two weeks out we lock the promise and ask the host what we get afterwards. One week out the promotion goes live. The day after, we chase the list and the recording. What changes between events is how much of the room is yours and how much is theirs, and that changes where the effort goes.
+    </div>
+
+    <div class="ev next">
+      <div class="ev-head"><h4>How to Grow and Sustain a More Profitable Accounting Firm</h4><span class="d">Sep 23 &middot; TaxProMarketer</span></div>
+      <p class="kind">Joint webinar. Their list is around 20,000 and yours is around 300, so almost everyone in the room comes from their side. Top of funnel for you.</p>
+      <ul>
+        <li><b>Monday:</b> their graphics and email copy land, we adapt them to your voice.</li>
+        <li><b>Tuesday:</b> standalone email to your list. Not Ops Notes, a dedicated send.</li>
+        <li><b>Wednesday:</b> your video goes up on LinkedIn with the $50 behind it, running through to the webinar.</li>
+        <li><b>Sep 22:</b> reminder email.</li>
+        <li><b>During:</b> CTA said out loud and left on screen, closing poll if they allow it.</li>
+        <li><b>Next day:</b> we ask TPM for the registrant list and the recording.</li>
+      </ul>
+      <p class="mine"><b>From you:</b> the video by Tuesday night so it goes up Wednesday.</p>
+    </div>
+
+    <div class="ev">
+      <div class="ev-head"><h4>Gusto Next &middot; firm profitability lab</h4><span class="d">Oct 7 &middot; In person</span></div>
+      <p class="kind">You deliver a workshop. The room is Gusto's, and this one carries the partnership we just announced, so it doubles as proof that the Gusto relationship is real.</p>
+      <ul>
+        <li><b>Sep 23:</b> we lock the angle, right after the TPM webinar.</li>
+        <li><b>Sep 30:</b> Ops Notes mention plus a LinkedIn post announcing you will be there.</li>
+        <li><b>Oct 6:</b> a reminder post the day before.</li>
+        <li><b>During:</b> photos. Ask someone to take them, selfies with the room work fine.</li>
+        <li><b>Oct 8:</b> takeaways posted on LinkedIn while it is still fresh.</li>
+      </ul>
+      <p class="mine"><b>From you:</b> whether Gusto is fine with us posting about it, and anything they want us to avoid saying.</p>
+    </div>
+
+    <div class="ev">
+      <div class="ev-head"><h4>CPA Academy</h4><span class="d">Oct 21 &middot; Webinar</span></div>
+      <p class="kind">The one that actually produced volume last time: 200+ signups, and the only paid one. This is the biggest room of the quarter.</p>
+      <ul>
+        <li><b>Oct 7:</b> title and promise locked, two weeks out.</li>
+        <li><b>Oct 14:</b> Ops Notes invite plus the first LinkedIn post.</li>
+        <li><b>Oct 17:</b> your video, with spend behind it. Worth more than $50 here given the size of the room.</li>
+        <li><b>Oct 20:</b> reminder email and a last post.</li>
+        <li><b>Oct 22:</b> list into the funnel, recording requested.</li>
+      </ul>
+      <p class="mine"><b>From you:</b> the title by Oct 7, and the video by Oct 16.</p>
+    </div>
+
+    <div class="ev">
+      <div class="ev-head"><h4>State of the Tax &amp; Accounting Industry</h4><span class="d">Oct 21 &middot; TaxProMarketer</span></div>
+      <p class="kind">Expert panel, same day as CPA Academy. Two events on one day is a lot, so the promotion for this one leans on TPM and we keep our own push on CPA Academy.</p>
+      <ul>
+        <li><b>Oct 14:</b> it goes in the same Ops Notes as CPA Academy, not a separate send.</li>
+        <li><b>Oct 19:</b> one LinkedIn post covering both, framed as a busy week rather than two announcements.</li>
+        <li><b>Oct 22:</b> we ask TPM for the recording, same as September.</li>
+      </ul>
+      <p class="mine"><b>From you:</b> nothing extra. Panels are lighter, and you are already carrying CPA Academy that day.</p>
+    </div>
+
+    <div class="ev">
+      <div class="ev-head"><h4>Accounting Founders DC Dinner</h4><span class="d">Nov 5 &middot; In person</span></div>
+      <p class="kind">Through Joe Manganelli. A dinner is not a promotion opportunity, it is a relationship one. Almost all of the value here is in the room.</p>
+      <ul>
+        <li><b>Oct 29:</b> a short LinkedIn post saying you will be there, so anyone in DC can reach out.</li>
+        <li><b>During:</b> photos, and names. Who you talked to matters more than reach here.</li>
+        <li><b>Nov 6:</b> personal follow-up to anyone worth following up with, from you not from us.</li>
+      </ul>
+      <p class="mine"><b>From you:</b> after the dinner, the names of anyone we should keep warm.</p>
+    </div>
+
+    <div class="ev">
+      <div class="ev-head"><h4>Winter Retreat for Accountants</h4><span class="d">Dec 4 &middot; Bend</span></div>
+      <p class="kind">In person, multi-day. Same logic as the dinner but with more time in the room, so more chances to come back with something.</p>
+      <ul>
+        <li><b>Nov 20:</b> Ops Notes mention plus a LinkedIn post.</li>
+        <li><b>Dec 3:</b> post the day before.</li>
+        <li><b>During:</b> photos and notes on what people keep bringing up. That is next year's content.</li>
+        <li><b>Dec 8:</b> takeaways on LinkedIn, and an Ops Notes issue if there is enough there.</li>
+      </ul>
+      <p class="mine"><b>From you:</b> whatever you notice in the room. Half of an Ops Notes issue usually comes out of these.</p>
+    </div>
+
+    <div class="callout" style="background:#fff;border-left-color:var(--ink-3);">
+      <b>What I need from you, in one place.</b> The TPM video by Tuesday night. Whether Gusto is fine with us posting about their event. The CPA Academy title by Oct 7 and that video by Oct 16. Everything else is on our side.
+    </div>
   </section>
 
   <section id="pipeline">
