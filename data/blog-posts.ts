@@ -91890,6 +91890,212 @@ Sources: 2026 chiropractic marketing cost benchmark reporting; Meta healthcare a
   },
   {
     id: "713",
+    title: "What's a Good CPM for TikTok Ads in 2026?",
+    slug: "good-cpm-tiktok-ads-2026",
+    excerpt: "TikTok Ads CPM runs $4-$7 across broad campaigns in 2025-2026, but ecommerce advertisers optimizing for purchases report a much higher $13.26 average CPM.",
+    featuredImage: "https://images.unsplash.com/photo-1596558450268-9c27524ba856?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-16",
+    category: "Social Media",
+    tags: ["TikTok Ads", "CPM", "Ad Benchmarks", "Paid Social", "Ecommerce Advertising"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Good CPM for TikTok Ads in 2026",
+      metaDescription: "TikTok Ads CPM runs $4-$7 for broad campaigns in 2025-2026, but ecommerce advertisers optimizing for purchases report a much higher $13.26 average CPM.",
+      keywords: ["good cpm tiktok ads", "tiktok ads cpm benchmark 2026", "tiktok cost per thousand impressions", "tiktok cpm by objective"]
+    },
+    content: `TikTok Ads CPM ran between roughly $3 and $7 across most of 2025 for broad-reach campaigns, based on independent ad-cost trackers, but ecommerce advertisers running conversion-optimized campaigns paid far more — a full-year 2025 average of $13.26, according to Triple Whale's 2026 TikTok Ads benchmark report. The gap between those two numbers comes down almost entirely to campaign objective, not a single platform-wide price.
+
+## The Broad-Market Number
+
+eMarketer forecast in November 2024 that TikTok's US CPM would reach $7.03 in Q1 2025, a 15.6% year-over-year increase — the steepest rise among the major platforms it tracked, though still below Meta's forecast $12.53 for the same quarter. Gupta Media's Social Media Ads Cost Tracker, a running dataset built on tens of billions of tracked impressions and cited by outlets including The Wall Street Journal and Adweek, showed TikTok CPM moving between $6.21 in June 2025, $3.20 in December 2025, and $4.26 by the end of January 2026 — real month-to-month volatility rather than one fixed rate.
+
+## Why Ecommerce Conversion Campaigns Cost Much More
+
+Triple Whale's "TikTok Ads Benchmarks by Industry (2026 Data)" report, built from its own panel of ecommerce advertisers, put the full-year 2025 average CPM at $13.26 — nearly double the high end of the broad-market range — alongside a $32.74 average CPA, 2.01% conversion rate, and 1.77% CTR. Campaigns bidding directly for purchases compete for TikTok's narrowest, hardest-to-predict inventory: users the algorithm believes will actually buy, not just watch or engage. That difficulty gets priced into CPM the same way it does on Meta and Snapchat, where conversion-objective campaigns consistently cost more than awareness or reach campaigns on the same platform.
+
+## What Actually Moves Your Number
+
+- **Objective**: Reach and awareness campaigns bid against TikTok's cheapest, most abundant inventory; conversion campaigns bid against its scarcest.
+- **Placement**: In-feed placements sit at the lower end of the range; TopView and Spark Ads (boosted creator content) typically carry a premium.
+- **Panel composition**: A benchmark built from an ecommerce-only advertiser panel, like Triple Whale's, will always read higher than a blended, all-industry tracker like Gupta Media's or eMarketer's — the two aren't measuring the same population of campaigns.
+
+## How TikTok Compares Elsewhere on Paid Social
+
+TikTok's broad-market CPM still undercuts Meta's forecast $12.53 for the same period, which is part of why brands chasing younger audiences keep testing budget on the platform even as its own CPM climbs faster than the competition's.
+
+## Working With a Range This Wide
+
+A $4 to $13+ spread means a single "good CPM" number is close to useless without knowing which side of that range your campaign belongs on. Before comparing your own account to any of these figures, check what objective your campaign is actually running — Reach, Traffic, or App/Web Conversions — since that single setting predicts more of your CPM than industry, creative quality, or targeting choices combined.
+
+## Bottom Line
+
+Plan around $4-$7 CPM for broad TikTok reach and awareness campaigns heading into 2026, but budget closer to $13+ if you're running conversion-optimized ecommerce campaigns bidding directly for purchases — and benchmark your own results against whichever of these two profiles actually matches your campaign objective, not the platform-wide average.
+
+Sources: eMarketer, "TikTok takes the lead as social CPMs climb" (November 2024 forecast for Q1 2025); Gupta Media Social Media Ads Cost Tracker; Triple Whale, "TikTok Ads Benchmarks by Industry (2026 Data)."`
+  },
+  {
+    id: "714",
+    title: "What's a Good CPM for Amazon DSP in 2026?",
+    slug: "good-cpm-amazon-dsp-2026",
+    excerpt: "Amazon DSP's average CPM was $7.82 in 2025, up 47% from $5.30 in 2024, with Pets ($11.66) the most expensive category and Toys & Games ($4.30) the cheapest.",
+    featuredImage: "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-16",
+    category: "Advertising Strategy",
+    tags: ["Amazon DSP", "CPM", "Programmatic Advertising", "Amazon Ads", "Ad Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Good CPM for Amazon DSP in 2026",
+      metaDescription: "Amazon DSP's average CPM was $7.82 in 2025, up 47% from $5.30 in 2024, with Pets the most expensive category and Toys & Games the cheapest.",
+      keywords: ["good cpm amazon dsp", "amazon dsp cpm benchmark 2026", "amazon dsp cost per thousand impressions", "amazon dsp pricing 2026"]
+    },
+    content: `Amazon DSP's average CPM was $7.82 in 2025, up 47% from $5.30 in 2024 — the sharpest year-over-year cost increase of any major digital ad channel measured — according to SellerApp's "State of Amazon Advertising 2026" benchmark report. Category matters too: Pets averaged $11.66 CPM in 2025 while Toys & Games ran as low as $4.30, the cheapest reach category in the report.
+
+## Why DSP Got So Much More Expensive So Fast
+
+SellerApp's report, built on more than $3 billion in managed ad spend across 33,000+ brands, ties the price jump to demand: DSP's share of total Amazon ad spend rose from 17.7% to 23.4% over the year, DSP-driven clicks grew 156% year-over-year, and 36.5% of DSP-attributed purchases came from customers new to the brand. Advertisers kept bidding up the same inventory because it was delivering something Sponsored Ads struggle to reach on their own: net-new customers, not just shoppers already searching for the brand by name.
+
+## CPM by Category
+
+- **Pets**: $11.66, the most expensive category SellerApp measured
+- **Health**: $11.13, close behind Pets
+- **Toys & Games**: $4.30, the cheapest reach category in the dataset
+
+Categories competing for a smaller, higher-intent shopper base command a premium the same way finance and legal keywords do on search — Pets and Health both skew toward repeat, higher-lifetime-value purchases, which makes advertisers willing to pay more per thousand impressions to stay in front of that audience.
+
+## CPM Isn't Steady Quarter to Quarter
+
+Tinuiti's quarterly Digital Ads Benchmark Report shows real swings underneath that annual average: DSP CPM fell 10% year-over-year in Q2 2025, then rose 11% in Q3 2025 — the first quarter of positive CPM growth since Q3 2023 — before dipping 4% again over the Thanksgiving-to-Cyber-Monday 2025 stretch, even as Prime Video ad impressions on DSP grew 650% in that same window. Budgeting off a single annual number will miss quarter-to-quarter shifts of 10% or more in either direction.
+
+## Rising Impressions Don't Always Mean Rising CPM
+
+The BFCM 2025 window is a useful illustration of why a single average can mislead: Prime Video ad impressions on DSP grew 650% year-over-year during that stretch, yet CPM actually fell 4% over the same period. More inventory volume and higher CPM don't move together automatically — it depends on whether advertiser demand is growing as fast as the impression supply Amazon is adding.
+
+## Budgeting Around These Numbers
+
+Use $7.82 as a 2026 planning baseline for blended DSP CPM, adjust up meaningfully if Pets or Health is your category, and build in room for the kind of double-digit quarterly swings Tinuiti's tracker has shown over the past year rather than assuming a flat rate across every quarter.
+
+## Bottom Line
+
+Expect to pay somewhere around $8 CPM on Amazon DSP heading into 2026, more in Pets and Health, less in categories like Toys & Games, and treat that number as a moving target rather than a fixed price given how much CPM has swung quarter to quarter over the past year.
+
+Sources: SellerApp, "State of Amazon Advertising 2026" benchmark report; Tinuiti, Digital Ads Benchmark Report (Q2 2025, Q3 2025, and Q4 2025/BFCM editions).`
+  },
+  {
+    id: "715",
+    title: "How Much Does a Lead Cost for Handyman Services on Google Ads in 2026?",
+    slug: "handyman-services-cost-per-lead-google-ads-2026",
+    excerpt: "Handyman services pay $54.05 per lead on Google Search Ads in 2026, about 40% below the home services average, with a 13.45% conversion rate.",
+    featuredImage: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-16",
+    category: "Google Ads",
+    tags: ["Handyman Marketing", "Google Ads", "Cost Per Lead", "Home Services Marketing", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Handyman Services Google Ads Cost Per Lead 2026",
+      metaDescription: "Handyman services pay $54.05 per lead on Google Search Ads in 2026, about 40% below the home services average, with a 13.45% conversion rate.",
+      keywords: ["handyman google ads cost per lead", "handyman ppc cost 2026", "handyman marketing benchmark", "google ads for handyman services cost"]
+    },
+    content: `Handyman services businesses pay an average of $54.05 per lead running Google Search Ads in 2026, with a 13.45% conversion rate — one of the highest conversion rates of any home services trade — according to LocaliQ's 2025 Search Ad Benchmarks for Home Services report.
+
+## How Handyman Stacks Up Against Other Trades
+
+LocaliQ's report puts the home services category overall at a $90.92 average cost per lead and $7.85 average CPC, based on 3,211 US search-ad campaigns run between April 2024 and March 2025. Handyman leads come in roughly 40% below that broader average, making it one of the more cost-efficient home services verticals to advertise in on Search.
+
+## Why Handyman Converts So Well
+
+Handyman searches tend to be broad, urgent, and low-commitment — "fix a leaky faucet," "hang drywall," "small repair near me" — compared to the higher-ticket, more-researched purchases that make up other home services categories, like a roof replacement or a new HVAC system. That combination of urgency and low perceived risk is a large part of why handyman's 13.45% conversion rate sits well above categories built around bigger, slower purchase decisions.
+
+## A Second Data Point From Local Services Ads
+
+99Calls' Local Services Ads Cost Estimator, built from its own client billing data pulled via the Google Ads API, reported an average Local Services Ads cost of $40.98 per charged handyman lead as of September 2026 (median $37.96) — cheaper still than the Search Ads figure above. That gap mirrors the pattern seen across nearly every other home services trade on Google: LSA charges only for a qualified lead rather than every click, which typically prices it below standard Search Ads for the same trade.
+
+## Budgeting for Handyman Lead Generation
+
+At a $54.05 average cost per lead on Search and a 13.45% conversion rate, a handyman business spending $2,000 a month on Search Ads should expect roughly 37 leads. Layering in Local Services Ads at its lower per-lead cost typically increases total lead volume for the same overall budget, at the cost of less control over which specific jobs get prioritized.
+
+## Search Ads vs. Local Services Ads for Handyman
+
+The gap between $54.05 and $40.98 comes down to what you're paying for. Search Ads charge for every click, so the cost of visitors who click but never call or fill out a form gets absorbed into the effective cost per lead. Local Services Ads only charge when a real, qualified lead comes through, which is why it consistently prices below Search Ads for the same trade across nearly every home services category on Google.
+
+## What to Watch Beyond the Average
+
+A below-average cost per lead doesn't guarantee below-average cost per booked job. Handyman work covers a wide range of ticket sizes, so tracking which lead sources produce jobs worth pursuing — not just which produce the cheapest leads — matters more here than in trades with a narrower, more consistent service menu.
+
+## Bottom Line
+
+Budget around $54 per lead for Google Search Ads as a handyman business heading into 2026, expect a meaningfully lower per-lead cost — close to $40 — if you add Local Services Ads to the mix, and treat handyman's above-average conversion rate as the reason this category tends to be one of the more cost-efficient home services trades to run on Google.
+
+Sources: LocaliQ, "2025 Search Ad Benchmarks for Home Services"; 99Calls Local Services Ads Cost Estimator, handyman category, September 2026 data.`
+  },
+  {
+    id: "716",
+    title: "How Much Does a Lead Cost for Pressure Washing Companies on Google Local Services Ads in 2026?",
+    slug: "pressure-washing-cost-per-lead-google-lsa-2026",
+    excerpt: "Pressure washing companies pay an average of $41.28 per charged lead on Google Local Services Ads in 2026, with a typical range of $26.38 to $64.14.",
+    featuredImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-16",
+    category: "Google Ads",
+    tags: ["Pressure Washing Marketing", "Local Services Ads", "Cost Per Lead", "Home Services Marketing", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Pressure Washing Google LSA Cost Per Lead 2026",
+      metaDescription: "Pressure washing companies pay an average of $41.28 per charged lead on Google Local Services Ads in 2026, ranging from $26.38 to $64.14.",
+      keywords: ["pressure washing local services ads cost", "pressure washing google lsa cost 2026", "pressure washing ppc benchmark", "google lsa pressure washing cost"]
+    },
+    content: `Pressure washing companies pay an average of $41.28 per charged lead through Google Local Services Ads in 2026, with a median of $48.46 and a typical range of $26.38 to $64.14, according to 99Calls' Local Services Ads Cost Estimator, based on its own client billing data pulled via the Google Ads API.
+
+## Where This Number Comes From
+
+99Calls tracks real, disclosed billing data from its own client base rather than an independent cross-market survey the way WordStream or LocaliQ run. That makes it a real, checkable data point rather than an industry-wide average, so treat it as directional evidence of where pressure washing LSA costs sit today rather than a guaranteed rate in any specific market.
+
+## How Pressure Washing Compares to Similar Trades
+
+Other exterior and cleaning-focused home services trades running Google Local Services Ads land in a similar band: house cleaning and maid services average $39.93 per verified lead (median $31.10, range $25.56-$69.83), and window cleaning runs $20-$50 per verified lead. Pressure washing's $41.28 average sits squarely inside that same cluster, which typically prices lower on LSA than trades involving licensed, higher-liability work like electrical or HVAC.
+
+## Why the Range Is So Wide
+
+Local Services Ads pricing is set by local auction dynamics in each specific market, not a national rate card. A pressure washing company's cost per lead moves with how many competitors run LSA in that ZIP code, the business's Google Guaranteed status and review volume — both of which affect ranking in the LSA unit — and the mix of job types coming through, since a small residential driveway request and a larger commercial contract inquiry can both register as a single lead despite very different values.
+
+## Budgeting for Pressure Washing Lead Generation
+
+At roughly $41 to $48 per lead, a pressure washing company spending $1,000 a month on Local Services Ads should expect somewhere between 20 and 24 leads, before accounting for how many of those actually turn into booked jobs — a number that depends heavily on how quickly the business responds to each Google-routed call or message.
+
+## Search Ads vs. Local Services Ads
+
+Standard Google Search Ads charge per click regardless of whether that visitor calls or fills out a form, so a pressure washing company running Search alone absorbs the cost of clicks that never convert into an actual lead. Local Services Ads only charge for a qualified lead — a call or message from a real customer — which is the main reason LSA cost per lead consistently lands below what the same business would pay chasing an equivalent lead through Search.
+
+## Bottom Line
+
+Budget in the $40-$50 range per lead for Google Local Services Ads as a pressure washing company heading into 2026, expect meaningful variation by local market and review profile, and prioritize building out Google Guaranteed status and review volume, since both directly affect where you rank in the LSA unit and, in turn, what you pay per lead.
+
+Sources: 99Calls Local Services Ads Cost Estimator, pressure washing contractor category, September 2026 data. Comparison figures for house cleaning and window cleaning per Local Services Ads cost data previously published on this site.`
+  },
+  {
+    id: "719",
     title: "OpenAI Launches ChatGPT Ads in India With 50+ Brands",
     slug: "chatgpt-ads-india-launch-2026",
     excerpt: "OpenAI began showing ChatGPT ads in India on August 28, 2026, launching with 50+ brands and a self-serve Ads Manager opening September 4 for marketers to test directly.",
@@ -91944,7 +92150,7 @@ There's also a positioning shift worth noting. ChatGPT ads are surfaced contextu
 OpenAI's ChatGPT Ads launch in India — with 50-plus brands, agency partners already onboard, and self-serve access opening September 4 — is one of the clearest signs yet that conversational AI is becoming a real advertising channel, not just an experiment. For marketers watching where attention and ad dollars are heading next, this is worth a small test budget now, while competition and costs are still low.`
   },
   {
-    id: "714",
+    id: "720",
     title: "Google Ads Auto-Upgrades Broad Match Campaigns to AI Max on September 1",
     slug: "google-ads-ai-max-auto-upgrade-september-2026",
     excerpt: "Google Ads auto-upgrades Broad Match and Automatically Created Assets campaigns to AI Max on September 1, 2026, with no opt-out. Here's what advertisers should check first.",
