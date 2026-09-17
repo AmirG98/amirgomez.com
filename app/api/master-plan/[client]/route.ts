@@ -52,10 +52,17 @@ What each LinkedIn campaign proved: Thought Leader v2, the engagement campaign, 
 Meta has run three rounds. Round one sent traffic to the Operations Assessment, 155.43 spent at 0.40 per landing page view, high volume and no filtering. Round two moved capture into a native lead form with basic questions, 101.46 spent at 4.41 per lead, a named contact instead of an anonymous visit but too loose a filter. Round three, running now, adds pre-qualifying questions about the firm so people are qualified before they reach the assessment. Cost per result rises with each round and that is the intent: qualification keeps moving earlier in the funnel.
 Attributed leads: zero for that cycle, because the Meta pixel was not yet installed. The pixel went live on August 26, so conversion events are now recording and the first real cost-per-lead reads arrive with the next reporting cycle.
 
-WHAT HAS TO BE TRUE NEXT
-The pixel is in and recording, so measurement is no longer the open question. Two things have to be true from here, and they run together rather than in sequence.
-One: a full quarter of the plan executed holistically, with every channel coordinated rather than run one at a time, across a quarter that already has a heavy run of webinars. Each appearance produces a recording, the recording produces clips and an Ops Notes issue, and that content makes the next appearance easier to book. The loop only compounds if the pieces run at the same time. Anything shorter than a quarter measures noise, because the channels feed each other with a lag.
-Two: lead sources beyond webinars and podcasts. Borrowed audiences are the strongest channel today and also the dependency, since both need someone else to say yes. Meta is the way to own a source outright and the open problem there is quality, not volume. Native lead forms capture cheaply, and the path from that form through to the Operations Assessment is where a raw lead becomes a qualified one. Qualifying questions belong inside the form so filtering happens at capture rather than on a booked call. The number that matters is cost per lead that fits, not cost per lead: a cheap lead from a firm too small to have a bottleneck worth removing costs more than an expensive one that does, because the expensive part is the call, not the click.
+TARGETS FOR THE NEXT 90 DAYS
+Booked calls: 8 to 12 per quarter. Today it is zero, so this is the number that matters most.
+Cost per lead that fits: under 60 dollars. Not cost per lead, cost per lead we would actually call.
+Assessments started: 40 or more per quarter across every channel.
+Newsletter list: 600, up from 350 today. Webinars are the way to get there.
+Per channel: Ops Notes from 3 clicks an issue to 15 or more. LinkedIn holds the 0.45 cost per engagement and turns 2 or 3 profile visits a week into conversations. Meta at 15 ICP-fitting leads a month. Every webinar produces the attendee list and the recording plus roughly 100 new subscribers. The Assessment converts 1 in 4 into a call.
+
+WHAT HAS TO HAPPEN NEXT
+Two things, and they run together.
+One: run the whole plan at once for a full quarter, not one channel at a time, across a quarter that already has six events booked. Each event leaves a recording, the recording becomes content, and that content makes the next invitation easier to get. Anything shorter than a quarter reads as noise because the channels feed each other slowly.
+Two: get leads from somewhere other than webinars and podcasts, both of which need someone else to invite us. Meta is the one channel we can turn on ourselves and the problem there is fit, not volume. Qualifying questions go inside the form so filtering happens before a call is booked.
 
 HOW THE PIECES FIT
 Content builds authority. Authority makes webinars and podcasts say yes. Those produce recordings. Recordings become clips and newsletter issues, which feed the content engine again. Paid amplifies whatever already works organically rather than replacing it. The Operations Assessment is where interest becomes a measurable action, and the Audit is where it becomes revenue.

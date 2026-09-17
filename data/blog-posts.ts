@@ -92095,7 +92095,313 @@ Budget in the $40-$50 range per lead for Google Local Services Ads as a pressure
 Sources: 99Calls Local Services Ads Cost Estimator, pressure washing contractor category, September 2026 data. Comparison figures for house cleaning and window cleaning per Local Services Ads cost data previously published on this site.`
   },
   {
+    id: "717",
+    title: "What's the Cost Per Lead for Plastic Surgery Practices on Google Ads in 2026?",
+    slug: "plastic-surgery-cost-per-lead-google-ads-2026",
+    excerpt: "Plastic and cosmetic surgery practices pay an average of $102.51 per lead on Google Search Ads in 2026, down 29% year-over-year, per LocaliQ's healthcare benchmark data.",
+    featuredImage: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-17",
+    category: "Google Ads",
+    tags: ["Plastic Surgery Marketing", "Google Ads", "Cost Per Lead", "Healthcare Marketing", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Plastic Surgery Google Ads Cost Per Lead 2026",
+      metaDescription: "Plastic and cosmetic surgery practices pay an average of $102.51 per lead on Google Search Ads in 2026, down 29% year-over-year, per LocaliQ benchmark data.",
+      keywords: ["plastic surgery google ads cost per lead", "cosmetic surgery ppc cost 2026", "plastic surgery marketing benchmark", "google ads cost per lead plastic surgery"]
+    },
+    content: `Plastic and cosmetic surgery practices pay an average of $102.51 per lead running Google Search Ads in 2026, down 29% year-over-year — one of the largest declines of any healthcare specialty — according to LocaliQ's Healthcare Search Advertising Benchmarks report.
+
+## Where This Number Comes From
+
+LocaliQ's report is built from a sample of 13,474 US-based search advertising campaigns running between April 2025 and March 2026, covering 16 healthcare specialties including plastic and cosmetic surgery. LocaliQ reports medians rather than simple averages to reduce the effect of outlier campaigns, and requires at least 52 unique active campaigns per subcategory before including it in the report.
+
+## How Plastic Surgery Compares to Other Specialties
+
+Across all 16 healthcare specialties LocaliQ tracked, the overall average cost per lead came in at $66.02, down 6% year-over-year, with an average cost per click of $5.64. Plastic and cosmetic surgery's $102.51 sits well above that broader healthcare average, trailing only Mental Health ($141.17) and Addiction Recovery ($120.30) as the most expensive specialties to generate a lead in. Dermatology, by contrast, averaged just $18.54 per lead — a reminder that healthcare spans an enormous range of buyer intent and competitive intensity.
+
+## Why Plastic Surgery Leads Cost So Much
+
+Plastic surgery is a high-value, high-consideration purchase, and specialties where a single converted patient is worth thousands of dollars tend to draw more advertisers bidding on the same searches, which pushes both clicks and leads up. That dynamic is part of why plastic surgery, mental health, and addiction recovery cluster near the top of LocaliQ's cost rankings while lower-ticket, more routine specialties like dermatology cluster near the bottom.
+
+## Why the Cost Dropped 29% Year-Over-Year
+
+LocaliQ's report doesn't break out a specific cause for plastic surgery's decline, but it's consistent with a broader pattern in the same data: click-through rate fell for 81% of healthcare businesses LocaliQ analyzed, with an average CTR decrease of 11.64%. A drop in engagement per click can pull cost per lead down even without a drop in competition, depending on how conversion rates move alongside it — which is the more likely explanation than reduced demand for procedures.
+
+## Budgeting for Plastic Surgery Lead Generation
+
+At $102.51 per lead, a plastic surgery practice spending $5,000 a month on Google Search Ads should expect roughly 48 leads, before accounting for how many of those convert into consultations and, ultimately, booked procedures — a figure that varies enormously by specific procedure and market. Major-metro markets like New York, Los Angeles, and Miami should expect to land above this national figure given the concentration of practices bidding in those areas.
+
+## Bottom Line
+
+Budget above $100 per lead for Google Search Ads as a plastic or cosmetic surgery practice heading into 2026, expect major-metro markets to run meaningfully higher than that national figure, and don't benchmark your own performance against lower-cost specialties like dermatology — plastic surgery competes in a fundamentally different, higher-value auction.
+
+Sources: LocaliQ, "Healthcare Search Advertising Benchmarks for 16 Specialties," data from 13,474 US search campaigns, April 2025-March 2026.`
+  },
+  {
+    id: "718",
+    title: "What's the Cost Per Lead for Dermatology Practices on Google Ads in 2026?",
+    slug: "dermatology-cost-per-lead-google-ads-2026",
+    excerpt: "Dermatology practices pay an average of $18.54 per lead on Google Search Ads in 2026, the lowest of any healthcare specialty tracked, down 37% year-over-year.",
+    featuredImage: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-17",
+    category: "Google Ads",
+    tags: ["Dermatology Marketing", "Google Ads", "Cost Per Lead", "Healthcare Marketing", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Dermatology Google Ads Cost Per Lead 2026",
+      metaDescription: "Dermatology practices pay an average of $18.54 per lead on Google Search Ads in 2026, the lowest of any healthcare specialty tracked, down 37% year-over-year.",
+      keywords: ["dermatology google ads cost per lead", "dermatology ppc cost 2026", "dermatology marketing benchmark", "google ads cost per lead dermatology"]
+    },
+    content: `Dermatology practices pay an average of $18.54 per lead running Google Search Ads in 2026 — the lowest cost per lead of any healthcare specialty tracked — down 37% year-over-year, the largest decline of any specialty, according to LocaliQ's Healthcare Search Advertising Benchmarks report.
+
+## Where This Number Comes From
+
+LocaliQ's report draws on 13,474 US-based search advertising campaigns running between April 2025 and March 2026 across 16 healthcare specialties, requiring a minimum of 52 unique active campaigns per specialty and reporting medians rather than raw averages to limit the effect of outlier accounts.
+
+## How Dermatology Compares to Other Specialties
+
+The overall healthcare average across LocaliQ's 16 tracked specialties was $66.02 per lead, down 6% year-over-year. Dermatology's $18.54 sits dramatically below that broader average and below every other specialty in the report — less than a fifth of what Plastic & Cosmetic Surgery ($102.51) costs, and roughly an eighth of Mental Health, the most expensive specialty at $141.17.
+
+## Why Dermatology Leads Cost So Little
+
+Dermatology covers a mix of high-volume, lower-ticket, often insurance-covered visits — acne treatment, mole checks, eczema, routine skin concerns — alongside a smaller share of higher-value cosmetic procedures. That volume of routine, lower-competition search terms pulls the specialty's blended average lead cost down relative to specialties built almost entirely around high-ticket, elective, cash-pay procedures.
+
+## Why the Cost Dropped 37% Year-Over-Year
+
+Dermatology posted the single biggest year-over-year decline of any specialty in LocaliQ's report. The report's broader healthcare data shows click-through rate falling for 81% of healthcare advertisers analyzed, with an average CTR decline of 11.64% — a trend that can pull cost per lead down across a specialty even without lower competition, depending on how conversion rates hold up alongside declining engagement.
+
+## Budgeting for Dermatology Lead Generation
+
+At $18.54 per lead, a dermatology practice spending $1,500 a month on Google Search Ads should expect roughly 80 leads, a volume that's typically impossible to reach at plastic surgery or mental health price points on the same budget. That volume advantage makes Search Ads a comparatively efficient acquisition channel for routine dermatology visits specifically.
+
+## What the Blended Average Hides
+
+A single low blended number can obscure a wide internal spread. Routine, insurance-covered visits likely pull the $18.54 figure down well below what any individual practice pays for its cosmetic-procedure keywords specifically, since terms like laser resurfacing, injectables, or body contouring compete in a very different, more expensive auction than "dermatologist near me" or "mole check appointment." Practices running both service lines through a single undifferentiated campaign risk misreading their cosmetic-procedure performance against this low overall average.
+
+## Bottom Line
+
+Budget close to $20 per lead for Google Search Ads as a dermatology practice heading into 2026, expect meaningfully higher costs for campaigns concentrated on cosmetic and elective procedures specifically rather than routine skin care, and treat dermatology's low blended average as a reason to segment cosmetic-procedure campaigns from routine-care campaigns so the cheaper routine leads don't mask underperformance on your higher-value cosmetic keywords.
+
+Sources: LocaliQ, "Healthcare Search Advertising Benchmarks for 16 Specialties," data from 13,474 US search campaigns, April 2025-March 2026.`
+  },
+  {
     id: "719",
+    title: "What's the Cost Per Lead for Mental Health Practices on Google Ads in 2026?",
+    slug: "mental-health-cost-per-lead-google-ads-2026",
+    excerpt: "Mental health practices pay an average of $141.17 per lead on Google Search Ads in 2026 \u2014 the highest of any healthcare specialty \u2014 up 146% year-over-year.",
+    featuredImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-17",
+    category: "Google Ads",
+    tags: ["Mental Health Marketing", "Google Ads", "Cost Per Lead", "Healthcare Marketing", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Mental Health Practice Google Ads Cost Per Lead 2026",
+      metaDescription: "Mental health practices pay an average of $141.17 per lead on Google Search Ads in 2026, the highest of any healthcare specialty, up 146% year-over-year.",
+      keywords: ["mental health google ads cost per lead", "therapy practice ppc cost 2026", "mental health marketing benchmark", "google ads cost per lead mental health"]
+    },
+    content: `Mental health practices pay an average of $141.17 per lead running Google Search Ads in 2026 — the highest cost per lead of any healthcare specialty tracked — up 146% year-over-year, the largest increase of any specialty, according to LocaliQ's Healthcare Search Advertising Benchmarks report.
+
+## Where This Number Comes From
+
+LocaliQ's report is built from 13,474 US-based search advertising campaigns running between April 2025 and March 2026 across 16 healthcare specialties, with a minimum of 52 unique active campaigns required per specialty and medians reported instead of raw averages to reduce the effect of outlier accounts.
+
+## How Mental Health Compares to Other Specialties
+
+The overall healthcare average across LocaliQ's report was $66.02 per lead. Mental Health's $141.17 is more than double that figure and sits above every other specialty tracked, ahead of Addiction Recovery ($120.30) and Plastic & Cosmetic Surgery ($102.51) — and roughly 7.6 times what Dermatology, the cheapest specialty, costs at $18.54.
+
+## Why Mental Health Leads Cost So Much
+
+Mental health is a specialty where a single retained patient can be worth significant recurring revenue across months or years of ongoing care, which draws more advertisers bidding on the same pool of searches and pushes both clicks and leads up. LocaliQ's data shows that dynamic playing out most sharply in specialties like Mental Health, Addiction Recovery, and Plastic & Cosmetic Surgery, where patient lifetime value is high and competition for search visibility is correspondingly intense.
+
+## Why the Cost Jumped 146% Year-Over-Year
+
+A 146% increase means mental health lead costs roughly doubled and a half again in a single year — by far the steepest move of any specialty LocaliQ tracked, well ahead of the next-largest increases at Hearing Aids & Care (up 107%) and Addiction Recovery (up 77%). That scale of increase points to a specialty where demand and advertiser competition are both rising faster than the broader healthcare category, which saw click-through rate fall for 81% of businesses analyzed and cost per lead decline 6% on average across all specialties combined.
+
+## Budgeting for Mental Health Lead Generation
+
+At $141.17 per lead, a mental health practice spending $5,000 a month on Google Search Ads should expect roughly 35 leads — less than half of what the same budget would produce at the overall healthcare average, and a fraction of what it would produce in a lower-cost specialty like dermatology.
+
+## What to Watch Beyond the Average
+
+A rising cost per lead this sharp usually means more practices are entering the same paid search auction, not that the underlying searches have grown proportionally scarcer. Telehealth expansion may have lowered the barrier to launching a mental health practice without a physical office tied to a single metro area, which would plausibly add bidders to searches that used to be more geographically contained — LocaliQ's report doesn't test this directly, but it's worth investigating in your own account if your cost per lead has moved in step with this broader industry trend.
+
+## Bottom Line
+
+Budget well above $140 per lead for Google Search Ads as a mental health practice heading into 2026, expect that figure to keep climbing given the specialty's 146% year-over-year jump, and weigh Google Search Ads against lower-funnel channels like referral networks and directory listings if per-lead costs at this level don't pencil out against your average patient lifetime value.
+
+Sources: LocaliQ, "Healthcare Search Advertising Benchmarks for 16 Specialties," data from 13,474 US search campaigns, April 2025-March 2026.`
+  },
+  {
+    id: "720",
+    title: "What's a Good Email Open Rate for Health and Fitness Businesses in 2026?",
+    slug: "health-fitness-industry-email-open-rate-2026",
+    excerpt: "Health and fitness businesses see an average email open rate of 47.81% in 2025, well above the 43.46% cross-industry average, per MailerLite's benchmark report.",
+    featuredImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-17",
+    category: "Email Marketing",
+    tags: ["Email Marketing", "Fitness Marketing", "Open Rate Benchmarks", "Email Benchmarks", "Wellness Marketing"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Health & Fitness Email Open Rate Benchmark 2026",
+      metaDescription: "Health and fitness businesses see an average email open rate of 47.81% in 2025, well above the 43.46% cross-industry average, per MailerLite's benchmark data.",
+      keywords: ["health and fitness email open rate", "fitness industry email benchmark 2026", "good email open rate fitness", "gym email marketing open rate"]
+    },
+    content: `Health and fitness businesses see an average email open rate of 47.81% in 2025 — well above the 43.46% cross-industry average — according to MailerLite's Email Marketing Benchmarks report, which analyzed platform send data across 46 industries and 7 regions.
+
+## Where This Number Comes From
+
+MailerLite's benchmark report pulls from its own platform send data across 46 industries and 7 regions for 2025, with a cross-industry average open rate of 43.46% — up slightly from 42.35% in 2024. As MailerLite notes, Apple Mail Privacy Protection automatically marks emails opened by Apple Mail clients as read regardless of whether a person actually viewed them, which inflates reported open rates across every industry in the report, including this one.
+
+## Open Rate vs. Click Rate: A Revealing Gap
+
+Health and fitness's 47.81% open rate is one of the stronger performances in MailerLite's report, but its click rate tells a different story: 1.45%, below the 2.09% cross-industry average. That combination — above-average opens, below-average clicks — suggests subscribers in this category are curious enough to open fitness emails but often don't find a specific action worth clicking on, a pattern consistent with newsletters and general content updates that lack a clear next step.
+
+## What Drives Strong Open Rates in This Category
+
+Fitness and wellness subscribers tend to opt in with high intent — signing up for a specific program, class schedule, or membership — which produces a more engaged list than industries relying on broader, colder acquisition. That selection effect is a common explanation for why niche, intent-driven categories like health and fitness consistently outperform broader retail or travel lists on open rate even when overall list sizes are smaller.
+
+## How to Read This Benchmark
+
+Because Apple Mail Privacy Protection inflates open rate broadly, don't treat 47.81% as the ceiling for engagement quality — treat it as a same-methodology comparison point against the 43.46% all-industry average and against your own historical performance measured the same way. Click rate, at 1.45%, is the more meaningful signal for whether your content is actually driving action, since it isn't affected by Apple's automatic-open behavior in the same way.
+
+## What to Do With a Below-Benchmark Open Rate
+
+If your health and fitness list is opening well below 47.81%, the more likely culprits are subject line specificity and sender reputation rather than content quality, since this category's subscribers have already demonstrated above-average willingness to open. Testing more concrete, benefit-led subject lines against generic ones is a reasonable first step before assuming your list itself is disengaged, and a straightforward one to run given how directly it isolates subject-line performance from everything else in the send.
+
+## Bottom Line
+
+If your health and fitness email list is opening below 47.81%, that's a stronger signal of a list quality or subject line problem than industry norms would suggest; if you're opening near or above it but clicking below 1.45%, focus on adding one clear, specific call to action per send rather than trying to push opens any higher.
+
+Sources: MailerLite, "Email Marketing Benchmarks 2025," based on platform send data across 46 industries and 7 regions.`
+  },
+  {
+    id: "721",
+    title: "What's a Good Email Open Rate for Travel and Hospitality Companies in 2026?",
+    slug: "travel-hospitality-email-open-rate-2026",
+    excerpt: "Travel and transportation companies see the lowest email open rate of any major industry in 2025 at 30.10%, roughly 13 points below the 43.46% cross-industry average.",
+    featuredImage: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-17",
+    category: "Email Marketing",
+    tags: ["Email Marketing", "Travel Marketing", "Open Rate Benchmarks", "Email Benchmarks", "Hospitality Marketing"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Travel & Hospitality Email Open Rate Benchmark 2026",
+      metaDescription: "Travel and transportation companies see the lowest email open rate of any major industry in 2025 at 30.10%, per MailerLite's 2025 benchmark report.",
+      keywords: ["travel industry email open rate", "hospitality email marketing benchmark 2026", "good email open rate travel", "travel email marketing statistics"]
+    },
+    content: `Travel and transportation companies post the lowest average email open rate of any major industry tracked in 2025, at 30.10% — roughly 13 percentage points below the 43.46% cross-industry average — according to MailerLite's Email Marketing Benchmarks report.
+
+## Where This Number Comes From
+
+MailerLite's report is based on its own platform send data spanning 46 industries and 7 regions for 2025, with an all-industry average open rate of 43.46%, up from 42.35% in 2024. Travel and transportation's 30.10% is the single lowest open rate of any industry category in the report, alongside a click rate of 1.68% and an unsubscribe rate of 0.13%.
+
+## Why Travel Underperforms on Open Rate
+
+MailerLite's analysis attributes weak open rates in categories like travel and transportation, ecommerce, and publishing to sending patterns: these industries tend to email broader audiences more frequently, often with promotional content rather than transactional or highly personalized messages. That combination — high send frequency, broad targeting, promotional framing — is a well-documented driver of lower open rates across email marketing generally, and travel sits at the extreme end of that pattern in MailerLite's data.
+
+## The Click Rate Is a More Encouraging Signal
+
+Despite the low open rate, travel's 1.68% click rate is actually above health and fitness's 1.45% and not far off the 2.09% cross-industry average — meaning subscribers who do open travel emails click through at a reasonably healthy rate. That gap between weak opens and comparatively solid clicks suggests the bigger lever for travel brands is getting into the inbox and earning the open in the first place, not what happens after someone opens.
+
+## What This Means for Travel Email Programs
+
+A 30.10% open rate should not be read as evidence that travel subscribers are disengaged across the board — the same data shows they click at a healthy rate once they open. The gap points instead toward subject lines, sender reputation, send frequency, and list segmentation as the more likely places to find improvement, rather than content or offer quality once the email is opened.
+
+## Segmentation as the Practical Lever
+
+Because travel brands typically mix deal-alert subscribers, past customers, and general newsletter sign-ups into one list, a single blended send often underperforms what any one of those segments would produce on its own. Splitting sends by trip intent or past booking behavior — rather than blasting the full list with every promotion — is one of the more direct ways to move a 30.10% baseline upward without changing send frequency or content volume at all.
+
+## Bottom Line
+
+If your travel or hospitality email program is opening below 30%, you're underperforming even this already-low industry baseline and should look first at send frequency and list hygiene; if you're at or above 30.10% with clicks trailing your opens, the bigger opportunity is tightening subject lines and segmentation to get more of your list into the inbox in the first place, not rewriting the emails themselves.
+
+Sources: MailerLite, "Email Marketing Benchmarks 2025," based on platform send data across 46 industries and 7 regions.`
+  },
+  {
+    id: "722",
+    title: "What's a Good Email Open Rate for Healthcare and Medical Practices in 2026?",
+    slug: "healthcare-medical-email-open-rate-2026",
+    excerpt: "Medical services average a 32% email open rate in Q1 2026 \u2014 about 1 point above the 30.8% cross-industry average \u2014 according to Constant Contact.",
+    featuredImage: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-17",
+    category: "Email Marketing",
+    tags: ["Email Marketing", "Healthcare Marketing", "Open Rate Benchmarks", "Email Benchmarks", "Medical Practice Marketing"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Healthcare Email Open Rate Benchmark 2026",
+      metaDescription: "Medical services average a 32% email open rate in Q1 2026, about 1 point above the 30.8% cross-industry average, according to Constant Contact data.",
+      keywords: ["healthcare email open rate", "medical practice email marketing benchmark 2026", "good email open rate healthcare", "medical email marketing statistics"]
+    },
+    content: `Medical services average a 32% email open rate in the first quarter of 2026 — about 1.2 percentage points above the 30.8% cross-industry average — making healthcare one of the stronger-performing categories among the industries Constant Contact tracks by send volume.
+
+## Where This Number Comes From
+
+Constant Contact's "What Is a Good Open Rate for Email in 2026?" report puts the overall average open rate across all industries at 30.8% for Q1 2026, based on data from its own customer base. Medical services ranks among the top-performing categories in that report out of the top 15 industries measured by overall email volume sent, with a 32% average open rate.
+
+## How Medical Compares to Other Industries
+
+At 32%, medical services sits modestly above Constant Contact's 30.8% all-industry Q1 2026 average — a smaller gap than the difference between, say, MailerLite's health and fitness figure (47.81%) and its own cross-industry benchmark (43.46%), though the two reports use different customer bases and methodologies and shouldn't be compared directly against each other. Within Constant Contact's own framework, medical services' performance reflects the fact that healthcare communications tend to carry higher perceived stakes for the recipient than typical promotional email.
+
+## Why Medical Email Tends to Perform Well
+
+Healthcare emails often carry direct personal relevance — appointment confirmations, test result notifications, prescription reminders, care updates — that gives recipients a concrete reason to open beyond general interest in a brand. That built-in relevance is a common explanation across the email marketing industry for why regulated, service-oriented categories like healthcare and financial account alerts tend to out-open purely promotional retail or travel sends.
+
+## What This Means for Medical Practices and Healthcare Marketers
+
+A 32% open rate is a reasonable baseline to benchmark against if your list mixes appointment and administrative messaging with promotional or newsletter content. Practices sending primarily transactional, high-relevance messages — reminders, results, follow-up instructions — should reasonably expect to perform above this blended average, since that content type is the one most likely pulling the category's overall number up in the first place.
+
+## Segmenting Transactional From Promotional Sends
+
+Because the 32% figure blends every type of medical email together, a practice that only tracks one aggregate open rate can't tell whether its appointment reminders or its monthly newsletter is driving performance. Reporting the two separately is the more useful diagnostic: a newsletter open rate sitting well below the transactional rate is normal and expected, not necessarily evidence of a content problem.
+
+## Why the Gap to the Overall Average Is Modest
+
+A roughly 1-point gap over the all-industry average is a smaller edge than what stronger-performing niche categories post elsewhere — MailerLite, for instance, put health and fitness more than 4 points above its own cross-industry average. That suggests medical services' advantage comes mostly from a subset of highly relevant transactional messages pulling a much larger volume of routine promotional and newsletter content up toward the overall average, rather than every type of medical email outperforming broadly.
+
+## Bottom Line
+
+Use 32% as your baseline for a blended medical email program in 2026, expect transactional and appointment-related messages to open meaningfully higher than that figure, and treat a newsletter-style campaign that opens well below your practice's own blended average as a sign to test more specific, action-oriented subject lines rather than assuming that's simply what healthcare open rates look like.
+
+Sources: Constant Contact, "What Is a Good Open Rate for Email in 2026?"`
+  },
+  {
+    id: "723",
     title: "OpenAI Launches ChatGPT Ads in India With 50+ Brands",
     slug: "chatgpt-ads-india-launch-2026",
     excerpt: "OpenAI began showing ChatGPT ads in India on August 28, 2026, launching with 50+ brands and a self-serve Ads Manager opening September 4 for marketers to test directly.",
@@ -92150,7 +92456,7 @@ There's also a positioning shift worth noting. ChatGPT ads are surfaced contextu
 OpenAI's ChatGPT Ads launch in India — with 50-plus brands, agency partners already onboard, and self-serve access opening September 4 — is one of the clearest signs yet that conversational AI is becoming a real advertising channel, not just an experiment. For marketers watching where attention and ad dollars are heading next, this is worth a small test budget now, while competition and costs are still low.`
   },
   {
-    id: "720",
+    id: "724",
     title: "Google Ads Auto-Upgrades Broad Match Campaigns to AI Max on September 1",
     slug: "google-ads-ai-max-auto-upgrade-september-2026",
     excerpt: "Google Ads auto-upgrades Broad Match and Automatically Created Assets campaigns to AI Max on September 1, 2026, with no opt-out. Here's what advertisers should check first.",
