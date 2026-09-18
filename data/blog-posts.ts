@@ -92401,6 +92401,320 @@ Use 32% as your baseline for a blended medical email program in 2026, expect tra
 Sources: Constant Contact, "What Is a Good Open Rate for Email in 2026?"`
   },
   {
+    id: "800",
+    title: "How Do You Track Conversions on Facebook and Meta Ads?",
+    slug: "track-conversions-facebook-meta-ads-2026",
+    excerpt: "Track Meta Ads conversions by running the Meta Pixel and Conversions API together, matched by a shared event_id, which recovers 20-30% of conversions browser tracking alone misses.",
+    featuredImage: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-18",
+    category: "Marketing Technology",
+    tags: ["Facebook Ads", "Meta Ads", "Conversions API", "Conversion Tracking", "Marketing Technology"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "How to Track Conversions on Facebook & Meta Ads",
+      metaDescription: "How do you track conversions on Facebook and Meta Ads? Set up the Meta Pixel and Conversions API together, deduplicated by event_id, for accurate 2026 tracking.",
+      keywords: ["track Facebook Ads conversions", "Meta Conversions API setup", "Meta Pixel tracking", "Facebook ads conversion tracking 2026", "event deduplication Meta ads"]
+    },
+    content: `You track conversions on Facebook and Meta Ads by running two methods together: the browser-based Meta Pixel and the server-side Conversions API (CAPI), matched by a shared event_id so Meta counts each conversion once instead of twice. Meta's own documentation recommends this dual setup rather than either method alone, because browser tracking alone misses a meaningful share of real conversions.
+
+## Why the Pixel Alone Isn't Enough
+
+The Meta Pixel is a JavaScript snippet that fires in the visitor's browser when they complete a tracked action — a purchase, a lead form submission, a signup. It's the standard starting point for any Meta Ads account, but it depends on the browser actually loading and executing that script. Ad blockers, Safari's Intelligent Tracking Prevention, iOS App Tracking Transparency prompts, and shortened cookie lifespans all interfere with that signal.
+
+## What the Conversions API Adds
+
+The Conversions API sends the same event data as a direct server-to-server call instead of a browser request, so it isn't affected by browser-level blocking. It pulls conversion events from your web server, ecommerce platform, or CRM and posts them straight to Meta using your Pixel ID and an access token generated in Events Manager. Running Pixel and CAPI together and deduplicating them recovers roughly 20-30% of conversion data that browser-only tracking loses, according to 2026 implementation guidance. Meta itself calls this combination the standard for accurate attribution and, as of 2026, offers a one-click setup inside Events Manager that connects a dataset without custom code.
+
+## Setting It Up
+
+**Create a pixel.** In Meta Business Suite, open Events Manager, select "Connect a new data source," and choose Web.
+
+**Retrieve the Pixel ID.** Click into the new pixel's details page to copy the numeric Pixel ID you'll need for both the browser and server-side setup.
+
+**Generate a CAPI access token.** Still inside Events Manager, generate the API access token tied to that same pixel.
+
+**Send matching events from both sources.** Fire each tracked action — purchase, lead, add-to-cart — from the Pixel and, separately, from your server via CAPI.
+
+## Avoiding Double-Counted Conversions
+
+Running both methods on the same event without matching them creates duplicate counts — Meta logs the purchase once from the browser and once from the server, inflating reported conversion volume and understating true cost per conversion. Meta deduplicates events by matching the event_name and event_id fields exactly across the two sources within a 48-hour window; if either field is missing or doesn't match, both events are counted separately. Getting that event_id generated once and passed identically to both the Pixel call and the CAPI call is the single most common point of failure in a dual setup.
+
+## Bottom Line
+
+Start with the Meta Pixel if you have no tracking in place yet, then add the Conversions API as a second layer covering the same events rather than a separate tracking plan, and confirm every event carries a matching event_id before trusting your combined conversion count. If your reported conversion volume jumps sharply right after adding CAPI, check deduplication first — a spike that size usually means events aren't matching correctly, not that server-side tracking recovered that much previously invisible volume overnight.
+
+Sources: Meta for Developers' Conversions API and Meta Pixel documentation; implementation and deduplication detail from Stape, Cometly, and Adsuploader's 2026 coverage of Pixel + Conversions API setup.`
+  },
+  {
+    id: "801",
+    title: "How Do You Track Conversions on TikTok Ads?",
+    slug: "track-conversions-tiktok-ads-2026",
+    excerpt: "Track TikTok Ads conversions by combining the TikTok Pixel with the server-side Events API, linked by a matching event_id, since blocked browser signal can miss up to 35% of Pixel events.",
+    featuredImage: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-18",
+    category: "Marketing Technology",
+    tags: ["TikTok Ads", "Events API", "Conversion Tracking", "Marketing Technology", "Server-Side Tracking"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "How to Track Conversions on TikTok Ads (2026)",
+      metaDescription: "How do you track conversions on TikTok Ads? Combine the TikTok Pixel with the Events API, deduplicated by event_id, for accurate 2026 attribution reporting.",
+      keywords: ["track TikTok Ads conversions", "TikTok Events API setup", "TikTok Pixel tracking", "TikTok server-side tracking", "TikTok ads conversion tracking 2026"]
+    },
+    content: `You track conversions on TikTok Ads by combining the browser-based TikTok Pixel with the server-side Events API, linked by a matching event_id so the same action isn't counted twice. TikTok positions both as required layers of a complete setup in 2026 — the Pixel captures browser-side signal and the ttclid attribution anchor, while the Events API sends enriched, server-verified event data the browser alone can't transmit.
+
+## The TikTok Pixel: Your Starting Point
+
+The Pixel is a base code snippet placed on every page of your site, plus individual event tags for specific actions you want to optimize toward — typically CompletePayment or Lead. It's created inside TikTok Ads Manager under Events Manager, where you set up a web data source and choose an installation method: a partner integration, Google Tag Manager, or manual code placement. Like any browser-based pixel, its signal degrades under ad blockers and browser privacy restrictions — industry guidance puts the share of Pixel events blocked before reaching TikTok as high as 35% in 2026.
+
+## The Events API: Server-to-Server Recovery
+
+The Events API closes that gap by sending conversion data directly from your server rather than the visitor's browser. For a custom-built site, your server sends an HTTP POST request to TikTok's event tracking endpoint, carrying your pixel ID, an access token, and enriched customer identifiers the browser can't reliably pass along, such as hashed email or phone match data.
+
+## Setup Steps
+
+**Create or select a web data source.** In TikTok Ads Manager, open Events Manager and add a new web pixel tied to your domain.
+
+**Install the base Pixel code.** Use TikTok's Google Tag Manager template, a partner integration, or manual placement in your site's header.
+
+**Generate an Events API access token.** Inside the same data source, set up server-side event delivery and generate the token your server will use to authenticate.
+
+**Send matching events from both sources.** Fire the same conversion — purchase, lead, signup — from the Pixel and again from your server, carrying an identical event_id on both.
+
+## Why Deduplication Matters Here Too
+
+Without a matching event_id, TikTok has no way to tell that a Pixel-reported purchase and a server-reported purchase are the same conversion, so it counts both — inflating reported volume and understating real cost per action. TikTok's own guidance calls deduplication a required step whenever Pixel and Events API run together, using the shared event_id as the matching key.
+
+## Bottom Line
+
+Install the Pixel first if you're starting from nothing, then layer the Events API on top of the same events rather than treating it as a separate tracking system, and verify every event carries a matching event_id before trusting the combined conversion count. If you're relying on a partner platform — Shopify, a CRM, a tag manager — check whether it already supports TikTok's Events API natively before building custom server code; most major ecommerce platforms do, which removes the development step entirely.
+
+Sources: TikTok for Business Help Center's Events API and Pixel setup articles; implementation detail from Benly, The Ad Spend, and Stackmatix's 2026 coverage of TikTok conversion tracking.`
+  },
+  {
+    id: "802",
+    title: "How Do You Track Conversions on Microsoft Advertising (Bing Ads)?",
+    slug: "track-conversions-microsoft-bing-ads-2026",
+    excerpt: "Track Microsoft Advertising conversions by installing a site-wide UET tag, then creating conversion goals in Microsoft Advertising for form fills, purchases, calls, or page visits.",
+    featuredImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-18",
+    category: "Marketing Technology",
+    tags: ["Microsoft Advertising", "Bing Ads", "UET Tag", "Conversion Tracking", "Marketing Technology"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "How to Track Conversions on Microsoft Ads (UET)",
+      metaDescription: "How do you track conversions on Microsoft Advertising? Install a site-wide UET tag, then build conversion goals for forms, purchases, calls, and visits.",
+      keywords: ["track Microsoft Advertising conversions", "Bing Ads UET tag setup", "Microsoft Advertising conversion goals", "UET tag installation", "Bing Ads conversion tracking 2026"]
+    },
+    content: `You track conversions on Microsoft Advertising by installing a Universal Event Tracking (UET) tag site-wide, then creating conversion goals in your account that define which on-site actions count as a conversion. The UET tag doesn't track conversions on its own — it's a passive data-collection layer; the conversion goals you build on top of it are what turn that data into reportable conversions.
+
+## What the UET Tag Does
+
+A UET tag is a small piece of JavaScript created at the account level inside Microsoft Advertising and placed in the header or a site-wide layout template so it loads on every page, not just one landing page. Once live, it starts recording visitor behavior — page visits, time on site, and the groundwork data conversion tracking and remarketing lists both depend on — before you've configured a single goal.
+
+## Creating the Tag
+
+**Open the UET tag tool.** In Microsoft Advertising, go to Tools, then Conversion Tracking, then UET Tag.
+
+**Generate and name the tag.** Create a new UET tag at the account level; one tag typically covers an entire account rather than needing a separate tag per campaign.
+
+**Install it site-wide.** Add the tag's code to every page's header, either by hand or through a tag management system like Google Tag Manager, so it fires on every page load regardless of which page a visitor lands on.
+
+## Turning Tracking Into Conversion Goals
+
+With the tag live and collecting page-visit data, the next step is defining what actually counts as a conversion. Microsoft Advertising supports goal types built around form submissions, purchases, phone calls, video views, and general page visits — any specific, meaningful action a visitor can take. Each goal specifies a trigger condition, such as a visit to a "thank you" or order-confirmation URL, that marks the action complete.
+
+## Using Google Tag Manager Instead of Manual Placement
+
+Because the UET tag needs to load on every page, many advertisers install it through Google Tag Manager rather than hand-editing every template — a single GTM tag configured to fire on all pages accomplishes the same site-wide coverage with one change instead of many. The base tag still has to fire first to activate data collection before any individual conversion goal can register events against it.
+
+## Tag Coverage Is the Most Common Failure Point
+
+A UET tag added only to the homepage, or only to a handful of landing pages, will collect data from those pages alone — and any conversion goal that depends on a "thank you" or checkout URL the visitor never passes through a tagged page won't fire at all. Before troubleshooting a conversion goal, confirm the tag itself is present across the full path a converting visitor actually takes, not just the pages your campaigns link to directly.
+
+## Bottom Line
+
+Install the UET tag site-wide before building anything else — no conversion goal will report data without it — then add conversion goals one action at a time, starting with whichever event maps most directly to revenue or lead volume for your account. If a goal shows zero conversions days after setup, check tag placement first: a UET tag that only loads on some pages, rather than truly site-wide, is the most common reason a properly configured goal never registers activity.
+
+Sources: Microsoft Advertising's official Universal Event Tracking and conversion-tracking documentation; setup detail cross-checked against Megadigital's and RealGeeks' 2026 UET tag implementation guides.`
+  },
+  {
+    id: "803",
+    title: "How Do You Track Conversions on Reddit Ads?",
+    slug: "track-conversions-reddit-ads-2026",
+    excerpt: "Track Reddit Ads conversions by running the Reddit Pixel and Conversions API together, deduplicated by a shared identifier and linked to the rdt_cid click parameter.",
+    featuredImage: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-18",
+    category: "Marketing Technology",
+    tags: ["Reddit Ads", "Conversions API", "Conversion Tracking", "Marketing Technology", "Server-Side Tracking"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "How to Track Conversions on Reddit Ads (2026)",
+      metaDescription: "How do you track conversions on Reddit Ads? Run the Reddit Pixel and Conversions API together, deduplicated and linked to the rdt_cid click ID parameter.",
+      keywords: ["track Reddit Ads conversions", "Reddit Conversions API setup", "Reddit Pixel tracking", "rdt_cid attribution", "Reddit ads conversion tracking 2026"]
+    },
+    content: `You track conversions on Reddit Ads by running the Reddit Pixel and the Reddit Conversions API (CAPI) together, deduplicated by a shared identifier so a single conversion isn't logged twice. Reddit's own Ads Help Center recommends the Pixel for quick visibility inside Ads Manager paired with CAPI for more reliable server-side accuracy — the combination, not either method alone, is the complete setup.
+
+## The Reddit Pixel
+
+The Pixel is JavaScript code installed on your website that fires when a visitor reaches a page or completes an action you've defined as a conversion. It gives fast visibility inside Reddit Ads Manager once installed, either through a tag manager or direct script placement in your site header, and it's the piece most advertisers set up first since it requires no server-side development.
+
+## The Conversions API
+
+CAPI sends the same event data from your server directly to Reddit instead of relying on the visitor's browser to fire the request, so it isn't affected by ad blockers or browser-level tracking restrictions the way the Pixel is. Setting it up requires an access token: inside Reddit Ads Manager, open Events Manager, go to Conversions API, and generate a named token your server will use to authenticate each event it sends.
+
+## Setup Steps
+
+**Install the Reddit Pixel.** Add the base pixel code via Google Tag Manager or a direct script tag, and configure the specific events you want to track, such as purchase or lead.
+
+**Generate a Conversions API token.** From Events Manager, create a CAPI token tied to your ad account.
+
+**Send matching server-side events.** Configure your server, or an integration partner, to POST the same conversion events to Reddit's Conversions API, formatted to Reddit's event spec.
+
+**Capture the click ID.** Make sure your tracking setup captures the rdt_cid parameter Reddit appends to ad-driven clicks, since CAPI events need that click ID to attribute correctly back to the originating ad.
+
+## Deduplication
+
+Reddit requires deduplication whenever the Pixel and CAPI run together, which Reddit itself recommends as the default setup. When both sources report the same action, Reddit prioritizes whichever event carries more complete metadata and matching keys — but only if a shared identifier links the two events in the first place.
+
+## Which Events to Prioritize First
+
+Most advertisers don't need every possible event tracked through both the Pixel and CAPI on day one. Starting with the handful of events that map directly to revenue or lead volume — purchase, lead form submission, signup — gets the highest-value data flowing through both layers first, and lighter-weight events like page view or content view can follow once the core conversion events are confirmed working and deduplicating correctly.
+
+## Bottom Line
+
+Start with the Pixel for basic visibility, then add the Conversions API as a server-side layer over the same events rather than a separate tracking setup, and confirm your integration captures the rdt_cid click parameter alongside a consistent event identifier before trusting reported conversion volume. If you're on Shopify, a CRM, or another major platform, check for a native Reddit CAPI integration before building custom server code — most of the setup work in a from-scratch implementation is handled automatically by an existing partner connection.
+
+Sources: Reddit Ads Help Center's Conversions API documentation; setup and deduplication detail from CustomerLabs, The Ad Spend, and Tarka's 2026 Reddit Ads tracking guides.`
+  },
+  {
+    id: "804",
+    title: "How Do You Track Conversions on Apple Search Ads?",
+    slug: "track-conversions-apple-search-ads-2026",
+    excerpt: "Apple Search Ads conversions track through SKAdNetwork, Apple's privacy-preserving framework, with AdAttributionKit layered in since April 2025 to add view-through attribution.",
+    featuredImage: "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-18",
+    category: "Marketing Technology",
+    tags: ["Apple Search Ads", "SKAdNetwork", "AdAttributionKit", "Conversion Tracking", "Marketing Technology"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "How to Track Conversions on Apple Search Ads",
+      metaDescription: "How do you track conversions on Apple Search Ads? SKAdNetwork is the current baseline, with AdAttributionKit adding view-through attribution in 2026 setups.",
+      keywords: ["track Apple Search Ads conversions", "SKAdNetwork setup", "AdAttributionKit", "Apple Search Ads attribution 2026", "iOS app install tracking"]
+    },
+    content: `You track conversions on Apple Search Ads primarily through SKAdNetwork, Apple's privacy-preserving, on-device attribution framework, with AdAttributionKit — Apple's newer attribution system — layered in as of 2026. Apple Search Ads registered with AdAttributionKit in April 2025, starting with compatibility for SKAdNetwork versions 1 through 3, so most 2026 setups are transitioning between the two frameworks rather than relying on either one exclusively.
+
+## Why Apple Search Ads Tracking Looks Different From Other Platforms
+
+Unlike the pixel-plus-server-API pattern used by Meta, TikTok, and Reddit, Apple Search Ads doesn't rely on a website pixel for app-install conversions. iOS handles attribution on-device and shares only aggregated, privacy-preserving signal back to the advertiser, rather than user-level event data tied to an individual click. That's a deliberate constraint of Apple's privacy model, not a gap in Apple Search Ads' own tracking setup.
+
+## SKAdNetwork: The Current Baseline
+
+SKAdNetwork attributes app installs and specific in-app conversion events to the ad that drove them without exposing device- or user-level identifiers to the advertiser. As of 2026, most major ad platforms — Meta, Google, and Snap among them — are still running primarily on SKAN 3, while TikTok has moved furthest toward SKAN 4's expanded capabilities. Apple hasn't set a deprecation timeline for SKAdNetwork, so it continues running alongside AdAttributionKit rather than being replaced outright.
+
+## AdAttributionKit: What It Adds
+
+AdAttributionKit's most significant addition over SKAdNetwork is view-through attribution — crediting an install to an ad impression the user saw but didn't click, within a 24-hour window — plus more consistent cross-platform measurement. For apps operating in alternative marketplaces under the EU's Digital Markets Act, AdAttributionKit becomes the essential framework rather than an optional upgrade, since SKAdNetwork's coverage doesn't extend cleanly to that distribution model.
+
+## Setting Up Tracking in Practice
+
+**Confirm your app's minimum OS support.** AdAttributionKit's capabilities depend on which iOS versions your install base is running, so check your deployment target before assuming full coverage.
+
+**Configure conversion values inside your MMP or Apple Search Ads Advanced.** Both SKAdNetwork and AdAttributionKit rely on a conversion value schema you define, mapping specific in-app events to reportable values.
+
+**Keep both frameworks active during the transition.** Since Apple hasn't deprecated SKAdNetwork, running SKAN and AdAttributionKit in parallel avoids an attribution gap while the broader ad ecosystem catches up to AdAttributionKit.
+
+## What This Means for Cross-Channel Reporting
+
+Because Apple Search Ads' attribution runs on a different framework than the pixel-and-server-API pattern used by web-focused ad platforms, don't expect its reported conversion counts to line up cleanly with how Meta, TikTok, or Google Ads report the same install or in-app event. A mobile measurement partner that normalizes data across SKAdNetwork, AdAttributionKit, and web-based attribution is the more reliable way to compare Apple Search Ads performance against other channels in a single dashboard, rather than reconciling the raw platform numbers by hand.
+
+## Bottom Line
+
+Treat 2026 as a transition year: keep SKAdNetwork running as your baseline while adding AdAttributionKit for the view-through attribution and cross-platform consistency it provides, and don't assume every ad platform in your stack has caught up to AdAttributionKit at the same pace Apple Search Ads has. If your app operates in the EU under the Digital Markets Act, prioritize AdAttributionKit configuration specifically — that's the framework Apple built for measurement outside standard App Store distribution.
+
+Sources: Apple Ads Help Center's app ad attribution overview; framework detail from Singular's and AppsFlyer's 2026 coverage of Apple Search Ads' SKAdNetwork and AdAttributionKit rollout.`
+  },
+  {
+    id: "805",
+    title: "How Do You Track Conversions on Amazon DSP?",
+    slug: "track-conversions-amazon-dsp-2026",
+    excerpt: "Track Amazon DSP conversions off-Amazon with a tracking pixel or Attribution tag; on-Amazon view-through attribution changed January 1, 2026 to a shopping-signal last-touch model.",
+    featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-18",
+    category: "Marketing Technology",
+    tags: ["Amazon DSP", "Amazon Attribution", "Conversion Tracking", "Marketing Technology", "Amazon Ads"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "How to Track Conversions on Amazon DSP (2026)",
+      metaDescription: "How do you track conversions on Amazon DSP? Use a pixel or Attribution tag off-Amazon, and see how the 2026 last-touch model changed view attribution.",
+      keywords: ["track Amazon DSP conversions", "Amazon Attribution tag setup", "Amazon tracking pixel", "Amazon DSP attribution 2026", "shopping-signal last-touch attribution"]
+    },
+    content: `You track conversions on Amazon DSP using an Amazon tracking pixel or an Amazon Attribution tag placed on your off-Amazon landing pages, which reports back to Amazon when a DSP-driven visitor completes a purchase or other defined action on your own site. For campaigns driving traffic within Amazon itself, conversion tracking runs through Amazon's own purchase and shopping-signal data instead, and as of January 1, 2026, that on-Amazon attribution runs on a new model that changed how view-through conversions get counted.
+
+## Tracking Off-Amazon Conversions
+
+When a DSP line item sends traffic to an external URL — your own ecommerce site, for example — Amazon needs a way to know when that visitor converts there. Advertisers handle this with either an Amazon tracking pixel, a code snippet placed on the confirmation or thank-you page, or an Amazon Attribution tag, a unique parameter appended to the landing page URL for that line item. When the pixel fires or the tagged URL registers the conversion, Amazon credits it back to the DSP campaign that drove the click.
+
+**Pixel conversions are aggregated by event name, so multiple pixels sharing the same event label report as one combined conversion type in your reporting.**
+
+## The 2026 Attribution Model Change
+
+On January 1, 2026, Amazon introduced a shopping-signal enhanced last-touch attribution model that changes how view-through conversions are counted for certain Sponsored Brands, Sponsored Display vCPM, and Amazon DSP campaigns serving ads inside the Amazon Store. Instead of a fixed 14-day click and 14-day view attribution window, the new model uses a machine-learning evaluation of whether a given ad view actually contributed to the eventual sale, weighting early discovery moments like exploratory browsing or general category searches. Click-based attribution is unchanged by this update — only view-through counting is affected.
+
+## Why DSP Revenue May Look Lower Without Real Sales Declining
+
+Because the new model qualifies fewer ad views as attributed conversions than the old flat 14-day window did, advertisers are seeing DSP revenue and ROAS reported lower in 2026 even when actual underlying sales haven't dropped. That's a reporting-methodology shift, not a performance decline — but comparing 2026 DSP ROAS directly against pre-2026 numbers, without accounting for the model change, will understate how the campaign is actually performing.
+
+## Setup Steps for Off-Amazon Tracking
+
+**Generate a tracking pixel or Attribution tag.** Inside your DSP line item setup, choose either the pixel snippet or the Attribution URL tag depending on your landing page setup.
+
+**Place it on the conversion page.** Install the pixel on your purchase-confirmation or thank-you page, or append the Attribution tag to your DSP-driven landing page URL.
+
+**Name events consistently.** Since Amazon aggregates pixel conversions by event name, use distinct, deliberate names for each conversion type you want reported separately.
+
+## Bottom Line
+
+Set up an Amazon pixel or Attribution tag on every off-Amazon landing page your DSP campaigns drive to, and name your conversion events deliberately since Amazon aggregates by event name rather than by individual pixel. If your on-Amazon DSP ROAS looks worse starting in 2026 reporting, check whether the shopping-signal enhanced attribution model explains the drop before assuming campaign performance actually declined — click-based conversions are unaffected, so a click-heavy campaign's numbers should hold steady while a view-driven campaign's numbers may shift materially.
+
+Sources: Amazon Ads Support Center's conversion tracking and pixel requirement pages; attribution model change detail from Amazon Ads' "View Attribution Updates for Amazon Store Ads" announcement, cross-checked against Code3's and PPC Land's 2026 coverage.`
+  },
+  {
     id: "723",
     title: "OpenAI Launches ChatGPT Ads in India With 50+ Brands",
     slug: "chatgpt-ads-india-launch-2026",
