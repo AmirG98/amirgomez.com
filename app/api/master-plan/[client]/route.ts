@@ -53,8 +53,8 @@ Meta has run three rounds. Round one sent traffic to the Operations Assessment, 
 Attributed leads: zero for that cycle, because the Meta pixel was not yet installed. The pixel went live on August 26, so conversion events are now recording and the first real cost-per-lead reads arrive with the next reporting cycle.
 
 TARGETS FOR THE NEXT 90 DAYS
-Booked calls: 8 to 12 per quarter. Today it is zero, so this is the number that matters most.
-Cost per lead that fits: under 60 dollars. Not cost per lead, cost per lead we would actually call.
+Booked calls: the target is still being set together with Chase. It is the number that matters most, and the one we cannot measure ourselves because the calls land on his calendar. Every two weeks Chase reports how many calls were added.
+Cost per lead that fits: under 100 dollars. Not cost per lead, cost per lead we would actually call. Today it sits at 221 dollars, because only 1 of 13 Meta leads came from an accounting firm.
 Assessments started: 40 or more per quarter across every channel.
 Newsletter list: 600, up from 350 today. Webinars are the way to get there.
 Per channel: Ops Notes from 3 clicks an issue to 15 or more. LinkedIn holds the 0.45 cost per engagement and turns 2 or 3 profile visits a week into conversations. Meta at 15 ICP-fitting leads a month. Every webinar produces the attendee list and the recording plus roughly 100 new subscribers. The Assessment converts 1 in 4 into a call.
