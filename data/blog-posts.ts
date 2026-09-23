@@ -94147,6 +94147,110 @@ Expect initial, directional Pinterest ads performance data within 4 to 8 weeks, 
 
 Sources: 84 Pins, "How Long Does Pinterest Marketing Actually Take to Work?"; Pin Nerds Media, "How Long Does It Really Take to See Results on Pinterest?"`
   },
+  {
+    id: "928",
+    title: "Meta May Be Quietly Removing Its 250-Ad Page Limit",
+    slug: "meta-facebook-ads-page-ad-limit-lifted-2026",
+    excerpt: "A Meta ads practitioner reported on September 22, 2026 that some Ads Manager accounts no longer show a 250-ad cap per Page, with one account running 286 live ads normally.",
+    featuredImage: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-23",
+    category: "Facebook Ads",
+    tags: ["Facebook Ads", "Meta Ads", "Ads Manager", "Creative Testing", "Platform Updates", "Facebook Advertising"],
+    featured: false,
+    readingTime: 4,
+    seo: {
+      metaTitle: "Meta's 250-Ad Page Limit May Be Disappearing",
+      metaDescription: "Some Meta accounts stopped enforcing the 250-ad Page cap on September 22, 2026, per one practitioner report — what it means for advertisers if it spreads.",
+      keywords: ["meta 250 ad limit removed", "facebook ads page ad limit 2026", "meta ads manager ad cap", "facebook page active ads limit"]
+    },
+    content: `Some Meta advertisers are seeing a message inside Ads Manager telling them the number of ads their Facebook Page can run at once is no longer limited — a change first documented on September 22, 2026 by digital marketing practitioner Bram Van der Hallen in a LinkedIn post, and reported the same day by industry outlet PPC Land.
+
+The account Van der Hallen documented was running 286 live ads against what has been a hard ceiling of 250 for that spend tier, with new ads continuing to deliver normally rather than getting blocked. Meta has not made any public announcement about this change, and PPC Land's reporting is careful to note it is showing up in some accounts, not universally.
+
+## What the Limit Has Actually Been
+
+Since 2021, Meta has capped the number of active ads a single Facebook Page can run at once, with the ceiling scaling by how much that Page spends per month. As of Meta's own Business Help Center documentation in 2026, the tiers are 250 active ads for Pages spending under €100,000 per month, 1,000 ads between €100,000 and €1,000,000, 5,000 ads between €1,000,000 and €10,000,000, and 20,000 ads above that. The vast majority of small and mid-sized advertisers fall into that bottom €100,000 tier, which means the 250-ad cap is the one that actually bites for most businesses running Meta ads.
+
+Meta has also been quietly softening its own guidance around ad volume. The company removed a specific recommendation of six ads per ad set from its "About managing ad volume" help article back in July 2025, and by August 2026 that same article no longer contained any per-ad-set number at all — a shift toward broader, less prescriptive guidance that predates this week's report of the Page-level cap itself disappearing for some accounts.
+
+## Why This Matters If It Spreads
+
+The 250-ad ceiling has mattered most to smaller advertisers who run active creative testing programs. A modest testing setup — a handful of campaigns, a few ad sets each, and Meta's own automated creative variations layered on top — can consume 250 active ad slots surprisingly fast for a business spending well under six figures a month. Once a Page hits that ceiling, launching a new ad means pausing or deleting an old one first, which adds friction to exactly the kind of iterative testing that tends to improve performance over time.
+
+If Meta genuinely lifts the Page-level cap rather than just failing to enforce it temporarily, advertisers who test heavily would no longer need to manage that queue manually. That would matter most for accounts that already run high ad volume relative to their spend tier: ecommerce brands testing many product creatives, agencies managing testing-heavy client accounts, and any advertiser using Meta's automated variations features, which multiply how many individual ad units exist under the hood.
+
+## What to Do About It Right Now
+
+- **Check your own accounts**: Look inside Ads Manager for any new messaging about ad limits on Pages that are close to or over 250 active ads, particularly if you already run a high-volume testing program.
+- **Don't restructure around it yet**: Because Meta has not confirmed this publicly and the change is only showing up in some accounts, treat it as an early signal rather than a policy you can rely on. A single practitioner report, even a credible one, is not the same as an official platform change.
+- **Keep testing discipline regardless**: Whether or not the hard ceiling disappears, running more ads is not automatically better. The old 250-ad limit forced some advertisers to prune underperforming creative on a regular cadence — a habit worth keeping even if the technical requirement to do so goes away.
+- **Watch for an official statement**: If Meta confirms this change through its own Business Help Center or newsroom, it will be worth revisiting testing strategy at that point rather than reacting now to an unconfirmed report.
+
+## Conclusion
+
+What's confirmed right now is narrow: one practitioner documented one account running above the historical 250-ad ceiling without issue, and a trade publication verified and reported it on September 22, 2026. What's not confirmed is whether this is a deliberate, permanent policy change, a limited test, or a temporary enforcement gap. Advertisers running high-volume creative testing on Meta should watch their own accounts for the same messaging over the next few weeks, but shouldn't rebuild their testing strategy around a limit change Meta itself hasn't announced.
+
+Sources: PPC Land, "Meta drops 250-ad Page cap in some accounts as 286 ads keep running," September 22, 2026, citing a LinkedIn post from Bram Van der Hallen; Meta Business Help Center, "Ad limits per Page."`
+  },
+  {
+    id: "929",
+    title: "Google Is Testing an AI Overview Inside Discover That Skips Your Site",
+    slug: "google-discover-dive-deeper-ai-overview-2026",
+    excerpt: "Google Search VP Robby Stein confirmed on September 18, 2026 that Discover is testing a \"Dive deeper\" button that opens an AI-written overview instead of sending readers to publishers.",
+    featuredImage: "https://images.unsplash.com/photo-1518186233392-c232efbf2373?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-23",
+    category: "SEO",
+    tags: ["Google Discover", "SEO", "Content Marketing", "AI Search", "Publisher Traffic", "Search Engine Optimization"],
+    featured: false,
+    readingTime: 4,
+    seo: {
+      metaTitle: "Google Discover Tests \"Dive Deeper\" AI Overview",
+      metaDescription: "Google confirmed it is testing a \"Dive deeper\" AI overview inside Discover that can open before a publisher page, per Search VP Robby Stein on Sept 18, 2026.",
+      keywords: ["google discover dive deeper", "google discover ai overview 2026", "google discover publisher traffic", "google discover algorithm update 2026"]
+    },
+    content: `Google is testing a new button inside Google Discover called "Dive deeper" that, instead of sending a reader straight to the article they tapped on, opens a short, Google-written topic overview with links to related coverage. Robby Stein, Google's vice president of product for Search, confirmed the test publicly in a post on X on September 18, 2026, and it was still being actively covered by search industry outlets as of September 22.
+
+The test currently starts with video cards inside Discover feeds, and Google has said it plans to try multiple designs for the feature over the coming weeks. There's no accompanying blog post, help center page, or list of test markets from Google, and the company has not published any click-through or referral-traffic data for the experiment.
+
+## What "Dive Deeper" Actually Does
+
+Today, tapping a card in Discover takes a reader directly to the publisher's article. With "Dive deeper" active, a reader instead gets a second tap target that opens a short AI-generated summary of the topic, which does include outbound links to related stories and original reporting — but those links appear inside Google's own overview screen, presented as smaller link cards with truncated headlines, rather than as the immediate destination.
+
+## Why This Is a Bigger Deal Than It Sounds
+
+Discover has quietly become one of the most important traffic sources publishers have. Research cited by search industry press found Discover now accounts for roughly two-thirds of Google's referral traffic to a sample of 2,000 news and media sites, having overtaken traditional web search as a referral source. Over the same period, Google Web Search's own share of referral traffic to those sites fell from about 51% to 27% between 2023 and 2025.
+
+That context is what makes "Dive deeper" worth watching closely rather than dismissing as a minor UI tweak. If an AI-generated overview satisfies enough of a reader's curiosity before they ever reach a publisher's page, it changes the shape of a channel that a large share of publishers currently depend on — even though, for now, the test is limited to video cards and Google hasn't disclosed how widely it's rolling out.
+
+## Why Marketers and Content Teams Should Pay Attention Now
+
+This test follows a pattern that's already played out in regular Google Search results with AI Overviews: a Google-generated summary appears above or before the traditional result, and some share of users get their answer without clicking through. Discover has so far been comparatively insulated from that dynamic, in part because it's a feed of recommended content rather than an answer to an explicit query. "Dive deeper" is Google's first visible move to bring a similar summary layer into Discover itself.
+
+For any business or agency that treats Discover as a meaningful referral channel — which, given the two-thirds referral share cited above, includes a large number of publishers and content-driven brands — this is worth tracking even in its current limited, video-only test phase.
+
+## What to Do About It
+
+- **Check Discover referral data now, before any wider rollout**: Establishing a clean baseline in Search Console for how much traffic Discover currently sends makes it possible to detect a real drop later, rather than guessing after the fact.
+- **Don't panic-restructure content around video specifically**: The test currently only affects video cards, and Google has stated it's still experimenting with different designs. A broad content strategy change based on a narrow, unconfirmed test would be premature.
+- **Keep producing the original reporting and named expertise that overviews tend to link out to**: Coverage of the test notes that "Dive deeper" summaries do link to original reporting, even if those links are visually smaller — original, well-sourced content still has a path to a click.
+- **Revisit this in a month**: Google said it would test multiple designs over the coming weeks, which means the current version is very unlikely to be the final one. The shape of the feature — and its real effect on click-through — will be much clearer by then.
+
+## Conclusion
+
+Google has confirmed it's testing an AI-generated overview layer inside Discover that inserts itself between a reader and a publisher's page, starting with video content, with no committed timeline, market list, or opt-out published so far. It's an early-stage test, not a finished product, but it points in the same direction as AI Overviews in regular search results: Google increasingly answering questions inside its own interface before a reader ever reaches the source. Content teams that rely on Discover traffic should start watching their own referral numbers now rather than waiting for a wider rollout to react.
+
+Sources: Robby Stein (Google VP of Product, Search), post on X, September 18, 2026; Search Engine Land, "Google testing 'Dive deeper' for Google Discover — it's not good for publishers"; PPC Land, "Google Discover test button sends readers to AI overview, not publisher," September 2026.`
+  },
 ];
 
 export const blogCategories = [
