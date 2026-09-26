@@ -95127,6 +95127,300 @@ If your call conversion rate is meaningfully below the 46% local-services benchm
 Sources: The Data-Driven Trades, "Google Local Service Ads Benchmark: March 2026 (By Trade)"; Estate Hub, "2026 Benchmarks for Lead Conversion Rates in Home Services."`
   },
   {
+    id: "952",
+    title: "How Much Does a Google Ads Click Cost in the UK in 2026?",
+    slug: "google-ads-cost-per-click-uk-industry-2026",
+    excerpt: "UK Google Ads Search CPC averages around £1.95 in 2026, but legal services runs about £18.26 per click versus roughly £1.84 for arts and entertainment.",
+    featuredImage: "https://images.unsplash.com/photo-1611262588024-d12430b98920?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-26",
+    category: "Google Ads",
+    tags: ["Google Ads", "Cost Per Click", "United Kingdom", "PPC Benchmarks", "International PPC"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Google Ads Cost Per Click in the UK 2026",
+      metaDescription: "UK Google Ads Search CPC averages around £1.95 in 2026, ranging from about £1.84 in arts & entertainment up to roughly £18.26 per click for legal services firms.",
+      keywords: ["google ads cost per click uk 2026", "uk google ads cpc benchmark", "google ads pricing united kingdom", "google ads cost by industry uk"]
+    },
+    content: `The average Google Ads cost per click across UK industries in 2026 runs around £1.95 on Search and £0.48 on Display, though blended estimates that fold in high-competition sectors put the all-industry average closer to £3.50–£3.65. Legal services is the UK's most expensive sector at roughly £18.26 per click, followed by insurance at about £14.71, while arts & entertainment is the cheapest at around £1.84 and charity/nonprofit follows at £1.96.
+
+## Why the Range Is So Wide
+
+Google Ads runs on a real-time auction, so cost per click tracks how many advertisers are bidding on the same keywords in the same market, not a fixed price list. Sectors where a single new customer is worth thousands of pounds — legal, insurance, financial services — can profitably bid far more per click than sectors selling low-margin, low-ticket products, which pulls the UK-wide average up even though most individual businesses pay much less than the blended figure suggests.
+
+## Legal and Insurance Sit at the Top
+
+Legal services and insurance are consistently the two most expensive sectors in UK Google Ads data for 2026, at roughly £18.26 and £14.71 per click respectively. Both sectors combine high customer lifetime value with intense competition for a relatively small pool of high-intent search terms, which is the same dynamic that pushes these two industries to the top of US benchmark data as well.
+
+## The Cheapest UK Sectors
+
+Arts & entertainment and charity/nonprofit sit at the opposite end, at roughly £1.84 and £1.96 per click. These sectors typically have lower per-conversion value and less commercial bidding pressure, since a ticket sale or a donation is worth far less than a legal case or an insurance policy, so advertisers can't justify bidding as aggressively even at full competitive intensity.
+
+## London Carries Its Own Premium
+
+Location adds another layer on top of industry: Greater London consistently sees CPCs 15–30% higher than equivalent keywords in northern England, Scotland, or Wales. A solicitor bidding on "conveyancing solicitor" in central London can pay significantly more per click than a firm bidding the identical keyword in Leeds, purely because of local competitive density.
+
+## How This Compares to the US
+
+The UK's blended average sits below the global 2026 benchmark of $5.42 (roughly £4.27) per click reported across US-heavy datasets, though the industry ranking — legal and insurance at the top, arts and charity at the bottom — is nearly identical in both markets. That consistency suggests the underlying driver is customer value and competition intensity rather than anything unique to either country's ad market.
+
+## Bottom Line
+
+If you're setting a UK Google Ads budget, use your own sector's position in this range rather than the £1.95–£3.65 blended average — a legal or insurance advertiser budgeting off the all-industry number will badly underestimate real costs, while an arts or charity advertiser using the same number will overshoot.
+
+Sources: Whito, "Google Ads Cost UK 2026: What a Click Really Costs"; aggregated 2026 Google Ads industry benchmark data (LocaliQ, Web Tonic, The eDigital).`
+  },
+  {
+    id: "953",
+    title: "How Much Does a Google Ads Click Cost in Canada in 2026?",
+    slug: "google-ads-cost-per-click-canada-industry-2026",
+    excerpt: "Canadian Google Ads CPC averages $2.69 across industries in 2026, but insurance runs $33.81 per click, ahead of financial services at $29.06 and legal at $26.39.",
+    featuredImage: "https://images.unsplash.com/photo-1611262588019-db6cc2032da3?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-26",
+    category: "Google Ads",
+    tags: ["Google Ads", "Cost Per Click", "Canada", "PPC Benchmarks", "International PPC"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Google Ads Cost Per Click in Canada 2026",
+      metaDescription: "Canadian Google Ads CPC averages $2.69 across industries in 2026, but insurance runs $33.81 per click, ahead of financial services and legal services.",
+      keywords: ["google ads cost per click canada 2026", "canada google ads cpc benchmark", "google ads pricing canada", "google ads cost by industry canada"]
+    },
+    content: `The average Google Ads cost per click across Canadian industries in 2026 is $2.69, but that blended figure hides enormous variation: insurance runs the highest at $33.81 per click, followed by financial services at $29.06 and legal services at $26.39, according to a study of more than 100,000 keywords across 19 Canadian industries by Toronto-based agency QliqQliq, using Google Keyword Planner data pulled in March–April 2026.
+
+## The QliqQliq Study
+
+QliqQliq's analysis measured top-of-page bid pricing across all 19 verticals it tracked, exporting cost-per-click data directly from Google Keyword Planner rather than relying on self-reported advertiser spend. That methodology makes it one of the more granular Canada-specific benchmark datasets available for 2026, since Google does not publish official cost-per-click figures broken out by country.
+
+## Insurance, Financial Services, and Legal Lead by a Wide Margin
+
+The same three sectors that dominate US and UK benchmark data also lead in Canada: insurance at $33.81, financial services at $29.06, and legal services at $26.39 per click. The study also found that a single click on certain high-value search terms in these sectors now exceeds $894, reflecting how concentrated the bidding is on a small number of extremely high-value keywords within those verticals.
+
+## Most Canadian Businesses Pay Far Less
+
+Outside these top three sectors, most Canadian businesses pay between $1 and $5 per click. Rough 2026 category ranges include home services like HVAC, plumbing, and general contracting at $6–$25, dental at $4–$18, and residential real estate at $3–$12 (commercial real estate runs higher, at $15–$40). The average cost per acquisition across Canadian industries sits around $45.27.
+
+## How Canada Compares to the US and UK
+
+Canadian CPCs generally run somewhat below the $5.42 global 2026 benchmark that's weighted heavily toward US data, though the industry ranking is consistent across all three markets: insurance, financial services, and legal cluster at the top everywhere, while lower-consideration retail and service categories cluster at the bottom. That consistency across countries suggests customer lifetime value, not geography, is the primary driver of CPC. A UK advertiser comparing notes with a Canadian counterpart in the same industry should expect a broadly similar ranking even though the absolute currency figures differ.
+
+## Why There's No Official Country Breakdown
+
+Google doesn't publish CPC data segmented by country, which is exactly why independently commissioned studies like QliqQliq's carry more weight for Canada-specific budgeting than the US-centric benchmark reports that dominate search results. Advertisers who rely solely on US benchmark figures for Canadian campaigns risk under- or over-budgeting depending on how their specific industry's competitive dynamics differ north versus south of the border.
+
+## Bottom Line
+
+Budget against your specific industry's position in the QliqQliq data rather than the $2.69 blended average — an insurance or legal advertiser using the all-industry figure will underfund their campaigns by more than 10x relative to actual market clearing prices.
+
+Sources: QliqQliq 2026 Canadian Google Ads industry study (via Aspen Daily News, "QliqQliq Study Reveals Google Ads Costs Across 19 Canadian Industries"); Consultus Digital, "How Much Do Google Ads Cost in Canada? 2026 Guide."`
+  },
+  {
+    id: "954",
+    title: "What's a Good ROAS for Pet Products on Meta Ads in 2026?",
+    slug: "good-roas-pet-products-meta-ads-2026",
+    excerpt: "Pet products average a 4.8x ROAS on Meta Ads in 2026, the highest of any e-commerce vertical, alongside a $25 CPA, 1.50% CTR, and $11.00 CPM.",
+    featuredImage: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-26",
+    category: "Facebook Ads",
+    tags: ["Meta Ads", "ROAS", "Pet Industry", "Ecommerce Marketing", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Good ROAS for Pet Products on Meta Ads 2026",
+      metaDescription: "Pet products average a 4.8x ROAS on Meta Ads in 2026, the highest of any e-commerce vertical, with a $25 CPA, 1.50% CTR, $0.73 CPC and $11.00 CPM.",
+      keywords: ["good roas pet products meta ads 2026", "pet ecommerce roas benchmark", "meta ads pet industry benchmark 2026", "facebook ads pet products roas"]
+    },
+    content: `Pet products average a 4.8x ROAS on Meta Ads in 2026 — the highest of any e-commerce vertical tracked — alongside a $25 CPA, 1.50% CTR, $0.73 CPC and an $11.00 CPM, which is also the lowest CPC and among the highest CTRs of any category. Within the vertical, food and treat subscriptions perform best at 5.6x ROAS and a $21 CPA, while health and supplements lag with CPA closer to $36.
+
+## Why Pet Products Outperform Every Other Vertical
+
+Pet owners are unusually responsive to Meta ad creative featuring animals, and purchase decisions tend to be lower-friction than in other consumer categories — a bag of dog food or a new toy carries far less deliberation than furniture or electronics. That combination of high engagement and quick purchase decisions is what drives both the category's low $0.73 CPC and its 4.8x average ROAS, well above the roughly 2.5x–4.0x range typical of Meta e-commerce overall.
+
+## Subscriptions Beat One-Time Purchases
+
+Food and treat subscription products are the strongest performers within pet, reaching 5.6x ROAS, a $21 CPA and a 1.70% CTR. Subscription pet food converts well because it solves a recurring, predictable need — owners don't want to think about reordering food every few weeks — which makes the value proposition easy to communicate in a single ad and easy for Meta's algorithm to optimize toward repeat, high-LTV customers.
+
+## Health and Supplements Are the Exception
+
+Not every pet sub-category performs equally well. Health and supplements products carry the highest CPA within the category, at roughly $36, reflecting more consideration-heavy purchases (a joint supplement or prescription-adjacent product requires more buyer education than a bag of treats) and a smaller, more specific target audience than mass-market pet food or toys.
+
+## What Counts as a Good ROAS Here
+
+Given the category average of 4.8x, a pet brand running notably below 2.5x–3x should treat that as a signal to audit creative and targeting before increasing spend, since the category ceiling other pet advertisers are hitting is unusually high. Brands in the health and supplements sub-category should benchmark against the roughly $36 CPA figure rather than the blended 4.8x category average, since that sub-category's economics are meaningfully different from food, treats, and toys.
+
+## Don't Read First-Order ROAS in Isolation
+
+Pet products carry meaningful repeat-purchase value beyond the first sale — a dog owner who buys food once typically keeps buying it for years — so a campaign showing a modest first-order ROAS can still be a strong long-term investment once repeat purchases are factored in. Brands that only optimize toward first-order ROAS risk cutting campaigns that are actually profitable on a lifetime basis, particularly in the subscription-driven food and treats sub-category.
+
+## Bottom Line
+
+If your pet brand is underperforming the 4.8x category ROAS, check whether your product mix skews toward supplements or health items before assuming your ad account is broken — that sub-category alone runs at a structurally higher CPA than the rest of the vertical.
+
+Sources: Adrise Lab, "Pet Products Meta Ads Benchmarks 2026: CPA, ROAS, CTR & CPM Data by Sub-Category"; Ad Library, "Meta Ad Benchmarks Pet Care 2026."`
+  },
+  {
+    id: "955",
+    title: "What's a Good ROAS for Food and Beverage Brands on Meta Ads in 2026?",
+    slug: "good-roas-food-beverage-meta-ads-2026",
+    excerpt: "Food and beverage brands average a 4.5x ROAS on Meta Ads in 2026, the second-highest of any vertical, with the cheapest media of any category at a $9.50 CPM.",
+    featuredImage: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-26",
+    category: "Facebook Ads",
+    tags: ["Meta Ads", "ROAS", "Food and Beverage", "CPG Marketing", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 2,
+    seo: {
+      metaTitle: "Good ROAS for Food & Beverage on Meta Ads 2026",
+      metaDescription: "Food and beverage brands average a 4.5x ROAS on Meta Ads in 2026, with a $22 CPA, 1.10% CTR, $0.86 CPC and the cheapest media of any category at $9.50 CPM.",
+      keywords: ["good roas food beverage meta ads 2026", "cpg meta ads roas benchmark", "food and beverage facebook ads roas", "meta ads roas by industry 2026"]
+    },
+    content: `Food and beverage brands average a 4.5x ROAS on Meta Ads in 2026 — the second-highest of any e-commerce vertical — with a $22 CPA, 1.10% CTR, $0.86 CPC and the cheapest media of any tracked category at a $9.50 CPM. Subscription meal-kit and coffee brands lead the vertical at 5.2x ROAS.
+
+## Why Food and Beverage Media Is So Cheap
+
+At $9.50, food and beverage carries the lowest CPM of any e-commerce category tracked for 2026, meaning advertisers reach the same audience for less than in almost any other vertical. Broad appeal and high ad relevance scores both play a role — food and drink content tends to earn strong engagement on Meta's feed, which platform auctions reward with lower delivery costs.
+
+## Subscription Models Lead the Category
+
+Subscription meal-kit and coffee brands outperform the rest of the vertical at 5.2x ROAS, the same pattern seen in pet products: a recurring, predictable purchase is easier to sell in a single ad and easier for Meta's optimization to compound into a high-LTV customer base than a one-time purchase is.
+
+## Repeat Purchases Change the ROAS Math
+
+Food and beverage's strong performance is tied to purchase frequency: a customer acquired once for a snack or beverage brand often reorders weekly, so a first-order ROAS understates true payback. The category also saw the smallest CPM increase of any vertical in the past year, up just 8.35%, while CPA held essentially flat, down 0.22% — both signs of a comparatively stable, uncrowded auction relative to more competitive categories.
+
+## Margin Still Matters More Than the Average
+
+The commonly cited "4:1 minimum ROAS" benchmark traces back to a 2016 Nielsen study and predates current platform economics; current Meta-wide median ROAS sits closer to 1.86x, with food and beverage's 4.5x well above that median. Even so, food and beverage margins are thinner than a blended ROAS number suggests once cold-chain shipping and packaging costs are factored in — a sub-$30 basket with refrigerated shipping can consume most of the contribution margin a 4.5x ROAS implies on paper.
+
+## How This Compares to Other Ecommerce Verticals
+
+Food and beverage's 4.5x average sits just behind pet products, the top-performing vertical at 4.8x, and comfortably ahead of higher-consideration categories like furniture and electronics, which typically run in the 1.8x–2.5x range on Meta. The common thread across both of Meta's top two verticals — pet and food & beverage — is high purchase frequency, which suggests brands in lower-ROAS categories may benefit more from investing in retention and subscription mechanics than from chasing first-order ROAS improvements alone.
+
+## Bottom Line
+
+Read your ROAS against delivered margin, not the 4.5x category average, before deciding whether a food or beverage campaign is actually profitable — shipping and spoilage costs specific to this category can erase gains that look strong on a pure revenue-to-spend basis.
+
+Sources: Adrise Lab, "Food & Beverage Meta Ads Benchmarks 2026: CPA, ROAS, CTR & CPM Data by Sub-Category"; Jetfuel Agency, "2026 CPG Ad Buying Guide."`
+  },
+  {
+    id: "956",
+    title: "What's a Good CTR and CPM for Nextdoor Ads in 2026?",
+    slug: "good-ctr-cpm-nextdoor-ads-2026",
+    excerpt: "Nextdoor's newsfeed ads average a 0.45%-0.55% CTR in 2026, the platform's best placement, with real-world CPCs of $2.50-$3.50 above the $2 recommended minimum.",
+    featuredImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-26",
+    category: "Advertising Strategy",
+    tags: ["Nextdoor Ads", "CTR", "CPM", "Hyperlocal Marketing", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 2,
+    seo: {
+      metaTitle: "Good CTR and CPM for Nextdoor Ads 2026",
+      metaDescription: "Nextdoor's newsfeed placement averages a 0.45%-0.55% CTR in 2026, with real-world CPCs of $2.50-$3.50, above the platform's $2 recommended minimum bid.",
+      keywords: ["good ctr nextdoor ads 2026", "nextdoor ads cpm benchmark", "nextdoor advertising performance 2026", "nextdoor ads cost per click"]
+    },
+    content: `Nextdoor's newsfeed ad placement delivers the platform's highest click-through rate in 2026, at 0.45%–0.55%, while the right-hand rail placement runs 0.10%–0.12%. Nextdoor recommends minimum bids of roughly $2 CPC and $10 CPM, but real-world costs typically land higher, between $2.50 and $3.50 per click.
+
+## Newsfeed Ads Outperform Every Other Placement
+
+The newsfeed is Nextdoor's top-performing ad placement by CTR, at 0.45%–0.55%, because it sits inside the same scrollable feed neighbors use to post about local recommendations, lost pets, and community updates — an environment with unusually high organic engagement that ad placements benefit from. The right-hand rail, by contrast, functions more like traditional display inventory and converts attention into clicks at a much lower rate, in the 0.10%–0.12% range.
+
+## Recommended Bids vs. Real-World Costs
+
+Nextdoor's platform-recommended minimum bids of about $2 CPC and $10 CPM function as a floor, not a realistic target. In practice, advertisers report real-world CPCs of $2.50 to $3.50, since most local categories — home services, real estate, healthcare — face at least some competitive bidding pressure even in a hyperlocal, lower-volume ad environment than Google or Meta.
+
+## What Actually Moves CTR on Nextdoor
+
+Creative choices matter more on Nextdoor than the raw platform averages suggest. Location-specific personalization in ad copy — referencing the actual neighborhood or city a user is in — increases CTR by 17%, and ads that skip an obvious business logo see a 22% higher CTR, likely because logo-free creative reads more like an organic neighbor post than a traditional ad in a feed built around peer-to-peer content.
+
+## AI Click Optimization Is Changing the Bidding Math
+
+In beta testing, Nextdoor's AI-powered click-optimization bidding recorded a median CTR increase of more than 75% compared to standard CPM bidding. That's a large enough gap that advertisers evaluating Nextdoor purely against the CTR ranges above should factor in which bidding strategy generated the historical data they're comparing against, since click-optimized campaigns and CPM-bid campaigns are not directly comparable on this platform.
+
+## How Nextdoor Compares to Other Local Ad Platforms
+
+Nextdoor's CTR range sits below Google Search and well below Google Local Services Ads, but that's an expected difference in ad format and intent — Nextdoor ads interrupt a community feed rather than answering an active search query, so a lower CTR against a much cheaper CPM can still deliver a competitive cost per engagement for hyperlocal advertisers like home services businesses, real estate agents, and neighborhood retailers who are Nextdoor's core advertiser base.
+
+## Bottom Line
+
+Default to the newsfeed placement over right-hand rail if forced to choose one, and budget closer to $2.50-$3.50 per click than Nextdoor's $2 recommended minimum — the recommended figure understates what most competitive local categories will actually pay in the auction.
+
+Sources: Nextdoor for Business, "How to Determine the ROI of Your Nextdoor Ad Campaigns"; Nextdoor for Business, "Creative Best Practices for Maximizing Ad Effectiveness on Nextdoor."`
+  },
+  {
+    id: "957",
+    title: "How Much Does a Lead Cost for Medical Weight Loss and GLP-1 Clinics on Google Ads?",
+    slug: "glp1-weight-loss-clinic-cost-per-lead-google-ads-2026",
+    excerpt: "Medical weight loss clinics pay $40-$90 per lead on Google Ads in 2026 for general inquiries, rising to $80-$150 for bariatric surgery consultations.",
+    featuredImage: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-26",
+    category: "Google Ads",
+    tags: ["Google Ads", "Cost Per Lead", "Healthcare Marketing", "Medical Weight Loss", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "GLP-1 Weight Loss Clinic Cost Per Lead on Google Ads",
+      metaDescription: "Medical weight loss clinics pay $40-$90 per lead on Google Ads in 2026 for general inquiries, rising to $80-$150 for bariatric surgery consultations.",
+      keywords: ["glp-1 clinic cost per lead google ads", "medical weight loss clinic google ads cost", "weight loss clinic ppc cost per lead 2026", "bariatric clinic google ads cpl"]
+    },
+    content: `Medical weight loss clinics running Google Ads in 2026 typically pay $40 to $90 per lead for general weight-loss inquiries, rising to $80 to $150 per lead for bariatric surgery consultations. Search-specific campaigns in competitive US markets often run even higher, at $70 to $150 per lead, and landing pages built for this vertical convert at 8%-15%.
+
+## Why GLP-1 Demand Has Pushed Costs Up
+
+Surging consumer demand for GLP-1 medications has pulled a wave of new medical weight loss clinics and telehealth providers into Google Ads at the same time, bidding on an overlapping, relatively narrow set of high-intent keywords. That concentrated competition is the direct driver of cost per lead in this vertical running well above typical local-service benchmarks, even before accounting for Google's added scrutiny of health-related advertiser verification and landing page compliance in this category.
+
+## Lead Cost Isn't the Metric That Matters
+
+Raw cost per lead is a misleading number to optimize in isolation here: a $40 lead that never shows up for a consultation is more expensive in practice than an $85 lead that enrolls in a 12-month program. Clinics that only track cost per lead risk shifting budget toward cheaper, lower-quality traffic sources that inflate lead volume while enrollment and program revenue stay flat or decline.
+
+## Bariatric Surgery Leads Cost More Than General Weight Loss
+
+Bariatric surgery consultation leads run $80 to $150, meaningfully above the $40-$90 range for general medical weight loss inquiries. Bariatric surgery is a higher-consideration, higher-value procedure with a smaller pool of qualified candidates actively searching, which pushes both the value of a converted lead and the competitive bidding on the associated keywords higher than for general GLP-1 or diet-program searches.
+
+## Budget Context
+
+A typical US medical weight loss clinic invests $4,000 to $12,000 per month across Google Ads, social ads, local SEO, and retention email combined, not on Google Ads alone. Cost per new patient overall — factoring in both organic and paid channels — runs roughly $40 to $90 for an organically sourced patient versus $120 to $200 for one sourced through paid search, underscoring how much of the total acquisition cost in this vertical now flows through paid channels.
+
+## Landing Page Quality Moves the Number More Than Bids Do
+
+Optimized landing pages for this vertical convert at 8%-15%, a wide enough range that landing page quality alone can swing effective cost per lead by nearly double before a single bid adjustment. Clinics competing on the same overlapping keyword set as dozens of other GLP-1 providers have limited room to out-bid competitors profitably, which makes conversion rate optimization on the landing page the more controllable lever for most clinics in this category.
+
+## Bottom Line
+
+Track cost per booked, attended consultation rather than raw cost per lead when evaluating a GLP-1 or medical weight loss Google Ads campaign — the lead-cost range alone can make an underperforming, low-quality campaign look identical to a high-performing one.
+
+Sources: Medical Marketing Digital, "Google Ads for Weight Loss Clinics: Capturing GLP-1 Demand Without Getting Suspended"; LeadsuiteNow, "Medical Weight Loss Clinic Lead Generation 2026."`
+  },
+  {
     id: "723",
     title: "OpenAI Launches ChatGPT Ads in India With 50+ Brands",
     slug: "chatgpt-ads-india-launch-2026",
