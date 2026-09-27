@@ -95420,6 +95420,332 @@ Track cost per booked, attended consultation rather than raw cost per lead when 
 
 Sources: Medical Marketing Digital, "Google Ads for Weight Loss Clinics: Capturing GLP-1 Demand Without Getting Suspended"; LeadsuiteNow, "Medical Weight Loss Clinic Lead Generation 2026."`
   },
+  {
+    id: "958",
+    title: "How Much Does a Google Ads Click Cost in Australia in 2026?",
+    slug: "google-ads-cost-per-click-australia-2026",
+    excerpt: "Australian Google Ads Search clicks average AUD $3.81 in 2026, with Legal (AUD $17.48) and Trades (AUD $9.25) running well above the blended national median.",
+    featuredImage: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-27",
+    category: "Google Ads",
+    tags: ["Google Ads", "Cost Per Click", "Australia", "PPC Benchmarks", "International Advertising"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Google Ads Cost Per Click in Australia (2026)",
+      metaDescription: "The average Google Ads cost per click in Australia is AUD $3.81 for Search in 2026, with Legal (AUD $17.48) and Trades (AUD $9.25) well above that median.",
+      keywords: ["google ads cost per click australia", "average cpc australia 2026", "google ads cost australia", "ppc benchmarks australia"]
+    },
+    content: `The average Google Ads cost per click in Australia is AUD $3.81 for Search campaigns as of May 2026, based on median pricing across more than 8,400 Australian service-business keywords. Most Australian advertisers pay between AUD $1.50 and $6.00 per click, and Display Network clicks run far cheaper at roughly AUD $0.96.
+
+## Why Australian CPCs Jumped in 2026
+
+Australian click prices rose 31% between January and May 2026 and are up 21% year-on-year, even as search demand fell 23% over the same period. Fewer searches combined with advertisers holding or increasing bids has pushed the average price per click higher industry-wide, rather than any single platform pricing change from Google.
+
+## Cost Per Click by Industry
+
+CPC in Australia varies sharply by category. Legal services carry the highest average CPC at AUD $17.48, followed by Marketing & Creative at AUD $12.62. Trades businesses — plumbers, electricians, and similar local service providers — see a median CPC of AUD $9.25, well above the AUD $3.81 blended Search average, reflecting how competitive high-value local-service keywords have become.
+
+## Search vs. Display Pricing
+
+The AUD $3.81 median applies to Search campaigns, where advertisers bid on keyword intent. Display Network placements price very differently, averaging around AUD $0.96 per click, since Display inventory is far larger and less directly tied to purchase intent.
+
+## How Australia Compares to the UK and Canada
+
+The pattern holds across English-speaking markets even though currencies and absolute numbers differ. The UK's blended Google Ads average runs roughly £3.50-£3.65 per click, with legal services the most expensive sector at about £18.26. Canada's blended average is $2.69 CAD, with insurance topping the list at $33.81 CAD. In all three markets, legal, insurance, and other high-customer-value sectors sit well above the national blended average, and Australia's AUD $9.25 Trades median and AUD $17.48 Legal figure fit that same pattern.
+
+## Turning CPC Into a Monthly Budget
+
+At the AUD $3.81 blended median, an AUD $1,500 monthly Search budget buys roughly 393 clicks. The same budget in Trades (AUD $9.25) buys only about 162 clicks, and in Legal (AUD $17.48) it buys roughly 86 clicks. Businesses in high-CPC categories need either a materially larger budget or a much higher landing-page conversion rate to generate the same lead volume as a business in a lower-CPC category.
+
+## Setting Realistic Expectations for New Accounts
+
+A newly launched Google Ads account in Australia typically pays somewhat more than these established benchmarks suggest, since Quality Score and ad rank both improve with account history and click-through performance over time. Budgeting toward the higher end of your industry's CPC range for the first one to two months, then reassessing once performance data accumulates, avoids the common mistake of judging a brand-new campaign against a mature-account benchmark.
+
+## Bottom Line
+
+Check your own account's average CPC against your specific industry category, not the blended national average, before deciding whether your Google Ads costs in Australia are in line with the market.
+
+Source: Store Growers, "27 Google Ads Benchmarks (2026)."`
+  },
+  {
+    id: "959",
+    title: "What's the Average Cost Per Install for Apple Search Ads in 2026?",
+    slug: "apple-search-ads-cost-per-install-2026",
+    excerpt: "The US median cost per install on Apple Search Ads is $4.06 in 2026 — more than double the $1.80 global median — according to AppTweak's 2026 benchmark report.",
+    featuredImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-27",
+    category: "Marketing Technology",
+    tags: ["Apple Search Ads", "Cost Per Install", "App Marketing", "ASO", "Mobile Advertising"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Apple Search Ads Cost Per Install Benchmark 2026",
+      metaDescription: "The US median cost per install on Apple Search Ads is $4.06 in 2026, more than double the $1.80 global median, according to AppTweak's benchmark report.",
+      keywords: ["apple search ads cost per install", "apple search ads cpi 2026", "apple search ads benchmark", "app store search ads cost"]
+    },
+    content: `The median cost per install (CPI) for Apple Search Ads in the United States is $4.06 in 2026, according to AppTweak's benchmark report covering nearly 3,500 apps, 50,000 campaigns, and $1 billion in tracked ad spend. Globally, the median CPI is lower at $1.80, and the spend-weighted blended average across all markets is $1.34.
+
+## Why the US Figure Is So Much Higher Than the Global Median
+
+The US remains Apple's largest and most competitive App Store market, with more advertisers bidding on the same install-intent keywords than in almost any other country. That concentrated competition is the direct driver of the gap between the $4.06 US median and the $1.80 global median — the same install, in a less competitive market, costs less than half as much to acquire.
+
+## Cost Per Tap Tells a Similar Story
+
+Cost per tap (CPT), the price advertisers pay when a user taps the ad rather than completes an install, follows the same US-premium pattern: the global median CPT is $0.92, compared to $1.91 in the US. CPT sits below CPI because not every tap converts to an install, so CPI always carries the cost of the taps that didn't convert on top of the raw tap price.
+
+## Category Drives Bigger Swings Than Geography
+
+App category moves CPI more than country does in many cases. Sports apps carry a median CPI of $26.81 and Games sit at $12.28, both well above the blended average, reflecting high subscriber lifetime value and heavy competitive bidding in those categories. At the other end, CPI for a free casual game can fall under $1, while a subscription productivity app in a competitive niche can exceed $15 — a range wide enough that category-specific benchmarking matters more than a single blended number.
+
+## Search Results Campaigns vs. Other Placements
+
+These CPI and CPT figures are specific to Apple's Search Results campaign type, the format that places ads at the top of App Store search results for a queried keyword. Apple Search Ads also runs Today Tab, Product Page, and Search Tab placements, which price and convert differently and aren't covered by this Search Results-specific benchmark.
+
+## What This Means for App Marketers
+
+A US-based app in a competitive category like Games or Sports should budget well above the $4.06 blended US median, not around it, while a utility or productivity app outside a subscription-heavy niche can often acquire installs closer to or below the median. Expanding into lower-competition App Store markets can meaningfully lower blended CPI without changing bidding strategy at all.
+
+## New Apps Should Expect Higher Early Costs
+
+A newly launched app with no install history typically pays above these established benchmarks at first, since Apple's ad rank algorithm weights relevance and conversion history alongside bid amount. Budgeting for a CPI premium during the first few weeks of a campaign, then optimizing keywords and creative once conversion data accumulates, is standard practice for bringing a new app's CPI down toward the category benchmark.
+
+## Bottom Line
+
+Benchmark your Apple Search Ads CPI against your specific country and app category rather than the $1.80 global median, since the gap between category benchmarks can run more than 20x.
+
+Source: AppTweak, "Apple Ads Benchmarks 2026: CPT, CPI, CR & TTR by Category."`
+  },
+  {
+    id: "960",
+    title: "What's a Good CPC for Snapchat Ads in 2026?",
+    slug: "snapchat-ads-average-cpc-2026",
+    excerpt: "The median CPC on Snapchat Ads is $0.84 in 2026 — roughly half of Meta's link-click CPC — though Home Services campaigns run a median of $2.80 per click.",
+    featuredImage: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-27",
+    category: "Social Media",
+    tags: ["Snapchat Ads", "Cost Per Click", "Social Media Advertising", "PPC Benchmarks", "Paid Social"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Snapchat Ads Average CPC Benchmark 2026",
+      metaDescription: "The median CPC on Snapchat Ads is $0.84 in 2026, roughly half of Meta's link-click CPC, though Home Services campaigns run a median of $2.80 per click.",
+      keywords: ["snapchat ads cpc", "snapchat ads cost per click 2026", "snapchat advertising benchmark", "snapchat ads cost"]
+    },
+    content: `The median cost per click (CPC) on Snapchat Ads is $0.84 in 2026, according to AdLiftr's benchmark analysis of 2,431 campaigns across 412 advertisers, with a typical interquartile range of $0.51 to $1.34. That makes Snapchat roughly half the cost of Meta's link-click CPC, which runs $1.86 to $2.23 across comparable campaigns.
+
+## Why Snapchat Clicks Cost Less Than Meta's
+
+Snapchat carries a smaller, younger-skewing user base and far less advertiser competition than Meta's Facebook and Instagram inventory, which keeps auction pressure — and therefore CPC — lower across most objectives. For advertisers targeting Snapchat's core demographic, that translates into more clicks per dollar than an equivalent Meta campaign would deliver.
+
+## CPC Varies by Ad Format
+
+Story Ads and Collection Ads tend to sit toward the higher end of Snapchat's CPC range, while standard Snap Ads stay closer to the $0.51 bottom-quartile figure. Format choice is one of the more direct levers advertisers have over CPC on the platform, independent of targeting or bidding strategy.
+
+## Industry Pushes the Number Much Higher
+
+Vertical matters more than the platform-wide median suggests. Home Services advertisers on Snapchat see a median CPC of $2.80 — more than three times the platform-wide median — with a top-quartile figure of $1.60 and a bottom-quartile figure of $5.40. That's consistent with the pattern seen across nearly every ad platform: high-consideration, high-customer-value verticals bid clicks up regardless of which platform they're running on.
+
+## Reading the Interquartile Range
+
+The $0.51-$1.34 interquartile range matters more than the $0.84 median alone for budgeting purposes, since it shows where the middle 50% of campaigns actually land. A campaign priced above $1.34 isn't necessarily performing badly, but it does sit outside the typical range and is worth auditing for targeting or creative fatigue.
+
+## Turning CPC Into Click Volume
+
+At the $0.84 platform median, a $1,000 monthly Snapchat budget buys roughly 1,190 clicks. The same budget in Home Services, at the $2.80 vertical median, buys roughly 357 clicks — a difference large enough that Home Services advertisers should size Snapchat campaigns around vertical-specific CPC rather than the platform-wide figure.
+
+## Who Snapchat Ads Work Best For
+
+Snapchat Ads tend to perform best for advertisers targeting a Gen Z or Millennial audience with visually driven creative — Story Ads and augmented-reality Lens formats in particular reward strong vertical video over static imagery. Advertisers reusing Meta creative without adapting it for Snapchat's younger, more visually native audience typically see CPC drift toward the top of the range rather than the median.
+
+## Run a Test Budget Before Scaling
+
+Because CPC on Snapchat can range from $0.51 to well over $5.00 depending on vertical and format, a small test budget across two or three ad formats is worth running before committing a full monthly budget to any single approach. Two to four weeks of data is typically enough to see which format lands closer to the bottom-quartile figure for a given vertical rather than the top.
+
+## Bottom Line
+
+Benchmark a Snapchat campaign against its specific vertical's CPC, not the $0.84 platform-wide median — a Home Services advertiser paying $2.80 per click is performing in line with the category, not underperforming the platform average.
+
+Source: AdLiftr, "Snapchat Ads Cost 2026: CPM, CPC & CPA Benchmarks."`
+  },
+  {
+    id: "961",
+    title: "What's the Average Cost Per Lead for Gutter Installation Companies on Google Ads?",
+    slug: "gutter-installation-cost-per-lead-google-ads-2026",
+    excerpt: "Gutter installation companies pay $70-$180 per lead on Google Search Ads in 2026, versus $20-$55 through Google Local Services Ads for the same category.",
+    featuredImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-27",
+    category: "Google Ads",
+    tags: ["Google Ads", "Cost Per Lead", "Home Services", "Gutter Installation", "Local Services Ads"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Gutter Installation Cost Per Lead on Google Ads",
+      metaDescription: "Gutter installation companies pay $70-$180 per lead on Google Search Ads in 2026, compared to $20-$55 through Google Local Services Ads for the category.",
+      keywords: ["gutter installation cost per lead", "gutter company google ads cost", "gutter installation ppc cost per lead 2026", "gutter contractor google ads"]
+    },
+    content: `Gutter installation companies typically pay $70 to $180 per lead on Google Ads Search campaigns in 2026, while Google Local Services Ads (LSA) run considerably cheaper at $20 to $55 per lead. Roofing & Gutter is among the highest cost-per-click home-service categories, averaging $11.13 per click, which is the main driver behind the wide Search CPL range.
+
+## Why Search Costs More Than Local Services Ads
+
+Search campaigns bill per click regardless of whether that click becomes a lead, so a low landing-page conversion rate directly inflates cost per lead. LSA, by contrast, bills per qualified lead rather than per click, which is why its CPL sits well below traditional Search even in the same competitive category — advertisers aren't paying for clicks that never convert.
+
+## Click Costs Are Unusually High for This Category
+
+At $11.13 per click, Roofing & Gutter carries one of the highest average CPCs across home services. Applied to a typical 10% landing-page conversion rate, an $18 click cost near the top of the range produces roughly a $180 cost per lead — exactly where the upper end of the Search CPL range lands.
+
+## Seasonality Pushes Costs Up in Fall
+
+Gutter-related searches and clicks spike from September through November, when leaf cleanup and pre-winter installation demand peaks. Established gutter companies typically run $1,500 to $5,000 in monthly Google Ads spend, concentrated toward the higher end during the fall rush when competition for the same keywords intensifies.
+
+## Negative Keywords Separate Installation Leads From Cleaning Leads
+
+A large share of gutter-related search volume is for one-time cleaning rather than installation, which pays far less per job. Aggressive negative keyword lists that filter out "cleaning" and "repair" queries, combined with a focused installation-specific landing page, are what separate companies landing near the $70 low end of the range from those stuck near $180.
+
+## How This Compares to Other Home Service Trades
+
+Gutter installation's $70-$180 range sits close to Roofing, whose CPL falls between HVAC ($149) and Electrical ($128), and below Plumbing at $183. That places gutter installation among the more moderately priced home-service trades on Google Ads, rather than at the expensive end occupied by plumbing and HVAC.
+
+## Running Search and LSA Side by Side
+
+Many established gutter companies run both channels at once rather than choosing between them: Local Services Ads for the volume of straightforward installation leads at the lower $20-$55 cost, and Search Ads to capture higher-intent, higher-ticket inquiries — full replacement jobs, gutter guard upgrades — that a searcher's specific keyword choice signals but LSA's simpler lead format doesn't always capture. Splitting budget this way typically produces a lower blended cost per lead than running either channel alone at full scale.
+
+## Bottom Line
+
+Track cost per installation lead separately from cost per cleaning lead, and compare your Search CPL against the $20-$55 LSA benchmark before assuming your Search campaign is priced correctly — LSA is frequently the cheaper channel for this category.
+
+Sources: aggregated 2026 gutter-services PPC benchmark data (Clicks Geek, Built-Right Digital, Home Service Direct).`
+  },
+  {
+    id: "962",
+    title: "What's a Good Cost Per Lead for Beauty Salons and Spas on Meta Ads in 2026?",
+    slug: "beauty-salon-spa-cost-per-lead-meta-ads-2026",
+    excerpt: "Beauty and personal care advertisers pay a median $50.91 per lead on Meta Ads in 2026 — nearly double the $27.39 cross-industry average, per WordStream/LocaliQ.",
+    featuredImage: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-27",
+    category: "Facebook Ads",
+    tags: ["Meta Ads", "Facebook Ads", "Cost Per Lead", "Beauty Industry", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Beauty Salon & Spa Cost Per Lead on Meta Ads 2026",
+      metaDescription: "Beauty and personal care advertisers pay a median $50.91 per lead on Meta Ads in 2026, nearly double the $27.39 cross-industry average, per WordStream/LocaliQ.",
+      keywords: ["beauty salon cost per lead facebook ads", "spa meta ads cost per lead", "beauty industry meta ads benchmark 2026", "salon facebook ads cost"]
+    },
+    content: `Beauty and personal care advertisers pay a median $50.91 per lead on Meta (Facebook and Instagram) Ads in 2026, according to WordStream and LocaliQ's annual Facebook Ads Benchmarks report — nearly double the $27.39 cross-industry average for lead-generation campaigns.
+
+## Why Beauty and Personal Care Costs Nearly 2x the Average
+
+The category converts clicks to leads at a solid 5.29% rate, but its click-through rate is the lowest of any industry WordStream tracks for lead campaigns, at just 1.35%. That combination — decent conversion once someone clicks, but few people clicking in the first place — pushes cost per lead up even though the average click itself is relatively cheap at around $3.06.
+
+## Hair Salons Specifically Can Run Much Cheaper
+
+The $50.91 figure is a blended Beauty & Personal Care category average spanning med spas, cosmetic services, and salons together. Hair salon booking-request campaigns specifically tend to run far cheaper, in the $5 to $20 range, because a haircut or color booking is a lower-consideration, more visual, and more impulse-driven purchase than many other services in the broader beauty category.
+
+## Lead Quality Matters More Than the Headline Number Here
+
+A cheap booking-request lead is not automatically a good one. Deep first-visit discounts commonly used to hit low CPL numbers tend to attract one-time deal-chasers rather than clients who rebook. Salons and spas optimizing purely for the lowest CPL risk filling their calendar with clients who never return, which costs more in wasted chair time than a higher-CPL, higher-quality lead would.
+
+## Lead Form Ads Lower CPL Across the Category
+
+Meta's native Lead Form ads consistently produce lower CPLs than campaigns that send traffic to an external booking page, because they remove a step of friction from the conversion path. For a category already fighting a 1.35% CTR, reducing friction at the conversion step is one of the more reliable levers available to bring the $50.91 median down.
+
+## How This Compares to Google Ads
+
+Facebook Ads in the health and beauty category produce leads at 40% to 60% lower cost than Google Ads for the same category, which makes Meta the more cost-efficient paid channel for most salons and spas even though its $50.91 median sits above Meta's own cross-industry average.
+
+## Turning Budget Into Leads
+
+At the $50.91 median, a $1,500 monthly Meta Ads budget generates roughly 29 leads. A salon running hair-specific booking-request campaigns at the $5-$20 low end of that range could generate 75 to 300 leads on the same budget — though, per the lead-quality caveat above, volume alone isn't the goal.
+
+## Why CTR Is the Real Lever Here
+
+Because Beauty & Personal Care's CPL problem traces back to a low 1.35% CTR rather than a weak conversion rate, creative and targeting improvements aimed at getting more people to click — sharper before-and-after imagery, a clearer offer in the first three seconds of a video ad — tend to move CPL more than landing page or booking form changes, which only affect the 5.29% of clicks that already arrived.
+
+## Bottom Line
+
+Track new-client rebooking rate alongside cost per lead — comparing two campaigns purely on CPL, without checking which one brought back repeat clients, optimizes for the wrong number.
+
+Sources: WordStream/LocaliQ, "Facebook Ads Benchmarks 2026"; Clever Zebo, "Beauty & Personal Care Meta Ads Cost Per Lead Benchmark."`
+  },
+  {
+    id: "963",
+    title: "What's the Average Cost Per Lead for General Contractors on Google Ads in 2026?",
+    slug: "general-contractor-cost-per-lead-google-ads-2026",
+    excerpt: "General contractors pay a median $165.67 per lead on Google Search Ads in 2026, versus roughly $53 through Google Local Services Ads for home services.",
+    featuredImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-27",
+    category: "Google Ads",
+    tags: ["Google Ads", "Cost Per Lead", "General Contractors", "Home Services", "Local Services Ads"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "General Contractor Cost Per Lead on Google Ads 2026",
+      metaDescription: "General contractors pay a median $165.67 per lead on Google Search Ads in 2026, compared to roughly $53 through Google Local Services Ads for home services.",
+      keywords: ["general contractor cost per lead google ads", "contractor google ads cost per lead 2026", "construction google ads benchmark", "general contractor ppc cost"]
+    },
+    content: `General contractors pay a median $165.67 per lead on Google Search Ads in 2026, according to LocaliQ/WordStream's industry benchmark data — one of the highest cost-per-lead figures of any home-service category, and the number climbs past $200 for high-ticket specialty trades like roofing and window replacement.
+
+## Why Contractors Pay So Much Per Lead
+
+Construction & Contractors has one of the lowest conversion rates in home services, at just 2.61%. High job values invite intense competitive bidding — a kitchen remodel or home addition can be worth tens of thousands of dollars, so contractors can profitably bid clicks up far higher than a business selling a low-ticket service. That combination of expensive clicks and a low conversion rate is what pushes CPL to $165.67 and beyond.
+
+## Local Services Ads Cost Far Less
+
+Google Local Services Ads (LSA) for home services overall average $53 per lead as of February 2026, based on $6.72 million in observed ad spend across 888 contractors, with an average book rate of 43.9% on those leads. That's less than a third of the $165.67 Search median, and LSA leads also convert to booked jobs at a far higher rate than the 2.61% Search conversion figure.
+
+## Why the Gap Between Search and LSA Is So Large
+
+Search Ads bill per click and require a contractor's own landing page and follow-up process to convert that click into a lead, while LSA bills only when a real lead is generated and includes Google's own screening layer. For a category with a 2.61% Search conversion rate, that structural difference alone explains most of the gap between $165.67 and $53.
+
+## Where the $165.67 Median Runs Higher
+
+Specialty trades with larger average job values — roofing and window replacement in particular — push past $200 per lead, above the general contractor median. As with most home-service categories, job value and lead cost move together: the more a single won job is worth, the more competitors are willing to spend to win the click.
+
+## Turning Budget Into Lead Volume
+
+A $5,000 monthly Search budget buys roughly 30 leads at the $165.67 median CPL. The same $5,000 through Local Services Ads, at $53 per lead, buys roughly 94 leads — more than three times the volume, before even accounting for LSA's higher 43.9% book rate on top of that.
+
+## LSA Isn't a Full Replacement for Search
+
+LSA's screening layer and pay-per-lead model make it the more efficient channel for straightforward jobs, but it caps how much detail a contractor can convey compared to a dedicated landing page built around a specific service like kitchen remodels or additions. Most contractors running both channels use LSA to fill baseline lead volume cheaply, then reserve Search budget for the higher-value project types where a tailored page and more deliberate keyword targeting can justify the $165.67 median.
+
+## Bottom Line
+
+Run Local Services Ads alongside Search rather than relying on Search alone — at $53 versus $165.67, LSA is very likely the cheaper lead source for most general contractors, with a meaningfully higher book rate to match.
+
+Sources: LocaliQ/WordStream, "Search Advertising Benchmarks for Every Industry (2026 Data)"; industry Local Services Ads spend analysis (888 contractors, $6.72M tracked spend, February 2026).`
+  },
 ];
 
 export const blogCategories = [
