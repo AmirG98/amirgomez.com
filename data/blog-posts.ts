@@ -95747,6 +95747,321 @@ Run Local Services Ads alongside Search rather than relying on Search alone — 
 Sources: LocaliQ/WordStream, "Search Advertising Benchmarks for Every Industry (2026 Data)"; industry Local Services Ads spend analysis (888 contractors, $6.72M tracked spend, February 2026).`
   },
   {
+    id: "964",
+    title: "What's Quora Ads' Default Attribution Window in 2026?",
+    slug: "quora-ads-default-attribution-window-2026",
+    excerpt: "Quora Ads defaults to a 28-day click-through attribution window and a 1-day view-through window in 2026, per Quora's own advertiser support documentation.",
+    featuredImage: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-28",
+    category: "Marketing Technology",
+    tags: ["Quora Ads", "Attribution Window", "Conversion Tracking", "Native Advertising", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Quora Ads Default Attribution Window 2026",
+      metaDescription: "Quora Ads' default attribution window in 2026 is 28 days for click-through conversions and 1 day for view-through conversions, per Quora's advertiser docs.",
+      keywords: ["quora ads attribution window", "quora ads default attribution", "quora ads conversion tracking", "quora ads clickthrough window 2026"]
+    },
+    content: `Quora Ads' default attribution window in 2026 is 28 days for click-through conversions and 1 day for view-through conversions. That means a conversion event counts toward a campaign if it happens within 28 days of someone clicking the ad, or within 1 day of someone simply viewing it without clicking — both figures come directly from Quora's own advertiser support documentation on conversion metrics.
+
+## How the Two Windows Actually Work
+
+Click-through and view-through conversions are tracked separately inside Quora's reporting. A click-through conversion requires a click on the ad followed by a qualifying action (a purchase, signup, or other tracked event) within the 28-day window. A view-through conversion only requires that the person saw the ad — no click — and then completed the action within the much shorter 1-day window. Quora reports both metrics as separate columns, so it's possible for a single campaign to show meaningfully different totals depending on which metric an advertiser is reading, and pulling only the combined number can hide how much of it is coming from weak view-through signal versus a genuine click.
+
+## Why the View-Through Window Is So Much Shorter
+
+A 1-day view-through window is deliberately tight compared to the 28-day click window because view-through attribution is inherently weaker evidence of causation — someone scrolling past an ad without engaging is a much thinner signal than someone actively clicking it. Most ad platforms handle this the same way: Google Ads defaults its own view-through window to 1 day for standard display ads (3 days for engaged-view video), while allowing its click-through window to run a full 30 days by default. Quora's 28-day click / 1-day view split sits almost exactly in line with that same industry pattern rather than being an outlier.
+
+## What This Means for Reporting Accuracy
+
+Because Quora's default click-through window runs a full 28 days, campaigns with a longer consideration cycle — B2B software, financial products, or higher-ticket purchases that Quora's Q&A-driven audience tends to research — get a more complete accounting of delayed conversions than platforms defaulting to 7- or 14-day windows. Advertisers comparing Quora's reported conversion numbers against a shorter-window platform like Meta or TikTok should expect Quora's totals to look proportionally stronger simply because of the wider net, not necessarily because of better underlying performance. That gap becomes especially visible in the first few weeks of a new campaign, when a shorter-window platform will appear to "finish" counting conversions well before Quora's 28-day window has fully played out.
+
+## Where to Check the Setting
+
+Quora surfaces click-through and view-through conversion counts as separate metrics inside campaign-level reporting rather than a single blended figure, which is what makes it possible to isolate how much of a campaign's reported performance depends on the 1-day view-through window specifically. Advertisers running budget across Quora alongside other platforms should pull both metrics separately before combining any numbers into a single blended CPA or ROAS figure.
+
+## Bottom Line
+
+Read Quora Ads conversion reports with the 28-day click / 1-day view split in mind, and don't compare Quora's totals directly against a platform running a shorter default window without adjusting for the difference first.
+
+Sources: Quora Ads Help Center, "Conversion Metrics"; Google Ads Help Center, "About attribution models and conversion windows."`
+  },
+  {
+    id: "965",
+    title: "What's Taboola's Default Conversion Attribution Window in 2026?",
+    slug: "taboola-default-attribution-window-2026",
+    excerpt: "Taboola defaults to a 30-day click-through lookback window and a 24-hour view-through window in 2026, both adjustable inside its Pixel Settings dashboard.",
+    featuredImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-28",
+    category: "Marketing Technology",
+    tags: ["Taboola", "Attribution Window", "Native Advertising", "Conversion Tracking", "Programmatic Advertising"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Taboola Default Attribution Window 2026",
+      metaDescription: "Taboola's default attribution window in 2026 is 30 days for click-through conversions and 24 hours for view-through conversions, per Taboola's help docs.",
+      keywords: ["taboola attribution window", "taboola default lookback window", "taboola conversion tracking", "taboola native ads attribution 2026"]
+    },
+    content: `Taboola's default conversion attribution window in 2026 is 30 days for click-through conversions and 24 hours for view-through conversions. A click-through conversion counts when someone clicks a Taboola-served ad and completes a tracked action on the advertiser's site within 30 days; a view-through conversion counts when someone sees the ad, doesn't click, and completes that action within 24 hours.
+
+## Both Windows Are Configurable, Not Fixed
+
+Unlike some platforms that lock advertisers into a single default, Taboola lets advertisers adjust both lookback periods inside Pixel Settings under the Conversions tab. The click-through lookback window can be set anywhere from 1 to 30 days, and the view-through window can be set anywhere from 1 to 24 hours — so the 30-day and 24-hour figures are the platform's out-of-the-box defaults, not hard limits. Because both ranges top out exactly at the default, advertisers can only shorten Taboola's windows from where they start, not extend them further.
+
+## Why Native Advertising Leans Toward Longer Click Windows
+
+Taboola's ad units run as native content recommendations at the bottom of publisher articles, which puts them in front of people earlier in a research or browsing session rather than at the point of active purchase intent, the way a search ad typically does. That earlier-funnel placement is a big part of why Taboola defaults its click window to the full 30 days: content-driven native traffic tends to convert on a longer delay than a bottom-of-funnel search click would, since the reader is often just starting to research a topic rather than ready to buy.
+
+## Comparing Taboola's Defaults to Google, Meta, and Quora
+
+Google Ads defaults its click-through window to 30 days as well, with view-through defaulting to 1 day for standard display and 3 days for engaged-view video — so Taboola's 30-day click default matches Google's exactly. Quora Ads runs a similar 28-day click default with a 1-day view-through window. Taboola's 24-hour view-through default stands out against all three: it's notably more generous than the 1-day (24-hour, functionally the same length) windows those platforms use for view-through, but it applies to a fundamentally different kind of impression — a native content placement rather than a search result or Q&A feed slot.
+
+## What Changing the Lookback Window Does to Reported Numbers
+
+Shortening either window in Pixel Settings will reduce the number of conversions Taboola reports for identical ad spend, since fewer delayed conversions fall inside the measurement period — this is a reporting change, not a performance change. Advertisers who inherited a Taboola account from a previous media buyer should check the current Pixel Settings configuration before assuming the account is still running on Taboola's 30-day/24-hour defaults.
+
+## Bottom Line
+
+Check Pixel Settings before assuming Taboola's numbers are directly comparable to another platform's — if an advertiser has shortened the click window to match a faster-converting product, that changes the reported conversion count independent of any real change in campaign performance.
+
+Sources: Taboola Advertiser Help Center, "Defining and Creating Conversions"; Taboola Backstage API documentation, "look_back_window."`
+  },
+  {
+    id: "966",
+    title: "What's the Default Attribution Window for Walmart Connect Sponsored Products?",
+    slug: "walmart-connect-sponsored-products-attribution-window-2026",
+    excerpt: "Walmart Connect Sponsored Products default to a 14-day post-click attribution window in 2026, with 3-day and 30-day reporting windows also selectable.",
+    featuredImage: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-28",
+    category: "Marketing Technology",
+    tags: ["Walmart Connect", "Retail Media", "Attribution Window", "Sponsored Products", "Conversion Tracking"],
+    featured: false,
+    readingTime: 2,
+    seo: {
+      metaTitle: "Walmart Connect Attribution Window 2026",
+      metaDescription: "Walmart Connect Sponsored Products default to a 14-day post-click attribution window in 2026, with 3-day and 30-day reporting windows also selectable.",
+      keywords: ["walmart connect attribution window", "walmart sponsored products attribution", "walmart connect conversion tracking", "retail media attribution window 2026"]
+    },
+    content: `Walmart Connect Sponsored Products default to a 14-day post-click attribution window in 2026. A sale is credited to a sponsored ad if the shopper clicks it and completes a purchase on Walmart.com or in the Walmart app within 14 days — advertisers can also switch reporting to a 3-day or 30-day window, but 14 days is what the platform applies by default.
+
+## Sponsored Search, Onsite Display, and Offsite Media Share the Same Default
+
+The 14-day post-click default isn't unique to Sponsored Products — Walmart Connect applies it consistently across Sponsored Search, onsite display, and offsite media placements, which keeps reporting comparable across ad formats within the same account. Walmart's own first-party performance benchmark reporting, covering a full year of advertiser spend, is built on this same 14-day attribution basis, which is part of why 14 days functions as the platform's effective reporting standard even where a 3-day or 30-day view is also available.
+
+## Why the Window Length Changes Reported ROAS
+
+Choosing a longer attribution window doesn't just capture more sales — it changes the reported return on ad spend for identical ad spend, because a longer window simply has more time to credit purchases back to the same click. A campaign measured on a 30-day window will show a higher ROAS than the exact same campaign measured on a 3-day window, even though nothing about the underlying advertising changed. That makes the choice of window a reporting decision as much as a technical one, and it's why Walmart Connect exposes all three options rather than forcing every advertiser onto a single fixed number.
+
+## How 14 Days Compares to Other Retail Media Platforms
+
+Instacart Ads also defaults to a 14-day attribution window across its ad formats, which makes cross-platform ROAS comparisons between Walmart Connect and Instacart relatively apples-to-apples by default. Amazon Ads, by contrast, varies its default window by placement type, running shorter for some lower-funnel formats and longer for certain upper-funnel placements. Advertisers running budget across all three retail media networks should confirm each platform's active window setting before treating the ROAS figures as directly comparable, since a mismatched window is one of the most common reasons two retail media dashboards disagree even when the underlying campaigns are performing similarly.
+
+## A Practical Reconciliation Check
+
+Because the reporting window can be switched per report rather than fixed permanently to the account, it's worth confirming which window a specific export or dashboard view is using before sharing it externally — two exports pulled minutes apart on a 3-day versus 30-day setting from the same account will show different ROAS for the exact same spend.
+
+## Bottom Line
+
+Confirm which attribution window a Walmart Connect report is using before comparing its ROAS against another retail media platform or against a prior reporting period — a window change alone can move the number without any real change in campaign performance.
+
+Sources: Walmart Connect, Sponsored Products Advertiser FAQ; Walmart Connect first-party performance benchmark documentation (Feb 2024-Jan 2025 attribution basis).`
+  },
+  {
+    id: "967",
+    title: "What's the Attribution Window for Instacart Ads in 2026?",
+    slug: "instacart-ads-attribution-window-2026",
+    excerpt: "Instacart Ads use a 14-day attribution window in 2026 across Sponsored Product, Featured Product, and display campaigns, per Instacart's own documentation.",
+    featuredImage: "https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-28",
+    category: "Marketing Technology",
+    tags: ["Instacart Ads", "Retail Media", "Attribution Window", "Conversion Tracking", "Grocery Ecommerce"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Instacart Ads Attribution Window 2026",
+      metaDescription: "Instacart Ads use a 14-day attribution window in 2026 across Sponsored Product, Featured Product, and display campaigns, per Instacart's own ad documentation.",
+      keywords: ["instacart ads attribution window", "instacart ads conversion tracking", "instacart sponsored product attribution", "retail media attribution 2026"]
+    },
+    content: `Instacart Ads use a 14-day attribution window in 2026: a purchase is credited to an ad if the shopper buys the product within 14 days of clicking it. This window applies consistently across Instacart's main ad formats, including Sponsored Product campaigns, Featured Product campaigns, and display ads.
+
+## Multi-Touch Attribution Is Now the Default Model
+
+Alongside the 14-day window, Instacart now defaults to a linear multi-touch attribution model rather than a last-touch model. Linear multi-touch distributes credit for a sale across every ad a shopper interacted with in the lead-up to purchase, instead of giving 100% of the credit to the last ad clicked. Instacart still offers an improved last-touch model as an alternative for advertisers who prefer it, but multi-touch is what a new account sees by default, and switching between the two models changes which specific placement gets credited for a given sale even though the underlying 14-day window stays the same.
+
+## Why Multi-Touch Matters More on a Grocery Platform
+
+Grocery shopping trips on Instacart routinely involve a shopper seeing and interacting with several sponsored placements in a single session — a Featured Product banner, then a Sponsored Product result further down the search page. A last-touch model would give full credit to whichever ad happened to be clicked last, understating the contribution of earlier touchpoints in the same basket-building session. Multi-touch attribution is Instacart's answer to that specific dynamic, and it changes how advertisers should read which placement is "working" versus just capturing credit late in the funnel.
+
+## How This Compares to Other Retail Media Attribution Windows
+
+Instacart's 14-day window matches Walmart Connect's own 14-day default for Sponsored Products, which makes side-by-side ROAS comparisons between the two retail media networks reasonably consistent without extra adjustment. That consistency doesn't extend to every retailer, though — some retail media networks vary their default window by ad format, so a 14-day figure on one platform shouldn't automatically be assumed to match a same-named format on another without checking both the window length and the attribution model behind it.
+
+## What to Check Before Trusting a Cross-Platform ROAS Comparison
+
+Two numbers labeled "14-day ROAS" from different platforms are only genuinely comparable if both the window length and the underlying attribution model match. A Walmart Connect report on last-touch attribution and an Instacart report on linear multi-touch attribution, even with identical 14-day windows, will distribute credit differently across a shopper's path — so matching the window alone isn't sufficient to call the two numbers equivalent.
+
+## Bottom Line
+
+When comparing Instacart Ads performance against another retail media network, confirm both the attribution window length and the attribution model (multi-touch versus last-touch) — matching the window alone isn't enough if one platform is crediting the whole basket-building session and the other is crediting only the final click. That single check prevents the most common source of retail-media budget decisions being made on numbers that were never actually comparable in the first place.
+
+Sources: Instacart Ads documentation (docs.instacart.com), "Linear attribution reporting" and "Measuring display ad performance"; Perpetua Help Center, "Instacart Ads Attribution Window."`
+  },
+  {
+    id: "968",
+    title: "What's Etsy Offsite Ads' Attribution Window in 2026?",
+    slug: "etsy-offsite-ads-attribution-window-2026",
+    excerpt: "Etsy Offsite Ads attribute a sale to an ad click for a full 30 days in 2026, and every qualifying order in that window can carry a separate advertising fee.",
+    featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-28",
+    category: "Marketing Technology",
+    tags: ["Etsy Ads", "Offsite Ads", "Attribution Window", "Ecommerce Advertising", "Marketplace Advertising"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Etsy Offsite Ads Attribution Window 2026",
+      metaDescription: "Etsy Offsite Ads use a 30-day attribution window in 2026 — a purchase made within 30 days of an ad click is billed as an Offsite Ads fee, per Etsy's help docs.",
+      keywords: ["etsy offsite ads attribution window", "etsy offsite ads fee", "etsy ads conversion tracking", "etsy seller advertising 2026"]
+    },
+    content: `Etsy Offsite Ads use a 30-day attribution window in 2026. If a shopper clicks an Offsite Ad and completes a purchase from that seller's shop within 30 days, Etsy attributes the sale to the ad and charges the seller an Offsite Ads fee — even if the eventual purchase is for a different item than the one originally clicked.
+
+## Multiple Orders Inside One Window Can All Be Billed
+
+Because the window covers 30 full days rather than a single transaction, more than one order from the same shop can be attributed to the same original ad click if the shopper returns and buys again within that period. Each qualifying order placed inside the 30-day window can incur its own separate Offsite Ads fee, which means a single successful ad click has the potential to generate several billable events rather than just one — a dynamic that doesn't exist on pay-per-click platforms where the advertiser sets a bid upfront rather than being billed after the fact per attributed order.
+
+## Why This Window Is Longer Than Most Retail Media Platforms
+
+At 30 days, Etsy's Offsite Ads window runs longer than the 14-day defaults used by Instacart Ads and Walmart Connect Sponsored Products, and matches the 30-day click-through defaults used by platforms like Taboola, Google Ads, and Display & Video 360's Floodlight activities. Etsy's marketplace is built around handmade, custom, and gift-oriented purchases, which often involve a longer consideration period than a routine grocery reorder — a longer attribution window fits that slower-moving purchase pattern more closely than a shorter retail-media-style window would.
+
+## What This Means for Sellers Evaluating Offsite Ads Costs
+
+Because Offsite Ads is a mandatory program for sellers who cross Etsy's annual sales threshold and operates on this attribution-then-fee basis rather than a bid an advertiser controls upfront, the 30-day window is worth watching closely when reconciling shop finances: a spike in Offsite Ads fees in a given period may trace back to ad clicks that happened weeks earlier, not to anything that changed about the shop that same week. Sellers reviewing a month-end statement should look at click activity across the prior 30 days, not just the billing period itself, to understand where a fee actually originated.
+
+## A Structural Difference From Bid-Based Advertising
+
+Unlike Google Ads or Meta, where an advertiser sets a maximum bid and only pays when that bid wins an auction, Offsite Ads' fee is calculated as a percentage of the order value after the sale already happened, and it only exists because the 30-day attribution window connected that sale back to an ad click. That makes the attribution window itself the mechanism that determines whether a fee applies at all, not just how it's measured.
+
+## Bottom Line
+
+When an Offsite Ads fee shows up on a shop's statement, check ad-click activity going back a full 30 days rather than just the days immediately before the order — that's the actual window Etsy uses to make the attribution call.
+
+Sources: Etsy Help Center, "How Etsy's Offsite Ads Work."`
+  },
+  {
+    id: "969",
+    title: "What's the Default Attribution Window in Google Display & Video 360?",
+    slug: "dv360-default-attribution-window-2026",
+    excerpt: "Display & Video 360's Floodlight defaults credit conversions for 30 days after a click and 1 day after an impression in 2026, both adjustable per activity.",
+    featuredImage: "https://images.unsplash.com/photo-1618044619888-009e412ff12a?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-28",
+    category: "Marketing Technology",
+    tags: ["Display & Video 360", "Programmatic Advertising", "Attribution Window", "Floodlight", "Conversion Tracking"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "DV360 Default Attribution Window 2026",
+      metaDescription: "Display & Video 360's Floodlight defaults to a 30-day post-click and 1-day post-view attribution window in 2026, adjustable per Floodlight activity setup.",
+      keywords: ["dv360 attribution window", "display video 360 floodlight window", "dv360 conversion tracking", "programmatic attribution window 2026"]
+    },
+    content: `Display & Video 360's Floodlight conversion tracking defaults to a 30-day post-click window and a 1-day post-view window in 2026. A conversion counts toward a Floodlight activity if it happens within 30 days of someone clicking a DV360-served ad, or within 1 day of someone simply seeing an impression without clicking.
+
+## The Window Is Set Per Floodlight Activity, Not Account-Wide
+
+Unlike a single account-level setting, DV360's post-click and post-view windows are configured individually for each Floodlight activity, meaning a single advertiser can run different attribution windows for different conversion events in the same account — a shorter window for a low-consideration action like a newsletter signup, and a longer one for a high-consideration action like a completed purchase. The 30-day/1-day figures are simply what a new Floodlight activity defaults to before anyone adjusts it, and because the setting lives at the activity level, two conversion actions in the same account can legitimately be running on two different windows at once.
+
+## Same Defaults as Google Ads' Own Attribution System
+
+DV360's 30-day click / 1-day view default mirrors the same defaults Google Ads uses for its own conversion tracking (30-day click-through, 1-day view-through for standard display, 3-day for engaged-view video), which isn't a coincidence — both products sit inside Google's broader ads infrastructure and share the same underlying Floodlight-style conversion counting logic. Advertisers who run linked Google Ads and DV360 accounts under Google's consistent default windows get more directly comparable reporting than they would pairing DV360 against a third-party platform running different defaults, such as Taboola's 24-hour view-through default or Roku's 14-day view-through window for connected TV.
+
+## How Adjusting the Window Changes Reported Performance
+
+Widening a Floodlight activity's post-click window from 30 days to something longer will typically increase the number of conversions counted for identical campaign spend, since more of the natural purchase delay falls inside the measurement period. That's a reporting effect, not a performance change — which is why DV360 lets advertisers configure the window per activity rather than forcing every conversion type onto the same clock.
+
+## Where Advertisers Most Often Get This Wrong
+
+The most common reporting mistake in DV360 accounts isn't a wrong default — it's comparing two Floodlight activities with different windows as if they were on equal footing, or comparing a DV360 campaign's Floodlight numbers against a linked Google Ads account without confirming both are still running the shared 30-day/1-day default rather than a customized setting from an earlier campaign.
+
+## Bottom Line
+
+Check the specific Floodlight activity's configured window, not just the account default, before comparing conversion counts across two DV360 campaigns or against a linked Google Ads account — a mismatched window between activities is one of the more common causes of numbers that look inconsistent for no obvious reason. A quick audit of every active Floodlight activity's window settings, done once per quarter, catches this before it distorts a budget decision.
+
+Sources: Google Campaign Manager 360 / Display & Video 360 Help, "Floodlight conversion windows" and "About Floodlight and Floodlight conversions."`
+  },
+  {
+    id: "970",
+    title: "What's Roku Ads Manager's Attribution Window for Conversions?",
+    slug: "roku-ads-manager-attribution-window-2026",
+    excerpt: "Roku Ads Manager uses a 14-day view-through attribution window in 2026, meaning reported conversions keep climbing for up to two weeks after a campaign ends.",
+    featuredImage: "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-28",
+    category: "Marketing Technology",
+    tags: ["Roku Ads", "Connected TV Advertising", "Attribution Window", "CTV Marketing", "Conversion Tracking"],
+    featured: false,
+    readingTime: 2,
+    seo: {
+      metaTitle: "Roku Ads Manager Attribution Window 2026",
+      metaDescription: "Roku Ads Manager uses a 14-day view-through attribution window in 2026, so reported conversions can keep rising for two weeks after a campaign stops spending.",
+      keywords: ["roku ads attribution window", "roku ads manager conversion tracking", "connected tv attribution window", "ctv advertising conversion lag 2026"]
+    },
+    content: `Roku Ads Manager uses a 14-day view-through attribution window in 2026. A conversion can be credited to a Roku ad campaign if it happens within 14 days of someone being served that ad impression, per Roku's own Self Serve Help Center documentation on event tracking and reporting.
+
+## Why Conversion Counts Keep Rising After a Campaign Stops
+
+Because the window runs a full 14 days from the impression rather than closing when the campaign stops spending, advertisers should expect reported conversion numbers to keep increasing for up to two weeks after a Roku campaign has already ended. Pulling a performance report the day after a campaign wraps will understate the true result — the 14-day window means some of the conversions the campaign actually drove haven't been counted yet, and a side-by-side comparison against an earlier campaign that's had its full 14 days to mature will make the newer campaign look artificially weaker than it is.
+
+## Connected TV Advertising Runs on View-Through by Design
+
+Roku's attribution model leans on view-through conversions because connected TV ads, unlike search or social ads, are rarely clicked directly from the screen someone is watching — the ad is seen on a TV, and the resulting action (a purchase, a signup, a store visit) typically happens later, on a different device entirely. A 14-day view-through window is Roku's way of capturing that delayed, cross-device behavior pattern that's structurally built into how CTV advertising gets consumed, rather than trying to force a click-based model onto a medium where clicking isn't the primary way people interact with the ad.
+
+## How This Compares to Other View-Through Windows
+
+Most social and search platforms default their view-through window to a single day — Google Ads, Display & Video 360's Floodlight activities, and Quora Ads all use a 1-day view-through default — which makes Roku's 14-day window unusually long by comparison. That gap reflects the fundamental difference between a scroll-past ad impression on a phone and a 15- or 30-second ad seen during an actual TV viewing session, which better fits a genuine brand-awareness-to-purchase timeline than a 24-hour cutoff would.
+
+## What This Means for Campaign Reporting Cadence
+
+Because the full 14-day window needs to elapse before a campaign's conversion numbers are complete, pulling interim reports mid-flight is useful for pacing but shouldn't be treated as a final read on performance. Waiting the full window out before making a budget decision based on Roku's reported conversions avoids the common mistake of cutting a campaign that was actually still accumulating credited conversions from earlier impressions.
+
+## Bottom Line
+
+Wait at least two weeks after a Roku campaign ends before treating its final reported conversion numbers as complete — pulling the report too early will make the campaign look weaker than it actually performed, and comparing an incomplete report against a fully matured one from an earlier flight will make the trend look worse than it is.
+
+Sources: Roku Self Serve Help Center, "Event tracking and reporting FAQ."`
+  },
+  {
     id: "723",
     title: "OpenAI Launches ChatGPT Ads in India With 50+ Brands",
     slug: "chatgpt-ads-india-launch-2026",
