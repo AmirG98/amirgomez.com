@@ -96061,6 +96061,302 @@ Wait at least two weeks after a Roku campaign ends before treating its final rep
 
 Sources: Roku Self Serve Help Center, "Event tracking and reporting FAQ."`
   },
+  {
+    id: "971",
+    title: "How Do You Import Offline Conversions Into Microsoft Advertising?",
+    slug: "offline-conversion-import-microsoft-advertising-2026",
+    excerpt: "Import offline conversions into Microsoft Advertising via file upload or the Campaign Management API, matched to a Microsoft Click ID, with a mandatory 2-hour wait before data is accepted.",
+    featuredImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-29",
+    category: "Marketing Technology",
+    tags: ["Microsoft Advertising", "Bing Ads", "Offline Conversions", "Conversion Tracking", "Marketing Technology"],
+    featured: false,
+    readingTime: 4,
+    seo: {
+      metaTitle: "Import Offline Conversions Into Microsoft Ads",
+      metaDescription: "Import offline conversions into Microsoft Advertising by uploading a file or using the API, matched by Microsoft Click ID, after a required 2-hour wait.",
+      keywords: ["microsoft advertising offline conversions", "import offline conversions bing ads", "microsoft click id offline conversion", "offline conversion import 2026"]
+    },
+    content: `You import offline conversions into Microsoft Advertising by uploading a file — either once or on a recurring schedule — or by sending the data through the Campaign Management API, matching each offline event to the Microsoft Click ID (MSCLKID) that was captured when the original ad click happened. Before any of that works, you have to wait two hours after creating the offline conversion goal itself, or the data you send won't be applied.
+
+## The Three Ways to Send the Data
+
+Microsoft Advertising gives advertisers three paths for getting offline conversion data into an account: a one-time file upload for a single batch, a scheduled file upload that repeats automatically, or a direct API integration using the Campaign Management service. The file-based options work well for a business uploading CRM exports on a regular cadence; the API path suits advertisers who want offline data flowing in continuously without manual exports.
+
+## What Each Offline Conversion Record Needs
+
+A basic offline conversion record needs four things: the date, the time, the Microsoft Click ID from the original ad click, and the name of the conversion goal it should count against. Bulk uploads carry a few more required fields — Conversion Currency Code, Conversion Name, Conversion Time, Conversion Value, and the Microsoft Click ID — since a bulk file has to stand on its own without the context a single API call would carry. The Microsoft Click ID is the piece that makes the whole system work: without it, Microsoft Advertising has nothing to match the offline event back to.
+
+## The Two-Hour Wait Is Not Optional
+
+After you create an OfflineConversionGoal, Microsoft Advertising needs two hours before it will accept any offline conversion data tied to that goal. Send data before that window closes and it may simply not get applied — with no retry happening on Microsoft's end. Once you're past that setup wait and start sending real conversions, expect up to six hours before the data shows up in reporting; pulling a report five minutes after an upload will look emptier than it should, not because the upload failed but because the data hasn't propagated yet.
+
+## Volume Limits and Corrections
+
+Each upload request can carry up to 1,000 offline conversions — advertisers with larger volumes need to batch requests rather than pushing everything through in one call. Mistakes are recoverable: the Adjustment Type field lets you restate (correct the value or timing of) a previously uploaded conversion, or retract (delete) one entirely, referencing the original Conversion Name, Conversion Time, and Microsoft Click ID to identify which record to change.
+
+## Where This Differs From Regular Conversion Tracking
+
+Offline conversion import is a separate mechanism from the Universal Event Tracking (UET) tag that most Microsoft Advertising accounts already run for on-site conversions like form fills or purchases. UET captures what happens on your website in real time; offline conversion import is for everything that happens after the click but away from your site — a sale closed over the phone, an in-person purchase, a deal that closed in a CRM weeks later. Both can feed the same account, but they're built to capture fundamentally different kinds of conversion events.
+
+## Bottom Line
+
+If your sales cycle includes any step that happens off your website — a phone close, a showroom visit, a CRM-tracked deal — set up an OfflineConversionGoal now, wait out the two-hour activation window, and start sending data through either the scheduled file upload or the API rather than relying on UET alone to capture the full value of your Microsoft Advertising traffic.
+
+Sources: Microsoft Advertising documentation (learn.microsoft.com), "Tracking offline conversions," "OfflineConversionGoal Data Object," and "Offline Conversion Record - Bulk."`
+  },
+  {
+    id: "972",
+    title: "Is Google Consent Mode Required for Advertisers in Europe in 2026?",
+    slug: "google-consent-mode-required-europe-2026",
+    excerpt: "Yes — Google has required Consent Mode v2 for advertisers serving ads to EEA users since March 2024, and losing it in 2026 cuts off remarketing and conversion modeling for that traffic.",
+    featuredImage: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-29",
+    category: "Marketing Technology",
+    tags: ["Google Consent Mode", "GDPR", "Google Ads", "GA4", "Marketing Technology"],
+    featured: false,
+    readingTime: 4,
+    seo: {
+      metaTitle: "Is Google Consent Mode Required in Europe 2026?",
+      metaDescription: "Yes, Google Consent Mode v2 is required for advertisers serving ads to EEA users in 2026, or remarketing and conversion modeling stop working for that traffic.",
+      keywords: ["google consent mode required europe", "consent mode v2 2026", "google ads eea requirement", "consent mode ga4 remarketing"]
+    },
+    content: `Yes. Google has required advertisers serving ads to users in the European Economic Area to implement Consent Mode v2 through a Google-certified consent management platform since March 2024, and that requirement is still in force in 2026. An advertiser running Google Ads or Google Analytics 4 without it loses remarketing, conversion modeling, and ad personalization for every EEA visitor — the tags simply stop collecting usable data for that traffic.
+
+## Why This Exists
+
+The requirement traces back to the EU's Digital Markets Act, which classifies Google as a regulatory "gatekeeper" and requires it to obtain explicit, verifiable consent before collecting or using personal data from European users for advertising purposes. Consent Mode v2 is Google's technical answer to that obligation — it standardizes how a site communicates a visitor's cookie consent choices to Google's tags, so ad and analytics data collection can adjust automatically based on what that visitor actually agreed to.
+
+## What Breaks Without It
+
+Without Consent Mode v2 correctly implemented, Google's tags stop collecting advertising-related data on EEA visitors entirely. That means no remarketing lists built from that traffic, no conversion modeling to fill in the gaps left by visitors who decline tracking, and shrinking usable audience sizes for any campaign targeting Europe. It doesn't just reduce data quality — measurable EEA performance can start looking artificially worse than it actually is, because Google can no longer model around the consent gaps the way it does for advertisers who have Consent Mode properly in place.
+
+## The 2026 Change That Raises the Stakes
+
+On June 15, 2026, Google made ad_storage the sole authority for advertising data collected on Google Ads accounts linked to a consent management platform — tightening how strictly the ad_storage consent signal governs what gets collected and used. Combined with Safari's Intelligent Tracking Prevention and the ongoing phase-out of third-party cookies in Chrome, direct cookie-based tracking is becoming less reliable across the board, which makes Consent Mode's modeling capability — filling gaps with statistical estimates rather than raw cookie data — more central to accurate EEA reporting than it was when the requirement first rolled out in 2024.
+
+## What Advertisers Running EEA Traffic Should Check
+
+- **Confirm a Google-certified CMP is installed** — not just any cookie banner, since Google Consent Mode only recognizes signals from certified partners
+- **Verify Basic or Advanced Consent Mode is actually firing** — a CMP installed but misconfigured provides no more protection than having none at all
+- **Check Google Analytics 4's consent settings** under Admin, to confirm consent state is being read and applied correctly to EEA traffic specifically
+
+## Bottom Line
+
+If your Google Ads or GA4 account serves any ads or collects any analytics data from EEA visitors, Consent Mode v2 isn't optional in 2026 — it's the baseline requirement for keeping remarketing and conversion modeling functional for that traffic, and the June 2026 change to ad_storage's authority makes a correct implementation matter more, not less.
+
+Sources: 2026 Consent Mode v2 implementation coverage from Stape, ConsentPixel, and AuditSocials; Google Analytics Help, consent settings documentation (support.google.com/analytics).`
+  },
+  {
+    id: "973",
+    title: "What's a Good Event Match Quality Score for Meta's Conversions API?",
+    slug: "good-event-match-quality-score-meta-conversions-api-2026",
+    excerpt: "A good Event Match Quality score for Meta's Conversions API is 7.0 or higher out of 10 — Meta's own internal benchmark sits near 6.0, and scores above 8.0 are considered excellent.",
+    featuredImage: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-29",
+    category: "Facebook Ads",
+    tags: ["Meta Ads", "Conversions API", "Event Match Quality", "Conversion Tracking", "Facebook Ads"],
+    featured: false,
+    readingTime: 4,
+    seo: {
+      metaTitle: "Good Event Match Quality Score for Meta CAPI",
+      metaDescription: "A good Event Match Quality score for Meta's Conversions API is 7.0+ out of 10. Meta's internal benchmark is around 6.0; above 8.0 is excellent.",
+      keywords: ["good event match quality score meta", "meta conversions api emq benchmark", "event match quality 2026", "meta capi match quality score"]
+    },
+    content: `A good Event Match Quality (EMQ) score for Meta's Conversions API is 7.0 or higher out of a possible 10. That's the threshold Meta associates with optimal ad delivery and accurate attribution. Meta's own stated internal benchmark sits around 6.0, scores between 6.0 and 7.0 are flagged as needing improvement, and anything below 6.0 is treated as a real problem for how well events get matched to real Facebook or Instagram profiles.
+
+## What EMQ Actually Measures
+
+Event Match Quality scores each conversion event you send through the Conversions API based on how much reliable customer information came with it — email, phone number, name, location data, and similar identifiers Meta can hash and compare against its own user records. The more of that identifying information a given event carries, and the more accurately it matches a real account, the higher the score. It's a per-event-type metric, not a single account-wide number, which is why a Purchase event and a PageView event on the same account can carry very different scores.
+
+## Targets Differ by Event Type
+
+- **Purchase events:** 8.8 to 9.3 is the ideal range, since these are the highest-value events advertisers optimize toward and Meta expects the richest data to accompany them
+- **AddToCart events:** aim for 8.0 or above
+- **PageView events:** 6.5 to 7.5 is considered a normal range, reflecting that page views typically carry less identifying data than a completed purchase
+
+## The Single Biggest Lever
+
+Sending a hashed email address with every event is the change that moves EMQ the most — reported to lift scores by up to 4 points on its own. Email alone typically gets a business into the 5-to-6 range; adding phone number, name, and location data on top of that commonly pushes scores into the 7-to-9 range. The pattern holds across most implementations: match quality is really a function of how much first-party identity data makes it into each server-side event call, not a setting to tweak inside Events Manager itself.
+
+## Why Low EMQ Quietly Costs Money
+
+A low Event Match Quality score doesn't produce an error or a warning banner — it degrades performance silently. Events Meta can't confidently match to a real account get discounted in how much weight they carry for optimization, which means campaigns bidding toward a conversion event with poor match quality end up optimizing against noisier, less reliable data than an advertiser sending well-matched events with the same nominal event volume.
+
+## How to Check Your Own Score
+
+EMQ is visible directly inside Meta Events Manager, broken out by event type and by data source (Pixel versus Conversions API), which makes it possible to see exactly which event is dragging the account average down rather than guessing from overall performance alone.
+
+## Bottom Line
+
+Check Events Manager for your account's current EMQ by event type, and if Purchase events are sitting below 8.0, start by making sure hashed email is present on every one of those events before adding other identifiers — it's the single change most likely to move the score into the range Meta treats as optimal.
+
+Sources: Triple Whale, "Event Match Quality (EMQ): What Actually Matters on Meta & TikTok"; LeadsBridge, "Meta event match quality (EMQ): What it is and how to improve it."`
+  },
+  {
+    id: "974",
+    title: "What Is Google Analytics 4's Default Event Data Retention Period?",
+    slug: "ga4-default-event-data-retention-period-2026",
+    excerpt: "GA4's default event data retention period is 2 months for a new property, not the commonly assumed 14 months — and it only limits Explorations reports, not standard reporting.",
+    featuredImage: "https://images.unsplash.com/photo-1487070183336-b863922373d4?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-29",
+    category: "Analytics",
+    tags: ["Google Analytics 4", "GA4", "Data Retention", "Analytics", "Marketing Technology"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "GA4 Default Event Data Retention Period",
+      metaDescription: "GA4's default event data retention is 2 months for a new property, not 14. It only limits Explorations reports, not standard GA4 reporting.",
+      keywords: ["ga4 default data retention", "google analytics 4 event data retention", "ga4 data retention 2 months", "ga4 data settings"]
+    },
+    content: `Google Analytics 4's default event data retention period is 2 months for any newly created property — not the 14 months many marketers assume, which is only the longer of the two selectable options, not the default. This setting controls how far back Explorations (ad hoc analysis) reports can query raw event- and user-level data; it does not affect GA4's standard reports, which stay fully available regardless of how the retention setting is configured.
+
+## Where to Check and Change It
+
+The setting lives under Admin, then Data Settings, then Data Retention, inside any GA4 property. Two options are available to standard GA4 properties: 2 months or 14 months. Properties on Google Analytics 360 get more room — 26, 38, or 50 months — reflecting the higher data volumes and longer-term analysis those accounts are typically built for.
+
+## What This Setting Actually Limits
+
+The retention window only governs Explorations — GA4's free-form analysis tool for building custom segments, funnels, and path explorations directly against event-level data. Once that window passes, the underlying event and user data used by Explorations ages out and can't be queried anymore. Standard reports, the pre-built dashboards most users check day to day, pull from aggregated data that isn't subject to this same retention limit, which is why a property can still show a year-over-year trend in standard reporting even with the 2-month setting left untouched.
+
+## Why the Default Catches People Off Guard
+
+Because the 2-month default only affects a specific report type, it's easy for a team to run a property for months without noticing anything is missing — until someone tries to build a custom exploration querying event-level data from further back than two months and finds the data simply isn't there anymore. By the time that gap is noticed, the earlier data is unrecoverable; retention settings only apply going forward from when they're changed, not retroactively.
+
+## What to Do About It
+
+Switching a property from the 2-month default to the maximum 14 months available on standard GA4 costs nothing and takes one click in Data Settings. There's no performance or cost tradeoff to choosing the longer window on a standard property — the only reason 2 months remains the default is that Google set it conservatively at property creation, not because a longer window carries any real downside.
+
+## If You Need Data Beyond 14 Months
+
+For a standard (non-360) property, 14 months is the hard ceiling inside GA4 itself — there's no workaround to extend it further within the interface. The way around that limit is exporting raw event data to BigQuery, which isn't subject to the Data Retention setting at all; once an event lands in BigQuery, it stays there indefinitely, governed only by whatever retention policy is set on the BigQuery dataset itself. Businesses that need year-over-year, event-level comparisons beyond 14 months typically set up that export well before they need the historical data, since — like the Data Retention setting — BigQuery only captures data going forward from when the export is turned on.
+
+## Bottom Line
+
+Check Admin, Data Settings, Data Retention on every GA4 property you run, and switch it to 14 months now if it's still sitting on the 2-month default — waiting to do this only means losing access to Explorations data for the months that pass before the change is made.
+
+Sources: GA4.com, "Data Retention in Google Analytics (GA4)"; Fathom Analytics, "GA4 Data Retention: All You Need To Know."`
+  },
+  {
+    id: "975",
+    title: "What's the Minimum Daily Budget for a Google Performance Max Campaign?",
+    slug: "google-performance-max-minimum-daily-budget-2026",
+    excerpt: "Google's official baseline is an average daily budget of at least 3x your target CPA for Performance Max, though 10-20x target CPA is what most advertisers need for the algorithm to perform well.",
+    featuredImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-29",
+    category: "Google Ads",
+    tags: ["Google Ads", "Performance Max", "PMax", "Ad Budget", "Google Ads Strategy"],
+    featured: false,
+    readingTime: 4,
+    seo: {
+      metaTitle: "Performance Max Minimum Daily Budget 2026",
+      metaDescription: "Google's baseline for a Performance Max campaign is 3x your target CPA as a daily budget, though 10-20x target CPA is what most advertisers actually need.",
+      keywords: ["performance max minimum daily budget", "pmax budget 2026", "google ads pmax minimum spend", "performance max target cpa budget"]
+    },
+    content: `Google's own baseline recommendation is an average daily budget of at least three times your target cost-per-action (CPA) for a Performance Max campaign. In practice, most advertisers need closer to 10 to 20 times target CPA as a daily budget to get Performance Max's automated bidding through its learning phase quickly and performing at a stable level.
+
+## The Official 3x Rule
+
+Google's guidance on recommended average daily budgets ties the minimum directly to your conversion goal rather than to a flat dollar figure: set the budget at least three times what you're willing to pay per conversion. A campaign with a $40 target CPA should run a daily budget of at least $120 under this rule — below that, Performance Max doesn't have enough room in a single day to test its way toward efficient delivery.
+
+## Why 3x Is a Floor, Not a Target
+
+The 3x figure is Google's stated minimum, not its recommendation for good performance. Budgets in the 10x to 20x target CPA range give the algorithm meaningfully more room to explore audiences, placements, and creative combinations during the campaign's learning period, which shortens the time it takes to reach stable, efficient delivery. A campaign funded at exactly 3x CPA can technically run, but it's likely to spend more time in an unstable, exploratory state than one funded closer to the 10x-20x range.
+
+## A Practical Dollar Floor
+
+- **Daily spend:** most practical guidance puts a workable minimum around $50 to $100 per day, separate from the CPA-based multiplier, for campaigns without an established CPA history yet
+- **Monthly conversion volume:** campaigns spending under roughly $3,000 a month rarely generate the 30 to 50 conversions Performance Max needs in that window to optimize its bidding effectively
+
+## What Happens When a Campaign Is Under-Budgeted
+
+A Performance Max campaign running below its effective minimum tends to show erratic day-to-day performance — cost per conversion swinging widely between days — because the algorithm never accumulates enough conversion volume in any given period to settle into a stable bidding pattern. That instability is often mistaken for the campaign type simply "not working," when the underlying issue is a budget too thin to feed the automation the data volume it needs.
+
+## Daily Budget Isn't a Hard Daily Cap
+
+Google Ads spends against an average daily budget, not a fixed daily ceiling — on any individual day, actual spend can run up to double the set daily budget when Performance Max sees stronger opportunity, as long as spend averages out to the set amount across the billing cycle. Setting a budget right at the calculated minimum leaves no cushion for those higher-opportunity days, which is another reason advertisers who fund closer to the 10x-20x range tend to see steadier delivery than those running exactly at the 3x floor.
+
+## Bottom Line
+
+Calculate your target CPA before setting a Performance Max budget, then fund the campaign at a minimum of 3x that figure — and budget closer to 10x-20x if you want to reach stable performance faster rather than spend weeks in an unstable learning phase.
+
+Sources: Google Ads Help, "Recommended average daily budget" and "Fix 'Limited by budget' bid adjustments" (support.google.com/google-ads); 2026 Performance Max budget guidance cross-checked against Get-Ryze and Data Bid Machine.`
+  },
+  {
+    id: "976",
+    title: "How Do You Import Offline Conversions Into TikTok Ads?",
+    slug: "offline-conversion-import-tiktok-ads-2026",
+    excerpt: "Import offline conversions into TikTok Ads through the Offline Events API, an integration partner, or a manual upload in Events Manager — but the event must have happened within the last 28 days.",
+    featuredImage: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-09-29",
+    category: "Marketing Technology",
+    tags: ["TikTok Ads", "Offline Conversions", "Events API", "Conversion Tracking", "Marketing Technology"],
+    featured: false,
+    readingTime: 4,
+    seo: {
+      metaTitle: "Import Offline Conversions Into TikTok Ads",
+      metaDescription: "Import offline conversions into TikTok Ads via the Offline Events API or manual upload in Events Manager, within a 28-day matching window.",
+      keywords: ["tiktok ads offline conversions", "tiktok offline events api", "import offline conversions tiktok", "tiktok events manager offline upload"]
+    },
+    content: `You import offline conversions into TikTok Ads through one of three paths: TikTok's Offline Events API for automated, ongoing data feeds; an approved integration partner that handles the connection for you; or a manual upload directly inside Events Manager. Whichever method is used, the offline event has to have happened within the previous 28 days, or TikTok won't be able to match it back to an ad interaction.
+
+## The Three Upload Paths
+
+TikTok's Business Help Center describes offline conversions as a way to measure how TikTok ads lead to actions that happen away from a website or app — an in-store purchase, an offline subscription, a sale closed after the initial click. The Offline Events API is the path TikTok describes as the most robust, sending first-party conversion data directly from an advertiser's own systems back into TikTok on an ongoing basis. Advertisers without the engineering resources to build that integration can go through an approved third-party partner instead, or upload data manually.
+
+## Manual Upload, Step by Step
+
+- **Open Ads Manager** and go to Tools, then Events
+- **Select Connect Data Source**, then choose Offline as the data source type
+- **Name the offline event set** so it's identifiable alongside any other data sources connected to the account
+- **Select Create**, then Upload Events to push the file in
+
+This manual path works for a business uploading data in occasional batches — a monthly CRM export, for instance — without needing to maintain an API connection.
+
+## The 28-Day Matching Window Is the Constraint That Matters
+
+TikTok will only match an offline event to a prior ad interaction if that event occurred within the previous 28 days. This mirrors TikTok's standard 28-day click attribution window, and it means offline data has a real shelf life for attribution purposes — a sale that closes 40 days after the ad click that started it can still be recorded as revenue in a CRM, but TikTok has no mechanism to credit that ad interaction once the 28-day window has passed. View-through matching is even tighter, following TikTok's standard 1-day view-through window rather than the 28-day click window.
+
+## Why the API Is the Recommended Default
+
+Manual uploads work, but they depend on someone remembering to export and upload data on a schedule — and a missed upload cycle can quietly push conversions outside the 28-day matching window before they're ever sent. An API integration removes that dependency by sending data automatically as offline events happen, which keeps conversions comfortably inside the matching window rather than racing against it.
+
+## Bottom Line
+
+If your sales cycle regularly closes more than a few weeks after the ad click — common for higher-consideration purchases — prioritize getting the Offline Events API or an integration partner in place over relying on manual uploads, since a delayed manual upload risks pushing real conversions outside TikTok's 28-day matching window before they're ever counted.
+
+Sources: TikTok for Business Help Center, "About Events API for Offline" and "About Offline Conversions" (ads.tiktok.com/help).`
+  },
 ];
 
 export const blogCategories = [
