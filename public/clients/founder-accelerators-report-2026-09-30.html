@@ -101,6 +101,8 @@
   .js .rv { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1); }
   .js .rv.in { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) { .js .rv { opacity: 1; transform: none; transition: none; } }
+  .steps-bucket { font-family: var(--display); font-size: 12.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); margin: 26px 0 14px; }
+  .steps-bucket:first-of-type { margin-top: 0; }
   @media print { body { background: #fff; color: #111; } .js .rv { opacity: 1 !important; transform: none !important; } .picker, #notes-save { display: none !important; } }
   .tbd { opacity: .5; font-style: italic; font-weight: 400 !important; letter-spacing: .01em; }
   .v.tbd { font-size: 15px !important; }
@@ -229,13 +231,18 @@
   <section id="pasos">
     <div class="sec-head rv"><span class="n">05</span><h2>Próximos pasos</h2></div>
     <div class="sec-rule rv"></div>
+    <h3 class="steps-bucket rv">AI Brain</h3>
     <ol class="steps-list">
       <li><span class="sn">01</span><span><b>Feedback de Ignacio en los guiones</b> y grabación de los clips de intro. Después, edición con el material de social proof.</span></li>
       <li><span class="sn">02</span><span><b>Lanzar el A/B de la landing B:</b> CTA above the fold + social proof de los clips. Antes, definir si se usan las caras de la community call o se blurrean.</span></li>
       <li><span class="sn">03</span><span><b>Bajar el botón de gestionar suscripción al fondo</b> de las landings.</span></li>
-      <li><span class="sn">04</span><span><b>Medir el email de seguimiento:</b> aperturas, respuestas y bookings recuperados desde que está activo.</span></li>
-      <li><span class="sn">05</span><span><b>Seguimiento de Ezequiel:</b> mes de prueba con el Brain y retomar la conversación del 1:1 en ~3 semanas.</span></li>
-      <li><span class="sn">06</span><span><b>Consolidar los números</b> de la ventana completa en el próximo reporte, con CPA del Brain y lectura del 1:1 contra benchmarks.</span></li>
+      <li><span class="sn">04</span><span><b>Consolidar los números del Brain</b> en el próximo reporte: trials, pagos y CPA sobre la ventana completa.</span></li>
+    </ol>
+    <h3 class="steps-bucket rv">1:1</h3>
+    <ol class="steps-list">
+      <li><span class="sn">01</span><span><b>Medir el email de seguimiento:</b> aperturas, respuestas y bookings recuperados desde que está activo.</span></li>
+      <li><span class="sn">02</span><span><b>Seguimiento de Ezequiel:</b> mes de prueba con el Brain y retomar la conversación del 1:1 en ~3 semanas.</span></li>
+      <li><span class="sn">03</span><span><b>Consolidar leads y llamadas del 1:1</b> de la ventana completa contra los benchmarks que venimos usando.</span></li>
     </ol>
   </section>
 
