@@ -96644,6 +96644,393 @@ Don't assume Consent Mode setup covers your CCPA obligations — if you serve Ca
 
 Sources: Google Ads Help, "Helping advertisers comply with the U.S. states' privacy laws" (support.google.com/google-ads/answer/9614122); Martech, "Google Ads intros 'restricted data processing' capability for CCPA compliance."`
   },
+  {
+    id: "983",
+    title: "How Does Google Ads Track Conversions Across Devices?",
+    slug: "google-ads-cross-device-conversion-tracking-2026",
+    excerpt: "Google Ads tracks cross-device conversions using observed data from signed-in Google users plus privacy-safe modeled data, not third-party cookies.",
+    featuredImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-01",
+    category: "Google Ads",
+    tags: ["Google Ads", "Cross-Device Tracking", "Conversion Tracking", "Enhanced Conversions", "Attribution"],
+    featured: false,
+    readingTime: 4,
+    seo: {
+      metaTitle: "How Google Ads Tracks Cross-Device Conversions",
+      metaDescription: "Google Ads tracks cross-device conversions by combining observed data from signed-in Google users with privacy-safe modeled data, no cookies required.",
+      keywords: ["google ads cross-device conversion tracking", "how does google ads track conversions across devices", "google ads modeled conversions", "enhanced conversions cross-device"]
+    },
+    content: `Google Ads tracks a cross-device conversion — someone clicking an ad on their phone and converting later on a desktop — by combining two data sources: observed data from users signed into a Google Account on multiple devices, and privacy-safe modeled data that estimates the cross-device conversions it can't directly observe. Neither method relies on third-party cookies.
+
+## Observed Data: Signed-In Users
+
+When a person is signed into their Google Account on more than one device, Google can directly observe that the same person clicked an ad on one device and converted on another. This observed data forms the baseline of cross-device reporting and is the most reliable layer, since it's based on an actual logged-in match rather than a prediction.
+
+## Modeled Data: Filling the Gaps
+
+Not every user stays signed in everywhere, so Google layers in modeled data: statistical models trained on the observed, privacy-safe signals from users who have signed into Google services are used to estimate conversions that can't be directly traced. Google's own cross-device methodology documentation describes this as combining observed and modeled conversions into a single blended report, rather than showing advertisers two separate numbers.
+
+## Enhanced Conversions Strengthens the Match
+
+Enhanced conversions improve this matching by securely sending a hashed version of first-party data you already collect, typically a customer's email address, back to Google at the time of conversion. Because a large share of web users stay signed into a Google account across their devices and browsers, that hashed identifier can be matched against the same person who clicked your ad, even if the click and the conversion happened on two different devices or browsers.
+
+## What This Means for Your Reporting
+
+- **Your "conversions" number already includes cross-device activity** — Google Ads doesn't report cross-device conversions as a separate line item by default; they're folded into your standard conversion counts.
+- **Enabling Enhanced Conversions improves the match rate** — advertisers who haven't set it up are likely under-reporting conversions that happened across devices, since fewer of those journeys get matched.
+- **None of this depends on third-party cookies** — the entire system is built on first-party, signed-in-user signals, which is why Google has continued investing in it as cookie-based tracking fades.
+
+## A Common Misreading of This Data
+
+Advertisers sometimes assume a dip in reported conversions means their campaign got worse, when the actual cause is a dip in cross-device match rate — fewer users staying signed in, a tracking change on the landing page, or Enhanced Conversions data quality degrading. Before diagnosing a conversion drop as a targeting or creative problem, check whether your match rate for Enhanced Conversions has shifted in the same period; Google Ads surfaces this under the diagnostics section of each conversion action.
+
+## How to Check Your Current Setup
+
+- **Open Goals, then Conversions** in your Google Ads account and select the conversion action you want to check.
+- **Look at the "Enhanced conversions" status** — it will show as enabled, needs attention, or not set up.
+- **Review the diagnostics tab** for that conversion action, which reports match rate and any data quality issues Google has flagged.
+
+## Bottom Line
+
+If your Google Ads account isn't using Enhanced Conversions yet, cross-device journeys in your funnel are more likely to go unmatched and your true conversion volume is probably higher than what's reported — check your conversion action settings and turn it on.
+
+Sources: Google Ads Help, "Understand your conversion tracking data" (support.google.com/google-ads/answer/6270625); Google, "Calculating Cross-Device Conversions" methodology documentation (services.google.com/fh/files/helpcenter/cross_device_methodology.pdf).`
+  },
+  {
+    id: "984",
+    title: "What's the Default Session Timeout in GA4?",
+    slug: "ga4-default-session-timeout-2026",
+    excerpt: "GA4's default session timeout is 30 minutes of inactivity, adjustable from a minimum of 5 minutes to a maximum of 7 hours 55 minutes.",
+    featuredImage: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-01",
+    category: "Analytics",
+    tags: ["GA4", "Google Analytics 4", "Session Timeout", "Analytics Configuration", "Marketing Technology"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "GA4 Default Session Timeout: 30 Minutes",
+      metaDescription: "GA4's default session timeout is 30 minutes of inactivity, adjustable between 5 minutes and 7 hours 55 minutes in the Data Stream settings.",
+      keywords: ["ga4 default session timeout", "google analytics 4 session timeout", "ga4 session duration default", "how to change ga4 session timeout"]
+    },
+    content: `GA4's default session timeout is 30 minutes of inactivity — if a user doesn't trigger a new event within 30 minutes of their last one, GA4 ends that session. You can adjust this setting anywhere from a minimum of 5 minutes up to a maximum of 7 hours 55 minutes.
+
+## Where Session Timeout Lives in GA4
+
+Session timeout is configured per data stream, not account-wide: go to Admin, then Data Streams, select your web stream, open Configure Tag Settings, then Show More, and adjust the "Session timeout" value under Adjust Session Timeout. This is a web-specific setting — it's distinct from how GA4 counts "engaged sessions," which require a session to last at least 10 seconds, include a conversion event, or include two or more page or screen views.
+
+## Why the Default Matters
+
+A 30-minute window means a visitor who leaves your site, grabs coffee, and comes back 40 minutes later to finish checkout gets counted as a new session, not a continuation of the first one. That split affects session-based metrics like sessions per user, average engagement time per session, and any session-scoped conversion reporting — not the events themselves, which are always recorded, but how GA4 groups them.
+
+## When to Raise or Lower It
+
+- **Content and research-heavy sites** often raise the timeout, since users genuinely pause for long stretches — reading a long guide, comparing options in another tab — without actually disengaging from that visit.
+- **E-commerce checkout funnels** sometimes shorten it to better reflect true single-visit purchase behavior and avoid conflating a user's unrelated return visit with their original session.
+- **Most standard marketing sites** can leave the default alone, since 30 minutes reasonably approximates a single browsing session for most verticals.
+
+## Session Timeout Doesn't Change What Gets Recorded
+
+It's worth being precise about what this setting actually controls: every event GA4 collects is still recorded regardless of the timeout value you choose. What changes is only how those events get grouped into sessions after the fact. A shorter timeout produces more, shorter sessions out of the same underlying event stream; a longer timeout produces fewer, longer ones. That distinction matters because teams sometimes chase a "better" engagement rate by adjusting session timeout, when the actual user behavior behind the data hasn't changed at all — only the grouping has.
+
+## Signs Your Timeout Setting Might Be Wrong for Your Site
+
+- **Unusually high bounce-like behavior on long-form content** can indicate the timeout is too short for how long users genuinely spend reading before interacting again.
+- **Session counts that look inflated relative to your traffic volume** can indicate users are naturally pausing mid-visit — browsing a product, stepping away, then returning — in a way the current timeout is splitting into separate sessions.
+- **A multi-day sales cycle with form fills spread across visits** is a signal to look at your conversion window and attribution settings rather than session timeout, since session timeout can't meaningfully bridge gaps longer than its 7-hour-55-minute ceiling.
+
+## Bottom Line
+
+Don't change GA4's session timeout without a specific reason tied to your users' real behavior — the 30-minute default is a reasonable approximation for most sites, and adjusting it mainly matters if your typical visit includes a long, natural pause.
+
+Sources: Measure School, "What are Google Analytics 4 Sessions" (measureschool.com/google-analytics-4-sessions); Perfist, "What is Session Timeout in Google Analytics 4, Why is it Important and How to Configure It?" (perfist.com).`
+  },
+  {
+    id: "985",
+    title: "How Much Does a Garage Floor Coating Lead Cost on Google Ads in 2026?",
+    slug: "garage-floor-coating-epoxy-cost-per-lead-google-ads-2026",
+    excerpt: "Epoxy and garage floor coating leads cost $85-$200 on Google Ads search in 2026, with a 15-25% close rate, well above Local Services Ads at $20-$65.",
+    featuredImage: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-01",
+    category: "Google Ads",
+    tags: ["Google Ads", "Garage Floor Coating", "Epoxy Flooring", "Cost Per Lead", "Home Services Marketing"],
+    featured: false,
+    readingTime: 4,
+    seo: {
+      metaTitle: "Garage Floor Coating Cost Per Lead on Google Ads 2026",
+      metaDescription: "Garage floor coating and epoxy leads cost $85-$200 on Google Ads search in 2026, versus $20-$65 on Google Local Services Ads, per 2026 contractor data.",
+      keywords: ["garage floor coating cost per lead", "epoxy flooring google ads cost", "garage floor coating google ads 2026", "epoxy contractor lead generation cost"]
+    },
+    content: `Garage floor coating and epoxy contractors pay $85 to $200 per lead running Google Ads search campaigns in 2026, with a typical 15-25% close rate, according to Minyona's 2026 contractor lead-generation data. That's notably higher than Google Local Services Ads, which run $20-$65 per lead for the same trade.
+
+## Why Search Costs More Than Local Services Ads
+
+Google Ads search campaigns bill you for every click regardless of whether it converts, while Local Services Ads only charge when a lead actually contacts you — which is the core reason the per-lead cost looks so different between the two. Search leads are exclusive to your business the moment someone fills out your form or calls, but you're absorbing the cost of clicks that never convert, which pushes the effective per-lead price well above LSA's pay-per-lead model.
+
+## How It Compares to Other Lead Sources
+
+- **Google Local Services Ads** — $20-$65 per lead, mostly exclusive, rotating among qualified pros, with a 20-32% close rate.
+- **Angi/HomeAdvisor** — $20-$80 per lead, shared across 3-5 companies, with a lower 5-12% close rate.
+- **Thumbtack** — $18-$65 per contact, also shared, with an 8-15% close rate.
+- **Exclusive Meta leads** — $45-$110 per lead, single-company exclusive, with a 20-38% close rate.
+
+## The Metric That Actually Matters: Cost Per Job
+
+Raw cost per lead is misleading on its own because close rates vary so widely by source. A $65 exclusive Local Services Ads lead closing at 25% works out to roughly $260 per acquired job, while a $45 shared platform lead closing at only 8% works out to about $562 per job — nearly double the real acquisition cost despite the lower sticker price per lead. Google Ads search, despite its higher $85-$200 per-lead cost, can still be competitive on a cost-per-job basis because of its stronger close rate and full exclusivity.
+
+## What Pushes a Campaign Toward the High or Low End
+
+- **Keyword specificity** — bidding on broad terms like "flooring" alongside epoxy-specific keywords inflates clicks from people who aren't actually shopping for garage coatings, dragging cost per lead toward the $200 end.
+- **Landing page match** — a page built specifically around garage floor coating, with pricing context and before-and-after photos, converts clicks into leads at a meaningfully higher rate than a generic contractor homepage.
+- **Geographic targeting precision** — epoxy coating is typically a drive-to-you service with a limited real service radius, so campaigns that geofence tightly waste fewer clicks on out-of-area searchers than ones running broad regional targeting.
+
+## Budgeting for a Realistic Test
+
+Because close rates and per-lead costs both vary this widely, a new campaign needs enough budget to generate a statistically meaningful number of leads before judging performance — a handful of leads at either end of the $85-$200 range isn't enough data to tell whether a campaign is actually working or just had a lucky or unlucky week.
+
+## Bottom Line
+
+Don't judge a lead source by cost per lead alone — divide by your actual close rate to get cost per job before deciding whether Google Ads search, Local Services Ads, or a shared marketplace is the better spend for your garage floor coating business.
+
+Source: Minyona, "Garage Floor Coating Leads: 2026 Guide for Epoxy and Polyaspartic Pros" (minyona.com/blog/garage-floor-coating-leads-guide).`
+  },
+  {
+    id: "986",
+    title: "How Much Does a Mobile Auto Detailing Lead Cost on Google Ads in 2026?",
+    slug: "mobile-auto-detailing-cost-per-lead-google-ads-2026",
+    excerpt: "Mobile auto detailing leads cost $16-$33 on Google Ads nationwide in 2026, with the middle 80% of businesses paying between about $15 and $63 per lead.",
+    featuredImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-01",
+    category: "Google Ads",
+    tags: ["Google Ads", "Auto Detailing", "Cost Per Lead", "Local Services Marketing", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 4,
+    seo: {
+      metaTitle: "Mobile Auto Detailing Cost Per Lead Google Ads 2026",
+      metaDescription: "Mobile auto detailing leads cost $16-$33 on Google Ads nationwide in 2026, with most businesses paying between roughly $15 and $63 per lead.",
+      keywords: ["auto detailing cost per lead google ads", "mobile detailing google ads cost 2026", "car detailing ppc lead cost", "auto detailing google ads benchmark"]
+    },
+    content: `Mobile auto detailing businesses pay $16 to $33 per lead on Google Ads nationwide in 2026, according to 99 Calls' tracked 2026 campaign data. The middle 80% of businesses — the 10th to 90th percentile range — pay between roughly $15 and $63 per lead depending on local competition and season.
+
+## The Percentile Spread
+
+- **10th percentile (top-performing campaigns)** — $15 to $24 per lead.
+- **50th percentile (typical/median campaigns)** — $20 to $31 per lead.
+- **90th percentile (most competitive markets or less-optimized campaigns)** — $27 to $63 per lead.
+
+That spread shows mobile detailing is one of the lower cost-per-lead local service categories tracked, with even the high end staying well under what trades like roofing or legal services pay.
+
+## What a Lead Actually Costs to Generate
+
+Mobile detailing also carries the lowest average cost per click among the home service categories in the same dataset, averaging $4.03 per click with a range of $2.40 to $5.97. A low CPC combined with a relatively high-intent search category — someone searching "mobile detailing near me" is usually ready to book — is the main reason detailing's cost per lead stays low relative to other trades.
+
+## Why Costs Still Vary This Much
+
+- **Local competition** — markets with several detailing businesses bidding on the same keywords push both CPC and cost per lead toward the 90th percentile end.
+- **Season** — demand swings with weather and regional car-care habits, shifting bid competition and lead volume month to month.
+- **Campaign quality** — landing page relevance, ad copy specificity, and negative keyword hygiene separate 10th-percentile campaigns from 90th-percentile ones at the same CPC.
+
+## Where Detailing Businesses Lose Money Even at a Low CPL
+
+A low cost per lead doesn't automatically mean a profitable campaign if lead quality is weak. Mobile detailing searches often mix genuine booking intent with price-shoppers and one-off requests far outside a business's actual service area, so a campaign optimized purely for the lowest possible cost per lead can end up filling the pipeline with leads that never convert into a booked appointment. Tracking cost per booked job, not just cost per lead, is the more reliable way to judge whether a detailing campaign is actually working.
+
+## Practical Ways to Stay Near the Low End
+
+- **Use tight geographic radius targeting** — mobile detailing is inherently local, and campaigns that target too wide an area waste budget on clicks from people outside a realistic drive-to or drive-out radius.
+- **Add service-specific keywords** — terms like "mobile detailing" or "ceramic coating near me" tend to carry higher intent than broad "car wash" terms, which pull in a different, lower-intent audience.
+- **Match ad copy to pricing expectations** — detailing pricing varies widely by package, and ads that set accurate price expectations upfront tend to filter out clicks from people who were never going to book at your price point.
+
+## Bottom Line
+
+If you're paying more than roughly $35-$40 per lead for mobile auto detailing on Google Ads, treat it as a signal to review keyword targeting and landing page conversion rate before assuming the market itself is just expensive — the data shows most businesses pay less.
+
+Source: 99 Calls, "Google Ads Lead Costs by Home Service Industry in 2026" and "What are the lowest CPC and highest CPC campaigns in Google Ads?" (99calls.com).`
+  },
+  {
+    id: "987",
+    title: "What Does a Dental Implant Lead Cost on Google Ads in 2026?",
+    slug: "dental-implant-cost-per-lead-google-ads-2026",
+    excerpt: "Dental implant keywords cost $12-$35 per click on Google Ads in 2026, putting lead cost at roughly $120-$250 depending on market and conversion rate.",
+    featuredImage: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-01",
+    category: "Google Ads",
+    tags: ["Google Ads", "Dental Marketing", "Dental Implants", "Cost Per Lead", "Healthcare Marketing"],
+    featured: false,
+    readingTime: 4,
+    seo: {
+      metaTitle: "Dental Implant Cost Per Lead on Google Ads 2026",
+      metaDescription: "Dental implant keywords cost $12-$35 per click on Google Ads in 2026, putting implant lead cost at roughly $120-$250 depending on market competition.",
+      keywords: ["dental implant cost per lead", "dental implant google ads cost 2026", "implant marketing ppc cost", "dental implant cpc google ads"]
+    },
+    content: `Dental implant keywords cost $12 to $35 per click on Google Ads as of 2026, which works out to roughly $120 to $250 per lead depending on the market's competition level and the practice's landing page conversion rate — well above the broader dental industry's average cost per lead of about $73 to $84.
+
+## Why CPC Swings So Widely by Market
+
+Implant keyword pricing depends heavily on how many DSOs and competing practices are bidding in a given metro. A practice in a lower-competition market like Brownsville can pay roughly $5.25 per click on implant terms, while a practice in a DSO-saturated corridor like Dallas or Houston can pay $15 to $35 per click on the identical keywords — a difference driven entirely by local auction competition, not the keywords themselves.
+
+## How Cost Per Click Becomes Cost Per Lead
+
+At a $12 CPC with a 7% landing page conversion rate, each lead costs $171 — a useful baseline math for budgeting, though it shifts with either variable. A practice converting at a lower rate or paying a higher CPC in a competitive market should expect to land toward the upper end of the $120-$250 range, or beyond it.
+
+## Why Implants Cost More Than General Dental Leads
+
+- **Deeper competition for high-value keywords** — implants represent some of the highest lifetime-value procedures in dentistry, so practices and DSOs bid aggressively for that traffic.
+- **Lower search volume relative to demand** — implant-specific searches are rarer than general "dentist near me" searches, concentrating competition onto fewer available clicks.
+- **Longer, more research-driven buyer journey** — implant patients often compare multiple practices before booking a consultation, which can suppress on-page conversion rates relative to routine dental care.
+
+## Lead Cost Isn't the Same as Patient Acquisition Cost
+
+The cost per booked implant patient — not just the lead — typically runs $200 to $400, since not every lead converts to a scheduled consultation. Budgeting off lead cost alone understates what it actually costs to fill an implant chair.
+
+## Building a Realistic Monthly Budget
+
+Working backward from a case goal makes the math concrete: a practice targeting five new implant cases per month, with a 50% lead-to-case close rate, needs roughly ten leads. At a $171 blended lead cost, that's around $1,710 in monthly ad spend. Against five cases worth $10,000 or more each in revenue, that spend represents a small fraction of the return — which is the core reason implant marketing remains attractive despite its high per-click cost relative to other dental services.
+
+## What Separates a Qualified Implant Lead From a Wasted Click
+
+- **Pre-qualifying content on the landing page** — pages that clearly state candidacy factors (missing teeth, interest in a permanent solution, budget range) filter out browsers before they submit a form, improving the lead-to-consultation rate.
+- **Financing information up front** — implants are a significant out-of-pocket expense for most patients, and ads or pages that mention financing options tend to convert searchers who would otherwise abandon over cost uncertainty.
+- **Separate campaigns from general dental keywords** — blending implant and routine-care keywords in one campaign makes it harder for Smart Bidding to optimize toward the much higher implant lead value, since the algorithm is averaging across two very different conversion values.
+
+## Bottom Line
+
+Budget for implant leads at $120-$250 each rather than general dental's roughly $75-85 benchmark, and track cost per booked patient, not just cost per lead, since that's the number that actually maps to case revenue.
+
+Source: Geek Powered Studios, "Dental PPC Budget: Cost-Per-Patient Math (2026)" (geekpoweredstudios.com/post/dental-ppc-budget-cost-per-patient-math-2026).`
+  },
+  {
+    id: "988",
+    title: "How Much Does a Flooring Company Pay Per Lead on Google Ads in 2026?",
+    slug: "flooring-company-cost-per-lead-google-ads-2026",
+    excerpt: "Flooring companies pay $48-$121 per lead on Google Ads nationally in 2026, with costs swinging from around $34 in slow months to $220+ at peak season.",
+    featuredImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-01",
+    category: "Google Ads",
+    tags: ["Google Ads", "Flooring Marketing", "Cost Per Lead", "Home Services Marketing", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 4,
+    seo: {
+      metaTitle: "Flooring Company Cost Per Lead on Google Ads 2026",
+      metaDescription: "Flooring companies pay $48-$121 per lead on Google Ads nationally in 2026, swinging from about $34 in slow months to $220+ during peak season.",
+      keywords: ["flooring company cost per lead", "flooring google ads cost 2026", "flooring contractor ppc lead cost", "flooring installation google ads benchmark"]
+    },
+    content: `Flooring companies pay $48 to $121 per lead on Google Ads nationally in 2026, according to 99 Calls' tracked campaign data — but that national average hides a sharp seasonal swing, with costs as low as $34 in slow months and above $220 during peak spring and summer renovation demand.
+
+## The Seasonal Pattern
+
+Flooring lead costs move more by month than almost any other factor. January campaigns in the 99 Calls dataset ran as low as $34 per lead, climbing steadily into spring, before peaking in March ($100-$234 across the percentile range) and again in June ($99-$219), then easing slightly by July ($73-$153). That pattern tracks the home renovation season: homeowners plan flooring projects heavily in spring and early summer, driving up both search demand and advertiser competition at the same time.
+
+## The Percentile Spread
+
+- **10th percentile (top-performing campaigns)** — $34 to $105 per lead.
+- **50th percentile (typical/median campaigns)** — $34 to $167 per lead.
+- **90th percentile (most competitive markets or less-optimized campaigns)** — $34 to $234 per lead.
+
+The wide gap between the 10th and 90th percentile at the same time of year shows campaign quality matters at least as much as season — well-targeted, well-optimized flooring campaigns can stay near the low end even during peak months.
+
+## Why Flooring Sits Mid-Pack Among Home Services
+
+Flooring installation is a considered purchase with real project value, which supports higher CPCs than low-ticket services, but it doesn't carry the emergency urgency of trades like plumbing or HVAC that drives those categories' costs even higher. That combination puts flooring in a moderately competitive middle tier rather than at either extreme.
+
+## Planning Budget Around the Calendar
+
+Flat monthly ad budgets don't fit a category that swings this much by season. A flooring company spending the same dollar amount every month will see lead volume collapse during peak-cost months like March and June, since a fixed budget buys fewer leads when the per-lead price climbs. The more effective approach is flexing spend up ahead of the spring renovation season and pulling back slightly in slower months, rather than holding a flat number and treating the resulting volume swings as a campaign problem.
+
+## Why Optimization Matters More Than the Calendar
+
+The gap between the 10th and 90th percentile at the exact same point in the season — for example, $34 versus $234 during the January-into-spring ramp — is often wider than the gap between the cheapest and most expensive months overall. That means a flooring company with a well-optimized campaign running in a competitive month can still beat a poorly optimized campaign running in an otherwise cheap month. Keyword negative lists, tight geographic targeting, and landing pages built around specific flooring types (hardwood, LVP, tile) rather than a generic "flooring services" page all push a campaign toward the lower end of its seasonal range.
+
+## Bottom Line
+
+Budget flooring lead generation seasonally, not as a flat monthly number — plan for costs near the $100+ range during March and June peaks, and expect meaningfully cheaper leads in January and other off-season months.
+
+Source: 99 Calls, "Google Ads Lead Costs by Home Service Industry in 2026" (99calls.com/blog/google-ads-lead-costs-by-home-service-industry-in-2026).`
+  },
+  {
+    id: "989",
+    title: "What Does a Yelp Ads Click Cost for Home Services Businesses?",
+    slug: "yelp-ads-cost-per-click-home-services-2026",
+    excerpt: "Yelp Ads clicks for home services like plumbing, HVAC, and electrical run roughly $2.00-$8.00 in 2026, though Yelp's own setup-time estimate is more reliable.",
+    featuredImage: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-01",
+    category: "Advertising Strategy",
+    tags: ["Yelp Ads", "Home Services Marketing", "Cost Per Click", "Local Advertising", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Yelp Ads Cost Per Click for Home Services 2026",
+      metaDescription: "Yelp Ads clicks for home services businesses like plumbing and HVAC run roughly $2.00-$8.00 in 2026, per WebFX's published category benchmarks.",
+      keywords: ["yelp ads cost per click home services", "yelp ads cpc 2026", "yelp advertising cost plumbing hvac", "how much do yelp ads cost"]
+    },
+    content: `Yelp Ads clicks for home services businesses — plumbing, HVAC, electrical, and similar trades — run roughly $2.00 to $8.00 per click in 2026, according to WebFX's published 2026 Yelp advertising cost guide. That's meaningfully higher than lower-intent categories like restaurants, but below higher-ticket categories like legal and healthcare.
+
+## How Home Services Compares to Other Yelp Categories
+
+- **Restaurants and food** — $0.30 to $2.00 per click.
+- **Home services (plumbing, HVAC, electrical)** — $2.00 to $8.00 per click.
+- **Health and wellness (dentists, chiropractors)** — $3.00 to $10.00 per click.
+- **Legal services** — $5.00 to $15.00+ per click.
+
+The pattern tracks customer lifetime value: a single plumbing or HVAC job is worth more than a single restaurant visit, so businesses in that category can profitably bid higher per click than lower-ticket categories can.
+
+## Why Published Averages Matter Less Than Your Own Estimate
+
+Yelp shows an advertiser a category-, targeting-, and location-specific cost-per-click estimate directly during campaign setup, and that number reflects your actual competitive landscape far more precisely than any blended published average can. A national "$2-$8" range necessarily flattens huge variation between, say, a plumber in a dense competitive metro and one in a smaller market with fewer Yelp advertisers bidding against them.
+
+## A Recent Pricing Trend Worth Knowing
+
+Yelp's average cost per click rose roughly 10% year-over-year recently, a change the company has attributed to higher advertiser demand in services categories combined with fewer available clicks overall — a dynamic worth factoring into your budget if you're planning spend based on last year's numbers.
+
+## Why Yelp CPC Isn't Directly Comparable to Google Ads CPC
+
+Home services businesses that are used to Google Ads benchmarks sometimes assume Yelp's lower headline CPC makes it the cheaper channel outright. That comparison misses that the two platforms capture different points in the buyer journey — Yelp traffic is largely bottom-of-funnel, business-comparison intent from people already reading reviews and deciding between specific local providers, while Google Ads search captures a broader mix of research and ready-to-book intent depending on keyword. A fair comparison looks at cost per booked job on each platform, not cost per click alone.
+
+## How to Read Yelp's Setup-Time Estimate Correctly
+
+- **Treat it as a starting bid range, not a guaranteed cost** — actual CPC still moves with real-time competition from other advertisers in your category and area.
+- **Re-check it periodically** — Yelp's estimate reflects current conditions, and categories with rising advertiser demand (which the platform has reported broadly across services categories) will see that estimate shift over time.
+- **Compare it against your own historical spend**, not just the published range, since a business's own account history is a more accurate predictor of its future CPC than any category-wide figure.
+
+## Bottom Line
+
+Use the $2.00-$8.00 home services range as a rough planning baseline, but treat the real-time estimate Yelp shows you at setup, scoped to your exact category and location, as the number to actually budget against.
+
+Source: WebFX, "Yelp Advertising Costs: How Much Should You Budget in 2026?" (webfx.com/blog/ppc/yelp-advertising-costs/).`
+  },
 ];
 
 export const blogCategories = [
