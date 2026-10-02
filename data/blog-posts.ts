@@ -97031,6 +97031,323 @@ Use the $2.00-$8.00 home services range as a rough planning baseline, but treat 
 
 Source: WebFX, "Yelp Advertising Costs: How Much Should You Budget in 2026?" (webfx.com/blog/ppc/yelp-advertising-costs/).`
   },
+  {
+    id: "990",
+    title: "What's the Average Cost Per Lead for Paving and Asphalt Contractors on Google Ads in 2026?",
+    slug: "paving-contractor-cost-per-lead-google-ads-2026",
+    excerpt: "Paving and asphalt contractors pay about $70-$74 per lead on Google Local Services Ads in 2026, and $85-$115 per lead on traditional Google Ads search campaigns.",
+    featuredImage: "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-02",
+    category: "Google Ads",
+    tags: ["Google Local Services Ads", "Paving Contractors", "Cost Per Lead", "Home Services Marketing", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Paving Contractor Cost Per Lead on Google Ads 2026",
+      metaDescription: "Paving and asphalt contractors pay roughly $70-$74 per charged lead on Google LSA in 2026, and $85-$115 per lead on traditional Google Ads search campaigns.",
+      keywords: ["paving contractor cost per lead", "asphalt contractor google ads cost 2026", "google local services ads paving", "driveway paving ppc benchmark"]
+    },
+    content: `Paving and asphalt contractors pay an average of $69.85 per charged lead on Google Local Services Ads (LSA) as of July 2026, with a median of $73.52, according to 99 Calls' LSA Cost Estimator. Running standard Google Ads search campaigns instead, paving contractors typically pay $85 to $115 per lead, built on a category average cost per click of roughly $8.50.
+
+## LSA vs. Standard Search Ads for Paving
+
+- **Google Local Services Ads** — $69.85 average per charged lead, $73.52 median (99 Calls, July 2026), billed only when a customer calls or messages through a verified profile.
+- **Traditional Google Ads search** — $85-$115 per lead, built from a roughly $8.50 average cost per click and the category's typical click-to-lead conversion rate.
+- **High-intent keyword clicks** — terms like "asphalt paving contractor" and "driveway replacement" can run $5-$15+ per click individually before blending into the lead-cost average.
+
+LSA comes out cheaper for paving in most markets because it bills per verified lead rather than per click, shifting the risk of a low-converting click away from the contractor.
+
+## Why Paving Sits Where It Does Relative to Other Trades
+
+Paving and asphalt work shares cost dynamics with other driveway and hardscape trades: concrete contractors, for comparison, typically see LSA leads in a similar $30-$90 range depending on market. Paving's position toward the upper-middle of that broader home-services band reflects two things — job values that often run into the thousands of dollars, which lets contractors bid more aggressively per click, and strong seasonality, since most paving demand concentrates in warmer months and compresses competition (and cost) into a shorter window.
+
+## What Moves the Price Within the Range
+
+- **Local competition** — dense suburban markets with multiple paving companies bidding on the same keywords push costs toward the high end of both the LSA and search-ads ranges.
+- **Residential vs. commercial targeting** — commercial paving and resurfacing jobs carry higher lifetime value, so contractors chasing that segment often accept a higher cost per lead deliberately.
+- **Season** — spring and early summer searches, when most paving work is scheduled, typically carry higher competition and cost than off-season months.
+- **Job type within paving** — a full driveway replacement or new installation pulls a different bid strategy than a smaller patch or sealcoating job, since the former justifies a much higher cost per lead.
+
+## Why LSA Qualification Is Worth Pursuing First
+
+Paving contractors who haven't yet gone through Google's Local Services Ads screening — a background check and proof of insurance, leading to the Google Guaranteed badge — are leaving the cheaper of the two channels on the table. Because LSA only charges for a verified call or message, a contractor running both channels can direct budget toward LSA first and treat standard search as a secondary volume source once LSA's local lead supply is exhausted for the month. That sequencing matters more in paving than in lower-ticket trades, since a single missed or wasted click on a $5-$15 keyword adds up quickly across a full campaign.
+
+## How This Compares to Adjacent Trades
+
+Paving sits close to concrete work in cost structure — both trades show LSA leads in roughly the $30-$90 range depending on market — which makes sense given the overlapping equipment, crews, and seasonal demand patterns between the two. Contractors who offer both paving and concrete services can often cross-use the same LSA profile and keyword strategy without needing to build entirely separate campaigns for each service line.
+
+## Bottom Line
+
+Start with Google Local Services Ads if your business qualifies — the $69.85 average charged-lead cost from 99 Calls' July 2026 estimator beats the $85-$115 typical cost per lead on standard search campaigns, and you only pay for verified contact, not clicks that never convert.
+
+Sources: 99 Calls, "Paving Contractor Google LSA Cost Per Lead (July 2026)" (99calls.com/LSA-Cost-Estimator/paving-contractor); Viotto, "Google Ads for Driveway/Paving: What Actually Drives Booked Jobs" (viotto.ai/insights/google-ads-for-driveway-paving-what-actually-drives-booked-jobs).`
+  },
+  {
+    id: "991",
+    title: "How Much Does a Lead Cost for Towing Companies on Google Ads in 2026?",
+    slug: "towing-company-cost-per-lead-google-ads-2026",
+    excerpt: "Towing companies pay roughly $20-$30 per lead on Google Ads in 2026, with cost per click running $8-$10, and leads under $15 in dense urban metro markets.",
+    featuredImage: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-02",
+    category: "Google Ads",
+    tags: ["Google Ads", "Towing Companies", "Cost Per Lead", "Local Advertising", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Towing Company Cost Per Lead on Google Ads 2026",
+      metaDescription: "Towing companies pay roughly $20-$30 per lead on Google Ads in 2026, with cost per click running $8-$10 and leads as low as $10-$15 in dense metro markets.",
+      keywords: ["towing company cost per lead", "towing google ads cost 2026", "tow truck ppc benchmark", "how much do towing ads cost"]
+    },
+    content: `Towing companies pay roughly $20 to $30 per lead running Google Ads in 2026, based on account data from agency Web Eminence across more than 17 managed towing accounts. Cost per click for the category runs $8 to $10 on average, with leads sometimes landing under $15 — and occasionally under $10 — in dense, high-population metro markets like Miami or New York City.
+
+## What Towing Actually Costs
+
+- **Average cost per click** — $8-$10, though it has run as low as $5 on well-optimized accounts.
+- **High-intent keyword clicks** — terms like "tow truck near me" and "emergency towing near me" run $15-$45 per click individually; "24-hour towing" terms typically run $12-$35.
+- **Average cost per lead** — $20-$30 across managed accounts, with dense metro markets pushing well below that floor due to higher search volume supporting cheaper effective costs.
+- **Downside risk** — Web Eminence documented a case where cost per conversion climbed from roughly $45 to $150 per lead under a suboptimal bidding strategy, underscoring how much bid strategy choice affects this number.
+
+## Why Towing Runs Cheaper Than Many Home-Service Trades
+
+Towing's $20-$30 average cost per lead sits well below the $70.11 all-industry Google Ads average cost per lead reported industry-wide for 2026. The category benefits from extremely high search intent — almost nobody searches "tow truck near me" without an immediate, urgent need — which drives strong click-to-lead conversion rates and keeps blended costs down relative to categories with more research-phase browsing before a lead converts.
+
+## Why Bidding Strategy Matters More Than the Average Suggests
+
+The gap between a well-run towing account ($20-$30/lead) and a poorly optimized one ($45-$150/lead) is unusually wide for the category, largely because towing searches are heavily time-sensitive and location-dependent — a Target CPA or Maximize Conversions strategy that isn't tuned to local call volume and time-of-day patterns can quickly overspend chasing low-probability clicks outside a tow truck's practical service radius.
+
+## Call Tracking Matters More for Towing Than Most Trades
+
+Because towing is almost entirely a phone-call business — searchers in a roadside emergency rarely fill out a contact form — cost-per-lead figures for this category are only as accurate as the call-tracking setup behind them. Campaigns that count every inbound call as a lead, without filtering out wrong numbers, spam, or calls under a few seconds, will report an artificially low cost per lead that doesn't reflect real booked jobs. Any towing company evaluating its own numbers against the $20-$30 benchmark here should confirm its tracking counts qualified calls specifically, not raw call volume.
+
+## Why Geographic Targeting Radius Matters
+
+Towing companies operate within a practical service radius dictated by drive time, not just distance, since a tow truck dispatched too far from a breakdown location erodes margin even on a cheaply acquired lead. Tightening geographic targeting to match actual dispatch capacity — rather than targeting an entire metro area uniformly — is one of the more reliable ways account managers bring blended cost per lead down toward the lower end of the $20-$30 range cited above.
+
+## Bottom Line
+
+Budget $20-$30 per lead as a realistic starting target for towing on Google Ads, expect lower effective costs in dense urban markets, and watch your bidding strategy closely in the first few weeks — Web Eminence's account data shows cost per lead can triple when automated bidding isn't tightly managed for this category's urgency-driven search behavior.
+
+Source: Web Eminence, "Secrets Learned For Towing Campaigns In Google Ads — After Managing 17+ Accounts" (webeminence.com/towing-campaigns-google-ads/).`
+  },
+  {
+    id: "992",
+    title: "What's the Average Cost Per Lead for Driving Schools on Google Ads in 2026?",
+    slug: "driving-school-cost-per-lead-google-ads-2026",
+    excerpt: "Driving schools fall under Google Ads' Education & Instruction category, averaging a $77.48 cost per lead and $4.81 cost per click in 2026, per WordStream.",
+    featuredImage: "https://images.unsplash.com/photo-1611944212129-29977ae1398c?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-02",
+    category: "Google Ads",
+    tags: ["Google Ads", "Driving Schools", "Cost Per Lead", "Education Marketing", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Driving School Cost Per Lead on Google Ads 2026",
+      metaDescription: "Driving schools, under Google Ads' Education & Instruction category, average a $77.48 cost per lead and $4.81 cost per click in 2026, per WordStream's data.",
+      keywords: ["driving school cost per lead", "driving school google ads cost 2026", "driving school ppc benchmark", "how much do driving school ads cost"]
+    },
+    content: `Driving schools don't get their own Google Ads benchmark category — they're grouped under "Education & Instruction," which averaged a $77.48 cost per lead and a $4.81 cost per click across 2026, according to WordStream's annual Google Ads Benchmarks report. A separately reported trade-school-specific estimate narrows that to roughly $30-$70 per lead once a campaign is optimized, using the vertical's 11.4% average conversion rate against that same $4.81 cost per click.
+
+## The Education & Instruction Benchmark
+
+- **Average cost per click** — $4.81, close to the roughly $5.42 all-industry Google Ads average for 2026.
+- **Average cost per lead** — $77.48 category-wide, which spans everything from driving schools to tutoring services, test-prep courses, and vocational training.
+- **Average conversion rate** — 11.4%, which is what turns that $4.81 CPC into a cost-per-lead figure once applied against actual click volume.
+
+## Why the Category Average Overstates a Well-Run Driving School Campaign
+
+The $77.48 figure blends every type of education and instruction advertiser, including higher-ticket vocational and certification programs that can justify — and sustain — a higher cost per lead than a local driving school realistically should pay. A trade-school-specific analysis applying the same $4.81 CPC and 11.4% conversion rate narrows the realistic range for a focused, locally-targeted driving school campaign to roughly $30-$70 per lead once it's stabilized past the initial learning phase.
+
+## What Pulls Cost Toward the Low End
+
+- **Tight local geo-targeting** — driving schools serve a defined service radius, and narrowing targeting to that radius avoids paying for clicks that can never convert into an enrolled student.
+- **Intent-specific keywords** — terms like "driving lessons near me" or "teen driver's ed [city]" convert at a higher rate than broad terms like "learn to drive," which pulls in more research-stage traffic.
+- **Seasonal timing** — demand concentrates around the school year and summer break for teen drivers, and bidding more aggressively inside those windows tends to produce a better cost-per-lead than flat, year-round spend.
+
+## Why the Blended Category Figure Can Mislead Budgeting Decisions
+
+Google's own benchmark categories group advertisers by broad industry, not by business model, which means "Education & Instruction" mixes in everything from community-college marketing budgets to online certification platforms with national reach and much higher customer lifetime value than a single-location driving school. A driving school owner who budgets directly off the $77.48 blended average risks either overpaying for clicks that a tighter, locally-targeted campaign wouldn't need, or underestimating the budget needed to compete if local competition happens to run above the sub-category's typical $30-$70 range.
+
+## What a New Driving School Campaign Should Expect Early On
+
+New campaigns in any Google Ads category typically see a higher cost per lead in the first few weeks while Google's algorithm gathers enough conversion data to optimize bidding, so a driving school just launching its first campaign should expect costs closer to the $77.48 category average initially, with room to improve toward the $30-$70 range as search terms, negative keywords, and landing pages get refined against real performance data.
+
+## Bottom Line
+
+Budget using the Education & Instruction category average of $4.81 per click as your baseline, and target the $30-$70 per-lead range rather than the blended $77.48 category figure, since that number includes higher-ticket vocational programs that skew the average above what a tightly-targeted local driving school should expect to pay.
+
+Sources: WordStream, "Google Ads Benchmarks 2026: Competitive Data & Insights for Every Industry" (wordstream.com/blog/2026-google-ads-benchmarks); Propellant Media, "Google Ads for Trade Schools: Cost Guide" (propellant.media/google-ads-trade-schools/).`
+  },
+  {
+    id: "993",
+    title: "What's the Minimum Ad Budget to Run ChatGPT Ads in 2026?",
+    slug: "chatgpt-ads-minimum-budget-2026",
+    excerpt: "Criteo cut its ChatGPT ads minimum spend to $10,000 in June 2026, down from $50,000 in April and from $200,000-$250,000 at OpenAI's February pilot launch.",
+    featuredImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-02",
+    category: "Advertising Strategy",
+    tags: ["ChatGPT Ads", "AI Advertising", "Minimum Budget", "Criteo", "Advertising Costs"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "ChatGPT Ads Minimum Budget in 2026: What It Costs",
+      metaDescription: "Criteo's ChatGPT ads minimum spend dropped to $10,000 in June 2026, down from $50,000 in April and from $200,000-$250,000 at February's pilot launch.",
+      keywords: ["chatgpt ads minimum budget", "chatgpt advertising cost 2026", "criteo chatgpt ads minimum spend", "how much do chatgpt ads cost"]
+    },
+    content: `Criteo, OpenAI's ad-tech partner for ChatGPT advertising, cut its ChatGPT campaign minimum spend to $10,000 in June 2026, down from a $50,000 minimum set in April — which itself was a steep drop from the $200,000-$250,000 entry commitment OpenAI required when the ads pilot launched in February 2026. StackAdapt, a second ad network running ChatGPT ad pilots, dropped its own $50,000 minimum entirely in May 2026 after opening its self-serve model more broadly.
+
+## The Minimum-Spend Timeline
+
+- **February 2026** — OpenAI launches its ChatGPT ads pilot with Criteo as first ad-tech partner, requiring a $200,000-$250,000 upfront commitment.
+- **April 2026** — Criteo lowers its minimum to $50,000; StackAdapt enters with its own $50,000 minimum spend commitment.
+- **May 2026** — StackAdapt drops its minimum spend requirement entirely as it opens access to a broader set of self-serve advertisers.
+- **June 2026** — Criteo cuts its minimum again, to $10,000, alongside simplified product-feed integrations and added incentives aimed at retail brands.
+
+## Why Minimums Fell So Fast
+
+The roughly 96% drop from OpenAI's original $200,000-$250,000 pilot commitment to Criteo's current $10,000 minimum, in under four months, reflects intense early competition between ad networks to land advertisers on a new, high-visibility inventory source. Criteo had reported over 1,000 live brands on ChatGPT ads as adoption accelerated, and lowering the entry bar further opens the channel to mid-market and smaller advertisers who couldn't justify a six-figure test budget.
+
+## What This Means If You're Considering ChatGPT Ads
+
+A $10,000 minimum through Criteo is still a meaningfully larger commitment than testing a new channel on Google or Meta, where campaigns can start at a few dollars a day. Businesses without that budget available for a single-channel test aren't entirely locked out, though — StackAdapt's self-serve access, which no longer carries its own stated minimum, is currently the lower-barrier path into the same ad inventory.
+
+## Why the Minimums Exist at All
+
+Unlike Google Ads or Meta, which run fully self-serve auctions open to any advertiser at any budget, ChatGPT ads launched as a managed pilot through a small number of ad-tech partners, with OpenAI and those partners controlling early access while the ad product, measurement, and brand-safety tooling were still being built out. Minimum spend commitments in that early phase function less like a price floor and more like a qualification filter — a way to prioritize onboarding support and account management toward advertisers serious enough to commit meaningful budget, while the self-serve tooling that would support smaller advertisers directly was still in development.
+
+## What's Reportedly Driving Continued Advertiser Interest
+
+Criteo has reported strong early performance signals alongside the falling minimums — the company cited AI-driven conversions nearing double prior levels and over 1,000 brands live on the channel as of mid-2026, which is part of why ad networks are racing to lower the barrier to entry rather than holding firm on pricing while the channel is still establishing its reputation with advertisers.
+
+## Bottom Line
+
+Expect a $10,000 floor to test ChatGPT ads through Criteo as of June 2026, with StackAdapt offering a lower-barrier self-serve alternative with no published minimum — and expect these numbers to keep moving as more ad networks compete for ChatGPT ad inventory, so confirm current minimums directly with each network before committing budget.
+
+Sources: eMarketer, "Criteo lowers ChatGPT spending minimums to $10,000, opening the door for smaller brands" (emarketer.com/content/criteo-lowers-chatgpt-spending-minimums--10-000--opening-door-smaller-brands); Adweek, "StackAdapt Drops Minimum Spend Commitment for ChatGPT Ads" (adweek.com/media/stackadapt-drops-minimum-spend-commitment-for-chatgpt-ads/).`
+  },
+  {
+    id: "994",
+    title: "What's the Average Cost Per Lead for Foundation Repair Companies on Google Ads in 2026?",
+    slug: "foundation-repair-cost-per-lead-google-ads-2026",
+    excerpt: "Foundation repair companies pay $60-$75 per lead on Google Local Services Ads in 2026, versus $152-$180 per lead on traditional Google Ads search campaigns.",
+    featuredImage: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-02",
+    category: "Google Ads",
+    tags: ["Google Local Services Ads", "Foundation Repair", "Cost Per Lead", "Home Services Marketing", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Foundation Repair Cost Per Lead on Google Ads 2026",
+      metaDescription: "Foundation repair companies pay $60-$75 per lead on Google Local Services Ads in 2026, versus $152-$180 per lead on traditional Google Ads search campaigns.",
+      keywords: ["foundation repair cost per lead", "foundation repair google ads cost 2026", "google local services ads foundation repair", "foundation repair ppc benchmark"]
+    },
+    content: `Foundation repair companies pay $60 to $75 per lead on Google Local Services Ads (LSA) in standard markets in 2026, rising above $75 in highly competitive metros like Southern California, according to 2026 benchmark data from The Valley Marketing Group. Running traditional Google Ads search campaigns instead costs considerably more — $152 to $180 per lead based on the same 2026 data, well above the $30-$90 range that older, less current estimates for the category cite.
+
+## LSA vs. Standard Search Ads for Foundation Repair
+
+- **Google Local Services Ads** — $60-$75 per lead in standard markets, $75+ in highly competitive metros, billed only for verified calls or messages.
+- **Traditional Google Ads search** — $152-$180 per lead in current 2026 data, a gap wide enough that most foundation repair companies run LSA as their primary channel where they qualify.
+- **Cost per click** — high-intent terms like "foundation repair," "basement wall crack repair," and "house leveling" commonly run $15-$45 per click in competitive metro markets.
+
+## Why This Category Runs Above Most Home-Service Trades
+
+Foundation repair's $152-$180 traditional PPC cost per lead sits well above the broader home-services average of roughly $53 per lead reported across contractor trades generally. The gap reflects project economics: a single piering or wall-anchor job routinely runs $5,000 to $25,000, which lets — and effectively requires — foundation repair companies bid far more aggressively per click than lower-ticket trades like window cleaning or lawn care to stay competitive for the same searcher.
+
+## What a Realistic Budget Looks Like
+
+Most established foundation repair companies run $4,000-$8,000 per month in Google Ads spend, according to the same 2026 benchmark data, scaling up 25-40% during peak seasons such as spring, when water intrusion and hydrostatic pressure drive a seasonal spike in search volume for cracking, settling, and water-related foundation issues.
+
+## Why Older Published Estimates Understate Current Costs
+
+Foundation repair cost-per-lead figures circulating from earlier benchmark cycles commonly cite a $30-$90 range for the category, a figure that no longer reflects 2026 market conditions according to the more recent data cited above. The gap matters for budgeting: a company planning spend off an outdated $30-$90 estimate would badly underfund a traditional search campaign that's actually running $152-$180 per lead, likely concluding the channel "isn't working" when the real issue is a stale cost assumption.
+
+## Why High-Intent Keywords Cost So Much in This Category
+
+The $15-$45 per-click range for terms like "foundation repair" and "house leveling" reflects both strong commercial intent — almost nobody searches those terms without an active problem — and the project economics described above, where a single job can be worth $5,000-$25,000. That combination of high intent and high lifetime value means foundation repair competes for clicks against other high-ticket home-service categories like roofing and HVAC replacement, all bidding aggressively for the same pool of urgent, high-value local searchers.
+
+## Bottom Line
+
+Prioritize Google Local Services Ads if your company qualifies — the $60-$75 per-lead range beats traditional search by more than half — and budget $4,000-$8,000 a month as a realistic starting point for a standard-market traditional PPC campaign, scaling up for spring's seasonal demand spike.
+
+Source: The Valley Marketing Group, "Foundation Repair Google Ads Cost Per Lead 2026" (thevalleymarketinggroup.com/blog/foundation-repair-google-ads-cost-per-lead-2026/).`
+  },
+  {
+    id: "995",
+    title: "What's the Average Cost Per Lead for Deck Builders on Google Ads in 2026?",
+    slug: "deck-builder-cost-per-lead-google-ads-2026",
+    excerpt: "Deck builders pay $25-$50 per lead on Google Local Services Ads in 2026, and $30-$70 per lead on standard Google Ads search campaigns, per 2026 benchmark data.",
+    featuredImage: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-02",
+    category: "Google Ads",
+    tags: ["Google Local Services Ads", "Deck Builders", "Cost Per Lead", "Home Services Marketing", "PPC Benchmarks"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Deck Builder Cost Per Lead on Google Ads 2026",
+      metaDescription: "Deck builders pay $25-$50 per lead on Google Local Services Ads in 2026, and $30-$70 per lead on standard Google Ads search campaigns, per 2026 benchmark data.",
+      keywords: ["deck builder cost per lead", "deck builder google ads cost 2026", "google local services ads deck building", "deck building ppc benchmark"]
+    },
+    content: `Deck builders pay $25 to $50 per lead on Google Local Services Ads (LSA) in 2026, with a 28-40% close rate that works out to $63-$179 per closed job, according to 2026 benchmark data from The Valley Marketing Group. Standard Google Ads search campaigns cost more per lead — $30 to $70 — and close at a lower 18-30% rate, putting cost per closed job at $100-$389.
+
+## LSA vs. Standard Search Ads, by the Numbers
+
+- **Google Local Services Ads** — $25-$50 per lead, 28-40% close rate, $63-$179 cost per closed job.
+- **Traditional Google Ads search** — $30-$70 per lead, 18-30% close rate, $100-$389 cost per closed job.
+- **Why the close-rate gap matters** — LSA's higher close rate comes from Google pre-qualifying the lead through its own matching system and Google Guaranteed verification, which filters out a meaningful share of the tire-kicking and price-shopping traffic that standard search ads attract.
+
+## Why Cost Per Closed Job Is the Number That Matters
+
+Looking only at cost per lead undersells how much better LSA performs for deck builders: a lead that costs twice as much on standard search ($30-$70 vs. $25-$50) but closes at roughly half the rate (18-30% vs. 28-40%) ends up costing meaningfully more per actual signed project. The $63-$179 vs. $100-$389 cost-per-closed-job comparison is the figure that should drive channel allocation, not the raw per-lead number alone.
+
+## What Pushes Costs to Either End of the Range
+
+- **Project scope searched** — a full multi-level deck build commands more competitive bidding than a smaller repair or resurfacing job, since the lifetime value justifies a higher cost per lead.
+- **Local competition density** — suburban markets with several established deck-building companies bidding the same keywords push both LSA and search costs toward the top of their ranges.
+- **Google Guaranteed qualification** — deck builders who complete LSA's background-check and insurance-verification process gain access to the lower-cost, higher-converting LSA channel; those who don't qualify are limited to standard search pricing.
+
+## Why Close Rate Varies So Much Between the Two Channels
+
+The 28-40% LSA close rate versus 18-30% for standard search isn't just about lead quality filtering — it also reflects how each channel presents the business to the searcher. LSA listings show a contractor's rating, review count, and Google Guaranteed badge directly in the result, so a searcher who clicks or calls has already done a layer of vetting before making contact. A standard search ad click, by contrast, lands on a landing page the searcher hasn't yet evaluated against competitors, which naturally produces more comparison-shopping behavior and a lower close rate per lead.
+
+## What This Means for Budget Allocation
+
+A deck builder splitting budget evenly between LSA and standard search without accounting for the close-rate gap is effectively overpaying on a cost-per-closed-job basis for every dollar routed to standard search. Shifting budget toward LSA up to the point where local lead supply is exhausted — and only then supplementing with standard search for incremental volume — is the allocation that the cost-per-closed-job numbers above support, assuming a deck builder has completed Google Guaranteed qualification.
+
+## Bottom Line
+
+Pursue Google Local Services Ads qualification first if you're a deck builder — the $63-$179 cost per closed job beats standard search's $100-$389 by a wide margin — and budget standard search as a secondary channel for volume once LSA capacity is maxed out in your market.
+
+Source: The Valley Marketing Group, "Deck Builder Google Ads Cost Per Lead 2026" (thevalleymarketinggroup.com/blog/deck-builder-google-ads-cost-per-lead-2026/).`
+  },
 ];
 
 export const blogCategories = [
