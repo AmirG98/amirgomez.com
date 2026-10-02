@@ -122,6 +122,33 @@
 .model .row .pain, .pil .row .pain { padding: 0; display: block; font-weight: 700; font-size: 13px; color: var(--ink); }
 #casos .pil .rows { margin-top: 4px; }
 #casos .pil .row { grid-template-columns: minmax(120px, .8fr) 2fr; gap: 14px; padding: 12px 0; }
+
+/* ---------- Case blocks (mismo sistema que /case-studies) ---------- */
+#casos .case { padding: 44px 0; border-bottom: 1px solid var(--hair); }
+#casos .case:last-child { border-bottom: 0; }
+#casos .case .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+#casos .chip { font-size: 10.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; padding: 4px 11px; border-radius: 999px; background: rgba(224,78,16,0.08); color: var(--orange); }
+#casos .chip.v { background: #E9E5DD; color: var(--ink-2); }
+#casos .case h3 { font-family: var(--serif); font-weight: 600; font-size: clamp(22px, 2.6vw, 29px); color: var(--ink); letter-spacing: -0.01em; margin-bottom: 8px; }
+#casos .case p.desc { font-size: 14.5px; max-width: 62ch; text-wrap: pretty; }
+#casos .case .metric { font-family: var(--serif); font-weight: 500; font-size: clamp(18px, 2.2vw, 23px); line-height: 1.35; color: var(--ink); margin-top: 18px; padding-top: 16px; border-top: 2px solid var(--ink); max-width: 32ch; text-wrap: pretty; }
+#casos .case .metric span { color: var(--orange); }
+#casos .case.split .cols { display: grid; grid-template-columns: minmax(280px, 5fr) 7fr; gap: 40px; align-items: center; }
+#casos .case.split.flip .cols { grid-template-columns: 7fr minmax(280px, 5fr); }
+#casos .case.split.flip .txt { order: 2; }
+#casos .case.stack .shotwrap { margin-top: 28px; }
+#casos .shot { background: var(--card); border: 1px solid var(--hair); border-radius: 12px; overflow: hidden;
+  box-shadow: 0 2px 6px rgba(30,28,24,.05), 0 24px 60px -18px rgba(30,28,24,.18); }
+#casos .shot .bar { display: flex; align-items: center; gap: 7px; background: var(--dark); padding: 9px 13px; }
+#casos .shot .bar i { width: 9px; height: 9px; border-radius: 50%; background: #4A453E; }
+#casos .shot .bar i:first-child { background: var(--orange); }
+#casos .shot .bar .url { margin-left: 8px; font-size: 10.5px; letter-spacing: 0.06em; color: #9A958D; text-transform: lowercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#casos .shot img { width: 100%; height: auto; display: block; }
+#casos .for-q { font-size: 10.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
+@media (max-width: 860px) {
+  #casos .case.split .cols, #casos .case.split.flip .cols { grid-template-columns: 1fr; gap: 24px; }
+  #casos .case.split.flip .txt { order: 0; }
+}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-icon.png">
@@ -225,39 +252,101 @@
 <section class="disc" id="casos">
   <div class="wrap">
     <div class="sec-head rv"><span class="no">03</span><h2>What This Looked Like Elsewhere</h2></div>
-    <p class="sec-intro rv">One set per quote. Home services and homeowner decisions where we could find them.</p>
+    <p class="sec-intro rv">Real accounts. The closest ones to each part of the proposal.</p>
 
-    <div class="pillars">
-      <div class="pil rv">
-        <div class="n">For Quote 1</div>
-        <h3>Paid lead generation</h3>
-        <div class="rows">
-          <div class="row"><span class="pain">Home decor &middot; USA</span><div><b>63,000 leads at $4.50 each</b> on a $335K/year paid social campaign. Homeowners deciding to spend on their house.</div></div>
-          <div class="row"><span class="pain">Legal &middot; USA</span><div><b>ROAS from 2x to 7x</b> after running 20x more UGC volume than they had before. Same approach we would use with your before and afters.</div></div>
-          <div class="row"><span class="pain">Agency &middot; USA</span><div><b>Google and Microsoft Ads revenue 3.7x</b> over two years, ROI from 1.74 to 3.76.</div></div>
+    <article class="case split">
+      <div class="cols">
+        <div class="txt rv">
+          <div class="for-q">For Quote 1 &middot; Paid</div>
+          <div class="chips"><span class="chip">Paid Social</span><span class="chip v">Home decor &middot; USA</span></div>
+          <h3>LeadGen B2C</h3>
+          <p class="desc">The complete funnel for a $335,000/year social campaign for a leading US home-decor brand. Homeowners deciding to spend on their house, which is the same call yours make.</p>
+          <div class="metric">Over <span>63,000 leads</span> at an average CPL of <span>$4.5</span></div>
         </div>
+        <div class="shotwrap rv"><figure class="shot">
+          <div class="bar"><i></i><i></i><i></i><span class="url">meta ads manager</span></div>
+          <img loading="lazy" src="/case-studies/leadgen-b2c.jpg" alt="LeadGen B2C results">
+        </figure></div>
       </div>
+    </article>
 
-      <div class="pil rv">
-        <div class="n">For Quote 2</div>
-        <h3>SEO</h3>
-        <div class="rows">
-          <div class="row"><span class="pain">Consumer services</span><div><b>9,000 to 25,000 organic clicks a month.</b> 237K clicks and 37.6M impressions, average position 9.7.</div></div>
-          <div class="row"><span class="pain">Media &middot; from scratch</span><div><b>53.8K clicks and 2.5M impressions in 16 months</b> for Aurora Circ, now around 5,000 clicks a month.</div></div>
-          <div class="row"><span class="pain">Lending &middot; no backlinks</span><div><b>12.1% CTR on 1.78K clicks</b> starting with no domain history and nothing bought.</div></div>
+    <article class="case split flip">
+      <div class="cols">
+        <div class="txt rv">
+          <div class="for-q">For Quote 1 &middot; Creative</div>
+          <div class="chips"><span class="chip">Paid Social</span><span class="chip">UGC</span><span class="chip v">Legal &middot; USA</span></div>
+          <h3>UGC (+AI)</h3>
+          <p class="desc">We explored and launched 20x more UGC content volume than previously existed for a US legal company. Same approach we would use with the before and after photos your cleaners already take.</p>
+          <div class="metric">ROAS grew from <span>2x to 7x</span></div>
         </div>
+        <div class="shotwrap rv"><figure class="shot">
+          <div class="bar"><i></i><i></i><i></i><span class="url">meta ads manager</span></div>
+          <img loading="lazy" src="/case-studies/ugc-ai.jpg" alt="UGC results">
+        </figure></div>
       </div>
+    </article>
 
-      <div class="pil rv">
-        <div class="n">For Quote 3</div>
-        <h3>Pages that convert</h3>
-        <div class="rows">
-          <div class="row"><span class="pain">Marketing agency</span><div><b>Cost per lead from $50 to $5,</b> best ads down to $2.20, after rebuilding the funnel and the page behind the ads.</div></div>
-          <div class="row"><span class="pain">Lending</span><div><b>5 new deals and $1M+ in margin on $2,744 spent.</b> The spend was small. The page and the follow-up did the work.</div></div>
+    <article class="case split">
+      <div class="cols">
+        <div class="txt rv">
+          <div class="for-q">For Quote 1 &middot; Google</div>
+          <div class="chips"><span class="chip">PPC</span><span class="chip v">Advertising agency &middot; USA</span></div>
+          <h3>PPC B2B</h3>
+          <p class="desc">Inherited Google Ads and Microsoft Ads accounts with a +15% YoY goal; a year and a half of funnel work inside the PPC platforms.</p>
+          <div class="metric">Channel revenue <span>3.7x</span> &middot; ROI doubled, <span>1.74 to 3.76</span></div>
         </div>
-        <p class="scope-note">We do not have a straight cleaning-company redesign to show you. What we have is pages built behind paid traffic, which is what yours would be.</p>
+        <div class="shotwrap rv"><figure class="shot">
+          <div class="bar"><i></i><i></i><i></i><span class="url">google ads</span></div>
+          <img loading="lazy" src="/case-studies/ppc-b2b.jpg" alt="PPC B2B results">
+        </figure></div>
       </div>
-    </div>
+    </article>
+
+    <article class="case stack">
+      <div class="txt rv">
+        <div class="for-q">For Quote 2 &middot; SEO</div>
+        <div class="chips"><span class="chip">SEO &amp; GEO</span><span class="chip">Integrated</span><span class="chip v">Consumer services &middot; USA</span></div>
+        <h3>EverPresent</h3>
+        <p class="desc">Not SEO alone: organic content and technical work running alongside paid campaigns that build top-of-funnel awareness, each channel feeding the other.</p>
+        <div class="metric">From <span>9,000</span> to <span>25,000 organic clicks/month</span> &middot; 237K clicks, avg. position 9.7</div>
+      </div>
+      <div class="shotwrap rv"><figure class="shot">
+        <div class="bar"><i></i><i></i><i></i><span class="url">everpresent.com</span></div>
+        <img loading="lazy" src="/case-studies/everpresent.jpg" alt="EverPresent organic results">
+      </figure></div>
+    </article>
+
+    <article class="case stack">
+      <div class="txt rv">
+        <div class="for-q">For Quote 2 &middot; From scratch</div>
+        <div class="chips"><span class="chip">SEO &amp; GEO</span><span class="chip">Content</span><span class="chip v">Media &middot; USA</span></div>
+        <h3>Aurora Circ</h3>
+        <p class="desc">Built almost from scratch, then scaled through disciplined content production and technical structure. The starting point is close to where your organic sits today.</p>
+        <div class="metric">Now at <span>~5,000 clicks/month</span> &middot; 53.8K clicks and <span>2.5M impressions</span> over 16 months</div>
+      </div>
+      <div class="shotwrap rv"><figure class="shot">
+        <div class="bar"><i></i><i></i><i></i><span class="url">auroracirc.com</span></div>
+        <img loading="lazy" src="/case-studies/aurora-circ.jpg" alt="Aurora Circ organic results">
+      </figure></div>
+    </article>
+
+    <article class="case split flip">
+      <div class="cols">
+        <div class="txt rv">
+          <div class="for-q">For Quote 3 &middot; Pages</div>
+          <div class="chips"><span class="chip">Paid Social</span><span class="chip">Funnels</span><span class="chip v">Marketing agency &middot; California</span></div>
+          <h3>Lead Magnet B2B</h3>
+          <p class="desc">The funnel built end to end, lead magnet included, to attract leads with opt-in and turn them into meetings. The page behind the ads is what moved the number.</p>
+          <div class="metric">Cost per lead from <span>$50 to $5</span> &middot; best ads down to <span>$2.20/lead</span></div>
+        </div>
+        <div class="shotwrap rv"><figure class="shot">
+          <div class="bar"><i></i><i></i><i></i><span class="url">meta ads manager</span></div>
+          <img loading="lazy" src="/case-studies/lead-magnet-b2b.jpg" alt="Lead Magnet B2B results">
+        </figure></div>
+      </div>
+    </article>
+
+    <div class="note rv">We do not have a cleaning-company redesign to show you. What we have is pages built behind paid traffic, which is what yours would be.</div>
   </div>
 </section>
 
