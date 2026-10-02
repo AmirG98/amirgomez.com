@@ -109,6 +109,10 @@ const nextConfig: NextConfig = {
       {
         source: '/proposal/personal',
         destination: '/proposal-personal.html'
+      },
+      {
+        source: '/proposal/glowing',
+        destination: '/proposal-glowing.html'
       }
     ];
   },
