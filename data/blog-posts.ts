@@ -97349,6 +97349,304 @@ Pursue Google Local Services Ads qualification first if you're a deck builder �
 Source: The Valley Marketing Group, "Deck Builder Google Ads Cost Per Lead 2026" (thevalleymarketinggroup.com/blog/deck-builder-google-ads-cost-per-lead-2026/).`
   },
   {
+    id: "996",
+    title: "How Long Does Meta's Ad Set Learning Phase Last?",
+    slug: "meta-ads-ad-set-learning-phase-duration-2026",
+    excerpt: "Meta's ad set learning phase typically ends once an ad set hits about 50 optimization events within a rolling 7-day window, which usually takes 7-14 days in practice.",
+    featuredImage: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-03",
+    category: "Facebook Ads",
+    tags: ["Meta Ads", "Facebook Ads", "Learning Phase", "Ad Set Optimization", "Campaign Structure"],
+    featured: false,
+    readingTime: 2,
+    seo: {
+      metaTitle: "How Long Is Meta's Ad Set Learning Phase?",
+      metaDescription: "Meta's ad set learning phase typically ends once an ad set hits about 50 optimization events within a rolling 7-day window, which usually takes 7-14 days in practice.",
+      keywords: ["meta ads learning phase", "facebook ads learning phase duration", "ad set learning phase length", "50 optimization events meta"]
+    },
+    content: `Meta's ad set learning phase typically lasts until the ad set accumulates roughly 50 optimization events within a rolling 7-day window. For most advertisers with reasonable budgets, that works out to 7 to 14 days, though it can stretch longer for lower-volume campaigns.
+
+## What Counts as an Optimization Event
+
+The 50-event threshold is based on whatever action the ad set is optimizing for, not clicks or impressions.
+
+- **Optimizing for purchases** — the ad set needs about 50 purchases in a 7-day rolling window to exit learning.
+- **Optimizing for leads** — the same ad set needs about 50 lead events in that same 7-day window.
+- **Optimizing for a different event** — add-to-cart, app installs, or any other objective follows the same 50-event rule, just measured against that specific action.
+
+## Why It's Per Ad Set, Not Per Campaign
+
+The 50-event requirement applies to each individual ad set, which catches advertisers off guard when they split budget across several ad sets to test audiences or creative. Ten ad sets sharing one campaign budget means each of those ten needs its own 50 events in 7 days — splitting volume thin across ad sets is one of the most common reasons an account stays stuck in learning longer than expected.
+
+## What Resets the Clock
+
+Meta restarts the learning phase whenever an ad set goes through a "significant edit." That includes a large budget change, swapping in new creative, editing the targeted audience, or pausing the ad set for more than 7 days and resuming it. Making several small edits in quick succession while trying to "optimize" a learning ad set is counterproductive — it keeps resetting the counter instead of letting it accumulate events.
+
+## What Happens If an Ad Set Never Hits 50 Events
+
+An ad set that doesn't reach 50 optimization events within its 7-day window gets flagged as **Learning Limited** rather than exiting learning normally. Delivery tends to be less stable and more expensive while an ad set sits in this state, since the algorithm hasn't gathered enough signal to optimize delivery efficiently. The fix is usually to broaden targeting, consolidate ad sets so volume isn't split too thin, or switch to a conversion event further up the funnel that occurs more often.
+
+## Campaign Budget Optimization Doesn't Exempt an Ad Set
+
+Running Campaign Budget Optimization, where Meta shifts spend dynamically across ad sets inside one campaign, doesn't change the per-ad-set learning rule. Each ad set under a CBO campaign still needs its own roughly 50 events in a 7-day window to exit learning; CBO only affects how budget is distributed between ad sets, not how the learning phase is counted.
+
+## Bottom Line
+
+If you're structuring a new Meta campaign, consolidate budget into fewer ad sets so each one can realistically clear 50 optimization events within a week, and resist editing a learning ad set until it has had a full 7-day window to settle.
+
+Source: Meta's ad-set learning-phase guidance, as summarized in Cometly, "Facebook Ads Learning Phase Optimization" (cometly.com/post/facebook-ads-learning-phase-optimization).`
+  },
+  {
+    id: "997",
+    title: "How Long Does Google Ads Smart Bidding Take to Exit the Learning Period?",
+    slug: "google-ads-smart-bidding-learning-period-duration-2026",
+    excerpt: "Google Ads Smart Bidding typically needs about 50 conversions or 3 conversion cycles to calibrate — roughly one week to one month of elapsed time, per Google.",
+    featuredImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-03",
+    category: "Google Ads",
+    tags: ["Google Ads", "Smart Bidding", "Learning Period", "Bid Strategy", "PPC Optimization"],
+    featured: false,
+    readingTime: 2,
+    seo: {
+      metaTitle: "Google Ads Smart Bidding Learning Period Length",
+      metaDescription: "Google Ads Smart Bidding typically needs about 50 conversions or 3 conversion cycles to calibrate — roughly one week to one month of elapsed time, per Google.",
+      keywords: ["google ads smart bidding learning period", "smart bidding how long to learn", "google ads learning phase conversions", "target cpa target roas calibration time"]
+    },
+    content: `Google Ads' Smart Bidding learning period typically takes up to about 50 conversions, or roughly 3 full conversion cycles, for a bid strategy to calibrate to a new target. In elapsed time, Google states this can take anywhere from about a week to a month, depending on how much conversion data the campaign already has.
+
+## The Three Factors That Determine Duration
+
+Google's own support documentation names three variables that control how long a Smart Bidding strategy spends learning.
+
+- **Conversion volume** — campaigns, ad groups, keywords, or products that generate more conversions per day calibrate faster, since the algorithm has more data points to work from sooner.
+- **Conversion cycle length** — a business where customers convert within hours learns faster than one where the typical path to conversion takes days or weeks, because each conversion cycle has to largely complete before it counts toward calibration.
+- **Bid strategy chosen** — strategies like Maximize Conversions and Maximize Conversion Value calibrate against your actual conversion data, so a strategy change restarts this process; Manual CPC isn't affected since the learning period doesn't apply to it.
+
+## Conversion Volume Benchmarks
+
+Google recommends a minimum of 15 conversions in the trailing 30 days before a campaign is considered ready for Smart Bidding, with 30 to 50 conversions per campaign per month cited as the range that produces the most reliable results. Campaigns sitting below that volume tend to see noisier performance and a longer effective learning period, since the strategy has less data to calibrate against each cycle.
+
+## Why Historical Conversion Data Helps
+
+Smart Bidding strategies can draw on a campaign's conversion history from before the current bid strategy or target was set. Carrying that history forward — by avoiding account restructures that orphan existing conversion data — tends to shorten the initial calibration window, since the algorithm isn't starting from zero.
+
+## What Resets Calibration
+
+Changing the bid strategy itself, making a large change to the target CPA or target ROAS value, or significantly altering the campaign's budget or targeting during the learning period can send the strategy back into a fresh calibration cycle. Letting a strategy run through at least one full conversion cycle before adjusting targets is the standard advice for avoiding repeated resets.
+
+## "Learning" vs. "Limited by Data" Status
+
+Google Ads shows a bid strategy's current status directly in the interface, and it's worth distinguishing the two labels you'll see. A strategy marked **Learning** is actively within its calibration window and should be left alone. A strategy marked **Limited by data** has settled but still doesn't have enough conversion volume to optimize reliably — a longer-term volume problem rather than a temporary calibration one, and the fix is almost always to broaden the campaign's conversion volume rather than wait it out.
+
+## Bottom Line
+
+Budget for one to four weeks of reduced performance stability whenever you launch a new Smart Bidding strategy or materially change its target, and avoid touching the strategy again until it has logged close to 50 conversions or run through a few full conversion cycles.
+
+Source: Google Ads Help, "Duration of the learning period for campaigns and what affects it" (support.google.com/google-ads/answer/13020501).`
+  },
+  {
+    id: "998",
+    title: "What Are Gmail's 2026 Requirements for Bulk Email Senders?",
+    slug: "gmail-bulk-sender-requirements-2026",
+    excerpt: "Domains sending 5,000+ daily emails to Gmail addresses must authenticate with SPF, DKIM and DMARC, support 1-click unsubscribe, and keep spam rates under 0.3%.",
+    featuredImage: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-03",
+    category: "Email Marketing",
+    tags: ["Email Deliverability", "Gmail", "SPF DKIM DMARC", "Email Compliance", "Bulk Senders"],
+    featured: false,
+    readingTime: 2,
+    seo: {
+      metaTitle: "Gmail's 2026 Bulk Email Sender Requirements",
+      metaDescription: "Domains sending 5,000+ daily emails to Gmail addresses must authenticate with SPF, DKIM and DMARC, support 1-click unsubscribe, and keep spam rates under 0.3%.",
+      keywords: ["gmail bulk sender requirements", "gmail email authentication 2026", "spf dkim dmarc gmail", "gmail one-click unsubscribe", "gmail spam rate threshold"]
+    },
+    content: `Any domain that sends 5,000 or more emails to personal Gmail addresses within a 24-hour period is classified by Google as a bulk sender, and once a domain crosses that line even once it's treated as a bulk sender permanently. Bulk senders must authenticate every message with SPF, DKIM and DMARC, support one-click unsubscribe with requests processed within two days, and keep their reported spam complaint rate below 0.3%.
+
+## The Four Hard Requirements
+
+- **Email authentication** — SPF confirms which servers are authorized to send on your domain's behalf, DKIM verifies message content wasn't altered in transit, and DMARC enforces that your "From:" domain aligns with those authentication records. Missing or misconfigured records on any of the three can get messages filtered or rejected outright.
+- **One-click unsubscribe** — marketing and other subscribed messages need a clearly visible unsubscribe link, and the message headers must support list-unsubscribe functionality so Gmail's own one-click control works. Unsubscribe requests have to be honored within two days.
+- **Spam rate below 0.3%** — Gmail tracks spam complaint rate as reported through Google Postmaster Tools, calculated daily; senders should aim to stay under 0.1% as a safety margin, since anything brushing up against 0.3% risks message filtering or rejection.
+- **Valid formatting and no impersonation** — messages must be RFC-compliant, forwarded mail needs ARC headers, and a sender's "From:" domain can't impersonate Gmail or another brand.
+
+## When This Took Effect, and What Changed Since
+
+Google began enforcing these requirements for bulk senders starting February 1, 2024, rolling out gradually with temporary allowances before moving to outright message rejection for non-compliant senders. Google tightened enforcement further starting around November 2025, introducing a harder line between standard senders and bulk senders, stricter DMARC alignment checks, and spam-rate tracking that can apply at the subdomain level rather than only the root domain.
+
+## Why This Matters More for Marketing Email Than Transactional Email
+
+Marketing campaigns are far more likely to trip the one-click-unsubscribe and spam-rate requirements than one-off transactional emails, since marketing lists accumulate disengaged recipients over time who are more prone to hitting "report spam" instead of unsubscribing. A domain sending both transactional and marketing mail benefits from separating them onto different sending subdomains, so a spike in spam complaints on a marketing campaign doesn't put transactional deliverability at risk under the same domain reputation.
+
+## Bottom Line
+
+If your domain sends anywhere close to 5,000 emails a day to Gmail addresses, confirm SPF, DKIM and DMARC are all correctly configured and aligned, add a working one-click unsubscribe header to every marketing send, and monitor your spam rate in Google Postmaster Tools before it approaches 0.3%.
+
+Source: Google, "Email sender guidelines FAQ" (support.google.com/mail/answer/14229414), as summarized in reporting from PPC Land, "Google updates requirements for Bulk Email Senders to Gmail" (ppc.land/google-updates-requirements-for-bulk-email-senders-to-gmail).`
+  },
+  {
+    id: "999",
+    title: "How Often Do You Have to Refresh Your Product Feed in Google Merchant Center?",
+    slug: "google-merchant-center-feed-refresh-30-days-2026",
+    excerpt: "Google Merchant Center requires a full feed refresh at least once every 30 days — products that go 30 days without one automatically expire from Shopping ads.",
+    featuredImage: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-03",
+    category: "Google Ads",
+    tags: ["Google Merchant Center", "Google Shopping Ads", "Product Feed", "E-commerce Advertising", "Feed Management"],
+    featured: false,
+    readingTime: 2,
+    seo: {
+      metaTitle: "Google Merchant Center Feed Refresh Requirement",
+      metaDescription: "Google Merchant Center requires a full feed refresh at least once every 30 days — products that go 30 days without one automatically expire from Shopping ads.",
+      keywords: ["google merchant center feed refresh", "merchant center 30 day expiration", "google shopping feed update frequency", "merchant center expiring items"]
+    },
+    content: `Google Merchant Center requires every product in your feed to be resubmitted, or otherwise refreshed, at least once every 30 days. Any item that goes 30 days without a refresh automatically expires and drops out of Shopping ads and free listings, regardless of whether the product is still in stock or for sale.
+
+## What Counts as a Refresh
+
+A refresh happens whenever you resubmit your feed, whether through a scheduled fetch, a manual upload, or the Content API. Google also refreshes product data automatically for sites it can crawl, where schema.org structured data on the product landing page lets Google re-validate the listing without a new feed submission. Merchants who rely only on Google's own crawling rather than scheduled feed uploads should confirm their structured markup is actually being picked up, since a crawl failure counts the same as never refreshing at all.
+
+## Recommended Upload Frequency vs. the Hard Limit
+
+- **Hard requirement** — a full feed resubmission at least once every 30 days, or every item in it expires.
+- **Recommended cadence** — submitting on a daily or near-daily schedule for most catalogs, so pricing, availability and stock status stay current between the mandatory 30-day refresh.
+- **High-frequency option** — Google allows a full feed to be uploaded up to 4 times per day for merchants whose inventory or pricing changes often enough to justify it.
+
+## The Warning Before Expiration
+
+Merchant Center surfaces an "Expiring items" warning in the diagnostics dashboard before products actually drop out, flagging listings that are approaching their 30-day limit without a refresh. Catching that warning early is the difference between a quiet feed-schedule fix and a sudden, unexplained drop in Shopping ads impressions once previously-live products silently expire.
+
+## Why This Trips Up Shopify and Platform-Connected Stores
+
+Stores that connect Merchant Center through a platform app rather than a manually scheduled feed sometimes assume the integration keeps products perpetually current. In practice, an app that stops syncing correctly — due to a disconnected account, an expired API token, or a plan change — can leave a feed stale well past 30 days before anyone notices the Shopping ads have gone quiet, since there's no separate alert outside the Merchant Center diagnostics page itself.
+
+## Partial Feed Updates Don't Reset the 30-Day Clock for Every Item
+
+Submitting a partial feed, or updating only a subset of products through the Content API, refreshes the clock only for the items actually included in that submission. Products that weren't touched by a partial update keep counting down from their last full refresh, so a merchant who assumes any feed activity resets the whole catalog's 30-day window can still lose untouched listings on schedule.
+
+## Bottom Line
+
+Schedule an automated feed fetch at an interval well inside the 30-day limit — daily is standard — and check the Merchant Center diagnostics page periodically for expiring-items warnings rather than assuming a platform integration is refreshing data on its own.
+
+Source: Google Merchant Center Help, "About expiration dates" (support.google.com/merchants/answer/188490), via feed-management documentation summarized at FeedArmy (feedarmy.com/kb/google-merchant-center-products-expiring-using-shopify-solution) and AdNabu (blog.adnabu.com/google-merchant-center/expiring-items-google-merchant-center).`
+  },
+  {
+    id: "1000",
+    title: "What's GA4's Default Attribution Lookback Window?",
+    slug: "ga4-default-attribution-lookback-window-2026",
+    excerpt: "GA4 defaults to a 30-day lookback window for acquisition events like first_visit, and 90 days for all other conversion events, per Google's attribution settings.",
+    featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-03",
+    category: "Analytics",
+    tags: ["Google Analytics 4", "GA4", "Attribution", "Lookback Window", "Conversion Tracking"],
+    featured: false,
+    readingTime: 2,
+    seo: {
+      metaTitle: "GA4's Default Attribution Lookback Window",
+      metaDescription: "GA4 defaults to a 30-day lookback window for acquisition events like first_visit, and 90 days for all other conversion events, per Google's attribution settings.",
+      keywords: ["ga4 default attribution window", "ga4 lookback window days", "ga4 conversion window settings", "ga4 attribution settings default"]
+    },
+    content: `GA4's default attribution lookback window is 30 days for acquisition events — specifically first_open and first_visit — and 90 days for every other conversion event. Both can be changed in the property's Attribution Settings, and as of an August 2026 update, Google replaced the old preset dropdown with custom integer values instead of a fixed list of options.
+
+## The Two Default Windows
+
+- **Acquisition events (first_open, first_visit)** — default to a 30-day lookback, with 7 days available as the alternative preset-era option for businesses with a much shorter path from first touch to acquisition.
+- **All other key events** — default to a 90-day lookback, covering purchases, leads, sign-ups, and any other conversion event configured outside the acquisition category.
+
+## What Changed in August 2026
+
+On August 11, 2026, Google removed GA4's fixed preset list for lookback windows and replaced it with free-entry integer values. Click-through conversions, which previously only offered 1, 7, 14, 30, 60 or 90-day presets, now accept any whole number of days from 1 to 90. Engaged-view conversions, previously fixed at a flat 3 days, now accept any integer from 1 to 30. Properties that hadn't touched their attribution settings kept their existing preset value as the starting point after the change, rather than being reset.
+
+## Why the Lookback Window Applies to Session Attribution Too
+
+The key-event lookback window a property chooses doesn't only affect conversion counting — it also governs session attribution, meaning the window determines how far back GA4 will look to credit a session, and therefore a channel or campaign, with a given conversion. A shorter window attributes more conversions to whichever touchpoint happened most recently, while a longer window spreads credit further back toward earlier-funnel channels.
+
+## When to Shorten or Lengthen It
+
+A business with an impulse-purchase sales cycle — same-day or next-day converters — gets a more accurate attribution picture from a shorter window, since a 90-day default would let GA4 credit touchpoints from months-old sessions that had little real influence on the eventual conversion. A longer sales cycle, like B2B software or high-ticket purchases researched over weeks, benefits from extending the window closer to the full 90-day maximum for click-through conversions so earlier research-stage touchpoints aren't undercounted.
+
+## This Is a Separate Setting From Google Ads' Own Attribution Window
+
+GA4's lookback window governs how GA4 itself attributes conversions in its reports; it's a distinct setting from the conversion window configured inside Google Ads, which controls how Google Ads attributes and reports conversions for bidding and billing. A property can have GA4 and Google Ads linked and still run different lookback windows in each tool, so checking one doesn't tell you what the other is set to — they have to be checked and aligned separately if consistent attribution across both is the goal.
+
+## Bottom Line
+
+Check your GA4 property's Attribution Settings against your actual average time-to-conversion rather than assuming the 30/90-day defaults fit your business, and take advantage of the August 2026 move to custom integer windows to match the setting to your real sales cycle instead of the nearest preset.
+
+Source: Google Analytics Help, "Advertising and attribution" (support.google.com/analytics/answer/10597962); Google Analytics Admin API, AttributionSettings reference (developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/AttributionSettings).`
+  },
+  {
+    id: "1001",
+    title: "What's a Good Email Open Rate for Hardware and Home Improvement Brands?",
+    slug: "hardware-home-improvement-email-open-rate-benchmark-2026",
+    excerpt: "Hardware and home improvement brands average a 49.5% email open rate and 1.28% click rate, well above the 43.46% all-industry average, per 2025 benchmark data.",
+    featuredImage: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-03",
+    category: "Email Marketing",
+    tags: ["Email Marketing Benchmarks", "Home Improvement", "Open Rate", "Hardware Retail", "Email Performance"],
+    featured: false,
+    readingTime: 2,
+    seo: {
+      metaTitle: "Good Email Open Rate: Home Improvement Brands",
+      metaDescription: "Hardware and home improvement brands average a 49.5% email open rate and 1.28% click rate, well above the 43.46% all-industry average, per 2025 benchmark data.",
+      keywords: ["email open rate home improvement", "hardware industry email benchmark", "good email open rate 2026", "home improvement email marketing benchmark"]
+    },
+    content: `A good email open rate for a hardware or home improvement brand is around 49.5%, with a click rate near 1.28%, based on MailerLite's 2025 benchmark report covering over 3.6 million campaigns sent from 181,000 accounts. That's well above the 43.46% open rate average across all industries measured in the same report.
+
+## How the Category Compares to the All-Industry Average
+
+- **Hardware & Home Improvement open rate** — 49.5%, about 6 points above the 43.46% all-industry average for 2025.
+- **Hardware & Home Improvement click rate** — 1.28%, below the 2.09% all-industry average click rate.
+- **The gap between the two metrics** — a high open rate paired with a below-average click rate suggests subject lines and sender reputation are working well for this category, while the emails themselves may be under-delivering on driving clicks once opened.
+
+## Why This Category Tends to Open Well
+
+Home improvement and hardware purchases are frequently tied to a specific ongoing project — a renovation, a repair, a seasonal task — which gives subscribers an active reason to open emails about relevant products, promotions, or how-to content rather than archiving them unopened. Seasonal timing also plays a role: campaigns tied to spring planting, fall weatherproofing, or holiday project sales tend to land when recipients are already thinking about the category, which lifts open rates independent of subject-line quality.
+
+## Why the Click Rate Lags
+
+A below-average click rate alongside an above-average open rate points toward either broad, catalog-style emails that don't give any single recipient a clear reason to click, or a mismatch between what gets someone to open the email and what the email itself offers once opened. Home improvement retailers sending the same broad promotional blast to an entire list, rather than segmenting by project type or past purchase category, are the most likely candidates for this pattern.
+
+## What the Report Measured
+
+The MailerLite benchmark draws from a full year of campaign data, December 2024 through November 2025, across 46 separate industries and 7 regions, which makes it one of the larger sample sizes available for industry-level email benchmarking rather than a single-vendor's customer base alone. The 43.46% all-industry open rate average for 2025 was itself a small increase from 42.35% in 2024, and the 2.09% all-industry click rate average rose slightly from 2% the year before.
+
+## Bottom Line
+
+If your hardware or home improvement email program is clearing roughly 49.5% opens but falling short on the 1.28% click benchmark, the fix is more likely in segmentation and offer relevance than in subject lines — test splitting broad promotional sends by project category or past purchase history before touching send times or subject-line copy.
+
+Source: MailerLite, "Compare Your Email Performance Metrics: Industry Benchmarks" 2025 report (mailerlite.com/blog/compare-your-email-performance-metrics-industry-benchmarks).`
+  },
+  {
     id: "723",
     title: "OpenAI Launches ChatGPT Ads in India With 50+ Brands",
     slug: "chatgpt-ads-india-launch-2026",
