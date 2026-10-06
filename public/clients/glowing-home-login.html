@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glowing Home Cleaners | Client Portal</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep: #0E3A3A; --deep-2: #14514E; --ink: #1D2B2B; --ink-2: #566463; --ink-3: #93A09F;
+    --paper: #F7FAF9; --paper-2: #EDF4F2; --hairline: #DCE7E4; --mint: #2FA98C; --mint-soft: #E3F3EE;
+    --serif: 'Fraunces', Georgia, serif; --sans: 'Inter', -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15.5px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 24px; }
+  .box { width: 100%; max-width: 380px; text-align: center; }
+  .mark { display: flex; justify-content: center; margin-bottom: 16px; }
+  .wordmark { font-family: var(--serif); font-weight: 600; font-size: 25px; letter-spacing: .02em; color: var(--deep); }
+  .wordmark-sub { font-size: 9.5px; font-weight: 600; letter-spacing: .42em; text-indent: .42em; color: var(--mint); margin-top: 6px; text-transform: uppercase; }
+  .rule { width: 50px; height: 1px; background: var(--mint); margin: 24px auto 22px; }
+  .msg { font-size: 14px; color: var(--ink-2); margin-bottom: 22px; }
+  input { width: 100%; padding: 13px 15px; font-family: var(--sans); font-size: 15px; color: var(--ink);
+    background: #fff; border: 1px solid var(--hairline); border-radius: 8px; outline: none; transition: border-color .2s; }
+  input:focus { border-color: var(--mint); }
+  button { width: 100%; margin-top: 11px; padding: 13px; font-family: var(--sans); font-size: 13px; font-weight: 600;
+    letter-spacing: .1em; text-transform: uppercase; color: #fff; background: var(--deep); border: 0; border-radius: 8px; cursor: pointer; transition: background .2s; }
+  button:hover { background: var(--deep-2); }
+  .error { margin-top: 14px; font-size: 13px; color: #B4472F; display: none; }
+  .error.show { display: block; }
+</style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-icon.png">
+</head>
+<body>
+<div class="box">
+    <div class="mark" aria-hidden="true">
+      <svg width="46" height="46" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="30" fill="none" stroke="#2FA98C" stroke-width="2"/>
+        <circle cx="50" cy="50" r="12" fill="#2FA98C" opacity=".18"/>
+        <g stroke="#0E3A3A" stroke-width="2" stroke-linecap="round">
+          <line x1="50" y1="6" x2="50" y2="16"/><line x1="50" y1="84" x2="50" y2="94"/>
+          <line x1="6" y1="50" x2="16" y2="50"/><line x1="84" y1="50" x2="94" y2="50"/>
+          <line x1="19" y1="19" x2="26" y2="26"/><line x1="74" y1="74" x2="81" y2="81"/>
+          <line x1="81" y1="19" x2="74" y2="26"/><line x1="26" y1="74" x2="19" y2="81"/>
+        </g>
+      </svg>
+    </div>
+  <div class="wordmark">Glowing Home Cleaners</div>
+  <div class="wordmark-sub">Client Portal</div>
+  <div class="rule"></div>
+  <p class="msg">This portal is private. Enter your access key to continue.</p>
+  <form id="f">
+    <input type="password" id="pass" placeholder="Access key" autocomplete="off" autofocus>
+    <button type="submit">Enter</button>
+  </form>
+  <p class="error" id="err">Wrong key. Try again.</p>
+</div>
+<script>
+(function () {
+  var COOKIE = 'client_auth_glowing-home';
+  if (document.cookie.indexOf(COOKIE + '=') !== -1) {
+    document.getElementById('err').classList.add('show');
+    document.cookie = COOKIE + '=; path=/; max-age=0';
+  }
+  document.getElementById('f').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = document.getElementById('pass').value.trim();
+    if (!v) return;
+    document.cookie = COOKIE + '=' + encodeURIComponent(v) + '; path=/; max-age=2592000; SameSite=Lax';
+    location.reload();
+  });
+})();
+</script>
+</body>
+</html>
