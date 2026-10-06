@@ -29,12 +29,19 @@ export function middleware(req: NextRequest) {
 
   // Tablero del equipo: /hq/equipo con clave compartida (env AGROWTH_TEAM_KEY,
   // default EQUIPO2226). Lo usan Pilar, Agustin y Amir.
-  if (req.nextUrl.pathname === '/hq/equipo' || req.nextUrl.pathname === '/hq/equipo/') {
+  const teamPaths: Record<string, string> = {
+    '/hq/equipo': '/hq-equipo.html',
+    '/hq/equipo/entrenamientos': '/hq-entrenamientos.html',
+    '/hq-equipo.html': '/hq-equipo.html',
+    '/hq-entrenamientos.html': '/hq-entrenamientos.html',
+  };
+  const teamTarget = teamPaths[req.nextUrl.pathname.replace(/\/$/, '') || '/'];
+  if (teamTarget) {
     const team = req.cookies.get('agrowth_team')?.value;
     const expected = process.env.AGROWTH_TEAM_KEY || 'EQUIPO2226';
     const master = req.cookies.get('agrowth_master')?.value;
     if ((team && team === expected) || isMasterAuthorized(master)) {
-      return NextResponse.rewrite(new URL('/hq-equipo.html', req.url));
+      return NextResponse.rewrite(new URL(teamTarget, req.url));
     }
     return NextResponse.rewrite(new URL('/hq-equipo-login.html', req.url));
   }
@@ -129,5 +136,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/clients/:path*', '/hq', '/hq.html', '/hq/', '/hq/equipo', '/hq/equipo/', '/hq/budgets', '/hq/budgets/', '/hq-budgets.html'],
+  matcher: ['/clients/:path*', '/hq', '/hq.html', '/hq/', '/hq/equipo', '/hq/equipo/', '/hq/equipo/entrenamientos', '/hq/equipo/entrenamientos/', '/hq-equipo.html', '/hq-entrenamientos.html', '/hq/budgets', '/hq/budgets/', '/hq-budgets.html'],
 };
