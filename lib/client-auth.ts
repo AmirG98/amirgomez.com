@@ -8,6 +8,7 @@ export const CLIENT_PASSWORDS: Record<string, string> = {
   'casafight': 'CASA2226',
   'qhu': 'QHU2226',
   'liz-solari': 'LIZ2226',
+  'glowing-home': 'GLOWING2226',
 };
 
 // Clave maestra interna de A+Growth (env AGROWTH_MASTER_KEY, nunca en el repo).

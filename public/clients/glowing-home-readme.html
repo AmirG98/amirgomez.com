@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glowing Home Cleaners | Onboarding</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep: #0E3A3A; --deep-2: #14514E; --ink: #1D2B2B; --ink-2: #566463; --ink-3: #93A09F;
+    --paper: #F7FAF9; --paper-2: #EDF4F2; --hairline: #DCE7E4; --mint: #2FA98C; --mint-soft: #E3F3EE;
+    --serif: 'Fraunces', Georgia, serif; --sans: 'Inter', -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15.5px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 820px; margin: 0 auto; padding: 60px 24px 72px; }
+  .back { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--mint); text-decoration: none; margin-bottom: 28px; }
+  .back:hover { text-decoration: underline; }
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--mint); }
+  h1 { font-family: var(--serif); font-size: clamp(28px, 4vw, 36px); font-weight: 600; margin: 8px 0 10px; letter-spacing: -.01em; }
+  .lede { font-size: 16px; color: var(--ink-2); max-width: 60ch; }
+  .rule { height: 1px; background: var(--hairline); margin: 36px 0 32px; }
+  h2 { font-family: var(--serif); font-size: 22px; font-weight: 600; margin: 36px 0 12px; }
+  h3 { font-size: 15.5px; font-weight: 600; margin: 22px 0 6px; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 0 0 14px 20px; }
+  li { margin-bottom: 7px; }
+  b, strong { color: var(--ink); font-weight: 600; }
+  a { color: var(--deep); }
+  .card { background: #fff; border: 1px solid var(--hairline); border-radius: 12px; padding: 22px 24px; margin-bottom: 14px; }
+  .card h3 { margin-top: 0; }
+  .note { border-left: 3px solid var(--mint); background: var(--mint-soft); padding: 15px 19px; border-radius: 0 8px 8px 0; margin: 18px 0; font-size: 14.5px; }
+  .step { display: grid; grid-template-columns: 34px 1fr; gap: 14px; align-items: start; padding: 16px 0; border-bottom: 1px solid var(--hairline); }
+  .step:last-child { border-bottom: 0; }
+  .step .n { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--mint); line-height: 1.2; }
+  .step h3 { margin: 0 0 4px; }
+  .step p { font-size: 14.5px; color: var(--ink-2); margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0 20px; font-size: 14.5px; }
+  th { text-align: left; font-size: 10.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); padding: 0 12px 9px 0; border-bottom: 1px solid var(--hairline); }
+  td { padding: 11px 12px 11px 0; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+  td:last-child, th:last-child { padding-right: 0; }
+  .tag { display: inline-block; font-size: 10.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: var(--mint-soft); color: var(--deep); }
+  .tag.wait { background: #FBF0E2; color: #8A5A1B; }
+  footer { margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--hairline); font-size: 12px; color: var(--ink-3); }
+  .rv { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+  .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } }
+  @media (max-width: 620px) { .step { grid-template-columns: 26px 1fr; gap: 10px; } }
+</style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-icon.png">
+</head>
+<body data-client="glowing-home" data-page="readme">
+<div class="page">
+<a class="back" href="/clients/glowing-home">&larr; Portal</a>
+
+<div class="rv">
+  <p class="eyebrow">Start here</p>
+  <h1>Onboarding</h1>
+  <p class="lede">Six things to get us running. The first three are what block us from starting the audit, so those come first.</p>
+</div>
+
+<div class="rule"></div>
+
+<h2 class="rv">What we need from you</h2>
+
+<div class="rv">
+  <div class="step">
+    <div class="n">1</div>
+    <div>
+      <h3>Meta Business Manager access <span class="tag">Blocks the audit</span></h3>
+      <p>Go to <b>business.facebook.com</b> &rarr; Settings &rarr; Users &rarr; Partners &rarr; Add partner, and send us the invite with <b>Admin</b> access on the ad account and the page.</p>
+      <p>The ad account stays in your name, with your payment method. We come in as a partner, so the history and the data stay on your side even if we stop working together.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="n">2</div>
+    <div>
+      <h3>Google Ads and Local Service Ads <span class="tag">Blocks the audit</span></h3>
+      <p>In Google Ads: Tools &rarr; Access and security &rarr; invite us with <b>Admin</b>. For LSA, the access comes through the same Google account.</p>
+      <p>If LSA is on a separate login, send us that one too. We need to see the $4,000 a month working, not guess at it.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="n">3</div>
+    <div>
+      <h3>Google Business Profile and Analytics <span class="tag">Blocks the audit</span></h3>
+      <p>Manager access on the Business Profile, and viewer or admin on Google Analytics and Search Console if you have them set up.</p>
+      <p>If you do not have Analytics installed, say so and we will set it up during week one.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="n">4</div>
+    <div>
+      <h3>Shared Drive folder</h3>
+      <p>We will send you a Google Drive folder. Drop in anything you already have: logos, brand files, photos of completed jobs, before and afters, reviews, pricing sheets, your service area list.</p>
+      <p>The before and after photos matter more than you think. They are the best performing content in this category and your cleaners are already taking them.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="n">5</div>
+    <div>
+      <h3>Brand questionnaire</h3>
+      <p>A set of questions about your offer, your customers and how you talk about the business. It takes about 20 minutes and it saves weeks of back and forth on every ad and page we write after.</p>
+      <p>We send it once the contract is signed.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="n">6</div>
+    <div>
+      <h3>Jobber and your booking flow</h3>
+      <p>View access to Jobber, or at minimum a walkthrough of how a lead goes from form to booked job. We need to see where leads land and how your team follows up.</p>
+      <p>This is also where we look at the connection between your forms and the CRM, which is usually where leads quietly leak.</p>
+    </div>
+  </div>
+</div>
+
+<div class="note rv"><b>Thumbtack and Slack.</b> Send us read access to Thumbtack so we can see what those leads cost you, and add amir@amirgomez.com to your Slack as a guest. Slack is where the day to day happens.</div>
+
+<h2 class="rv">What happens on our side</h2>
+
+<table class="rv">
+  <tr><th>When</th><th>What we do</th></tr>
+  <tr><td><b>Days 1&ndash;3</b></td><td>Audit every platform you gave us access to. We look at what is running, what it costs and where it leaks.</td></tr>
+  <tr><td><b>Days 4&ndash;7</b></td><td>Conversion tracking installed properly, so from that point on we know which ad produced which booking. Keyword research for Google.</td></tr>
+  <tr><td><b>Week 2</b></td><td>Google Ads account built from scratch. Meta restructured with several creative angles instead of one promoted post. Action plan shared with you.</td></tr>
+  <tr><td><b>Week 3 on</b></td><td>Campaigns live and testing. Biweekly reports start.</td></tr>
+</table>
+
+<h2 class="rv">What stays the same for now</h2>
+<div class="card rv">
+  <p>Keep your budgets exactly where they are while we audit:</p>
+  <ul>
+    <li><b>Meta:</b> $25 a day minimum. Below that there is not enough data to tell a good ad from a bad one.</li>
+    <li><b>Google LSA:</b> around $4,000 a month. It is working, so we do not touch it until we understand it.</li>
+    <li><b>Thumbtack:</b> $700 to $1,000. Same reasoning.</li>
+  </ul>
+  <p>You can stop your own Instagram posting whenever you want to hand that over. Ad spend keeps going directly to the platforms, never through us.</p>
+</div>
+
+<h2 class="rv">How we work together</h2>
+<table class="rv">
+  <tr><th>Thing</th><th>How</th></tr>
+  <tr><td><b>Day to day</b></td><td>Slack. Amir is your main contact until things are running, then we bring in whoever each project needs.</td></tr>
+  <tr><td><b>Reports</b></td><td>Every two weeks. We need that much data before a number means anything.</td></tr>
+  <tr><td><b>Calls</b></td><td>Monthly. We go over the last 30 days against what you are seeing on your end, and agree on what happens next.</td></tr>
+  <tr><td><b>This portal</b></td><td>Live. Reports, approvals, ideas and context all live here.</td></tr>
+</table>
+
+<div class="note rv"><b>On what we measure.</b> You said it on the call and we agree: cost per lead on its own is not the point. We want visibility into booked jobs and what they are worth, so we can tell whether this is actually making you money. Whatever you can share from Jobber on that side makes the reports a lot more useful.</div>
+
+<footer>Prepared by A+ Growth &middot; amir@amirgomez.com</footer>
+</div>
+<script>
+(function () {
+  var io = ('IntersectionObserver' in window) ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .1, rootMargin: '0px 0px -40px 0px' }) : null;
+  document.querySelectorAll('.rv').forEach(function (el) { io ? io.observe(el) : el.classList.add('in'); });
+})();
+</script>
+<script src="/clients/portal-edit.js" defer></script>
+</body>
+</html>

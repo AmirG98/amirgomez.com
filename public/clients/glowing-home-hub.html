@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glowing Home Cleaners | Client Portal</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep: #0E3A3A; --deep-2: #14514E; --ink: #1D2B2B; --ink-2: #566463; --ink-3: #93A09F;
+    --paper: #F7FAF9; --paper-2: #EDF4F2; --hairline: #DCE7E4; --mint: #2FA98C; --mint-soft: #E3F3EE;
+    --serif: 'Fraunces', Georgia, serif; --sans: 'Inter', -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15.5px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  .page { max-width: 900px; margin: 0 auto; padding: 68px 24px 64px; }
+  header { text-align: center; margin-bottom: 48px; }
+  .mark { display: flex; justify-content: center; margin-bottom: 14px; }
+  .wordmark { font-family: var(--serif); font-weight: 600; font-size: 26px; color: var(--deep); }
+  .wordmark-sub { font-size: 9.5px; font-weight: 600; letter-spacing: .42em; text-indent: .42em; color: var(--mint); margin-top: 6px; text-transform: uppercase; }
+  .rule { width: 50px; height: 1px; background: var(--mint); margin: 26px auto 22px; }
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--mint); }
+  h1 { font-family: var(--serif); font-size: 26px; font-weight: 600; margin-top: 8px; }
+  .sub { font-size: 14.5px; color: var(--ink-2); margin-top: 6px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(262px, 1fr)); gap: 16px; }
+  a.tile { display: block; text-decoration: none; color: inherit; background: #fff; border: 1px solid var(--hairline);
+    border-radius: 12px; padding: 28px 28px 24px; transition: border-color .25s, transform .25s, box-shadow .25s; }
+  a.tile:hover { border-color: var(--mint); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(14,58,58,.08); }
+  .tile .t-eyebrow { font-size: 10.5px; font-weight: 600; letter-spacing: .17em; text-transform: uppercase; color: var(--ink-3); }
+  .tile h2 { font-family: var(--serif); font-size: 21px; font-weight: 600; color: var(--ink); margin: 10px 0 6px; }
+  .tile p { font-size: 14px; color: var(--ink-2); min-height: 44px; }
+  .tile .go { display: inline-block; margin-top: 15px; font-size: 12px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; color: var(--mint); }
+  a.tile:hover .go { text-decoration: underline; }
+  .tile.soon { background: transparent; border-style: dashed; pointer-events: none; }
+  .tile.soon h2, .tile.soon p { color: var(--ink-3); }
+  .tile.soon .badge { display: inline-block; font-size: 10.5px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase;
+    color: var(--deep); background: var(--mint-soft); border-radius: 999px; padding: 3px 11px; margin-top: 15px; }
+  footer { text-align: center; margin-top: 60px; font-size: 12px; color: var(--ink-3); }
+  .rv { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+  .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } }
+</style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-icon.png">
+</head>
+<body data-client="glowing-home" data-page="hub">
+<div class="page">
+
+  <header class="rv">
+    <div class="mark" aria-hidden="true">
+      <svg width="46" height="46" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="30" fill="none" stroke="#2FA98C" stroke-width="2"/>
+        <circle cx="50" cy="50" r="12" fill="#2FA98C" opacity=".18"/>
+        <g stroke="#0E3A3A" stroke-width="2" stroke-linecap="round">
+          <line x1="50" y1="6" x2="50" y2="16"/><line x1="50" y1="84" x2="50" y2="94"/>
+          <line x1="6" y1="50" x2="16" y2="50"/><line x1="84" y1="50" x2="94" y2="50"/>
+          <line x1="19" y1="19" x2="26" y2="26"/><line x1="74" y1="74" x2="81" y2="81"/>
+          <line x1="81" y1="19" x2="74" y2="26"/><line x1="26" y1="74" x2="19" y2="81"/>
+        </g>
+      </svg>
+    </div>
+    <div class="wordmark">Glowing Home Cleaners</div>
+    <div class="wordmark-sub">Client Portal</div>
+    <div class="rule"></div>
+    <p class="eyebrow">Client portal</p>
+    <h1>Everything we run together, in one place</h1>
+    <p class="sub">Pick a section to start.</p>
+  </header>
+
+  <div class="grid">
+    <a class="tile rv" href="/clients/glowing-home/readme">
+      <span class="t-eyebrow">Start here</span>
+      <h2>Onboarding</h2>
+      <p>What we need from you to get moving: platform access, the brand questionnaire and the shared Drive folder.</p>
+      <span class="go">Open onboarding &rarr;</span>
+    </a>
+    <a class="tile rv" href="/clients/glowing-home/contrato">
+      <span class="t-eyebrow">Agreement</span>
+      <h2>Contract</h2>
+      <p>Scope, pricing and terms for Meta + Google Ads, with the discounts we agreed on.</p>
+      <span class="go">Read contract &rarr;</span>
+    </a>
+    <a class="tile rv" href="/clients/glowing-home/context">
+      <span class="t-eyebrow">Knowledge</span>
+      <h2>Business context</h2>
+      <p>The living document: where you are today, your channels, your numbers and what we learn as we go.</p>
+      <span class="go">View context &rarr;</span>
+    </a>
+    <a class="tile rv" href="/clients/glowing-home/approvals">
+      <span class="t-eyebrow">Collaboration</span>
+      <h2>Asset approvals</h2>
+      <p>Review creatives, copy and landing pages. Approve or leave feedback on each piece.</p>
+      <span class="go">Open board &rarr;</span>
+    </a>
+    <a class="tile rv" href="/clients/glowing-home/ideas">
+      <span class="t-eyebrow">Ideas</span>
+      <h2>Ideas bank</h2>
+      <p>A place to drop ideas as they come up, with context, links or images, so none of them get lost.</p>
+      <span class="go">Open bank &rarr;</span>
+    </a>
+    <div class="tile soon rv">
+      <span class="t-eyebrow">Results</span>
+      <h2>Reports</h2>
+      <p>Biweekly report: spend, leads, cost per lead and what we are changing next.</p>
+      <span class="badge">First one in two weeks</span>
+    </div>
+  </div>
+
+  <footer class="rv">Prepared by A+ Growth</footer>
+
+</div>
+<script>
+(function () {
+  var els = document.querySelectorAll('.rv');
+  els.forEach(function (el, i) {
+    el.style.transitionDelay = (i * 90) + 'ms';
+    requestAnimationFrame(function () { requestAnimationFrame(function () { el.classList.add('in'); }); });
+  });
+})();
+</script>
+<script src="/clients/portal-edit.js" defer></script>
+</body>
+</html>

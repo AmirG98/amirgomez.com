@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Glowing Home Cleaners &middot; Agreement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #14192E; --ink-2: #565E7D; --ink-3: #8E95AD;
+    --papel: #F7F8FC; --panel: #FFFFFF; --hairline: #E2E5F0;
+    --taupe: #4338F0; --taupe-soft: #EEEDFE; --taupe-deep: #2A21B8;
+    --ok: #17886B; --ok-soft: #E7F5F1; --alerta: #B45309; --alerta-soft: #FDF3E7;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--papel); color: var(--ink); font-size: 15px; line-height: 1.6; font-weight: 300; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 860px; margin: 0 auto; padding: 0 26px 70px; }
+
+  header { text-align: center; padding: 46px 0 32px; }
+  .marca { font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--taupe-deep); }
+  header h1 { font-size: 27px; font-weight: 300; margin-top: 13px; letter-spacing: -0.01em; }
+  header .sub { font-size: 14px; color: var(--ink-2); margin-top: 9px; max-width: 62ch; margin-inline: auto; }
+  .back { display: inline-block; margin-top: 12px; font-size: 12.5px; color: var(--taupe-deep); text-decoration: none; }
+
+  .paso { background: var(--panel); border: 1px solid var(--hairline); margin-bottom: 14px; }
+  .paso-h { display: flex; align-items: center; gap: 11px; padding: 15px 20px; border-bottom: 1px solid var(--hairline); }
+  .paso-h .n { width: 22px; height: 22px; border-radius: 50%; background: var(--taupe); color: #fff; font-size: 11px; font-weight: 600; display: grid; place-items: center; flex: none; }
+  .paso-h h2 { font-size: 15px; font-weight: 500; }
+  .paso-h .est { margin-left: auto; font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+  .paso-b { padding: 20px; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .fld { margin-bottom: 14px; }
+  .fld.full { grid-column: 1 / -1; }
+  .fld label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 6px; }
+  .fld input { width: 100%; font-family: var(--sans); font-size: 14.5px; padding: 10px 12px; border: 1px solid var(--hairline); background: var(--papel); color: var(--ink); outline: none; }
+  .fld input:focus { border-color: var(--taupe); background: var(--panel); }
+  .fld .hint { font-size: 11.5px; color: var(--ink-3); margin-top: 5px; }
+  .fld input.err { border-color: #B3341B; }
+
+  .doc { background: var(--panel); border: 1px solid var(--hairline); padding: 34px 38px; max-height: 460px; overflow-y: auto; font-size: 13.5px; line-height: 1.72; color: var(--ink-2); }
+  .doc h3 { font-size: 15px; font-weight: 600; color: var(--ink); margin: 22px 0 9px; }
+  .doc h3:first-child { margin-top: 0; }
+  .doc p { margin-bottom: 11px; }
+  .doc b { color: var(--ink); font-weight: 500; }
+  .doc .tit { text-align: center; font-size: 16px; font-weight: 500; color: var(--ink); letter-spacing: 0.02em; margin-bottom: 26px; }
+  .doc ul { margin: 0 0 12px 20px; }
+  .doc li { margin-bottom: 6px; }
+  .doc .leido { text-align: center; font-size: 12px; color: var(--ink-3); padding: 14px 0 4px; }
+
+  .sig-wrap { display: flex; gap: 16px; flex-wrap: wrap; align-items: flex-start; }
+  .sig-box { flex: 1; min-width: 280px; }
+  canvas { width: 100%; height: 170px; border: 1px dashed var(--hairline); background: var(--panel); touch-action: none; cursor: crosshair; display: block; }
+  canvas.hasink { border-style: solid; border-color: var(--taupe); }
+  .sig-tools { display: flex; align-items: center; gap: 12px; margin-top: 9px; }
+  .sig-tools button { font-family: var(--sans); font-size: 12px; background: none; border: none; color: var(--ink-3); cursor: pointer; padding: 0; }
+  .sig-tools button:hover { color: var(--taupe-deep); }
+  .sig-tools .lbl { font-size: 11.5px; color: var(--ink-3); margin-left: auto; }
+
+  .chk { display: flex; gap: 10px; align-items: flex-start; margin-top: 18px; font-size: 13.5px; color: var(--ink-2); cursor: pointer; }
+  .chk input { margin-top: 3px; width: 16px; height: 16px; accent-color: var(--taupe); flex: none; }
+
+  .go { display: block; width: 100%; font-family: var(--sans); font-size: 14px; font-weight: 500; letter-spacing: 0.04em; padding: 14px; background: var(--taupe); color: #fff; border: none; cursor: pointer; margin-top: 18px; }
+  .go:hover { background: var(--taupe-deep); }
+  .go:disabled { opacity: .4; cursor: default; }
+  .msg { font-size: 13px; color: var(--ink-2); margin-top: 12px; text-align: center; }
+  .msg.err { color: #B3341B; }
+
+  .nota { background: var(--taupe-soft); border-left: 3px solid var(--taupe); padding: 14px 18px; font-size: 13px; color: var(--ink-2); margin-top: 16px; }
+  .nota b { color: var(--ink); font-weight: 500; }
+  .warn { background: var(--alerta-soft); border-left: 3px solid var(--alerta); padding: 14px 18px; font-size: 13px; color: var(--ink-2); margin-bottom: 16px; }
+  .warn b { color: var(--ink); font-weight: 500; }
+
+  .firmado { display: none; background: var(--ok-soft); border: 1px solid #CFE0D2; padding: 26px 30px; text-align: center; }
+  .firmado.on { display: block; }
+  .firmado h2 { font-size: 19px; font-weight: 400; color: var(--ok); margin-bottom: 8px; }
+  .firmado p { font-size: 13.5px; color: var(--ink-2); }
+  .firmado .datos { display: inline-block; text-align: left; margin-top: 18px; font-size: 12.5px; color: var(--ink-2); }
+  .firmado .datos div { margin-bottom: 4px; }
+  .firmado .datos span { color: var(--ink-3); display: inline-block; min-width: 92px; }
+  .firmado .hash { font-family: ui-monospace, Menlo, monospace; font-size: 10.5px; word-break: break-all; max-width: 420px; }
+  .firmado .acts { margin-top: 20px; }
+  .firmado .acts button { font-family: var(--sans); font-size: 13px; padding: 10px 22px; background: var(--panel); border: 1px solid var(--hairline); color: var(--ink-2); cursor: pointer; }
+
+  .oculto { display: none !important; }
+  footer { text-align: center; margin-top: 44px; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3); }
+
+  @media print {
+    body { background: #fff; }
+    .paso-h, .no-print, header .back, footer { display: none !important; }
+    .doc { max-height: none; overflow: visible; border: none; padding: 0; }
+    .paso { border: none; }
+  }
+  @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } .doc { padding: 22px; } }
+</style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-icon.png">
+</head>
+<body data-client="glowing-home" data-page="contrato">
+<div class="page">
+
+  <header>
+    <div class="marca">Glowing Home Cleaners</div>
+    <h1>Services agreement</h1>
+    <p class="sub">Fill in your details, read the agreement and sign it right here. You get a copy by email as soon as you sign.</p>
+    <a class="back" href="/clients/glowing-home">&larr; Back to portal</a>
+  </header>
+
+  <!-- YA FIRMADO -->
+  <div class="firmado" id="yaSignaturedo">
+    <h2>Agreement signed</h2>
+    <p>Done. We sent you a copy by email and it is recorded here.</p>
+    <div class="datos" id="datosSignature"></div>
+    <div class="acts"><button onclick="window.print()">Print or save as PDF</button></div>
+  </div>
+
+  <div id="flujo">
+    <!-- PASO 1 -->
+    <div class="paso">
+      <div class="paso-h"><span class="n">1</span><h2>Your details</h2><span class="est" id="est1">To fill in</span></div>
+      <div class="paso-b">
+        <div class="grid">
+          <div class="fld full">
+            <label for="f-razon">Legal name of the business</label>
+            <input id="f-razon" type="text" placeholder="Glowing Home Cleaners LLC">
+          </div>
+          <div class="fld">
+            <label for="f-rep">Legal representative</label>
+            <input id="f-rep" type="text" placeholder="Nombre y apellido de quien firma">
+          </div>
+          <div class="fld">
+            <label for="f-doc">EIN or tax identification</label>
+            <input id="f-doc" type="text" placeholder="CUIT o DNI">
+          </div>
+          <div class="fld full">
+            <label for="f-dom">Address</label>
+            <input id="f-dom" type="text" placeholder="Street, number, city, state">
+          </div>
+          <div class="fld">
+            <label for="f-mail">Email</label>
+            <input id="f-mail" type="email" placeholder="Where the signed copy goes">
+          </div>
+          <div class="fld">
+            <label for="f-tel">Phone (optional)</label>
+            <input id="f-tel" type="text" placeholder="+54 351 000 0000">
+          </div>
+          <div class="fld full">
+            <label for="f-ciudad">City where this is signed</label>
+            <input id="f-ciudad" type="text" placeholder="Orange County, CA">
+          </div>
+        </div>
+        <div class="nota">
+          <b>Your details save automatically.</b> If you need to look up your tax ID, close this and come back when you have it. Nothing gets lost.
+        </div>
+      </div>
+    </div>
+
+    <!-- PASO 2 -->
+    <div class="paso">
+      <div class="paso-h"><span class="n">2</span><h2>The agreement</h2><span class="est" id="est2">Fill in your details</span></div>
+      <div class="paso-b">
+        <div class="doc" id="doc"></div>
+      </div>
+    </div>
+
+    <!-- PASO 3 -->
+    <div class="paso">
+      <div class="paso-h"><span class="n">3</span><h2>Signature</h2><span class="est" id="est3">Last step</span></div>
+      <div class="paso-b">
+        <div class="warn">
+          <b>About this signature.</b> Signing here records your agreement, with the date, IP address and a digital fingerprint of the exact text you signed. It works as an agreement between the parties. It is not a certified digital signature issued by an official body. If you need that level, tell us and we will do it through a formal provider.
+        </div>
+        <div class="sig-wrap">
+          <div class="sig-box">
+            <canvas id="pad"></canvas>
+            <div class="sig-tools">
+              <button id="limpiar" type="button">Clear and sign again</button>
+              <span class="lbl">Sign with your mouse or finger</span>
+            </div>
+          </div>
+          <div class="sig-box">
+            <div class="fld">
+              <label for="f-firmante">Printed name</label>
+              <input id="f-firmante" type="text" placeholder="Nombre completo de quien firma">
+              <div class="hint">Shown below the signature, like on paper.</div>
+            </div>
+            <label class="chk">
+              <input type="checkbox" id="f-acepto">
+              <span>I have read the full agreement, I agree to its terms and I have authority to sign on behalf of the business.</span>
+            </label>
+          </div>
+        </div>
+        <button class="go" id="firmar" disabled>Signaturer el contrato</button>
+        <div class="msg" id="msg"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>Glowing Home Cleaners</footer>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var CLIENTE = 'glowing-home';
+  var API = '/api/contrato/' + CLIENTE;
+  var LS = 'contrato:' + CLIENTE;
+
+  var F = {
+    razon: document.getElementById('f-razon'),
+    rep: document.getElementById('f-rep'),
+    doc: document.getElementById('f-doc'),
+    dom: document.getElementById('f-dom'),
+    mail: document.getElementById('f-mail'),
+    tel: document.getElementById('f-tel'),
+    ciudad: document.getElementById('f-ciudad')
+  };
+  var firmante = document.getElementById('f-firmante');
+  var acepto = document.getElementById('f-acepto');
+  var btn = document.getElementById('firmar');
+  var msg = document.getElementById('msg');
+  var timer = null;
+  var hayTrazo = false;
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function datos() {
+    return {
+      razonSocial: F.razon.value.trim(),
+      representante: F.rep.value.trim(),
+      documento: F.doc.value.trim(),
+      domicilio: F.dom.value.trim(),
+      email: F.mail.value.trim(),
+      telefono: F.tel.value.trim(),
+      ciudad: F.ciudad.value.trim()
+    };
+  }
+
+  function completo(d) {
+    return !!(d.razonSocial && d.representante && d.documento && d.domicilio && d.email);
+  }
+
+  var MESES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+  function contrato(d) {
+    var hoy = new Date();
+    var v = function (x, ph) { return x ? esc(x) : '<b style="color:#A8895A">' + ph + '</b>'; };
+    return '' +
+      '<div class="tit">DIGITAL MARKETING SERVICES AGREEMENT</div>' +
+
+      '<h3>1. Parties</h3>' +
+      '<p>This Digital Marketing Services Agreement is entered into between <b>' + v(d.razonSocial, '[legal name]') + '</b>, ' +
+      'hereinafter &ldquo;THE CLIENT&rdquo;, with address at ' + v(d.domicilio, '[address]') + ', tax identification ' +
+      v(d.documento, '[EIN or tax ID]') + ', represented by ' + v(d.representante, '[representative]') + '; ' +
+      'and <b>Amir Gabriel Gomez</b>, hereinafter &ldquo;THE PROVIDER&rdquo;, with address at ' +
+      'Fleming 392, Villa Carlos Paz, Cordoba, Argentina, operating as A+ Growth. The parties agree to the ' +
+      'following terms and conditions.</p>' +
+
+      '<h3>2. Scope of services</h3>' +
+      '<p>THE PROVIDER will deliver paid media management across Meta (Facebook and Instagram) and Google Ads, ' +
+      'including Google Local Service Ads. The engagement covers:</p>' +
+      '<ul>' +
+      '<li>Audit of all existing advertising platforms and conversion tracking setup.</li>' +
+      '<li>Meta campaign restructuring with ongoing creative testing across multiple angles.</li>' +
+      '<li>Google Ads search campaigns built from keyword research, plus remarketing.</li>' +
+      '<li>Review and optimization of existing Local Service Ads.</li>' +
+      '<li>Ad creative production, including editing of photo and video material supplied by THE CLIENT.</li>' +
+      '<li>Biweekly reporting and monthly strategy calls.</li>' +
+      '</ul>' +
+      '<p>SEO services and website redesign are <b>not</b> included in this agreement. Both were quoted separately ' +
+      'and may be added later by written agreement. THE PROVIDER confirms that the multi-service and referral ' +
+      'discounts quoted remain available to THE CLIENT if those services are contracted at a later date.</p>' +
+
+      '<h3>3. Term</h3>' +
+      '<p>This agreement begins on the date of signature and runs on a month to month basis. The initial setup ' +
+      'phase is estimated at four (4) to six (6) weeks from the date THE CLIENT provides full platform access ' +
+      'and the completed brand questionnaire.</p>' +
+      '<p>Paid media results require time to stabilize. THE CLIENT acknowledges that cost per lead typically ' +
+      'fluctuates significantly during the first eight weeks of testing before settling.</p>' +
+
+      '<h3>4. Fees and payment</h3>' +
+      '<p><b>Setup fee:</b> one thousand five hundred US dollars (USD 1,500), one time, covering platform audits, ' +
+      'conversion tracking, keyword research, the Google Ads account build, Meta restructuring and the first ' +
+      'round of creative.</p>' +
+      '<p><b>Monthly management fee:</b> one thousand two hundred US dollars (USD 1,200) per month, covering ' +
+      'ongoing management and optimization of Meta and Google Ads, creative production, and reporting.</p>' +
+      '<p><b>When payment starts:</b> the parties expressly agree that invoicing begins once the setup work is ' +
+      'underway and the action items are in motion, rather than in advance of any work being performed. The ' +
+      'setup fee is invoiced at that point; the first monthly fee is invoiced thirty (30) days later, and ' +
+      'monthly thereafter.</p>' +
+      '<p>Payment by credit card or bank transfer, at the choice of THE CLIENT. Invoices are due within fifteen ' +
+      '(15) days of issue.</p>' +
+      '<p><b>Advertising spend is not included in these fees.</b> THE CLIENT pays all media spend directly to ' +
+      'Meta, Google and any other platform, using its own payment method. No advertising budget passes through ' +
+      'THE PROVIDER at any point.</p>' +
+
+      '<h3>5. Obligations of the parties</h3>' +
+      '<p><b>THE PROVIDER agrees to:</b></p>' +
+      '<ul>' +
+      '<li>Deliver the services described in Section 2 to professional standards.</li>' +
+      '<li>Report on performance every two weeks and hold a monthly review call.</li>' +
+      '<li>Maintain an open line of communication through Slack for day to day matters.</li>' +
+      '<li>Provide up to two (2) rounds of revision on primary deliverables.</li>' +
+      '<li>Advise honestly on what the numbers show, including when something is not working.</li>' +
+      '</ul>' +
+      '<p><b>THE CLIENT agrees to:</b></p>' +
+      '<ul>' +
+      '<li>Provide admin access to Meta Business Manager, Google Ads, Google Local Service Ads, Google Business Profile and any analytics tools, within a reasonable timeframe.</li>' +
+      '<li>Provide the completed brand questionnaire and the source material requested, including photographs of completed work.</li>' +
+      '<li>Maintain advertising budgets at a level sufficient to produce usable data. The parties agree a minimum of twenty five US dollars (USD 25) per day on Meta.</li>' +
+      '<li>Provide feedback and approvals in reasonable time. Delays in approval may extend delivery timelines without liability for THE PROVIDER.</li>' +
+      '<li>Make payments in the form and timeframe agreed.</li>' +
+      '</ul>' +
+
+      '<h3>6. Performance targets</h3>' +
+      '<p>The parties agree that the primary objective for the first quarter is to reduce the cost per lead on ' +
+      'Meta from its current level of approximately seventy five US dollars (USD 75) to below fifty US dollars ' +
+      '(USD 50), while increasing total qualified lead volume.</p>' +
+      '<p>These are targets, not guarantees. Advertising results depend on factors outside the control of ' +
+      'THE PROVIDER, including market conditions, platform changes, seasonality, the competitiveness of the ' +
+      'offer and the speed and quality of lead follow-up by THE CLIENT.</p>' +
+      '<p>The parties further agree to measure performance against business outcomes, including booked jobs and ' +
+      'their value, and not against platform metrics alone.</p>' +
+
+      '<h3>7. Intellectual property and account ownership</h3>' +
+      '<p>Upon payment of the fees due, THE PROVIDER assigns to THE CLIENT all intellectual property rights in ' +
+      'the deliverables created specifically for this engagement, including ad creative, copy and campaign structures.</p>' +
+      '<p><b>Account ownership:</b> all advertising accounts, platforms, tools and properties used or created ' +
+      'during this engagement remain the exclusive property of THE CLIENT. THE PROVIDER operates as a partner ' +
+      'or authorized user on accounts held in the name of THE CLIENT. On termination, THE PROVIDER will remove ' +
+      'its own access and will not retain, transfer or delete any account, campaign history or data belonging ' +
+      'to THE CLIENT.</p>' +
+      '<p>THE PROVIDER retains the right to reference this engagement and its anonymized results as part of its ' +
+      'professional portfolio, unless THE CLIENT objects in writing.</p>' +
+
+      '<h3>8. Confidentiality</h3>' +
+      '<p>Both parties agree to keep confidential all sensitive commercial, strategic, financial or personal ' +
+      'information accessed under this agreement, including customer data, pricing, financial information and ' +
+      'marketing strategy.</p>' +
+      '<p>Neither party may disclose such information to third parties without prior written consent of the ' +
+      'other, except where required by law. This obligation survives termination of this agreement.</p>' +
+
+      '<h3>9. Termination</h3>' +
+      '<p>Either party may terminate this agreement with thirty (30) days written notice.</p>' +
+      '<p>On termination by THE CLIENT, fees already paid are non-refundable and THE CLIENT retains all ' +
+      'deliverables produced to that date, along with full ownership of all advertising accounts. If termination ' +
+      'results from material breach by THE PROVIDER, the parties will agree in good faith on fair and ' +
+      'proportionate compensation.</p>' +
+      '<p>Either party may terminate immediately and without notice in the event of material breach of ' +
+      'contractual obligations, insolvency or bankruptcy of either party, or breach of the confidentiality clause.</p>' +
+
+      '<h3>10. Limitation of liability</h3>' +
+      '<p>The total liability of THE PROVIDER under this agreement is limited to the fees paid by THE CLIENT in ' +
+      'the three (3) months preceding the event giving rise to the claim. Neither party is liable to the other ' +
+      'for indirect, incidental or consequential damages, including lost profits.</p>' +
+
+      '<h3>11. Governing law and jurisdiction</h3>' +
+      '<p>The parties will attempt in good faith to resolve any dispute arising from this agreement through ' +
+      'direct negotiation. Failing that, the parties submit to the courts of the City of Cordoba, Argentina, ' +
+      'and this agreement is governed by the laws of the Argentine Republic.</p>' +
+
+      '<h3>12. General provisions</h3>' +
+      '<ul>' +
+      '<li>Any amendment must be made in writing and accepted by both parties to be valid.</li>' +
+      '<li>The invalidity of any clause does not affect the validity of the remaining provisions.</li>' +
+      '<li>Notices will be sent to the addresses stated above or to the email addresses the parties communicate to each other.</li>' +
+      '<li>This agreement constitutes the entire understanding between the parties and supersedes any prior proposal or discussion.</li>' +
+      '<li>The parties accept electronic signature of this agreement as a valid expression of consent.</li>' +
+      '</ul>' +
+
+      '<h3>Agreement</h3>' +
+      '<p>In witness whereof, the parties sign this agreement in ' +
+      v(d.ciudad, '[city]') + ', on ' + MESES[hoy.getMonth()] + ' ' + hoy.getDate() + ', ' + hoy.getFullYear() + '.</p>' +
+      '<div class="leido">End of agreement</div>';
+  }
+
+  function pintar() {
+    var d = datos();
+    document.getElementById('doc').innerHTML = contrato(d);
+    var ok = completo(d);
+    document.getElementById('est1').textContent = ok ? 'Complete' : 'To fill in';
+    document.getElementById('est2').textContent = ok ? 'Ready to read' : 'Fill in your details';
+    revisar();
+  }
+
+  function revisar() {
+    var ok = completo(datos()) && hayTrazo && firmante.value.trim() && acepto.checked;
+    btn.disabled = !ok;
+    document.getElementById('est3').textContent = ok ? 'Ready to sign' : 'Last step';
+  }
+
+  function guardar() {
+    var d = datos();
+    try { localStorage.setItem(LS, JSON.stringify(d)); } catch (e) {}
+    fetch(API, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ datos: d }) })
+      .catch(function () {});
+  }
+
+  Object.keys(F).forEach(function (k) {
+    F[k].addEventListener('input', function () {
+      pintar();
+      clearTimeout(timer);
+      timer = setTimeout(guardar, 1200);
+    });
+  });
+  firmante.addEventListener('input', revisar);
+  acepto.addEventListener('change', revisar);
+
+  // --- Pad de firma ---
+  var pad = document.getElementById('pad');
+  var ctx = pad.getContext('2d');
+  var dibujando = false;
+
+  function medir() {
+    var r = pad.getBoundingClientRect();
+    var dpr = window.devicePixelRatio || 1;
+    var img = hayTrazo ? pad.toDataURL() : null;
+    pad.width = r.width * dpr;
+    pad.height = r.height * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.lineWidth = 2;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.strokeStyle = '#1a1a1a';
+    if (img) {
+      var i = new Image();
+      i.onload = function () { ctx.drawImage(i, 0, 0, r.width, r.height); };
+      i.src = img;
+    }
+  }
+  medir();
+  window.addEventListener('resize', medir);
+
+  function pos(e) {
+    var r = pad.getBoundingClientRect();
+    var p = e.touches ? e.touches[0] : e;
+    return { x: p.clientX - r.left, y: p.clientY - r.top };
+  }
+  function arranca(e) {
+    e.preventDefault();
+    dibujando = true;
+    var p = pos(e);
+    ctx.beginPath();
+    ctx.moveTo(p.x, p.y);
+  }
+  function mueve(e) {
+    if (!dibujando) return;
+    e.preventDefault();
+    var p = pos(e);
+    ctx.lineTo(p.x, p.y);
+    ctx.stroke();
+    if (!hayTrazo) { hayTrazo = true; pad.classList.add('hasink'); revisar(); }
+  }
+  function corta() { dibujando = false; }
+
+  pad.addEventListener('mousedown', arranca);
+  pad.addEventListener('mousemove', mueve);
+  window.addEventListener('mouseup', corta);
+  pad.addEventListener('touchstart', arranca, { passive: false });
+  pad.addEventListener('touchmove', mueve, { passive: false });
+  pad.addEventListener('touchend', corta);
+
+  document.getElementById('limpiar').addEventListener('click', function () {
+    ctx.clearRect(0, 0, pad.width, pad.height);
+    hayTrazo = false;
+    pad.classList.remove('hasink');
+    revisar();
+  });
+
+  // --- Signaturer ---
+  btn.addEventListener('click', function () {
+    btn.disabled = true;
+    msg.className = 'msg';
+    msg.textContent = 'Registrando la firma…';
+    var texto = document.getElementById('doc').innerText;
+    fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        datos: datos(),
+        firma: pad.toDataURL('image/png'),
+        nombre: firmante.value.trim(),
+        texto: texto
+      })
+    })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (res) {
+        if (!res.ok) throw new Error(res.j.error || 'error');
+        mostrarFirmado({ nombre: firmante.value.trim(), fecha: res.j.fecha, hash: res.j.hash }, datos(), res.j.mailed);
+      })
+      .catch(function (err) {
+        msg.className = 'msg err';
+        msg.textContent = err.message === 'ya_firmado'
+          ? 'This agreement was already signed. Reload the page.'
+          : 'Could not record the signature. Try again in a moment.';
+        btn.disabled = false;
+      });
+  });
+
+  function mostrarFirmado(firma, d, mailed) {
+    document.getElementById('flujo').classList.add('oculto');
+    var box = document.getElementById('yaSignaturedo');
+    var f = new Date(firma.fecha);
+    document.getElementById('datosSignature').innerHTML =
+      '<div><span>Signed by</span> ' + esc(firma.nombre) + '</div>' +
+      '<div><span>Empresa</span> ' + esc(d.razonSocial) + '</div>' +
+      '<div><span>Fecha</span> ' + f.toLocaleString('es-AR') + '</div>' +
+      '<div><span>Huella</span> <span class="hash">' + esc(firma.hash || '') + '</span></div>';
+    if (mailed === false) {
+      box.querySelector('p').textContent = 'It is recorded here. The email failed to send, so save a copy with the button below.';
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // --- Carga inicial ---
+  try {
+    var local = JSON.parse(localStorage.getItem(LS));
+    if (local) Object.keys(F).forEach(function (k) {
+      var map = { razon: 'razonSocial', rep: 'representante', doc: 'documento', dom: 'domicilio', mail: 'email', tel: 'telefono', ciudad: 'ciudad' };
+      if (local[map[k]]) F[k].value = local[map[k]];
+    });
+  } catch (e) {}
+  pintar();
+
+  fetch(API, { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (res) {
+      if (!res || !res.doc) return;
+      var d = res.doc.datos || {};
+      var map = { razon: 'razonSocial', rep: 'representante', doc: 'documento', dom: 'domicilio', mail: 'email', tel: 'telefono', ciudad: 'ciudad' };
+      Object.keys(F).forEach(function (k) { if (d[map[k]]) F[k].value = d[map[k]]; });
+      pintar();
+      if (res.doc.firma) {
+        mostrarFirmado({ nombre: res.doc.firma.nombre, fecha: res.doc.firma.fecha, hash: res.doc.firma.hash }, d, true);
+      }
+    })
+    .catch(function () {});
+})();
+</script>
+<script src="/clients/portal-edit.js" defer></script>
+</body>
+</html>
