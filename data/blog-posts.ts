@@ -98331,6 +98331,509 @@ Write Microsoft Advertising RSA headlines at or under 30 characters and descript
 Source: Microsoft Advertising Help, "About responsive search ads" (help.ads.microsoft.com, article 60038).`
   },
   {
+    id: "1015",
+    title: "What's the Maximum Number of Ad Groups Allowed in a Google Ads Campaign?",
+    slug: "google-ads-maximum-ad-groups-per-campaign-2026",
+    excerpt: "A standard Google Ads campaign can hold up to 20,000 ad groups. Local and App campaigns are capped much lower, at 100 ad groups each, per Google's account limits.",
+    featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-06",
+    category: "Google Ads",
+    tags: ["Google Ads", "Account Limits", "Campaign Structure", "Ad Groups", "PPC"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Google Ads Max Ad Groups Per Campaign",
+      metaDescription: "A Google Ads campaign can hold up to 20,000 ad groups, but Local and App campaigns are capped at 100 each, per Google's official account limits.",
+      keywords: ["google ads maximum ad groups per campaign", "google ads ad group limit", "google ads account limits", "how many ad groups per campaign google ads"]
+    },
+    content: `A standard Google Ads campaign can hold up to 20,000 ad groups. That ceiling drops sharply for two campaign types built around simpler, more automated structures: Local campaigns and App campaigns are each capped at only 100 ad groups, per Google's official account limits documentation.
+
+## Why the Limit Varies by Campaign Type
+
+Google Ads sets different ad group ceilings depending on how a campaign type is designed to be managed:
+
+- **Search, Display, Video, and Shopping campaigns** — up to 20,000 ad groups per campaign, the standard limit for manually structured campaign types.
+- **Local campaigns** — capped at 100 ad groups, matching the simplified setup Google built for driving store visits and local actions across Search, Maps, Display, and YouTube from a single, mostly automated campaign.
+- **App campaigns** — also capped at 100 ad groups, since App campaigns rely on machine learning to place creative across Search, Display, YouTube, and Discover rather than on granular manual ad group segmentation.
+
+Very few advertisers approach the 20,000-ad-group ceiling in practice. The accounts that get close tend to be large, manually segmented search campaigns built around highly granular geographic, product-level, or keyword-based ad group structures.
+
+## It's an Account-Wide Ceiling, Not a Soft Guideline
+
+The 20,000 figure sits inside Google's broader system of account limits, which also caps the total number of campaigns, keywords, and extensions an account can hold. These are hard technical ceilings enforced by Google Ads' serving infrastructure, not recommendations — there's no setting to raise them for an individual campaign.
+
+## What Happens If You Hit the Cap
+
+An advertiser who reaches the ad group limit for a campaign can't add new ad groups to that same campaign. The only options are deleting or consolidating existing ad groups, or moving the new structure into a separate campaign. Google does not offer an exception request process for this specific limit.
+
+## Why This Rarely Comes Up for Most Accounts
+
+Account structures have generally moved toward fewer, more consolidated ad groups over the past several years, as Smart Bidding and broad match keywords reduced the need for the tightly segmented single-keyword-ad-group approach that was once common in Search campaigns. A consolidated modern account is far more likely to bump into a different account limit — such as keywords per ad group — before it ever gets near 20,000 ad groups in one campaign.
+
+## A Related Limit: Keywords Within Each Ad Group
+
+The ad group ceiling isn't the only structural limit in play. Each individual ad group also has its own cap on how many keywords it can hold, tracked separately from the 20,000-ad-groups-per-campaign figure. An advertiser restructuring a large account to stay under the ad group ceiling needs to check both numbers — consolidating ad groups to use fewer of them only works if the keyword count per consolidated ad group also stays within its own limit.
+
+## Bottom Line
+
+Unless you're running an unusually large, manually segmented Search or Shopping campaign, the 20,000-ad-group ceiling isn't a practical constraint. Local and App campaigns hit their much lower 100-ad-group cap far sooner, so plan those campaign types around consolidated ad groups from the start rather than one-ad-group-per-location or one-ad-group-per-asset structures.
+
+Source: Google Ads Help, "About your Google Ads account limits" (support.google.com/google-ads/answer/6372658).`
+  },
+  {
+    id: "1016",
+    title: "What's the Maximum Number of Campaigns Allowed in a Single Google Ads Account?",
+    slug: "google-ads-maximum-campaigns-per-account-2026",
+    excerpt: "A Google Ads account can hold up to 10,000 campaigns total, counting both active and paused ones, with a separate 100-campaign sub-limit for Performance Max.",
+    featuredImage: "https://images.unsplash.com/photo-1611262588019-6d4ba93aa3f8?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-06",
+    category: "Google Ads",
+    tags: ["Google Ads", "Account Limits", "Performance Max", "Campaign Structure", "PPC"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Google Ads Max Campaigns Per Account",
+      metaDescription: "A single Google Ads account can hold up to 10,000 campaigns total, with a separate 100-campaign cap for Performance Max, per Google's account limits.",
+      keywords: ["google ads maximum campaigns per account", "how many campaigns can a google ads account have", "google ads account limits", "performance max campaign limit"]
+    },
+    content: `A single Google Ads account can hold up to 10,000 campaigns in total, counting active and paused campaigns together. Within that overall ceiling, Google Ads applies a separate, much smaller sub-limit of 100 Performance Max campaigns per account, per Google's official account limits documentation.
+
+## Two Different Ceilings, Not One
+
+These are two distinct numbers that advertisers managing large accounts need to track separately:
+
+- **10,000 campaigns account-wide** — the hard ceiling across every campaign type combined, including Search, Display, Shopping, Video, Demand Gen, App, and Local campaigns.
+- **100 Performance Max campaigns** — a tighter cap that applies specifically to Performance Max, regardless of how much headroom remains in the 10,000-campaign account total.
+
+An account could theoretically still have thousands of campaign slots available overall while already being unable to create another Performance Max campaign, because the two limits are tracked independently.
+
+## Paused Campaigns Still Count Against the Limit
+
+Both active and paused campaigns count toward the 10,000-campaign ceiling — removing a campaign from active delivery by pausing it doesn't free up room in the account. Only actually deleting a campaign removes it from the count. Large agencies and enterprise advertisers managing seasonal or test campaigns over many years are the accounts most likely to approach this ceiling, since paused historical campaigns accumulate indefinitely unless someone actively deletes them.
+
+## Why Google Caps Campaigns at the Account Level
+
+Account-wide limits like this one exist to keep Google's ad-serving and reporting systems performant, not as a deliberate constraint on legitimate advertiser scale. For context, 10,000 campaigns is an enormous number for the overwhelming majority of advertisers — most accounts, even large ones, operate with a few dozen to a few hundred active campaigns at any given time.
+
+## What To Do If You're Approaching Either Limit
+
+- **Audit and delete truly inactive campaigns** rather than leaving years of paused seasonal campaigns sitting in the account, since pausing alone doesn't free up the count.
+- **Consolidate near-duplicate Performance Max campaigns** when possible, since the 100-campaign PMax sub-limit is far easier to reach than the account-wide 10,000 figure, especially for multi-location or multi-brand advertisers who create one PMax campaign per location.
+- **Use MCC (manager account) structure** to split a sprawling business across multiple linked Google Ads accounts rather than pushing a single account toward its ceiling, which also improves reporting clarity.
+
+## Where the 100-Campaign PMax Sub-Limit Actually Bites
+
+The PMax sub-limit matters most for a specific, fairly common setup: a multi-location business — a regional retail chain or a multi-clinic healthcare group, for example — that creates one Performance Max campaign per physical location rather than one campaign covering several locations with location-level asset groups or feeds. A chain with more than 100 locations following that one-campaign-per-location pattern hits the PMax ceiling well before it comes anywhere close to the account's 10,000-campaign total, which is why the two numbers need to be tracked independently rather than assumed to move together.
+
+## Bottom Line
+
+The 10,000-campaign account ceiling is rarely a real-world constraint, but the 100-campaign Performance Max sub-limit is worth watching for any multi-location or multi-brand advertiser scaling PMax campaign-by-campaign rather than consolidating them.
+
+Source: Google Ads Help, "About your Google Ads account limits" (support.google.com/google-ads/answer/6372658).`
+  },
+  {
+    id: "1017",
+    title: "What's the Maximum Length for a YouTube Non-Skippable In-Stream Ad?",
+    slug: "youtube-non-skippable-in-stream-ad-length-2026",
+    excerpt: "A standard YouTube non-skippable in-stream ad can run up to 15 seconds, extending to 20 seconds in the EU, India, Malaysia, Mexico, and Singapore, per Google Ads Help.",
+    featuredImage: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-06",
+    category: "Google Ads",
+    tags: ["YouTube Ads", "Google Ads", "Non-Skippable Ads", "Video Advertising", "Ad Specs"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "YouTube Non-Skippable Ad Max Length",
+      metaDescription: "A YouTube non-skippable in-stream ad maxes out at 15 seconds in most markets, or 20 seconds in the EU, India, Malaysia, Mexico, and Singapore, per Google Ads Help.",
+      keywords: ["youtube non-skippable ad max length", "youtube non-skippable in-stream ad seconds", "youtube ad length limits", "google ads non-skippable in-stream ads"]
+    },
+    content: `A standard YouTube non-skippable in-stream ad must run between 7 and 15 seconds in most markets. That ceiling extends to 20 seconds in the European Union, India, Malaysia, Mexico, and Singapore, per Google Ads Help's official video ad specifications.
+
+## This Is the Opposite Rule From Skippable In-Stream Ads
+
+Non-skippable in-stream ads work under the reverse logic of their skippable counterpart. Standard skippable in-stream ads have no fixed minimum or maximum length at all — viewers simply get a Skip Ad option after 5 seconds, however long the ad actually runs. Non-skippable ads trade that flexibility for a hard length window, since the viewer has no way to exit the ad early:
+
+- **Non-skippable in-stream ads** — 7 to 15 seconds (up to 20 seconds in the EU, India, Malaysia, Mexico, and Singapore), no option to skip.
+- **Bumper ads** — Google's companion short-form, non-skippable format, capped at 6 seconds.
+- **Skippable in-stream ads** — no fixed length limit, but skippable after 5 seconds.
+
+## Why the Regional Variation Exists
+
+Google doesn't publish a single stated rationale for the 15-versus-20-second regional split, but it tracks with those markets' broader TV and digital ad-length conventions, where 20-second non-skippable formats are a more established norm than in the US. Advertisers running the same creative globally need to account for this: a 20-second cut approved for Mexico or India will need to be trimmed to 15 seconds for US and most other markets, or built as two separate length versions from the start.
+
+## Why Google Caps Non-Skippable Length at All
+
+Because the viewer can't exit a non-skippable ad early, Google limits how long one can force a viewer to wait before their video resumes. Removing a hard ceiling on a format the viewer can't escape would create a materially worse viewing experience than the skippable format, where length is self-limiting by nature — a boring 90-second skippable ad simply gets skipped, so Google doesn't need to cap it.
+
+## Practical Implications for Creative Production
+
+- **Build non-skippable creative to the 15-second mark first**, then adapt a 20-second cut only for campaigns specifically targeting the EU, India, Malaysia, Mexico, or Singapore.
+- **Don't confuse this limit with bumper ads**, which are a separate, shorter 6-second-max format often used alongside non-skippable or skippable ads in a sequential campaign.
+- **Check length compliance before upload** — Google Ads will reject a non-skippable in-stream ad that exceeds the applicable regional cap rather than trimming it automatically.
+
+## Companion Banners Can Extend the Message on Desktop
+
+A non-skippable in-stream ad can run alongside a companion banner — a 300 x 60 pixel image, up to 150KB, in JPEG, GIF, or PNG format, that appears next to the video on the YouTube watch page. Companion banners are desktop-only; they don't show on mobile, connected TVs, or other devices. Advertisers can either upload a custom banner or let Google auto-generate one, and clicking the banner takes the viewer to whatever URL was set for the campaign — giving a short non-skippable ad a secondary, clickable call to action it otherwise wouldn't have room for.
+
+## Bottom Line
+
+Keep non-skippable in-stream creative at 15 seconds or under for broadest market compatibility, and only produce a 20-second version specifically for campaigns targeting the EU, India, Malaysia, Mexico, or Singapore.
+
+Source: Google Ads Help, "Non-skippable in-stream ads" (support.google.com/google-ads/answer/11462260).`
+  },
+  {
+    id: "1018",
+    title: "What's the Maximum File Size for a LinkedIn Single Image Ad?",
+    slug: "linkedin-single-image-ad-max-file-size-2026",
+    excerpt: "LinkedIn caps single image ads at 5MB per file, accepting JPG, PNG, or GIF, per LinkedIn Marketing Solutions' official ad specifications.",
+    featuredImage: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-06",
+    category: "B2B Marketing",
+    tags: ["LinkedIn Ads", "Single Image Ads", "Ad Specs", "B2B Marketing", "Sponsored Content"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "LinkedIn Single Image Ad Max File Size",
+      metaDescription: "LinkedIn single image ads are capped at 5MB per file, accepting JPG, PNG, or GIF, per LinkedIn Marketing Solutions' official single image ad specifications.",
+      keywords: ["linkedin single image ad max file size", "linkedin ads file size limit", "linkedin sponsored content image specs", "linkedin ad image requirements"]
+    },
+    content: `LinkedIn caps single image ads at 5MB per file. The format accepts JPG, PNG, or GIF files, per LinkedIn Marketing Solutions' official single image ad specifications.
+
+## Dimensions Matter Almost as Much as File Size
+
+A file under 5MB can still perform poorly if it doesn't match LinkedIn's recommended dimensions. LinkedIn's own specs recommend:
+
+- **1200 x 628 pixels** for a 1.91:1 landscape image, the format most consistently rendered across desktop and mobile feeds.
+- **1200 x 1200 pixels** for a 1:1 square image, which LinkedIn notes tends to take up more vertical space in the mobile feed than landscape creative.
+- **Vertical aspect ratios** are supported for some placements but render less predictably across every surface than the landscape and square options.
+
+Because LinkedIn compresses and resizes images that don't match these dimensions, an oversized or oddly cropped source file can still upload successfully under the 5MB cap while displaying with unwanted cropping in the feed.
+
+## Why 5MB Is Generous Compared to Other Platforms
+
+A 5MB ceiling is roomy relative to some other ad platforms' static image limits — Google Ads' legacy uploaded display ad format, for comparison, caps static images at just 150KB. LinkedIn's higher allowance reflects that single image ads are typically a single finished creative file rather than one of several assets assembled automatically, so there's less pressure to keep file weight minimal for combinatorial testing.
+
+## What Happens If a File Exceeds 5MB
+
+LinkedIn's Campaign Manager rejects the upload outright rather than auto-compressing an oversized file. The ad simply won't save until the image is resized or compressed below the 5MB threshold — there's no override or exception process for this limit.
+
+## Getting Under 5MB Without Losing Quality
+
+- **Export at the recommended 1200 x 628 or 1200 x 1200 dimensions** rather than uploading a much larger source file and letting LinkedIn scale it down, since oversized source files are the most common reason an export crosses 5MB.
+- **Use JPG over PNG for photographic images**, since PNG's lossless compression produces substantially larger files for photo-heavy creative without a visible quality benefit at ad size.
+- **Run the export through a dedicated image compressor** set to a moderate quality level before upload, which typically cuts file size well below 5MB with no visible loss at feed resolution.
+
+## This Limit Is Specific to the Single Image Format
+
+LinkedIn's other ad formats carry their own separate specifications rather than sharing the single image ad's 5MB ceiling. Carousel ads, video ads, and document ads each have different file size and format rules tied to how that format is rendered, so a creative team producing assets across several LinkedIn formats at once needs to check the spec for each format individually rather than assuming one file-size rule applies account-wide.
+
+## Bottom Line
+
+Design LinkedIn single image ad creative at 1200 x 628 or 1200 x 1200 pixels and export as a compressed JPG — doing so keeps files comfortably under the 5MB cap without the cropping or quality issues that come from forcing an oversized source file to fit.
+
+Source: LinkedIn Marketing Solutions Help, "Single image ads advertising specifications" (linkedin.com/help/lms/answer/a426534).`
+  },
+  {
+    id: "1019",
+    title: "What's the Minimum Product Image Size Google Merchant Center Will Require in 2027?",
+    slug: "google-merchant-center-minimum-image-size-2027",
+    excerpt: "Starting January 31, 2027, Google Merchant Center will require every product image to be at least 500x500 pixels, up from today's 100x100 (250x250 for apparel) minimum.",
+    featuredImage: "https://images.unsplash.com/photo-1607082349566-187342175e2f?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-06",
+    category: "Google Ads",
+    tags: ["Google Merchant Center", "Google Shopping Ads", "Product Feed", "Image Requirements", "Ecommerce Advertising"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Merchant Center 500x500 Image Rule 2027",
+      metaDescription: "Starting January 31, 2027, Google Merchant Center requires every product image to be at least 500x500 pixels, replacing today's much lower 100x100/250x250 minimums.",
+      keywords: ["google merchant center minimum image size 2027", "google shopping 500x500 pixels", "merchant center image too small", "google shopping product image requirements"]
+    },
+    content: `Starting January 31, 2027, Google Merchant Center will require every product image to be at least 500 x 500 pixels. That replaces the current, much lower minimum of 100 x 100 pixels for general merchandise and 250 x 250 pixels for apparel, per Google Merchant Center Help.
+
+## What Changes and When
+
+Until January 30, 2027, Google still accepts smaller images:
+
+- **General merchandise** — minimum 100 x 100 pixels today, rising to 500 x 500 pixels for every category once the new rule takes effect.
+- **Apparel** — minimum 250 x 250 pixels today, also rising to the same 500 x 500 floor.
+- **After January 31, 2027** — any product image under 500 x 500 pixels gets disapproved and stops serving, with no stated grace period once enforcement begins.
+
+Google has already started flagging undersized images ahead of the deadline: Merchant Center's "Needs attention" tab surfaces a "image too small for upcoming enforcement" warning for any product that will fail the new rule, well before the cutoff date arrives.
+
+## Why This Matters More Than It Sounds
+
+A disapproved product image doesn't just look worse — it pulls the entire product listing out of Shopping ads and free listings until it's fixed. For merchants with large catalogs scraped from older product photography or supplier-provided images, this single spec change can silently take hundreds of SKUs out of Shopping results on the enforcement date if nobody checks the feed beforehand.
+
+## Google's Recommendation Goes Well Beyond the Minimum
+
+The 500 x 500 figure is only the floor needed to avoid disapproval. Google's own guidance recommends images of 1500 x 1500 pixels or larger for the best performance across Shopping ads' different display formats and crop ratios, plus a hard ceiling of 64 megapixels and 16MB per file that applies regardless of the minimum.
+
+## How to Check Your Feed Before January 2027
+
+- **Open the "Needs attention" tab in Merchant Center** and review the "View history" log for any "image too small" or "image resolution optimizations applied" warnings already being surfaced on existing products.
+- **Audit supplier-provided and legacy product photography first**, since older or dropship-sourced catalogs are the most likely source of sub-500px images.
+- **Re-export or re-shoot flagged images at 1500 x 1500 pixels or larger** rather than just clearing the 500 x 500 floor, to get the performance benefit Google explicitly recommends rather than the bare minimum.
+
+## It Applies to Every Image Attribute, Not Just the Primary Photo
+
+The 500 x 500 pixel floor isn't limited to a product's main listing photo. It applies to both the primary image_link attribute and any additional_image_link images submitted in the same feed, so a product that passes on its main photo but includes smaller supplementary angle shots or lifestyle images can still trigger the same disapproval once enforcement begins, if those secondary images fall under the new minimum.
+
+## Bottom Line
+
+Audit product images against the 500 x 500 pixel floor well before January 31, 2027 — and while you're fixing flagged images, re-export them at Google's recommended 1500 x 1500 pixels instead of stopping at the bare minimum.
+
+Source: Google Merchant Center Help, "How to fix: Image too small" (support.google.com/merchants/answer/12159030).`
+  },
+  {
+    id: "1020",
+    title: "What's the Minimum Image Resolution for a Google Ads Responsive Display Ad?",
+    slug: "google-ads-responsive-display-ad-minimum-image-resolution-2026",
+    excerpt: "Google requires at least 600x314px for landscape, 300x300px for square, and 600x1067px for vertical images in a responsive display ad, per Google Ads Help.",
+    featuredImage: "https://images.unsplash.com/photo-1618044619888-009e412ff12a?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-06",
+    category: "Google Ads",
+    tags: ["Google Ads", "Responsive Display Ads", "Image Specs", "Display Network", "Ad Specs"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Responsive Display Ad Min Image Resolution",
+      metaDescription: "Google Ads requires a minimum of 600x314px for landscape, 300x300px for square, and 600x1067px for vertical images in a responsive display ad, per Google Ads Help.",
+      keywords: ["responsive display ad minimum image resolution", "google ads responsive display ad image size", "google ads image minimum pixels", "responsive display ad specs"]
+    },
+    content: `Google requires a minimum resolution of 600 x 314 pixels for a landscape image, 300 x 300 pixels for a square image, and 600 x 1067 pixels for a vertical image in a Google Ads responsive display ad, per Google Ads Help's responsive display ad specifications.
+
+## Three Aspect Ratios, Three Different Floors
+
+Responsive display ads let an advertiser upload up to 15 images across three aspect ratios, and Google enforces a separate minimum resolution for each:
+
+- **Landscape (1.91:1)** — minimum 600 x 314 pixels, recommended 1200 x 628 pixels.
+- **Square (1:1)** — minimum 300 x 300 pixels, recommended 1200 x 1200 pixels.
+- **Vertical (9:16)** — minimum 600 x 1067 pixels, no separate recommended size published beyond meeting the minimum ratio and resolution.
+
+Images that fall below these minimums are rejected at upload, regardless of file size — a technically small file that's also under-resolution won't be approved just because it's within the separate file size cap.
+
+## File Size Is a Different Limit From Resolution
+
+Resolution and file size are tracked separately in responsive display ads. Every image, at any of the three aspect ratios, can go up to 5,120KB (5MB) in file size. An image can be well above the minimum resolution and still get rejected if the file itself exceeds 5,120KB, so clearing the pixel-dimension floor doesn't guarantee the upload succeeds.
+
+## Logos Follow Their Own Minimums
+
+If the ad includes a logo asset, Google applies yet another set of resolution floors: a minimum of 128 x 128 pixels for a square (1:1) logo, and 512 x 128 pixels for a landscape (4:1) logo. These are separate from the main image requirements and get checked independently during upload.
+
+## Why This Format Uses Minimums Instead of Fixed Sizes
+
+Unlike the old uploaded static image ad format — which requires one finished creative at an exact size — responsive display ads are assembled automatically by Google from whichever combination of headlines, images, and logos performs best for a given placement. Setting a minimum resolution rather than a single fixed size lets Google's system crop, resize, and recombine assets across the enormous range of ad slot dimensions on the Display Network, while still guaranteeing the source image has enough detail to hold up after resizing.
+
+## Practical Upload Tips
+
+- **Shoot or source images above the recommended sizes** (1200 x 628 landscape, 1200 x 1200 square) rather than at the bare minimum, since Google's automated cropping performs better with extra resolution to work from.
+- **Check both resolution and file size before upload** — an image can fail for either reason independently, and the error message doesn't always make clear which limit was missed.
+- **Keep logos simple and high-contrast**, since the 128 x 128 minimum logo size leaves little room for fine detail to render clearly at small sizes.
+
+## Bottom Line
+
+Supply responsive display ad images at or above Google's recommended 1200 x 628 (landscape) and 1200 x 1200 (square) sizes rather than the bare 600 x 314 and 300 x 300 minimums, so the automated cropping and resizing has enough resolution to work with.
+
+Source: Google Ads Help, "Create a responsive display ad" and "Best practices guide for responsive display ads" (support.google.com/google-ads/answer/7005917 and support.google.com/google-ads/answer/9823397).`
+  },
+  {
+    id: "1021",
+    title: "What's the Length Requirement for an Amazon Sponsored Brands Video Ad?",
+    slug: "amazon-sponsored-brands-video-ad-length-requirement-2026",
+    excerpt: "Amazon requires Sponsored Brands video ads to run between 6 and 45 seconds, per Amazon Ads' official creative acceptance policy for animation and video.",
+    featuredImage: "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-06",
+    category: "Advertising Strategy",
+    tags: ["Amazon Ads", "Sponsored Brands", "Video Advertising", "Ad Specs", "Ecommerce Advertising"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Amazon Sponsored Brands Video Length Rule",
+      metaDescription: "Amazon Sponsored Brands video ads must run between 6 and 45 seconds, per Amazon Ads' official creative acceptance policy for animation and video.",
+      keywords: ["amazon sponsored brands video length", "amazon sponsored brands video ad specs", "amazon video ad duration requirement", "amazon ads creative acceptance video"]
+    },
+    content: `Amazon requires Sponsored Brands video ads to run between 6 and 45 seconds. That range is set by Amazon Ads' official creative acceptance policy covering animation and video, and it applies regardless of what the video otherwise shows.
+
+## The Full Technical Spec Beyond Length
+
+Duration is only one part of what Amazon checks before approving a Sponsored Brands video ad. The format also requires:
+
+- **Aspect ratio of 16:9**, at a resolution of 1280 x 720, 1920 x 1080, or 3840 x 2160 pixels.
+- **File size of 500MB or smaller**, in MP4 or MOV format.
+- **Frame rate of 23.976 to 30fps** (23.976, 24, 25, 29.97, 29.98, or 30), with a minimum bit rate of 1Mbps.
+- **H.264 or H.265 codec**, with audio at 44.1kHz or higher, a minimum 96kbps bit rate, and either stereo or mono channels.
+
+A video that meets the 6-45 second window but fails any of these other technical checks still gets rejected at submission, so duration alone isn't a guarantee of approval.
+
+## Why Amazon Autoplays Muted and Why That Matters for Length
+
+Sponsored Brands video ads autoplay in search results with sound off by default, which shapes how the 6-45 second window actually gets used in practice. A video that depends on dialogue or narration to make its point loses most of that message unless it also carries on-screen text or captions, since the shopper has to tap to unmute. Amazon's own creative guidance recommends closed captions for this reason, along with text sized to stay legible on a mobile screen.
+
+## Where 15 Seconds Tends to Land in Practice
+
+Within the 6-45 second legal range, campaign data commonly cited across Amazon advertising case studies points to roughly 15 seconds as a length that balances completion rate against message delivery — long enough to show the product in use, short enough that most viewers watch to the end before scrolling past. That's a practical convention rather than an Amazon-enforced rule; anything from 6 to 45 seconds is technically compliant.
+
+## Common Rejection Reasons Beyond Length
+
+- **Running under 6 seconds or over 45 seconds**, which fails the hard duration check before any other review happens.
+- **Using a frame rate or codec outside Amazon's accepted list**, which is a frequent rejection cause for video exported from consumer editing tools with non-standard defaults.
+- **Submitting dialogue-dependent creative with no captions**, which isn't a hard rejection but routinely underperforms given the autoplay-muted default.
+
+## This Is a Different Spec From Sponsored Display or Sponsored Products Video
+
+Amazon's video length and technical requirements vary by ad product, not by a single catalog-wide video policy. Sponsored Brands video is reviewed under its own creative acceptance rules, separate from video creative used in Sponsored Display or the video assets accepted as part of a product's organic listing content, so a video approved for one placement isn't automatically pre-approved for another.
+
+## Bottom Line
+
+Keep Sponsored Brands video ads inside the 6-45 second window, build around muted autoplay with captions or on-screen text, and double-check the aspect ratio, codec, and frame rate against Amazon's spec before upload — length alone won't get a video approved if the underlying file doesn't match the rest of the technical requirements.
+
+Source: Amazon Ads, "Animation and video" creative acceptance policy (advertising.amazon.com/resources/ad-policy/creative-acceptance/animation-video).`
+  },
+  {
+    id: "1022",
+    title: "What's the Minimum Video Length for a TikTok In-Feed Ad?",
+    slug: "tiktok-in-feed-ad-minimum-video-length-2026",
+    excerpt: "Standard TikTok In-Feed ads must run at least 5 seconds, with a 60-second maximum; Spark Ads boosting existing organic posts aren't bound by this range.",
+    featuredImage: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-06",
+    category: "Social Media",
+    tags: ["TikTok Ads", "In-Feed Ads", "Video Advertising", "Ad Specs", "Spark Ads"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "TikTok In-Feed Ad Minimum Video Length",
+      metaDescription: "Standard TikTok In-Feed ads must be at least 5 seconds long, with a 60-second cap, per TikTok Ads Manager's official video ad specifications.",
+      keywords: ["tiktok in-feed ad minimum video length", "tiktok ad minimum seconds", "tiktok video ad specs", "tiktok spark ads length requirement"]
+    },
+    content: `A standard, non-Spark TikTok In-Feed ad must run at least 5 seconds, with a maximum of 60 seconds, per TikTok Ads Manager's official video ad specifications.
+
+## Spark Ads Follow a Different Rule
+
+That 5-60 second window applies specifically to standard In-Feed ads built from creative uploaded directly to Ads Manager. Spark Ads — the format that boosts an existing organic TikTok post, whether the brand's own or a creator's with permission — inherit the length of whatever organic video is being boosted, which isn't bound by the 5-60 second In-Feed range. A brand can run a 3-minute organic video as a Spark Ad even though the same video would fail the minimum-length check as a standard In-Feed upload, since the two paths are reviewed under different rules.
+
+## The Full In-Feed Video Spec
+
+Length isn't the only requirement TikTok checks on a standard In-Feed upload:
+
+- **Resolution** — minimum 540 x 960 pixels, recommended 720 x 1280 pixels or higher, at a 9:16 aspect ratio (1:1 and 16:9 are also accepted).
+- **File size** — maximum 500MB per video.
+- **File format** — .mp4, .mov, .mpeg, .3gp, or .avi.
+
+A video under 5 seconds gets rejected at upload regardless of how well it otherwise meets the resolution and file size requirements, since the minimum-length check happens independently of the other technical checks.
+
+## Why TikTok Sets a 5-Second Floor
+
+TikTok's own creative guidance recommends In-Feed videos land closer to 9-15 seconds for best engagement, well above the bare 5-second minimum. The floor itself exists mainly to rule out near-static image slideshows or single-frame creative being dressed up as video — 5 seconds is enough time to show at least one real moment of motion or product demonstration, which TikTok's feed-based, sound-on viewing format is built around.
+
+## Why the Gap Between "Allowed" and "Recommended" Matters
+
+TikTok's own data consistently points advertisers toward the shorter end of the allowed range rather than the full 60 seconds, since completion rate drops sharply as length increases in a feed where the next video is one swipe away. Treating 5-60 seconds as a hard legal range rather than a creative target is a common mistake — plenty of In-Feed ads that are technically compliant at 45 or 50 seconds underperform simply because they were built to the maximum instead of to what the feed format actually rewards.
+
+## Getting Creative Approved on the First Try
+
+- **Build to 9-15 seconds as a default target**, reserving the full range up to 60 seconds only for creative with a specific reason to run longer, like a tutorial or unboxing format.
+- **Export at 9:16 and at least 720 x 1280 pixels**, since TikTok's feed is a vertical, mobile-first surface and off-ratio creative gets cropped or letterboxed.
+- **Use the organic Spark Ads path for content that's already proven itself organically**, rather than re-uploading it as a fresh In-Feed asset and re-triggering the standard length and format checks.
+
+## Bottom Line
+
+Standard TikTok In-Feed ads need at least 5 seconds and no more than 60, but build toward TikTok's own recommended 9-15 second range rather than treating the legal maximum as the creative target.
+
+Source: TikTok Ads Manager Help Center, "Video Ads Specifications" (ads.tiktok.com/help/article/video-ads-specifications).`
+  },
+  {
+    id: "1023",
+    title: "What's the Maximum Number of Asset Groups in a Google Performance Max Campaign?",
+    slug: "performance-max-maximum-asset-groups-per-campaign-2026",
+    excerpt: "A Google Performance Max campaign can hold up to 100 asset groups, with a minimum of one required, and asset groups can't be shared between campaigns.",
+    featuredImage: "https://images.unsplash.com/photo-1633356122102-3fe601e7d436?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-06",
+    category: "Google Ads",
+    tags: ["Performance Max", "Google Ads", "Asset Groups", "Campaign Structure", "PPC"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "PMax Max Asset Groups Per Campaign",
+      metaDescription: "A Google Performance Max campaign can hold up to 100 asset groups, with a minimum of one required, per Google's Performance Max developer documentation.",
+      keywords: ["performance max maximum asset groups", "pmax asset group limit", "google ads performance max campaign structure", "how many asset groups performance max"]
+    },
+    content: `A single Google Performance Max campaign can hold up to 100 asset groups. Every Performance Max campaign needs at least one asset group to run, and asset groups can't be shared between separate campaigns, per Google's Performance Max developer documentation.
+
+## What an Asset Group Actually Is
+
+An asset group is the core creative and targeting unit inside a Performance Max campaign — it bundles the headlines, descriptions, images, videos, and logos the campaign can draw from, along with the audience signals and optional final URL expansion settings that apply to that specific grouping. Most advertisers use one asset group per product category, theme, or landing page, rather than one per individual product, which is why 100 is a generous ceiling for the vast majority of accounts.
+
+## Why Advertisers Rarely Approach 100
+
+Google's own guidance recommends keeping Performance Max asset groups organized around a small number of meaningfully distinct themes rather than creating one for every product variation. A retailer with thousands of SKUs typically still runs somewhere in the range of a handful to a few dozen asset groups, organized by category or margin tier, because Performance Max's own machine learning needs enough signal volume within each asset group to optimize effectively — spreading the same budget across 100 narrow asset groups dilutes the data each one gets, rather than improving targeting precision.
+
+## Asset Groups Can't Be Shared Across Campaigns
+
+Each asset group belongs to exactly one Performance Max campaign. An advertiser who wants the same creative assets to appear in two different Performance Max campaigns has to upload and configure a separate asset group in each one — there's no shared-asset-group or cross-campaign linking feature, which is a common point of confusion for advertisers used to Google's shared library handling things like audience lists or negative keyword lists across campaigns.
+
+## This Is Distinct From the Minimum Asset Requirement
+
+The 100-asset-group ceiling answers a different question from Performance Max's minimum asset requirement within a single asset group, which governs how many headlines, images, and videos that one asset group needs to be eligible to serve. A campaign can satisfy the minimum-assets-per-group requirement while still being far below the 100-asset-group campaign ceiling, and vice versa — a campaign with many thin asset groups could hit structural limits before it hits the content minimums.
+
+## Practical Guidance for Structuring Asset Groups
+
+- **Group by theme or margin, not by individual SKU**, so each asset group accumulates enough conversion data for Performance Max's automated bidding and creative optimization to work with.
+- **Avoid fragmenting a single product line across multiple near-identical asset groups**, which splits signal without adding meaningful targeting precision.
+- **Reserve dedicated asset groups for genuinely distinct audiences or offers** — a seasonal promotion or a different customer segment is a legitimate reason to add one, unlike simply wanting separate reporting for similar products.
+
+## Bottom Line
+
+The 100-asset-group ceiling on Performance Max campaigns is rarely the real constraint — the practical limit is how much conversion volume each asset group needs to optimize well, so most advertisers get better results from a handful of well-resourced asset groups than from spreading the same budget across dozens of narrow ones.
+
+Source: Google Ads API Developer Documentation, "Performance Max Asset Groups" (developers.google.com/google-ads/api/performance-max/asset-groups).`
+  },
+  {
     id: "723",
     title: "OpenAI Launches ChatGPT Ads in India With 50+ Brands",
     slug: "chatgpt-ads-india-launch-2026",
