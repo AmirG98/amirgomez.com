@@ -269,14 +269,14 @@
   function autosave() {
     var answers = collect();
     try { localStorage.setItem(LS, JSON.stringify(answers)); } catch (e) {}
-    saved.textContent = 'Guardando…';
+    saved.textContent = 'Saving...';
     fetch(API, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ answers: answers })
     })
-      .then(function (r) { saved.textContent = r.ok ? 'Guardado' : 'Guardado en este navegador'; })
-      .catch(function () { saved.textContent = 'Guardado en este navegador'; });
+      .then(function (r) { saved.textContent = r.ok ? 'Saved' : 'Saved in this browser'; })
+      .catch(function () { saved.textContent = 'Saved in this browser'; });
   }
 
   function fill(answers) {
