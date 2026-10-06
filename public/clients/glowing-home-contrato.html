@@ -66,7 +66,7 @@
 
   .go { display: block; width: 100%; font-family: var(--sans); font-size: 14px; font-weight: 500; letter-spacing: 0.04em; padding: 14px; background: var(--taupe); color: #fff; border: none; cursor: pointer; margin-top: 18px; }
   .go:hover { background: var(--taupe-deep); }
-  .go:disabled { opacity: .4; cursor: default; }
+  .go:disabled { opacity: .4; cursor: default; pointer-events: none; }
   .msg { font-size: 13px; color: var(--ink-2); margin-top: 12px; text-align: center; }
   .msg.err { color: #B3341B; }
 
@@ -194,7 +194,7 @@
             </label>
           </div>
         </div>
-        <button class="go" id="firmar" disabled>Signaturer el contrato</button>
+        <button class="go" id="firmar" disabled>Sign the agreement</button>
         <div class="msg" id="msg"></div>
       </div>
     </div>
@@ -399,7 +399,29 @@
     var ok = completo(datos()) && hayTrazo && firmante.value.trim() && acepto.checked;
     btn.disabled = !ok;
     document.getElementById('est3').textContent = ok ? 'Ready to sign' : 'Last step';
+    if (ok && msg.className === 'msg err') { msg.className = 'msg'; msg.textContent = ''; }
   }
+
+  function faltantes() {
+    var d = datos(), out = [];
+    if (!d.razonSocial) out.push('the legal name of the business (step 1)');
+    if (!d.representante) out.push('the legal representative (step 1)');
+    if (!d.documento) out.push('the EIN or tax ID (step 1)');
+    if (!d.domicilio) out.push('the address (step 1)');
+    if (!d.email) out.push('the email (step 1)');
+    if (!hayTrazo) out.push('your signature in the pad');
+    if (!firmante.value.trim()) out.push('the full name of the signer');
+    if (!acepto.checked) out.push('the agreement checkbox');
+    return out;
+  }
+
+  btn.parentNode.addEventListener('click', function () {
+    if (!btn.disabled) return;
+    var f = faltantes();
+    if (!f.length) return;
+    msg.className = 'msg err';
+    msg.textContent = 'Almost there — to sign, complete: ' + f.join(', ') + '.';
+  });
 
   function guardar() {
     var d = datos();
@@ -483,7 +505,7 @@
   btn.addEventListener('click', function () {
     btn.disabled = true;
     msg.className = 'msg';
-    msg.textContent = 'Registrando la firma…';
+    msg.textContent = 'Recording your signature…';
     var texto = document.getElementById('doc').innerText;
     fetch(API, {
       method: 'POST',
@@ -515,7 +537,7 @@
     var f = new Date(firma.fecha);
     document.getElementById('datosSignature').innerHTML =
       '<div><span>Signed by</span> ' + esc(firma.nombre) + '</div>' +
-      '<div><span>Empresa</span> ' + esc(d.razonSocial) + '</div>' +
+      '<div><span>Business</span> ' + esc(d.razonSocial) + '</div>' +
       '<div><span>Fecha</span> ' + f.toLocaleString('es-AR') + '</div>' +
       '<div><span>Huella</span> <span class="hash">' + esc(firma.hash || '') + '</span></div>';
     if (mailed === false) {
