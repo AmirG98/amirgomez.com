@@ -57,7 +57,7 @@
   .meta { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 14px; font-size: 12.5px; color: var(--ink-2); }
   .meta b { color: var(--ink); font-weight: 600; }
   .viewer { background: #fffefb; border: 1px solid var(--hairline); height: 82vh; min-height: 560px; }
-  .viewer iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .viewer object { width: 100%; height: 100%; border: 0; display: block; }
   .fallback { padding: 28px; font-size: 14px; color: var(--ink-2); display: none; }
   .fill { border-left: 3px solid var(--gold); background: var(--gold-soft); padding: 14px 18px; margin-top: 22px; font-size: 13.5px; }
   @media (max-width: 700px) { .viewer { display: none; } .fallback { display: block; border: 1px solid var(--hairline); background: #fffefb; } }
@@ -85,7 +85,9 @@
   </div>
 
   <div class="viewer rv">
-    <iframe src="/clients/docs/urban-cassia-nordelta-launch-plan.pdf#view=FitH" title="Cassia x Nordelta launch plan"></iframe>
+    <object data="/clients/docs/urban-cassia-nordelta-launch-plan.pdf#view=FitH" type="application/pdf" title="Cassia x Nordelta launch plan">
+      <p class="fallback" style="display:block">Tu navegador no muestra PDFs embebidos. <a href="/clients/docs/urban-cassia-nordelta-launch-plan.pdf" target="_blank" rel="noopener">Abrilo en una pesta&ntilde;a nueva</a> o descargalo con el bot&oacute;n de arriba.</p>
+    </object>
   </div>
   <div class="fallback rv">En el celular el visor no carga. Us&aacute; el bot&oacute;n de descarga para abrir el PDF.</div>
 
