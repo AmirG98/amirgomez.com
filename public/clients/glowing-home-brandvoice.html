@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glowing Home Cleaners | Brand questionnaire</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #000000; --ink-2: #4A4A4A; --ink-3: #8C8C8C;
+    --paper: #F8F8F8; --panel: #FFFFFF; --hairline: #E2E0DC;
+    --taupe: #9B8D7A; --taupe-soft: #F0EDE7; --taupe-deep: #7A6E5D;
+    --ok: #5A7A5E; --warn: #A8895A;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.6; font-weight: 300; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 1040px; margin: 0 auto; padding: 56px 28px 80px; }
+
+  header { margin-bottom: 46px; }
+  .brand { font-size: 13px; font-weight: 500; letter-spacing: 0.34em; text-transform: uppercase; color: var(--ink); }
+  .brand span { color: var(--taupe); }
+  h1 { font-size: 34px; font-weight: 300; letter-spacing: -0.015em; margin-top: 26px; }
+  .sub { font-size: 15px; color: var(--ink-2); margin-top: 10px; max-width: 62ch; font-weight: 300; }
+  .meta { display: flex; gap: 22px; margin-top: 22px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); }
+
+  section { margin-top: 52px; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; border-bottom: 1px solid var(--hairline); padding-bottom: 10px; margin-bottom: 22px; }
+  .sec-head h2 { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink); }
+  .sec-head .note { font-size: 12px; color: var(--ink-3); margin-left: auto; font-weight: 300; }
+
+  /* Progreso del onboarding */
+  .progress { display: flex; gap: 3px; margin-bottom: 26px; }
+  .progress span { flex: 1; height: 3px; background: var(--hairline); }
+  .progress span.on { background: var(--taupe); }
+  .progress-label { font-size: 12px; color: var(--ink-2); margin-bottom: 10px; }
+
+  .phase { margin-bottom: 30px; }
+  .phase-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
+  .phase-num { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: var(--taupe); }
+  .phase-head h3 { font-size: 18px; font-weight: 400; }
+  .phase-head .when { margin-left: auto; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); }
+
+  .steps { display: grid; gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); }
+  .step { background: var(--panel); padding: 14px 18px; display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: start; }
+  .step .t { font-size: 14.5px; font-weight: 400; }
+  .step .d { font-size: 13px; color: var(--ink-2); margin-top: 3px; }
+  .st { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 9px; white-space: nowrap; }
+  .st.done { background: #EDF2ED; color: var(--ok); }
+  .st.now { background: var(--taupe-soft); color: var(--taupe-deep); }
+  .st.wait { background: #F7F1E7; color: var(--warn); }
+  .st.next { background: #F2F2F2; color: var(--ink-3); }
+
+  .callout { background: var(--taupe-soft); border-left: 2px solid var(--taupe); padding: 16px 20px; font-size: 14px; color: var(--ink-2); margin-top: 20px; }
+  .callout b { font-weight: 600; color: var(--ink); }
+
+  /* Funnel */
+  .funnel { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .stage { background: var(--panel); border: 1px solid var(--hairline); padding: 18px; }
+  .stage .n { font-size: 10px; font-weight: 600; letter-spacing: 0.16em; color: var(--taupe); }
+  .stage h4 { font-size: 15px; font-weight: 400; margin: 8px 0 6px; }
+  .stage p { font-size: 12.5px; color: var(--ink-2); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th { text-align: left; font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); padding: 9px 12px; border-bottom: 1px solid var(--hairline); }
+  td { padding: 12px; border-bottom: 1px solid var(--hairline); vertical-align: top; font-weight: 300; }
+  tr:last-child td { border-bottom: none; }
+  .tbl { background: var(--panel); border: 1px solid var(--hairline); overflow-x: auto; }
+  .pending { color: var(--ink-3); font-style: italic; }
+
+  /* Contexto */
+  .ctx { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); }
+  .ctx-card { background: var(--panel); padding: 20px 22px; }
+  .ctx-card h4 { font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--taupe-deep); margin-bottom: 8px; }
+  .ctx-card p { font-size: 13.5px; color: var(--ink-2); font-weight: 300; }
+  .ctx-card p + p { margin-top: 8px; }
+  .ctx-card strong { color: var(--ink); font-weight: 500; }
+
+  /* Ritmo de trabajo */
+  .rit { display: grid; grid-template-columns: 150px 1fr; gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); }
+  .rit > div { background: var(--panel); padding: 14px 18px; }
+  .rit .when { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--taupe-deep); }
+  .rit .what { font-size: 13.5px; color: var(--ink-2); font-weight: 300; }
+  .rit .what b { color: var(--ink); font-weight: 500; }
+
+  /* Metricas */
+  .met { display: grid; gap: 1px; background: var(--hairline); border: 1px solid var(--hairline); }
+  .met-row { background: var(--panel); padding: 15px 20px; display: grid; grid-template-columns: 1fr 1.4fr; gap: 20px; }
+  .met-row .k { font-size: 14px; font-weight: 400; }
+  .met-row .k small { display: block; font-size: 12px; color: var(--taupe-deep); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 3px; }
+  .met-row .v { font-size: 13px; color: var(--ink-2); font-weight: 300; }
+
+  .mp { display: block; background: var(--ink); color: #fff; padding: 24px 28px; text-decoration: none; margin-top: 34px; transition: opacity .2s; }
+  .mp:hover { opacity: .9; }
+  .mp .k { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--taupe); }
+  .mp h3 { font-size: 20px; font-weight: 300; margin: 8px 0 6px; }
+  .mp p { font-size: 13.5px; color: #C4C0B8; max-width: 70ch; font-weight: 300; }
+  .mp .go { display: inline-block; margin-top: 13px; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--taupe); }
+
+  footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--hairline); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3); }
+
+  @media (max-width: 820px) {
+    .funnel { grid-template-columns: repeat(2, 1fr); }
+    .step { grid-template-columns: 1fr; }
+    .ctx { grid-template-columns: 1fr; }
+    .rit { grid-template-columns: 1fr; }
+    .met-row { grid-template-columns: 1fr; gap: 6px; }
+    h1 { font-size: 27px; }
+  }
+
+  /* --- Mockups --- */
+  .mk-tabs { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 18px; }
+  .mk-tabs button { font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 0.04em; padding: 8px 15px; background: var(--panel); border: 1px solid var(--hairline); color: var(--ink-2); cursor: pointer; }
+  .mk-tabs button.on { background: var(--taupe); border-color: var(--taupe); color: #fff; }
+  .mk-set { display: none; } .mk-set.on { display: block; }
+  .mk-lede { font-size: 13.5px; color: var(--ink-2); max-width: 78ch; margin-bottom: 16px; font-weight: 300; }
+  .mk-lede b { color: var(--ink); font-weight: 500; }
+
+  .mk-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .mk { position: relative; display: block; width: 100%; border: 0; padding: 0; margin: 0; background: none; cursor: zoom-in; overflow: hidden; font-family: var(--sans); text-align: left; }
+  .mk img { display: block; width: 100%; height: 240px; object-fit: cover; transition: transform .35s ease; }
+  .mk:hover img { transform: scale(1.03); }
+  .mk .cap { position: absolute; left: 0; right: 0; bottom: 0; display: block; padding: 26px 13px 11px; background: linear-gradient(to top, rgba(0,0,0,.72), transparent); color: #fff; }
+  .mk .cap .t { display: block; font-size: 12.5px; font-weight: 500; letter-spacing: 0.02em; }
+  .mk .cap .s { display: block; font-size: 11px; opacity: .78; margin-top: 1px; font-weight: 300; }
+
+  /* Descargas y links externos */
+  .dl { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 500; color: var(--taupe-deep); text-decoration: none; border-bottom: 1px solid var(--hairline); padding-bottom: 2px; }
+  .dl:hover { border-bottom-color: var(--taupe); }
+  .dl .tag { font-size: 9.5px; font-weight: 700; letter-spacing: 0.1em; background: var(--taupe-soft); color: var(--taupe-deep); padding: 2px 6px; }
+  .step .dl { margin-top: 8px; font-size: 12px; }
+
+  /* Lightbox */
+  .lb { position: fixed; inset: 0; background: rgba(0,0,0,.93); display: none; align-items: center; justify-content: center; z-index: 90; padding: 24px; }
+  .lb.on { display: flex; }
+  .lb img { max-width: 100%; max-height: 84vh; object-fit: contain; }
+  .lb .x { position: absolute; top: 18px; right: 24px; font-size: 30px; color: #fff; background: none; border: 0; cursor: pointer; line-height: 1; opacity: .8; }
+  .lb .nav { position: absolute; top: 50%; transform: translateY(-50%); font-size: 34px; color: #fff; background: none; border: 0; cursor: pointer; padding: 12px 18px; opacity: .65; }
+  .lb .nav:hover { opacity: 1; }
+  .lb .prev { left: 8px; } .lb .next { right: 8px; }
+  .lb .meta { position: absolute; bottom: 22px; left: 0; right: 0; text-align: center; color: #fff; font-size: 12.5px; font-weight: 300; letter-spacing: 0.04em; }
+
+  @media (max-width: 900px) { .mk-grid { grid-template-columns: repeat(2, 1fr); } .mk img { height: 190px; } }
+  @media (max-width: 560px) { .mk-grid { grid-template-columns: 1fr; } .mk img { height: 220px; } }
+
+  /* --- Cuestionario --- */
+  .bv-bar { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 14px; background: var(--paper); padding: 13px 0; border-bottom: 1px solid var(--hairline); margin-bottom: 26px; }
+  .bv-bar .prog { flex: 1; height: 6px; background: var(--hairline); }
+  .bv-bar .prog i { display: block; height: 100%; background: var(--taupe); width: 0; transition: width .25s; }
+  .bv-bar .cnt { font-size: 12.5px; font-weight: 500; color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .bv-bar .saved { font-size: 12px; color: var(--ink-3); white-space: nowrap; }
+  .bv-block { margin-bottom: 34px; }
+  .bv-block > .bh { border-bottom: 1px solid var(--hairline); padding-bottom: 9px; margin-bottom: 6px; }
+  .bv-block > .bh .n { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--taupe-deep); }
+  .bv-block > .bh h3 { font-size: 17px; font-weight: 400; margin-top: 5px; }
+  .bv-block > .bh p { font-size: 13px; color: var(--ink-2); margin-top: 6px; font-weight: 300; max-width: 76ch; }
+  .q { padding: 18px 0; border-bottom: 1px solid var(--hairline); }
+  .q:last-child { border-bottom: none; }
+  .q label { display: block; font-size: 14px; color: var(--ink); margin-bottom: 9px; font-weight: 400; }
+  .q label .num { color: var(--taupe-deep); font-weight: 600; margin-right: 7px; }
+  .q textarea { width: 100%; font-family: var(--sans); font-size: 14px; line-height: 1.55; color: var(--ink); background: var(--panel); border: 1px solid var(--hairline); padding: 11px 13px; resize: vertical; min-height: 62px; outline: none; }
+  .q textarea:focus { border-color: var(--taupe); }
+  .q.done label .num::after { content: ' ✓'; color: var(--ok); }
+  .bv-send { border: 1px solid var(--hairline); padding: 22px 24px; margin-top: 10px; background: var(--panel); }
+  .bv-send h3 { font-size: 16px; font-weight: 400; margin-bottom: 6px; }
+  .bv-send p { font-size: 13px; color: var(--ink-2); font-weight: 300; max-width: 72ch; }
+  .bv-send .row { display: flex; align-items: center; gap: 14px; margin-top: 16px; flex-wrap: wrap; }
+  .bv-send button { font-family: var(--sans); font-size: 12.5px; font-weight: 500; letter-spacing: 0.06em; padding: 11px 24px; background: var(--taupe); color: #fff; border: 1px solid var(--taupe); cursor: pointer; }
+  .bv-send button:hover { background: var(--taupe-deep); border-color: var(--taupe-deep); }
+  .bv-send button:disabled { opacity: .45; cursor: default; }
+  .bv-send .msg { font-size: 12.5px; color: var(--ink-2); }
+  .bv-send .msg.ok { color: var(--ok); }
+  .bv-sent { background: var(--taupe-soft); border-left: 3px solid var(--taupe); padding: 15px 19px; font-size: 13.5px; color: var(--ink-2); margin-bottom: 24px; display: none; }
+  .bv-sent.on { display: block; }
+  .bv-sent b { color: var(--ink); font-weight: 500; }
+</style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-icon.png">
+</head>
+<body data-client="glowing-home" data-page="brandvoice">
+<div class="page">
+
+  <header>
+    <div class="brand">GLOWING HOME CLEANERS</div>
+    <h1>Brand questionnaire</h1>
+    <p class="sub">Sixteen questions so I can write ads that sound like you instead of like an agency. There are no right answers, what helps is how you would actually say it. It saves as you type.</p>
+    <div class="meta">
+      <span>Onboarding</span>
+      <span>October 2026</span>
+    </div>
+  </header>
+  <div class="bv-sent" id="bvSent">
+    <b>Got it, thanks.</b> You can keep editing and send it again if you want to change something. The new version comes through.
+  </div>
+
+  <div class="bv-bar">
+    <span class="cnt" id="bvCnt">0 of 16</span>
+    <span class="prog"><i id="bvProg"></i></span>
+    <span class="saved" id="bvSaved"></span>
+  </div>
+
+  <p class="mk-lede" style="margin-bottom:26px;">
+    Answer straight through without polishing. One or two sentences is plenty for most of these, and if something does not apply, skip it.
+    The most useful answers are the concrete ones: something you actually told a customer, a question you get constantly, a complaint you have heard.
+    <b>It saves automatically</b>, so you can close this and come back.
+  </p>
+
+  <div class="bv-block"><div class="bh"><div class="n">Block 01</div><h3>The business</h3></div><div class="q" data-q="q01"><label for="q01"><span class="num">1.</span>How would you describe what Glowing Home Cleaners does to someone who has never hired a cleaning service?</label><textarea id="q01" name="q01" rows="2" placeholder="Write here..."></textarea></div><div class="q" data-q="q02"><label for="q02"><span class="num">2.</span>What made you start this business, and why in Orange County specifically?</label><textarea id="q02" name="q02" rows="2" placeholder="Write here..."></textarea></div><div class="q" data-q="q03"><label for="q03"><span class="num">3.</span>What do you do differently from the other cleaning companies in your area? Be specific, not "better service".</label><textarea id="q03" name="q03" rows="2" placeholder="Write here..."></textarea></div></div>
+  <div class="bv-block"><div class="bh"><div class="n">Block 02</div><h3>Your customers</h3></div><div class="q" data-q="q04"><label for="q04"><span class="num">4.</span>Describe your best customer. Not a category, an actual person: who they are, what their home is like, why they called you.</label><textarea id="q04" name="q04" rows="2" placeholder="Write here..."></textarea></div><div class="q" data-q="q05"><label for="q05"><span class="num">5.</span>What makes someone finally decide to hire a cleaner instead of doing it themselves? What is usually going on in their life at that moment?</label><textarea id="q05" name="q05" rows="2" placeholder="Write here..."></textarea></div><div class="q" data-q="q06"><label for="q06"><span class="num">6.</span>What do people ask you before they book? The questions you get over and over.</label><textarea id="q06" name="q06" rows="2" placeholder="Write here..."></textarea></div><div class="q" data-q="q07"><label for="q07"><span class="num">7.</span>What makes someone say no, or go quiet after asking for a quote?</label><textarea id="q07" name="q07" rows="2" placeholder="Write here..."></textarea></div></div>
+  <div class="bv-block"><div class="bh"><div class="n">Block 03</div><h3>The service and the offer</h3></div><div class="q" data-q="q08"><label for="q08"><span class="num">8.</span>What exactly does a standard clean include? And what are the add-ons people ask for most?</label><textarea id="q08" name="q08" rows="2" placeholder="Write here..."></textarea></div><div class="q" data-q="q09"><label for="q09"><span class="num">9.</span>How does your pricing work, and what does a typical job cost?</label><textarea id="q09" name="q09" rows="2" placeholder="Write here..."></textarea></div><div class="q" data-q="q10"><label for="q10"><span class="num">10.</span>What happens after someone books? Walk me through it from their side, from booking to the cleaners leaving.</label><textarea id="q10" name="q10" rows="2" placeholder="Write here..."></textarea></div><div class="q" data-q="q11"><label for="q11"><span class="num">11.</span>Is there anything you offer that you think people do not know about?</label><textarea id="q11" name="q11" rows="2" placeholder="Write here..."></textarea></div></div>
+  <div class="bv-block"><div class="bh"><div class="n">Block 04</div><h3>Proof and voice</h3></div><div class="q" data-q="q12"><label for="q12"><span class="num">12.</span>What do customers say when they are happy? Paste an actual review or message if you have one.</label><textarea id="q12" name="q12" rows="2" placeholder="Write here..."></textarea></div><div class="q" data-q="q13"><label for="q13"><span class="num">13.</span>Has anyone ever complained, or asked for a redo? What happened and how did you handle it?</label><textarea id="q13" name="q13" rows="2" placeholder="Write here..."></textarea></div><div class="q" data-q="q14"><label for="q14"><span class="num">14.</span>How do you want the brand to sound? Pick a few words: warm, professional, friendly, premium, no nonsense. And tell me what it should never sound like.</label><textarea id="q14" name="q14" rows="2" placeholder="Write here..."></textarea></div></div>
+  <div class="bv-block"><div class="bh"><div class="n">Block 05</div><h3>Recruiting and practical</h3></div><div class="q" data-q="q15"><label for="q15"><span class="num">15.</span>You also need cleaners. What kind of person are you looking for, and what do you offer them that other companies do not?</label><textarea id="q15" name="q15" rows="2" placeholder="Write here..."></textarea></div><div class="q" data-q="q16"><label for="q16"><span class="num">16.</span>Anything else I should know before I start writing ads? Something that annoys you about how this industry advertises, a competitor you watch, a rule I should not break.</label><textarea id="q16" name="q16" rows="2" placeholder="Write here..."></textarea></div></div>
+
+  
+  <div class="bv-send">
+    <h3>When you are done</h3>
+    <p>You do not need to answer all sixteen. Send me whatever you have and I will ask about the rest. I get a notification when it comes through.</p>
+    <div class="row">
+      <button id="bvSubmit">Send the questionnaire</button>
+      <span class="msg" id="bvMsg"></span>
+    </div>
+  </div>
+
+  <footer>Glowing Home Cleaners &middot; Brand questionnaire</footer>
+</div>
+
+<script>
+(function () {
+  var API = '/api/brand-voice/glowing-home';
+  var LS = 'brandvoice:glowing-home';
+  var TOTAL = 16;
+  var areas = Array.prototype.slice.call(document.querySelectorAll('.q textarea'));
+  var cnt = document.getElementById('bvCnt');
+  var prog = document.getElementById('bvProg');
+  var saved = document.getElementById('bvSaved');
+  var msg = document.getElementById('bvMsg');
+  var timer = null;
+
+  function collect() {
+    var a = {};
+    areas.forEach(function (t) { var v = t.value.trim(); if (v) a[t.id] = v; });
+    return a;
+  }
+
+  function questions() {
+    var q = {};
+    document.querySelectorAll('.q').forEach(function (d) {
+      var l = d.querySelector('label');
+      q[d.getAttribute('data-q')] = l ? l.textContent.replace(/^\s*\d+\.\s*/, '') : '';
+    });
+    return q;
+  }
+
+  function tally() {
+    var n = 0;
+    areas.forEach(function (t) {
+      var has = t.value.trim().length > 0;
+      t.closest('.q').classList.toggle('done', has);
+      if (has) n++;
+    });
+    cnt.textContent = n + ' of ' + TOTAL;
+    prog.style.width = (n / TOTAL * 100) + '%';
+    return n;
+  }
+
+  function autosave() {
+    var answers = collect();
+    try { localStorage.setItem(LS, JSON.stringify(answers)); } catch (e) {}
+    saved.textContent = 'Guardando…';
+    fetch(API, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ answers: answers })
+    })
+      .then(function (r) { saved.textContent = r.ok ? 'Guardado' : 'Guardado en este navegador'; })
+      .catch(function () { saved.textContent = 'Guardado en este navegador'; });
+  }
+
+  function fill(answers) {
+    if (!answers) return;
+    areas.forEach(function (t) { if (answers[t.id]) t.value = answers[t.id]; });
+    tally();
+  }
+
+  areas.forEach(function (t) {
+    t.addEventListener('input', function () {
+      tally();
+      clearTimeout(timer);
+      timer = setTimeout(autosave, 1200);
+    });
+  });
+
+  document.getElementById('bvSubmit').addEventListener('click', function () {
+    var n = tally();
+    if (!n) { msg.textContent = 'No answers yet.'; return; }
+    var btn = this;
+    btn.disabled = true;
+    msg.className = 'msg';
+    msg.textContent = 'Enviando…';
+    fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ answers: collect(), questions: questions() })
+    })
+      .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
+      .then(function () {
+        msg.className = 'msg ok';
+        msg.textContent = 'Sent. Got it, thanks.';
+        document.getElementById('bvSent').classList.add('on');
+        btn.disabled = false;
+      })
+      .catch(function () {
+        msg.textContent = 'Could not send. Your answers are saved, try again in a moment.';
+        btn.disabled = false;
+      });
+  });
+
+  var local = null;
+  try { local = JSON.parse(localStorage.getItem(LS)); } catch (e) {}
+  fill(local);
+
+  fetch(API, { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      if (d && d.doc && d.doc.answers) {
+        fill(d.doc.answers);
+        if (d.doc.submittedAt) document.getElementById('bvSent').classList.add('on');
+      }
+    })
+    .catch(function () {});
+
+  tally();
+})();
+</script>
+<script src="/clients/portal-edit.js" defer></script>
+</body>
+</html>
