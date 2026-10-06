@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A+Growth · Banco de entrenamientos</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #101214; --panel: #17191d; --panel-2: #1c1f24; --ink: #f1f2f3; --ink-2: #a2a8ad; --ink-3: #6b7176; --line: rgba(255,255,255,0.10); --orange: #f97316; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 820px; margin: 0 auto; padding: 56px 24px 80px; }
+  a { color: var(--orange); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  header { margin-bottom: 44px; }
+  .wordmark { font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 22px; color: #fff; }
+  .wordmark span { color: var(--orange); }
+  .hq { display: inline-block; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.3em; color: var(--orange); border: 1px solid var(--orange); border-radius: 6px; padding: 3px 9px 3px 12px; margin-left: 10px; vertical-align: 3px; }
+  h1 { font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 32px; letter-spacing: -0.01em; margin-top: 22px; }
+  .sub { color: var(--ink-2); margin-top: 8px; max-width: 56ch; }
+  .back { display: inline-block; font-size: 13px; color: var(--ink-3); margin-top: 14px; }
+
+  .index { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; margin-bottom: 52px; }
+  .index .lbl { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-3); }
+  .index ol { list-style: none; margin-top: 10px; }
+  .index li { padding: 7px 0; border-bottom: 1px solid var(--line); font-weight: 500; }
+  .index li:last-child { border-bottom: none; }
+  .index li .n { font-family: 'Archivo', sans-serif; color: var(--orange); font-weight: 800; margin-right: 10px; }
+  .index li .soon { color: var(--ink-3); font-weight: 400; font-size: 13px; }
+
+  .tr-head { border-top: 2px solid var(--orange); padding-top: 26px; margin-bottom: 8px; }
+  .tr-head .eyebrow { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--orange); }
+  h2 { font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 26px; margin-top: 10px; letter-spacing: -0.01em; }
+  .lede { color: var(--ink-2); margin-top: 14px; }
+  .lede b { color: var(--ink); }
+
+  .thesis { background: linear-gradient(135deg, rgba(249,115,22,0.12), rgba(249,115,22,0.04)); border: 1px solid rgba(249,115,22,0.35); border-radius: 12px; padding: 20px 24px; margin: 28px 0 40px; }
+  .thesis b { color: var(--orange); }
+
+  .tech { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 26px; margin-bottom: 16px; }
+  .tech h3 { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 16.5px; display: flex; gap: 12px; align-items: baseline; }
+  .tech h3 .n { font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 14px; color: var(--orange); flex: none; }
+  .tech p { color: var(--ink-2); margin-top: 8px; }
+  .tech p b, .tech p i { color: var(--ink); }
+  .tech .plus { display: inline-block; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bg); background: var(--orange); border-radius: 5px; padding: 2px 8px; margin-left: 8px; vertical-align: 2px; }
+
+  .proto { background: var(--panel-2); border: 1px solid var(--line); border-left: 3px solid var(--orange); border-radius: 12px; padding: 24px 28px; margin: 44px 0; }
+  .proto .lbl { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); }
+  .proto h3 { font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 20px; margin-top: 8px; }
+  .proto ol { margin: 14px 0 0 18px; color: var(--ink-2); }
+  .proto li { margin-top: 9px; }
+  .proto li b { color: var(--ink); }
+  .proto .note { font-size: 13px; color: var(--ink-3); margin-top: 16px; }
+
+  .ideas { border: 1px solid rgba(249,115,22,0.4); border-radius: 12px; padding: 26px 28px; margin: 44px 0; background: var(--panel); }
+  .ideas .lbl { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); }
+  .ideas h3 { font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 20px; margin-top: 8px; }
+  .ideas p { color: var(--ink-2); margin-top: 12px; }
+  .ideas p b { color: var(--ink); }
+  .ideas ul { margin: 12px 0 0 18px; color: var(--ink-2); }
+  .ideas li { margin-top: 7px; }
+  .ideas li b { color: var(--ink); }
+
+  .closing { text-align: center; margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--line); }
+  .closing p { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 19px; max-width: 46ch; margin: 0 auto; }
+  .closing p span { color: var(--orange); }
+  footer { text-align: center; color: var(--ink-3); font-size: 12.5px; margin-top: 44px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <span class="wordmark">A<span>+</span>Growth</span><span class="hq">EQUIPO</span>
+    <h1>Banco de entrenamientos</h1>
+    <p class="sub">Entrenamientos cortos y accionables para el equipo. Cada uno se lee en 10 minutos y se usa en el trabajo del día.</p>
+    <a class="back" href="/hq/equipo">← Volver al tablero del equipo</a>
+  </header>
+
+  <div class="index">
+    <span class="lbl">Entrenamientos</span>
+    <ol>
+      <li><span class="n">01</span>Salir del bloqueo creativo</li>
+      <li><span class="n">02</span><span class="soon">Próximo entrenamiento — se suma acá</span></li>
+    </ol>
+  </div>
+
+  <div class="tr-head" id="t01">
+    <span class="eyebrow">Entrenamiento 01</span>
+    <h2>Salir del bloqueo creativo</h2>
+    <p class="lede">Técnicas para destrabarte cuando no sale nada: antes de un brainstorm, frente a una pieza que no arranca, o en el medio de una campaña que pide ángulos nuevos. No hace falta usarlas todas — con reconocer cuál pide el momento, alcanza.</p>
+  </div>
+
+  <div class="thesis">
+    <b>La idea central:</b> el bloqueo creativo rara vez es falta de ideas — es exceso de autocrítica actuando demasiado temprano. Casi todas estas técnicas funcionan por la misma razón: <b>separan el generar del juzgar</b>. Cuando generás y editás al mismo tiempo, te trabás; cuando generás sin filtro primero y editás después, fluís.
+  </div>
+
+  <div class="tech">
+    <h3><span class="n">01</span>Robá estructura, no contenido</h3>
+    <p>Cuando no sale nada de cero, agarrá un anuncio, una campaña o un diseño que admirás y copiá su esqueleto — el ritmo, el orden, la jerarquía — no sus palabras ni sus imágenes. El bloqueo casi siempre es frente a la página en blanco; con una estructura prestada, la página deja de estar en blanco y tu cerebro arranca a llenarla con lo tuyo.</p>
+  </div>
+
+  <div class="tech">
+    <h3><span class="n">02</span>Imponete una restricción fuerte</h3>
+    <p>La libertad total paraliza; el límite libera. "Resolvé esto en blanco y negro", "un solo tipo de letra", "el copy en 5 palabras", "sin fotos". La restricción le saca a tu cerebro el peso de elegir entre infinitas opciones y lo obliga a ser ingenioso dentro de un marco. Es la razón por la que un brief acotado produce mejor trabajo que uno abierto.</p>
+  </div>
+
+  <div class="tech">
+    <h3><span class="n">03</span>Cambiá de medio o de herramienta</h3>
+    <p>Si estás trancado en la pantalla, agarrá papel y lápiz. Si estás escribiendo copy, dibujá el concepto. Si diseñás en digital, hacé un collage a mano. Mover la idea a otro soporte la descongela porque usás otra parte del cerebro y te saca del modo "producción pulida", que es donde vive el bloqueo.</p>
+  </div>
+
+  <div class="tech">
+    <h3><span class="n">04</span>Producí cantidad mala a propósito</h3>
+    <p>Date 10 minutos para hacer 20 versiones deliberadamente malas o absurdas. El bloqueo es casi siempre perfeccionismo disfrazado — el miedo a que lo primero no sea bueno. Si el objetivo es que sea malo, el miedo desaparece, y en el medio de las 20 basura aparecen 2 que sirven. <b>Caso propio: las 245 angles de franquicias.</b> El volumen encuentra el ganador, no la búsqueda del ángulo perfecto de entrada.</p>
+  </div>
+
+  <div class="tech">
+    <h3><span class="n">05</span>Explicáselo a alguien (o a nadie)</h3>
+    <p>Contale el problema en voz alta a un colega, a una pared o a un chatbot. El acto de verbalizar para que otro entienda te fuerza a ordenar el problema, y en la mitad de la frase suele aparecer la solución. "El problema es que no sé cómo mostrar que..." — y ahí, al nombrarlo, se destraba.</p>
+  </div>
+
+  <div class="tech">
+    <h3><span class="n">06</span>Alejate físicamente — caminá, corré, duchate</h3>
+    <p>El bloqueo muchas veces es tu cerebro pidiendo soltar el problema para resolverlo en segundo plano. Las mejores ideas no llegan mirando la pantalla: llegan en la ducha o corriendo, justamente porque ahí la mente consciente suelta y la inconsciente trabaja. Si corrés o entrenás, eso es literalmente una herramienta de trabajo, no una pausa del trabajo.</p>
+  </div>
+
+  <div class="tech">
+    <h3><span class="n">07</span>Volvé al problema real del cliente, no al diseño</h3>
+    <p>Cuando no sale la pieza, muchas veces es porque te trabaste en la ejecución y perdiste el norte. Volvé a la pregunta de fondo: ¿qué siente el cliente de este negocio?, ¿qué lo despierta a las 3 AM? El bloqueo creativo es a veces un bloqueo de estrategia disfrazado — no sabés qué decir porque no tenés claro a quién ni por qué. Reconectar con el dolor real destraba la forma.</p>
+  </div>
+
+  <div class="tech">
+    <h3><span class="n">08</span>Consumí input de afuera de tu rubro</h3>
+    <p>El bloqueo es a veces el pozo vacío: estuviste produciendo sin cargar. Mirá arquitectura, cine, naturaleza, un museo, un rubro que no es el tuyo. Las mejores soluciones de marketing suelen venir de analogías con cosas que no son marketing. Si solo mirás ads, vas a hacer ads que se parecen a todos los ads.</p>
+  </div>
+
+  <div class="tech">
+    <h3><span class="n">09</span>Empezá por el final o por el medio</h3>
+    <p>La página en blanco duele más al principio. Saltealo: escribí primero el cierre, o el detalle del medio, o el único elemento que sí tenés claro. El resto se arma alrededor de esa ancla. No tenés que crear en orden lineal.</p>
+  </div>
+
+  <div class="tech">
+    <h3><span class="n">10</span>Ponele un deadline brutal y artificial</h3>
+    <p>"Tengo 25 minutos y después lo mando como esté." La urgencia mata al perfeccionismo, que es el combustible del bloqueo. Un timer corto fuerza a tu cerebro a dejar de editar y empezar a producir. La imperfección con deadline le gana siempre a la perfección sin fecha.</p>
+  </div>
+
+  <div class="tech">
+    <h3><span class="n">11</span>Preguntate cómo lo resolvería otro<span class="plus">extra</span></h3>
+    <p>¿Cómo venderían esto en Apple? ¿Cómo lo contaría una cuenta de memes? ¿Cómo lo haría un casino, una aerolínea low-cost, un documentalista? Pedir prestado el marco mental de otra marca u otro oficio te obliga a abandonar el ángulo en el que estás girando en falso. No es para copiar el resultado: es para romper el encuadre.</p>
+  </div>
+
+  <div class="tech">
+    <h3><span class="n">12</span>Terminá el día con una punta suelta<span class="plus">extra</span></h3>
+    <p>El truco de Hemingway: no termines la sesión cuando se agota la idea — terminala en la mitad de algo que sabés cómo sigue. Dejá la frase incompleta, el diseño a medio resolver, la lista con el próximo ítem anotado. Mañana no arrancás de cero: arrancás en movimiento, y el bloqueo nunca llega a formarse.</p>
+  </div>
+
+  <div class="proto">
+    <span class="lbl">Para usar hoy</span>
+    <h3>El protocolo de 15 minutos</h3>
+    <ol>
+      <li><b>2 minutos — nombralo (técnica 05):</b> decí en voz alta o escribí "el problema es que no sé cómo...". Completá la frase.</li>
+      <li><b>1 minuto — elegí una restricción y un timer (02 + 10):</b> una sola variable, un límite absurdo, 10 minutos de reloj.</li>
+      <li><b>10 minutos — 20 versiones malas a propósito (04):</b> sin editar, sin volver atrás, sin borrar nada.</li>
+      <li><b>2 minutos — rescatá 2 y cargalas al banco de ideas.</b></li>
+    </ol>
+    <p class="note">¿Terminaste el protocolo y no apareció nada? No insistas frente a la pantalla: salí a caminar o a correr (06) y volvé en una hora. Eso también es parte del protocolo.</p>
+  </div>
+
+  <div class="ideas">
+    <span class="lbl">El sistema detrás de todo esto</span>
+    <h3>El banco de ideas: la creatividad convertida en proceso</h3>
+    <p>Todas estas técnicas producen chispas — ángulos, hooks, conceptos a medio formar. Las chispas que no se capturan se mueren a los 20 minutos. Por eso <b>el banco de ideas es la forma de transformar la creatividad en proceso</b>: deja de depender de la inspiración del momento y pasa a ser un sistema que carga, revisa y aplica.</p>
+    <ul>
+      <li><b>Capturá todo, sin filtro:</b> cada idea suelta entra a Pendientes en el momento en que aparece, con contexto y links. Capturar no es comprometerse — es no perder.</li>
+      <li><b>Revisá en frío:</b> el juicio llega después, en la revisión semanal, cuando la autocrítica sí suma. Generar y juzgar, en momentos distintos — el mismo principio de todo este entrenamiento.</li>
+      <li><b>Aplicá y marcá:</b> cuando una idea se usa, pasa a Aplicadas. El banco te muestra qué tipo de ideas terminan funcionando, y eso afina las próximas.</li>
+    </ul>
+    <p>La consecuencia práctica: <b>nunca más arrancás de cero.</b> La próxima vez que no salga nada, el primer movimiento no es mirar la página en blanco — es abrir el banco. Y la regla de cierre de cualquier sesión de desbloqueo es siempre la misma: las ideas rescatadas se cargan al banco antes de levantarte.</p>
+  </div>
+
+  <div class="closing">
+    <p>Generar y juzgar son dos trabajos distintos.<br><span>Hacelos en momentos distintos y el bloqueo no tiene dónde vivir.</span></p>
+  </div>
+
+  <footer>A+Growth · Banco de entrenamientos · Uso interno del equipo</footer>
+
+</div>
+</body>
+</html>
