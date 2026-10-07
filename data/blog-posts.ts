@@ -98833,6 +98833,373 @@ The 100-asset-group ceiling on Performance Max campaigns is rarely the real cons
 
 Source: Google Ads API Developer Documentation, "Performance Max Asset Groups" (developers.google.com/google-ads/api/performance-max/asset-groups).`
   },
+  {
+    id: "1024",
+    title: "What's the Maximum Number of Sitelinks on a Google Ads Search Ad?",
+    slug: "google-ads-maximum-sitelinks-search-ad-2026",
+    excerpt: "A Google Ads search ad can show up to 6 sitelinks on desktop and up to 8 on mobile, but needs at least 2 eligible sitelinks before any appear.",
+    featuredImage: "https://images.unsplash.com/photo-1611262588019-db6cc2032da3?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-07",
+    category: "Google Ads",
+    tags: ["Google Ads", "Sitelink Extensions", "Ad Specs", "PPC", "Search Ads"],
+    featured: false,
+    readingTime: 2,
+    seo: {
+      metaTitle: "Max Sitelinks on a Google Ads Search Ad",
+      metaDescription: "A Google Ads search ad can show up to 6 sitelinks on desktop and up to 8 on mobile, requiring at least 2 eligible sitelinks before any display.",
+      keywords: ["google ads maximum sitelinks", "how many sitelinks google ads", "sitelink extensions limit", "google ads sitelink minimum"]
+    },
+    content: `A Google Ads search ad can show up to 6 sitelinks on desktop and up to 8 on mobile devices. At least 2 sitelinks need to be eligible to show before any of them appear with the ad, per Google's official sitelink asset documentation.
+
+## Desktop vs. Mobile Sitelink Counts
+
+On desktop, sitelinks typically appear below the main ad copy, arranged on one or two lines beneath the headline and description, and Google can show up to 6 of them in that space. On mobile, sitelinks render differently: they show side-by-side in a swipeable carousel on a single line, and that layout accommodates up to 8 sitelinks rather than 6. The difference comes down to available screen space and interaction pattern, not a difference in how many sitelinks an advertiser is allowed to create.
+
+## The 2-Sitelink Minimum
+
+Google requires at least 2 sitelinks to be eligible and ready to serve before any sitelink shows with a given ad. An account can have more than 2 sitelinks set up at the campaign or account level, but if fewer than 2 are eligible for a particular auction, because of disapproval, scheduling, or device targeting, none of them will display, not just the ones that failed eligibility.
+
+## How Many Sitelinks to Actually Create
+
+The 6-to-8 display ceiling is a serving limit, not a creation limit. Advertisers can add more than 8 sitelinks to a campaign or account, and Google's system rotates and selects whichever ones are most likely to perform for a given query and device. Most advertisers get the full benefit of the feature by building somewhere between 4 and 8 well-differentiated sitelinks, such as distinct landing pages for pricing, contact, key product categories, or promotions, rather than padding the list with near-duplicate links that compete with each other in rotation.
+
+## What Counts as a Useful Sitelink
+
+Each sitelink needs its own link text and ideally its own description lines, and should point to a genuinely distinct page rather than a variation of the main ad's destination. A sitelink pointing to the homepage when the main ad's final URL is already the homepage, for instance, adds nothing to the auction and just dilutes rotation among the sitelinks that do offer something different.
+
+## Example of a Strong Sitelink Set
+
+A home services company running search ads for "emergency plumber" might build sitelinks for Same-Day Service, Service Areas, Customer Reviews, and Request a Quote, four landing pages that each answer a different question a searcher might have before calling, rather than four variations of the same contact page.
+
+## Bottom Line
+
+Build at least 4 to 6 meaningfully distinct sitelinks per campaign so Google's system has real options to rotate between on both desktop (up to 6 shown) and mobile (up to 8 shown), and confirm all of them are approved and eligible, since falling below the 2-sitelink floor at serving time means none show at all.
+
+Source: Google Ads Help Center, "About sitelink assets" (support.google.com/google-ads/answer/2375416).`
+  },
+  {
+    id: "1025",
+    title: "What's the Maximum Number of Cards in a Facebook or Instagram Carousel Ad?",
+    slug: "meta-facebook-instagram-carousel-ad-maximum-cards-2026",
+    excerpt: "A Facebook or Instagram carousel ad can include between 2 and 10 cards, per Meta's official ad specifications, no more and no fewer.",
+    featuredImage: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-07",
+    category: "Facebook Ads",
+    tags: ["Facebook Ads", "Instagram Ads", "Carousel Ads", "Meta Ads", "Ad Specs"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Max Cards in a Meta Carousel Ad",
+      metaDescription: "A Facebook or Instagram carousel ad can include a minimum of 2 and a maximum of 10 cards, per Meta's official carousel ad specifications.",
+      keywords: ["facebook carousel ad maximum cards", "instagram carousel ad card limit", "meta carousel ad specs", "how many cards facebook carousel"]
+    },
+    content: `A Facebook or Instagram carousel ad can include a minimum of 2 and a maximum of 10 cards. Each card carries its own image or video, headline, and link, per Meta's official carousel ad specifications.
+
+## What Counts as a Card
+
+A card is one scrollable unit inside the carousel: its own creative asset, its own 40-character headline, and its own destination link, distinct from the other cards in the same ad. Viewers swipe horizontally through the cards in the order the advertiser sets, though Meta's delivery system can also reorder cards toward whichever ones are getting better engagement, depending on the optimization settings chosen.
+
+## Images and Video Follow the Same Aspect Ratio Rule
+
+Every card in a single carousel must share the same aspect ratio. A 1:1 square is the recommended default, with 1.91:1 as the other accepted option. If an advertiser uploads cards with mismatched ratios, Meta uses the first card's ratio as the standard and crops the remaining cards to match, which can cut off parts of images that weren't designed with that crop in mind. Image files top out at 30 MB each; video files can run up to 4 GB and as long as 240 minutes, though Meta recommends keeping each card closer to 15 seconds for a format built around quick, scrollable consumption rather than long-form viewing.
+
+## Text Limits Apply Per Card, Not Per Ad
+
+Primary text above the carousel is shared across the whole ad and capped at 125 characters, but headline (40 characters) and link description (25 characters) are set individually on each card, meaning a 10-card carousel effectively runs 10 separate small headlines working together rather than one headline repeated across cards.
+
+## Why Most Advertisers Don't Use All 10 Cards
+
+Few campaigns actually need the full 10-card ceiling. E-commerce brands showcasing a product catalog, or education and real estate advertisers walking through a multi-step offering, are the more common use cases for cards in the upper range. Most other advertisers get the format's main benefit, showing more than one product or message in a single ad unit, with somewhere between 3 and 5 cards, since cramming in more cards without a clear reason for each one tends to dilute attention rather than add it.
+
+## Bottom Line
+
+Plan for at least 3 cards to make the carousel format worth using over a single image, keep every card's aspect ratio consistent before upload to avoid Meta's automatic cropping, and reserve the 10-card maximum for genuinely sequential or catalog-style creative rather than defaulting to it.
+
+## Practical Guidance
+
+- **Lead with your strongest card** — Meta's delivery system can reorder cards toward whichever get the best engagement, but the first card a new ad serves is still the one carrying the most weight before enough data accumulates to reorder anything.
+- **Match card count to objective** — a 10-card product catalog carousel suits an e-commerce sale, while a 3-4 card carousel works better for telling a single sequential story like a case study or a multi-step service offer.
+
+## Where Carousel Ads Can Run
+
+Meta serves carousel ads across Facebook, Instagram, Messenger, and Audience Network from a single ad set, using the same 2-to-10 card creative. Placement doesn't change the card-count rule, though individual placements may crop or resize cards to fit their own layout.
+
+Source: Meta Business Help Center, carousel ad specifications (facebook.com/business/ads-guide).`
+  },
+  {
+    id: "1026",
+    title: "What's the Maximum Number of Cards in a LinkedIn Carousel Ad?",
+    slug: "linkedin-carousel-ad-maximum-cards-2026",
+    excerpt: "A LinkedIn Carousel ad allows a minimum of 2 and a maximum of 10 cards, per LinkedIn's official Carousel Ads advertising specifications.",
+    featuredImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-07",
+    category: "B2B Marketing",
+    tags: ["LinkedIn Ads", "Carousel Ads", "B2B Marketing", "Ad Specs", "Sponsored Content"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Max Cards in a LinkedIn Carousel Ad",
+      metaDescription: "A LinkedIn Carousel ad requires a minimum of 2 cards and allows a maximum of 10, matching Meta's carousel card range exactly.",
+      keywords: ["linkedin carousel ad maximum cards", "linkedin carousel ad specs", "how many cards linkedin carousel", "linkedin sponsored content carousel"]
+    },
+    content: `A LinkedIn Carousel ad requires a minimum of 2 cards and allows a maximum of 10, per LinkedIn's official Carousel Ads advertising specifications.
+
+## Per-Card Image Requirements
+
+Each card accepts an image up to 4320 x 4320 pixels, with a maximum file size of 10 MB. LinkedIn's recommended spec is a simpler 1080 x 1080px square at a 1:1 aspect ratio, in JPG, PNG, or non-animated GIF format. Headline text on each card is limited to roughly two lines before LinkedIn truncates it, which in practice means keeping individual card headlines short and front-loaded with the key word or phrase.
+
+## Shared Ad-Level Text
+
+Unlike the per-card headline, introductory text sits above the whole carousel and is shared across all cards. LinkedIn allows up to 255 characters here, but recommends staying under 150 to avoid truncation on some devices and placements. Destination URLs for each card can run up to 2,000 characters, though the visible call-to-action text tied to that URL is capped at 45 characters per card.
+
+## You Can't Edit Cards After Saving
+
+One structural quirk worth planning around: once a LinkedIn Carousel ad is saved, its individual cards can't be edited afterward. Any change to an image, headline, or destination link on an existing card requires building a new carousel ad rather than revising the one already running, which makes it worth double-checking every card before publishing rather than treating the format as something to tweak after launch.
+
+## How This Compares to Meta's Carousel Format
+
+LinkedIn's 2-to-10 card range matches Meta's Facebook and Instagram carousel ads exactly, which makes the format easier to port between the two platforms without redesigning the card count. The platforms diverge more on text limits: LinkedIn's per-card headline runs by line-wrap rather than a hard character number, while Meta sets a flat 40-character cap, so creative built for one platform's carousel still needs a text pass before reuse on the other.
+
+## When to Use Fewer Than 10
+
+B2B advertisers most often use LinkedIn Carousel ads to walk through a short, sequential story, such as product features, case study steps, or a multi-part offer, and 10 cards is rarely necessary for that kind of narrative. A carousel that uses most of its 10-card ceiling without a clear reason for each card tends to lose viewers partway through the swipe, so the card count is worth matching to how many genuinely distinct points the ad actually needs to make.
+
+## Bottom Line
+
+Build LinkedIn Carousel ads with at least 2 cards to use the format at all, keep the count closer to 3 to 6 unless the message genuinely needs more, and review every card carefully before saving since none of them can be edited afterward.
+
+## The Ad's Internal Name Has Its Own Limit
+
+The ad's own internal name, visible only to the advertiser inside Campaign Manager and never shown to the audience, can run up to 255 characters as well, useful for labeling which product line or test variant a given carousel belongs to.
+
+Source: LinkedIn Help Center, "Carousel Ads advertising specifications" (linkedin.com/help/lms/answer/88137).`
+  },
+  {
+    id: "1027",
+    title: "What's the Maximum Number of Images in a Pinterest Carousel Ad?",
+    slug: "pinterest-carousel-ad-maximum-images-2026",
+    excerpt: "A Pinterest carousel ad supports between 2 and 5 images, per Pinterest's official specs, a narrower range than Meta's or LinkedIn's 10-card carousels.",
+    featuredImage: "https://images.unsplash.com/photo-1611944212129-29977ae1398c?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-07",
+    category: "Social Media",
+    tags: ["Pinterest Ads", "Carousel Ads", "Social Media", "Ad Specs", "Paid Social"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Max Images in a Pinterest Carousel Ad",
+      metaDescription: "A Pinterest carousel ad supports a minimum of 2 and a maximum of 5 images per carousel, per Pinterest's official product specs.",
+      keywords: ["pinterest carousel ad maximum images", "pinterest carousel ad specs", "how many images pinterest carousel", "pinterest ad card limit"]
+    },
+    content: `A Pinterest carousel ad supports a minimum of 2 and a maximum of 5 images per carousel, per Pinterest's official product specs documentation.
+
+## Image Requirements for Each Card
+
+Non-Sales carousel ads accept JPEG or PNG files up to 20 MB per image, with an aspect ratio of either 1:1 (square) or 2:3 (portrait). Pinterest's interface for building carousels, whether PinBuilder for Ads, the bulk editor, or directly inside Ads Manager during campaign setup, applies the same per-image specs across all of them, so the limit isn't something that changes based on how the carousel gets built.
+
+## Why Pinterest's Ceiling Is Lower Than Meta's or LinkedIn's
+
+Both Meta's Facebook and Instagram carousels and LinkedIn's Carousel ads top out at 10 cards; Pinterest's 5-image ceiling is half that. The difference reflects how people actually use Pinterest versus a feed-based platform. Pins are discovery and planning content that people often save for later, and a shorter carousel keeps the swipe-through fast enough to match that browsing behavior, rather than asking someone mid-scroll to work through a long sequence the way a product catalog carousel might on other platforms.
+
+## What Happens Below the Minimum
+
+A single image or video with only one creative asset isn't a carousel ad at all on Pinterest, it's a Standard Pin or video ad, a separate ad format with its own specs. The 2-image floor is really the definitional line between those two ad types rather than an arbitrary rule layered onto the carousel format itself.
+
+## How This Compares Across Platforms
+
+Lined up against the other major carousel formats, the pattern is: Meta (Facebook and Instagram) allows 2 to 10 cards, LinkedIn allows 2 to 10 cards, and Pinterest allows 2 to 5 images. An advertiser repurposing the same multi-image campaign concept across all three platforms needs to design around Pinterest's tighter 5-image ceiling first, then decide whether to extend the sequence further for Meta or LinkedIn rather than building for 10 and cutting down.
+
+## Practical Guidance
+
+Since every image has to work within a shorter sequence than on Meta or LinkedIn, lead with the strongest image first rather than building toward a reveal, and make sure each of the 5 images can stand on its own for a Pinner who only sees part of the carousel before tapping away.
+
+## Bottom Line
+
+Design Pinterest carousels around a maximum of 5 images that each stand on their own if someone only swipes through part of the sequence, since Pinterest's shorter ceiling rewards a tighter story more than a platform that allows 10 cards does.
+
+## Practical Guidance
+
+- **Front-load the strongest image** — with only 5 slots instead of 10, the first image needs to work even harder as a standalone Pin for anyone who stops scrolling before reaching card two.
+- **Keep all 5 images in the same aspect ratio** — mixing 1:1 and 2:3 cards in one carousel creates a visually inconsistent swipe-through, even though Pinterest technically allows either ratio per image.
+
+Source: Pinterest Business Help Center, "Pinterest product specs" (help.pinterest.com/business/article/pinterest-product-specs).`
+  },
+  {
+    id: "1028",
+    title: "What's the Maximum Video Length for an Instagram Stories Ad?",
+    slug: "instagram-stories-ad-maximum-video-length-2026",
+    excerpt: "A single Instagram Stories ad video card is capped at 15 seconds; longer stories are built from multiple sequential 15-second cards per Meta's specs.",
+    featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-07",
+    category: "Facebook Ads",
+    tags: ["Instagram Ads", "Facebook Ads", "Stories Ads", "Video Advertising", "Ad Specs"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Max Video Length for Instagram Stories Ads",
+      metaDescription: "A single Instagram Stories ad video is capped at 15 seconds per card, per Meta's official ad specifications for Stories placements.",
+      keywords: ["instagram stories ad maximum video length", "instagram stories ad specs", "facebook stories ad video length", "stories ad 15 seconds"]
+    },
+    content: `A single Instagram Stories ad video is capped at 15 seconds per card, per Meta's official ad specifications. Advertisers who need a longer story build it from multiple sequential 15-second cards rather than uploading one longer video file.
+
+## Image Cards Run on a Shorter Clock
+
+Image-based Stories ads follow a different rule than video: a static image card displays for 5 seconds before advancing, regardless of the image's own file properties. That's a fixed display duration set by the Stories format itself, not something an advertiser can extend by choosing a different file size or resolution.
+
+## File Requirements Behind the 15-Second Cap
+
+Instagram Stories video ads accept .mp4 and .mov files up to 4 GB, with a minimum video width of 500 pixels and H.264 compression at a fixed frame rate with progressive scan. Audio needs stereo AAC compression at 128kbps or higher. None of those file-level specs change the 15-second ceiling; a technically compliant, high-quality video that runs past 15 seconds still needs to be trimmed or split before it's eligible to run as a single Stories card.
+
+## Facebook Stories Ads Use the Same Per-Card Rule
+
+Facebook Stories ads allow a video asset of up to 240 minutes total, but that runtime isn't delivered as one continuous clip. Ads Manager breaks it into the same 15-seconds-per-card structure as Instagram, sequencing the story across however many cards the full video requires. The 240-minute figure describes the outer limit of what can be uploaded and auto-sequenced, not a single card's own length, which stays at 15 seconds on both Instagram and Facebook.
+
+## Why the Cap Is Short
+
+Stories as a format are built around fast, full-screen, tap-through consumption. A viewer taps forward to advance, and one long unbroken card works against that interaction pattern by asking someone to sit through a single clip rather than tapping through a sequence at their own pace. Keeping each card to 15 seconds or less also keeps file sizes and load times manageable on mobile connections, where Stories ads are overwhelmingly viewed.
+
+## Practical Guidance for Longer Stories Content
+
+Advertisers with footage that runs longer than 15 seconds should pre-edit it into distinct 15-second or shorter segments with their own clear beginning and end, rather than relying on Ads Manager's automatic sequencing to find natural break points in one long file. A deliberately cut sequence reads better across multiple cards than an arbitrary split of continuous footage.
+
+## Bottom Line
+
+Treat 15 seconds as the real per-card ceiling for both Instagram and Facebook Stories video ads, and plan multi-card sequences deliberately rather than uploading a longer file and hoping the platform splits it in a sensible place.
+
+## Practical Guidance
+
+- **Cut footage into deliberate 15-second segments before upload** — rather than relying on Ads Manager's automatic sequencing to find a natural break point in one long file.
+- **Treat the first card as the hook** — since Stories are tap-through rather than auto-playing straight to the end, the first 15 seconds carries more weight than it would in a feed placement a viewer can't skip past as easily.
+
+Source: Meta for Developers, Instagram ads media requirements (developers.facebook.com, ads-commerce/instagram/ads-api/reference/media-requirements).`
+  },
+  {
+    id: "1029",
+    title: "How Many Product Tiles Does a Snapchat Collection Ad Need?",
+    slug: "snapchat-collection-ad-product-tiles-2026",
+    excerpt: "A Snapchat Collection ad needs 2 to 4 square product tiles, each at least 160x160 pixels, per Snapchat for Business's official ad specifications.",
+    featuredImage: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-07",
+    category: "Social Media",
+    tags: ["Snapchat Ads", "Collection Ads", "Social Media", "Ad Specs", "Ecommerce"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "Snapchat Collection Ad Product Tiles",
+      metaDescription: "A Snapchat Collection ad needs between 2 and 4 square product tiles, each at least 160x160 pixels, per Snapchat's official ad specs.",
+      keywords: ["snapchat collection ad product tiles", "snapchat collection ad specs", "how many tiles snapchat collection ad", "snapchat ad specs 2026"]
+    },
+    content: `A Snapchat Collection ad needs between 2 and 4 square product tiles, each at least 160 x 160 pixels, per Snapchat for Business's official ad specifications.
+
+## What a Collection Ad Looks Like
+
+Collection ads pair a full-screen hero image or video (9:16 aspect ratio, 1080 x 1920 pixels, running 3 to 180 seconds) with a row of smaller product tiles beneath it. Snappers tap an individual tile to go straight to that specific product, rather than landing on a single destination for the whole ad, which is what separates Collection ads from a Single Image or Video ad running the same hero creative without the tappable tile row.
+
+## Tile File Requirements
+
+Each product tile is a JPG or PNG file at a minimum of 160 x 160 pixels, square in aspect ratio. Snapchat's guidance is to use clear, well-lit product photography on a plain background for the tiles specifically, since they render small within the ad unit and busy or low-contrast images lose legibility at that size more than the larger hero creative does.
+
+## Brand Name and Headline Still Apply
+
+Collection ads share the same text caps as Snapchat's other core formats: a brand name field limited to 25 characters and a headline limited to 34 characters, both including spaces. That consistency across Single Image, Story, and Collection ads means creative teams don't need a separate text-length rulebook per format; only the tile row is specific to Collection ads.
+
+## Why the Range Tops Out at 4
+
+Unlike Meta's or LinkedIn's carousel formats, which allow up to 10 cards, Snapchat caps Collection ad tiles at 4. The format is built to spotlight a small, curated set of products underneath a single piece of hero creative, rather than functioning as a scrollable catalog. Advertisers who want to showcase more than 4 products are better served by Snapchat's Dynamic or catalog-based ad formats, which are designed for larger product sets.
+
+## Practical Guidance
+
+Choose the 4 products most likely to convert from whatever's being promoted, rather than defaulting to the first 4 in a catalog feed, since every tile competes for the same small amount of visual space and each one should earn its spot. Keep tile photography consistent in lighting and background across all tiles in a single ad, so the row reads as one cohesive set rather than four mismatched product photos.
+
+## Bottom Line
+
+Build Snapchat Collection ads with 2 to 4 product tiles at minimum 160x160 pixels each, pick products with real stand-alone appeal for that limited tile space, and move to a catalog-based format instead of Collection ads once the product set that needs showcasing grows past 4.
+
+## Tracking Taps on Individual Tiles
+
+Each product tile in a Collection ad links out separately, so performance reporting inside Ads Manager breaks down engagement by individual tile rather than only at the whole-ad level, which is useful for spotting which 1 or 2 products in the row are actually driving the taps.
+
+Source: Snapchat for Business, Snap Ads and Collection Ads specifications (forbusiness.snapchat.com/advertise).`
+  },
+  {
+    id: "1030",
+    title: "What's the Maximum Number of Images in a TikTok Carousel Ad?",
+    slug: "tiktok-carousel-ad-maximum-images-2026",
+    excerpt: "A TikTok Carousel (Photo Mode) ad allows up to 35 uploaded images, but only the first 20 are shown to users, with a 2-image minimum, per TikTok's specs.",
+    featuredImage: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-07",
+    category: "Social Media",
+    tags: ["TikTok Ads", "Carousel Ads", "Photo Mode", "Social Media", "Ad Specs"],
+    featured: false,
+    readingTime: 2,
+    seo: {
+      metaTitle: "Max Images in a TikTok Carousel Ad",
+      metaDescription: "A TikTok Carousel ad allows up to 35 uploaded images, but only the first 20 display to users, with a 2-image minimum, per TikTok's specs.",
+      keywords: ["tiktok carousel ad maximum images", "tiktok photo mode ad specs", "how many images tiktok carousel", "tiktok carousel ad specs 2026"]
+    },
+    content: `A TikTok Carousel ad, also called Photo Mode, allows up to 35 images to be uploaded to a single ad, but TikTok displays only the first 20 of them to users. A minimum of 2 images is required, per TikTok's official carousel ad specifications.
+
+## Why Uploaded and Displayed Counts Differ
+
+The gap between the 35-image upload allowance and the 20-image display cap means advertisers can stage extra images in a single ad without all of them necessarily reaching the audience; only the first 20, in upload order, are what viewers actually swipe through. There's no secondary selection or performance-based rotation among the uploaded set the way there is with some other platforms' carousel formats. The first 20 are simply what gets shown.
+
+## Other Rules Specific to TikTok's Carousel Format
+
+Every image in the carousel must share the same caption and call-to-action. TikTok's Photo Mode doesn't support per-card text the way Meta's or LinkedIn's carousel ads do, so the entire ad runs on one caption regardless of how many images are included. Music is also mandatory on TikTok Carousel ads: a track of at least 2 seconds, in .mp3 format, plays on loop underneath the image sequence, since the format inherits TikTok's audio-first viewing expectation even though it's displaying static images rather than video.
+
+## Image File Specs
+
+Accepted formats are JPG or JPEG and PNG, with a suggested file size of 100 KB or less per image to keep load times fast. Supported resolutions are 1200 x 628 (horizontal), 640 x 640 (square), or 720 x 1280 (vertical). The format doesn't force a single aspect ratio the way Meta's carousel does, though consistency across the images in one ad still makes for a cleaner swipe-through experience.
+
+## How This Compares to Other Platforms' Carousels
+
+TikTok's 35-image upload ceiling is far higher than Meta's or LinkedIn's 10-card maximum, or Pinterest's 5-image limit, but the practical, user-facing cap of 20 brings it closer to that range than the headline 35 number suggests. Advertisers planning a TikTok Carousel campaign should design around the 20 images that will actually be seen, not the 35 that can technically be uploaded.
+
+## Bottom Line
+
+Treat 20 as the real design ceiling for a TikTok Carousel ad even though the platform accepts up to 35 uploads, write one caption that works across the whole sequence since per-card text isn't supported, and don't forget the mandatory looping audio track that every Photo Mode ad requires.
+
+## Practical Guidance
+
+- **Design for 20, not 35** — since only the first 20 images in upload order actually reach viewers, treat the 21st-through-35th slots as unused rather than building a campaign that depends on them.
+- **Write one caption that works for every image** — because TikTok Carousel ads share a single caption and CTA across the whole set, avoid captions that reference one specific image in the sequence.
+
+Source: TikTok Ads Manager Help Center, "Specifications for Carousel Ads" (ads.tiktok.com/help/article/specifications-for-carousel-ads).`
+  },
 ];
 
 export const blogCategories = [
