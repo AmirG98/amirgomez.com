@@ -8,7 +8,6 @@ export const CLIENT_PASSWORDS: Record<string, string> = {
   'casafight': 'CASA2226',
   'qhu': 'QHU2226',
   'liz-solari': 'LIZ2226',
-  'closefly': 'CLOSEFLY2226',
   'glowing-home': 'GLOWING2226',
 };
 

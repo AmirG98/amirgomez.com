@@ -67,6 +67,13 @@ export function middleware(req: NextRequest) {
   const section = match[2];
   const date = match[3];
 
+  // Páginas públicas sin clave (propuestas compartibles por link, con noindex).
+  const PUBLIC_PAGES: Record<string, string> = {
+    'closefly': '/clients/closefly-dashboard.html',
+    'closefly-dashboard': '/clients/closefly-dashboard.html',
+  };
+  if (!section && PUBLIC_PAGES[client]) return NextResponse.rewrite(new URL(PUBLIC_PAGES[client], req.url));
+
   // Archivos internos (-hub, -approvals, -ideas, -report-<fecha>) nunca se sirven por URL directa; -login sí.
   if (client.endsWith('-login')) return NextResponse.next();
   if (
@@ -127,7 +134,7 @@ export function middleware(req: NextRequest) {
   if (req.nextUrl.pathname.endsWith('.html')) return NextResponse.next();
   // Clientes con una sola sección: la raíz sirve el dashboard directamente,
   // así no hay que mantener un hub duplicado con un único tile.
-  const SOLO_DASHBOARD = ['domic', 'qhu', 'liz-solari', 'closefly'];
+  const SOLO_DASHBOARD = ['domic', 'qhu', 'liz-solari'];
   if (SOLO_DASHBOARD.includes(client)) {
     return NextResponse.rewrite(new URL(`/clients/${client}-dashboard.html`, req.url));
   }
