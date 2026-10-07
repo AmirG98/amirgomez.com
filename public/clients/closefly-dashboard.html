@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#F4EFE8; --card:#FBF8F3; --band:#EDE5DA;
@@ -15,17 +15,18 @@
   --champagne:#E3CDAE; --line:#DDD2C2;
   --wine:#6B1233; --wine-dark:#3E0F22;
   --cream:#F7F3ED; --ok:#3F6B48;
-  --serif:'Playfair Display',Georgia,serif;
-  --sans:'Instrument Sans',system-ui,-apple-system,sans-serif;
-  --mono:'JetBrains Mono','SF Mono',Menlo,monospace;
+  --serif:'Libre Caslon Display',Georgia,serif;
+  --serif-txt:'Libre Caslon Text',Georgia,serif;
+  --sans:'Albert Sans',system-ui,-apple-system,sans-serif;
+  --mono:'Albert Sans',system-ui,sans-serif;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
 .wrap{max-width:880px;margin:0 auto;padding:0 26px 70px}
-h1{font-family:var(--serif);font-weight:600;font-size:clamp(32px,4.8vw,44px);line-height:1.08;letter-spacing:-.01em;margin:16px 0 10px}
-h1 em{font-style:italic;font-weight:500;color:var(--wine)}
-h2{font-family:var(--serif);font-weight:600;font-size:clamp(21px,3vw,26px);margin:6px 0 12px}
-h2 em{font-style:italic;font-weight:500;color:var(--wine)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(32px,4.8vw,44px);line-height:1.08;letter-spacing:-.01em;margin:16px 0 10px}
+h1 em{font-family:var(--serif-txt);font-style:italic;color:var(--wine)}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(21px,3vw,26px);margin:6px 0 12px}
+h2 em{font-family:var(--serif-txt);font-style:italic;color:var(--wine)}
 p{margin:0 0 12px}
 b{font-weight:600}
 .page{background:var(--card);border:1px solid var(--line);border-radius:18px;margin:26px 0 34px;padding:48px 54px 38px;box-shadow:0 1px 3px rgba(35,32,28,.05)}
@@ -35,23 +36,25 @@ b{font-weight:600}
 .meta{min-width:220px;text-align:right}
 .meta .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mono-dim);margin-bottom:2px}
 .meta .val{font-family:var(--mono);font-size:12px;color:var(--ink);margin-bottom:12px}
-.lede{font-family:var(--serif);font-size:18.5px;font-weight:500;line-height:1.55;max-width:700px}
-.secnum{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--wine);margin:30px 0 10px;padding-top:16px;border-top:1px solid var(--line)}
+.lede{font-family:var(--serif-txt);font-size:19px;line-height:1.6;max-width:700px}
+.lede .l2{display:block;margin-top:6px}
+.lede .hit{color:var(--wine)}
+.secnum{font-family:var(--sans);font-weight:700;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--wine);margin:30px 0 10px;padding-top:16px;border-top:1px solid var(--line)}
 .box{background:var(--band);border-radius:12px;padding:18px 22px;margin:12px 0 8px}
-.box .who{font-family:var(--serif);font-style:italic;font-weight:500;font-size:16.5px;color:var(--wine);margin-bottom:4px}
+.box .who{font-family:var(--serif-txt);font-style:italic;font-size:16.5px;color:var(--wine);margin-bottom:4px}
 .box p{margin:0 0 6px}
 table{width:100%;border-collapse:collapse;margin:12px 0 6px;font-size:13.5px}
-th{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mono-dim);text-align:left;padding:0 12px 8px 0;border-bottom:1.5px solid var(--wine);font-weight:400}
+th{font-family:var(--sans);font-weight:600;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mono-dim);text-align:left;padding:0 12px 8px 0;border-bottom:1.5px solid var(--wine)}
 td{padding:9px 12px 9px 0;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.5}
 tr:last-child td{border-bottom:none}
-td.n{font-family:var(--mono);font-size:11.5px;color:var(--wine);white-space:nowrap}
-td.num{font-family:var(--mono);font-size:12px;white-space:nowrap}
-.kpi-anchor{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--wine)}
+td.n{font-family:var(--sans);font-weight:600;font-variant-numeric:tabular-nums;font-size:12px;color:var(--wine);white-space:nowrap}
+td.num{font-family:var(--sans);font-weight:600;font-variant-numeric:tabular-nums;font-size:12.5px;white-space:nowrap}
+.kpi-anchor{font-family:var(--serif);font-weight:400;font-size:22px;color:var(--wine)}
 .strike{text-decoration:line-through;opacity:.55;font-size:11px;margin-right:7px}
 .refbadge{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:var(--champagne);color:var(--wine-dark);border-radius:999px;padding:2px 8px;margin-left:7px;vertical-align:1px}
 .phase{border:1px solid var(--line);border-radius:12px;background:var(--paper);padding:20px 24px 12px;margin:0 0 14px}
 .phase .fnum{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--wine)}
-.phase h3{font-family:var(--serif);font-weight:600;font-size:18.5px;margin:6px 0 9px;line-height:1.3}
+.phase h3{font-family:var(--serif);font-weight:400;font-size:18.5px;margin:6px 0 9px;line-height:1.3}
 .phase p{margin:0 0 8px;font-size:13.5px}
 .phase ul{margin:4px 0 10px;padding-left:20px;font-size:13.5px}
 .phase li{margin-bottom:6px}
@@ -63,8 +66,8 @@ td.num{font-family:var(--mono);font-size:12px;white-space:nowrap}
 .tstep .tact{font-weight:600;font-size:13.5px;margin:5px 0 6px;line-height:1.35}
 .tstep .tres{font-size:12.5px;color:var(--muted);line-height:1.45}
 .pricing{background:var(--wine-dark);border-radius:14px;color:var(--cream);padding:26px 30px 20px;margin:16px 0 8px}
-.pricing h3{font-family:var(--serif);font-weight:600;font-size:21px;margin:0 0 14px;color:var(--cream)}
-.pricing h3 em{font-style:italic;color:var(--champagne)}
+.pricing h3{font-family:var(--serif);font-weight:400;font-size:21px;margin:0 0 14px;color:var(--cream)}
+.pricing h3 em{font-family:var(--serif-txt);font-style:italic;color:var(--champagne)}
 .pricing table{font-size:14px}
 .pricing th{color:rgba(247,243,237,.55);border-bottom-color:var(--champagne)}
 .pricing td{color:var(--cream);border-bottom-color:rgba(247,243,237,.15)}
@@ -76,15 +79,45 @@ td.num{font-family:var(--mono);font-size:12px;white-space:nowrap}
 .next{background:var(--champagne);border-radius:12px;padding:20px 24px 14px;margin:18px -6px 2px}
 .next .ntitle{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--wine);margin:0 0 12px}
 .nstep{display:flex;gap:14px;margin-bottom:12px;align-items:flex-start}
-.nstep .nn{font-family:var(--serif);font-weight:700;font-size:19px;color:var(--wine);flex:none;width:22px;line-height:1.25}
+.nstep .nn{font-family:var(--serif);font-weight:400;font-size:19px;color:var(--wine);flex:none;width:22px;line-height:1.25}
 .nstep p{margin:0;font-size:14px;color:var(--wine-dark);line-height:1.5}
 .nstep p b{color:var(--wine-dark)}
 .foot{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--mono-dim);border-top:1px solid var(--line);margin-top:28px;padding-top:12px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .okx{color:var(--ok);font-family:var(--mono)}
-@media (max-width:640px){.page{padding:30px 20px}.meta{text-align:left}.timeline{grid-template-columns:1fr 1fr}}
+html{scroll-behavior:smooth}
+.topnav{position:sticky;top:0;z-index:50;background:rgba(244,239,232,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topnav .in{max-width:880px;margin:0 auto;padding:0 26px;display:flex;align-items:center;gap:18px;height:52px}
+.topnav .nb{font-family:var(--sans);font-weight:700;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--wine);white-space:nowrap}
+.topnav nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin-left:auto}
+.topnav nav::-webkit-scrollbar{display:none}
+.topnav a{font-family:var(--sans);font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;padding:6px 11px;border-radius:999px;white-space:nowrap;transition:color .2s,background .2s}
+.topnav a:hover{color:var(--wine)}
+.topnav a.on{background:var(--wine);color:var(--cream)}
+.progress{height:2px;background:transparent}
+.progress i{display:block;height:100%;width:0;background:var(--wine);transition:width .1s linear}
+.anchor{scroll-margin-top:76px}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}}
+@media (max-width:640px){.page{padding:30px 20px}.meta{text-align:left}.timeline{grid-template-columns:1fr 1fr}.topnav .in{padding:0 14px;gap:10px}}
 </style>
 </head>
-<body><div class="wrap">
+<body>
+<div class="topnav">
+  <div class="in">
+    <span class="nb">A+GROWTH × CLOSEFLY</span>
+    <nav id="nav">
+      <a href="#s-contexto">Contexto</a>
+      <a href="#s-alcance">Alcance</a>
+      <a href="#s-timeline">Timeline</a>
+      <a href="#s-kpis">Forecast</a>
+      <a href="#s-pricing">Inversión</a>
+      <a href="#s-pasos">Pasos</a>
+    </nav>
+  </div>
+  <div class="progress"><i id="bar"></i></div>
+</div>
+<div class="wrap">
 
 <div class="page">
   <div class="rephead">
@@ -100,17 +133,17 @@ td.num{font-family:var(--mono);font-size:12px;white-space:nowrap}
     </div>
   </div>
 
-  <p class="lede">Ayer quedó claro que el producto resuelve un dolor real y que el research que juntaste no lo tiene ninguna agencia de Estados Unidos. Cuando lográs sentarte frente a un dueño, cerrás. Hoy el problema es que no te sentás frente a suficientes, y más visitas en persona o más emails fríos no lo van a resolver. Esta propuesta es el motor que sí.</p>
+  <p class="lede"><span class="l2">Cuando estás frente a un dueño, cerrás.</span><span class="l2">El problema es que hoy no estás frente a suficientes.</span><span class="l2 hit">Esto arregla eso: un motor de llamadas calificadas, andando en dos semanas.</span></p>
 
-  <div class="secnum">Lo que entendimos</div>
-  <div class="box">
+  <div class="secnum anchor" id="s-contexto">Lo que entendimos</div>
+  <div class="box rv">
     <p class="who">Todo lo que hace falta para vender ya existe adentro de Closefly. Lo único que falta es el flujo constante de llamadas.</p>
     <p>El Full Chair System ya está definido y la oferta escrita: $1,500 de setup, $4,500 por mes. El First Findings abre puertas, y las diez visitas en persona probaron el pitch. Lo que no escala es caminar clínicas. Falta una sola cosa: <b>conversaciones constantes con dueños que califican</b> (1 a 2 ubicaciones, $1–3M al año, ya invirtiendo en ads). Y lo acordamos ayer: el mercado deja de ser solo Miami. <b>Nationwide</b>, con Los Ángeles y Nueva York al frente.</p>
   </div>
 
-  <div class="secnum">El alcance — qué construye A+Growth</div>
+  <div class="secnum anchor" id="s-alcance">El alcance — qué construye A+Growth</div>
 
-  <div class="phase">
+  <div class="phase rv">
     <div class="fnum">Fase 1 · El motor de meetings para Closefly</div>
     <h3>Ads → landing → seguimiento → llamada agendada en tu calendario.</h3>
     <ul>
@@ -124,22 +157,22 @@ td.num{font-family:var(--mono);font-size:12px;white-space:nowrap}
     <div class="deliv"><b>Entregable central</b>Llamadas agendadas en tu calendario con dueños que ya vieron los números de Closefly y llegan precalificados por el contenido.</div>
   </div>
 
-  <div class="phase">
+  <div class="phase rv">
     <div class="fnum">Fase 2 · Performance para los clientes de Closefly (en paralelo, cuando digas)</div>
     <h3>El mismo equipo, del otro lado del mostrador.</h3>
     <p>Para tus clínicas cliente (la dental es el primer caso) operamos como tu capa de performance: SEM de resultados rápidos, Meta, landings que estén a la altura de las prácticas, y auditorías que vayan desplazando a los proveedores flojos, de a poco, como lo hablamos. Y cuando Closefly tenga volumen de clientes, trabajamos la otra palanca: <b>bajar el costo por lead de las clínicas a escala</b> — con 100 clientes, bajar un costo de $25 a $19 cambia el negocio entero. Y para el contenido filmado que van a pedir estas prácticas, tengo a quién llamar en Miami: esta semana le presento la idea a mi especialista de contenido de confianza.</p>
     <div class="deliv"><b>Cómo se cotiza</b>Por clínica, aparte de esta propuesta. El caso dental lo arrancamos con el esquema que ya conversamos.</div>
   </div>
 
-  <div class="secnum">Timeline — en el aire en dos semanas</div>
-  <div class="timeline">
+  <div class="secnum anchor" id="s-timeline">Timeline — en el aire en dos semanas</div>
+  <div class="timeline rv">
     <div class="tstep"><div class="tnum">Días 1–4</div><div class="tact">Fundaciones</div><div class="tres">Kickoff, accesos, ángulos de copy desde el research, brief de creativos, estructura de campañas.</div></div>
     <div class="tstep"><div class="tnum">Días 4–10</div><div class="tact">Build</div><div class="tres">Landing nueva, tracking completo, primeros creativos (UGC en producción), cadencia de seguimiento.</div></div>
     <div class="tstep"><div class="tnum">Días 10–14</div><div class="tact">Live</div><div class="tres">Campañas prendidas. Primeros leads y primeras llamadas agendadas.</div></div>
     <div class="tstep"><div class="tnum">Semanas 3–12</div><div class="tact">Calibración y escala</div><div class="tres">Optimización semanal por costo por meeting. VSL/UGC entran a reemplazar a los ganadores cansados.</div></div>
   </div>
 
-  <div class="secnum">KPIs y forecast — el número que manda es el costo por meeting</div>
+  <div class="secnum anchor" id="s-kpis">KPIs y forecast — el número que manda es el costo por meeting</div>
   <p style="font-size:13.5px;color:var(--muted)">Dos escenarios según inversión publicitaria (la pagás directo a Meta, nunca a través nuestro). El objetivo de la primera ronda: <span class="kpi-anchor">$200–250</span> por meeting agendada con un dueño calificado.</p>
   <table>
     <thead><tr><th>Métrica mensual</th><th>Escenario base · $3,000/mes en ads</th><th>Escenario escala · $5,000/mes en ads</th></tr></thead>
@@ -158,9 +191,9 @@ td.num{font-family:var(--mono);font-size:12px;white-space:nowrap}
     <p>Un cliente de Full Chair vale <b>$4,500/mes recurrentes + $1,500 de setup</b>. En el escenario base, el costo total del motor (fee + ads) se recupera con <b>el primer cliente cerrado del mes</b>. Todo lo que cierra después es margen que se acumula, porque el retainer es recurrente y el costo de adquisición se paga una sola vez. A $200–250 por meeting y 15–25% de cierre, tu CAC queda entre <b>$1,000 y $1,700 por cliente</b> que te paga $13,500 solo en su primer trimestre.</p>
   </div>
 
-  <div class="caveat"><b>Cómo leer estos números</b>Son forecasts, no promesas: salen de benchmarks del nicho (clicks de aesthetics y B2B salud, tu propia data de CPC de la primera campaña) y de nuestra experiencia operando funnels así. Las primeras dos semanas calibran los rangos reales; desde ahí el reporte semanal muestra los números verdaderos y las decisiones se toman sobre esos. Regla de la casa: nunca te vamos a inventar un número.</div>
+  <div class="caveat rv"><b>Cómo leer estos números</b>Son forecasts, no promesas: salen de benchmarks del nicho (clicks de aesthetics y B2B salud, tu propia data de CPC de la primera campaña) y de nuestra experiencia operando funnels así. Las primeras dos semanas calibran los rangos reales; desde ahí el reporte semanal muestra los números verdaderos y las decisiones se toman sobre esos. Regla de la casa: nunca te vamos a inventar un número.</div>
 
-  <div class="secnum">Lo que cobran las agencias como Closefly — y qué te recomendamos cobrar</div>
+  <div class="secnum anchor" id="s-pricing">Lo que cobran las agencias como Closefly — y qué te recomendamos cobrar</div>
   <p style="font-size:13.5px;color:var(--muted)">Antes de hablar de nuestra inversión, el contexto que importa: relevamos pricing público de agencias de marketing para medspas en Estados Unidos (octubre 2026) y lo cruzamos con tu propio research de Miami.</p>
   <table>
     <thead><tr><th>Tier de agencia</th><th>Retainer mensual</th><th>Qué venden</th></tr></thead>
@@ -170,13 +203,13 @@ td.num{font-family:var(--mono);font-size:12px;white-space:nowrap}
       <tr><td>Programas completos</td><td class="num">$3,000–8,500</td><td>Sistema entero: adquisición + respuesta + reporting. Acá nadie compite por precio: compiten por certeza.</td></tr>
     </tbody>
   </table>
-  <div class="box">
+  <div class="box rv">
     <p class="who">Nuestra recomendación: sostené los $4,500. No es caro: está en el medio del tier correcto.</p>
     <p>Tu Full Chair ($1,500 setup + $4,500/mes) queda bien parado en el tier de programas completos, y vende lo que ese tier vende: certeza, con una baseline firmada y un Ledger semanal que nadie más entrega. Contra el de $1,000 la pelea nunca es por precio: él vende leads sueltos y vos vendés sillas llenas con números firmados, y eso se cobra distinto. Si un prospecto no llega al número, recortale alcance (un canal en vez de todos, ledger quincenal), nunca el precio. El precio también posiciona.</p>
   </div>
 
   <div class="secnum">Inversión — estructura híbrida, como lo hablamos</div>
-  <div class="pricing">
+  <div class="pricing rv">
     <h3>Setup + retainer + <em>performance.</em></h3>
     <span class="free">Referido de Nacho</span><span class="free">Sin lock-in anual</span><span class="free">Primera ronda: 90 días</span>
     <table>
@@ -191,7 +224,7 @@ td.num{font-family:var(--mono);font-size:12px;white-space:nowrap}
     <p style="margin-bottom:0">Dos cosas, para ser claro. Uno: los precios tachados son nuestra tarifa de lista actual; lo que ves al lado es el descuento por venir referido de Nacho y por la apuesta a crecer juntos hacia la Fase 2. Ese precio queda fijo mientras trabajemos juntos: no es una promo de entrada. Dos: el performance está ahí porque creemos en el funnel. Si en 90 días los números no te cierran, lo cortás con 30 días de aviso y todo lo construido queda tuyo: landing, tracking, creativos y aprendizajes.</p>
   </div>
 
-  <div class="secnum">Qué necesitamos de tu lado</div>
+  <div class="secnum anchor" id="s-pasos">Qué necesitamos de tu lado</div>
   <table>
     <thead><tr><th style="width:55%">Qué</th><th>Cuándo</th></tr></thead>
     <tbody>
@@ -203,7 +236,7 @@ td.num{font-family:var(--mono);font-size:12px;white-space:nowrap}
     </tbody>
   </table>
 
-  <div class="next">
+  <div class="next rv">
     <p class="ntitle">Próximos pasos</p>
     <div class="nstep"><span class="nn">1</span><p><b>Revisás esta propuesta y me decís qué ajustar:</b> alcance, escenario de inversión, lo que sea. Por WhatsApp, como quedamos.</p></div>
     <div class="nstep"><span class="nn">2</span><p><b>Con el OK, kickoff en 48 horas:</b> accesos, brief de creativos y arranca el build.</p></div>
@@ -213,4 +246,33 @@ td.num{font-family:var(--mono);font-size:12px;white-space:nowrap}
   <div class="foot"><span>Propuesta · A+Growth para Closefly.ai · amir@amirgomez.com</span><span>Nothing falls through — tampoco acá.</span></div>
 </div>
 
-</div></body></html>
+</div>
+<script>
+(function () {
+  var bar = document.getElementById('bar');
+  function prog() {
+    var d = document.documentElement;
+    var max = d.scrollHeight - innerHeight;
+    bar.style.width = (max > 0 ? (scrollY / max) * 100 : 0) + '%';
+  }
+  addEventListener('scroll', prog, { passive: true }); prog();
+
+  var links = [].slice.call(document.querySelectorAll('#nav a'));
+  var ids = links.map(function (a) { return a.getAttribute('href').slice(1); });
+  function active() {
+    var cur = ids[0];
+    for (var i = 0; i < ids.length; i++) {
+      var el = document.getElementById(ids[i]);
+      if (el && el.getBoundingClientRect().top < 120) cur = ids[i];
+    }
+    links.forEach(function (a) { a.classList.toggle('on', a.getAttribute('href') === '#' + cur); });
+  }
+  addEventListener('scroll', active, { passive: true }); active();
+
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
+})();
+</script>
+</body></html>
