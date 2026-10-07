@@ -19,6 +19,21 @@
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  /* Cancha de precios */
+  .ml-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0 10px; }
+  .ml-card { background: var(--panel); border: 1px solid var(--linea); border-radius: 8px; padding: 16px 18px; }
+  .ml-card .vend { font-size: 11px; font-weight: 600; color: var(--tinta-3); letter-spacing: 0.04em; }
+  .ml-card .vend b { color: var(--tinta); }
+  .ml-card h4 { font-size: 13px; font-weight: 600; line-height: 1.4; margin: 6px 0 2px; }
+  .ml-card .stars { font-size: 11.5px; color: var(--tinta-3); }
+  .ml-card .precio { font-size: 26px; font-weight: 700; margin-top: 8px; font-variant-numeric: tabular-nums; }
+  .ml-card .precio .off { display: inline-block; font-size: 11px; font-weight: 700; background: var(--ok); color: #fff; border-radius: 4px; padding: 2px 7px; vertical-align: 4px; margin-left: 8px; }
+  .ml-card .precio .antes { font-size: 13px; font-weight: 400; color: var(--tinta-3); text-decoration: line-through; margin-right: 8px; }
+  .ml-card .extra { font-size: 12px; color: var(--tinta-2); margin-top: 5px; line-height: 1.5; }
+  .ml-card .extra b { color: var(--tinta); }
+  .ml-card.alerta-card { border-left: 3px solid var(--alerta); }
+  .ml-note { font-size: 11.5px; color: var(--tinta-3); margin-top: 8px; }
+  @media (max-width: 680px) { .ml-compare { grid-template-columns: 1fr; } }
   /* Probamos / pasos */
   .pro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .pro-card { background: var(--panel); border: 1px solid var(--linea); padding: 18px 20px; }
@@ -238,6 +253,26 @@
         <tbody><tr><td>1–7 ago</td><td class="num">$ 6.627.635</td><td class="num">$ 164.594</td><td class="num"><b>$ 6.792.229</b></td><td class="num">$ 970.318</td><td class="num">$ 150.067</td><td class="num">2,2%</td></tr><tr><td>8–14 ago</td><td class="num">$ 10.563.495</td><td class="num">$ 189.094</td><td class="num"><b>$ 10.752.589</b></td><td class="num">$ 1.536.084</td><td class="num">$ 292.417</td><td class="num">2,7%</td></tr><tr><td>15–21 ago</td><td class="num">$ 4.349.132</td><td class="num">$ 267.054</td><td class="num"><b>$ 4.616.186</b></td><td class="num">$ 659.455</td><td class="num">$ 152.412</td><td class="num">3,3%</td></tr><tr><td>22–28 ago</td><td class="num">$ 4.744.013</td><td class="num">$ 501.028</td><td class="num"><b>$ 5.245.041</b></td><td class="num">$ 749.292</td><td class="num">$ 405.103</td><td class="num">7,7%</td></tr><tr><td>29 ago–3 sep</td><td class="num">$ 3.721.874</td><td class="num">$ 76.308</td><td class="num"><b>$ 3.798.182</b></td><td class="num">$ 633.030</td><td class="num">$ 0</td><td class="num">0%</td></tr><tr><td>4–10 sep</td><td class="num">$ 3.805.150</td><td class="num">$ 236.937</td><td class="num"><b>$ 4.042.087</b></td><td class="num">$ 577.441</td><td class="num">$ 322.840</td><td class="num">8,0%</td></tr><tr><td>11–17 sep</td><td class="num">$ 4.214.983</td><td class="num">$ 92.820</td><td class="num"><b>$ 4.307.803</b></td><td class="num">$ 615.400</td><td class="num">$ 147.579</td><td class="num">3,4%</td></tr><tr><td>18–24 sep</td><td class="num">$ 3.505.634</td><td class="num">$ 155.693</td><td class="num"><b>$ 3.661.327</b></td><td class="num">$ 523.047</td><td class="num">$ 242.021</td><td class="num">6,6%</td></tr><tr><td>25 sep–1 oct</td><td class="num">$ 3.624.400</td><td class="num">$ 113.795</td><td class="num"><b>$ 3.738.195</b></td><td class="num">$ 534.028</td><td class="num">$ 107.915</td><td class="num">2,9%</td></tr><tr><td>2–7 oct*</td><td class="num">$ 2.228.091</td><td class="num">$ 249.494</td><td class="num"><b>$ 2.477.585</b></td><td class="num">$ 412.931</td><td class="num">$ 145.529</td><td class="num">5,9%</td></tr><tr style="border-top:2px solid var(--tinta);"><td><b>Total</b></td><td class="num"><b>$ 47.384.407</b></td><td class="num"><b>$ 2.046.817</b></td><td class="num"><b>$ 49.431.224</b></td><td class="num">—</td><td class="num"><b>$ 1.965.883</b></td><td class="num"><b>4,9%</b></td></tr></tbody>
       </table>
     </div>
+
+    <h3 style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin:24px 0 2px;">La cancha de precios en Mercado Libre</h3>
+    <p style="font-size:13.5px;color:var(--tinta-2);max-width:74ch;">El sitio no tiene ventaja de precio: la publicación oficial vende "Dígalo Con Memes" al mismo precio que la tienda. Y hay algo más grande: un revendedor lo está vendiendo <b style="color:var(--tinta)">21% más barato que el canal oficial</b>, habilitado por el precio mayorista público ($ 24.862 llevando 24 o más).</p>
+    <div class="ml-compare">
+      <div class="ml-card">
+        <div class="vend">Publicación oficial · <b>Casa Fight</b> ✓</div>
+        <h4>Juego De Mesa Dígalo Con Memes Casa Fight Previa Risas</h4>
+        <div class="stars">★ 4.8 · +500 vendidos</div>
+        <div class="precio">$ 44.999</div>
+        <div class="extra">6 cuotas de $ 8.759 · <b>$ 24.862,50 llevando 24 o más</b> (exclusivo negocios)</div>
+      </div>
+      <div class="ml-card alerta-card">
+        <div class="vend">Revendedor · <b>SINOPSYSSHOP</b> ✓</div>
+        <h4>Dígalo Con Memes Juego de Cartas 240 Situación 80 Imagen Fight For Your Right</h4>
+        <div class="stars">★ 4.7 · +10mil vendidos · "Últimas 4"</div>
+        <div class="precio"><span class="antes">$ 48.986</span>$ 38.252<span class="off">21% OFF</span></div>
+        <div class="extra">Compra al por mayor a $ 24.862 y revende por debajo del precio oficial, con margen del 54%.</div>
+      </div>
+    </div>
+    <p class="ml-note">Publicaciones reales de Mercado Libre, relevadas el 7 de octubre de 2026. Esto conecta dos temas de la agenda: la pauta que empuja al sitio compite contra ML a igual precio y contra un revendedor más barato, y el canal mayorista necesita reglas de precio mínimo de reventa antes de escalarlo.</p>
 
     <div class="vi-read">
       <h3>Qué sigue con esto</h3>
