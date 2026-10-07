@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Closefly — Acceso</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --paper: #F4EFE8; --ink: #23201C; --muted: #6B6259; --line: #DDD2C2;
+    --wine: #6B1233; --champagne: #E3CDAE;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Instrument Sans', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink);
+    min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+  .box { text-align: center; max-width: 380px; width: 100%; background: #FBF8F3;
+    border: 1px solid var(--line); border-radius: 18px; padding: 44px 36px 38px; }
+  .brandline { font-family: var(--mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9C8E83; }
+  .brandline b { color: var(--wine); font-weight: 500; }
+  .marca { font-family: var(--serif); font-style: italic; font-weight: 600; font-size: 28px; color: var(--wine); margin-top: 10px; }
+  .rule { width: 48px; height: 2px; background: var(--champagne); margin: 24px auto; }
+  p.msg { font-size: 14px; color: var(--muted); margin-bottom: 22px; }
+  input { width: 100%; padding: 13px 16px; font-family: var(--sans); font-size: 15px; text-align: center;
+    letter-spacing: 0.1em; border: 1px solid var(--line); background: #fff; color: var(--ink); outline: none; border-radius: 10px; }
+  input::placeholder { color: #9C8E83; }
+  input:focus { border-color: var(--wine); }
+  button { width: 100%; margin-top: 12px; padding: 13px 16px; cursor: pointer; font-family: var(--mono);
+    font-size: 11.5px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+    background: var(--wine); color: #F7F3ED; border: none; border-radius: 10px; transition: opacity .2s; }
+  button:hover { opacity: .9; }
+  .error { display: none; font-size: 13px; color: #A33; margin-top: 14px; }
+  .error.show { display: block; }
+</style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-icon.png">
+</head>
+<body>
+<div class="box">
+  <div class="brandline"><b>A+GROWTH</b> × CLOSEFLY</div>
+  <div class="marca">Propuesta privada</div>
+  <div class="rule"></div>
+  <p class="msg">Este documento es privado. Ingres&aacute; la clave para continuar.</p>
+  <form id="f">
+    <input type="password" id="pass" placeholder="Clave de acceso" autocomplete="off" autofocus>
+    <button type="submit">Entrar</button>
+  </form>
+  <p class="error" id="err">Clave incorrecta. Prob&aacute; de nuevo.</p>
+</div>
+<script>
+(function () {
+  var COOKIE = 'client_auth_closefly';
+  if (document.cookie.indexOf(COOKIE + '=') !== -1) {
+    document.getElementById('err').classList.add('show');
+    document.cookie = COOKIE + '=; path=/; max-age=0';
+  }
+  document.getElementById('f').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = document.getElementById('pass').value.trim();
+    if (!v) return;
+    document.cookie = COOKIE + '=' + encodeURIComponent(v) + '; path=/; max-age=2592000; SameSite=Lax';
+    location.reload();
+  });
+})();
+</script>
+</body>
+</html>
