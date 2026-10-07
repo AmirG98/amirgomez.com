@@ -19,6 +19,8 @@
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  .ag-group { margin: 16px 0 4px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tinta-3); }
+  .ag-abierto { font-size: 13px; color: var(--tinta-2); padding: 5px 0 5px 14px; border-left: 2px solid var(--linea); margin: 6px 0; }
   /* Cancha de precios */
   .ml-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0 10px; }
   .ml-card { background: var(--panel); border: 1px solid var(--linea); border-radius: 8px; padding: 16px 18px; }
@@ -203,15 +205,31 @@
   <section>
     <div class="agenda">
       <div class="head">
-        <h3>Agenda</h3>
+        <h3>Reunión del 7/10 — qué se lleva cada uno</h3>
         <span class="date">07 &middot; 10 &middot; 2026</span>
       </div>
-      <p class="hint">Marcá cada punto a medida que se trata.</p>
-      <label class="ag-item"><input type="checkbox"><span><b>Campañas que se probaron hasta ahora</b><small>El detalle completo está en la sección "Lo que probamos hasta ahora", acá abajo.</small></span></label>
-      <label class="ag-item"><input type="checkbox"><span><b>Mercado Libre versus sitio web</b> (data semana a semana)<small>El reporte especial de abajo cruza ventas e inversión; la tabla tiene el detalle semanal de los dos canales.</small></span></label>
-      <label class="ag-item"><input type="checkbox"><span><b>Lo que funciona y lo que no</b><small>Videos variados - Octubre es la única campaña con señal real (ROAS 3,60). El resto, a revisión.</small></span></label>
-      <label class="ag-item"><input type="checkbox"><span><b>Proceso de comunicación interna, reuniones, pagos a plataformas y promociones</b></span></label>
-      <label class="ag-item"><input type="checkbox"><span><b>Proceso de posts en redes</b></span></label>
+      <p class="hint">Queda la reunión fija de los miércoles 11 am, cada dos semanas. Marcá cada punto a medida que se complete.</p>
+
+      <div class="ag-group">A+Growth</div>
+      <label class="ag-item"><input type="checkbox"><span><b>Escalar videos variados</b> y pasarles los dos videos del formato ganador<small>Es lo que mejor funciona: 4x en el sitio en los últimos 7 días.</small></span></label>
+      <label class="ag-item"><input type="checkbox"><span><b>Seguimiento por mail a los que inician checkout</b></span></label>
+      <label class="ag-item"><input type="checkbox"><span><b>Lanzar la prueba de TikTok</b> apenas se acredite la devolución</span></label>
+      <label class="ag-item"><input type="checkbox"><span><b>Tracking del WhatsApp mayorista</b><small>Qué consultas entran por los anuncios y qué conversión hay.</small></span></label>
+      <label class="ag-item"><input type="checkbox"><span><b>Excel de métricas de redes</b> (seguidores, engagement, vistas) con marco oct-nov-dic</span></label>
+      <label class="ag-item"><input type="checkbox"><span><b>Agente de tendencias e ideas de contenido</b> entrenado para Casa Fight<small>Más adelante, uno de comunidad — siempre con aprobación de ustedes antes de publicar.</small></span></label>
+      <label class="ag-item"><input type="checkbox"><span><b>Calendario de contenidos compartido</b><small>Lo organiza Pili con Mili, editable por ambos equipos.</small></span></label>
+
+      <div class="ag-group">Casa Fight</div>
+      <label class="ag-item"><input type="checkbox"><span><b>Mili: archivo de contactos mayoristas</b> y cómo les están vendiendo<small>También el contenido viejo de influencers (Colapinto sobre todo) para reeditarlo con el formato que hoy funciona. Y seguir con los memes reactivos tipo Sancor.</small></span></label>
+      <label class="ag-item"><input type="checkbox"><span><b>Eze: carga de saldo a las plataformas</b><small>Meta: $800K-1M de una (o los lunes $250-300K). Google: los primeros 10 días del mes. Al pasar ~$1M/mes se activa la línea de crédito propia.</small></span></label>
+      <label class="ag-item"><input type="checkbox"><span><b>Contarnos qué respondió Sinopsys</b><small>Y cualquier data de cuánto compran y venden los mayoristas suma para la atribución.</small></span></label>
+
+      <div class="ag-group">Temas abiertos para las próximas</div>
+      <div class="ag-abierto">Reglas de descuento ML vs. mayoristas: el 10% nuestro contra el 15% que empuja Mercado Libre.</div>
+      <div class="ag-abierto">Black Friday y Navidad: qué promo hacemos y cómo captamos al que compra antes.</div>
+      <div class="ag-abierto">Día de la Madre: solo contenido orgánico, sin presupuesto de ads.</div>
+      <div class="ag-abierto">Juegos nuevos: Casa Fight manda ideas y progreso, apoyamos con research de ML y Amazon.</div>
+
       <div class="ag-notas">
         <div class="l">Notas de la reunión</div>
         <textarea id="ag-notas" placeholder="Lo que salga de la charla"></textarea>
@@ -332,10 +350,11 @@
     </div>
     <div class="sec-rule"></div>
     <ol class="pasos">
-      <li><b>Subir de a poco el presupuesto de "Videos variados - Octubre".</b> Es la única campaña con ROAS arriba de 1 y todavía está en sus primeros días.</li>
+      <li><b>Subir de a poco el presupuesto de "Videos variados - Octubre"</b> y escalar el formato con los dos videos ganadores.</li>
       <li><b>Cambiar los anuncios de "Combos - 15% off"</b> y apagarla si en una semana no vende.</li>
-      <li><b>Crear la campaña de remarketing para carritos abandonados.</b> Hay 289 carritos y 69 pagos iniciados en el período esperando ese empujón.</li>
-      <li><b>Lanzar la primera prueba en TikTok</b> ahora que la cuenta está verificada, con presupuesto chico y el contenido ganador de Meta.</li>
+      <li><b>Seguimiento por mail a checkouts iniciados</b> — hay 289 carritos y 69 pagos iniciados en el período esperando ese empujón.</li>
+      <li><b>Lanzar la primera prueba en TikTok</b> cuando se acredite la devolución, con presupuesto chico y el contenido ganador de Meta.</li>
+      <li><b>WhatsApp mayorista:</b> medir qué consultas traen los anuncios y qué conversión hay, con el archivo de contactos de Mili como base.</li>
     </ol>
   </section>
 
