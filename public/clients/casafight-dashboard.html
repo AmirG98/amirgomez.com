@@ -19,6 +19,25 @@
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
+  /* Probamos / pasos */
+  .pro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .pro-card { background: var(--panel); border: 1px solid var(--linea); padding: 18px 20px; }
+  .pro-card h3 { font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+  .pro-card.nuevo { grid-column: 1 / -1; border-left: 3px solid var(--azul); }
+  .pro-card.nuevo p { font-size: 13.5px; color: var(--tinta-2); margin: 0; }
+  .pro-card.nuevo p b { color: var(--tinta); }
+  .badge-nuevo { display: inline-block; font-size: 9.5px; font-weight: 700; letter-spacing: 0.12em; background: var(--azul); color: #fff; padding: 2px 9px; border-radius: 999px; vertical-align: 2px; margin-left: 6px; }
+  .trial { display: flex; justify-content: space-between; gap: 14px; padding: 8px 0; border-bottom: 1px solid var(--linea); font-size: 13px; }
+  .trial:last-child { border-bottom: none; }
+  .trial span { color: var(--tinta-2); }
+  .trial em { font-style: normal; font-weight: 600; white-space: nowrap; font-size: 12px; }
+  .trial em.t-ok { color: var(--ok); }
+  .trial em.t-no { color: var(--alerta); }
+  .trial em.t-mid { color: var(--tinta-3); }
+  .pasos { margin: 4px 0 0 20px; }
+  .pasos li { font-size: 13.5px; color: var(--tinta-2); margin-bottom: 10px; }
+  .pasos li b { color: var(--tinta); }
+  @media (max-width: 720px) { .pro-grid { grid-template-columns: 1fr; } .trial { flex-direction: column; gap: 2px; } .trial em { white-space: normal; } }
   /* Ventas vs inversion */
   .vi-kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 18px; }
   .vi-kpi { background: var(--panel); border: 1px solid var(--linea); padding: 14px 16px; }
@@ -169,17 +188,15 @@
   <section>
     <div class="agenda">
       <div class="head">
-        <h3>Para conversar</h3>
-        <span class="date">26 &middot; 08 &middot; 2026</span>
+        <h3>Agenda</h3>
+        <span class="date">07 &middot; 10 &middot; 2026</span>
       </div>
       <p class="hint">Marcá cada punto a medida que se trata.</p>
-      <label class="ag-item"><input type="checkbox"><span><b>La curva de compras:</b> arrancamos bien, se estancó, y ahora hay señales nuevas<small>El estancamiento probablemente vino por exceso de retargeting. Las campañas nuevas con el contenido en test ya empiezan a mover, y es sobre eso que hay que escalar.</small></span></label>
-      <label class="ag-item"><input type="checkbox"><span><b>El algoritmo necesita ciclos para aprender</b><small>Cada vez que se cambia el contenido vuelve a empezar. Escalar algo que ya genera compras es más rápido que buscar un ángulo nuevo desde cero.</small></span></label>
-      <label class="ag-item"><input type="checkbox"><span><b>Decidir sobre la cuenta publicitaria</b><small>Levantar el límite de la línea de crédito de Meta o abrir una nueva a nombre de Casa Fight. Sin techo no se puede subir presupuesto aunque las campañas funcionen.</small></span></label>
-      <label class="ag-item"><input type="checkbox"><span>Ángulos nuevos de contenido, fuera de lo que hacen los influencers<small>Tomando como referencia lo que hacen En Palabras y Con El Kora. Ya están aprobadas y listas para salir.</small></span></label>
-      <label class="ag-item"><input type="checkbox"><span>Los reviews de la web ya están sumados y ayudan mucho<small>Es lo que da confianza a alguien que llega de un anuncio sin conocer la marca.</small></span></label>
-      <label class="ag-item"><input type="checkbox"><span>Más tráfico a las páginas de combos<small>Suben el ticket promedio y son mejor puerta de entrada que un producto suelto para quien todavía no sabe cuál juego quiere.</small></span></label>
-      <label class="ag-item"><input type="checkbox"><span>Apelación de la cuenta de TikTok<small>Rechazada tras arrancar campañas, sin razones claras. Sin novedades todavía.</small></span></label>
+      <label class="ag-item"><input type="checkbox"><span><b>Campañas que se probaron hasta ahora</b><small>El detalle completo está en la sección "Lo que probamos hasta ahora", acá abajo.</small></span></label>
+      <label class="ag-item"><input type="checkbox"><span><b>Mercado Libre versus sitio web</b> (data semana a semana)<small>El reporte especial de abajo cruza ventas e inversión; la tabla tiene el detalle semanal de los dos canales.</small></span></label>
+      <label class="ag-item"><input type="checkbox"><span><b>Lo que funciona y lo que no</b><small>Videos variados - Octubre es la única campaña con señal real (ROAS 3,60). El resto, a revisión.</small></span></label>
+      <label class="ag-item"><input type="checkbox"><span><b>Proceso de comunicación interna, reuniones, pagos a plataformas y promociones</b></span></label>
+      <label class="ag-item"><input type="checkbox"><span><b>Proceso de posts en redes</b></span></label>
       <div class="ag-notas">
         <div class="l">Notas de la reunión</div>
         <textarea id="ag-notas" placeholder="Lo que salga de la charla"></textarea>
@@ -195,8 +212,8 @@
   <!-- ============ VENTAS VS INVERSION ============ -->
   <section id="ventas-vs-inversion">
     <div class="sec-head">
-      <h2>Reporte especial · Ventas vs. inversión, semana a semana</h2>
-      <span class="note">1 ago – 7 oct 2026</span>
+      <h2>Reporte especial · Ventas vs. inversión</h2>
+      <span class="note">1 ago – 7 oct 2026 · pintura por quincena, detalle por semana</span>
     </div>
     <div class="sec-rule"></div>
 
@@ -210,10 +227,10 @@
     <p class="vi-lead">La pregunta que dispara este reporte: ¿qué pasa con las ventas cuando los ads se apagan? Entre el 29 de agosto y el 3 de septiembre no hubo pauta por el cambio de cuenta, y las ventas por día quedaron en <b>$ 633.030</b>. Las cuatro semanas siguientes, con pauta activa de vuelta, promediaron <b>$ 562.479 por día</b>. La semana sin ads vendió un 13% más por día que el promedio de septiembre con ads.</p>
 
     <div class="vi-chart-wrap">
-      <svg viewBox="0 0 760 378" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ventas por día e inversión por día, semana a semana" style="width:100%;height:auto;display:block"><rect x="327.6" y="14" width="70.4" height="342" fill="#EFEDE6"/><text x="362.8" y="10" text-anchor="middle" font-size="9" font-weight="700" letter-spacing="1.5" fill="#4D4A47">SIN PAUTA</text><line x1="46" y1="200.0" x2="750" y2="200.0" stroke="#E0DCD4" stroke-width="1"/><text x="40" y="203.0" text-anchor="end" font-size="9.5" fill="#8A8681">0</text><line x1="46" y1="146.9" x2="750" y2="146.9" stroke="#E0DCD4" stroke-width="1"/><text x="40" y="149.9" text-anchor="end" font-size="9.5" fill="#8A8681">0,5 M</text><line x1="46" y1="93.8" x2="750" y2="93.8" stroke="#E0DCD4" stroke-width="1"/><text x="40" y="96.8" text-anchor="end" font-size="9.5" fill="#8A8681">1 M</text><line x1="46" y1="40.6" x2="750" y2="40.6" stroke="#E0DCD4" stroke-width="1"/><text x="40" y="43.6" text-anchor="end" font-size="9.5" fill="#8A8681">1,5 M</text><line x1="46" y1="342.0" x2="750" y2="342.0" stroke="#E0DCD4" stroke-width="1"/><text x="40" y="345.0" text-anchor="end" font-size="9.5" fill="#8A8681">0</text><line x1="46" y1="297.0" x2="750" y2="297.0" stroke="#E0DCD4" stroke-width="1"/><text x="40" y="300.0" text-anchor="end" font-size="9.5" fill="#8A8681">30 k</text><line x1="46" y1="252.0" x2="750" y2="252.0" stroke="#E0DCD4" stroke-width="1"/><text x="40" y="255.0" text-anchor="end" font-size="9.5" fill="#8A8681">60 k</text><text x="46" y="14" font-size="10.5" font-weight="700" fill="#111111">VENTAS POR DÍA <tspan font-weight="400" fill="#8A8681">(Mercado Libre + tienda)</tspan></text><text x="46" y="242" font-size="10.5" font-weight="700" fill="#111111">INVERSIÓN META POR DÍA</text><path d="M69.2,200.0 L69.2,100.9 Q69.2,96.9 73.2,96.9 L89.2,96.9 Q93.2,96.9 93.2,100.9 L93.2,200.0 Z" fill="#4A42D6" opacity="1.0"/><path d="M69.2,342.0 L69.2,313.8 Q69.2,309.8 73.2,309.8 L89.2,309.8 Q93.2,309.8 93.2,313.8 L93.2,342.0 Z" fill="#D454B2" opacity="1.0"/><text x="81.2" y="364" text-anchor="middle" font-size="8.8" fill="#4D4A47">1–7 ago</text><path d="M139.6,200.0 L139.6,40.8 Q139.6,36.8 143.6,36.8 L159.6,36.8 Q163.6,36.8 163.6,40.8 L163.6,200.0 Z" fill="#4A42D6" opacity="1.0"/><path d="M139.6,342.0 L139.6,283.3 Q139.6,279.3 143.6,279.3 L159.6,279.3 Q163.6,279.3 163.6,283.3 L163.6,342.0 Z" fill="#D454B2" opacity="1.0"/><text x="151.6" y="364" text-anchor="middle" font-size="8.8" fill="#4D4A47">8–14 ago</text><path d="M210.0,200.0 L210.0,133.9 Q210.0,129.9 214.0,129.9 L230.0,129.9 Q234.0,129.9 234.0,133.9 L234.0,200.0 Z" fill="#4A42D6" opacity="1.0"/><path d="M210.0,342.0 L210.0,313.3 Q210.0,309.3 214.0,309.3 L230.0,309.3 Q234.0,309.3 234.0,313.3 L234.0,342.0 Z" fill="#D454B2" opacity="1.0"/><text x="222.0" y="364" text-anchor="middle" font-size="8.8" fill="#4D4A47">15–21 ago</text><path d="M280.4,200.0 L280.4,124.4 Q280.4,120.4 284.4,120.4 L300.4,120.4 Q304.4,120.4 304.4,124.4 L304.4,200.0 Z" fill="#4A42D6" opacity="1.0"/><path d="M280.4,342.0 L280.4,259.2 Q280.4,255.2 284.4,255.2 L300.4,255.2 Q304.4,255.2 304.4,259.2 L304.4,342.0 Z" fill="#D454B2" opacity="1.0"/><text x="292.4" y="364" text-anchor="middle" font-size="8.8" fill="#4D4A47">22–28 ago</text><path d="M350.8,200.0 L350.8,136.7 Q350.8,132.7 354.8,132.7 L370.8,132.7 Q374.8,132.7 374.8,136.7 L374.8,200.0 Z" fill="#4A42D6" opacity="1.0"/><rect x="350.8" y="342.0" width="24" height="1.5" fill="#D454B2" opacity="1.0"/><text x="362.8" y="364" text-anchor="middle" font-size="8.8" fill="#4D4A47">29 ago–3 sep</text><path d="M421.2,200.0 L421.2,142.6 Q421.2,138.6 425.2,138.6 L441.2,138.6 Q445.2,138.6 445.2,142.6 L445.2,200.0 Z" fill="#4A42D6" opacity="1.0"/><path d="M421.2,342.0 L421.2,276.8 Q421.2,272.8 425.2,272.8 L441.2,272.8 Q445.2,272.8 445.2,276.8 L445.2,342.0 Z" fill="#D454B2" opacity="1.0"/><text x="433.2" y="364" text-anchor="middle" font-size="8.8" fill="#4D4A47">4–10 sep</text><path d="M491.6,200.0 L491.6,138.6 Q491.6,134.6 495.6,134.6 L511.6,134.6 Q515.6,134.6 515.6,138.6 L515.6,200.0 Z" fill="#4A42D6" opacity="1.0"/><path d="M491.6,342.0 L491.6,314.4 Q491.6,310.4 495.6,310.4 L511.6,310.4 Q515.6,310.4 515.6,314.4 L515.6,342.0 Z" fill="#D454B2" opacity="1.0"/><text x="503.6" y="364" text-anchor="middle" font-size="8.8" fill="#4D4A47">11–17 sep</text><path d="M562.0,200.0 L562.0,148.4 Q562.0,144.4 566.0,144.4 L582.0,144.4 Q586.0,144.4 586.0,148.4 L586.0,200.0 Z" fill="#4A42D6" opacity="1.0"/><path d="M562.0,342.0 L562.0,294.1 Q562.0,290.1 566.0,290.1 L582.0,290.1 Q586.0,290.1 586.0,294.1 L586.0,342.0 Z" fill="#D454B2" opacity="1.0"/><text x="574.0" y="364" text-anchor="middle" font-size="8.8" fill="#4D4A47">18–24 sep</text><path d="M632.4,200.0 L632.4,147.3 Q632.4,143.3 636.4,143.3 L652.4,143.3 Q656.4,143.3 656.4,147.3 L656.4,200.0 Z" fill="#4A42D6" opacity="1.0"/><path d="M632.4,342.0 L632.4,322.9 Q632.4,318.9 636.4,318.9 L652.4,318.9 Q656.4,318.9 656.4,322.9 L656.4,342.0 Z" fill="#D454B2" opacity="1.0"/><text x="644.4" y="364" text-anchor="middle" font-size="8.8" fill="#4D4A47">25 sep–1 oct</text><path d="M702.8,200.0 L702.8,160.1 Q702.8,156.1 706.8,156.1 L722.8,156.1 Q726.8,156.1 726.8,160.1 L726.8,200.0 Z" fill="#4A42D6" opacity="0.5"/><path d="M702.8,342.0 L702.8,309.6 Q702.8,305.6 706.8,305.6 L722.8,305.6 Q726.8,305.6 726.8,309.6 L726.8,342.0 Z" fill="#D454B2" opacity="0.5"/><text x="714.8" y="364" text-anchor="middle" font-size="8.8" fill="#4D4A47">2–7 oct*</text><text x="151.6" y="30.8" text-anchor="middle" font-size="9.5" font-weight="600" fill="#4D4A47">1,54 M · Día del Niño</text><text x="362.8" y="126.7" text-anchor="middle" font-size="9.5" font-weight="700" fill="#111111">633 k</text><text x="362.8" y="332.0" text-anchor="middle" font-size="9.5" font-weight="700" fill="#111111">$ 0</text><rect class="cf-hit" data-i="0" x="46.0" y="14" width="70.4" height="342" fill="transparent"/><rect class="cf-hit" data-i="1" x="116.4" y="14" width="70.4" height="342" fill="transparent"/><rect class="cf-hit" data-i="2" x="186.8" y="14" width="70.4" height="342" fill="transparent"/><rect class="cf-hit" data-i="3" x="257.2" y="14" width="70.4" height="342" fill="transparent"/><rect class="cf-hit" data-i="4" x="327.6" y="14" width="70.4" height="342" fill="transparent"/><rect class="cf-hit" data-i="5" x="398.0" y="14" width="70.4" height="342" fill="transparent"/><rect class="cf-hit" data-i="6" x="468.4" y="14" width="70.4" height="342" fill="transparent"/><rect class="cf-hit" data-i="7" x="538.8" y="14" width="70.4" height="342" fill="transparent"/><rect class="cf-hit" data-i="8" x="609.2" y="14" width="70.4" height="342" fill="transparent"/><rect class="cf-hit" data-i="9" x="679.6" y="14" width="70.4" height="342" fill="transparent"/></svg>
+      <svg viewBox="0 0 760 378" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ventas por día e inversión por día, por quincena" style="width:100%;height:auto;display:block"><rect x="327.6" y="14" width="140.8" height="342" fill="#EFEDE6"/><text x="398.0" y="10" text-anchor="middle" font-size="9" font-weight="700" letter-spacing="1.2" fill="#4D4A47">INCLUYE 6 DÍAS SIN PAUTA</text><line x1="46" y1="200.0" x2="750" y2="200.0" stroke="#E0DCD4" stroke-width="1"/><text x="40" y="203.0" text-anchor="end" font-size="9.5" fill="#8A8681">0</text><line x1="46" y1="134.6" x2="750" y2="134.6" stroke="#E0DCD4" stroke-width="1"/><text x="40" y="137.6" text-anchor="end" font-size="9.5" fill="#8A8681">0,5 M</text><line x1="46" y1="69.2" x2="750" y2="69.2" stroke="#E0DCD4" stroke-width="1"/><text x="40" y="72.2" text-anchor="end" font-size="9.5" fill="#8A8681">1 M</text><line x1="46" y1="342.0" x2="750" y2="342.0" stroke="#E0DCD4" stroke-width="1"/><text x="40" y="345.0" text-anchor="end" font-size="9.5" fill="#8A8681">0</text><line x1="46" y1="301.1" x2="750" y2="301.1" stroke="#E0DCD4" stroke-width="1"/><text x="40" y="304.1" text-anchor="end" font-size="9.5" fill="#8A8681">20 k</text><line x1="46" y1="260.2" x2="750" y2="260.2" stroke="#E0DCD4" stroke-width="1"/><text x="40" y="263.2" text-anchor="end" font-size="9.5" fill="#8A8681">40 k</text><text x="46" y="14" font-size="10.5" font-weight="700" fill="#111111">VENTAS POR DÍA <tspan font-weight="400" fill="#8A8681">(Mercado Libre + tienda)</tspan></text><text x="46" y="242" font-size="10.5" font-weight="700" fill="#111111">INVERSIÓN META POR DÍA</text><path d="M103.4,200.0 L103.4,40.1 Q103.4,36.1 107.4,36.1 L125.4,36.1 Q129.4,36.1 129.4,40.1 L129.4,200.0 Z" fill="#4A42D6" opacity="1.0"/><path d="M103.4,342.0 L103.4,281.4 Q103.4,277.4 107.4,277.4 L125.4,277.4 Q129.4,277.4 129.4,281.4 L129.4,342.0 Z" fill="#D454B2" opacity="1.0"/><text x="116.4" y="30.1" text-anchor="middle" font-size="10" font-weight="600" fill="#4D4A47">1,25 M</text><text x="116.4" y="271.4" text-anchor="middle" font-size="10" font-weight="600" fill="#4D4A47">32 k</text><text x="116.4" y="364" text-anchor="middle" font-size="9.5" fill="#4D4A47">1–14 ago</text><path d="M244.2,200.0 L244.2,111.9 Q244.2,107.9 248.2,107.9 L266.2,107.9 Q270.2,107.9 270.2,111.9 L270.2,200.0 Z" fill="#4A42D6" opacity="1.0"/><path d="M244.2,342.0 L244.2,264.5 Q244.2,260.5 248.2,260.5 L266.2,260.5 Q270.2,260.5 270.2,264.5 L270.2,342.0 Z" fill="#D454B2" opacity="1.0"/><text x="257.2" y="101.9" text-anchor="middle" font-size="10" font-weight="600" fill="#4D4A47">704 k</text><text x="257.2" y="254.5" text-anchor="middle" font-size="10" font-weight="600" fill="#4D4A47">40 k</text><text x="257.2" y="364" text-anchor="middle" font-size="9.5" fill="#4D4A47">15–28 ago</text><path d="M385.0,200.0 L385.0,125.1 Q385.0,121.1 389.0,121.1 L407.0,121.1 Q411.0,121.1 411.0,125.1 L411.0,200.0 Z" fill="#4A42D6" opacity="1.0"/><path d="M385.0,342.0 L385.0,295.2 Q385.0,291.2 389.0,291.2 L407.0,291.2 Q411.0,291.2 411.0,295.2 L411.0,342.0 Z" fill="#D454B2" opacity="1.0"/><text x="398.0" y="115.1" text-anchor="middle" font-size="10" font-weight="600" fill="#4D4A47">603 k</text><text x="398.0" y="285.2" text-anchor="middle" font-size="10" font-weight="600" fill="#4D4A47">25 k</text><text x="398.0" y="364" text-anchor="middle" font-size="9.5" fill="#4D4A47">29 ago–10 sep</text><path d="M525.8,200.0 L525.8,129.6 Q525.8,125.6 529.8,125.6 L547.8,125.6 Q551.8,125.6 551.8,129.6 L551.8,200.0 Z" fill="#4A42D6" opacity="1.0"/><path d="M525.8,342.0 L525.8,289.1 Q525.8,285.1 529.8,285.1 L547.8,285.1 Q551.8,285.1 551.8,289.1 L551.8,342.0 Z" fill="#D454B2" opacity="1.0"/><text x="538.8" y="119.6" text-anchor="middle" font-size="10" font-weight="600" fill="#4D4A47">569 k</text><text x="538.8" y="279.1" text-anchor="middle" font-size="10" font-weight="600" fill="#4D4A47">28 k</text><text x="538.8" y="364" text-anchor="middle" font-size="9.5" fill="#4D4A47">11–24 sep</text><path d="M666.6,200.0 L666.6,141.5 Q666.6,137.5 670.6,137.5 L688.6,137.5 Q692.6,137.5 692.6,141.5 L692.6,200.0 Z" fill="#4A42D6" opacity="0.55"/><path d="M666.6,342.0 L666.6,306.1 Q666.6,302.1 670.6,302.1 L688.6,302.1 Q692.6,302.1 692.6,306.1 L692.6,342.0 Z" fill="#D454B2" opacity="0.55"/><text x="679.6" y="131.5" text-anchor="middle" font-size="10" font-weight="600" fill="#4D4A47">478 k</text><text x="679.6" y="296.1" text-anchor="middle" font-size="10" font-weight="600" fill="#4D4A47">19 k</text><text x="679.6" y="364" text-anchor="middle" font-size="9.5" fill="#4D4A47">25 sep–7 oct*</text><text x="116.4" y="18.1" text-anchor="middle" font-size="9" fill="#8A8681">Día del Niño</text><rect class="cf-hit" data-i="0" x="46.0" y="14" width="140.8" height="342" fill="transparent"/><rect class="cf-hit" data-i="1" x="186.8" y="14" width="140.8" height="342" fill="transparent"/><rect class="cf-hit" data-i="2" x="327.6" y="14" width="140.8" height="342" fill="transparent"/><rect class="cf-hit" data-i="3" x="468.4" y="14" width="140.8" height="342" fill="transparent"/><rect class="cf-hit" data-i="4" x="609.2" y="14" width="140.8" height="342" fill="transparent"/></svg>
       <div class="vi-tip" id="vi-tip"></div>
     </div>
-    <p class="vi-foot">Barras por día para que las semanas de 6 y 7 días sean comparables. La semana 2–7 oct es parcial (tono más claro). Google Ads ($ 447.401 en el período) no tiene desglose semanal, así que el cruce semanal usa Meta; el total del período sí lo incluye.</p>
+    <p class="vi-foot">La pintura va por quincena para que la tendencia se lea limpia; el detalle semana a semana está en la tabla. Todo en valores por día, así los períodos de 13 y 14 días comparan parejo. La última quincena es parcial (tono claro). La tienda online es ~4% de las ventas: a esta escala no se distingue en la barra, por eso tiene su columna en la tabla. Google Ads ($ 447.401 en el período) no tiene desglose semanal; el cruce usa Meta.</p>
 
     <div class="tabla-wrap" style="overflow-x:auto;">
       <table class="vi-table">
@@ -237,171 +254,58 @@
     </div>
   </section>
 
-  <!-- ============ NÚMEROS ============ -->
+  
+
+  
+
+  
+
+  <!-- ============ LO QUE PROBAMOS ============ -->
   <section>
     <div class="sec-head">
-      <h2>Números del período</h2>
-      <span class="note">25 jul – 25 ago 2026</span>
+      <h2>Lo que probamos hasta ahora</h2>
+      <span class="note">Cada prueba con su resultado, sin vueltas</span>
     </div>
     <div class="sec-rule"></div>
-    <div class="kpis">
-      <div class="kpi azul">
-        <div class="label">Inversión en ads</div>
-        <div class="value">$710.000</div>
-        <div class="foot">Meta Ads · ARS</div>
+    <div class="pro-grid">
+      <div class="pro-card">
+        <h3>Meta Ads</h3>
+        <div class="trial"><span>Día del Niño (agosto)</span><em class="t-no">sin compras</em></div>
+        <div class="trial"><span>Primera ronda - Posts de Instagram (agosto)</span><em class="t-ok">8 compras</em></div>
+        <div class="trial"><span>Segunda ronda de ads (agosto)</span><em class="t-ok">7 compras</em></div>
+        <div class="trial"><span>Anuncios UGC Amir (ago–sep)</span><em class="t-mid">1 compra</em></div>
+        <div class="trial"><span>Primera ronda de ads (septiembre)</span><em class="t-mid">4 compras</em></div>
+        <div class="trial"><span>Día del Estudiante (septiembre)</span><em class="t-no">sin compras</em></div>
+        <div class="trial"><span>Videos variados - Septiembre (A/B test)</span><em class="t-mid">clics baratos, 3 compras</em></div>
+        <div class="trial"><span>Videos variados - Octubre</span><em class="t-ok">3 compras · ROAS 3,60 — la mejor</em></div>
+        <div class="trial"><span>Combos - 15% off (octubre)</span><em class="t-no">todavía sin compras</em></div>
       </div>
-      <div class="kpi">
-        <div class="label">Ventas</div>
-        <div class="value">18</div>
-        <div class="foot">$863.137 en revenue · ticket prom. $47.952</div>
+      <div class="pro-card">
+        <h3>Google Ads</h3>
+        <div class="trial"><span>Búsqueda de marca</span><em class="t-no">activa pero muy cara: $ 6.111 por clic</em></div>
+        <div class="trial"><span>Búsqueda general · marca #2 · Performance Max</span><em class="t-mid">probadas y pausadas</em></div>
+        <div class="trial"><span>Pijamas, medias, beanies, mayorista, sale y tráfico de octubre</span><em class="t-no">no llegaron a salir; varios anuncios rechazados</em></div>
       </div>
-      <div class="kpi">
-        <div class="label">CPA</div>
-        <div class="value">$39.444</div>
-        <div class="foot">Por venta, atribución total a Meta</div>
+      <div class="pro-card nuevo">
+        <h3>TikTok Ads <span class="badge-nuevo">prueba nueva</span></h3>
+        <p>La cuenta quedó <b>verificada</b> después de la apelación. Entra como canal de prueba, arrancando con el contenido que ya mostró señal en Meta.</p>
       </div>
-      <div class="kpi magenta">
-        <div class="label">ROAS</div>
-        <div class="value">1,22x</div>
-        <div class="foot">Revenue / inversión</div>
-      </div>
-    </div>
-    <div class="nota">
-      <b>Objetivo de mejora.</b> Cortar el CPA al menos a un tercio: de $39.444 a la zona de $13.000 por venta, para que cada campaña genere más profit. El camino: concentrar presupuesto en el formato ganador, escalar los videos UGC nuevos y mejorar la eficiencia de Google Ads, que ya está corriendo.
     </div>
   </section>
 
-  <!-- ============ CAMPAÑAS ============ -->
+  <!-- ============ PROXIMOS PASOS ============ -->
   <section>
     <div class="sec-head">
-      <h2>Campañas</h2>
-      <span class="note">Estado por campaña</span>
+      <h2>Próximos pasos decididos</h2>
+      <span class="note">Lo que sale andando de esta reunión</span>
     </div>
     <div class="sec-rule"></div>
-    <div class="tbl">
-      <table>
-        <thead>
-          <tr><th>Campaña</th><th>Objetivo</th><th>Inversión</th><th>Resultado</th><th>Estado</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><b>Primera ronda de ads · Posts de Instagram</b></td>
-            <td>Ventas</td>
-            <td>$440.908</td>
-            <td>13 compras · 56.981 impresiones</td>
-            <td>Activa</td>
-          </tr>
-          <tr>
-            <td><b>Ventas · Día del Niño</b></td>
-            <td>Ventas · fecha comercial</td>
-            <td>$140.424</td>
-            <td>124.726 impresiones</td>
-            <td>Completada</td>
-          </tr>
-          <tr>
-            <td><b>Google Ads · Búsqueda</b></td>
-            <td>Ventas · branded y non-branded</td>
-            <td class="vacio">Primeros datos en el próximo corte</td>
-            <td class="vacio">En aprendizaje</td>
-            <td>Activa</td>
-          </tr>
-          <tr>
-            <td><b>Ventas · Segunda ronda de ads (Agosto)</b></td>
-            <td>Ventas</td>
-            <td>$53.131</td>
-            <td>2 compras · 7.418 impresiones</td>
-            <td>Activa</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- ============ TABLERO ============ -->
-  <section>
-    <div class="sec-head">
-      <h2>En qué estamos</h2>
-      <span class="note">Lo que espera respuesta está marcado</span>
-    </div>
-    <div class="sec-rule"></div>
-    <div class="board">
-      <div class="col">
-        <h3>Hecho</h3>
-        <div class="item">
-          <div class="t">Primera ronda de ads · Día del Niño</div>
-          <div class="m">Piezas entregadas y campaña completada.</div>
-          <span class="tag ok">Entregado</span>
-        </div>
-        <div class="item">
-          <div class="t">Edición del UGC</div>
-          <div class="m">Videos editados y cargados en la carpeta de Drive.</div>
-          <span class="tag ok">Entregado</span>
-        </div>
-        <div class="item">
-          <div class="t">Accesos a Meta Ads y tienda</div>
-          <div class="m">Datos recibidos: inversión, ventas y ROAS ya cargados arriba.</div>
-          <span class="tag ok">Resuelto</span>
-        </div>
-        <div class="item">
-          <div class="t">Ángulos nuevos de contenido</div>
-          <div class="m">Ángulos que no estaban en el contenido de influencers, tomando como referencia lo que hacen En Palabras y Con El Kora. Aprobados y listos para salir.</div>
-          <span class="tag ok">Aprobado</span>
-        </div>
-        <div class="item">
-          <div class="t">Reviews en la web</div>
-          <div class="m">Se sumaron y ayudan mucho: es lo que da confianza a quien llega de un anuncio sin conocer la marca.</div>
-          <span class="tag ok">Sumado</span>
-        </div>
-        <div class="item">
-          <div class="t">Keywords y copys de Google Ads</div>
-          <div class="m">Campañas branded y non-branded con negativas, publicadas.</div>
-          <span class="tag ok">Listo</span>
-        </div>
-      </div>
-
-      <div class="col">
-        <h3>En curso</h3>
-        <div class="item">
-          <div class="t">Aprobación de los videos UGC</div>
-          <div class="m">Las piezas nuevas están en el tablero de aprobaciones, con el link de Drive.</div>
-          <span class="tag espera">De ustedes</span>
-        </div>
-        <div class="item">
-          <div class="t">Línea de crédito de Meta</div>
-          <div class="m">Levantar el límite lo máximo posible para escalar, o abrir una nueva propia de Casafight.</div>
-          <span class="tag espera">De ustedes</span>
-        </div>
-        <div class="item">
-          <div class="t">Apelación de la cuenta de TikTok</div>
-          <div class="m">Rechazada tras arrancar campañas, sin razones claras. Esperando respuesta.</div>
-          <span class="tag curso">Nuestro</span>
-        </div>
-        <div class="item">
-          <div class="t">Optimización de Google Ads</div>
-          <div class="m">Las campañas ya corren; el foco ahora es mejorar su eficiencia.</div>
-          <span class="tag curso">Nuestro</span>
-        </div>
-        <div class="item">
-          <div class="t">Más tráfico a los Combos</div>
-          <div class="m">Estamos llevando gente a las páginas de combos en lugar de a productos sueltos. Suben el ticket promedio y son la mejor entrada para alguien que llega por un anuncio y todavía no sabe cuál juego quiere.</div>
-          <span class="tag curso">Nuestro</span>
-        </div>
-      </div>
-
-      <div class="col">
-        <h3>Próximo</h3>
-        <div class="item">
-          <div class="t">Campaña siempre activa</div>
-          <div class="m">Catálogo general corriendo de fondo entre fechas comerciales.</div>
-          <span class="tag prox">A definir</span>
-        </div>
-        <div class="item">
-          <div class="t">Plan de fechas comerciales</div>
-          <div class="m">Día de la Madre es la próxima: creativos y presupuesto definidos antes, no encima.</div>
-          <span class="tag prox">A definir</span>
-        </div>
-      </div>
-    </div>
+    <ol class="pasos">
+      <li><b>Subir de a poco el presupuesto de "Videos variados - Octubre".</b> Es la única campaña con ROAS arriba de 1 y todavía está en sus primeros días.</li>
+      <li><b>Cambiar los anuncios de "Combos - 15% off"</b> y apagarla si en una semana no vende.</li>
+      <li><b>Crear la campaña de remarketing para carritos abandonados.</b> Hay 289 carritos y 69 pagos iniciados en el período esperando ese empujón.</li>
+      <li><b>Lanzar la primera prueba en TikTok</b> ahora que la cuenta está verificada, con presupuesto chico y el contenido ganador de Meta.</li>
+    </ol>
   </section>
 
   <!-- ============ CALENDARIO ============ -->
@@ -477,7 +381,7 @@
 
 <script>
 (function () {
-  var data = [{"s": "1–7 ago", "t": "$ 6.792.229", "vd": "$ 970.318", "inv": "$ 150.067", "invd": "$ 21.438", "r": "2,2%"}, {"s": "8–14 ago", "t": "$ 10.752.589", "vd": "$ 1.536.084", "inv": "$ 292.417", "invd": "$ 41.774", "r": "2,7%"}, {"s": "15–21 ago", "t": "$ 4.616.186", "vd": "$ 659.455", "inv": "$ 152.412", "invd": "$ 21.773", "r": "3,3%"}, {"s": "22–28 ago", "t": "$ 5.245.041", "vd": "$ 749.292", "inv": "$ 405.103", "invd": "$ 57.872", "r": "7,7%"}, {"s": "29 ago–3 sep", "t": "$ 3.798.182", "vd": "$ 633.030", "inv": "$ 0", "invd": "$ 0", "r": "0%"}, {"s": "4–10 sep", "t": "$ 4.042.087", "vd": "$ 577.441", "inv": "$ 322.840", "invd": "$ 46.120", "r": "8,0%"}, {"s": "11–17 sep", "t": "$ 4.307.803", "vd": "$ 615.400", "inv": "$ 147.579", "invd": "$ 21.083", "r": "3,4%"}, {"s": "18–24 sep", "t": "$ 3.661.327", "vd": "$ 523.047", "inv": "$ 242.021", "invd": "$ 34.574", "r": "6,6%"}, {"s": "25 sep–1 oct", "t": "$ 3.738.195", "vd": "$ 534.028", "inv": "$ 107.915", "invd": "$ 15.416", "r": "2,9%"}, {"s": "2–7 oct*", "t": "$ 2.477.585", "vd": "$ 412.931", "inv": "$ 145.529", "invd": "$ 24.255", "r": "5,9%"}];
+  var data = [{"s": "1–14 ago", "t": "$ 17.544.818", "vd": "$ 1.253.201", "inv": "$ 442.484", "invd": "$ 31.606", "r": "2,5%"}, {"s": "15–28 ago", "t": "$ 9.861.227", "vd": "$ 704.373", "inv": "$ 557.515", "invd": "$ 39.822", "r": "5,7%"}, {"s": "29 ago–10 sep", "t": "$ 7.840.269", "vd": "$ 603.098", "inv": "$ 322.840", "invd": "$ 24.834", "r": "4,1%"}, {"s": "11–24 sep", "t": "$ 7.969.130", "vd": "$ 569.224", "inv": "$ 389.600", "invd": "$ 27.829", "r": "4,9%"}, {"s": "25 sep–7 oct*", "t": "$ 6.215.780", "vd": "$ 478.137", "inv": "$ 253.444", "invd": "$ 19.496", "r": "4,1%"}];
   var tip = document.getElementById('vi-tip');
   var wrap = document.querySelector('.vi-chart-wrap');
   if (!tip || !wrap) return;
