@@ -67,6 +67,13 @@ export function middleware(req: NextRequest) {
   const section = match[2];
   const date = match[3];
 
+  // Páginas públicas sin clave (propuestas compartibles por link, con noindex).
+  const PUBLIC_PAGES: Record<string, string> = {
+    'closefly': '/clients/closefly-dashboard.html',
+    'closefly-dashboard': '/clients/closefly-dashboard.html',
+  };
+  if (!section && PUBLIC_PAGES[client]) return NextResponse.rewrite(new URL(PUBLIC_PAGES[client], req.url));
+
   // Archivos internos (-hub, -approvals, -ideas, -report-<fecha>) nunca se sirven por URL directa; -login sí.
   if (client.endsWith('-login')) return NextResponse.next();
   if (
