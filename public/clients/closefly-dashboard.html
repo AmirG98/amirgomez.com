@@ -29,7 +29,24 @@ h2{font-family:var(--serif);font-weight:700;font-size:clamp(20px,2.9vw,25px);let
 h2 em{font-family:var(--serif-txt);font-style:italic;color:var(--wine)}
 p{margin:0 0 12px}
 b{font-weight:600}
-.page{background:var(--card);border:1px solid var(--line);border-radius:18px;margin:26px 0 34px;padding:48px 54px 38px;box-shadow:0 1px 3px rgba(35,32,28,.05)}
+.page{background:var(--card);border:1px solid var(--line);border-radius:18px;margin:18px 0 34px;padding:44px 54px 38px;box-shadow:0 1px 3px rgba(35,32,28,.05)}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--wine-dark) 0%,var(--wine) 85%);border-radius:18px;margin:26px 0 0;padding:50px 54px 40px;color:var(--cream)}
+.hero .strokes{position:absolute;right:-30px;top:-70px;width:400px;height:470px;opacity:.14;pointer-events:none}
+.hero .topline{position:relative;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:36px}
+.hero .hbrand{font-weight:700;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--champagne)}
+.hero .chips{display:flex;gap:8px;flex-wrap:wrap}
+.hero .chip{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;border:1px solid rgba(227,205,174,.45);color:var(--champagne);border-radius:999px;padding:4px 11px}
+.hero h1{position:relative;color:#fff;margin:0 0 12px}
+.hero h1 em{font-style:normal;color:var(--champagne)}
+.hero .para{position:relative;font-size:13.5px;color:rgba(247,243,237,.72);margin:0 0 28px}
+.hero .para b{color:var(--cream)}
+.hero .lines{position:relative;font-family:var(--serif);font-weight:600;font-size:clamp(16px,2.4vw,19px);line-height:1.52;letter-spacing:-.01em}
+.hero .lines span{display:block}
+.hero .lines .hit{color:var(--champagne)}
+.hero .stats{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;border-top:1px solid rgba(227,205,174,.28);margin-top:30px;padding-top:22px}
+.hero .stat .v{font-family:var(--serif);font-weight:800;font-size:clamp(20px,3vw,27px);color:var(--champagne);letter-spacing:-.01em}
+.hero .stat .k{font-size:11.5px;color:rgba(247,243,237,.68);margin-top:4px;line-height:1.4}
+@media (max-width:640px){.hero{padding:34px 22px 28px}.hero .stats{grid-template-columns:1fr;gap:14px}}
 .rephead{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;border-bottom:2px solid var(--wine);padding-bottom:20px;margin-bottom:26px;flex-wrap:wrap}
 .brandline{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mono-dim)}
 .brandline b{color:var(--wine);font-weight:500}
@@ -123,23 +140,24 @@ html{scroll-behavior:smooth}
 </div>
 <div class="wrap">
 
-<div class="page">
-  <div class="rephead">
-    <div>
-      <div class="brandline"><b>A+GROWTH</b> × CLOSEFLY</div>
-      <h1>El motor de meetings<br>de Closefly<em>.</em></h1>
-      <p style="color:var(--muted);margin:0">Preparada para <b>Gerardo Briones</b> · Closefly.ai</p>
-    </div>
-    <div class="meta">
-      <div class="lbl">Fecha</div><div class="val">7 de octubre, 2026</div>
-      <div class="lbl">Preparó</div><div class="val">Amir Gomez · A+Growth</div>
-      <div class="lbl">Validez</div><div class="val" style="margin-bottom:0">14 días</div>
-    </div>
+<div class="hero">
+  <svg class="strokes" viewBox="0 0 300 330" aria-hidden="true"><g fill="#E3CDAE"><path d="M60 330 L140 0 h34 L94 330Z"/><path d="M135 330 L215 0 h34 L169 330Z" opacity=".55"/><path d="M210 330 L290 0 h34 L244 330Z" opacity=".28"/></g></svg>
+  <div class="topline">
+    <span class="hbrand">A+GROWTH × CLOSEFLY</span>
+    <span class="chips"><span class="chip">7 oct 2026</span><span class="chip">Validez 14 días</span><span class="chip">Propuesta privada</span></span>
   </div>
+  <h1>El motor de meetings<br>de Closefly<em>.</em></h1>
+  <p class="para">Preparada para <b>Gerardo Briones</b> · Closefly.ai · por Amir Gomez, A+Growth</p>
+  <p class="lines"><span>Cuando estás frente a un dueño, cerrás.</span><span>El problema es que hoy no estás frente a suficientes.</span><span class="hit">Esto arregla eso: un motor de llamadas calificadas, andando en dos semanas.</span></p>
+  <div class="stats">
+    <div class="stat"><div class="v">$200–250</div><div class="k">costo por meeting agendada, el objetivo de la primera ronda</div></div>
+    <div class="stat"><div class="v">14 días</div><div class="k">del kickoff al funnel en el aire</div></div>
+    <div class="stat"><div class="v">1 cierre</div><div class="k">paga el motor completo del mes</div></div>
+  </div>
+</div>
 
-  <p class="lede"><span class="l2">Cuando estás frente a un dueño, cerrás.</span><span class="l2">El problema es que hoy no estás frente a suficientes.</span><span class="l2 hit">Esto arregla eso: un motor de llamadas calificadas, andando en dos semanas.</span></p>
-
-  <div class="secnum anchor" id="s-contexto">Lo que entendimos</div>
+<div class="page">
+  <div class="secnum anchor" id="s-contexto" style="border-top:none;padding-top:0;margin-top:0">Lo que entendimos</div>
   <div class="box rv">
     <p class="who">Todo lo que hace falta para vender ya existe adentro de Closefly. Lo único que falta es el flujo constante de llamadas.</p>
     <p>El Full Chair System ya está definido y la oferta escrita: $1,500 de setup, $4,500 por mes. El First Findings abre puertas, y las diez visitas en persona probaron el pitch. Lo que no escala es caminar clínicas. Falta una sola cosa: <b>conversaciones constantes con dueños que califican</b> (1 a 2 ubicaciones, $1–3M al año, ya invirtiendo en ads). Y lo acordamos ayer: el mercado deja de ser solo Miami. <b>Nationwide</b>, con Los Ángeles y Nueva York al frente.</p>
