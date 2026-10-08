@@ -462,10 +462,18 @@
     return String(n || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
   }
   function clientesConFicha() { return Object.keys(state.clientes || {}).sort(); }
+  var tarjetaPendiente = null;
   function desdeHash() {
-    var h = decodeURIComponent(location.hash.replace(/^#/, ''));
-    var m = clientesConFicha().filter(function (n) { return slugify(n) === h; })[0];
+    var h = decodeURIComponent(location.hash.replace(/^#/, '')).split('/');
+    var m = clientesConFicha().filter(function (n) { return slugify(n) === h[0]; })[0];
     clienteSel = m || 'General';
+    tarjetaPendiente = h[1] || (m ? null : (h[0] || null));
+  }
+  function abrirPendiente() {
+    if (!tarjetaPendiente) return;
+    var c = state.cards.filter(function (x) { return x.id === tarjetaPendiente; })[0];
+    tarjetaPendiente = null;
+    if (c) verDetalle(c);
   }
   function asegurarOpcion(n) {
     var sel = document.getElementById('f-cli');
@@ -571,7 +579,7 @@
   });
   document.getElementById('x-cancel').addEventListener('click', function () { fmodal.classList.remove('on'); });
   fmodal.addEventListener('click', function (e) { if (e.target === fmodal) fmodal.classList.remove('on'); });
-  window.addEventListener('hashchange', function () { desdeHash(); render(); });
+  window.addEventListener('hashchange', function () { desdeHash(); render(); abrirPendiente(); });
 
   function chips(c) {
     var out = [];
@@ -798,6 +806,7 @@
       state.clientes = state.clientes || {};
       desdeHash();
       render();
+      abrirPendiente();
       if (!d.state) guardar();
     })
     .catch(function (err) { if (err.message !== 'auth') local(); });
