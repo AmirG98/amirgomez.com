@@ -204,6 +204,7 @@
       <button data-f="paid">Paid acquisition</button>
       <button data-f="funnels">Funnels &amp; VSL</button>
       <button data-f="organic">SEO &amp; GEO</button>
+      <button data-f="ai">AI &amp; automation</button>
     </div>
     <div class="cases" id="cases-grid"></div>
 
@@ -254,6 +255,8 @@
   ret.addEventListener('input', calc); mo.addEventListener('input', calc); calc();
 
   var CASES = [
+    { sec:'organic ai', title:'EcoNews', tags:['AI agents','AI automations','SEO & GEO'], vert:'Top news outlet · LatAm',
+      metric:'<span>2x Google rankings</span> with <span>5x more content</span>, written automatically by AI agents on trending topics in real time', img:'/case-studies/econews.jpg' },
     { sec:'paid', title:'Trailer Valet', tags:['Paid Social','PPC','Email','Affiliates'], vert:'Physical product · USA',
       metric:'Monthly revenue from <span>$20K in 2022</span> to <span>$100K+ today</span>, four years running their digital operation', img:'/case-studies/trailer-valet.jpg' },
     { sec:'funnels', title:'Webinar + VSL', tags:['Funnels'], vert:'Lending B2B/B2C · USA',
@@ -314,7 +317,7 @@
       btns.forEach(function (x) { x.classList.toggle('on', x === b); });
       var f = b.getAttribute('data-f');
       grid.querySelectorAll('.case').forEach(function (el) {
-        el.classList.toggle('hide', f !== 'all' && el.getAttribute('data-sec') !== f);
+        el.classList.toggle('hide', f !== 'all' && el.getAttribute('data-sec').split(' ').indexOf(f) === -1);
       });
     });
   });
