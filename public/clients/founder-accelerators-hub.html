@@ -116,6 +116,35 @@
   .kb-del { background: none; border: 0; color: #ff8a7a; font-size: 12.5px; cursor: pointer; font-family: inherit; }
   .kb-msg { font-size: 12.5px; color: #ff8a7a; }
   @media (max-width: 700px) { .kb-board { grid-template-columns: repeat(4, 82vw); } .kb-row { grid-template-columns: 1fr; } }
+
+  /* ---------- Gabi, second brain ---------- */
+  .gabi { width: min(1280px, calc(100vw - 32px)); margin: 0 0 56px calc((100% - min(1280px, calc(100vw - 32px))) / 2); background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .gabi-in { display: grid; grid-template-columns: minmax(260px, 340px) 1fr; }
+  .gabi-side { padding: 26px 26px; border-right: 1px solid var(--line); background: linear-gradient(180deg, rgba(241,181,39,0.07), rgba(255,113,57,0.03) 60%, transparent); }
+  .gabi-av { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, var(--amber), var(--orange)); display: flex; align-items: center; justify-content: center; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 19px; color: #061018; }
+  .gabi-side h2 { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 24px; color: #fff; margin-top: 14px; }
+  .gabi-side .rol { font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--amber); margin-top: 2px; }
+  .gabi-side p { font-size: 13.5px; color: var(--ink-2); margin-top: 12px; }
+  .gabi-side .sabe { margin-top: 16px; font-size: 12.5px; color: var(--ink-3); }
+  .gabi-side .sabe li { margin: 4px 0 0 16px; }
+  .gabi-chat { display: flex; flex-direction: column; min-height: 420px; max-height: 620px; }
+  .gabi-msgs { flex: 1; overflow-y: auto; padding: 22px 24px; display: flex; flex-direction: column; gap: 12px; }
+  .gm { max-width: 82%; font-size: 14px; line-height: 1.55; padding: 11px 14px; border-radius: 12px; white-space: pre-wrap; }
+  .gm.yo { align-self: flex-end; background: rgba(255,113,57,0.14); color: #fff; border-bottom-right-radius: 4px; }
+  .gm.gb { align-self: flex-start; background: var(--bg); border: 1px solid var(--line); color: var(--ink); border-bottom-left-radius: 4px; }
+  .gm.gb b { color: #fff; }
+  .gm .sin { display: block; margin-top: 9px; font-size: 12px; color: var(--amber); }
+  .gm .sin button { font-family: inherit; font-size: 12px; color: #061018; background: var(--amber); border: 0; border-radius: 6px; padding: 4px 9px; margin-left: 6px; cursor: pointer; }
+  .gabi-sug { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 24px 12px; }
+  .gabi-sug button { font-family: inherit; font-size: 12px; color: var(--ink-2); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 6px 11px; cursor: pointer; text-align: left; }
+  .gabi-sug button:hover { border-color: var(--amber); color: #fff; }
+  .gabi-form { display: flex; gap: 8px; padding: 14px 18px; border-top: 1px solid var(--line); }
+  .gabi-form textarea { flex: 1; font-family: inherit; font-size: 14px; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; resize: none; height: 46px; outline: none; }
+  .gabi-form textarea:focus { border-color: var(--orange); }
+  .gabi-form button { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; color: #061018; background: linear-gradient(90deg, var(--amber), var(--orange)); border: 0; border-radius: 10px; padding: 0 18px; cursor: pointer; }
+  .gabi-form button:disabled { opacity: .5; cursor: default; }
+  .gabi-pensando { align-self: flex-start; font-size: 12.5px; color: var(--ink-3); padding: 4px 2px; }
+  @media (max-width: 820px) { .gabi-in { grid-template-columns: 1fr; } .gabi-side { border-right: 0; border-bottom: 1px solid var(--line); } .gm { max-width: 92%; } }
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-icon.png">
@@ -143,6 +172,39 @@
     <div class="kb-filtros" id="kb-filtros"></div>
     <div class="kb-board" id="kb-board"><div class="kb-cargando">Cargando el tablero…</div></div>
     <div class="kb-foot"><a href="#" id="kb-equipo">Equipo de A+ Growth: entrar en modo edición</a></div>
+  </section>
+    <section class="gabi rv" id="gabi">
+    <div class="gabi-in">
+      <div class="gabi-side">
+        <div class="gabi-av">G</div>
+        <h2>Gabi</h2>
+        <div class="rol">El second brain de A+ Growth</div>
+        <p>Antes de preguntarle al equipo: si está dentro del contexto, preguntale a Gabi y recibí una respuesta certera.</p>
+        <div class="sabe">Gabi sabe:
+          <ul>
+            <li>Qué se decidió en cada reunión</li>
+            <li>Quién lleva cada tarea y para cuándo</li>
+            <li>Cómo está armado el funnel y dónde está cada cosa</li>
+          </ul>
+        </div>
+        <p class="sabe">Si algo no está documentado, te lo dice y lo llevás al equipo.</p>
+      </div>
+      <div class="gabi-chat">
+        <div class="gabi-msgs" id="gabi-msgs">
+          <div class="gm gb">Hola, soy Gabi. Preguntame lo que necesites sobre el trabajo con A+ Growth: qué se decidió, quién está con qué, para cuándo o dónde encontrar algo.</div>
+        </div>
+        <div class="gabi-sug" id="gabi-sug">
+          <button>¿Qué tengo pendiente yo?</button>
+          <button>¿Qué se decidió en la última reunión?</button>
+          <button>¿Cuándo es el próximo check-in?</button>
+          <button>¿En qué está la landing del Blueprint?</button>
+        </div>
+        <form class="gabi-form" id="gabi-form">
+          <textarea id="gabi-q" placeholder="Escribile a Gabi…" maxlength="1500"></textarea>
+          <button type="submit" id="gabi-send">Preguntar</button>
+        </form>
+      </div>
+    </div>
   </section>
   <div class="kb-modal" id="kb-modal"><div class="kb-sheet" id="kb-sheet"></div></div>
 
@@ -417,6 +479,46 @@
 
   cargar();
   setInterval(function () { if (!$('kb-modal').classList.contains('on') && !document.hidden) cargar(); }, 30000);
+})();
+</script>
+
+<script>
+(function () {
+  'use strict';
+  var API = '/api/asistente/founder-accelerators';
+  var hist = [];
+  var msgs = document.getElementById('gabi-msgs'), q = document.getElementById('gabi-q'), btn = document.getElementById('gabi-send');
+  function esc(t) { return String(t).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function fmt(t) { return esc(t).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>'); }
+  function agregar(cls, html) { var d = document.createElement('div'); d.className = 'gm ' + cls; d.innerHTML = html; msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight; return d; }
+  function quien() { try { return localStorage.getItem('kb-autor:founder-accelerators') || ''; } catch (e) { return ''; } }
+  function preguntar(texto) {
+    texto = (texto || '').trim(); if (texto.length < 3 || btn.disabled) return;
+    agregar('yo', esc(texto)); q.value = ''; btn.disabled = true;
+    var p = document.createElement('div'); p.className = 'gabi-pensando'; p.textContent = 'Gabi está buscando en el contexto…'; msgs.appendChild(p); msgs.scrollTop = msgs.scrollHeight;
+    fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ question: texto, history: hist, quien: quien() }) })
+      .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw j; return j; }); })
+      .then(function (j) {
+        p.remove();
+        var html = fmt(j.answer);
+        if (!j.en_contexto) html += '<span class="sin">No está en el contexto todavía.<button type="button" data-copiar="' + esc(texto) + '">Copiar pregunta para Slack</button></span>';
+        agregar('gb', html);
+        hist.push({ role: 'user', content: texto }, { role: 'assistant', content: j.answer }); hist = hist.slice(-6);
+      })
+      .catch(function (e) {
+        p.remove();
+        agregar('gb', e && e.error === 'unauthorized' ? 'Tu sesión venció. Recargá la página e ingresá la clave.' : 'Ahora no pude responder. Probá de nuevo en un momento, o escribile al equipo por Slack.');
+      })
+      .then(function () { btn.disabled = false; q.focus(); });
+  }
+  document.getElementById('gabi-form').addEventListener('submit', function (e) { e.preventDefault(); preguntar(q.value); });
+  q.addEventListener('keydown', function (e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); preguntar(q.value); } });
+  document.getElementById('gabi-sug').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) preguntar(b.textContent); });
+  msgs.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-copiar]'); if (!b) return;
+    var t = 'Pregunta para el equipo: ' + b.getAttribute('data-copiar');
+    try { navigator.clipboard.writeText(t); b.textContent = 'Copiada'; } catch (x) {}
+  });
 })();
 </script>
 <script src="/clients/portal-edit.js" defer></script>
