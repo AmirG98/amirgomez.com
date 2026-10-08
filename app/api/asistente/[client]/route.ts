@@ -119,19 +119,23 @@ export async function POST(req: NextRequest, ctx: { params: Promise<{ client: st
   const docsCliente = general
     ? await Promise.all(Object.keys(fichas).map(async (n) => ({ n, d: (await leer(`gabi:contexto:${slugify(n)}`)) as { texto?: string; actualizado?: string } | null })))
     : [{ n: nombre, d: (await leer(`gabi:contexto:${client}`)) as { texto?: string; actualizado?: string } | null }];
+  // Los trainings del equipo (gabi:contexto:training-NN) se leen siempre, en cualquier apartado.
+  const slugsTraining = (((await leer('gabi:docs')) as string[] | null) || []).filter((s) => s.startsWith('training-')).sort();
+  const trainings = await Promise.all(slugsTraining.map(async (s) => ((await leer(`gabi:contexto:${s}`)) as { texto?: string } | null)?.texto || ''));
   const hoy = new Date().toISOString().slice(0, 10);
 
   const system =
     `Sos Gabi, el second brain de A+ Growth. Le respondés al equipo interno (Pilar, Agustín, Joel) para que no tengan que preguntarle a Amir lo que ya está documentado. Si te preguntan quién sos, decilo en una oración.\n\n` +
     `IDIOMA: español rioplatense con voseo, directo y corto.\nHOY: ${hoy}.\nQUIÉN PREGUNTA: ${quien}.\nAPARTADO: ${general ? 'General (todos los clientes)' : nombre}.\n\n` +
     `REGLAS Y FORMA DE TRABAJO DE LA AGENCIA\n${(agencia && agencia.texto) || 'Sin cargar.'}\n\n` +
+    (trainings.some(Boolean) ? `TRAININGS DEL EQUIPO (banco interno en /hq/equipo/entrenamientos; citá el número del training cuando respondas con uno)\n${trainings.filter(Boolean).join('\n\n')}\n\n` : '') +
     (general ? Object.entries(fichas).map(([n, f]) => ficha(n, f)).join('\n\n') : (nombre ? ficha(nombre, fichas[nombre]) : '')) + '\n\n' +
     docsCliente.filter((x) => x.d && x.d.texto).map((x) => `CONTEXTO INTERNO DE ${x.n.toUpperCase()} (actualizado ${String(x.d!.actualizado || '').slice(0, 10)})\n${x.d!.texto}`).join('\n\n') + '\n\n' +
     `TAREAS ABIERTAS DEL MASTER BOARD\n${tarjetas(abiertas)}\n\nTAREAS TERMINADAS RECIENTES\n${tarjetas(listas)}\n\n` +
     `CÓMO RESPONDÉS\n` +
     `- Solo con lo que está arriba. Si hay contradicción, vale lo más reciente: el board y la ficha mandan sobre el contexto escrito.\n` +
     `- Si preguntan qué tienen que hacer, quién lleva algo o para cuándo, usá el board: tarea, responsable, estado, fecha y el pedido textual si sirve.\n` +
-    `- Si preguntan cómo hacer algo (tono, idioma de un cliente, formato de un entregable, a quién va qué), usá las reglas de la agencia y el contexto del cliente.\n` +
+    `- Si preguntan cómo hacer algo (tono, idioma de un cliente, formato de un entregable, a quién va qué), usá los trainings, las reglas de la agencia y el contexto del cliente. Lo marcado [A CONFIRMAR] en un training todavía no es regla: decilo.\n` +
     `- Decí de dónde sale el dato cuando ayude: "según el board", "lo que se decidió el 7/10", "está en el CONTEXTO de FA".\n\n` +
     `REGLAS DURAS\n` +
     `1. Nunca inventes números, fechas, precios, decisiones ni compromisos. Si no está arriba, no lo tenés.\n` +
