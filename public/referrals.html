@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A+ Growth — Referrals</title>
-<meta name="description" content="Introduce a business to A+ Growth and earn up to $2,000 per client. Every case study we've compiled, in one place.">
+<meta name="description" content="Introduce a business to A+ Growth and earn up to 15% of everything they pay us. Every case study we've compiled, in one place.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +46,7 @@
   .sec-head h2 { font-size:clamp(1.6rem,3.2vw,2.4rem); font-weight:700; letter-spacing:-.02em; line-height:1.1; }
 
   /* pago */
-  .pay { display:grid; grid-template-columns:1.3fr 1fr; gap:16px; }
+  .pay { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
   .pay-card { background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:30px 30px 26px; }
   .pay-card.main { background:linear-gradient(150deg,#1d120c 0%,var(--surface) 60%); border-color:rgba(255,106,43,.35); }
   .pay-card .when { margin-bottom:14px; }
@@ -60,6 +60,18 @@
   .pay-card p.d { color:#b8bfbc; font-size:.98rem; margin-top:16px; }
   .fine { font-size:.85rem; color:var(--muted); margin-top:18px; }
 
+  .hero-ex { margin-top:22px; display:inline-flex; flex-direction:column; gap:6px; border:1px solid rgba(255,106,43,.35); background:rgba(255,106,43,.06); border-radius:12px; padding:12px 18px; color:#d6dbd8; }
+  .hero-ex b { color:var(--brand); font-size:1.15em; }
+  .pay-card .big.sm { font-size:clamp(2.2rem,4.4vw,3rem); }
+  .calc { margin-top:16px; background:var(--surface-2); border:1px solid var(--line); border-radius:18px; padding:26px 30px; display:grid; grid-template-columns:1.2fr 1fr; gap:30px; align-items:center; }
+  .calc label { display:block; margin-bottom:18px; }
+  .calc label .row { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px; }
+  .calc label b { font-size:1.1rem; }
+  .calc input[type=range] { width:100%; accent-color:var(--brand); }
+  .calc .out { border-left:1px solid var(--line); padding-left:30px; }
+  .calc .out .val { font-size:clamp(2.4rem,5vw,3.4rem); font-weight:800; letter-spacing:-.03em; color:var(--brand); line-height:1; margin:8px 0 10px; }
+  .calc .out p { color:#b8bfbc; font-size:.92rem; }
+  @media (max-width:900px) { .calc { grid-template-columns:1fr; } .calc .out { border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:20px; } }
   /* pasos */
   .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
   .step { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:24px; }
@@ -124,8 +136,9 @@
 
   <header class="hero">
     <span class="mono">Referral program</span>
-    <h1>One intro can earn you <em>up to $2,000.</em></h1>
-    <p>Know a business owner who needs more customers? Introduce us. If they become a client, you get paid. That's the whole job.</p>
+    <h1>One intro. <em>Up to 15%</em> of everything they pay us.</h1>
+    <p>Know a business owner who needs more customers? Introduce us. If they become a client, you get paid, and on bigger accounts you keep earning for as long as they stay.</p>
+    <div class="hero-ex"><span class="mono">Example</span><span>A client on $6,000/mo for a year pays you <b>$10,800</b>.</span></div>
     <div class="actions">
       <a class="cta" id="intro-top" href="#" data-event="referrals_email_click">Make an intro <span aria-hidden="true">→</span></a>
       <a class="ghost" href="#cases">See every case ↓</a>
@@ -135,18 +148,37 @@
   <section id="pay">
     <div class="sec-head"><span class="n">01</span><h2>How you get paid</h2></div>
     <div class="pay">
-      <div class="pay-card main">
-        <div class="mono when">Clients on a $1,800–$3,500/mo retainer</div>
-        <div class="big">$2,000<small>per client</small></div>
-        <div class="split">
-          <div><b>$1,500</b><span>when they pay their first month</span></div>
-          <div><b>+ $500</b><span>when they reach month 3</span></div>
-        </div>
+      <div class="pay-card">
+        <div class="mono when">Smaller projects · under $1,800/mo</div>
+        <div class="big sm">10%<small>flat</small></div>
+        <p class="d">Of what the client pays us, for as long as their contract runs.</p>
       </div>
       <div class="pay-card">
-        <div class="mono when">Smaller projects</div>
+        <div class="mono when">Retainers · $1,800–$3,500/mo</div>
+        <div class="big sm">$2,000<small>per client</small></div>
+        <div class="split">
+          <div><b>$1,500</b><span>when they pay month 1</span></div>
+          <div><b>+ $500</b><span>at month 3</span></div>
+        </div>
+      </div>
+      <div class="pay-card main">
+        <div class="mono when">Bigger projects · over $3,500/mo</div>
         <div class="big">15%<small>flat</small></div>
-        <p class="d">Of what the client pays us, for as long as their contract runs.</p>
+        <p class="d">Of what the client pays us, for as long as their contract runs. The bigger the account, the more you earn.</p>
+      </div>
+    </div>
+
+    <div class="calc" aria-label="Referral earnings calculator">
+      <div>
+        <label><span class="row"><span class="mono">Their monthly retainer</span><b id="c-ret-v">$6,000</b></span>
+          <input type="range" id="c-ret" min="500" max="12000" step="100" value="6000"></label>
+        <label style="margin-bottom:0;"><span class="row"><span class="mono">Months they stay</span><b id="c-mo-v">12</b></span>
+          <input type="range" id="c-mo" min="1" max="24" step="1" value="12"></label>
+      </div>
+      <div class="out">
+        <span class="mono" id="c-tier">Bigger project · 15%</span>
+        <div class="val" id="c-val">$10,800</div>
+        <p id="c-how">15% of $6,000 a month, for 12 months.</p>
       </div>
     </div>
     <p class="fine">Paid on money actually collected from the client, never on signature. No quotas, no exclusivity, no sales experience needed.</p>
@@ -171,7 +203,7 @@
       <span>Email &amp; lifecycle</span>
       <span>UGC &amp; creative production</span>
     </div>
-    <p class="svc-note">Retainers go from <b>$1,800/mo</b> for the basics to <b>$3,500/mo</b> for the full funnel. The whole operation or a single piece of it, whatever the business actually needs.</p>
+    <p class="svc-note">Retainers usually go from <b>$1,800/mo</b> for the basics to <b>$3,500/mo</b> for the full funnel, and bigger operations go beyond that. The whole operation or a single piece of it, whatever the business actually needs.</p>
   </section>
 
   <section id="cases">
@@ -216,6 +248,21 @@
       window.dataLayer.push({ event: 'referrals_email_click', position: id });
     });
   });
+
+  var ret = document.getElementById('c-ret'), mo = document.getElementById('c-mo');
+  function money(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+  function calc() {
+    var r = +ret.value, m = +mo.value, total, tier, how;
+    if (r < 1800) { total = r * m * 0.10; tier = 'Smaller project · 10%'; how = '10% of ' + money(r) + ' a month, for ' + m + (m === 1 ? ' month.' : ' months.'); }
+    else if (r <= 3500) { total = 1500 + (m >= 3 ? 500 : 0); tier = 'Retainer · fixed fee'; how = m >= 3 ? '$1,500 after month 1, plus $500 at month 3.' : '$1,500 after month 1. The extra $500 comes at month 3.'; }
+    else { total = r * m * 0.15; tier = 'Bigger project · 15%'; how = '15% of ' + money(r) + ' a month, for ' + m + (m === 1 ? ' month.' : ' months.'); }
+    document.getElementById('c-ret-v').textContent = money(r);
+    document.getElementById('c-mo-v').textContent = m;
+    document.getElementById('c-tier').textContent = tier;
+    document.getElementById('c-val').textContent = money(total);
+    document.getElementById('c-how').textContent = how;
+  }
+  ret.addEventListener('input', calc); mo.addEventListener('input', calc); calc();
 
   var CASES = [
     { sec:'paid', title:'Trailer Valet', tags:['Paid Social','PPC','Email','Affiliates'], vert:'Physical product · USA',
