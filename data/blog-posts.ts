@@ -99200,6 +99200,306 @@ Treat 20 as the real design ceiling for a TikTok Carousel ad even though the pla
 
 Source: TikTok Ads Manager Help Center, "Specifications for Carousel Ads" (ads.tiktok.com/help/article/specifications-for-carousel-ads).`
   },
+  {
+    id: "1031",
+    title: "How Often Can the Same LinkedIn Member Receive a Message Ad?",
+    slug: "linkedin-message-ads-member-frequency-cap-2026",
+    excerpt: "LinkedIn caps Message Ads at one delivery per member every 45 days, per LinkedIn's own Message Ads documentation, to prevent inbox fatigue.",
+    featuredImage: "https://images.unsplash.com/photo-1611944212129-29977ae1398c?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-08",
+    category: "B2B Marketing",
+    tags: ["LinkedIn Ads", "Message Ads", "B2B Marketing", "Sponsored InMail", "Frequency Capping"],
+    featured: false,
+    readingTime: 4,
+    seo: {
+      metaTitle: "LinkedIn Message Ads Frequency Cap 2026",
+      metaDescription: "LinkedIn limits a Message Ad to one delivery per member every 45 days, a hard frequency cap LinkedIn built in to prevent inbox fatigue.",
+      keywords: ["linkedin message ads frequency cap", "sponsored inmail frequency limit", "linkedin message ad 45 days", "linkedin conversation ad limit"]
+    },
+    content: `LinkedIn limits a Message Ad (the format formerly called Sponsored InMail) to one delivery per member every 45 days, according to LinkedIn's own Message Ads marketing documentation. The stated purpose is to prevent inbox fatigue, so a given member can't be hit with the same message ad campaign repeatedly in a short window.
+
+## What LinkedIn's Own Documentation Says
+
+LinkedIn's Message Ads resource describes the cap as a 100% share-of-voice guarantee for a 45-day period: once a member receives a given message ad, LinkedIn won't deliver that same ad to them again until the 45-day window has passed. That framing matters for planning, since it means the cap isn't a soft recommendation advertisers can bid their way around — it's built into how LinkedIn's delivery system paces the format.
+
+## This Can Tap Out a Small Audience Fast
+
+Because the cap applies per member rather than per impression budget, a narrowly targeted account-based campaign can exhaust its available audience well before the budget runs out. A list of 2,000 target members can only receive one message each in a given 45-day stretch, so once that one send lands, there's no way to reach the same list again with the same ad until the window resets — campaigns aimed at small, high-value account lists need to plan pacing around member count, not just budget.
+
+## The Workaround Advertisers Use
+
+- **Run multiple ad variations in one campaign** — a member can still receive a different message variation within the same campaign during the 45-day window, since the cap tracks a specific ad, not the whole campaign. Advertisers running account-based B2B campaigns commonly set up two or three message variants to extend reach to the same list without waiting out the cap.
+- **Stagger campaigns across target segments** — splitting a larger target list into smaller segments and sequencing sends lets a campaign keep touching the audience without repeating the identical message to any one member inside the 45-day period.
+
+## How This Compares to Standard LinkedIn Ad Formats
+
+Sponsored Content and other feed-based LinkedIn ad formats use conventional frequency capping tools inside Campaign Manager, where advertisers set their own impression caps per member per time period. Message Ads work differently: the 45-day limit on the same ad isn't a setting an advertiser configures, it's a fixed platform rule that applies regardless of budget or bid strategy.
+
+## Why This Design Choice Makes Sense for the Format
+
+Message Ads land directly in a member's LinkedIn inbox rather than appearing passively in a feed, so repeated identical messages would read as spam far faster than a repeated feed ad would. The 45-day reset reflects that a direct-message format needs a stricter built-in limit than a scroll-past placement, protecting both the recipient's inbox and, longer-term, the format's response rates for every advertiser using it.
+
+## Bottom Line
+
+Plan Message Ads campaigns around the fact that no single member will see the same ad twice inside 45 days — build two or three message variations per campaign if the target list is small, and don't expect bid or budget increases to get a repeat send through to someone who already received that exact ad this cycle.
+
+Source: LinkedIn Marketing Solutions, "Message Ads" resource (business.linkedin.com/marketing-solutions/resources/message-ads).`
+  },
+  {
+    id: "1032",
+    title: "Does Meta Still Enforce the 20% Text Rule on Ad Images in 2026?",
+    slug: "meta-20-percent-text-rule-ad-images-2026",
+    excerpt: "No. Meta removed its 20% text-image rejection rule in September 2020 and doesn't limit ad delivery based on image text in 2026 — it's now just a recommendation.",
+    featuredImage: "https://images.unsplash.com/photo-1611262588019-db6cc2032da3?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-08",
+    category: "Facebook Ads",
+    tags: ["Facebook Ads", "Meta Ads", "Ad Creative", "Ad Policy", "Image Ads"],
+    featured: false,
+    readingTime: 4,
+    seo: {
+      metaTitle: "Is Meta's 20% Text Rule Still Active in 2026?",
+      metaDescription: "Meta dropped its 20% text-image enforcement rule in September 2020. In 2026 it's a creative best-practice recommendation, not a delivery restriction.",
+      keywords: ["meta 20 percent text rule 2026", "facebook ads text overlay rule", "is the 20 percent rule still active", "facebook ad image text limit"]
+    },
+    content: `No — Meta removed its hard 20% text-rule restriction on ad images in September 2020, confirmed by Meta to reporters at the time, and it does not limit, reject, or reduce delivery of image ads in 2026 based on how much text is in the picture. Meta's current creative guidance still recommends keeping text under roughly 20% of an image for better performance, but that's advice, not an enforced policy.
+
+## What the Original Rule Was
+
+Before September 2020, Meta's ad review system used an automated text-overlay checker to grade how much of an image was covered by text, on a scale running from "OK" through "low," "medium," and "high." Ads graded high for text density faced reduced delivery or, in the older and stricter version of the rule, outright rejection. Advertisers used Meta's own text overlay tool to check an image before submitting a campaign, since failing the check could throttle reach regardless of bid or budget.
+
+## Why Meta Dropped It
+
+Meta confirmed the change directly to social media consultant Matt Navarra in September 2020, telling him ads would no longer be disapproved or see reduced delivery because of text on the image. No formal Meta Newsroom post announced the policy shift — it surfaced through direct confirmation to press rather than a blog announcement, which is part of why the change is still sometimes misunderstood as a rumor rather than a confirmed policy update years later.
+
+## What Still Applies in 2026
+
+- **The text overlay checking tool is gone** — the standalone tool advertisers once used to score an image before launching a campaign was retired around the same time as the rule itself, since there's no longer a pass/fail threshold to check against.
+- **Meta's ad policies on content still apply** — removing the text-density rule didn't touch Meta's separate rules on what an ad's text can say, including restrictions on prohibited claims, discriminatory language, and other standard ad-content policies that have nothing to do with how much of the image area text covers.
+
+## Why Text-Heavy Images Can Still Underperform
+
+Even with no rule forcing it, Meta's own current creative recommendations still suggest limiting text to about 20% of an image, because text-heavy images tend to perform worse in Meta's ad auction on relevance and engagement signals — not because of a compliance check, but because busy, text-dense creative typically gets less engagement in a fast-scrolling feed. The practical effect looks similar to the old rule, but the mechanism is different: it's an organic performance outcome of the auction, not an enforced ceiling.
+
+## Bottom Line
+
+Treat 20% text coverage as a creative best practice worth testing against, not a hard limit that will get an ad rejected or throttled — Meta hasn't enforced that restriction since 2020, and nothing in its 2026 ad policies has reinstated it.
+
+Source: Social Media Today, "Facebook's Removing Its Restrictions on Text Content in Facebook Ad Images" (socialmediatoday.com), reporting Meta's September 2020 confirmation to Matt Navarra.`
+  },
+  {
+    id: "1033",
+    title: "What's the Maximum Number of Images Allowed in a Google Performance Max Asset Group?",
+    slug: "performance-max-asset-group-maximum-images-2026",
+    excerpt: "A Google Performance Max asset group allows up to 20 images per image type (landscape, square, portrait), plus up to 5 logos and 5 videos, per Google Ads Help.",
+    featuredImage: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-08",
+    category: "Google Ads",
+    tags: ["Google Ads", "Performance Max", "Asset Groups", "Ad Specs", "Image Assets"],
+    featured: false,
+    readingTime: 4,
+    seo: {
+      metaTitle: "Performance Max Asset Group Image Limits 2026",
+      metaDescription: "A Performance Max asset group allows up to 20 images per type (landscape, square, portrait), up to 5 logos, and up to 5 videos, per Google Ads Help.",
+      keywords: ["performance max maximum images", "performance max asset group limits", "pmax image asset requirements", "google ads pmax image specs"]
+    },
+    content: `A Google Performance Max asset group allows up to 20 images for each of three image types — landscape (1.91:1), square (1:1), and portrait (4:5) — according to Google Ads Help Center documentation on image assets for Performance Max campaigns. The same asset group also allows up to 5 logo images and up to 5 videos.
+
+## The Minimums Required to Publish
+
+- **Images** — at least 1 landscape and 1 square image are required, plus at least 2 portrait images, before Google will let the asset group go live.
+- **Videos** — Google lists a minimum of 0, meaning an asset group can technically launch without video, though Google recommends including at least 1 and will auto-generate one from existing images and text if none is provided.
+- **Logos** — at least 1 square logo is required for most asset group setups.
+
+## Why the 20-Image Cap Exists Per Type, Not in Total
+
+Performance Max serves ads across Search, Display, YouTube, Discover, Gmail, and Maps from a single campaign, and each surface needs a different aspect ratio to fill its placements cleanly. Capping each image type at 20 — rather than one shared pool — gives Google's system enough landscape options for Display and YouTube placements and enough portrait options for Discover and in-feed placements, without one aspect ratio crowding out the others.
+
+## Google's Recommended Count Is Lower Than the Maximum
+
+Google's help documentation recommends roughly 3 to 4 images each for landscape and square, well under the 20-image ceiling. The maximum exists to give the system enough raw material to test combinations across every placement type, not because every asset group needs to be filled to the cap — most advertisers get full placement coverage with well under half of the available slots used.
+
+## Logos and Videos Follow the Same Pattern
+
+Logo images are capped at 5 each for the square and landscape logo fields, well below the 20-image ceiling on regular images, since a logo doesn't need the same creative variation testing that photo or lifestyle imagery does. Videos are capped at 5 per asset group, and Google requires any video asset to run longer than 10 seconds to be eligible.
+
+## What Happens If an Image Doesn't Match the Aspect Ratio
+
+An image submitted for the landscape or square field that doesn't match the required ratio is rejected when it's linked to the asset group, not flagged earlier at upload — a detail that matters when building asset groups through the Google Ads API rather than the Ads Manager interface, where the UI usually catches mismatched ratios before they're attached.
+
+## Bottom Line
+
+Plan Performance Max creative around roughly 3-4 well-chosen images per type rather than maxing out at 20, but know the ceiling is there if testing calls for more variation — and don't forget the hard minimums of 1 landscape, 1 square, and 2 portrait images before the asset group can publish at all.
+
+Source: Google Ads Help Center, "About image assets for Performance Max campaigns" (support.google.com/google-ads/answer/14530211).`
+  },
+  {
+    id: "1034",
+    title: "What Are the Character Limits for Google Performance Max Headlines and Descriptions?",
+    slug: "performance-max-text-asset-character-limits-2026",
+    excerpt: "Performance Max text assets allow headlines up to 30 characters (3-15 of them), long headlines up to 90 characters (1-5), and descriptions up to 90 characters (2-5).",
+    featuredImage: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-08",
+    category: "Google Ads",
+    tags: ["Google Ads", "Performance Max", "Ad Copy", "Character Limits", "Asset Groups"],
+    featured: false,
+    readingTime: 4,
+    seo: {
+      metaTitle: "Performance Max Text Asset Character Limits",
+      metaDescription: "Performance Max headlines cap at 30 characters (3-15 needed), long headlines at 90 characters (1-5), and descriptions at 90 characters (2-5), per Google.",
+      keywords: ["performance max character limits", "performance max headline limit", "performance max long headline", "pmax text asset requirements"]
+    },
+    content: `Google Performance Max text assets break into three fields with separate character limits: headlines cap at 30 characters each and require 3 to 15 of them, long headlines cap at 90 characters each and require 1 to 5, and descriptions cap at 90 characters each and require 2 to 5, per Google Ads Help Center documentation on text assets for Performance Max campaigns.
+
+## The Full Set of Text Fields
+
+- **Headlines** — 30 characters maximum, minimum of 3 needed to publish, up to 15 allowed. Google recommends at least one headline of 15 characters or fewer, since some placements have less room to display longer ones.
+- **Long headlines** — 90 characters maximum, minimum of 1, up to 5 allowed. Google suggests writing long headlines at 30 characters or more so they actually read as a fuller message rather than duplicating a short headline.
+- **Descriptions** — 90 characters maximum, minimum of 2, up to 5 allowed.
+- **Business name** — 25 characters maximum, and Google requires it to match the advertiser's actual domain name or legally verified business name rather than a promotional tagline.
+- **Display URL paths** — 15 characters maximum each, with 1 to 2 paths allowed, appended after the domain in the ad's visible URL.
+
+## Why There Are Two Kinds of Headlines
+
+The split between short headlines and long headlines exists because Performance Max serves ads across placements with very different amounts of visible space — a Search results headline has far less room than a Discover feed card. Short headlines fill the tighter Search-style placements, while long headlines give the system a fuller message to use on placements like YouTube and Discover that can show more text at once.
+
+## Double-Width Languages Count Differently
+
+As with Google's other text ad formats, every character in Chinese, Japanese, or Korean counts as two toward each limit instead of one. A 30-character headline effectively becomes a 15-character headline in those languages, which means copy translated directly from English often needs to be rewritten shorter rather than translated character-for-character.
+
+## Recommended Counts Exceed the Minimums
+
+Google's help documentation recommends 11 or more headlines even though only 3 are required, because Performance Max's machine-learning system tests combinations of assets against different placements and audiences, and a thin set of headlines gives it fewer combinations to learn from. The required minimums are a publishing floor, not a performance target.
+
+## How This Differs From Standard Responsive Search Ads
+
+A standard Google Ads responsive search ad allows up to 15 headlines at 30 characters and 4 descriptions at 90 characters, with no separate long-headline field. Performance Max adds the long-headline field on top of that structure specifically because its placements extend beyond Search into Display, YouTube, Discover, Gmail, and Maps, surfaces that can accommodate a longer message than a search results page can.
+
+## Bottom Line
+
+Fill in more than the required minimum of 3 headlines, 1 long headline, and 2 descriptions — Google's own 11-headline recommendation reflects how much the system relies on having multiple options to combine across different Performance Max placements.
+
+Source: Google Ads Help Center, "About text assets for Performance Max campaigns" (support.google.com/google-ads/answer/14528373).`
+  },
+  {
+    id: "1035",
+    title: "What's the Maximum Number of Keywords Allowed in a Google Ads Negative Keyword List?",
+    slug: "google-ads-negative-keyword-list-maximum-size-2026",
+    excerpt: "A Google Ads shared negative keyword list holds up to 5,000 keywords, and an account can create up to 20 such lists, per Google Ads Help Center account limits.",
+    featuredImage: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-08",
+    category: "Google Ads",
+    tags: ["Google Ads", "Negative Keywords", "Account Limits", "PPC", "Campaign Management"],
+    featured: false,
+    readingTime: 4,
+    seo: {
+      metaTitle: "Google Ads Negative Keyword List Size Limit",
+      metaDescription: "A shared Google Ads negative keyword list caps at 5,000 keywords, with up to 20 lists per account and 10,000 negative keywords per campaign.",
+      keywords: ["negative keyword list maximum size", "google ads negative keyword limit", "how many negative keywords google ads", "shared negative keyword list limit"]
+    },
+    content: `A Google Ads shared negative keyword list caps at 5,000 keywords, and an account can create up to 20 of these lists, per Google's official "About negative keyword lists" and "About your Google Ads account limits" help pages. Separately, a single campaign can hold up to 10,000 negative keywords, and account-level negatives are capped at 1,000.
+
+## The Four Different Limits
+
+- **Per shared list** — up to 5,000 negative keywords in any one list.
+- **Lists per account** — up to 20 shared negative keyword lists can exist in a single account at once.
+- **Per campaign** — up to 10,000 negative keywords total, whether added directly or through applied shared lists.
+- **Account-level negatives** — a separate pool of up to 1,000 negative keywords can be excluded across the entire account.
+
+## Performance Max Used to Be the Exception
+
+Performance Max campaigns were capped at just 100 negative keywords per campaign when the format first allowed them, far below the 10,000 ceiling Search campaigns had. Google raised that cap to 10,000 negative keywords per Performance Max campaign in 2025, bringing it in line with Search. Shared negative keyword lists still aren't available inside Performance Max the way they are for Search — PMax negatives get added directly to the campaign rather than applied from a shared list.
+
+## Why Google Separates "List Size" From "Campaign Total"
+
+A shared negative keyword list is meant to be reused across multiple campaigns — a common one is a list of competitor brand names or clearly irrelevant terms applied account-wide. The 5,000-per-list cap keeps any single reusable list manageable, while the separate 10,000-per-campaign cap accounts for the fact that one campaign might apply several shared lists at once, plus its own campaign-specific negatives, and still needs a ceiling on the combined total.
+
+## What Happens When Display or Video Campaigns Are Involved
+
+Google's documentation notes that negative keywords behave differently on Display and Video campaign types, where only part of a long negative list may actually be honored depending on targeting settings. Advertisers running Display alongside Search under the same shared lists should treat the Search-campaign limits as the reliable ceiling and verify Display-specific behavior separately, since Google's own guidance on the exact Display-campaign number has varied across versions of its help documentation.
+
+## Practical Guidance
+
+- **Split large negative lists by purpose** — a dedicated "competitor brands" list and a separate "irrelevant intent" list stay under the 5,000-keyword cap far more easily than one combined master list, and each stays easier to audit on its own.
+- **Audit before you hit the campaign ceiling** — a campaign nearing 10,000 total negatives, especially one built from several applied shared lists, is a signal to review for redundant or outdated entries rather than requesting more room.
+
+## Bottom Line
+
+Treat 5,000 as the working limit for any one shared negative keyword list, 20 as the limit on how many such lists an account can hold, and 10,000 as the hard ceiling on negatives applied to a single campaign — including Performance Max campaigns since the 2025 increase.
+
+Source: Google Ads Help Center, "About negative keyword lists" (support.google.com/google-ads/answer/2453983) and "About your Google Ads account limits" (support.google.com/google-ads/answer/6372658).`
+  },
+  {
+    id: "1036",
+    title: "What's the Maximum Length for a YouTube Bumper Ad?",
+    slug: "youtube-bumper-ad-maximum-length-2026",
+    excerpt: "A YouTube bumper ad must run 6 seconds or shorter, per Google's ad specs. It's non-skippable and sold on a CPM basis, not CPC or CPV.",
+    featuredImage: "https://images.unsplash.com/photo-1607082349566-187342175e2f?w=800&h=450&fit=crop&auto=format",
+    author: {
+      name: "Amir Gomez",
+      bio: "Digital marketing specialist with 8+ years helping businesses scale through Google Ads and Facebook advertising.",
+      avatar: "/amir-profile.jpg"
+    },
+    publishedAt: "2026-10-08",
+    category: "Google Ads",
+    tags: ["YouTube Ads", "Google Ads", "Bumper Ads", "Video Advertising", "Ad Specs"],
+    featured: false,
+    readingTime: 3,
+    seo: {
+      metaTitle: "YouTube Bumper Ad Maximum Length 2026",
+      metaDescription: "A YouTube bumper ad must be 6 seconds or shorter per Google's official video campaign specs, and it can't be skipped once it starts playing.",
+      keywords: ["youtube bumper ad length", "bumper ad maximum length", "youtube bumper ad specs", "6 second youtube ad"]
+    },
+    content: `A YouTube bumper ad must run 6 seconds or shorter, per Google's own video campaign specifications. The format is non-skippable — viewers can't bypass it the way they can a standard skippable in-stream ad — and it's bought entirely on a CPM basis, meaning advertisers pay per thousand impressions rather than per click or per view.
+
+## Why the Format Is Capped So Short
+
+Google introduced bumper ads in 2016 specifically as a short, unskippable complement to longer-form video ads, designed for brand awareness and reach rather than a detailed pitch. Because the format can't be skipped, Google caps it at 6 seconds to keep the forced-viewing experience brief enough that it doesn't frustrate viewers the way a longer non-skippable ad would.
+
+## How Bumper Ads Are Bought and Measured
+
+- **Pricing model** — bumper campaigns use Target CPM bidding, where the advertiser sets how much they're willing to pay per thousand impressions, not a cost-per-click or cost-per-view model.
+- **View counting** — a bumper ad impression counts toward YouTube's public view count, but it doesn't count as a TrueView view, since the format isn't part of the TrueView skippable or non-skippable product line.
+- **Remarketing** — views on a bumper ad can't be used to build a remarketing list, unlike engagement with some other YouTube ad formats.
+
+## Bumper Campaigns Run Separately From Other Formats
+
+In Google Ads and Google Ads Editor, a bumper campaign can only contain bumper ads — a campaign built for skippable TrueView in-stream ads has to be created separately, since the two formats can't be mixed inside the same campaign structure. Bumper video ads can also only be added to bumper-specific ad groups, not ad groups built for other video formats.
+
+## How This Compares to Other YouTube In-Stream Formats
+
+A standard skippable in-stream ad has no fixed minimum or maximum length — viewers simply get a Skip Ad option after 5 seconds — while a non-skippable in-stream ad (separate from the bumper format) typically runs up to 15 or 20 seconds depending on region. The bumper format sits at the shortest end of that range by design, trading length for the guarantee that every viewer sees the full message.
+
+## Bottom Line
+
+Build bumper ad creative around a single, immediate message that fits inside 6 seconds — the format's value is guaranteed full exposure to a short message, not room to develop a longer pitch, and Google Ads won't accept a longer video into a bumper ad group regardless of campaign budget.
+
+Source: Google Ads Help Center, "YouTube campaigns" video ad format specifications (support.google.com/displayvideo/answer/7245674).`
+  },
 ];
 
 export const blogCategories = [
