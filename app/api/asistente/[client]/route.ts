@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { isClientAuthorized, isMasterAuthorized } from '../../../../lib/client-auth';
+import { isMasterAuthorized } from '../../../../lib/client-auth';
 
 // Gabi, el second brain de A+ Growth: "antes de preguntarle al equipo, preguntale a Gabi".
 // Responde solo con lo que está cargado: el contexto curado de este archivo, el
@@ -115,9 +115,8 @@ export async function GET(req: NextRequest, ctx: { params: Promise<{ client: str
 export async function POST(req: NextRequest, ctx: { params: Promise<{ client: string }> }) {
   const { client } = await ctx.params;
   const equipo = esEquipo(req);
-  if (!equipo && !isClientAuthorized(client, req.cookies.get(`client_auth_${client}`)?.value)) {
-    return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
-  }
+  // Gabi es interna: solo el equipo de A+ Growth (decision 8/10).
+  if (!equipo) return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
   const cfg = CONTEXTO[client];
   if (!cfg) return NextResponse.json({ error: 'no_context' }, { status: 404 });
   const apiKey = process.env.ANTHROPIC_API_KEY;

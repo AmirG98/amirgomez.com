@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { isClientAuthorized, isMasterAuthorized } from '../../../../lib/client-auth';
+import { isMasterAuthorized } from '../../../../lib/client-auth';
 
 // Tablero de trabajo compartido con el cliente, arriba de todo en su portal.
 //
@@ -35,7 +35,8 @@ function rol(req: NextRequest, client: string): 'agencia' | 'cliente' | null {
   const team = req.cookies.get('agrowth_team')?.value;
   const master = req.cookies.get('agrowth_master')?.value;
   if ((team && team === teamKey()) || isMasterAuthorized(master)) return 'agencia';
-  if (isClientAuthorized(client, req.cookies.get(`client_auth_${client}`)?.value)) return 'cliente';
+  // Interno: el cliente no tiene acceso a este tablero (decision 8/10).
+  void client;
   return null;
 }
 
