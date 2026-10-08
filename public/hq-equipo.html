@@ -179,6 +179,35 @@
   .ficha .lk a:hover { text-decoration: underline; }
   .f-upd { font-size: 11px; color: var(--ink-3); margin-top: 14px; }
   @media (max-width: 900px) { .f-cols, .f-cols.f-cols2 { grid-template-columns: 1fr; } }
+
+  .who.cli { background: #FFF6DE; color: #8A5A00; }
+  .filt .sep { width: 1px; background: var(--linea); margin: 0 4px; }
+  /* Gabi */
+  .gabi-fab { position: fixed; right: 22px; bottom: 22px; z-index: 70; display: flex; align-items: center; gap: 10px; font-family: var(--sans); font-size: 13px; font-weight: 600; color: #fff; background: var(--ink); border: 0; border-radius: 999px; padding: 8px 16px 8px 8px; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+  .gabi-fab .av, .gabi-box .av { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #FBBF24, var(--naranja)); color: var(--ink); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+  .gabi-box { position: fixed; right: 22px; bottom: 22px; z-index: 75; width: min(440px, calc(100vw - 32px)); height: min(620px, calc(100vh - 44px)); background: var(--panel); border: 1px solid var(--linea); border-radius: 12px; box-shadow: 0 24px 60px rgba(0,0,0,.25); display: none; flex-direction: column; overflow: hidden; }
+  .gabi-box.on { display: flex; }
+  .gabi-top { display: flex; align-items: center; gap: 10px; padding: 14px 16px; background: var(--ink); color: #fff; }
+  .gabi-top b { font-size: 14.5px; display: block; }
+  .gabi-top small { font-size: 11px; color: #9AA0AB; display: block; }
+  .gabi-top button { margin-left: auto; background: none; border: 0; color: #9AA0AB; font-size: 18px; cursor: pointer; }
+  .gabi-scope { font-size: 11.5px; color: var(--ink-2); padding: 8px 16px; border-bottom: 1px solid var(--linea); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .gabi-scope select { font-family: var(--sans); font-size: 11.5px; border: 1px solid var(--linea); border-radius: 4px; padding: 2px 6px; background: var(--papel); }
+  .gabi-msgs { flex: 1; overflow-y: auto; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; background: var(--papel); }
+  .gm { max-width: 88%; font-size: 13.5px; line-height: 1.5; padding: 9px 12px; border-radius: 10px; white-space: pre-wrap; }
+  .gm.yo { align-self: flex-end; background: var(--naranja-soft); color: var(--ink); }
+  .gm.gb { align-self: flex-start; background: var(--panel); border: 1px solid var(--linea); }
+  .gm .sin { display: block; margin-top: 8px; font-size: 12px; color: var(--alerta); }
+  .gm .sin button { font-family: var(--sans); font-size: 11.5px; font-weight: 600; color: #fff; background: var(--naranja); border: 0; border-radius: 4px; padding: 3px 8px; margin-left: 4px; cursor: pointer; }
+  .gabi-sug { display: flex; flex-wrap: wrap; gap: 5px; padding: 8px 16px 0; background: var(--papel); }
+  .gabi-sug button { font-family: var(--sans); font-size: 11.5px; color: var(--ink-2); background: var(--panel); border: 1px solid var(--linea); border-radius: 999px; padding: 4px 10px; cursor: pointer; }
+  .gabi-sug button:hover { border-color: var(--naranja); }
+  .gabi-form { display: flex; gap: 8px; padding: 10px 12px; border-top: 1px solid var(--linea); background: var(--panel); }
+  .gabi-form textarea { flex: 1; font-family: var(--sans); font-size: 13.5px; border: 1px solid var(--linea); border-radius: 6px; padding: 8px 10px; resize: none; height: 40px; outline: none; background: var(--papel); }
+  .gabi-form textarea:focus { border-color: var(--naranja); }
+  .gabi-form button { font-family: var(--sans); font-size: 12.5px; font-weight: 600; color: #fff; background: var(--naranja); border: 0; border-radius: 6px; padding: 0 14px; cursor: pointer; }
+  .gabi-form button:disabled { opacity: .5; }
+  .gabi-pens { font-size: 12px; color: var(--ink-3); }
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-icon.png">
@@ -207,6 +236,7 @@
       <button data-p="Agustín">Agustín</button>
       <button data-p="Joel">Joel</button>
       <button data-p="Amir">Amir</button>
+      <span id="filt-cli" style="display:contents"></span>
     </div>
     <span class="saved" id="saved"></span>
     <div class="add">
@@ -216,8 +246,8 @@
 </div>
 
 <div class="wrap">
-  <div class="ficha" id="ficha" style="display:none"></div>
   <div class="board" id="board"></div>
+  <div class="ficha" id="ficha" style="display:none;margin-bottom:60px"></div>
 </div>
 
 <div class="modal" id="modal">
@@ -327,6 +357,7 @@
       <div><label for="x-reunion">Reunión y cadencia</label><textarea id="x-reunion" style="min-height:42px"></textarea></div>
       <div><label for="x-contactos">Contactos y canal</label><textarea id="x-contactos" style="min-height:42px"></textarea></div>
     </div>
+    <div class="fld"><label for="x-personas">Gente del cliente (para asignarles tareas)</label><input id="x-personas" type="text" placeholder="Ignacio, Benji"></div>
     <div class="fld"><label for="x-links">Links</label><textarea id="x-links" placeholder="Portal | https://..."></textarea></div>
     <div class="sheet-foot"><button id="x-cancel">Cancelar</button><button class="go" id="x-ok">Guardar ficha</button></div>
   </div>
@@ -343,6 +374,15 @@
     <div class="sec"><h4>Historial</h4><div class="hist" id="d-hist"></div></div>
     <div class="btns"><button id="d-prev">&larr; Anterior</button><button id="d-next">Siguiente &rarr;</button><button class="go" id="d-edit" style="margin-left:auto">Editar</button></div>
   </div>
+</div>
+
+<button class="gabi-fab" id="gabi-fab"><span class="av">G</span>Preguntale a Gabi</button>
+<div class="gabi-box" id="gabi-box">
+  <div class="gabi-top"><span class="av">G</span><div><b>Gabi</b><small>El second brain de A+ Growth</small></div><button id="gabi-x" title="Cerrar">&times;</button></div>
+  <div class="gabi-scope">Mirando: <b id="gabi-ap">General</b> · Preguntás como <select id="gabi-quien"><option>Pilar</option><option>Agustín</option><option>Joel</option><option>Amir</option></select></div>
+  <div class="gabi-msgs" id="gabi-msgs"><div class="gm gb">Antes de preguntarle a Amir: si está en el contexto, preguntame a mí. Sé lo que se acordó con cada cliente, qué tareas hay en el board, quién las lleva y cómo trabajamos.</div></div>
+  <div class="gabi-sug" id="gabi-sug"><button>¿Qué tengo pendiente?</button><button>¿Qué es lo más urgente hoy?</button><button>¿Qué se decidió en la última reunión?</button><button>¿Cómo le escribo a este cliente?</button></div>
+  <form class="gabi-form" id="gabi-form"><textarea id="gabi-q" placeholder="Escribile a Gabi…" maxlength="1500"></textarea><button type="submit" id="gabi-send">Preguntar</button></form>
 </div>
 
 <script>
@@ -411,7 +451,7 @@
 
   function render() {
     state.clientes = state.clientes || {};
-    renderTabs(); renderFicha();
+    renderTabs(); renderFicha(); filtroCliente();
     var board = document.getElementById('board');
     board.innerHTML = '';
     COLS.forEach(function (col) {
@@ -440,7 +480,7 @@
         var i = COLS.indexOf(col);
         el.innerHTML =
           (c.urgente ? '<span class="flag">URGENTE</span>' : '') +
-          '<span class="who ' + esc(c.quien) + '">' + esc(c.quien) + '</span>' +
+          '<span class="who ' + esc(c.quien) + (esDelCliente(c) ? ' cli' : '') + '">' + esc(c.quien) + '</span>' +
           '<h3>' + esc(c.titulo) + '</h3>' +
           (c.cliente && c.cliente !== 'Sin cliente' ? '<div class="cli">' + esc(c.cliente) + '</div>' : '') +
           (c.nota ? '<p class="nota">' + esc(c.nota.length > 160 ? c.nota.slice(0, 157) + '…' : c.nota) + '</p>' : '') +
@@ -556,6 +596,7 @@
     document.getElementById('x-reunion').value = f.reunion || '';
     document.getElementById('x-contactos').value = f.contactos || '';
     document.getElementById('x-links').value = (f.links || []).map(function (l) { return (l.t || '') + ' | ' + l.u; }).join('\n');
+    document.getElementById('x-personas').value = (f.personas || []).join(', ');
     fmodal.classList.add('on');
   }
   function lineas(id) { return document.getElementById(id).value.split('\n').map(function (x) { return x.trim(); }).filter(Boolean); }
@@ -573,6 +614,7 @@
       reunion: document.getElementById('x-reunion').value.trim(),
       contactos: document.getElementById('x-contactos').value.trim(),
       links: lineas('x-links').map(function (l) { var p = partes(l); return p.length > 1 ? { t: p[0], u: p[1] } : { t: p[0], u: p[0] }; }),
+      personas: document.getElementById('x-personas').value.split(',').map(function (x) { return x.trim(); }).filter(Boolean),
       actualizado: new Date().toISOString()
     };
     fmodal.classList.remove('on'); render(); guardar();
@@ -580,6 +622,24 @@
   document.getElementById('x-cancel').addEventListener('click', function () { fmodal.classList.remove('on'); });
   fmodal.addEventListener('click', function (e) { if (e.target === fmodal) fmodal.classList.remove('on'); });
   window.addEventListener('hashchange', function () { desdeHash(); render(); abrirPendiente(); });
+
+  // ---------- Gente del cliente ----------
+  var EQUIPO = ['Pilar', 'Agustín', 'Joel', 'Amir', 'Equipo'];
+  function genteDe(cli) { return ((state.clientes || {})[cli] || {}).personas || []; }
+  function esDelCliente(c) { return genteDe(c.cliente).indexOf(c.quien) >= 0; }
+  function opcionesQuien(cli, sel) {
+    var q = document.getElementById('f-quien'), extra = genteDe(cli);
+    q.innerHTML = EQUIPO.map(function (p) { return '<option>' + esc(p) + '</option>'; }).join('') +
+      (extra.length ? '<optgroup label="' + esc(cli) + '">' + extra.map(function (p) { return '<option>' + esc(p) + '</option>'; }).join('') + '</optgroup>' : '');
+    if (sel) { if (EQUIPO.concat(extra).indexOf(sel) < 0) q.insertAdjacentHTML('beforeend', '<option>' + esc(sel) + '</option>'); q.value = sel; }
+  }
+  function filtroCliente() {
+    var el = document.getElementById('filt-cli'); if (!el) return;
+    var g = clienteSel === 'General' ? [] : genteDe(clienteSel);
+    if (filtro !== 'todos' && EQUIPO.indexOf(filtro) < 0 && g.indexOf(filtro) < 0) filtro = 'todos';
+    el.innerHTML = g.length ? '<span class="sep"></span>' + g.map(function (p) { return '<button data-p="' + esc(p) + '" class="' + (filtro === p ? 'on' : '') + '">' + esc(p) + '</button>'; }).join('') : '';
+    Array.prototype.forEach.call(document.querySelectorAll('#filt > button'), function (b) { b.classList.toggle('on', b.getAttribute('data-p') === filtro); });
+  }
 
   function chips(c) {
     var out = [];
@@ -684,7 +744,7 @@
     editId = c ? c.id : null;
     document.getElementById('m-title').textContent = c ? 'Editar tarea' : 'Nueva tarea';
     document.getElementById('f-tit').value = c ? c.titulo : '';
-    document.getElementById('f-quien').value = c ? c.quien : 'Pilar';
+    opcionesQuien(c ? c.cliente : (clienteSel !== 'General' ? clienteSel : ''), c ? c.quien : 'Pilar');
     if (!c && clienteSel !== 'General') asegurarOpcion(clienteSel);
     document.getElementById('f-cli').value = c ? (c.cliente || 'Sin cliente') : (clienteSel !== 'General' ? clienteSel : 'Sin cliente');
     document.getElementById('f-nota').value = c ? (c.nota || '') : '';
@@ -703,6 +763,7 @@
   function cerrar() { modal.classList.remove('on'); editId = null; }
 
   document.getElementById('nueva').addEventListener('click', function () { abrir(null); });
+  document.getElementById('f-cli').addEventListener('change', function () { opcionesQuien(this.value, document.getElementById('f-quien').value); });
   document.getElementById('m-cancel').addEventListener('click', cerrar);
   modal.addEventListener('click', function (e) { if (e.target === modal) cerrar(); });
 
@@ -746,7 +807,7 @@
   var detId = null;
   function verDetalle(c) {
     detId = c.id;
-    var who = document.getElementById('d-who'); who.className = 'who ' + esc(c.quien); who.textContent = c.quien;
+    var who = document.getElementById('d-who'); who.className = 'who ' + esc(c.quien) + (esDelCliente(c) ? ' cli' : ''); who.textContent = c.quien;
     document.getElementById('d-col').textContent = c.columna + (c.urgente ? ' · URGENTE' : '');
     document.getElementById('d-tit').textContent = c.titulo;
     document.getElementById('d-sub').textContent = (c.cliente && c.cliente !== 'Sin cliente' ? c.cliente + ' · ' : '') + 'actualizada ' + cuando(c.actualizado) + (c.vence ? ' · vence ' + fmtFecha(c.vence) : '');
@@ -780,6 +841,47 @@
     e.preventDefault();
     document.cookie = 'agrowth_team=; path=/; max-age=0';
     location.reload();
+  });
+
+
+  // ---------- Gabi ----------
+  var gHist = [], gScope = null;
+  var gBox = document.getElementById('gabi-box'), gMsgs = document.getElementById('gabi-msgs'), gQ = document.getElementById('gabi-q'), gSend = document.getElementById('gabi-send');
+  try { var gq = localStorage.getItem('gabi-quien'); if (gq) document.getElementById('gabi-quien').value = gq; } catch (e) {}
+  function gAgregar(cls, html) { var d = document.createElement('div'); d.className = 'gm ' + cls; d.innerHTML = html; gMsgs.appendChild(d); gMsgs.scrollTop = gMsgs.scrollHeight; return d; }
+  function gScopeSync() {
+    document.getElementById('gabi-ap').textContent = clienteSel;
+    if (gScope !== null && gScope !== clienteSel) { gHist = []; gAgregar('gb', 'Ahora miro ' + esc(clienteSel) + '.'); }
+    gScope = clienteSel;
+  }
+  function gPreguntar(t) {
+    t = (t || '').trim(); if (t.length < 3 || gSend.disabled) return;
+    gScopeSync();
+    var quien = document.getElementById('gabi-quien').value;
+    gAgregar('yo', esc(t)); gQ.value = ''; gSend.disabled = true;
+    var p = document.createElement('div'); p.className = 'gabi-pens'; p.textContent = 'Gabi está buscando en el contexto…'; gMsgs.appendChild(p); gMsgs.scrollTop = gMsgs.scrollHeight;
+    var slug = clienteSel === 'General' ? 'general' : slugify(clienteSel);
+    fetch('/api/asistente/' + slug, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ question: t, history: gHist, quien: quien }) })
+      .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw j; return j; }); })
+      .then(function (j) {
+        p.remove();
+        var h = esc(j.answer).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+        if (!j.en_contexto) h += '<span class="sin">No está documentado.<button type="button" data-gcopiar="' + esc(t) + '">Copiar pregunta para Amir</button></span>';
+        gAgregar('gb', h);
+        gHist.push({ role: 'user', content: t }, { role: 'assistant', content: j.answer }); gHist = gHist.slice(-6);
+      })
+      .catch(function () { p.remove(); gAgregar('gb', 'Ahora no pude responder. Probá de nuevo en un momento.'); })
+      .then(function () { gSend.disabled = false; gQ.focus(); });
+  }
+  document.getElementById('gabi-fab').addEventListener('click', function () { gScopeSync(); gBox.classList.add('on'); this.style.display = 'none'; gQ.focus(); });
+  document.getElementById('gabi-x').addEventListener('click', function () { gBox.classList.remove('on'); document.getElementById('gabi-fab').style.display = ''; });
+  document.getElementById('gabi-form').addEventListener('submit', function (e) { e.preventDefault(); gPreguntar(gQ.value); });
+  gQ.addEventListener('keydown', function (e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); gPreguntar(gQ.value); } });
+  document.getElementById('gabi-sug').addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) gPreguntar(b.textContent); });
+  document.getElementById('gabi-quien').addEventListener('change', function () { try { localStorage.setItem('gabi-quien', this.value); } catch (e) {} });
+  gMsgs.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-gcopiar]'); if (!b) return;
+    try { navigator.clipboard.writeText('Amir, una consulta que no está en el contexto: ' + b.getAttribute('data-gcopiar')); b.textContent = 'Copiada'; } catch (x) {}
   });
 
   // Carga

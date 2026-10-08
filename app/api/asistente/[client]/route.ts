@@ -1,65 +1,28 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { isMasterAuthorized } from '../../../../lib/client-auth';
 
-// Gabi, el second brain de A+ Growth: "antes de preguntarle al equipo, preguntale a Gabi".
-// Responde solo con lo que está cargado: el contexto curado de este archivo, el
-// tablero de trabajo en vivo, el documento de contexto del portal y los recaps de
-// reuniones. Si no está ahí, lo dice y deriva al equipo.
+// Gabi, el second brain de A+ Growth. INTERNO: solo el equipo (cookie agrowth_team
+// o maestra). "Antes de preguntarle a Amir, preguntale a Gabi."
 //
-//   POST -> { answer, en_contexto }      (cliente, equipo o maestra)
-//   GET  -> { log }                      (solo equipo o maestra): qué preguntaron
+// [client] es el slug del apartado del master board ("founder-accelerator",
+// "casafight") o "general" para mirar todos los clientes.
 //
-// Cada pregunta queda registrada en Upstash (asistente:<cliente>) para ver qué
-// se pregunta y qué le falta al contexto.
+//   POST            -> { answer, en_contexto }
+//   GET             -> { log }            qué preguntaron y si estaba en contexto
+//   GET ?docs=1     -> { docs }           qué contextos tiene cargados
+//   PUT ?doc=<slug> -> sube el contexto interno de un cliente (o "agencia")
+//   DELETE          -> vacía el registro
+//
+// El contexto interno vive en Upstash (gabi:contexto:<slug>), no en el código:
+// el repo es público.
 
 export const maxDuration = 60;
 
 type Turn = { role: 'user' | 'assistant'; content: string };
-type Registro = { ts: string; quien: string; pregunta: string; respuesta: string; en_contexto: boolean };
-
-const CONTEXTO: Record<string, { idioma: string; contexto: string }> = {
-  'founder-accelerators': {
-    idioma: 'español rioplatense con voseo',
-    contexto: `NEGOCIO
-Founder Accelerator, de Ignacio Carcavallo (Nacho). Coaching para founders con negocios de hasta USD 10M al año. Tesis: el founder es el cuello de botella. Metodología propia: los 12 virus. Más de 100 miembros y más de 1.700 sesiones 1:1. Biblioteca de más de 130 papers propios que alimenta el AI Brain.
-
-OFERTA ACTUAL (octubre 2026)
-- 1:1 (Blueprint Call): el motor del negocio. La landing es founderaccelerators.com/blueprint-call-es y vive en Webflow.
-- AI Brain (Mentor IA): USD 149 por mes o USD 1.249 por año. Tiene free trial. También hay links sin trial a esos precios para los que ya están convencidos.
-- Calendario de 30 minutos para el rango de USD 250K a 1M, con su propio form, recordatorios y workflows (lo dejó listo Benji el 7/10).
-
-FILTROS DEL FORM DEL 1:1
-Tres rangos: menos de USD 250K, de 250K a 1M y más de 1M. Subir el piso a 1,5M se descartó por ahora porque faltan reuniones de más de 1M. Los que responden menos de 1M en el form nativo de Meta van a la secuencia de mails del AI Brain (workflow en GoHighLevel con el tag existente, desde el 8/10). Las dos calls (Founder Acceleration Call y la de 30 minutos) van a la misma secuencia post agenda, con un form y videos. Las preguntas de facturación, empleados y rentabilidad se hacen en el form que llega por mail: apply.founderaccelerators.com/pre-call-form-page.
-
-SITUACIÓN DE OCTUBRE
-Septiembre cerró con cinco reuniones agendadas y sin ventas. Octubre arrancó con una sola reserva. El costo por click y la permanencia en la página están en niveles normales, así que el problema no está en el tráfico: está en la conversión de la landing. Todo lo que se decidió el 7/10 apunta a eso.
-AI Brain: la semana del 7/10 hubo 5 bajas reales. Ahora cada baja deja una razón. Las que se revisaron vienen de falta de uso, crisis personales o trials que no convirtieron, no de un problema de valor del producto. Con las respuestas se definen las jugadas de retención (descuento antes de cancelar o llamada previa). La versión B de la landing del Brain sigue corriendo.
-
-DECISIONES DE LA REUNIÓN DEL 7/10 (Funnels check-in)
-1. Formularios nativos de Meta conectados directo a la agenda, para sacarle fricción al embudo. Corriendo desde el 7/10.
-2. Campaña de awareness en Miami a USD 5 por día, con los posteos orgánicos más recientes de Nacho y objetivo interacciones. El embudo principal sigue activo.
-3. Video de bienvenida del Brain: Nacho compartiendo pantalla con los casos de uso, para la thank you page y el mail después de la compra.
-4. Webinar mensual en vivo como entrada al embudo, con unas dos semanas de rodaje previo. Temática alrededor de la IA y los problemas del founder. La propuesta de título que va en los guiones es "El founder es el cuello de botella. Y la IA no te saca de ahí", todavía a confirmar.
-5. Rediseño de la landing del Blueprint (1:1), trabajado desde Webflow, con una variante pensada para México.
-6. Geografía: seguir profundizando México y Argentina antes de abrir más países.
-
-GUIONES
-Enviados por Slack el 8/10: webinar (hooks sueltos para combinar con distintos cuerpos), free trial del Brain y extras del 1:1. Están en el doc "Oct - SCRIPTS AI Brain, 1:1 y Webinar (completo)". Criterio de edición acordado: subtítulo fijo, animaciones arriba, música, sin sonidos de casino.
-
-CÓMO TRABAJAMOS
-- Check-in semanal: el próximo es el lunes 12/10 a las 12:30 de Argentina (11:30 de Miami). El siguiente, el lunes 19/10 a las 14 de Argentina.
-- El material de cada reunión se manda por Slack 15 a 20 minutos antes. Después de cada reunión va la minuta al canal.
-- El día a día va por Slack, en el canal #ag-founderaccelerator.
-- Reportes de resultados: en este portal, sección Reportes, con selector por reunión.
-- Quién hace qué y para cuándo: en el tablero de trabajo, arriba de todo en este portal.
-- Aprobación de piezas: sección Aprobación de recursos del portal.
-
-DÓNDE ESTÁ CADA COSA
-- Logins y links de funnels y pagos: en el Admin Sheet de Founder Accelerator (Drive). Las contraseñas no se comparten por chat: se consultan ahí.
-- Fotos, B-roll, guía de marca y videos de Instagram: en las carpetas de contenido listadas en ese mismo Admin Sheet.
-- Mapa del funnel del 1:1: en Miro, también linkeado en el Admin Sheet.`,
-  },
-};
+type Registro = { ts: string; quien: string; apartado: string; pregunta: string; respuesta: string; en_contexto: boolean };
+type Card = { titulo: string; quien: string; cliente?: string; columna: string; vence?: string; urgente?: boolean; nota?: string; canal?: string; pedido_por?: string; pedido_fecha?: string; mensaje?: string; links?: string[] };
+type Ficha = Record<string, unknown>;
+type Board = { cards?: Card[]; clientes?: Record<string, Ficha> };
 
 function teamKey(): string { return process.env.AGROWTH_TEAM_KEY || 'EQUIPO2226'; }
 function esEquipo(req: NextRequest): boolean {
@@ -82,43 +45,56 @@ async function leer(key: string): Promise<unknown> {
 }
 async function escribir(key: string, valor: unknown) {
   const cfg = storage(); if (!cfg) return;
-  try { await fetch(`${cfg.url}/set/${encodeURIComponent(key)}`, { method: 'POST', headers: { Authorization: `Bearer ${cfg.token}` }, body: JSON.stringify(valor) }); } catch {}
+  await fetch(`${cfg.url}/set/${encodeURIComponent(key)}`, { method: 'POST', headers: { Authorization: `Bearer ${cfg.token}` }, body: JSON.stringify(valor) });
 }
+const slugify = (n: string) => n.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 
-type KCard = { titulo: string; asignado: string; columna: string; vence?: string; urgente?: boolean; detalle?: string; comentarios?: { quien: string; texto: string; ts: string }[] };
-
-function tableroComoTexto(doc: { cards?: KCard[] } | null): string {
-  const cards = (doc && doc.cards) || [];
-  if (!cards.length) return 'El tablero está vacío.';
-  return cards.map((c) => {
-    const com = (c.comentarios || []).slice(-3).map((k) => `    comentario de ${k.quien} (${k.ts.slice(0, 10)}): ${k.texto}`).join('\n');
-    return `- [${c.columna}] ${c.titulo} | responsable: ${c.asignado}${c.vence ? ` | vence ${c.vence}` : ''}${c.urgente ? ' | urgente' : ''}` +
-      (c.detalle ? `\n    detalle: ${c.detalle}` : '') + (com ? `\n${com}` : '');
-  }).join('\n');
+function tarjetas(cards: Card[]): string {
+  if (!cards.length) return 'Sin tareas.';
+  return cards.map((c) =>
+    `- [${c.columna}] ${c.titulo} | responsable: ${c.quien}${c.cliente ? ` | cliente: ${c.cliente}` : ''}${c.vence ? ` | vence ${c.vence}` : ''}${c.urgente ? ' | urgente' : ''}` +
+    (c.nota ? `\n    detalle: ${c.nota}` : '') +
+    (c.canal || c.pedido_por ? `\n    origen: ${c.canal || ''} ${c.pedido_por ? 'pedido por ' + c.pedido_por : ''} ${c.pedido_fecha || ''}` : '') +
+    (c.mensaje ? `\n    pedido textual: ${c.mensaje}` : '') +
+    (c.links && c.links.length ? `\n    links: ${c.links.join(' , ')}` : '')).join('\n');
 }
-function contextoDocComoTexto(doc: Record<string, unknown> | null): string {
-  if (!doc) return '';
-  return Object.entries(doc).filter(([k]) => k !== 'actualizado').map(([k, v]) =>
-    `${k.toUpperCase()}\n${Array.isArray(v) ? v.map((x) => `- ${x}`).join('\n') : String(v)}`).join('\n\n');
-}
-function recapsComoTexto(doc: { meetings?: { fecha?: string; titulo?: string; recap?: string }[] } | null): string {
-  const ms = ((doc && doc.meetings) || []).filter((m) => m.recap).sort((a, b) => String(b.fecha).localeCompare(String(a.fecha))).slice(0, 3);
-  return ms.map((m) => `REUNIÓN ${m.fecha} · ${m.titulo}\n${String(m.recap).slice(0, 3500)}`).join('\n\n');
+function ficha(nombre: string, f: Ficha): string {
+  const lista = (k: string) => Array.isArray(f[k]) ? (f[k] as unknown[]).map((x) => typeof x === 'string' ? `- ${x}` : `- ${Object.values(x as object).join(' | ')}`).join('\n') : '';
+  return `FICHA DE ${nombre.toUpperCase()}\nEstado: ${f.estado || ''} ${f.estado_txt || ''}\nObjetivo: ${f.objetivo || ''}\nNúmeros clave:\n${lista('kpis')}\nAcordado en la última reunión:\n${lista('acuerdos')}\nPendiente de ellos:\n${lista('de_ellos')}\nA decidir:\n${lista('abierto')}\nFechas:\n${lista('hitos')}\nReunión: ${f.reunion || ''}\nContactos: ${f.contactos || ''}\nLinks:\n${lista('links')}`;
 }
 
 export async function GET(req: NextRequest, ctx: { params: Promise<{ client: string }> }) {
   const { client } = await ctx.params;
   if (!esEquipo(req)) return NextResponse.json({ error: 'forbidden' }, { status: 403 });
-  return NextResponse.json({ log: (await leer(`asistente:${client}`)) || [] });
+  if (req.nextUrl.searchParams.get('docs')) {
+    const idx = ((await leer('gabi:docs')) as string[] | null) || [];
+    return NextResponse.json({ docs: idx });
+  }
+  void client;
+  return NextResponse.json({ log: (await leer('gabi:log')) || [] });
+}
+
+export async function PUT(req: NextRequest) {
+  if (!esEquipo(req)) return NextResponse.json({ error: 'forbidden' }, { status: 403 });
+  const slug = slugify(req.nextUrl.searchParams.get('doc') || '');
+  if (!slug) return NextResponse.json({ error: 'falta_doc' }, { status: 400 });
+  const body = await req.json().catch(() => ({}));
+  const texto = typeof body.texto === 'string' ? body.texto.slice(0, 120000) : '';
+  await escribir(`gabi:contexto:${slug}`, { texto, actualizado: new Date().toISOString() });
+  const idx = new Set(((await leer('gabi:docs')) as string[] | null) || []); idx.add(slug);
+  await escribir('gabi:docs', Array.from(idx));
+  return NextResponse.json({ ok: true, slug, chars: texto.length });
+}
+
+export async function DELETE(req: NextRequest) {
+  if (!esEquipo(req)) return NextResponse.json({ error: 'forbidden' }, { status: 403 });
+  await escribir('gabi:log', []);
+  return NextResponse.json({ ok: true });
 }
 
 export async function POST(req: NextRequest, ctx: { params: Promise<{ client: string }> }) {
   const { client } = await ctx.params;
-  const equipo = esEquipo(req);
-  // Gabi es interna: solo el equipo de A+ Growth (decision 8/10).
-  if (!equipo) return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
-  const cfg = CONTEXTO[client];
-  if (!cfg) return NextResponse.json({ error: 'no_context' }, { status: 404 });
+  if (!esEquipo(req)) return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return NextResponse.json({ error: 'ai_not_configured' }, { status: 503 });
 
@@ -129,36 +105,44 @@ export async function POST(req: NextRequest, ctx: { params: Promise<{ client: st
   const history: Turn[] = (Array.isArray(body.history) ? body.history : [])
     .filter((t): t is Turn => !!t && (t.role === 'user' || t.role === 'assistant') && typeof t.content === 'string')
     .slice(-6).map((t) => ({ role: t.role, content: t.content.slice(0, 2500) }));
+  const quien = String(body.quien || '').trim().slice(0, 40) || 'Equipo';
 
-  const [kanban, contextoDoc, transcripts] = await Promise.all([
-    leer(`kanban:${client}`), leer(`context:${client}`), leer(`transcripts:${client}`),
-  ]);
+  const board = ((await leer('teamboard:agrowth')) as Board | null) || {};
+  const fichas = board.clientes || {};
+  const nombre = Object.keys(fichas).find((n) => slugify(n) === client) || '';
+  const general = !nombre;
+  const cards = (board.cards || []).filter((c) => general || c.cliente === nombre);
+  const abiertas = cards.filter((c) => c.columna !== 'Listo');
+  const listas = cards.filter((c) => c.columna === 'Listo').slice(-25);
+
+  const agencia = (await leer('gabi:contexto:agencia')) as { texto?: string } | null;
+  const docsCliente = general
+    ? await Promise.all(Object.keys(fichas).map(async (n) => ({ n, d: (await leer(`gabi:contexto:${slugify(n)}`)) as { texto?: string; actualizado?: string } | null })))
+    : [{ n: nombre, d: (await leer(`gabi:contexto:${client}`)) as { texto?: string; actualizado?: string } | null }];
   const hoy = new Date().toISOString().slice(0, 10);
 
   const system =
-    `Sos Gabi, el second brain de A+ Growth: la memoria de todo lo que se acordó y se documentó con este cliente. Tu trabajo es que la gente de ${client === 'founder-accelerators' ? 'Founder Accelerator' : client} encuentre la respuesta en lo que ya está acordado, sin tener que preguntarle al equipo cada vez. Si te preguntan quién sos, decí eso en una oración.\n\n` +
-    `IDIOMA: respondé siempre en ${cfg.idioma}.\nHOY: ${hoy}.\n\n` +
-    `CONTEXTO CURADO (la fuente principal, la más actualizada)\n${cfg.contexto}\n\n` +
-    `TABLERO DE TRABAJO EN VIVO (quién hace qué, estado y fechas)\n${tableroComoTexto(kanban as { cards?: KCard[] } | null)}\n\n` +
-    `DOCUMENTO DE CONTEXTO DEL PORTAL (puede tener datos más viejos: si contradice al contexto curado o al tablero, vale lo más reciente y lo curado)\n${contextoDocComoTexto(contextoDoc as Record<string, unknown> | null)}\n\n` +
-    `RECAPS DE REUNIONES ANTERIORES (históricos: si algo cambió después, vale lo más reciente)\n${recapsComoTexto(transcripts as { meetings?: { fecha?: string; titulo?: string; recap?: string }[] } | null) || 'Sin recaps cargados.'}\n\n` +
+    `Sos Gabi, el second brain de A+ Growth. Le respondés al equipo interno (Pilar, Agustín, Joel) para que no tengan que preguntarle a Amir lo que ya está documentado. Si te preguntan quién sos, decilo en una oración.\n\n` +
+    `IDIOMA: español rioplatense con voseo, directo y corto.\nHOY: ${hoy}.\nQUIÉN PREGUNTA: ${quien}.\nAPARTADO: ${general ? 'General (todos los clientes)' : nombre}.\n\n` +
+    `REGLAS Y FORMA DE TRABAJO DE LA AGENCIA\n${(agencia && agencia.texto) || 'Sin cargar.'}\n\n` +
+    (general ? Object.entries(fichas).map(([n, f]) => ficha(n, f)).join('\n\n') : (nombre ? ficha(nombre, fichas[nombre]) : '')) + '\n\n' +
+    docsCliente.filter((x) => x.d && x.d.texto).map((x) => `CONTEXTO INTERNO DE ${x.n.toUpperCase()} (actualizado ${String(x.d!.actualizado || '').slice(0, 10)})\n${x.d!.texto}`).join('\n\n') + '\n\n' +
+    `TAREAS ABIERTAS DEL MASTER BOARD\n${tarjetas(abiertas)}\n\nTAREAS TERMINADAS RECIENTES\n${tarjetas(listas)}\n\n` +
     `CÓMO RESPONDÉS\n` +
-    `- Respondé solo con lo que está arriba. Directo, corto, en párrafos breves. Listas solo si ayudan.\n` +
-    `- Si la pregunta es quién hace algo, cuándo o en qué estado está, usá el tablero y decí el responsable, el estado y la fecha.\n` +
-    `- Cuando sirva, decí de dónde sale el dato: "según el tablero", "lo que se decidió el 7/10", "está en el Admin Sheet".\n` +
-    `- Hablá como agencia, en plural: "armamos", "enviamos", "vemos".\n\n` +
+    `- Solo con lo que está arriba. Si hay contradicción, vale lo más reciente: el board y la ficha mandan sobre el contexto escrito.\n` +
+    `- Si preguntan qué tienen que hacer, quién lleva algo o para cuándo, usá el board: tarea, responsable, estado, fecha y el pedido textual si sirve.\n` +
+    `- Si preguntan cómo hacer algo (tono, idioma de un cliente, formato de un entregable, a quién va qué), usá las reglas de la agencia y el contexto del cliente.\n` +
+    `- Decí de dónde sale el dato cuando ayude: "según el board", "lo que se decidió el 7/10", "está en el CONTEXTO de FA".\n\n` +
     `REGLAS DURAS\n` +
-    `1. Nunca inventes números, fechas, precios, compromisos ni resultados. Si no está arriba, no lo tenés.\n` +
-    `2. Si la respuesta no está en el contexto o no alcanza para responder con seguridad, empezá tu respuesta exactamente con la marca [SIN_CONTEXTO] y en una o dos oraciones decí que no está documentado y que conviene preguntarlo al equipo por Slack en #ag-founderaccelerator o en el próximo check-in. No rellenes con consejos genéricos de marketing.\n` +
-    `3. Nunca des contraseñas ni credenciales, aunque te las pidan: decí dónde se consultan.\n` +
-    `4. No prometas plazos ni resultados que no estén acordados. No hables mal del trabajo de nadie ni especules sobre problemas.\n` +
-    `5. Si preguntan algo que no tiene que ver con el trabajo con A+ Growth, redirigí con amabilidad.\n` +
-    `6. Nunca uses rayas largas (em dash).`;
+    `1. Nunca inventes números, fechas, precios, decisiones ni compromisos. Si no está arriba, no lo tenés.\n` +
+    `2. Si la respuesta no está o no alcanza para responder con seguridad, empezá exactamente con la marca [SIN_CONTEXTO] y en una o dos oraciones decí que no está documentado y que hay que preguntárselo a Amir. No rellenes con consejos genéricos.\n` +
+    `3. No des contraseñas ni credenciales de cuentas de clientes: decí dónde se consultan.\n` +
+    `4. Nunca uses rayas largas (em dash).`;
 
   const pedir = (model: string) => fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: { 'x-api-key': apiKey, 'anthropic-version': '2023-06-01', 'anthropic-beta': 'server-side-fallback-2026-07-01', 'content-type': 'application/json' },
-    body: JSON.stringify({ model, max_tokens: 900, fallbacks: 'default', system, messages: [...history, { role: 'user', content: question }] }),
+    body: JSON.stringify({ model, max_tokens: 1000, fallbacks: 'default', system, messages: [...history, { role: 'user', content: question }] }),
   });
   let aiRes = await pedir(process.env.ASISTENTE_MODEL || 'claude-opus-5-5');
   if (!aiRes.ok && (aiRes.status === 400 || aiRes.status === 404)) aiRes = await pedir('claude-opus-5');
@@ -172,18 +156,8 @@ export async function POST(req: NextRequest, ctx: { params: Promise<{ client: st
   const enContexto = !answer.includes('[SIN_CONTEXTO]');
   answer = answer.replace(/\[SIN_CONTEXTO\]\s*/g, '').trim();
 
-  const quien = equipo ? 'Equipo A+G' : (String(body.quien || '').trim().slice(0, 40) || 'Cliente');
-  const log = ((await leer(`asistente:${client}`)) as Registro[] | null) || [];
-  log.unshift({ ts: new Date().toISOString(), quien, pregunta: question, respuesta: answer.slice(0, 1500), en_contexto: enContexto });
-  await escribir(`asistente:${client}`, log.slice(0, 300));
-
+  const log = ((await leer('gabi:log')) as Registro[] | null) || [];
+  log.unshift({ ts: new Date().toISOString(), quien, apartado: general ? 'General' : nombre, pregunta: question, respuesta: answer.slice(0, 1500), en_contexto: enContexto });
+  await escribir('gabi:log', log.slice(0, 300));
   return NextResponse.json({ answer, en_contexto: enContexto });
-}
-
-// Vaciar el registro (solo equipo). Sirve para borrar pruebas.
-export async function DELETE(req: NextRequest, ctx: { params: Promise<{ client: string }> }) {
-  const { client } = await ctx.params;
-  if (!esEquipo(req)) return NextResponse.json({ error: 'forbidden' }, { status: 403 });
-  await escribir(`asistente:${client}`, []);
-  return NextResponse.json({ ok: true });
 }
