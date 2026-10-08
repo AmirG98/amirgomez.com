@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { Board, fusionar, guardarBoard, leerBoard } from '../../../lib/teamboard';
 
 // Tablero interno del equipo de A+Growth (Pilar, Agustin y Amir).
 // Una sola clave compartida: AGROWTH_TEAM_KEY, o la maestra si existe.
@@ -51,15 +52,13 @@ export async function GET(req: NextRequest) {
 
 export async function PUT(req: NextRequest) {
   if (!authorized(req)) return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
-  const cfg = storageConfig();
-  if (!cfg) return NextResponse.json({ error: 'storage_not_configured' }, { status: 503 });
-
-  const body = await req.json();
-  const res = await fetch(`${cfg.url}/set/${encodeURIComponent(KEY)}`, {
-    method: 'POST',
-    headers: { Authorization: `Bearer ${cfg.token}` },
-    body: JSON.stringify(body),
-  });
-  if (!res.ok) return NextResponse.json({ error: 'storage_error' }, { status: 502 });
-  return NextResponse.json({ ok: true });
+  if (!storageConfig()) return NextResponse.json({ error: 'storage_not_configured' }, { status: 503 });
+  try {
+    const entrante = (await req.json()) as Board;
+    const actual = await leerBoard();
+    await guardarBoard(fusionar(actual, entrante));
+    return NextResponse.json({ ok: true });
+  } catch {
+    return NextResponse.json({ error: 'storage_error' }, { status: 502 });
+  }
 }

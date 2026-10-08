@@ -398,6 +398,7 @@
   var editId = null;
   var modo = 'server';
   var clienteSel = 'General';
+  var leidoEn = '';
 
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
@@ -444,8 +445,8 @@
     if (modo !== 'server') return;
     var s = document.getElementById('saved');
     s.textContent = 'Guardando…';
-    fetch(API, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(state) })
-      .then(function (r) { s.textContent = r.ok ? 'Guardado' : 'Guardado local'; })
+    fetch(API, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Object.assign({}, state, { leido_en: leidoEn })) })
+      .then(function (r) { s.textContent = r.ok ? 'Guardado' : 'Guardado local'; if (r.ok) setTimeout(refrescar, 400); })
       .catch(function () { s.textContent = 'Guardado local'; });
   }
 
@@ -884,6 +885,21 @@
     try { navigator.clipboard.writeText('Amir, una consulta que no está en el contexto: ' + b.getAttribute('data-gcopiar')); b.textContent = 'Copiada'; } catch (x) {}
   });
 
+  // Refresco: trae lo que otros cambiaron (incluido lo que llega por el MCP).
+  function refrescar() {
+    if (modo !== 'server') return;
+    fetch(API, { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (!d || !d.state || !d.state.cards) return;
+      state = d.state; state.clientes = state.clientes || {}; leidoEn = new Date().toISOString();
+      render();
+      if (detId) { var c = state.cards.filter(function (x) { return x.id === detId; })[0]; if (c) verDetalle(c); }
+    }).catch(function () {});
+  }
+  setInterval(function () {
+    if (document.hidden || modal.classList.contains('on') || fmodal.classList.contains('on')) return;
+    refrescar();
+  }, 25000);
+
   // Carga
   function local() {
     modo = 'local';
@@ -906,6 +922,7 @@
     .then(function (d) {
       state = (d.state && d.state.cards) ? d.state : seed();
       state.clientes = state.clientes || {};
+      leidoEn = new Date().toISOString();
       desdeHash();
       render();
       abrirPendiente();
