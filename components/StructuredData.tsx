@@ -3,7 +3,7 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "A+ Growth",
-    "description": "A+ Growth turns ad spend into predictable revenue, connecting paid media, funnels and analytics into one clean acquisition signal.",
+    "description": "A+ Growth builds funnels that turn clicks into customers: ads, landing pages, follow-up and tracking working as one system.",
     "url": "https://www.amirgomez.com",
     "logo": "https://www.amirgomez.com/amir-profile.jpg",
     "image": "https://www.amirgomez.com/amir-profile.jpg",

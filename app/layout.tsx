@@ -21,7 +21,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.amirgomez.com'),
-  title: "A+ Growth — Turn Ad Spend Into Predictable Revenue",
+  title: "A+ Growth — Funnels That Turn Clicks Into Customers",
   description: "A+ Growth turns ad spend into predictable revenue. We connect paid media, funnels and analytics into one clean acquisition signal — 10 years, 300+ funnels across the US, Europe and LatAm.",
   keywords: ["predictable revenue", "growth marketing agency", "paid media", "ROI", "acquisition", "funnels", "conversion optimization", "marketing analytics", "UGC", "SEO", "PPC management"],
   authors: [{ name: "Amir Gomez" }],
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.amirgomez.com",
     siteName: "A+ Growth",
-    title: "A+ Growth — Turn Ad Spend Into Predictable Revenue",
+    title: "A+ Growth — Funnels That Turn Clicks Into Customers",
     description: "A+ Growth turns ad spend into predictable revenue. We connect paid media, funnels and analytics into one clean acquisition signal — 10 years, 300+ funnels across the US, Europe and LatAm.",
     images: [
       {
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "A+ Growth — Turn Ad Spend Into Predictable Revenue",
+    title: "A+ Growth — Funnels That Turn Clicks Into Customers",
     description: "A+ Growth turns ad spend into predictable revenue — paid media, funnels and analytics connected into one clean acquisition signal.",
     images: ["/amir-profile.jpg"],
   },
