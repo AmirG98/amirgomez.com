@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A+ Growth — Referrals</title>
-<meta name="description" content="Introduce a business to A+ Growth and earn up to 15% of everything they pay us. Some of the case studies we've compiled.">
+<meta name="description" content="Introduce a business to A+ Growth and earn 15% of everything they pay us. Some of the case studies we've compiled.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +46,7 @@
   .sec-head h2 { font-size:clamp(1.6rem,3.2vw,2.4rem); font-weight:700; letter-spacing:-.02em; line-height:1.1; }
 
   /* pago */
-  .pay { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .pay { display:grid; grid-template-columns:1fr; gap:16px; }
   .pay-card { background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:30px 30px 26px; }
   .pay-card.main { background:linear-gradient(150deg,#1d120c 0%,var(--surface) 60%); border-color:rgba(255,106,43,.35); }
   .pay-card .when { margin-bottom:14px; }
@@ -136,8 +136,8 @@
 
   <header class="hero">
     <span class="mono">Referral program</span>
-    <h1>One intro. <em>Up to 15%</em> of everything they pay us.</h1>
-    <p>Know a business owner who needs more customers? Introduce us. If they become a client, you get paid, and on bigger accounts you keep earning for as long as they stay.</p>
+    <h1>One intro. <em>15%</em> of everything they pay us.</h1>
+    <p>Know a business owner who needs more customers? Introduce us. If they become a client, you earn 15% of what they pay us, every month, for as long as they stay.</p>
     <div class="hero-ex"><span class="mono">Example</span><span>A client on $6,000/mo for a year pays you <b>$10,800</b>.</span></div>
     <div class="actions">
       <a class="cta" id="intro-top" href="#" data-event="referrals_email_click">Make an intro <span aria-hidden="true">→</span></a>
@@ -148,23 +148,10 @@
   <section id="pay">
     <div class="sec-head"><span class="n">01</span><h2>How you get paid</h2></div>
     <div class="pay">
-      <div class="pay-card">
-        <div class="mono when">Smaller projects · under $1,800/mo</div>
-        <div class="big sm">10%<small>flat</small></div>
-        <p class="d">Of what the client pays us, for as long as their contract runs.</p>
-      </div>
-      <div class="pay-card">
-        <div class="mono when">Retainers · $1,800–$3,500/mo</div>
-        <div class="big sm">$2,000<small>per client</small></div>
-        <div class="split">
-          <div><b>$1,500</b><span>when they pay month 1</span></div>
-          <div><b>+ $500</b><span>at month 3</span></div>
-        </div>
-      </div>
       <div class="pay-card main">
-        <div class="mono when">Bigger projects · over $3,500/mo</div>
+        <div class="mono when">Every client you send · any size</div>
         <div class="big">15%<small>flat</small></div>
-        <p class="d">Of what the client pays us, for as long as their contract runs. The bigger the account, the more you earn.</p>
+        <p class="d">Of what the client pays us, every month, for as long as their contract runs. One rate for everyone: the bigger the account and the longer they stay, the more you earn.</p>
       </div>
     </div>
 
@@ -176,7 +163,7 @@
           <input type="range" id="c-mo" min="1" max="60" step="1" value="12"></label>
       </div>
       <div class="out">
-        <span class="mono" id="c-tier">Bigger project · 15%</span>
+        <span class="mono" id="c-tier">Your 15%</span>
         <div class="val" id="c-val">$10,800</div>
         <p id="c-how">15% of $6,000 a month, for 12 months.</p>
       </div>
@@ -252,14 +239,12 @@
   var ret = document.getElementById('c-ret'), mo = document.getElementById('c-mo');
   function money(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
   function calc() {
-    var r = +ret.value, m = +mo.value, total, tier, how;
-    if (r < 1800) { total = r * m * 0.10; tier = 'Smaller project · 10%'; how = '10% of ' + money(r) + ' a month, for ' + m + (m === 1 ? ' month.' : ' months.'); }
-    else if (r <= 3500) { total = 1500 + (m >= 3 ? 500 : 0); tier = 'Retainer · fixed fee'; how = m >= 3 ? '$1,500 after month 1, plus $500 at month 3.' : '$1,500 after month 1. The extra $500 comes at month 3.'; }
-    else { total = r * m * 0.15; tier = 'Bigger project · 15%'; how = '15% of ' + money(r) + ' a month, for ' + m + (m === 1 ? ' month.' : ' months.'); }
+    var r = +ret.value, m = +mo.value;
+    var total = r * m * 0.15;
+    var how = '15% of ' + money(r) + ' a month, for ' + m + (m === 1 ? ' month.' : ' months.');
     document.getElementById('c-ret-v').textContent = money(r);
     var yrs = m % 12 === 0 ? (m / 12) + (m === 12 ? ' year' : ' years') : '';
     document.getElementById('c-mo-v').textContent = m + (yrs ? ' · ' + yrs : '');
-    document.getElementById('c-tier').textContent = tier;
     document.getElementById('c-val').textContent = money(total);
     document.getElementById('c-how').textContent = how;
   }
