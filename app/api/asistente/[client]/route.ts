@@ -180,3 +180,11 @@ export async function POST(req: NextRequest, ctx: { params: Promise<{ client: st
 
   return NextResponse.json({ answer, en_contexto: enContexto });
 }
+
+// Vaciar el registro (solo equipo). Sirve para borrar pruebas.
+export async function DELETE(req: NextRequest, ctx: { params: Promise<{ client: string }> }) {
+  const { client } = await ctx.params;
+  if (!esEquipo(req)) return NextResponse.json({ error: 'forbidden' }, { status: 403 });
+  await escribir(`asistente:${client}`, []);
+  return NextResponse.json({ ok: true });
+}
