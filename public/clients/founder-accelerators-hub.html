@@ -42,6 +42,80 @@
   .rv { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
   .rv.in { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) { .rv { opacity: 1; transform: none; transition: none; } }
+
+  /* ---------- Tablero de trabajo (kanban compartido) ---------- */
+  .kb { width: min(1280px, calc(100vw - 32px)); position: relative; left: 50%; transform: translateX(-50%); margin: 0 0 56px; }
+  .kb-head { display: flex; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
+  .kb-head h2 { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 23px; color: #fff; margin-top: 6px; letter-spacing: -0.01em; }
+  .kb-sub { font-size: 13.5px; color: var(--ink-2); margin-top: 4px; max-width: 70ch; }
+  .kb-acts { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+  .kb-rol { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); border: 1px solid var(--line); border-radius: 999px; padding: 5px 11px; }
+  .kb-rol.ag { color: var(--amber); border-color: rgba(241,181,39,.35); }
+  .kb-btn { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; color: #061018; background: linear-gradient(90deg, var(--amber), var(--orange)); border: 0; border-radius: 8px; padding: 10px 16px; cursor: pointer; }
+  .kb-btn:hover { filter: brightness(1.06); }
+  .kb-btn.sec { background: transparent; color: var(--ink-2); border: 1px solid var(--line); }
+  .kb-filtros { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+  .kb-filtros button { font-family: inherit; font-size: 12px; font-weight: 600; color: var(--ink-2); background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+  .kb-filtros button.on { color: #061018; background: var(--amber); border-color: var(--amber); }
+  .kb-filtros .sep { width: 1px; background: var(--line); margin: 0 4px; }
+  .kb-board { display: grid; grid-template-columns: repeat(4, minmax(240px, 1fr)); gap: 12px; align-items: start; overflow-x: auto; padding-bottom: 6px; }
+  .kb-col { background: rgba(255,255,255,0.025); border: 1px solid var(--line); border-radius: 12px; min-height: 160px; }
+  .kb-col-h { display: flex; align-items: center; gap: 8px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  .kb-col-h h3 { font-family: 'Archivo', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+  .kb-col-h .n { font-size: 11.5px; color: var(--ink-3); }
+  .kb-col-h .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ink-3); }
+  .kb-col[data-col="En curso"] .dot { background: var(--orange); }
+  .kb-col[data-col="En revisión"] .dot { background: var(--amber); }
+  .kb-col[data-col="Listo"] .dot { background: #3ecf8e; }
+  .kb-cards { padding: 10px; display: flex; flex-direction: column; gap: 9px; min-height: 90px; }
+  .kb-cards.over { background: rgba(255,113,57,0.07); border-radius: 0 0 12px 12px; }
+  .kb-card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 13px; cursor: pointer; transition: border-color .2s, transform .2s; }
+  .kb-card:hover { border-color: rgba(255,113,57,0.55); }
+  .kb-card[draggable="true"] { cursor: grab; }
+  .kb-card.drag { opacity: .4; }
+  .kb-card.urg { border-left: 3px solid var(--orange); }
+  .kb-card h4 { font-size: 13.5px; font-weight: 500; color: #fff; line-height: 1.4; margin-top: 8px; }
+  .kb-col[data-col="Listo"] .kb-card h4 { color: var(--ink-2); }
+  .kb-who { display: inline-flex; align-items: center; gap: 6px; font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 3px 8px; border-radius: 5px; }
+  .kb-who.ag { background: rgba(255,113,57,0.14); color: #ff9a6e; }
+  .kb-who.cl { background: rgba(241,181,39,0.14); color: var(--amber); }
+  .kb-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 9px; }
+  .kb-chip { font-size: 10.5px; color: var(--ink-3); border: 1px solid var(--line); border-radius: 5px; padding: 2px 7px; }
+  .kb-chip.late { color: #ff8a7a; border-color: rgba(255,138,122,0.4); }
+  .kb-chip.urg { color: var(--orange); border-color: rgba(255,113,57,0.4); }
+  .kb-empty { font-size: 12px; color: var(--ink-3); text-align: center; padding: 18px 6px; }
+  .kb-cargando, .kb-error { grid-column: 1 / -1; font-size: 13.5px; color: var(--ink-2); padding: 26px; text-align: center; border: 1px dashed var(--line); border-radius: 12px; }
+  .kb-foot { margin-top: 10px; font-size: 12px; text-align: right; }
+  .kb-foot a { color: var(--ink-3); text-decoration: none; }
+  .kb-foot a:hover { color: var(--ink-2); text-decoration: underline; }
+  .kb-modal { position: fixed; inset: 0; background: rgba(2,6,10,0.72); display: none; align-items: flex-start; justify-content: center; z-index: 80; padding: 40px 16px; overflow-y: auto; }
+  .kb-modal.on { display: flex; }
+  .kb-sheet { width: 100%; max-width: 620px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 14px; padding: 24px 26px; }
+  .kb-sheet h3 { font-family: 'Archivo', sans-serif; font-size: 19px; color: #fff; margin-bottom: 4px; }
+  .kb-sheet .quien { font-size: 12.5px; color: var(--ink-3); margin-bottom: 16px; }
+  .kb-f { margin-bottom: 12px; }
+  .kb-f label { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 5px; }
+  .kb-f input, .kb-f select, .kb-f textarea { width: 100%; font-family: inherit; font-size: 14px; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 9px 11px; outline: none; }
+  .kb-f input:focus, .kb-f select:focus, .kb-f textarea:focus { border-color: var(--orange); }
+  .kb-f textarea { min-height: 80px; resize: vertical; }
+  .kb-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .kb-chk { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--ink-2); }
+  .kb-read p { font-size: 14px; color: var(--ink); white-space: pre-wrap; }
+  .kb-read .lbl { font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin: 14px 0 5px; }
+  .kb-links a { display: block; font-size: 13px; color: var(--orange); word-break: break-all; margin-bottom: 3px; }
+  .kb-sec { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line); }
+  .kb-sec h5 { font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 8px; }
+  .kb-com { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 9px 11px; margin-bottom: 7px; }
+  .kb-com b { font-size: 12px; color: var(--amber); }
+  .kb-com span { font-size: 11px; color: var(--ink-3); margin-left: 6px; }
+  .kb-com p { font-size: 13.5px; color: var(--ink); margin-top: 3px; white-space: pre-wrap; }
+  .kb-hist { font-size: 12px; color: var(--ink-3); }
+  .kb-hist div { padding: 3px 0; }
+  .kb-pie { display: flex; gap: 9px; align-items: center; margin-top: 18px; flex-wrap: wrap; }
+  .kb-pie .der { margin-left: auto; display: flex; gap: 9px; }
+  .kb-del { background: none; border: 0; color: #ff8a7a; font-size: 12.5px; cursor: pointer; font-family: inherit; }
+  .kb-msg { font-size: 12.5px; color: #ff8a7a; }
+  @media (max-width: 700px) { .kb-board { grid-template-columns: repeat(4, 82vw); } .kb-row { grid-template-columns: 1fr; } }
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-icon.png">
@@ -56,6 +130,22 @@
     <h1>Todo tu trabajo con A+Growth, en un solo lugar</h1>
     <p class="sub">Elegí una sección para empezar.</p>
   </header>
+
+  <section class="kb rv" id="kb">
+    <div class="kb-head">
+      <div>
+        <p class="eyebrow">Tablero de trabajo</p>
+        <h2>Qué está en marcha y quién lo lleva</h2>
+        <p class="kb-sub">Las tareas de los dos lados, cada una con su responsable. Agregá una tarea, comentá en cualquiera y mové las tuyas a medida que avanzan. Click en una tarjeta para ver el detalle.</p>
+      </div>
+      <div class="kb-acts"><span class="kb-rol" id="kb-rol"></span><button class="kb-btn" id="kb-nueva">+ Nueva tarea</button></div>
+    </div>
+    <div class="kb-filtros" id="kb-filtros"></div>
+    <div class="kb-board" id="kb-board"><div class="kb-cargando">Cargando el tablero…</div></div>
+    <div class="kb-foot"><a href="#" id="kb-equipo">Equipo de A+ Growth: entrar en modo edición</a></div>
+  </section>
+  <div class="kb-modal" id="kb-modal"><div class="kb-sheet" id="kb-sheet"></div></div>
+
 
   <div class="grid">
     <a class="tile rv" href="/clients/founder-accelerators/approvals">
@@ -111,6 +201,222 @@
     el.style.transitionDelay = (i * 90) + 'ms';
     requestAnimationFrame(function () { requestAnimationFrame(function () { el.classList.add('in'); }); });
   });
+})();
+</script>
+
+<script>
+(function () {
+  'use strict';
+  var API = '/api/kanban/founder-accelerators';
+  var LS_AUTOR = 'kb-autor:founder-accelerators';
+  var S = { doc: { cards: [] }, rol: null, columnas: ['Por hacer', 'En curso', 'En revisión', 'Listo'], personas: { agencia: [], cliente: [] } };
+  var filtro = 'todos', abierta = null, editando = false;
+  var $ = function (id) { return document.getElementById(id); };
+
+  function esc(t) { return String(t == null ? '' : t).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function hoy() { var d = new Date(); return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+  function fFecha(iso) { if (!iso) return ''; var p = iso.split('-'); var M = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic']; return parseInt(p[2], 10) + ' ' + M[parseInt(p[1], 10) - 1]; }
+  function hace(iso) { if (!iso) return ''; var m = Math.round((Date.now() - new Date(iso).getTime()) / 60000); if (m < 1) return 'recién'; if (m < 60) return 'hace ' + m + ' min'; var h = Math.round(m / 60); if (h < 24) return 'hace ' + h + ' h'; var d = Math.round(h / 24); return d === 1 ? 'ayer' : 'hace ' + d + ' días'; }
+  function esCliente(n) { return S.personas.cliente.indexOf(n) >= 0; }
+  function puede(c) { return S.rol === 'agencia' || c.creado_por === 'cliente' || esCliente(c.asignado); }
+  function autor() {
+    var lista = S.rol === 'agencia' ? S.personas.agencia : S.personas.cliente;
+    var a = ''; try { a = localStorage.getItem(LS_AUTOR) || ''; } catch (e) {}
+    return lista.indexOf(a) >= 0 ? a : (lista[0] || '');
+  }
+  function setAutor(a) { try { localStorage.setItem(LS_AUTOR, a); } catch (e) {} }
+
+  function api(body) {
+    body.autor = autor();
+    return fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+      .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw j; return j; }); })
+      .then(function (j) { S.doc = j.doc; render(); return j; });
+  }
+  function cargar() {
+    return fetch(API, { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw r.status; return r.json(); })
+      .then(function (j) { S.doc = j.doc || { cards: [] }; S.rol = j.rol; S.columnas = j.columnas; S.personas = j.personas; render(); })
+      .catch(function (e) {
+        $('kb-board').innerHTML = '<div class="kb-error">' + (e === 401 ? 'Tu sesión venció. Recargá la página e ingresá la clave.' : 'El tablero no está disponible en este momento. Probá recargar en un rato.') + '</div>';
+      });
+  }
+
+  function filtros() {
+    var opts = [['todos', 'Todos'], ['agencia', 'A+ Growth'], ['cliente', 'Founder Accelerator'], ['sep']]
+      .concat(S.personas.cliente.map(function (p) { return [p, p]; }))
+      .concat(S.personas.agencia.map(function (p) { return [p, p]; }));
+    $('kb-filtros').innerHTML = opts.map(function (o) {
+      if (o[0] === 'sep') return '<span class="sep"></span>';
+      return '<button data-f="' + esc(o[0]) + '" class="' + (filtro === o[0] ? 'on' : '') + '">' + esc(o[1]) + '</button>';
+    }).join('');
+  }
+  function pasa(c) {
+    if (filtro === 'todos') return true;
+    if (filtro === 'agencia') return !esCliente(c.asignado);
+    if (filtro === 'cliente') return esCliente(c.asignado);
+    return c.asignado === filtro;
+  }
+  function tarjeta(c) {
+    var late = c.vence && c.columna !== 'Listo' && c.vence < hoy();
+    var n = (c.comentarios || []).length;
+    return '<div class="kb-card' + (c.urgente && c.columna !== 'Listo' ? ' urg' : '') + '" data-id="' + esc(c.id) + '" draggable="' + (puede(c) ? 'true' : 'false') + '">' +
+      '<span class="kb-who ' + (esCliente(c.asignado) ? 'cl' : 'ag') + '">' + esc(c.asignado) + '</span>' +
+      '<h4>' + esc(c.titulo) + '</h4>' +
+      '<div class="kb-meta">' +
+        (c.urgente && c.columna !== 'Listo' ? '<span class="kb-chip urg">Urgente</span>' : '') +
+        (c.vence ? '<span class="kb-chip' + (late ? ' late' : '') + '">' + (late ? 'Venció ' : '') + fFecha(c.vence) + '</span>' : '') +
+        (n ? '<span class="kb-chip">' + n + (n === 1 ? ' comentario' : ' comentarios') + '</span>' : '') +
+      '</div></div>';
+  }
+  function render() {
+    var r = $('kb-rol');
+    r.textContent = S.rol === 'agencia' ? 'Modo A+ Growth · edición total' : 'Founder Accelerator';
+    r.className = 'kb-rol' + (S.rol === 'agencia' ? ' ag' : '');
+    $('kb-equipo').style.display = S.rol === 'agencia' ? 'none' : '';
+    filtros();
+    $('kb-board').innerHTML = S.columnas.map(function (col) {
+      var cs = S.doc.cards.filter(function (c) { return c.columna === col && pasa(c); });
+      return '<div class="kb-col" data-col="' + esc(col) + '"><div class="kb-col-h"><span class="dot"></span><h3>' + esc(col) + '</h3><span class="n">' + cs.length + '</span></div>' +
+        '<div class="kb-cards" data-col="' + esc(col) + '">' + (cs.length ? cs.map(tarjeta).join('') : '<div class="kb-empty">Nada acá</div>') + '</div></div>';
+    }).join('');
+    drag();
+    if (abierta && $('kb-modal').classList.contains('on') && !editando) { var c = buscar(abierta); if (c) ver(c); }
+  }
+  function buscar(id) { return S.doc.cards.filter(function (c) { return c.id === id; })[0]; }
+
+  function drag() {
+    var dragId = null;
+    Array.prototype.forEach.call(document.querySelectorAll('.kb-card[draggable="true"]'), function (el) {
+      el.addEventListener('dragstart', function (e) { dragId = el.getAttribute('data-id'); el.classList.add('drag'); try { e.dataTransfer.setData('text/plain', dragId); } catch (x) {} });
+      el.addEventListener('dragend', function () { el.classList.remove('drag'); });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.kb-cards'), function (z) {
+      z.addEventListener('dragover', function (e) { e.preventDefault(); z.classList.add('over'); });
+      z.addEventListener('dragleave', function () { z.classList.remove('over'); });
+      z.addEventListener('drop', function (e) {
+        e.preventDefault(); z.classList.remove('over');
+        var id = dragId; try { id = e.dataTransfer.getData('text/plain') || dragId; } catch (x) {}
+        if (!id) return;
+        var antes = null;
+        Array.prototype.some.call(z.querySelectorAll('.kb-card'), function (k) {
+          var b = k.getBoundingClientRect();
+          if (k.getAttribute('data-id') !== id && e.clientY < b.top + b.height / 2) { antes = k.getAttribute('data-id'); return true; }
+          return false;
+        });
+        var c = buscar(id), col = z.getAttribute('data-col');
+        if (!c) return;
+        c.columna = col; render();
+        api({ op: 'move', id: id, columna: col, antes_de: antes }).catch(function () { cargar(); });
+      });
+    });
+  }
+
+  function opcionesPersona(sel, soloCliente) {
+    var grupo = function (t, l) { return '<optgroup label="' + t + '">' + l.map(function (p) { return '<option' + (p === sel ? ' selected' : '') + '>' + esc(p) + '</option>'; }).join('') + '</optgroup>'; };
+    return grupo('Founder Accelerator', S.personas.cliente) + (soloCliente ? '' : grupo('A+ Growth', S.personas.agencia));
+  }
+  function opcionesAutor() {
+    var lista = S.rol === 'agencia' ? S.personas.agencia : S.personas.cliente, a = autor();
+    return lista.map(function (p) { return '<option' + (p === a ? ' selected' : '') + '>' + esc(p) + '</option>'; }).join('');
+  }
+  function comentarios(c) {
+    var cs = c.comentarios || [];
+    return '<div class="kb-sec"><h5>Comentarios</h5>' +
+      (cs.length ? cs.map(function (k) { return '<div class="kb-com"><b>' + esc(k.quien) + '</b><span>' + hace(k.ts) + '</span><p>' + esc(k.texto) + '</p></div>'; }).join('') : '<p class="kb-hist">Todavía no hay comentarios.</p>') +
+      '<div class="kb-f" style="margin-top:10px"><textarea id="kb-c-txt" placeholder="Escribí un comentario" style="min-height:60px"></textarea></div>' +
+      '<div class="kb-pie" style="margin-top:6px"><span class="kb-hist">Comentás como</span><select id="kb-c-autor" style="background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:5px 8px;font-family:inherit">' + opcionesAutor() + '</select>' +
+      '<div class="der"><button class="kb-btn sec" id="kb-c-ok">Comentar</button></div></div></div>';
+  }
+  function historial(c) {
+    var h = c.historial || [];
+    return h.length ? '<div class="kb-sec"><h5>Historial</h5><div class="kb-hist">' + h.slice(0, 8).map(function (x) { return '<div>' + esc(x.que) + ' · ' + hace(x.ts) + '</div>'; }).join('') + '</div></div>' : '';
+  }
+  function formulario(c) {
+    var nuevo = !c; c = c || { titulo: '', detalle: '', asignado: S.rol === 'agencia' ? 'Amir' : (S.personas.cliente[0] || ''), columna: 'Por hacer', urgente: false, vence: '', links: [] };
+    var soloCliente = S.rol !== 'agencia' && !nuevo && c.creado_por !== 'cliente';
+    return '<div class="kb-f"><label>Qué hay que hacer</label><input id="kb-tit" value="' + esc(c.titulo) + '" maxlength="200"></div>' +
+      '<div class="kb-f"><label>Detalle</label><textarea id="kb-det">' + esc(c.detalle) + '</textarea></div>' +
+      '<div class="kb-row"><div class="kb-f"><label>Responsable</label><select id="kb-asig">' + opcionesPersona(c.asignado, soloCliente) + '</select></div>' +
+      '<div class="kb-f"><label>Estado</label><select id="kb-col">' + S.columnas.map(function (x) { return '<option' + (x === c.columna ? ' selected' : '') + '>' + esc(x) + '</option>'; }).join('') + '</select></div></div>' +
+      '<div class="kb-row"><div class="kb-f"><label>Fecha límite</label><input type="date" id="kb-vence" value="' + esc(c.vence) + '"></div>' +
+      '<div class="kb-f"><label>&nbsp;</label><label class="kb-chk" style="text-transform:none;letter-spacing:0;font-weight:400"><input type="checkbox" id="kb-urg" style="width:auto"' + (c.urgente ? ' checked' : '') + '> Es urgente</label></div></div>' +
+      '<div class="kb-f"><label>Links (uno por línea)</label><textarea id="kb-links" style="min-height:52px">' + esc((c.links || []).join('\n')) + '</textarea></div>';
+  }
+  function datosForm() {
+    return { titulo: $('kb-tit').value, detalle: $('kb-det').value, asignado: $('kb-asig').value, columna: $('kb-col').value,
+      vence: $('kb-vence').value, urgente: $('kb-urg').checked, links: $('kb-links').value.split('\n').map(function (x) { return x.trim(); }).filter(Boolean) };
+  }
+  function abrirModal(html) { $('kb-sheet').innerHTML = html; $('kb-modal').classList.add('on'); }
+  function cerrar() { $('kb-modal').classList.remove('on'); abierta = null; editando = false; }
+
+  function ver(c) {
+    abierta = c.id; editando = false;
+    var lk = (c.links || []).map(function (u) { var h = /^https?:/i.test(u) ? u : 'https://' + u; return '<a href="' + esc(h) + '" target="_blank" rel="noopener">' + esc(u) + '</a>'; }).join('');
+    abrirModal(
+      '<span class="kb-who ' + (esCliente(c.asignado) ? 'cl' : 'ag') + '">' + esc(c.asignado) + '</span>' +
+      '<h3 style="margin-top:10px">' + esc(c.titulo) + '</h3>' +
+      '<div class="quien">' + esc(c.columna) + (c.vence ? ' · vence ' + fFecha(c.vence) : '') + (c.urgente ? ' · urgente' : '') + ' · actualizada ' + hace(c.actualizado) + '</div>' +
+      '<div class="kb-read">' + (c.detalle ? '<p>' + esc(c.detalle) + '</p>' : '') + (lk ? '<div class="lbl">Links</div><div class="kb-links">' + lk + '</div>' : '') + '</div>' +
+      comentarios(c) + historial(c) +
+      '<div class="kb-pie"><span class="kb-msg" id="kb-msg"></span><div class="der">' +
+        (puede(c) ? '<button class="kb-btn sec" id="kb-editar">Editar</button>' : '<span class="kb-hist">Esta tarea la mueve A+ Growth. Podés comentar.</span>') +
+        '<button class="kb-btn sec" id="kb-cerrar">Cerrar</button></div></div>');
+  }
+  function editar(c) {
+    editando = true;
+    var borrar = S.rol === 'agencia' || c.creado_por === 'cliente';
+    abrirModal('<h3>Editar tarea</h3><div class="quien">Los cambios los ven los dos equipos.</div>' + formulario(c) +
+      '<div class="kb-pie">' + (borrar ? '<button class="kb-del" id="kb-borrar">Borrar tarea</button>' : '') + '<span class="kb-msg" id="kb-msg"></span>' +
+      '<div class="der"><button class="kb-btn sec" id="kb-cancelar">Cancelar</button><button class="kb-btn" id="kb-guardar">Guardar</button></div></div>');
+  }
+  function nueva() {
+    abierta = null; editando = true;
+    abrirModal('<h3>Nueva tarea</h3><div class="quien">Elegí quién la lleva. La ven los dos equipos.</div>' + formulario(null) +
+      '<div class="kb-pie"><span class="kb-msg" id="kb-msg"></span><div class="der"><button class="kb-btn sec" id="kb-cerrar">Cancelar</button><button class="kb-btn" id="kb-crear">Crear tarea</button></div></div>');
+    $('kb-tit').focus();
+  }
+  function error(e) {
+    var m = e && e.error === 'forbidden' ? 'Esa tarea la edita A+ Growth.' : e && e.error === 'falta_titulo' ? 'Falta el título.' : 'No se pudo guardar. Probá de nuevo.';
+    var el = $('kb-msg'); if (el) el.textContent = m;
+  }
+
+  document.addEventListener('click', function (e) {
+    var f = e.target.closest('#kb-filtros button'); if (f) { filtro = f.getAttribute('data-f'); render(); return; }
+    var k = e.target.closest('.kb-card'); if (k) { var c = buscar(k.getAttribute('data-id')); if (c) ver(c); return; }
+    if (e.target.closest('#kb-nueva')) { nueva(); return; }
+    if (e.target.closest('#kb-cerrar')) { cerrar(); return; }
+    if (e.target.closest('#kb-cancelar')) { var cc = buscar(abierta); if (cc) ver(cc); else cerrar(); return; }
+    if (e.target.closest('#kb-editar')) { var ce = buscar(abierta); if (ce) editar(ce); return; }
+    if (e.target.closest('#kb-crear')) {
+      var d = datosForm(); if (!d.titulo.trim()) { error({ error: 'falta_titulo' }); return; }
+      api({ op: 'add', card: d }).then(cerrar).catch(error); return;
+    }
+    if (e.target.closest('#kb-guardar')) {
+      var id = abierta;
+      api({ op: 'update', id: id, cambios: datosForm() }).then(function () { var c2 = buscar(id); if (c2) ver(c2); else cerrar(); }).catch(error); return;
+    }
+    if (e.target.closest('#kb-borrar')) {
+      if (!confirm('¿Borrar esta tarea? No se puede deshacer.')) return;
+      api({ op: 'delete', id: abierta }).then(cerrar).catch(error); return;
+    }
+    if (e.target.closest('#kb-c-ok')) {
+      var t = $('kb-c-txt').value.trim(); if (!t) return;
+      setAutor($('kb-c-autor').value);
+      var cid = abierta;
+      api({ op: 'comment', id: cid, texto: t }).then(function () { var c3 = buscar(cid); if (c3) ver(c3); }).catch(error); return;
+    }
+    if (e.target.closest('#kb-equipo')) {
+      e.preventDefault();
+      var key = prompt('Clave del equipo de A+ Growth');
+      if (key) { document.cookie = 'agrowth_team=' + encodeURIComponent(key.trim()) + '; path=/; max-age=2592000; SameSite=Lax'; cargar(); }
+    }
+  });
+  $('kb-modal').addEventListener('click', function (e) { if (e.target === $('kb-modal')) cerrar(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && $('kb-modal').classList.contains('on')) cerrar(); });
+  document.addEventListener('change', function (e) { if (e.target.id === 'kb-c-autor') setAutor(e.target.value); });
+
+  cargar();
+  setInterval(function () { if (!$('kb-modal').classList.contains('on') && !document.hidden) cargar(); }, 30000);
 })();
 </script>
 <script src="/clients/portal-edit.js" defer></script>
