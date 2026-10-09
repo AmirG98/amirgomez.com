@@ -69,6 +69,25 @@
   .closing p { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 19px; max-width: 46ch; margin: 0 auto; }
   .closing p span { color: var(--orange); }
   footer { text-align: center; color: var(--ink-3); font-size: 12.5px; margin-top: 44px; }
+
+ .whos { margin-top: 12px; display: flex; gap: 6px; flex-wrap: wrap; }
+ .who { font-size: 11.5px; font-weight: 600; color: var(--ink-2); border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; }
+ .tech ul { margin: 8px 0 0 18px; color: var(--ink-2); }
+ .tech li { margin-top: 4px; }
+ .tech li b { color: var(--ink); }
+ .tbc { font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #fbbf24; border: 1px solid rgba(251,191,36,0.5); border-radius: 5px; padding: 1px 6px; white-space: nowrap; }
+ .faq { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; margin: 24px 0 16px; }
+ .faq .lbl, .pend .lbl { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-3); }
+ .qa { padding: 10px 0; border-bottom: 1px solid var(--line); }
+ .qa:last-child { border-bottom: none; }
+ .qa .q { font-weight: 600; }
+ .qa .a { color: var(--ink-2); margin-top: 2px; }
+ .pend { border: 1px dashed rgba(251,191,36,0.5); border-radius: 12px; padding: 18px 24px; margin: 16px 0; }
+ .pend ul { margin: 8px 0 0 18px; color: var(--ink-2); }
+ .index li a { color: var(--ink); }
+ .index li a:hover { color: var(--orange); text-decoration: none; }
+ .tr-sep { height: 72px; }
+ code { font-size: 12.5px; background: var(--panel-2); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; color: var(--ink); }
 </style>
 </head>
 <body>
@@ -83,9 +102,8 @@
 
   <div class="index">
     <span class="lbl">Entrenamientos</span>
-    <ol>
-      <li><span class="n">01</span>Salir del bloqueo creativo</li>
-      <li><span class="n">02</span><span class="soon">Próximo entrenamiento — se suma acá</span></li>
+    <ol id="idx">
+      <li><a href="#t01"><span class="n">01</span>Salir del bloqueo creativo</a></li>
     </ol>
   </div>
 
@@ -186,6 +204,21 @@
   <div class="closing">
     <p>Generar y juzgar son dos trabajos distintos.<br><span>Hacelos en momentos distintos y el bloqueo no tiene dónde vivir.</span></p>
   </div>
+
+  <!-- TRAININGS:INICIO -->
+  <div id="trainings-dyn"></div>
+  <script>
+  // Los trainings 02+ no viven en este HTML (el repo es público): se piden con la cookie de equipo.
+  fetch('/api/hq-entrenamientos', { credentials: 'same-origin', cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      if (!d || !d.html) return;
+      document.getElementById('idx').insertAdjacentHTML('beforeend', d.index);
+      document.getElementById('trainings-dyn').innerHTML = d.html;
+      if (location.hash) { var el = document.querySelector(location.hash); if (el) el.scrollIntoView(); }
+    });
+  </script>
+  <!-- TRAININGS:FIN -->
 
   <footer>A+Growth · Banco de entrenamientos · Uso interno del equipo</footer>
 

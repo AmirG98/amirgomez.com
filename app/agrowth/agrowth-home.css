@@ -164,7 +164,7 @@
   
   
   html.agrowth-scope .team{padding:5rem 6vw 4rem;position:relative;z-index:4;background:transparent}
-  html.agrowth-scope .team-eyebrow{display:block;margin-bottom:1.8rem}
+  html.agrowth-scope .team-eyebrow{display:block;margin:0 0 2.2rem}
   
   html.agrowth-scope .team-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;max-width:1100px}
   
@@ -179,7 +179,7 @@
   html.agrowth-scope .member p{color:#c4ccc9;font-size:.85rem;line-height:1.5;max-width:32ch}
   html.agrowth-scope .team-note{margin-top:2rem;letter-spacing:.16em}
   /* Single-person "lead behind the team" layout: portrait beside copy, centered */
-  html.agrowth-scope .team-solo{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:clamp(2.6rem,5vw,4.5rem);align-items:center;max-width:1000px;margin:0 auto}
+  html.agrowth-scope .team-solo{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:clamp(2.6rem,5vw,4.5rem);align-items:center;max-width:1000px;margin:0}
   html.agrowth-scope .team-solo .member{width:100%}
   /* Portrait: soft frame + warm ring, glow blooms on hover */
   html.agrowth-scope .team-solo .member img{border-radius:20px;border:1px solid rgba(242,239,233,.14);
@@ -197,7 +197,7 @@
     border-top:1px solid rgba(242,239,233,.16)}
   html.agrowth-scope .team-stats dt{color:var(--muted);font-size:.7rem;letter-spacing:.12em;margin-bottom:.35rem}
   html.agrowth-scope .team-stats dd{color:var(--fg);font-size:clamp(1.15rem,2vw,1.5rem);font-weight:700;letter-spacing:-.01em}
-  html.agrowth-scope .team-solo-copy .team-note{margin-top:1.6rem;color:var(--muted)}
+  html.agrowth-scope .team-solo-copy .team-note{margin-top:1.6rem;color:var(--muted);font-size:.78rem;letter-spacing:.18em;line-height:1.7}
   @media(max-width:820px){
     html.agrowth-scope .team-grid{grid-template-columns:1fr;gap:1.8rem;max-width:420px}
     html.agrowth-scope .member p{max-width:none}

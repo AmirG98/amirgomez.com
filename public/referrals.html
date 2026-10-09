@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A+ Growth — Referrals</title>
+<meta name="description" content="Introduce a business to A+ Growth and earn 15% of everything they pay us. Some of the case studies we've compiled.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<style>
+  :root {
+    --bg:#050608; --surface:#111214; --surface-2:#17181b; --fg:#f2efe9; --muted:#8d968f; --line:rgba(242,239,233,.10);
+    --brand:#ff6a2b; --brand-bright:#ff8a4d; --peach:#ffc9a3;
+    --sans:'Bricolage Grotesque',system-ui,sans-serif; --mono:'Martian Mono',ui-monospace,monospace;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--bg); color:var(--fg); font-family:var(--sans); -webkit-font-smoothing:antialiased; line-height:1.55; }
+  a { color:inherit; }
+  .wrap { max-width:1120px; margin:0 auto; padding:0 6vw; }
+  @media (min-width:1300px) { .wrap { padding:0 40px; } }
+  .mono { font-family:var(--mono); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
+
+  nav { display:flex; justify-content:space-between; align-items:center; padding:26px 0; }
+  .brand { font-weight:800; letter-spacing:.02em; text-decoration:none; font-size:1.05rem; }
+  .brand span { color:var(--brand); }
+  nav .links a { font-family:var(--mono); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase; text-decoration:none; color:var(--muted); margin-left:22px; }
+  nav .links a:hover { color:var(--fg); }
+
+  .hero { padding:9vh 0 7vh; }
+  .hero h1 { font-size:clamp(2.6rem,7vw,5.2rem); font-weight:800; letter-spacing:-.035em; line-height:.98; margin:18px 0 22px; max-width:14ch; }
+  .hero h1 em { font-style:normal; color:var(--brand); }
+  .hero p { font-size:clamp(1.05rem,1.6vw,1.25rem); color:#c4ccc9; max-width:46ch; }
+  .actions { display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-top:34px; }
+  .cta { display:inline-flex; align-items:center; gap:12px; background:var(--brand); color:#0b0b0c; font-weight:700; font-size:1.02rem; padding:16px 28px; border-radius:999px; text-decoration:none; transition:background .2s, transform .2s; }
+  .cta:hover { background:var(--brand-bright); transform:translateY(-2px); }
+  .ghost { font-family:var(--mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--fg); text-decoration:none; padding:14px 6px; }
+  .ghost:hover { color:var(--brand); }
+
+  section { padding:7vh 0; border-top:1px solid var(--line); }
+  .sec-head { display:flex; align-items:baseline; gap:16px; margin-bottom:30px; flex-wrap:wrap; }
+  .sec-head .n { font-family:var(--mono); color:var(--brand); font-size:.75rem; }
+  .sec-head h2 { font-size:clamp(1.6rem,3.2vw,2.4rem); font-weight:700; letter-spacing:-.02em; line-height:1.1; }
+
+  /* pago */
+  .pay { display:grid; grid-template-columns:1fr; gap:16px; }
+  .pay-card { background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:30px 30px 26px; }
+  .pay-card.main { background:linear-gradient(150deg,#1d120c 0%,var(--surface) 60%); border-color:rgba(255,106,43,.35); }
+  .pay-card .when { margin-bottom:14px; }
+  .pay-card .big { font-size:clamp(2.6rem,5.5vw,3.8rem); font-weight:800; letter-spacing:-.03em; line-height:1; }
+  .pay-card .big small { font-size:.32em; font-weight:500; color:var(--muted); letter-spacing:0; margin-left:6px; }
+  .pay-card.main .big { color:var(--brand); }
+  .split { display:flex; gap:12px; margin-top:22px; flex-wrap:wrap; }
+  .split div { flex:1; min-width:150px; background:rgba(242,239,233,.04); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+  .split b { display:block; font-size:1.35rem; font-weight:700; }
+  .split span { font-size:.88rem; color:#b8bfbc; }
+  .pay-card p.d { color:#b8bfbc; font-size:.98rem; margin-top:16px; }
+  .fine { font-size:.85rem; color:var(--muted); margin-top:18px; }
+
+  .hero-ex { margin-top:22px; display:inline-flex; flex-direction:column; gap:6px; border:1px solid rgba(255,106,43,.35); background:rgba(255,106,43,.06); border-radius:12px; padding:12px 18px; color:#d6dbd8; }
+  .hero-ex b { color:var(--brand); font-size:1.15em; }
+  .pay-card .big.sm { font-size:clamp(2.2rem,4.4vw,3rem); }
+  .calc { margin-top:16px; background:var(--surface-2); border:1px solid var(--line); border-radius:18px; padding:26px 30px; display:grid; grid-template-columns:1.2fr 1fr; gap:30px; align-items:center; }
+  .calc label { display:block; margin-bottom:18px; }
+  .calc label .row { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px; }
+  .calc label b { font-size:1.1rem; }
+  .calc input[type=range] { width:100%; accent-color:var(--brand); }
+  .calc .out { border-left:1px solid var(--line); padding-left:30px; }
+  .calc .out .val { font-size:clamp(2.4rem,5vw,3.4rem); font-weight:800; letter-spacing:-.03em; color:var(--brand); line-height:1; margin:8px 0 10px; }
+  .calc .out p { color:#b8bfbc; font-size:.92rem; }
+  @media (max-width:900px) { .calc { grid-template-columns:1fr; } .calc .out { border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:20px; } }
+  /* pasos */
+  .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .step { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:24px; }
+  .step .k { font-family:var(--mono); color:var(--brand); font-size:.72rem; }
+  .step h3 { font-size:1.2rem; font-weight:700; margin:10px 0 6px; letter-spacing:-.01em; }
+  .step p { color:#b8bfbc; font-size:.95rem; }
+
+  /* servicios */
+  .svc { display:flex; flex-wrap:wrap; gap:10px; }
+  .svc span { border:1px solid var(--line); background:var(--surface); border-radius:999px; padding:10px 18px; font-size:.95rem; }
+  .svc-note { color:#b8bfbc; margin-top:18px; font-size:1rem; }
+  .svc-note b { color:var(--fg); }
+
+  /* casos */
+  .filters { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px; }
+  .filters button { font-family:var(--mono); font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; background:transparent; color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:10px 16px; cursor:pointer; transition:all .2s; }
+  .filters button:hover { color:var(--fg); }
+  .filters button.on { background:var(--fg); color:var(--bg); border-color:var(--fg); }
+  .cases { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .case { background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden; display:flex; flex-direction:column; }
+  .case img { width:100%; aspect-ratio:16/10; object-fit:cover; object-position:top; display:block; border-bottom:1px solid var(--line); background:#0c0d0f; }
+  .case .body { padding:18px 20px 20px; display:flex; flex-direction:column; flex:1; }
+  .case .tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
+  .case .tags i { font-style:normal; font-family:var(--mono); font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; color:var(--peach); border:1px solid rgba(255,201,163,.25); border-radius:999px; padding:4px 9px; }
+  .case h3 { font-size:1.12rem; font-weight:700; letter-spacing:-.01em; }
+  .case .vert { font-size:.82rem; color:var(--muted); margin-top:2px; }
+  .case .metric { margin-top:14px; font-size:.98rem; color:#d6dbd8; line-height:1.45; }
+  .case .metric span { color:var(--brand); font-weight:700; }
+  .case.hide { display:none; }
+
+  .webs { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:28px; }
+  .web { display:flex; justify-content:space-between; align-items:center; gap:14px; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px 18px; text-decoration:none; transition:border-color .2s; }
+  .web:hover { border-color:var(--brand); }
+  .web b { font-weight:600; }
+  .web small { display:block; color:var(--muted); font-size:.82rem; }
+  .web .go { font-family:var(--mono); font-size:.7rem; color:var(--brand); white-space:nowrap; }
+  .webs-title { margin-top:44px; }
+  .library { margin-top:26px; display:flex; gap:18px; flex-wrap:wrap; }
+  .library a { font-family:var(--mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--fg); text-decoration:none; border-bottom:1px solid var(--brand); padding-bottom:3px; }
+
+  .closing { text-align:left; padding:10vh 0 12vh; }
+  .closing h2 { font-size:clamp(2.2rem,5.5vw,4rem); font-weight:800; letter-spacing:-.03em; line-height:1; max-width:15ch; }
+  .closing p { color:#c4ccc9; margin-top:16px; max-width:44ch; font-size:1.08rem; }
+  footer { border-top:1px solid var(--line); padding:26px 0 40px; }
+
+  @media (max-width:900px) {
+    .pay, .steps { grid-template-columns:1fr; }
+    .cases { grid-template-columns:repeat(2,1fr); }
+  }
+  @media (max-width:600px) {
+    .cases, .webs { grid-template-columns:1fr; }
+    nav .links { display:none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="/">A<span>+</span> GROWTH</a>
+    <span class="links"><a href="#pay">How you get paid</a><a href="#cases">Cases</a><a href="/">Home</a></span>
+  </nav>
+
+  <header class="hero">
+    <span class="mono">Referral program</span>
+    <h1>One intro. <em>15%</em> of everything they pay us.</h1>
+    <p>Know a business owner who needs more customers? Introduce us. If they become a client, you earn 15% of what they pay us, every month, for as long as they stay.</p>
+    <div class="hero-ex"><span class="mono">Example</span><span>A client on $6,000/mo for a year pays you <b>$10,800</b>.</span></div>
+    <div class="actions">
+      <a class="cta" id="intro-top" href="#" data-event="referrals_email_click">Make an intro <span aria-hidden="true">→</span></a>
+      <a class="ghost" href="#cases">See some cases ↓</a>
+    </div>
+  </header>
+
+  <section id="pay">
+    <div class="sec-head"><span class="n">01</span><h2>How you get paid</h2></div>
+    <div class="pay">
+      <div class="pay-card main">
+        <div class="mono when">Every client you send · any size</div>
+        <div class="big">15%<small>flat</small></div>
+        <p class="d">Of what the client pays us, every month, for as long as their contract runs. One rate for everyone: the bigger the account and the longer they stay, the more you earn.</p>
+      </div>
+    </div>
+
+    <div class="calc" aria-label="Referral earnings calculator">
+      <div>
+        <label><span class="row"><span class="mono">Their monthly retainer</span><b id="c-ret-v">$6,000</b></span>
+          <input type="range" id="c-ret" min="500" max="12000" step="100" value="6000"></label>
+        <label style="margin-bottom:0;"><span class="row"><span class="mono">Months they stay</span><b id="c-mo-v">12</b></span>
+          <input type="range" id="c-mo" min="1" max="60" step="1" value="12"></label>
+      </div>
+      <div class="out">
+        <span class="mono" id="c-tier">Your 15%</span>
+        <div class="val" id="c-val">$10,800</div>
+        <p id="c-how">15% of $6,000 a month, for 12 months.</p>
+      </div>
+    </div>
+    <p class="fine">Paid on money actually collected from the client, never on signature. No quotas, no exclusivity, no sales experience needed.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="n">02</span><h2>Three steps, and only the first one is yours</h2></div>
+    <div class="steps">
+      <div class="step"><div class="k">01 · You</div><h3>Make the intro</h3><p>One email with both of us copied. Two lines on who they are is plenty.</p></div>
+      <div class="step"><div class="k">02 · Us</div><h3>We take it from there</h3><p>We run the call, send the proposal and keep you posted on where it stands.</p></div>
+      <div class="step"><div class="k">03 · You</div><h3>You get paid</h3><p>The moment their payment lands, yours is on the way.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="n">03</span><h2>What they can hire us for</h2></div>
+    <div class="svc">
+      <span>Paid acquisition: Meta, Google, Microsoft, programmatic</span>
+      <span>Funnels &amp; VSL</span>
+      <span>Websites &amp; landing pages</span>
+      <span>SEO &amp; GEO</span>
+      <span>Email &amp; lifecycle</span>
+      <span>UGC &amp; creative production</span>
+      <span>AI agents</span>
+      <span>AI automations</span>
+      <span>Marketing technology</span>
+    </div>
+    <p class="svc-note">Retainers usually go from <b>$1,800/mo</b> for the basics to <b>$3,500/mo</b> for the full funnel, and bigger operations go beyond that. The whole operation or a single piece of it, whatever the business actually needs.</p>
+  </section>
+
+  <section id="cases">
+    <div class="sec-head"><span class="n">04</span><h2>Some cases we've compiled</h2></div>
+    <p class="mono" style="margin:-14px 0 24px;">Send these to whoever you're introducing. The numbers are real client work.</p>
+    <div class="filters" role="group" aria-label="Filter cases by service">
+      <button class="on" data-f="all">All</button>
+      <button data-f="paid">Paid acquisition</button>
+      <button data-f="funnels">Funnels &amp; VSL</button>
+      <button data-f="organic">SEO &amp; GEO</button>
+      <button data-f="ai">AI &amp; automation</button>
+    </div>
+    <div class="cases" id="cases-grid"></div>
+
+    <div class="sec-head webs-title"><h2 style="font-size:clamp(1.3rem,2.4vw,1.7rem);">Websites &amp; landings we built</h2></div>
+    <div class="webs" id="webs"></div>
+
+    <div class="library">
+      <a href="/case-studies">Full case library →</a>
+      <a href="/case-studies/partners">Services &amp; results for partners →</a>
+    </div>
+  </section>
+
+  <section class="closing">
+    <span class="mono">Your turn</span>
+    <h2 style="margin-top:16px;">Who comes to mind?</h2>
+    <p>Whoever just popped into your head is probably the right intro. Send it over and we'll handle the rest.</p>
+    <div class="actions"><a class="cta" id="intro-bottom" href="#" data-event="referrals_email_click">Make an intro <span aria-hidden="true">→</span></a></div>
+  </section>
+
+  <footer><span class="mono">A+ Growth · Amir Gomez · amir@amirgomez.com</span></footer>
+</div>
+
+<script>
+(function () {
+  var MAIL = 'mailto:amir@amirgomez.com?subject=' + encodeURIComponent('Referral intro: [company name]') +
+    '&body=' + encodeURIComponent('Hi Amir,\n\nI want to introduce you to [name] from [company]. They [what they do], and they could use help with [what they need].\n\nTheir email: \n\nThanks!');
+  ['intro-top', 'intro-bottom'].forEach(function (id) {
+    var a = document.getElementById(id);
+    a.href = MAIL;
+    a.addEventListener('click', function () {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'referrals_email_click', position: id });
+    });
+  });
+
+  var ret = document.getElementById('c-ret'), mo = document.getElementById('c-mo');
+  function money(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+  function calc() {
+    var r = +ret.value, m = +mo.value;
+    var total = r * m * 0.15;
+    var how = '15% of ' + money(r) + ' a month, for ' + m + (m === 1 ? ' month.' : ' months.');
+    document.getElementById('c-ret-v').textContent = money(r);
+    var yrs = m % 12 === 0 ? (m / 12) + (m === 12 ? ' year' : ' years') : '';
+    document.getElementById('c-mo-v').textContent = m + (yrs ? ' · ' + yrs : '');
+    document.getElementById('c-val').textContent = money(total);
+    document.getElementById('c-how').textContent = how;
+  }
+  ret.addEventListener('input', calc); mo.addEventListener('input', calc); calc();
+
+  var CASES = [
+    { sec:'organic ai', title:'EcoNews', tags:['AI agents','AI automations','SEO & GEO'], vert:'Top news outlet · LatAm',
+      metric:'<span>2x Google rankings</span> with <span>5x more content</span>, written automatically by AI agents on trending topics in real time', img:'/case-studies/econews.jpg' },
+    { sec:'paid', title:'Trailer Valet', tags:['Paid Social','PPC','Email','Affiliates'], vert:'Physical product · USA',
+      metric:'Monthly revenue from <span>$20K in 2022</span> to <span>$100K+ today</span>, four years running their digital operation', img:'/case-studies/trailer-valet.jpg' },
+    { sec:'funnels', title:'Webinar + VSL', tags:['Funnels'], vert:'Lending B2B/B2C · USA',
+      metric:'<span>5 new deals · $1M+ in margin</span> with just <span>$2,744</span> in ad spend', img:'/case-studies/webinar-vsl.jpg' },
+    { sec:'funnels', title:'Lead Magnet B2B', tags:['Paid Social','Funnels'], vert:'Marketing & data agency · California',
+      metric:'ICP cost per lead from <span>$50 to $5</span>, best ads down to <span>$2.20/lead</span>', img:'/case-studies/lead-magnet-b2b.jpg' },
+    { sec:'paid', title:'LeadGen B2C', tags:['Paid Social'], vert:'Home decor · USA',
+      metric:'<span>63,000+ leads</span> at an average CPL of <span>$4.5</span> on a $335K/yr campaign', img:'/case-studies/leadgen-b2c.jpg' },
+    { sec:'paid', title:'UGC (+AI)', tags:['Paid Social','UGC'], vert:'Legal · USA',
+      metric:'ROAS from <span>2x to 7x</span> after scaling UGC volume 20x', img:'/case-studies/ugc-ai.jpg' },
+    { sec:'paid', title:'PPC B2B', tags:['PPC'], vert:'Advertising agency · USA',
+      metric:'Channel revenue <span>3.7x</span> in 18 months, ROI from <span>1.74 to 3.76</span>', img:'/case-studies/ppc-b2b.jpg' },
+    { sec:'paid', title:'Programmatic at Scale', tags:['Programmatic'], vert:'Luxury automotive · Multinational',
+      metric:'<span>-11% CPM</span> at <span>1 billion impressions</span> per month', img:'/case-studies/programmatic.jpg' },
+    { sec:'organic', title:'Nationwide Trailers', tags:['SEO & GEO'], vert:'B2B/B2C · Texas, USA',
+      metric:'<span>5.3x organic traction</span> in one year, <span>410,000+</span> organic visitors', img:'/case-studies/nationwide-trailers.jpg' },
+    { sec:'organic', title:'EverPresent', tags:['SEO & GEO','Integrated'], vert:'Consumer services · USA',
+      metric:'From <span>9,000</span> to <span>25,000 organic clicks/month</span>', img:'/case-studies/everpresent.jpg' },
+    { sec:'organic', title:'Aurora Circ', tags:['SEO & GEO','Content'], vert:'Media · USA',
+      metric:'<span>~5,000 clicks/month</span>, 2.5M impressions over 16 months, built almost from scratch', img:'/case-studies/aurora-circ.jpg' },
+    { sec:'organic', title:'Realty Capital Financial', tags:['SEO & GEO','Content'], vert:'Lending · USA',
+      metric:'<span>12.1% CTR</span> from zero, without buying a single backlink', img:'/case-studies/realty-capital.jpg' },
+    { sec:'organic', title:'Senior Care Nation', tags:['SEO & GEO','Content'], vert:'Senior care · USA',
+      metric:'<span>127K impressions</span>, average position improving to 21.8', img:'/case-studies/senior-care-nation.jpg' }
+  ];
+  var WEBS = [
+    { url:'https://www.founderaccelerators.com/', name:'Founder Accelerators', what:'Website · premium coaching for founders' },
+    { url:'https://www.wolfgyms.com/franchise', name:'Wolf Gyms', what:'Franchise site, featuring Dave Bautista' },
+    { url:'https://trailervalet.com/', name:'Trailer Valet', what:'E-commerce · trailer moving hardware' },
+    { url:'https://urban-usa.com', name:'Urban Real Estate', what:'Website · brokerage & property management, Miami' },
+    { url:'https://lizsolari.net/', name:'Liz Solari', what:'Website · personal brand' },
+    { url:'https://via.tools/', name:'Via Tools', what:'Website · product' },
+    { url:'https://www.ttmotosmiami.com/', name:'TT Motos Miami', what:'E-commerce · electric motos & e-bikes' },
+    { url:'https://casafight.com', name:'Casafight', what:'E-commerce · party games brand' },
+    { url:'https://www.founderaccelerators.com/blueprint-call-es', name:'Founder Accelerators · Blueprint Call', what:'VSL landing page' },
+    { url:'https://go.everpresent.com/preserve-what-matters-b', name:'EverPresent', what:'VSL landing page' },
+    { url:'https://www.augustalawncareservices.com/franchise', name:'Augusta Lawn Care', what:'VSL landing · franchise pitch' }
+  ];
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c]; }); }
+
+  var grid = document.getElementById('cases-grid');
+  grid.innerHTML = CASES.map(function (c) {
+    return '<article class="case" data-sec="' + c.sec + '">' +
+      '<img src="' + c.img + '" alt="' + esc(c.title) + ' results" loading="lazy">' +
+      '<div class="body"><div class="tags">' + c.tags.map(function (t) { return '<i>' + esc(t) + '</i>'; }).join('') + '</div>' +
+      '<h3>' + esc(c.title) + '</h3><div class="vert">' + esc(c.vert) + '</div>' +
+      '<p class="metric">' + c.metric + '</p></div></article>';
+  }).join('');
+
+  document.getElementById('webs').innerHTML = WEBS.map(function (w) {
+    return '<a class="web" href="' + w.url + '" target="_blank" rel="noopener"><span><b>' + esc(w.name) + '</b><small>' + esc(w.what) + '</small></span><span class="go">Open ↗</span></a>';
+  }).join('');
+
+  var btns = document.querySelectorAll('.filters button');
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      btns.forEach(function (x) { x.classList.toggle('on', x === b); });
+      var f = b.getAttribute('data-f');
+      grid.querySelectorAll('.case').forEach(function (el) {
+        el.classList.toggle('hide', f !== 'all' && el.getAttribute('data-sec').split(' ').indexOf(f) === -1);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
