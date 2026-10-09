@@ -13,7 +13,7 @@ export type Card = {
   columna: string; actualizado: string; canal?: string; pedido_por?: string; pedido_fecha?: string;
   mensaje?: string; vence?: string; links?: string[]; historial?: Evento[];
 };
-export type Board = { cards: Card[]; clientes?: Record<string, Record<string, unknown>>; leido_en?: string };
+export type Board = { cards: Card[]; clientes?: Record<string, Record<string, unknown>>; leido_en?: string; borrados?: string[] };
 
 export function storage() {
   const url = process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL;
@@ -44,23 +44,34 @@ export async function guardarBoard(b: Board): Promise<void> {
 }
 
 // La página manda el board entero cada vez que guarda. Si mientras estaba abierta
-// alguien cambió algo por el MCP, un reemplazo directo lo pisaría. Con `leido_en`
-// (cuándo la página leyó el board) se fusiona tarjeta por tarjeta: gana la versión
-// más nueva, y una tarjeta que la página no conocía se conserva si nació después.
-// Sin `leido_en` (scripts, versiones viejas) se reemplaza como antes.
+// alguien cambió algo (el MCP, un script, otra pestaña), un reemplazo directo lo pisaría.
+// Con `leido_en` se fusiona: por tarjeta gana la versión más nueva, y una tarjeta que la
+// página no tiene se conserva SIEMPRE, salvo que venga en `borrados` (la borró alguien a
+// propósito). Las fichas de cliente se fusionan igual: una ficha que la página no tiene
+// se conserva, y si están las dos gana la de `actualizado` más nuevo.
+// Antes una pestaña que quedó horas sin refrescar se llevaba puestas tarjetas y fichas
+// creadas mientras tanto (pasó el 8/10/2026 con Glowing Home).
+// Sin `leido_en` (scripts viejos) se reemplaza como antes.
+const ts = (x: unknown) => { const t = Date.parse(String(x || '')); return Number.isNaN(t) ? 0 : t; };
 export function fusionar(actual: Board, entrante: Board): Board {
   const leido = entrante.leido_en || '';
   if (!leido) return { cards: entrante.cards || [], clientes: entrante.clientes ?? actual.clientes };
+  const borrados = new Set(entrante.borrados || []);
   const porIdActual = new Map(actual.cards.map((c) => [c.id, c]));
   const idsEntrante = new Set(entrante.cards.map((c) => c.id));
   const cards: Card[] = entrante.cards.map((c) => {
     const a = porIdActual.get(c.id);
-    return a && (a.actualizado || '') > (c.actualizado || '') ? a : c;
+    return a && ts(a.actualizado) > ts(c.actualizado) ? a : c;
   });
   for (const a of actual.cards) {
-    if (!idsEntrante.has(a.id) && (a.actualizado || '') > leido) cards.push(a);
+    if (!idsEntrante.has(a.id) && !borrados.has(a.id)) cards.push(a);
   }
-  return { cards, clientes: entrante.clientes ?? actual.clientes };
+  const clientes: Record<string, Record<string, unknown>> = { ...(actual.clientes || {}) };
+  for (const [n, f] of Object.entries(entrante.clientes || {})) {
+    const a = clientes[n];
+    if (!a || ts(f.actualizado) >= ts(a.actualizado)) clientes[n] = f;
+  }
+  return { cards, clientes };
 }
 
 export function log(c: Card, que: string) {

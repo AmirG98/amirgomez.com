@@ -399,6 +399,7 @@
   var modo = 'server';
   var clienteSel = 'General';
   var leidoEn = '';
+  var borrados = []; // ids borrados a propósito desde esta pestaña; el server solo quita estos
 
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
@@ -445,8 +446,9 @@
     if (modo !== 'server') return;
     var s = document.getElementById('saved');
     s.textContent = 'Guardando…';
-    fetch(API, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Object.assign({}, state, { leido_en: leidoEn })) })
-      .then(function (r) { s.textContent = r.ok ? 'Guardado' : 'Guardado local'; if (r.ok) setTimeout(refrescar, 400); })
+    var enviados = borrados.slice();
+    fetch(API, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(Object.assign({}, state, { leido_en: leidoEn || new Date(0).toISOString(), borrados: enviados })) })
+      .then(function (r) { s.textContent = r.ok ? 'Guardado' : 'Guardado local'; if (r.ok) { borrados = borrados.filter(function (x) { return enviados.indexOf(x) < 0; }); setTimeout(refrescar, 400); } })
       .catch(function () { s.textContent = 'Guardado local'; });
   }
 
@@ -800,6 +802,7 @@
   document.getElementById('m-borrar').addEventListener('click', function () {
     if (!editId) return;
     state.cards = state.cards.filter(function (x) { return x.id !== editId; });
+    borrados.push(editId);
     cerrar(); render(); guardar();
   });
 
@@ -895,6 +898,7 @@
       if (detId) { var c = state.cards.filter(function (x) { return x.id === detId; })[0]; if (c) verDetalle(c); }
     }).catch(function () {});
   }
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) refrescar(); });
   setInterval(function () {
     if (document.hidden || modal.classList.contains('on') || fmodal.classList.contains('on')) return;
     refrescar();
