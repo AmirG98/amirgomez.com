@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Founder Accelerator · Master Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #061018; --panel: #0e1a28; --panel-2: #101d2b; --ink: #f2f5f7; --ink-2: #a7b4c0; --ink-3: #6c7a87; --line: rgba(255,255,255,0.10); --orange: #ff7139; --amber: #f1b527; --ok: #3ccf91; --blue: #6aa8ff; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--ink); font-size: 15.5px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 900px; margin: 0 auto; padding: 56px 24px 72px; }
+  a { color: var(--orange); }
+  .back { font-size: 13px; color: var(--ink-3); text-decoration: none; }
+  .back:hover { color: var(--ink); }
+  header { margin: 22px 0 36px; }
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--amber); }
+  h1 { font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 32px; line-height: 1.15; margin-top: 10px; letter-spacing: -0.01em; }
+  .sub { color: var(--ink-2); margin-top: 10px; max-width: 64ch; }
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
+  .chip { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; border: 1px solid var(--line); color: var(--ink-2); padding: 5px 10px; border-radius: 6px; }
+  .chip.hot { border-color: var(--orange); color: var(--orange); }
+  section { margin-top: 44px; }
+  h2 { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 21px; display: flex; align-items: baseline; gap: 12px; }
+  h2 .n { font-size: 13px; color: var(--orange); font-weight: 800; }
+  h2 .note { margin-left: auto; font-family: 'Inter', sans-serif; font-weight: 400; font-size: 12.5px; color: var(--ink-3); }
+  .rule { height: 1px; background: var(--line); margin: 12px 0 18px; }
+  p { color: var(--ink-2); margin-top: 10px; }
+  p b, li b, td b { color: var(--ink); font-weight: 600; }
+  ul, ol { margin: 10px 0 0 20px; color: var(--ink-2); }
+  li { margin-top: 6px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; margin-top: 14px; }
+  .card h3 { font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 16.5px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .card h3 .st { margin-left: auto; }
+  .quote { border-left: 2px solid var(--orange); padding: 4px 0 4px 16px; margin-top: 16px; color: var(--ink); font-size: 16px; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-top: 14px; }
+  .kpi { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+  .kpi .l { font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); }
+  .kpi .v { font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 26px; margin-top: 4px; }
+  .kpi .d { font-size: 12.5px; color: var(--ink-2); margin-top: 2px; }
+  .tw { overflow-x: auto; margin-top: 14px; border: 1px solid var(--line); border-radius: 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 560px; }
+  th { text-align: left; font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); padding: 12px 14px; background: var(--panel-2); border-bottom: 1px solid var(--line); }
+  td { padding: 12px 14px; border-bottom: 1px solid var(--line); color: var(--ink-2); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  tr.total td { color: var(--ink); font-weight: 600; background: var(--panel-2); }
+  .st { display: inline-block; font-size: 9.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 8px; border-radius: 5px; white-space: nowrap; }
+  .st.ok { background: rgba(60,207,145,0.14); color: var(--ok); }
+  .st.curso { background: rgba(255,113,57,0.14); color: var(--orange); }
+  .st.pend { background: rgba(241,181,39,0.14); color: var(--amber); }
+  .st.prox { background: rgba(255,255,255,0.06); color: var(--ink-3); }
+  .log { margin-top: 14px; }
+  .log .e { display: grid; grid-template-columns: 96px 1fr; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+  .log .e:last-child { border-bottom: none; }
+  .log .f { color: var(--ink-3); font-size: 12.5px; }
+  .log .t { color: var(--ink-2); }
+  .estado { color: var(--ink-3); text-align: center; padding: 80px 0; }
+  footer { margin-top: 56px; font-size: 12px; color: var(--ink-3); text-align: center; }
+  @media (max-width: 600px) { h1 { font-size: 26px; } .log .e { grid-template-columns: 1fr; gap: 2px; } h2 .note { display: none; } }
+</style>
+</head>
+<body data-client="founder-accelerators" data-page="masterplan">
+<div class="page">
+  <a class="back" href="/clients/founder-accelerators">← Volver al portal</a>
+  <div id="plan"><p class="estado">Cargando el Master Plan…</p></div>
+  <section id="bitacora-sec" hidden>
+    <h2>Bitácora de cambios<span class="note">Lo último arriba</span></h2>
+    <div class="rule"></div>
+    <div class="log" id="bitacora"></div>
+  </section>
+  <footer>Preparado por A+Growth · Se actualiza a medida que avanza el plan</footer>
+</div>
+<script>
+// El contenido vive en Upstash (el repo del sitio es público) y se pide con la cookie del portal.
+(function () {
+  var fmt = function (iso) { try { return new Date(iso).toLocaleDateString('es-AR', { day: 'numeric', month: 'short', year: 'numeric' }); } catch (e) { return ''; } };
+  var esc = function (s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; };
+  fetch('/api/masterplan/founder-accelerators', { credentials: 'same-origin', cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      var plan = document.getElementById('plan');
+      if (!d || !d.html) { plan.innerHTML = '<p class="estado">Todavía no hay contenido cargado.</p>'; return; }
+      plan.innerHTML = d.html;
+      var act = document.getElementById('mp-actualizado');
+      if (act && d.actualizado) act.textContent = 'Actualizado ' + fmt(d.actualizado);
+      if (d.bitacora && d.bitacora.length) {
+        document.getElementById('bitacora').innerHTML = d.bitacora.map(function (b) {
+          return '<div class="e"><span class="f">' + esc(fmt(b.fecha)) + '</span><span class="t">' + esc(b.nota) + '</span></div>';
+        }).join('');
+        document.getElementById('bitacora-sec').hidden = false;
+      }
+    })
+    .catch(function () { document.getElementById('plan').innerHTML = '<p class="estado">No se pudo cargar. Probá de nuevo en un rato.</p>'; });
+})();
+</script>
+</body>
+</html>
