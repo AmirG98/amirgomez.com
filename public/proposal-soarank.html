@@ -191,6 +191,8 @@
   .grp-h span { font-size: 14px; }
   .sites { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
   .sites.one { grid-template-columns: 1fr; }
+  .sites.two { grid-template-columns: repeat(2, 1fr); }
+  .sites.two .site .frame { height: 290px; }
   .site { display: block; text-decoration: none; color: inherit; border: 1px solid var(--hair); border-radius: 12px; overflow: hidden; background: var(--card); transition: transform .25s, box-shadow .25s; }
   .site:hover { transform: translateY(-3px); box-shadow: 0 24px 50px -24px rgba(20,18,15,.35); }
   .site .frame { display: block; position: relative; height: 230px; overflow: hidden; background: var(--dark); border-bottom: 1px solid var(--hair); }
@@ -326,10 +328,11 @@
 
     <div class="grp rv">
       <div class="grp-h"><b>Structures that convert</b><span>Pages built to move a visitor to one action.</span></div>
-      <div class="sites">
+      <div class="sites two">
         <a class="site" href="https://via.tools/" target="_blank" rel="noopener"><span class="frame"><img src="/case-studies/webfull-viatools.jpg" alt="Via Tools website" loading="lazy"></span><span class="meta"><span><b>Via Tools</b><small>Marketing data platform &middot; USA</small></span><span class="go">Open &#8599;</span></span></a>
         <a class="site" href="https://www.founderaccelerators.com/" target="_blank" rel="noopener"><span class="frame"><img src="/case-studies/webfull-founderaccelerators.jpg" alt="Founder Accelerators website" loading="lazy"></span><span class="meta"><span><b>Founder Accelerators</b><small>Premium coaching for founders</small></span><span class="go">Open &#8599;</span></span></a>
         <a class="site" href="https://www.wolfgyms.com/franchise" target="_blank" rel="noopener"><span class="frame"><img src="/case-studies/webfull-wolfgyms.jpg" alt="Wolf Gyms franchise site" loading="lazy"></span><span class="meta"><span><b>Wolf Gyms</b><small>Franchise site, featuring Dave Bautista</small></span><span class="go">Open &#8599;</span></span></a>
+        <a class="site" href="https://humanatscale.com/" target="_blank" rel="noopener"><span class="frame"><img src="/case-studies/webfull-humanatscale.jpg" alt="Human at Scale website" loading="lazy"></span><span class="meta"><span><b>Human at Scale</b><small>Operations systems for US accounting firms</small></span><span class="go">Open &#8599;</span></span></a>
       </div>
     </div>
 
