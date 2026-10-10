@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Board, Card, COLUMNAS, guardarBoard, hashToken, kvGet, kvSet, leerBoard, log } from '../../../lib/teamboard';
+import { CLIENT_PASSWORDS } from '../../../lib/client-auth';
+import { borrarSitio, guardarSitio, leerIndice, MAX_BYTES, PUEDEN_PUBLICAR, rutaValida } from '../../../lib/sitios';
 
 // MCP del master board de A+ Growth (Streamable HTTP, sin estado).
 // Para que cada persona del equipo conecte su Claude y vea sus tareas, las mueva,
@@ -10,6 +12,8 @@ import { Board, Card, COLUMNAS, guardarBoard, hashToken, kvGet, kvSet, leerBoard
 // La persona sale del token: lo que hace queda firmado con su nombre.
 // Permisos: Amir toca todo. El resto modifica sus tareas y las de "Equipo"
 // (al tomar una de "Equipo" pasa a su nombre). Leer, lee todo.
+// Sitios: Amir y Agustín pueden publicar páginas HTML en weareaplus.net/s/<ruta>
+// (lib/sitios.ts). Cada uno edita y despublica lo suyo; Amir, todo.
 
 export const maxDuration = 30;
 
@@ -61,6 +65,67 @@ const TOOLS = [
     inputSchema: { type: 'object', properties: { cliente: { type: 'string' } }, required: ['cliente'] } },
 ];
 
+const SITIO_TOOLS = [
+  { name: 'publicar_sitio', description: 'Publica (o actualiza) una página HTML en weareaplus.net/s/<ruta>, al instante y sin deploy. Sirve para landings, previews para clientes y páginas sueltas. El HTML tiene que ser un solo archivo autocontenido (CSS y JS inline; imágenes por URL o en base64). Si se indica cliente, la página pide la misma clave que el portal de ese cliente.',
+    inputSchema: { type: 'object', properties: {
+      ruta: { type: 'string', description: 'Ruta en minúsculas con guiones, hasta 3 niveles. Ej: qhu/landing-c, glowing-home/preview-oferta.' },
+      html: { type: 'string', description: 'El HTML completo de la página.' },
+      url: { type: 'string', description: 'Alternativa a html: link https público a un archivo HTML para descargarlo y publicarlo.' },
+      titulo: { type: 'string', description: 'Nombre corto para reconocerla en el listado.' },
+      cliente: { type: 'string', description: 'Opcional. Slug del portal del cliente (ej: qhu, casafight, urban-usa) para protegerla con su clave.' } },
+      required: ['ruta'] } },
+  { name: 'listar_sitios', description: 'Lista las páginas publicadas en weareaplus.net/s/: ruta, link, quién la publicó, cliente y última actualización.',
+    inputSchema: { type: 'object', properties: {} } },
+  { name: 'despublicar_sitio', description: 'Saca una página publicada en weareaplus.net/s/<ruta>. El link deja de funcionar.',
+    inputSchema: { type: 'object', properties: { ruta: { type: 'string' } }, required: ['ruta'] } },
+];
+const ALL_TOOLS = [...TOOLS, ...SITIO_TOOLS];
+const BASE = 'https://www.weareaplus.net/s/';
+
+async function llamarSitio(p: string, nombre: string, a: Record<string, unknown>): Promise<{ text: string; error?: boolean }> {
+  if (!PUEDEN_PUBLICAR.includes(p)) return { text: 'Publicar sitios está habilitado solo para Amir y Agustín.', error: true };
+  const indice = await leerIndice();
+
+  if (nombre === 'listar_sitios') {
+    const filas = Object.entries(indice).sort((x, y) => y[1].actualizado.localeCompare(x[1].actualizado))
+      .map(([r, s]) => `- ${s.titulo || r} · ${BASE}${r} · ${s.autor}${s.cliente ? ` · clave de ${s.cliente}` : ' · pública'} · ${s.actualizado.slice(0, 10)}`);
+    return { text: filas.length ? `Sitios publicados:\n${filas.join('\n')}` : 'Todavía no hay sitios publicados.' };
+  }
+
+  const ruta = String(a.ruta || '').trim().toLowerCase().replace(/^\/+|\/+$/g, '').replace(/^s\//, '');
+  if (!rutaValida(ruta)) return { text: 'Ruta inválida. Usá minúsculas, números y guiones, hasta 3 niveles separados por "/". Ej: qhu/landing-c.', error: true };
+  const previo = indice[ruta];
+  if (previo && previo.autor !== p && p !== 'Amir') return { text: `Esa ruta la publicó ${previo.autor}. Elegí otra ruta.`, error: true };
+
+  if (nombre === 'despublicar_sitio') {
+    if (!previo) return { text: 'No hay ninguna página publicada en esa ruta.', error: true };
+    await borrarSitio(ruta);
+    return { text: `Listo, ${BASE}${ruta} ya no está publicada.` };
+  }
+
+  let html = typeof a.html === 'string' ? a.html : '';
+  if (!html.trim() && a.url) {
+    const u = String(a.url);
+    if (!/^https:\/\//i.test(u)) return { text: 'El link tiene que ser https.', error: true };
+    const r = await fetch(u, { signal: AbortSignal.timeout(15000), redirect: 'follow' }).catch(() => null);
+    if (!r || !r.ok) return { text: 'No pude descargar el HTML de ese link. Revisá que sea público.', error: true };
+    html = await r.text();
+  }
+  if (!html.trim()) return { text: 'Falta el contenido: pasá el HTML completo en "html" o un link en "url".', error: true };
+  if (!/<html|<body|<!doctype/i.test(html.slice(0, 5000))) return { text: 'Eso no parece una página HTML completa (falta <html> o <body>).', error: true };
+  if (Buffer.byteLength(html, 'utf8') > MAX_BYTES) return { text: 'La página pesa más de 4 MB. Sacá imágenes en base64 y usalas por URL.', error: true };
+
+  const cliente = a.cliente ? String(a.cliente).trim().toLowerCase() : '';
+  if (cliente && !(cliente in CLIENT_PASSWORDS)) return { text: `No existe el portal "${cliente}". Opciones: ${Object.keys(CLIENT_PASSWORDS).join(', ')}.`, error: true };
+
+  const ahora = new Date().toISOString();
+  await guardarSitio(ruta, html, {
+    titulo: String(a.titulo || previo?.titulo || ruta).slice(0, 120), autor: previo?.autor || p,
+    cliente: cliente || undefined, creado: previo?.creado || ahora, actualizado: ahora,
+  });
+  return { text: `${previo ? 'Actualizada' : 'Publicada'}: ${BASE}${ruta}\n${cliente ? `Protegida con la clave del portal de ${cliente}.` : 'Pública por link (no aparece en Google).'}` };
+}
+
 const linea = (c: Card) => `- [${c.id}] ${c.titulo} · ${c.cliente || 'Sin cliente'} · ${c.quien} · ${c.columna}${c.vence ? ` · vence ${c.vence}` : ''}${c.urgente ? ' · URGENTE' : ''}`;
 const norm = (t: string) => t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
 const hoy = () => new Date().toISOString().slice(0, 10);
@@ -78,6 +143,7 @@ function detalle(c: Card): string {
 function puede(p: string, c: Card) { return p === 'Amir' || c.quien === p || c.quien === 'Equipo'; }
 
 async function llamar(p: string, nombre: string, a: Record<string, unknown>): Promise<{ text: string; error?: boolean }> {
+  if (SITIO_TOOLS.some((t) => t.name === nombre)) return llamarSitio(p, nombre, a);
   const b: Board = await leerBoard();
   const buscar = (id: unknown) => b.cards.find((c) => c.id === String(id || ''));
   const ahora = new Date().toISOString();
@@ -160,14 +226,14 @@ async function manejar(p: string, m: Rpc): Promise<object | null> {
         protocolVersion: VERSIONES.includes(pedida) ? pedida : VERSIONES[0],
         capabilities: { tools: {} },
         serverInfo: { name: 'agrowth-board', version: '1.0.0' },
-        instructions: `Master board de A+ Growth. Conectado como ${p}. Al arrancar, usá mis_tareas. Al terminar un trabajo, usá completar_tarea con lo que hiciste y el link del entregable: queda en Revisión para que Amir lo vea. Escribí en español rioplatense.`,
+        instructions: `Master board de A+ Growth. Conectado como ${p}. Al arrancar, usá mis_tareas. Al terminar un trabajo, usá completar_tarea con lo que hiciste y el link del entregable: queda en Revisión para que Amir lo vea.${PUEDEN_PUBLICAR.includes(p) ? ' Para subir una página a weareaplus.net usá publicar_sitio y pasá el link que devuelve como entregable.' : ''} Escribí en español rioplatense.`,
       });
     }
     case 'ping': return ok({});
-    case 'tools/list': return ok({ tools: TOOLS });
+    case 'tools/list': return ok({ tools: PUEDEN_PUBLICAR.includes(p) ? ALL_TOOLS : TOOLS });
     case 'tools/call': {
       const n = String((m.params || {}).name || '');
-      if (!TOOLS.some((t) => t.name === n)) return err(-32602, `Herramienta desconocida: ${n}`);
+      if (!ALL_TOOLS.some((t) => t.name === n)) return err(-32602, `Herramienta desconocida: ${n}`);
       try {
         const r = await llamar(p, n, ((m.params || {}).arguments as Record<string, unknown>) || {});
         return ok({ content: [{ type: 'text', text: r.text }], isError: !!r.error });
