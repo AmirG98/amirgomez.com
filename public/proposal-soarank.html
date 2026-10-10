@@ -244,10 +244,12 @@
 
   .closer { padding: 40px 0 10px; }
   .closer-card { position: relative; overflow: hidden; border-radius: 22px; padding: 56px 52px 44px; background: radial-gradient(120% 140% at 100% 0%, #2B1A10 0%, #14120F 55%); color: #EDEAE4; isolation: isolate; }
-  .closer-card::before { content: ""; position: absolute; inset: 0; border-radius: 22px; padding: 1px; background: conic-gradient(from var(--ang, 0deg), rgba(224,78,16,.0), rgba(224,78,16,.9), rgba(240,149,106,.4), rgba(224,78,16,.0) 40%); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: spin 6s linear infinite; pointer-events: none; }
+  .closer-card::before { content: ""; position: absolute; inset: 0; border-radius: 22px; padding: 2px; background: conic-gradient(from var(--ang, 0deg), rgba(224,78,16,.08) 0deg, #E04E10 60deg, #FFB08A 90deg, rgba(224,78,16,.08) 160deg, rgba(224,78,16,.08) 360deg); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: spin 6s linear infinite; pointer-events: none; }
   .closer-card::after { content: ""; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 34px 34px; mask-image: radial-gradient(80% 80% at 80% 10%, #000, transparent 70%); }
   @property --ang { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
   @keyframes spin { to { --ang: 360deg; } }
+  .closer-card .glow { position: absolute; width: 520px; height: 520px; right: -180px; top: -220px; border-radius: 50%; background: radial-gradient(circle, rgba(224,78,16,.35), transparent 65%); filter: blur(10px); z-index: -1; animation: float 9s ease-in-out infinite; }
+  @keyframes float { 50% { transform: translate(-40px, 30px); } }
   .closer .kick { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--orange-soft); }
   .closer h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(34px, 5.2vw, 58px); line-height: 1.05; color: #F5F1EA; margin-top: 12px; letter-spacing: -0.015em; }
   .closer h2 em { font-style: italic; color: var(--orange); }
@@ -281,7 +283,21 @@
     .offer { grid-template-columns: 1fr; } .offer .plus { justify-self: center; }
     .steps { grid-template-columns: 1fr; } .steps::before { display: none; }
   }
-  @media (prefers-reduced-motion: reduce) { .closer-card::before { animation: none; } }
+  @media (prefers-reduced-motion: reduce) { .closer-card::before, .closer-card .glow { animation: none; } }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 22px; }
+  .stat { background: var(--card); border: 1px solid var(--hair); border-radius: 14px; padding: 18px; }
+  .stat .v { font-family: var(--serif); font-weight: 600; font-size: clamp(26px, 3vw, 34px); color: var(--ink); line-height: 1.1; }
+  .stat .l { font-size: 12.5px; color: var(--muted); margin-top: 6px; line-height: 1.45; }
+  .stat.hot { background: var(--dark); border-color: var(--dark); }
+  .stat.hot .v { color: var(--orange); }
+  .stat.hot .l { color: #B9B3A8; }
+  .report-cta { margin-top: 24px; display: flex; justify-content: space-between; align-items: center; gap: 18px; text-decoration: none; color: inherit; background: var(--card); border: 1px solid var(--hair); border-left: 3px solid var(--orange); border-radius: 12px; padding: 18px 22px; transition: transform .2s, box-shadow .2s; }
+  .report-cta:hover { transform: translateY(-2px); box-shadow: 0 20px 40px -24px rgba(20,18,15,.35); }
+  .report-cta b { display: block; color: var(--ink); font-size: 16px; }
+  .report-cta small { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .report-cta .arr { font-size: 22px; color: var(--orange); transition: transform .2s; }
+  .report-cta:hover .arr { transform: translateX(5px); }
+  @media (max-width: 900px) { .stats { grid-template-columns: 1fr 1fr; } }
 </style>
 </head><body>
 <div id="prog"></div>
@@ -320,9 +336,32 @@
   </div>
 </section>
 
+<section class="disc" id="lideres">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="no">02</span><h2>What the Leaders in Your Category Do</h2></div>
+    <p class="sec-intro rv">We researched eight AI visibility companies: what they have achieved and how their websites convert. The short version:</p>
+    <div class="stats">
+      <div class="stat rv"><div class="v"><span data-count="1.8" data-pre="$" data-suf="B">$1.8B</span></div><div class="l">Profound's valuation after its September 2026 round</div></div>
+      <div class="stat rv"><div class="v"><span data-count="10" data-pre="$" data-suf="M">$10M</span> ARR</div><div class="l">Peec AI, 16 months after launch</div></div>
+      <div class="stat rv"><div class="v"><span data-count="5">5</span> of 8</div><div class="l">show the product working on the first screen</div></div>
+      <div class="stat rv hot"><div class="v">0 of 7</div><div class="l">2026 "best GEO tools" roundups we checked mention SoaRank</div></div>
+    </div>
+    <div class="rows">
+      <div class="row rv"><span class="pain">Proof</span><div><b>Named customers with numbers.</b> Plaid with 300% more referral traffic on Profound, Gruns going from 2.0% to 12.6% share of voice in 60 days on AthenaHQ. Not famous brands with disclaimers.</div></div>
+      <div class="row rv"><span class="pain">Free entry</span><div><b>A free score is already free.</b> HubSpot gives a 0 to 100 AI visibility grade with no account. SoaRank's free scan has to show more than a number to win the sign-up.</div></div>
+      <div class="row rv"><span class="pain">Trust</span><div><b>SOC 2, security pages and named teams</b> are standard among the leaders. SoaRank has none of them today.</div></div>
+      <div class="row rv"><span class="pain">The opening</span><div><b>Nobody owns "an AI CMO that does the work" for founders and small businesses.</b> The leaders sell dashboards to marketing teams and enterprises. That lane is SoaRank's, and the website is where you claim it.</div></div>
+    </div>
+    <a class="report-cta rv" href="/proposal/soarank/research">
+      <span><b>Read the full competitor report</b><small>8 companies, 37 sources, pricing, traction and how each website converts</small></span>
+      <span class="arr" aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+</section>
+
 <section class="disc" id="site">
   <div class="wrap">
-    <div class="sec-head rv"><span class="no">02</span><h2>The Website</h2></div>
+    <div class="sec-head rv"><span class="no">03</span><h2>The Website</h2></div>
     <div class="pillars">
       <div class="pil rv" style="grid-column:1/-1;">
         <div class="n">Website remake &middot; identity, design and build</div>
@@ -363,7 +402,7 @@
 
 <section class="disc" id="despues">
   <div class="wrap">
-    <div class="sec-head rv"><span class="no">03</span><h2>After Launch: Bringing Buyers to the Site</h2></div>
+    <div class="sec-head rv"><span class="no">04</span><h2>After Launch: Bringing Buyers to the Site</h2></div>
     <p class="sec-intro rv">A better site converts more of the traffic you send. This is how we would send more, as a full-funnel service.</p>
     <div class="rows">
       <div class="row rv"><span class="pain">Content engine</span><div><b>Agents that research and publish at scale</b> around the prompts your buyers type into ChatGPT and Perplexity. The best live demo of what Maya promises is your own site showing up in those answers.</div></div>
@@ -386,7 +425,7 @@
 
 <section class="disc" id="sitios">
   <div class="wrap">
-    <div class="sec-head rv"><span class="no">04</span><h2>Sites We Have Built</h2></div>
+    <div class="sec-head rv"><span class="no">05</span><h2>Sites We Have Built</h2></div>
     <p class="sec-intro rv">Hover over any of them to scroll through the page. All live.</p>
 
     <div class="grp rv">
@@ -410,7 +449,7 @@
 
 <section class="disc" id="casos">
   <div class="wrap">
-    <div class="sec-head rv"><span class="no">05</span><h2>Marketing and Development Under One Roof</h2></div>
+    <div class="sec-head rv"><span class="no">06</span><h2>Marketing and Development Under One Roof</h2></div>
     <p class="sec-intro rv">Most agencies either market or build. In this era you need both: AI agents, integrations and products, plus the marketing that brings people to them.</p>
 
     <article class="case split">
@@ -481,7 +520,7 @@
 
 <section class="disc" id="tiempos">
   <div class="wrap">
-    <div class="sec-head rv"><span class="no">06</span><h2>Timeline</h2></div>
+    <div class="sec-head rv"><span class="no">07</span><h2>Timeline</h2></div>
     <div class="phases">
       <div class="ph rv"><div class="pn">Week 1</div><div>Kickoff call, then two identity directions to choose from.</div></div>
       <div class="ph rv"><div class="pn">Weeks 2&ndash;3</div><div>Homepage designed first and approved, then the rest of the pages on the same system.</div></div>
@@ -494,6 +533,7 @@
 <section class="closer" id="siguiente">
   <div class="wrap">
     <div class="closer-card rv">
+      <span class="glow" aria-hidden="true"></span>
       <span class="kick">Next step</span>
       <h2>Let's get SoaRank <em>cited.</em></h2>
       <p class="lead">One 30-minute call to walk through this, answer questions and pick a start date.</p>

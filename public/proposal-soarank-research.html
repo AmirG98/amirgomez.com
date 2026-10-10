@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A+ Growth × SoaRank | AI Visibility Competitor Report</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F2EFEA; --card: #FAF8F5; --ink: #2E2C28; --ink-2: #55524D; --muted: #8A8781;
+    --orange: #E04E10; --orange-soft: #F0956A; --hair: #DDD8CF; --dark: #14120F;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --serif: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--paper); color: var(--ink-2); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+  ::selection { background: var(--orange); color: #fff; }
+
+  .rv { opacity: 0; transform: translateY(26px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+  .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .rv { opacity: 1; transform: none; transition: none; } }
+
+  header { position: relative; overflow: hidden; padding: 56px 0 60px; }
+  header::after { content: ""; position: absolute; right: -180px; top: -180px; width: 520px; height: 520px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(224,78,16,0.18) 0%, rgba(224,78,16,0) 70%); filter: blur(30px); pointer-events: none; }
+  .head-row { display: flex; align-items: center; gap: 20px; margin-bottom: 48px; }
+  .wordmark { font-size: 23px; font-weight: 800; color: var(--ink); letter-spacing: -0.01em; white-space: nowrap; }
+  .wordmark span { color: var(--orange); }
+  .head-row .rule { flex: 1; height: 1px; background: var(--ink); }
+  .head-row .tag { font-size: 12px; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; white-space: nowrap; }
+  .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
+  h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(40px, 6.4vw, 68px); color: var(--ink); letter-spacing: -0.015em; line-height: 1.04; max-width: 20ch; text-wrap: balance; }
+  h1 em { font-style: italic; color: var(--orange); }
+  .sub { margin-top: 20px; font-size: 17px; max-width: 62ch; text-wrap: pretty; }
+  .sub b { color: var(--ink); }
+  .scope-note { margin-top: 26px; display: inline-block; background: var(--card); border: 1px solid var(--hair); border-left: 3px solid var(--orange); border-radius: 0 10px 10px 0; padding: 14px 20px; font-size: 14px; max-width: 66ch; }
+  .scope-note b { color: var(--ink); }
+
+  section.disc { padding: 64px 0 16px; }
+  .sec-head { display: flex; align-items: baseline; gap: 18px; border-bottom: 1px solid var(--ink); padding-bottom: 16px; margin-bottom: 24px; }
+  .sec-head .no { font-family: var(--serif); font-style: italic; font-weight: 500; font-size: 20px; color: var(--orange); }
+  .sec-head h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(28px, 4vw, 42px); color: var(--ink); letter-spacing: -0.01em; }
+  .sec-intro { font-size: 15.5px; max-width: 76ch; text-wrap: pretty; margin-bottom: 8px; }
+  .sec-intro b { color: var(--ink); }
+
+  .pain { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; padding: 22px 0 8px; }
+  .pn { background: var(--card); border: 1px solid var(--hair); border-radius: 12px; padding: 22px; }
+  .pn h3 { font-size: 15.5px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+  .pn p { font-size: 13.5px; }
+
+  .pillars { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; padding: 24px 0 8px; }
+  .pil { background: var(--card); border: 1px solid var(--hair); border-radius: 12px; padding: 24px;
+    transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s; }
+  .pil:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -22px rgba(224,78,16,.22); }
+  .pil .k { font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--orange); }
+  .pil h3 { font-size: 16.5px; font-weight: 700; color: var(--ink); margin: 6px 0 8px; }
+  .pil ul { list-style: none; display: grid; gap: 7px; }
+  .pil li { font-size: 13.5px; padding-left: 18px; position: relative; }
+  .pil li::before { content: "→"; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
+
+  .fit { background: var(--dark); border-radius: 16px; padding: 40px 40px 36px; margin-top: 28px; }
+  .fit h3 { font-family: var(--serif); font-weight: 600; font-size: 24px; color: #F5F1EA; margin-bottom: 14px; }
+  .fit h3 em { font-style: italic; color: var(--orange-soft); }
+  .fit p { font-size: 14.5px; color: #B9B3A9; max-width: 76ch; }
+  .fit p b { color: #F5F1EA; }
+  .fit .cols3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 22px; }
+  .fit .c h4 { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--orange-soft); margin-bottom: 6px; }
+  .fit .c p { font-size: 13px; }
+
+  .phases { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; padding: 24px 0 8px; }
+  .ph { border-left: 2px solid var(--orange); padding: 6px 0 6px 20px; }
+  .ph .n { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--orange); }
+  .ph h3 { font-size: 16px; font-weight: 700; color: var(--ink); margin: 4px 0 6px; }
+  .ph p { font-size: 13.5px; }
+  .ph .t { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); background: rgba(224,78,16,0.08); border-radius: 999px; padding: 3px 10px; margin-bottom: 8px; }
+
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; padding: 20px 0 8px; }
+  .kpi { background: var(--card); border: 1px solid var(--hair); border-radius: 12px; padding: 18px 20px; }
+  .kpi .l { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .kpi .v { font-family: var(--serif); font-weight: 600; font-size: 19px; color: var(--ink); margin-top: 4px; }
+
+  .stats { display: flex; gap: 48px; flex-wrap: wrap; margin: 22px 0 8px; }
+  .stat .n { font-family: var(--serif); font-size: 32px; font-weight: 600; color: var(--orange); letter-spacing: -0.01em; }
+  .stat .d { font-size: 13px; color: var(--ink-2); margin-top: 2px; }
+  .cases-cta { display: inline-block; margin-top: 18px; font-size: 13.5px; font-weight: 700; letter-spacing: 0.04em; color: #F5F1EA; background: var(--dark); text-decoration: none; padding: 13px 26px; border-radius: 999px; transition: transform .2s; }
+  .cases-cta:hover { transform: translateY(-2px); }
+
+  .model { background: var(--card); border: 1px solid var(--hair); border-radius: 14px; padding: 30px 30px 26px; margin-top: 24px;
+    box-shadow: 0 2px 6px rgba(30,28,24,.05), 0 20px 50px -22px rgba(30,28,24,.14); }
+  .model h3 { font-family: var(--serif); font-weight: 600; font-size: 23px; color: var(--ink); margin-bottom: 14px; }
+  .model .rows { display: grid; gap: 0; }
+  .model .row { display: grid; grid-template-columns: minmax(160px, 1fr) 2fr; gap: 18px; padding: 14px 0; border-bottom: 1px solid var(--hair); }
+  .model .row:last-child { border-bottom: 0; }
+  .model .row .a { font-weight: 700; font-size: 14px; color: var(--ink); }
+  .model .row .b { font-size: 13.5px; }
+  .model .note { margin-top: 14px; font-size: 12.5px; color: var(--muted); }
+
+  .next { margin: 70px 0 0; background: var(--dark); border-radius: 18px; padding: 48px 44px; position: relative; overflow: hidden; }
+  .next::after { content: ""; position: absolute; right: -140px; bottom: -160px; width: 420px; height: 420px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(224,78,16,0.35) 0%, rgba(224,78,16,0) 70%); filter: blur(24px); pointer-events: none; }
+  .next h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(26px, 3.6vw, 38px); color: #F5F1EA; letter-spacing: -0.01em; max-width: 24ch; text-wrap: balance; }
+  .next h2 em { font-style: italic; color: var(--orange-soft); }
+  .next p { margin-top: 14px; font-size: 14.5px; color: #B9B3A9; max-width: 66ch; }
+  .next .cta { display: inline-block; margin-top: 24px; font-size: 13.5px; font-weight: 700; letter-spacing: 0.06em; color: var(--dark); background: #F5F1EA; text-decoration: none; padding: 14px 28px; border-radius: 999px; transition: transform .2s, background .2s; }
+  .next .cta:hover { transform: translateY(-2px); background: #fff; }
+
+  footer { border-top: 1px solid var(--hair); margin-top: 80px; padding: 26px 0 44px; font-size: 13px; color: var(--muted); }
+  footer a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--hair); }
+  footer a:hover { color: var(--orange); border-color: var(--orange); }
+  footer .private { margin-top: 6px; }
+
+  @media (max-width: 720px) { .next, .fit { padding: 34px 26px; } .model .row { grid-template-columns: 1fr; gap: 4px; } }
+
+.next .sig { margin-top: 26px; font-size: 12.5px; letter-spacing: .04em; color: rgba(242,239,234,.55); }
+
+.model .row, .pil .row { align-items: baseline; }
+.model .row .pain, .pil .row .pain { padding: 0; display: block; font-weight: 700; font-size: 13px; color: var(--ink); }
+#casos .pil .rows { margin-top: 4px; }
+#casos .pil .row { grid-template-columns: minmax(120px, .8fr) 2fr; gap: 14px; padding: 12px 0; }
+
+/* ---------- Case blocks (mismo sistema que /case-studies) ---------- */
+#casos .case { padding: 44px 0; border-bottom: 1px solid var(--hair); }
+#casos .case:last-child { border-bottom: 0; }
+#casos .case .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+#casos .chip { font-size: 10.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; padding: 4px 11px; border-radius: 999px; background: rgba(224,78,16,0.08); color: var(--orange); }
+#casos .chip.v { background: #E9E5DD; color: var(--ink-2); }
+#casos .case h3 { font-family: var(--serif); font-weight: 600; font-size: clamp(22px, 2.6vw, 29px); color: var(--ink); letter-spacing: -0.01em; margin-bottom: 8px; }
+#casos .case p.desc { font-size: 14.5px; max-width: 62ch; text-wrap: pretty; }
+#casos .case .metric { font-family: var(--serif); font-weight: 500; font-size: clamp(18px, 2.2vw, 23px); line-height: 1.35; color: var(--ink); margin-top: 18px; padding-top: 16px; border-top: 2px solid var(--ink); max-width: 32ch; text-wrap: pretty; }
+#casos .case .metric span { color: var(--orange); }
+#casos .case.split .cols { display: grid; grid-template-columns: minmax(280px, 5fr) 7fr; gap: 40px; align-items: center; }
+#casos .case.split.flip .cols { grid-template-columns: 7fr minmax(280px, 5fr); }
+#casos .case.split.flip .txt { order: 2; }
+#casos .case.stack .shotwrap { margin-top: 28px; }
+#casos .shot { background: var(--card); border: 1px solid var(--hair); border-radius: 12px; overflow: hidden;
+  box-shadow: 0 2px 6px rgba(30,28,24,.05), 0 24px 60px -18px rgba(30,28,24,.18); }
+#casos .shot .bar { display: flex; align-items: center; gap: 7px; background: var(--dark); padding: 9px 13px; }
+#casos .shot .bar i { width: 9px; height: 9px; border-radius: 50%; background: #4A453E; }
+#casos .shot .bar i:first-child { background: var(--orange); }
+#casos .shot .bar .url { margin-left: 8px; font-size: 10.5px; letter-spacing: 0.06em; color: #9A958D; text-transform: lowercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#casos .shot img { width: 100%; height: auto; display: block; }
+#casos .for-q { font-size: 10.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--orange); margin-bottom: 10px; }
+@media (max-width: 860px) {
+  #casos .case.split .cols, #casos .case.split.flip .cols { grid-template-columns: 1fr; gap: 24px; }
+  #casos .case.split.flip .txt { order: 0; }
+}
+</style>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-icon.png">
+<style>
+  /* ---- efectos ---- */
+  #prog { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--orange); z-index: 50; transition: width .1s linear; }
+  .chat { margin-top: 34px; max-width: 640px; background: var(--dark); color: #EDEAE4; border-radius: 16px; padding: 18px 20px 20px; box-shadow: 0 30px 60px -30px rgba(20,18,15,.45); }
+  .chat .top { display: flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #9C968C; }
+  .chat .top i { width: 8px; height: 8px; border-radius: 50%; background: #4A453E; display: inline-block; }
+  .chat .top i:first-child { background: var(--orange); }
+  .chat .top span { margin-left: auto; }
+  .chat .q { margin-top: 16px; margin-left: auto; width: fit-content; max-width: 88%; background: #2A2722; padding: 10px 14px; border-radius: 14px 14px 4px 14px; font-size: 14.5px; min-height: 42px; }
+  .chat .a { margin-top: 14px; font-size: 14.5px; line-height: 1.65; color: #D9D4CB; min-height: 120px; }
+  .chat .a b { color: #fff; }
+  .chat .a mark { background: rgba(224,78,16,.22); color: #FFB08A; padding: 0 3px; border-radius: 3px; }
+  .chat .src { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; opacity: 0; transition: opacity .6s; }
+  .chat .src.on { opacity: 1; }
+  .chat .src span { font-size: 11.5px; border: 1px solid #3A362F; border-radius: 999px; padding: 3px 10px; color: #B9B3A8; }
+  .chat .src span.us { border-color: var(--orange); color: #FFB08A; }
+  .caret::after { content: '▍'; animation: blink 1s steps(1) infinite; color: var(--orange); }
+  @keyframes blink { 50% { opacity: 0; } }
+  .chat-note { margin-top: 10px; font-size: 12.5px; color: var(--muted); }
+
+  .gift { margin-top: 22px; border: 1px solid rgba(224,78,16,.35); background: linear-gradient(135deg, rgba(224,78,16,.08), rgba(224,78,16,.02)); border-radius: 14px; padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 26px; align-items: center; }
+  .gift .tag2 { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #fff; background: var(--orange); border-radius: 999px; padding: 4px 11px; }
+  .gift h3 { font-family: var(--serif); font-weight: 600; font-size: clamp(21px, 2.4vw, 26px); color: var(--ink); margin: 10px 0 8px; line-height: 1.2; }
+  .gift p { font-size: 14.5px; }
+  .gift p + p { margin-top: 8px; }
+  .term { background: var(--dark); border-radius: 12px; padding: 14px 16px; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.75; color: #CFC9BE; min-height: 230px; overflow: hidden; }
+  .term .hd { color: #8A8478; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; display: flex; justify-content: space-between; }
+  .term .hd b { color: var(--orange); font-weight: 600; }
+  .term .ln { opacity: 0; transform: translateY(4px); transition: opacity .35s, transform .35s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .term .ln.on { opacity: 1; transform: none; }
+  .term .ok { color: #7BD88F; }
+  .term .up { color: #FFB08A; }
+
+  .grp { margin-top: 30px; }
+  .grp-h { display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px; }
+  .grp-h b { font-size: 11.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--orange); }
+  .grp-h span { font-size: 14px; }
+  .sites { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+  .sites.one { grid-template-columns: 1fr; }
+  .sites.two { grid-template-columns: repeat(2, 1fr); }
+  .sites.two .site .frame { height: 290px; }
+  .site { display: block; text-decoration: none; color: inherit; border: 1px solid var(--hair); border-radius: 12px; overflow: hidden; background: var(--card); transition: transform .25s, box-shadow .25s; }
+  .site:hover { transform: translateY(-3px); box-shadow: 0 24px 50px -24px rgba(20,18,15,.35); }
+  .site .frame { display: block; position: relative; height: 230px; overflow: hidden; background: var(--dark); border-bottom: 1px solid var(--hair); }
+  .sites.one .site .frame { height: 380px; }
+  .site .frame img { display: block; width: 100%; height: auto; transform: translateY(0); transition: transform 0s linear; will-change: transform; }
+  .site .frame::after { content: 'Hover to scroll'; position: absolute; right: 10px; bottom: 10px; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: #fff; background: rgba(20,18,15,.6); padding: 3px 8px; border-radius: 999px; transition: opacity .3s; }
+  .site:hover .frame::after { opacity: 0; }
+  .site .meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 16px; }
+  .site b { font-weight: 600; color: var(--ink); }
+  .site small { display: block; color: var(--muted); font-size: .84rem; }
+  .site .go { font-size: .72rem; letter-spacing: .06em; white-space: nowrap; color: var(--orange); }
+
+  .disc > .wrap > .rows { margin-top: 18px; }
+  .disc > .wrap > .rows .row { display: grid; grid-template-columns: 160px 1fr; gap: 20px; padding: 15px 0; border-bottom: 1px solid var(--hair); align-items: baseline; }
+  .disc > .wrap > .rows .row:last-child { border-bottom: 0; }
+  .disc > .wrap > .rows .row .pain { display: block; padding: 0; font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--orange); }
+  .disc > .wrap > .rows .row b { color: var(--ink); }
+  .disc .note { margin-top: 22px; padding: 16px 20px; border-left: 3px solid var(--orange); background: var(--card); border-radius: 0 10px 10px 0; color: var(--ink); font-size: 15px; }
+  #site .pil h3 { font-family: var(--serif); font-weight: 600; font-size: clamp(22px, 2.6vw, 28px); }
+  #site .kpi .v { font-size: clamp(26px, 3.4vw, 36px); }
+  #site .pil li { font-size: 14px; }
+  .sub-h { font-family: var(--serif); font-weight: 600; font-size: 20px; color: var(--ink); margin: 34px 0 0; }
+  @media (max-width: 900px) { .sites { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 720px) {
+    .disc > .wrap > .rows .row { grid-template-columns: 1fr; gap: 4px; }
+    .sites { grid-template-columns: 1fr; } .sites.one .site .frame { height: 260px; }
+    .gift { grid-template-columns: 1fr; }
+    .term .ln { white-space: normal; }
+  }
+  @media (prefers-reduced-motion: reduce) { .site .frame img { transition: none !important; } .caret::after { animation: none; } }
+  .kpi.free { background: linear-gradient(135deg, rgba(224,78,16,.12), rgba(224,78,16,.04)); border-color: rgba(224,78,16,.45); }
+  .kpi.free .l { color: var(--orange); }
+  .kpi.free .v { color: var(--orange); }
+  .kpi .d { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  #site .kpis { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+  .gift { margin-top: 14px; }
+
+  .ff { margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; background: var(--card); border: 1px solid var(--hair); border-radius: 16px; padding: 28px; }
+  .ff-k { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); }
+  .ff h3 { font-family: var(--serif); font-weight: 600; font-size: clamp(22px, 2.6vw, 28px); color: var(--ink); line-height: 1.2; margin: 10px 0 10px; }
+  .ff p { font-size: 14.5px; }
+  .ff-metric { font-family: var(--serif); font-size: clamp(18px, 2.2vw, 22px); color: var(--ink); margin-top: 18px; padding-top: 14px; border-top: 2px solid var(--ink); }
+  .ff-metric span { color: var(--orange); }
+  .ff-shot { display: block; border-radius: 12px; overflow: hidden; border: 1px solid var(--hair); }
+  .ff-shot .frame { display: block; height: 300px; overflow: hidden; background: var(--dark); }
+  .ff-shot img { display: block; width: 100%; height: auto; }
+  .excl { margin-top: 18px; padding: 14px 18px; border: 1px dashed var(--hair); border-radius: 10px; font-size: 14px; background: rgba(255,255,255,.35); }
+  .excl b { color: var(--ink); }
+
+  .closer { padding: 40px 0 10px; }
+  .closer-card { position: relative; overflow: hidden; border-radius: 22px; padding: 56px 52px 44px; background: radial-gradient(120% 140% at 100% 0%, #2B1A10 0%, #14120F 55%); color: #EDEAE4; isolation: isolate; }
+  .closer-card::before { content: ""; position: absolute; inset: 0; border-radius: 22px; padding: 2px; background: conic-gradient(from var(--ang, 0deg), rgba(224,78,16,.08) 0deg, #E04E10 60deg, #FFB08A 90deg, rgba(224,78,16,.08) 160deg, rgba(224,78,16,.08) 360deg); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: spin 6s linear infinite; pointer-events: none; }
+  .closer-card::after { content: ""; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 34px 34px; mask-image: radial-gradient(80% 80% at 80% 10%, #000, transparent 70%); }
+  @property --ang { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+  @keyframes spin { to { --ang: 360deg; } }
+  .closer-card .glow { position: absolute; width: 520px; height: 520px; right: -180px; top: -220px; border-radius: 50%; background: radial-gradient(circle, rgba(224,78,16,.35), transparent 65%); filter: blur(10px); z-index: -1; animation: float 9s ease-in-out infinite; }
+  @keyframes float { 50% { transform: translate(-40px, 30px); } }
+  .closer .kick { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--orange-soft); }
+  .closer h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(34px, 5.2vw, 58px); line-height: 1.05; color: #F5F1EA; margin-top: 12px; letter-spacing: -0.015em; }
+  .closer h2 em { font-style: italic; color: var(--orange); }
+  .closer .lead { margin-top: 14px; font-size: 16px; color: #C9C2B7; max-width: 56ch; }
+  .offer { margin-top: 30px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 14px; align-items: stretch; max-width: 640px; }
+  .offer .o { border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 16px 18px; background: rgba(255,255,255,.03); }
+  .offer .o.free { border-color: rgba(224,78,16,.6); background: rgba(224,78,16,.10); }
+  .offer .l { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #9C968C; }
+  .offer .free .l { color: var(--orange-soft); }
+  .offer .v { display: block; font-family: var(--serif); font-weight: 600; font-size: 34px; color: #F5F1EA; margin-top: 4px; }
+  .offer .free .v { color: var(--orange); }
+  .offer .d { display: block; font-size: 12.5px; color: #9C968C; margin-top: 2px; }
+  .offer .plus { align-self: center; font-family: var(--serif); font-size: 30px; color: var(--orange); }
+  .steps { list-style: none; margin-top: 34px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; position: relative; }
+  .steps::before { content: ""; position: absolute; top: 15px; left: 16px; right: 16px; height: 1px; background: linear-gradient(90deg, var(--orange), rgba(224,78,16,.15)); }
+  .steps li { position: relative; padding-top: 0; }
+  .steps b { position: relative; display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: #14120F; border: 1px solid var(--orange); color: var(--orange); font-size: 11.5px; font-weight: 700; }
+  .steps span { display: block; margin-top: 12px; font-weight: 700; color: #F5F1EA; font-size: 15px; }
+  .steps small { display: block; margin-top: 3px; font-size: 13px; color: #9C968C; line-height: 1.5; }
+  .ctas { margin-top: 36px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .ctas .cta { display: inline-flex; align-items: center; gap: 10px; background: var(--orange); color: #fff; text-decoration: none; font-weight: 700; font-size: 14.5px; padding: 15px 24px; border-radius: 999px; box-shadow: 0 14px 30px -12px rgba(224,78,16,.7); transition: transform .2s, box-shadow .2s; }
+  .ctas .cta:hover { transform: translateY(-2px); box-shadow: 0 20px 40px -12px rgba(224,78,16,.85); }
+  .ctas .cta span { transition: transform .2s; }
+  .ctas .cta:hover span { transform: translateX(4px); }
+  .ctas .ghost { color: #EDEAE4; text-decoration: none; font-weight: 600; font-size: 14px; padding: 14px 20px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); transition: border-color .2s; }
+  .ctas .ghost:hover { border-color: rgba(255,255,255,.5); }
+  .closer .sig { margin-top: 26px; font-size: 12.5px; letter-spacing: .04em; color: rgba(242,239,234,.5); }
+  @media (max-width: 720px) {
+    .ff { grid-template-columns: 1fr; padding: 22px; }
+    .closer-card { padding: 40px 24px 32px; }
+    .offer { grid-template-columns: 1fr; } .offer .plus { justify-self: center; }
+    .steps { grid-template-columns: 1fr; } .steps::before { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { .closer-card::before, .closer-card .glow { animation: none; } }
+</style>
+<style>
+  .fgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 22px; }
+  .fcard { background: var(--card); border: 1px solid var(--hair); border-radius: 14px; padding: 20px 22px; }
+  .fcard .n { font-family: var(--serif); font-style: italic; color: var(--orange); font-size: 18px; }
+  .fcard h3 { font-family: var(--serif); font-weight: 600; font-size: 19px; color: var(--ink); margin: 4px 0 8px; line-height: 1.25; }
+  .fcard p { font-size: 14px; }
+  sup a { color: var(--orange); text-decoration: none; font-size: 10.5px; font-weight: 700; margin-left: 1px; }
+  .tw { overflow-x: auto; margin-top: 22px; border: 1px solid var(--hair); border-radius: 14px; background: var(--card); }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 820px; }
+  th { text-align: left; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding: 12px 14px; border-bottom: 1px solid var(--hair); background: rgba(0,0,0,.02); }
+  td { padding: 12px 14px; border-bottom: 1px solid var(--hair); vertical-align: top; }
+  tr:last-child td { border-bottom: 0; }
+  td b { color: var(--ink); }
+  tr.us td { background: rgba(224,78,16,.07); }
+  .prof { border-top: 1px solid var(--hair); padding: 26px 0; display: grid; grid-template-columns: 220px 1fr; gap: 26px; }
+  .prof h3 { font-family: var(--serif); font-weight: 600; font-size: 24px; color: var(--ink); }
+  .prof .u { font-size: 12.5px; color: var(--orange); text-decoration: none; }
+  .prof .hl { font-family: var(--serif); font-style: italic; font-size: 16px; color: var(--ink); margin-bottom: 10px; }
+  .prof .lbl { font-size: 10.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--orange); margin: 14px 0 4px; }
+  .prof ul { list-style: none; display: grid; gap: 5px; }
+  .prof li { font-size: 14px; padding-left: 16px; position: relative; }
+  .prof li::before { content: "→"; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
+  .meta-line { font-size: 13.5px; }
+  .imp { counter-reset: i; list-style: none; display: grid; gap: 10px; margin-top: 20px; }
+  .imp li { counter-increment: i; background: var(--card); border: 1px solid var(--hair); border-radius: 12px; padding: 16px 18px 16px 58px; position: relative; font-size: 14.5px; color: var(--ink); }
+  .imp li::before { content: counter(i, decimal-leading-zero); position: absolute; left: 18px; top: 15px; font-family: var(--serif); font-style: italic; color: var(--orange); font-size: 18px; }
+  .src { list-style: none; columns: 2; column-gap: 30px; margin-top: 18px; font-size: 12.5px; }
+  .src li { break-inside: avoid; margin: 0 0 6px; }
+  .src a { color: var(--ink-2); word-break: break-word; }
+  .back-top { display: inline-block; margin-top: 22px; font-size: 13.5px; font-weight: 700; color: var(--orange); text-decoration: none; }
+  @media (max-width: 720px) { .fgrid { grid-template-columns: 1fr; } .prof { grid-template-columns: 1fr; gap: 6px; } .src { columns: 1; } }
+
+</style>
+</head><body>
+<div id="prog"></div>
+<header>
+  <div class="wrap">
+    <div class="head-row rv"><div class="wordmark">A<span>+</span> Growth</div><div class="rule"></div><div class="tag">Research</div></div>
+    <span class="eyebrow rv">Prepared for SoaRank &middot; October 2026</span>
+    <h1 class="rv">How the leaders in AI visibility <em>are winning.</em></h1>
+    <p class="sub rv">Eight companies in your category, what they have achieved and how their websites earn trust and sign-ups. Every number links to its source. Where a figure could not be verified, it is left out.</p>
+    <a class="back-top rv" href="/proposal/soarank">&larr; Back to the proposal</a>
+  </div>
+</header>
+<section class="disc"><div class="wrap">
+  <div class="sec-head rv"><span class="no">01</span><h2>Key Findings</h2></div>
+  <div class="fgrid"><div class="fcard rv"><div class="n">01</div><h3>The category is well funded, and the leaders sell proof, not GEO education</h3><p>Profound raised a $180M Series D at a $1.8B valuation on Sep 15, 2026, seven months after a $96M Series C, and serves 1,000+ enterprise brands. Peec AI reported $10M ARR 16 months after launch and 2,500+ customers. Their homepages show product and results; soarank.com spends most of its page explaining the problem.<sup><a href="#s1">[1]</a></sup><sup><a href="#s2">[2]</a></sup><sup><a href="#s6">[6]</a></sup><sup><a href="#s7">[7]</a></sup></p></div><div class="fcard rv"><div class="n">02</div><h3>Winners show the product working in the first screen; SoaRank does not</h3><p>Profound (AI Marketer workspace), Peec (dashboard with a real customer, Attio), Otterly (brand report with competitors), Evertune (AI Brand Score dashboard) and Rankscale (dashboard right below the hero) all show product UI up front. soarank.com shows an input field and a Maya persona card; the product only appears in a video further down.<sup><a href="#s3">[3]</a></sup><sup><a href="#s9">[9]</a></sup><sup><a href="#s11">[11]</a></sup><sup><a href="#s21">[21]</a></sup><sup><a href="#s27">[27]</a></sup><sup><a href="#s29">[29]</a></sup></p></div><div class="fcard rv"><div class="n">03</div><h3>Proof is named customers with numbers, not famous brands with disclaimers</h3><p>Profound lists 21 customer stories (Plaid 300% referral traffic growth, Ramp 7x AI visibility). AthenaHQ quotes named CMOs (Gruns share of voice 2.0% to 12.6% in 60 days). Goodie shows SteelSeries, Rathbones and a Unilever brand with percentages. soarank.com leads with Nike, Tesla and Netflix reports marked &#x27;not a SoaRank customer&#x27; and first-name-only testimonials, including one from its own founder.<sup><a href="#s5">[5]</a></sup><sup><a href="#s14">[14]</a></sup><sup><a href="#s24">[24]</a></sup><sup><a href="#s29">[29]</a></sup></p></div><div class="fcard rv"><div class="n">04</div><h3>A free one-time AI visibility score is now a commodity</h3><p>HubSpot&#x27;s free, no-account AI Search Grader scores a brand out of 100 using OpenAI, Perplexity and Gemini, almost exactly SoaRank&#x27;s free scan. AthenaHQ offers a 10-minute free audit and a free plan, Otterly lists seven free GEO tools, Goodie offers an AI Visibility Index, site audit and llms.txt generator.<sup><a href="#s28">[28]</a></sup><sup><a href="#s14">[14]</a></sup><sup><a href="#s11">[11]</a></sup><sup><a href="#s24">[24]</a></sup></p></div><div class="fcard rv"><div class="n">05</div><h3>SoaRank&#x27;s $99 entry sits in a crowded band, but the done-for-you small-business lane is mostly unclaimed</h3><p>Entry prices: Otterly $29, Peec about $80 (annual), Rankscale $99, Scrunch $250 to $300, AthenaHQ free then $295, Goodie $399, Evertune $800, Profound enterprise after a trial. Nearly all target marketing teams, agencies or enterprise; none positions as an AI CMO doing the work for founders and small businesses.<sup><a href="#s12">[12]</a></sup><sup><a href="#s10">[10]</a></sup><sup><a href="#s27">[27]</a></sup><sup><a href="#s17">[17]</a></sup><sup><a href="#s14">[14]</a></sup><sup><a href="#s25">[25]</a></sup><sup><a href="#s22">[22]</a></sup><sup><a href="#s4">[4]</a></sup></p></div><div class="fcard rv"><div class="n">06</div><h3>Trust signals are standard among leaders and missing at SoaRank</h3><p>Profound (SOC 2, SCIM, RBAC), AthenaHQ (SOC 2 Type 2, GDPR, NIST CSF, Trust Center), Scrunch (SOC 2 Type II) and Goodie (Security &amp; Compliance page). Evertune and Rankscale publish named team pages. soarank.com has no security, data handling, about or team page.<sup><a href="#s3">[3]</a></sup><sup><a href="#s14">[14]</a></sup><sup><a href="#s16">[16]</a></sup><sup><a href="#s24">[24]</a></sup><sup><a href="#s21">[21]</a></sup><sup><a href="#s27">[27]</a></sup><sup><a href="#s29">[29]</a></sup></p></div><div class="fcard rv"><div class="n">07</div><h3>Leaders publish research that gets cited, which is how they show up in roundups and AI answers</h3><p>Profound Index and AEO report, AthenaHQ State of AI Search 2026, Otterly GEO experiments, Goodie Research Lab and AI Visibility Index, Evertune AI Search Statistics. Of seven 2026 roundups reviewed, Peec appeared in six and Profound was ranked in four (benchmark in a fifth); SoaRank in none. Several roundups are vendor-written and rank the author first or high (Superlines, Clearscope, NoGood for Goodie).<sup><a href="#s3">[3]</a></sup><sup><a href="#s14">[14]</a></sup><sup><a href="#s11">[11]</a></sup><sup><a href="#s24">[24]</a></sup><sup><a href="#s21">[21]</a></sup><sup><a href="#s30">[30]</a></sup><sup><a href="#s31">[31]</a></sup><sup><a href="#s32">[32]</a></sup><sup><a href="#s33">[33]</a></sup><sup><a href="#s34">[34]</a></sup><sup><a href="#s35">[35]</a></sup><sup><a href="#s37">[37]</a></sup></p></div></div>
+</div></section>
+<section class="disc"><div class="wrap">
+  <div class="sec-head rv"><span class="no">02</span><h2>The Category at a Glance</h2></div>
+  <div class="tw rv"><table><tr><th>Company</th><th>Who it is for</th><th>Pricing</th><th>Free entry</th><th>Traction</th></tr><tr><td><b>Profound</b></td><td>Enterprise marketing teams and agencies</td><td>No public price; free Trial plan, then Enterprise (custom)</td><td>Free trial (50 prompts daily for 7 days); no free tool</td><td>$180M Series D at $1.8B valuation, Sep 15, 2026, co-led by Sequoia and Kleiner Perkins (with Lightspeed, Khosla, Saga, Evantic, South Park Commons)<sup><a href="#s1">[1]</a></sup><br>$96M Series C at $1B valuation, Feb 24, 2026, led by Lightspeed<sup><a href="#s2">[2]</a></sup></td></tr><tr><td><b>Peec AI</b></td><td>Marketing teams, brands and agencies; mid-market moving into US enterprise</td><td>Starter, Pro, Advanced, Enterprise; Starter $80/mo billed annually per PricingSaaS (prices hidden on the page fetched)</td><td>Free trial; no free tool</td><td>$10M ARR 16 months after launch; 2,500+ customers; first US office in New York (May 28, 2026)<sup><a href="#s6">[6]</a></sup><br>TechCrunch verified the $10M ARR on internal dashboards (via TNW)<sup><a href="#s7">[7]</a></sup></td></tr><tr><td><b>Otterly.AI</b></td><td>Marketing teams, agencies, SEO and content teams, small businesses</td><td>Lite $29/mo, Standard $189/mo, Premium $489/mo, Enterprise custom</td><td>Free trial (no credit card per FAQ; length stated as 7 or 14 days) plus seven free GEO tools</td><td>Bootstrapped; CEO said it would not seek external funding; passed 1,000 users at stealth exit (Dec 2024)<sup><a href="#s13">[13]</a></sup><br>Homepage claims 40,000+ marketing pros (self-reported; FAQ also says 30,000+)<sup><a href="#s11">[11]</a></sup></td></tr><tr><td><b>AthenaHQ</b></td><td>Marketing leaders at enterprises and agencies, with industry pages</td><td>Essential free ($25 credit), Starter $295/mo, Enterprise custom</td><td>Free 10-minute audit (hero CTA) and free plan</td><td>$2.2M seed (Jul 2025) from Y Combinator, FCVC, Red Bike Capital, Amino Capital, Eli Schwartz, Ashley Stirrup; 80+ companies at launch incl. Coupons.com and Checkr<sup><a href="#s15">[15]</a></sup><br>Homepage logos include SoFi, Coinbase, Hearst, PagerDuty, Twilio, RingCentral<sup><a href="#s14">[14]</a></sup></td></tr><tr><td><b>Scrunch (a Sitecore company)</b></td><td>Marketing, SEO and content teams, agencies, enterprise</td><td>Starter $300/mo monthly ($250 annual), Growth $500/mo ($417 annual), Enterprise custom</td><td>7-day free trial, no credit card; Prompt Generator tool</td><td>$15M Series A led by Decibel with Mayfield and Homebrew, Jul 22, 2025; 500+ brands; paying customers +50% MoM in prior quarter<sup><a href="#s18">[18]</a></sup><br>Acquired by Sitecore, announced Jun 3, 2026 (terms not disclosed)<sup><a href="#s19">[19]</a></sup></td></tr><tr><td><b>Evertune</b></td><td>Advertisers, brands and agencies</td><td>Pro $800/mo, Enterprise custom</td><td>None; demo only</td><td>$15M Series A led by Felicis (Aug 2025); $20M total raised per company boilerplate; customers named: Canada Goose, Miro, Choreograph (WPP Media)<sup><a href="#s23">[23]</a></sup><br>Homepage: Trusted by over 700 advertisers &amp; agencies; logos include WPP, Roku, athenahealth<sup><a href="#s21">[21]</a></sup></td></tr><tr><td><b>Goodie</b></td><td>Enterprise brands and agencies, nine industry pages</td><td>Core $399/mo, Pro $999/mo, Enterprise custom; Agency Growth $275/mo</td><td>7-day free trial on Core; free AI Visibility Index, Agent Site Audit, LLMs.txt Generator</td><td>Case studies: Dermalogica (Unilever) +85% AI searches, Rathbones +106% AI citations, SteelSeries 3.2x AI search conversion in 6 months<sup><a href="#s24">[24]</a></sup><br>Awards: Shorty Awards 2026, Drum Awards gold 2024 and 2026, Webby gold 2024<sup><a href="#s26">[26]</a></sup></td></tr><tr><td><b>Rankscale</b></td><td>Agencies, enterprise and multi-brand SEO teams</td><td>Credit-based, from $99/mo (Pro) to $780/mo</td><td>Free trial; no free tool</td><td>Homepage claims 1000+ active users; team of 13 based in Vienna; logos include Bosch, UBS, Cartier, Dentsu, WPP Media<sup><a href="#s27">[27]</a></sup></td></tr><tr class="us"><td><b>SoaRank today</b></td><td>Founders and small businesses (US)</td><td>Free scan, Copilot $99/mo, Autopilot $499/mo, Managed custom</td><td>Free one-time scan</td><td>No public funding, customers or roundup mentions found</td></tr></table></div>
+</div></section>
+<section class="disc"><div class="wrap">
+  <div class="sec-head rv"><span class="no">03</span><h2>Competitor Profiles</h2></div>
+  <div class="prof rv"><div><h3>Profound</h3><a class="u" href="https://www.tryprofound.com" target="_blank" rel="noopener">tryprofound.com &#8599;</a></div><div><p class="hl">"The AI marketing platform to win in ChatGPT, Perplexity, Claude, Gemini and other AI engines"</p><p class="meta-line"><b>For:</b> Enterprise marketing teams and agencies &middot; <b>Pricing:</b> No public price; free Trial plan, then Enterprise (custom) &middot; <b>Free entry:</b> Free trial (50 prompts daily for 7 days); no free tool</p><div class="lbl">Traction</div><ul><li>$180M Series D at $1.8B valuation, Sep 15, 2026, co-led by Sequoia and Kleiner Perkins (with Lightspeed, Khosla, Saga, Evantic, South Park Commons)<sup><a href="#s1">[1]</a></sup></li><li>$96M Series C at $1B valuation, Feb 24, 2026, led by Lightspeed<sup><a href="#s2">[2]</a></sup></li><li>1,000+ enterprise brands; used by 16% of the Fortune 500<sup><a href="#s1">[1]</a></sup></li><li>Customers include Walmart, Comcast, Estee Lauder Companies, U.S. Bank, Zoom, Figma, Ramp, MongoDB<sup><a href="#s1">[1]</a></sup></li><li>21 published customer stories, most with a headline metric<sup><a href="#s5">[5]</a></sup></li></ul><div class="lbl">How the website converts</div><ul><li>Product UI (AI Marketer workspace) near the top</li><li>Dual CTA: Get a demo + self-serve Get started</li><li>Quantified case studies (Plaid, Ramp, Alchemy, GR0)</li><li>Testimonials with full name and company</li><li>SOC 2, RBAC, SCIM called out</li><li>Research hub, Profound Index, AEO report</li><li>Newsroom and careers pages</li></ul><div class="lbl">Listed in 2026 roundups</div><p class="meta-line">Brand24, Surmado, Clearscope, Superlines, Alex Birkett (as benchmark)</p></div></div><div class="prof rv"><div><h3>Peec AI</h3><a class="u" href="https://peec.ai" target="_blank" rel="noopener">peec.ai &#8599;</a></div><div><p class="hl">"AI search analytics for marketing teams"</p><p class="meta-line"><b>For:</b> Marketing teams, brands and agencies; mid-market moving into US enterprise &middot; <b>Pricing:</b> Starter, Pro, Advanced, Enterprise; Starter $80/mo billed annually per PricingSaaS (prices hidden on the page fetched) &middot; <b>Free entry:</b> Free trial; no free tool</p><div class="lbl">Traction</div><ul><li>$10M ARR 16 months after launch; 2,500+ customers; first US office in New York (May 28, 2026)<sup><a href="#s6">[6]</a></sup></li><li>TechCrunch verified the $10M ARR on internal dashboards (via TNW)<sup><a href="#s7">[7]</a></sup></li><li>$21M Series A led by Singular, Nov 18, 2025; $29M total raised<sup><a href="#s8">[8]</a></sup></li><li>Customers include Attio, Squarespace, TUI, Hugo Boss<sup><a href="#s6">[6]</a></sup></li><li>Homepage: Trusted by 3000+ brands and agencies<sup><a href="#s9">[9]</a></sup></li></ul><div class="lbl">How the website converts</div><ul><li>Product dashboard in hero using a real customer (Attio)</li><li>Dual CTA: Start Free Trial + Talk to Sales</li><li>Comparison pages vs Profound, Semrush, Ahrefs</li><li>Per-engine tracker landing pages</li><li>One named expert testimonial; no quantified case studies on homepage</li><li>No security mention; careers page but no team page</li><li>Offline billboards in Berlin</li></ul><div class="lbl">Listed in 2026 roundups</div><p class="meta-line">Brand24, NoGood, Surmado, Clearscope, Superlines, Alex Birkett</p></div></div><div class="prof rv"><div><h3>Otterly.AI</h3><a class="u" href="https://otterly.ai" target="_blank" rel="noopener">otterly.ai &#8599;</a></div><div><p class="hl">"We otter know where your brand shows up on AI Search"</p><p class="meta-line"><b>For:</b> Marketing teams, agencies, SEO and content teams, small businesses &middot; <b>Pricing:</b> Lite $29/mo, Standard $189/mo, Premium $489/mo, Enterprise custom &middot; <b>Free entry:</b> Free trial (no credit card per FAQ; length stated as 7 or 14 days) plus seven free GEO tools</p><div class="lbl">Traction</div><ul><li>Bootstrapped; CEO said it would not seek external funding; passed 1,000 users at stealth exit (Dec 2024)<sup><a href="#s13">[13]</a></sup></li><li>Homepage claims 40,000+ marketing pros (self-reported; FAQ also says 30,000+)<sup><a href="#s11">[11]</a></sup></li><li>Homepage claims Gartner Cool Vendor (2025) and 4.8/5 on G2<sup><a href="#s11">[11]</a></sup></li></ul><div class="lbl">How the website converts</div><ul><li>Product UI above the fold (brand report with competitors)</li><li>Self-serve first: Start Free Trial primary, demo secondary</li><li>Large logo wall and ~16 testimonials, most with full name and company</li><li>Case studies, some quantified (ChatArmin 1% to 10%)</li><li>Free GEO tools and email course as lead magnets</li><li>Industry reports and published GEO experiments</li><li>About, Careers and Security pages</li></ul><div class="lbl">Listed in 2026 roundups</div><p class="meta-line">Brand24, NoGood, Surmado, Clearscope</p></div></div><div class="prof rv"><div><h3>AthenaHQ</h3><a class="u" href="https://www.athenahq.ai" target="_blank" rel="noopener">athenahq.ai &#8599;</a></div><div><p class="hl">"Become the Brand AI Trusts / See, Act, and Win on AI Search and Beyond"</p><p class="meta-line"><b>For:</b> Marketing leaders at enterprises and agencies, with industry pages &middot; <b>Pricing:</b> Essential free ($25 credit), Starter $295/mo, Enterprise custom &middot; <b>Free entry:</b> Free 10-minute audit (hero CTA) and free plan</p><div class="lbl">Traction</div><ul><li>$2.2M seed (Jul 2025) from Y Combinator, FCVC, Red Bike Capital, Amino Capital, Eli Schwartz, Ashley Stirrup; 80+ companies at launch incl. Coupons.com and Checkr<sup><a href="#s15">[15]</a></sup></li><li>Homepage logos include SoFi, Coinbase, Hearst, PagerDuty, Twilio, RingCentral<sup><a href="#s14">[14]</a></sup></li></ul><div class="lbl">How the website converts</div><ul><li>No product UI in hero; visuals lower on page</li><li>Free audit as main CTA, plus Start for Free and Book a Demo</li><li>Quantified case studies with named CMOs (Verito, Gruns, Popl)</li><li>SOC 2 Type 2, GDPR, NIST CSF, SSO, Trust Center, DPA</li><li>State of AI Search 2026 report (gated)</li><li>Comparison pages vs Profound, Peec, Scrunch, Semrush, Ahrefs</li><li>About page with named advisory board; YC and G2 badges</li></ul><div class="lbl">Listed in 2026 roundups</div><p class="meta-line">Brand24, Surmado, Alex Birkett, Superlines (FAQ)</p></div></div><div class="prof rv"><div><h3>Scrunch (a Sitecore company)</h3><a class="u" href="https://scrunch.com" target="_blank" rel="noopener">scrunch.com &#8599;</a></div><div><p class="hl">"Monitor and improve your brand&#x27;s visibility in AI search"</p><p class="meta-line"><b>For:</b> Marketing, SEO and content teams, agencies, enterprise &middot; <b>Pricing:</b> Starter $300/mo monthly ($250 annual), Growth $500/mo ($417 annual), Enterprise custom &middot; <b>Free entry:</b> 7-day free trial, no credit card; Prompt Generator tool</p><div class="lbl">Traction</div><ul><li>$15M Series A led by Decibel with Mayfield and Homebrew, Jul 22, 2025; 500+ brands; paying customers +50% MoM in prior quarter<sup><a href="#s18">[18]</a></sup></li><li>Acquired by Sitecore, announced Jun 3, 2026 (terms not disclosed)<sup><a href="#s19">[19]</a></sup></li><li>Bloomberg reported deal value up to $225M (via Shopifreaks)<sup><a href="#s20">[20]</a></sup></li><li>Homepage names Lenovo, Skims, Crunchbase, Penn State<sup><a href="#s16">[16]</a></sup></li></ul><div class="lbl">How the website converts</div><ul><li>Dual CTA: 7-day free trial + Book a demo + See pricing</li><li>SOC 2 Type II and RBAC stated</li><li>Thin testimonials, no quantified case studies on homepage</li><li>Publishes its own best AEO/GEO tools roundup</li><li>About and Careers pages, no team page</li><li>Product UI above the fold could not be confirmed</li></ul><div class="lbl">Listed in 2026 roundups</div><p class="meta-line">Surmado, Alex Birkett</p></div></div><div class="prof rv"><div><h3>Evertune</h3><a class="u" href="https://www.evertune.ai" target="_blank" rel="noopener">evertune.ai &#8599;</a></div><div><p class="hl">"Own the AI customer journey."</p><p class="meta-line"><b>For:</b> Advertisers, brands and agencies &middot; <b>Pricing:</b> Pro $800/mo, Enterprise custom &middot; <b>Free entry:</b> None; demo only</p><div class="lbl">Traction</div><ul><li>$15M Series A led by Felicis (Aug 2025); $20M total raised per company boilerplate; customers named: Canada Goose, Miro, Choreograph (WPP Media)<sup><a href="#s23">[23]</a></sup></li><li>Homepage: Trusted by over 700 advertisers &amp; agencies; logos include WPP, Roku, athenahealth<sup><a href="#s21">[21]</a></sup></li></ul><div class="lbl">How the website converts</div><ul><li>Product dashboard in hero</li><li>Single CTA: Request a demo</li><li>One quantified case study (Halo Collar #5 to #1 in ChatGPT)</li><li>Press logo bar (WSJ, Forbes, The Economist)</li><li>Research, AI Search Statistics, AI Model Release Tracker, Methodology page</li><li>Our Team and Company Overview pages</li><li>No security mention found on homepage</li></ul><div class="lbl">Listed in 2026 roundups</div><p class="meta-line">Surmado</p></div></div><div class="prof rv"><div><h3>Goodie</h3><a class="u" href="https://higoodie.com" target="_blank" rel="noopener">higoodie.com &#8599;</a></div><div><p class="hl">"Your Full stack AEO Platform / Own AI Search"</p><p class="meta-line"><b>For:</b> Enterprise brands and agencies, nine industry pages &middot; <b>Pricing:</b> Core $399/mo, Pro $999/mo, Enterprise custom; Agency Growth $275/mo &middot; <b>Free entry:</b> 7-day free trial on Core; free AI Visibility Index, Agent Site Audit, LLMs.txt Generator</p><div class="lbl">Traction</div><ul><li>Case studies: Dermalogica (Unilever) +85% AI searches, Rathbones +106% AI citations, SteelSeries 3.2x AI search conversion in 6 months<sup><a href="#s24">[24]</a></sup></li><li>Awards: Shorty Awards 2026, Drum Awards gold 2024 and 2026, Webby gold 2024<sup><a href="#s26">[26]</a></sup></li><li>Founded by Mostafa ElBermawy, also founder of agency NoGood<sup><a href="#s37">[37]</a></sup></li></ul><div class="lbl">How the website converts</div><ul><li>Hero is a video, not product UI</li><li>Get a Demo primary, Get Started secondary</li><li>Four testimonials with full name, title and company</li><li>SOC 2-compliant infrastructure, Security &amp; Compliance page</li><li>Research Lab and AI Visibility Index</li><li>About page without named team</li></ul><div class="lbl">Listed in 2026 roundups</div><p class="meta-line">NoGood (same founder), Superlines, Alex Birkett</p></div></div><div class="prof rv"><div><h3>Rankscale</h3><a class="u" href="https://rankscale.ai" target="_blank" rel="noopener">rankscale.ai &#8599;</a></div><div><p class="hl">"The AI Visibility Platform"</p><p class="meta-line"><b>For:</b> Agencies, enterprise and multi-brand SEO teams &middot; <b>Pricing:</b> Credit-based, from $99/mo (Pro) to $780/mo &middot; <b>Free entry:</b> Free trial; no free tool</p><div class="lbl">Traction</div><ul><li>Homepage claims 1000+ active users; team of 13 based in Vienna; logos include Bosch, UBS, Cartier, Dentsu, WPP Media<sup><a href="#s27">[27]</a></sup></li></ul><div class="lbl">How the website converts</div><ul><li>Dashboard right below the hero</li><li>Free trial CTA repeated, plus Book a Demo</li><li>Testimonials mostly with full name and company; no quantified case studies on homepage</li><li>Team page with named leadership and company timeline</li><li>No security certifications listed</li></ul><div class="lbl">Listed in 2026 roundups</div><p class="meta-line">Surmado, Superlines, eCommerce Fastlane</p></div></div>
+</div></section>
+<section class="disc"><div class="wrap">
+  <div class="sec-head rv"><span class="no">04</span><h2>What This Means for SoaRank's Website</h2></div>
+  <ol class="imp"><li>Put Maya to work above the fold: replace the gradient card with a real scan result (engines checked, score, competitors AI recommends instead, first actions). Five of eight competitors show product UI in or right below the hero.</li><li>Make the free scan worth more than HubSpot&#x27;s free 0 to 100 grader: show the exact prompts where competitors win, make the report shareable, and bridge directly to what Copilot ($99) fixes this week. Design scan, result, email, plan as the main conversion path.</li><li>Swap famous-brand reports for customer proof: before and after scores, timeframe, full name, company and photo or logo. Remove the founder&#x27;s own testimonial; keep famous-brand reports only as a sample report section.</li><li>Own the lane the leaders are not in: an AI CMO that does the work for founders and small businesses. Order the page how it works first, pricing after.</li><li>Add the trust layer US buyers expect: About and team page, a data handling and security page, and a short methodology page.</li><li>Make the site its own best GEO case study: a recurring research asset (e.g. AI visibility index for US small businesses), comparison pages (vs Otterly, vs HubSpot AEO Grader) and a best GEO tools for small business page, to get into roundups and AI answers.</li></ol>
+  <a class="back-top" href="/proposal/soarank#site">See how the proposal covers this &rarr;</a>
+</div></section>
+<section class="disc"><div class="wrap">
+  <div class="sec-head rv"><span class="no">05</span><h2>Sources</h2></div>
+  <p class="sec-intro">Primary sources first: company announcements, press and the companies' own sites. Third-party roundups are used only to show who gets listed, never for numbers. Several roundups are written by vendors that rank themselves.</p>
+  <ol class="src"><li id="s1">1. <a href="https://www.tryprofound.com/newsroom/profound-raises-usd180m-series-d-at-usd1-8b-valuation-to-build-the-ai-platform-for-marketing-teams" target="_blank" rel="noopener">Profound newsroom, &quot;Profound raises $180M Series D at $1.8B valuation&quot; (Sep 15, 2026)</a></li><li id="s2">2. <a href="https://fortune.com/2026/02/24/exclusive-as-ai-threatens-search-profound-raises-96-million-to-help-brands-stay-visible" target="_blank" rel="noopener">Fortune, &quot;As AI threatens search, Profound raises $96 million&quot; (Feb 24, 2026)</a></li><li id="s3">3. <a href="https://www.tryprofound.com" target="_blank" rel="noopener">Profound homepage</a></li><li id="s4">4. <a href="https://www.tryprofound.com/pricing" target="_blank" rel="noopener">Profound pricing</a></li><li id="s5">5. <a href="https://www.tryprofound.com/customers" target="_blank" rel="noopener">Profound customer stories</a></li><li id="s6">6. <a href="https://www.manilatimes.net/2026/05/28/tmt-newswire/globenewswire/peec-ai-hits-10m-arr-16-months-after-launch-as-brands-race-to-optimize-for-ai-search/2353897" target="_blank" rel="noopener">Peec AI press release via GlobeNewswire, &quot;Peec AI hits $10M ARR 16 months after launch&quot; (May 28, 2026)</a></li><li id="s7">7. <a href="https://thenextweb.com/news/peec-ai-berlin-10-million-arr-geo-ai-search" target="_blank" rel="noopener">The Next Web, &quot;Berlin&#x27;s Peec AI more than doubled revenue to $10M ARR in six months&quot; (May 2026)</a></li><li id="s8">8. <a href="https://tech.eu/2025/11/18/peec-ai-raises-21m-series-a-to-help-brands-win-in-ai-search/" target="_blank" rel="noopener">Tech.eu, &quot;Peec AI raises $21M Series A&quot; (Nov 18, 2025)</a></li><li id="s9">9. <a href="https://peec.ai" target="_blank" rel="noopener">Peec AI homepage</a></li><li id="s10">10. <a href="https://pricingsaas.com/companies/peec" target="_blank" rel="noopener">PricingSaaS, Peec AI pricing tracker</a></li><li id="s11">11. <a href="https://otterly.ai" target="_blank" rel="noopener">Otterly.AI homepage</a></li><li id="s12">12. <a href="https://otterly.ai/pricing" target="_blank" rel="noopener">Otterly.AI pricing</a></li><li id="s13">13. <a href="https://techcrunch.com/2024/12/18/ai-is-burying-company-web-sites-in-search-results-but-otterly-ai-thinks-it-can-help" target="_blank" rel="noopener">TechCrunch, &quot;AI is burying company websites in search results, but Otterly.AI thinks it can help&quot; (Dec 18, 2024)</a></li><li id="s14">14. <a href="https://www.athenahq.ai" target="_blank" rel="noopener">AthenaHQ homepage</a></li><li id="s15">15. <a href="https://www.kmworld.com/Articles/News/News/Athena-launches-from-stealth-promoting-%E2%80%98the-worlds-fastest-generative-engine-optimization-platform-170485.aspx" target="_blank" rel="noopener">KMWorld, &quot;Athena launches from stealth&quot; (Jul 2025)</a></li><li id="s16">16. <a href="https://scrunch.com" target="_blank" rel="noopener">Scrunch homepage</a></li><li id="s17">17. <a href="https://scrunch.com/pricing" target="_blank" rel="noopener">Scrunch pricing</a></li><li id="s18">18. <a href="https://pulse2.com/scrunch-ai-15-million-raised-for-improving-ai-search/" target="_blank" rel="noopener">Pulse 2.0, &quot;Scrunch AI: $15 Million Raised&quot; (Jul 22, 2025)</a></li><li id="s19">19. <a href="https://www.sitecore.com/de-de/company/newsroom/press-releases/2026/06/sitecore-acquires-scrunch-to-help-brands-influence-discovery--and-buying-decisions" target="_blank" rel="noopener">Sitecore press release, &quot;Sitecore acquires Scrunch&quot; (Jun 3, 2026)</a></li><li id="s20">20. <a href="https://www.shopifreaks.com/sitecore-buys-ai-visibility-startup-scrunch-in-a-deal-reportedly-worth-up-to-225m-to-help-brands-get-found-and-cited-by-ai-agents/" target="_blank" rel="noopener">Shopifreaks, &quot;Sitecore buys AI visibility startup Scrunch in a deal reportedly worth up to $225M&quot;</a></li><li id="s21">21. <a href="https://www.evertune.ai" target="_blank" rel="noopener">Evertune homepage</a></li><li id="s22">22. <a href="https://www.evertune.ai/pricing" target="_blank" rel="noopener">Evertune pricing</a></li><li id="s23">23. <a href="https://evertune.ai/resources/insights-on-ai/evertune-raises-15-million-series-a-to-scale-its-ai-marketing-and-discovery-platform" target="_blank" rel="noopener">Evertune, &quot;Evertune raises $15 million Series A&quot; (Aug 2025)</a></li><li id="s24">24. <a href="https://higoodie.com" target="_blank" rel="noopener">Goodie homepage</a></li><li id="s25">25. <a href="https://higoodie.com/pricing" target="_blank" rel="noopener">Goodie pricing</a></li><li id="s26">26. <a href="https://higoodie.com/about" target="_blank" rel="noopener">Goodie about page</a></li><li id="s27">27. <a href="https://rankscale.ai" target="_blank" rel="noopener">Rankscale homepage</a></li><li id="s28">28. <a href="https://www.hubspot.com/aeo-grader" target="_blank" rel="noopener">HubSpot AEO Grader</a></li><li id="s29">29. <a href="https://www.soarank.com" target="_blank" rel="noopener">SoaRank homepage</a></li><li id="s30">30. <a href="https://brand24.com/blog/ai-visibility-tools/" target="_blank" rel="noopener">Brand24, &quot;The 12 Best AI Visibility Tools for 2026&quot; (updated Sep 4, 2026)</a></li><li id="s31">31. <a href="https://nogood.io/2025/04/05/generative-engine-optimization-tools" target="_blank" rel="noopener">NoGood, &quot;Top Generative Engine Optimization (GEO) Tools for 2026&quot; (Mar 30, 2026)</a></li><li id="s32">32. <a href="https://surmado.com/blog/best-ai-visibility-tools-2026" target="_blank" rel="noopener">Surmado, &quot;Best AI Visibility Tools 2026: Profound vs Peec vs Otterly vs the Rest&quot; (May 9, 2026)</a></li><li id="s33">33. <a href="https://www.clearscope.io/blog/Best-AI-Search-Visibility-Tools-for-2026" target="_blank" rel="noopener">Clearscope, &quot;The Best AI Search Visibility Tools for 2026&quot; (Dec 19, 2025)</a></li><li id="s34">34. <a href="https://superlines.io/articles/best-generative-engine-optimization-tools" target="_blank" rel="noopener">Superlines, &quot;Best GEO tools in 2026&quot; (updated Sep 2, 2026)</a></li><li id="s35">35. <a href="https://alexbirkett.com/profound-alternatives/" target="_blank" rel="noopener">Alex Birkett, &quot;The 9 Best Profound Alternatives in 2026&quot; (Feb 27, 2026)</a></li><li id="s36">36. <a href="https://ecommercefastlane.com/7-tools-shaping-the-future-of-ai-visibility-in-2026/" target="_blank" rel="noopener">eCommerce Fastlane, &quot;9 Tools Shaping The Future Of AI Visibility In 2026&quot; (updated Apr 21, 2026)</a></li><li id="s37">37. <a href="https://www.allamericanspeakers.com/speakers/468335/Mostafa-Elbermawy" target="_blank" rel="noopener">All American Speakers, Mostafa ElBermawy profile (founder of NoGood and Goodie AI)</a></li></ol>
+</div></section>
+<footer><div class="wrap"><div>A+ Growth &middot; <a href="https://www.weareaplus.net">weareaplus.net</a> &middot; <a href="mailto:amir@amirgomez.com">amir@amirgomez.com</a></div><div class="private">Private page, shared by invitation. Not indexed.</div></div></footer>
+<script>
+  var rio = ('IntersectionObserver' in window) ? new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); } }); }, { threshold: 0.05 }) : null;
+  document.querySelectorAll('.rv').forEach(function (el) { rio ? rio.observe(el) : el.classList.add('in'); });
+  var prog = document.getElementById('prog');
+  addEventListener('scroll', function () { var h = document.documentElement.scrollHeight - innerHeight; prog.style.width = (h > 0 ? (scrollY / h) * 100 : 0) + '%'; }, { passive: true });
+</script>
+</body>
+</html>

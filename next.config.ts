@@ -118,6 +118,10 @@ const nextConfig: NextConfig = {
       {
         source: '/proposal/soarank',
         destination: '/proposal-soarank.html'
+      },
+      {
+        source: '/proposal/soarank/research',
+        destination: '/proposal-soarank-research.html'
       }
     ];
   },
