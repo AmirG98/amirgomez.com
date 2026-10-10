@@ -153,6 +153,56 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-icon.png">
 <style>
+  /* ---- efectos ---- */
+  #prog { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--orange); z-index: 50; transition: width .1s linear; }
+  .chat { margin-top: 34px; max-width: 640px; background: var(--dark); color: #EDEAE4; border-radius: 16px; padding: 18px 20px 20px; box-shadow: 0 30px 60px -30px rgba(20,18,15,.45); }
+  .chat .top { display: flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #9C968C; }
+  .chat .top i { width: 8px; height: 8px; border-radius: 50%; background: #4A453E; display: inline-block; }
+  .chat .top i:first-child { background: var(--orange); }
+  .chat .top span { margin-left: auto; }
+  .chat .q { margin-top: 16px; margin-left: auto; width: fit-content; max-width: 88%; background: #2A2722; padding: 10px 14px; border-radius: 14px 14px 4px 14px; font-size: 14.5px; min-height: 42px; }
+  .chat .a { margin-top: 14px; font-size: 14.5px; line-height: 1.65; color: #D9D4CB; min-height: 120px; }
+  .chat .a b { color: #fff; }
+  .chat .a mark { background: rgba(224,78,16,.22); color: #FFB08A; padding: 0 3px; border-radius: 3px; }
+  .chat .src { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; opacity: 0; transition: opacity .6s; }
+  .chat .src.on { opacity: 1; }
+  .chat .src span { font-size: 11.5px; border: 1px solid #3A362F; border-radius: 999px; padding: 3px 10px; color: #B9B3A8; }
+  .chat .src span.us { border-color: var(--orange); color: #FFB08A; }
+  .caret::after { content: '▍'; animation: blink 1s steps(1) infinite; color: var(--orange); }
+  @keyframes blink { 50% { opacity: 0; } }
+  .chat-note { margin-top: 10px; font-size: 12.5px; color: var(--muted); }
+
+  .gift { margin-top: 22px; border: 1px solid rgba(224,78,16,.35); background: linear-gradient(135deg, rgba(224,78,16,.08), rgba(224,78,16,.02)); border-radius: 14px; padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 26px; align-items: center; }
+  .gift .tag2 { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #fff; background: var(--orange); border-radius: 999px; padding: 4px 11px; }
+  .gift h3 { font-family: var(--serif); font-weight: 600; font-size: clamp(21px, 2.4vw, 26px); color: var(--ink); margin: 10px 0 8px; line-height: 1.2; }
+  .gift p { font-size: 14.5px; }
+  .gift p + p { margin-top: 8px; }
+  .term { background: var(--dark); border-radius: 12px; padding: 14px 16px; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; line-height: 1.75; color: #CFC9BE; min-height: 230px; overflow: hidden; }
+  .term .hd { color: #8A8478; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; display: flex; justify-content: space-between; }
+  .term .hd b { color: var(--orange); font-weight: 600; }
+  .term .ln { opacity: 0; transform: translateY(4px); transition: opacity .35s, transform .35s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .term .ln.on { opacity: 1; transform: none; }
+  .term .ok { color: #7BD88F; }
+  .term .up { color: #FFB08A; }
+
+  .grp { margin-top: 30px; }
+  .grp-h { display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px; }
+  .grp-h b { font-size: 11.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--orange); }
+  .grp-h span { font-size: 14px; }
+  .sites { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+  .sites.one { grid-template-columns: 1fr; }
+  .site { display: block; text-decoration: none; color: inherit; border: 1px solid var(--hair); border-radius: 12px; overflow: hidden; background: var(--card); transition: transform .25s, box-shadow .25s; }
+  .site:hover { transform: translateY(-3px); box-shadow: 0 24px 50px -24px rgba(20,18,15,.35); }
+  .site .frame { position: relative; height: 230px; overflow: hidden; background: var(--dark); border-bottom: 1px solid var(--hair); }
+  .sites.one .site .frame { height: 380px; }
+  .site .frame img { display: block; width: 100%; height: auto; transform: translateY(0); transition: transform 0s linear; will-change: transform; }
+  .site .frame::after { content: 'Hover to scroll'; position: absolute; right: 10px; bottom: 10px; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: #fff; background: rgba(20,18,15,.6); padding: 3px 8px; border-radius: 999px; transition: opacity .3s; }
+  .site:hover .frame::after { opacity: 0; }
+  .site .meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 16px; }
+  .site b { font-weight: 600; color: var(--ink); }
+  .site small { display: block; color: var(--muted); font-size: .84rem; }
+  .site .go { font-size: .72rem; letter-spacing: .06em; white-space: nowrap; color: var(--orange); }
+
   .disc > .wrap > .rows { margin-top: 18px; }
   .disc > .wrap > .rows .row { display: grid; grid-template-columns: 160px 1fr; gap: 20px; padding: 15px 0; border-bottom: 1px solid var(--hair); align-items: baseline; }
   .disc > .wrap > .rows .row:last-child { border-bottom: 0; }
@@ -162,22 +212,17 @@
   #site .pil h3 { font-family: var(--serif); font-weight: 600; font-size: clamp(22px, 2.6vw, 28px); }
   #site .kpi .v { font-size: clamp(26px, 3.4vw, 36px); }
   #site .pil li { font-size: 14px; }
-  @media (max-width: 720px) { .disc > .wrap > .rows .row { grid-template-columns: 1fr; gap: 4px; } }
-  .sites { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:22px; }
-  .site { display:block; text-decoration:none; color:inherit; border:1px solid var(--hair); border-radius:12px; overflow:hidden; background:var(--card); transition:transform .2s, border-color .2s; }
-  .site:hover { transform:translateY(-2px); }
-  .site img { display:block; width:100%; aspect-ratio:16/10; object-fit:cover; object-position:top; border-bottom:1px solid var(--hair); }
-  .site .meta { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px 16px; }
-  .site b { font-weight:600; }
-  .site small { display:block; opacity:.7; font-size:.84rem; }
-  .site .go { font-size:.75rem; letter-spacing:.06em; white-space:nowrap; opacity:.8; }
-  .site.text .meta { padding:16px; }
-  .incl { columns:2; column-gap:36px; margin-top:6px; }
-  .incl li { break-inside:avoid; }
-  @media (max-width:720px) { .sites { grid-template-columns:1fr; } .incl { columns:1; } }
+  .sub-h { font-family: var(--serif); font-weight: 600; font-size: 20px; color: var(--ink); margin: 34px 0 0; }
+  @media (max-width: 900px) { .sites { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 720px) {
+    .disc > .wrap > .rows .row { grid-template-columns: 1fr; gap: 4px; }
+    .sites { grid-template-columns: 1fr; } .sites.one .site .frame { height: 260px; }
+    .gift { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) { .site .frame img { transition: none !important; } .caret::after { animation: none; } }
 </style>
-</head>
-<body>
+</head><body>
+<div id="prog"></div>
 <header>
   <div class="wrap">
     <div class="head-row rv">
@@ -188,6 +233,13 @@
     <span class="eyebrow rv">Andy &amp; the SoaRank team &middot; intro by Stephanie Luong</span>
     <h1 class="rv">A website that looks like the company <em>you are building.</em></h1>
     <p class="sub rv">Maya is a strong product. The site has most of the right pieces. What it is missing is the presentation an American buyer expects before handing a brand over to an AI CMO. That is the part we would fix first.</p>
+    <div class="chat rv" id="chat" aria-label="Example AI answer">
+      <div class="top"><i></i><i></i><i></i><span>AI search &middot; the goal</span></div>
+      <div class="q" id="chat-q"></div>
+      <div class="a" id="chat-a"></div>
+      <div class="src" id="chat-src"><span class="us">soarank.com</span><span>g2.com</span><span>reddit.com/r/SEO</span></div>
+    </div>
+    <p class="chat-note rv">Where the new site should take you: the answer a US founder gets when they ask. The site is half of how you get there.</p>
   </div>
 </header>
 
@@ -211,13 +263,13 @@
     <div class="sec-head rv"><span class="no">02</span><h2>The Website</h2></div>
     <div class="pillars">
       <div class="pil rv" style="grid-column:1/-1;">
-        <div class="n">Website refresh &middot; identity, design and build</div>
+        <div class="n">Website remake &middot; identity, design and build</div>
         <h3>A site built to earn trust from US buyers</h3>
         <div class="kpis">
           <div class="kpi"><div class="l">One time</div><div class="v">$9,400</div></div>
           <div class="kpi"><div class="l">Timeline</div><div class="v">5 weeks</div></div>
         </div>
-        <ul class="incl">
+        <ul>
           <li><b>Visual identity.</b> Logo lockup, color system, type and a real visual character for Maya, so she reads as a product and not a placeholder.</li>
           <li><b>Long-form homepage</b> rebuilt around the buyer's questions, in the order they ask them.</li>
           <li><b>Core pages:</b> How it works, Pricing, Reports, About and team, Trust and data, FAQ.</li>
@@ -225,11 +277,22 @@
           <li><b>Proof that holds up.</b> A case study template, starting with OptiNizers and its score moving over time.</li>
           <li><b>Copy edited for a US audience.</b> Your content, tightened and reordered. No rewrite from zero.</li>
           <li><b>Built for AI search:</b> schema, llms.txt, clean structure and answer-ready sections on every page.</li>
-          <li><b>Blog and report templates</b> ready for the content engine in section 03.</li>
           <li><b>Tracking from day one:</b> GA4, Meta and LinkedIn pixels, and events for free scans and plan starts.</li>
           <li><b>Two rounds of revisions</b> and 30 days of support after launch.</li>
         </ul>
         <p class="scope-note rv">50% to start, 50% at launch. You keep full ownership of the site, the design files and the accounts.</p>
+      </div>
+    </div>
+
+    <div class="gift rv">
+      <div>
+        <span class="tag2">Included at no cost</span>
+        <h3>AI agents that keep improving the site after launch</h3>
+        <p>Because you came through Stephanie, we set up the same kind of agents we run for EcoNews and leave them working on your site: they track your rankings and the AI answers for your buyer prompts, find the questions where you are missing, and draft and publish the pages that close the gap.</p>
+        <p><b>Setup and the first 90 days are on us.</b> After that they keep running inside a maintenance plan, if you want one.</p>
+      </div>
+      <div class="term" id="term" aria-label="Illustrative agent run">
+        <div class="hd"><span>agent &middot; weekly run</span><b>illustrative</b></div>
       </div>
     </div>
   </div>
@@ -240,7 +303,7 @@
     <div class="sec-head rv"><span class="no">03</span><h2>After Launch: Bringing Buyers to the Site</h2></div>
     <p class="sec-intro rv">A better site converts more of the traffic you send. This is how we would send more. Each part is quoted on its own once the site is live, and nothing here is required to start.</p>
     <div class="rows">
-      <div class="row rv"><span class="pain">Content engine</span><div><b>AI agents that research and publish at scale</b> around the prompts your buyers type into ChatGPT and Perplexity. The same system we run for a top LatAm news outlet, and the best live demo of what Maya promises.</div></div>
+      <div class="row rv"><span class="pain">Content engine</span><div><b>Agents that research and publish at scale</b> around the prompts your buyers type into ChatGPT and Perplexity. The best live demo of what Maya promises is your own site showing up in those answers.</div></div>
       <div class="row rv"><span class="pain">Paid acquisition</span><div><b>Meta, Google and LinkedIn</b> aimed at founders and marketers, with the free scan as the entry point instead of a cold "book a demo".</div></div>
       <div class="row rv"><span class="pain">Funnel</span><div><b>From free scan to paid plan.</b> Email follow-up after the first report, an upgrade path to Copilot and Autopilot, and a webinar or VSL when the volume is there.</div></div>
       <div class="row rv"><span class="pain">The site, ongoing</span><div><b>Monthly iterations and A/B tests</b> on the pages that carry traffic, so the site keeps improving after launch instead of freezing.</div></div>
@@ -251,31 +314,46 @@
 <section class="disc" id="sitios">
   <div class="wrap">
     <div class="sec-head rv"><span class="no">04</span><h2>Sites We Have Built</h2></div>
-    <p class="sec-intro rv">A few recent ones. Click through, they are all live.</p>
-    <div class="sites">
-      <a class="site rv" href="https://www.weareaplus.net/" target="_blank" rel="noopener"><img src="/case-studies/web-weareaplus.jpg" alt="A+ Growth website" loading="lazy"><span class="meta"><span><b>A+ Growth</b><small>Our own site, built to sell to US companies</small></span><span class="go">Open &#8599;</span></span></a>
-      <a class="site rv" href="https://via.tools/" target="_blank" rel="noopener"><img src="/case-studies/web-viatools.jpg" alt="Via Tools website" loading="lazy"><span class="meta"><span><b>Via Tools</b><small>Marketing data platform &middot; USA</small></span><span class="go">Open &#8599;</span></span></a>
-      <a class="site rv" href="https://www.founderaccelerators.com/" target="_blank" rel="noopener"><img src="/case-studies/web-founderaccelerators.jpg" alt="Founder Accelerators website" loading="lazy"><span class="meta"><span><b>Founder Accelerators</b><small>Premium coaching for founders</small></span><span class="go">Open &#8599;</span></span></a>
-      <a class="site rv" href="https://www.wolfgyms.com/franchise" target="_blank" rel="noopener"><img src="/case-studies/web-wolfgyms.jpg" alt="Wolf Gyms franchise site" loading="lazy"><span class="meta"><span><b>Wolf Gyms</b><small>Franchise site, featuring Dave Bautista</small></span><span class="go">Open &#8599;</span></span></a>
-      <a class="site rv" href="https://trailervalet.com/" target="_blank" rel="noopener"><img src="/case-studies/web-trailervalet.jpg" alt="Trailer Valet website" loading="lazy"><span class="meta"><span><b>Trailer Valet</b><small>E-commerce &middot; USA</small></span><span class="go">Open &#8599;</span></span></a>
-      <a class="site rv" href="https://urban-usa.com" target="_blank" rel="noopener"><img src="/case-studies/web-urbanusa.jpg" alt="Urban Real Estate website" loading="lazy"><span class="meta"><span><b>Urban Real Estate</b><small>Brokerage &amp; property management &middot; Miami</small></span><span class="go">Open &#8599;</span></span></a>
+    <p class="sec-intro rv">Hover over any of them to scroll through the page. All live.</p>
+
+    <div class="grp rv">
+      <div class="grp-h"><b>The visual reference</b><span>Closest to the look and feel we have in mind for SoaRank.</span></div>
+      <div class="sites one">
+        <a class="site" href="https://www.weareaplus.net/" target="_blank" rel="noopener"><span class="frame"><img src="/case-studies/webfull-weareaplus.jpg" alt="A+ Growth website" loading="lazy"></span><span class="meta"><span><b>A+ Growth</b><small>Our own site, built to sell to US companies</small></span><span class="go">Open &#8599;</span></span></a>
+      </div>
+    </div>
+
+    <div class="grp rv">
+      <div class="grp-h"><b>Structures that convert</b><span>Pages built to move a visitor to one action.</span></div>
+      <div class="sites">
+        <a class="site" href="https://via.tools/" target="_blank" rel="noopener"><span class="frame"><img src="/case-studies/webfull-viatools.jpg" alt="Via Tools website" loading="lazy"></span><span class="meta"><span><b>Via Tools</b><small>Marketing data platform &middot; USA</small></span><span class="go">Open &#8599;</span></span></a>
+        <a class="site" href="https://www.founderaccelerators.com/" target="_blank" rel="noopener"><span class="frame"><img src="/case-studies/webfull-founderaccelerators.jpg" alt="Founder Accelerators website" loading="lazy"></span><span class="meta"><span><b>Founder Accelerators</b><small>Premium coaching for founders</small></span><span class="go">Open &#8599;</span></span></a>
+        <a class="site" href="https://www.wolfgyms.com/franchise" target="_blank" rel="noopener"><span class="frame"><img src="/case-studies/webfull-wolfgyms.jpg" alt="Wolf Gyms franchise site" loading="lazy"></span><span class="meta"><span><b>Wolf Gyms</b><small>Franchise site, featuring Dave Bautista</small></span><span class="go">Open &#8599;</span></span></a>
+      </div>
+    </div>
+
+    <div class="grp rv">
+      <div class="grp-h"><b>A site we run</b><span>What working with us looks like after launch.</span></div>
+      <div class="sites one">
+        <a class="site" href="https://trailervalet.com/" target="_blank" rel="noopener"><span class="frame"><img src="/case-studies/webfull-trailervalet.jpg" alt="Trailer Valet website" loading="lazy"></span><span class="meta"><span><b>Trailer Valet</b><small>We manage the site and have shipped several improvements and refreshes over the years. Another one is in progress right now.</small></span><span class="go">Open &#8599;</span></span></a>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="disc" id="casos">
   <div class="wrap">
-    <div class="sec-head rv"><span class="no">05</span><h2>What the Traffic Side Looks Like</h2></div>
-    <p class="sec-intro rv">Real accounts, closest to what section 03 would do for SoaRank.</p>
+    <div class="sec-head rv"><span class="no">05</span><h2>Marketing and Development Under One Roof</h2></div>
+    <p class="sec-intro rv">Most agencies either market or build. In this era you need both: AI agents, integrations and products, plus the marketing that brings people to them.</p>
 
     <article class="case split">
       <div class="cols">
         <div class="txt rv">
-          <div class="for-q">Content engine</div>
-          <div class="chips"><span class="chip">AI agents</span><span class="chip">SEO &amp; GEO</span><span class="chip v">Top news outlet &middot; LatAm</span></div>
+          <div class="for-q">AI agents &middot; the engine we would give you</div>
+          <div class="chips"><span class="chip">AI agents</span><span class="chip">SEO &amp; GEO</span><span class="chip v">Media &middot; Spanish-speaking world</span></div>
           <h3>EcoNews</h3>
-          <p class="desc">AI agents that spot trending topics and write and publish in real time, with editorial rules on top. The same engine we would point at the prompts SoaRank wants to own.</p>
-          <div class="metric"><span>2x Google rankings</span> with <span>5x more content</span></div>
+          <p class="desc">One of the largest Spanish-language environmental outlets in the world, with close to a million followers on Instagram. Our agents spot trending topics, then write and publish in real time under editorial rules, and keep adjusting to what ranks and what people search.</p>
+          <div class="metric"><span data-count="2" data-suf="x">2x</span> Google rankings with <span data-count="5" data-suf="x">5x</span> more content &middot; <span data-count="926" data-suf="K">926K</span> followers</div>
         </div>
         <div class="shotwrap rv"><figure class="shot">
           <div class="bar"><i></i><i></i><i></i><span class="url">econews.global</span></div>
@@ -287,11 +365,29 @@
     <article class="case split flip">
       <div class="cols">
         <div class="txt rv">
+          <div class="for-q">AI product &middot; cross-industry</div>
+          <div class="chips"><span class="chip">AI product</span><span class="chip">Integrations</span><span class="chip v">Gaming &middot; Global</span></div>
+          <h3>RolHub</h3>
+          <p class="desc">A platform with an autonomous AI Dungeon Master that narrates story, generates images and applies the rules in real time, across a dozen original worlds. We built the product and its growth: image and video models routed by plan to control cost, payments, multilingual play and the acquisition funnel.</p>
+          <div class="metric">Proof that we build AI products, <span>not only market them</span></div>
+        </div>
+        <div class="shotwrap rv"><figure class="shot">
+          <div class="bar"><i></i><i></i><i></i><span class="url">rol-hub.com</span></div>
+          <img src="/case-studies/webfull-rolhub.jpg" alt="RolHub platform" loading="lazy">
+        </figure></div>
+      </div>
+    </article>
+
+    <h3 class="sub-h rv">And on the traffic side</h3>
+
+    <article class="case split">
+      <div class="cols">
+        <div class="txt rv">
           <div class="for-q">Paid acquisition &middot; B2B</div>
           <div class="chips"><span class="chip">Paid Social</span><span class="chip">Funnels</span><span class="chip v">Marketing &amp; data agency &middot; California</span></div>
           <h3>Lead Magnet B2B</h3>
           <p class="desc">A free resource in front of the right buyers, then follow-up that turns opt-ins into meetings. The free scan plays the same role for SoaRank.</p>
-          <div class="metric">ICP cost per lead from <span>$50 to $5</span> &middot; best ads at <span>$2.20/lead</span></div>
+          <div class="metric">ICP cost per lead from <span>$50</span> to <span data-count="5" data-pre="$">$5</span> &middot; best ads at <span>$2.20/lead</span></div>
         </div>
         <div class="shotwrap rv"><figure class="shot">
           <div class="bar"><i></i><i></i><i></i><span class="url">meta ads manager</span></div>
@@ -300,14 +396,14 @@
       </div>
     </article>
 
-    <article class="case split">
+    <article class="case split flip">
       <div class="cols">
         <div class="txt rv">
           <div class="for-q">Full funnel</div>
           <div class="chips"><span class="chip">Paid Social</span><span class="chip">PPC</span><span class="chip">Email</span><span class="chip v">Physical product &middot; USA</span></div>
           <h3>Trailer Valet</h3>
-          <p class="desc">Four years running their whole digital operation: site, ads, email and SEO working as one system.</p>
-          <div class="metric">Monthly revenue from <span>$20K</span> to <span>$100K+</span></div>
+          <p class="desc">Four years running their whole digital operation, site included, with ads, email and SEO working as one system.</p>
+          <div class="metric">Monthly revenue from <span>$20K</span> to <span data-count="100" data-pre="$" data-suf="K+">$100K+</span></div>
         </div>
         <div class="shotwrap rv"><figure class="shot">
           <div class="bar"><i></i><i></i><i></i><span class="url">trailervalet.com</span></div>
@@ -322,7 +418,7 @@
         <div class="chips"><span class="chip">SEO &amp; GEO</span><span class="chip v">B2B/B2C &middot; Texas, USA</span></div>
         <h3>Nationwide Trailers</h3>
         <p class="desc">Technical structure and content built to compound, month after month.</p>
-        <div class="metric"><span>5.3x organic traction</span> in one year &middot; <span>410,000+</span> organic visitors</div>
+        <div class="metric"><span data-count="5.3" data-suf="x">5.3x</span> organic traction in one year &middot; <span data-count="410000" data-suf="+">410,000+</span> organic visitors</div>
       </div>
       <div class="shotwrap rv"><figure class="shot">
         <div class="bar"><i></i><i></i><i></i><span class="url">search console</span></div>
@@ -338,8 +434,8 @@
     <div class="phases">
       <div class="ph rv"><div class="pn">Week 1</div><div>Kickoff call, then two identity directions to choose from.</div></div>
       <div class="ph rv"><div class="pn">Weeks 2&ndash;3</div><div>Homepage designed first and approved, then the rest of the pages on the same system.</div></div>
-      <div class="ph rv"><div class="pn">Week 4</div><div>Build, tracking and AI search structure.</div></div>
-      <div class="ph rv"><div class="pn">Week 5</div><div>Review, fixes and launch. Then 30 days of support.</div></div>
+      <div class="ph rv"><div class="pn">Week 4</div><div>Build, tracking, AI search structure and the agents set up.</div></div>
+      <div class="ph rv"><div class="pn">Week 5</div><div>Review, fixes and launch. The agents start their first 90 days.</div></div>
     </div>
   </div>
 </section>
@@ -360,10 +456,100 @@
 </footer>
 
 <script>
-  var rio = ('IntersectionObserver' in window) ? new IntersectionObserver(function(es){
-    es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); } });
+(function () {
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // reveal
+  var rio = ('IntersectionObserver' in window) ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); rio.unobserve(e.target); } });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }) : null;
-  document.querySelectorAll('.rv').forEach(function(el){ rio ? rio.observe(el) : el.classList.add('in'); });
+  document.querySelectorAll('.rv').forEach(function (el) { rio ? rio.observe(el) : el.classList.add('in'); });
+
+  // barra de progreso
+  var prog = document.getElementById('prog');
+  addEventListener('scroll', function () {
+    var h = document.documentElement.scrollHeight - innerHeight;
+    prog.style.width = (h > 0 ? (scrollY / h) * 100 : 0) + '%';
+  }, { passive: true });
+
+  // chat de IA que se escribe solo
+  var Q = 'What is the best tool to get my brand recommended by ChatGPT?';
+  var A = 'For small and mid-size businesses, <b>SoaRank</b> is one of the strongest options right now. Its AI CMO, <mark>Maya</mark>, scans how your brand shows up across ChatGPT, Perplexity and Gemini, explains why competitors get picked instead, and gives you a weekly plan to get cited. You can start with a <b>free scan</b>.';
+  var q = document.getElementById('chat-q'), a = document.getElementById('chat-a'), src = document.getElementById('chat-src');
+  function typeText(el, txt, speed, done) {
+    if (reduce) { el.innerHTML = txt; return done && done(); }
+    var i = 0; el.classList.add('caret');
+    (function step() {
+      if (txt[i] === '<') { var j = txt.indexOf('>', i); i = j + 1; }
+      else i++;
+      el.innerHTML = txt.slice(0, i);
+      if (i < txt.length) setTimeout(step, speed); else { el.classList.remove('caret'); done && done(); }
+    })();
+  }
+  var chatStarted = false;
+  function startChat() {
+    if (chatStarted) return; chatStarted = true;
+    typeText(q, Q, 28, function () { setTimeout(function () { typeText(a, A, 14, function () { src.classList.add('on'); }); }, 500); });
+  }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es, o) { if (es[0].isIntersecting) { startChat(); o.disconnect(); } }, { threshold: 0.4 }).observe(document.getElementById('chat'));
+  } else startChat();
+
+  // registro del agente (ilustrativo)
+  var LINES = [
+    '<span>&gt;</span> testing 40 buyer prompts in ChatGPT, Perplexity, Gemini',
+    '<span class="ok">&#10003;</span> soarank.com cited in <span class="up">9/40</span> answers (last week: 6/40)',
+    '<span>&gt;</span> gap found: "how to show up in ChatGPT answers"',
+    '<span>&gt;</span> competitor cited instead: 3 pages, 1 Reddit thread',
+    '<span>&gt;</span> drafting answer page + FAQ schema',
+    '<span class="ok">&#10003;</span> published /guides/show-up-in-chatgpt',
+    '<span>&gt;</span> Google: "ai visibility tool" moved <span class="up">#18 &rarr; #11</span>',
+    '<span>&gt;</span> next re-test scheduled: Monday 09:00'
+  ];
+  var term = document.getElementById('term');
+  function runTerm() {
+    term.querySelectorAll('.ln').forEach(function (l) { l.remove(); });
+    LINES.forEach(function (t, k) {
+      var d = document.createElement('div'); d.className = 'ln'; d.innerHTML = t; term.appendChild(d);
+      setTimeout(function () { d.classList.add('on'); }, reduce ? 0 : 450 * k + 200);
+    });
+    if (!reduce) setTimeout(runTerm, 450 * LINES.length + 4000);
+  }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es, o) { if (es[0].isIntersecting) { runTerm(); o.disconnect(); } }, { threshold: 0.3 }).observe(term);
+  } else runTerm();
+
+  // capturas que se desplazan al pasar el mouse
+  document.querySelectorAll('.site .frame').forEach(function (f) {
+    var img = f.querySelector('img'), site = f.closest('.site');
+    function go() {
+      var d = img.offsetHeight - f.offsetHeight; if (d <= 0 || reduce) return;
+      img.style.transition = 'transform ' + Math.max(2.5, d / 450) + 's cubic-bezier(.45,.05,.55,.95)';
+      img.style.transform = 'translateY(-' + d + 'px)';
+    }
+    function back() { img.style.transition = 'transform .9s cubic-bezier(.2,.7,.2,1)'; img.style.transform = 'translateY(0)'; }
+    site.addEventListener('mouseenter', go); site.addEventListener('mouseleave', back);
+    site.addEventListener('focus', go); site.addEventListener('blur', back);
+  });
+
+  // contadores
+  function fmt(n, dec) { return dec ? n.toFixed(dec) : Math.round(n).toLocaleString('en-US'); }
+  var cio = ('IntersectionObserver' in window) ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return; cio.unobserve(e.target);
+      var el = e.target, to = parseFloat(el.dataset.count), pre = el.dataset.pre || '', suf = el.dataset.suf || '';
+      var dec = (String(el.dataset.count).split('.')[1] || '').length, t0 = null, dur = 1400;
+      if (reduce) return;
+      function step(ts) {
+        if (!t0) t0 = ts; var p = Math.min(1, (ts - t0) / dur), v = to * (1 - Math.pow(1 - p, 3));
+        el.textContent = pre + fmt(v, dec) + suf;
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }, { threshold: 0.6 }) : null;
+  if (cio) document.querySelectorAll('[data-count]').forEach(function (el) { cio.observe(el); });
+})();
 </script>
 </body>
 </html>
