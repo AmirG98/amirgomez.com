@@ -114,6 +114,10 @@ const nextConfig: NextConfig = {
       {
         source: '/proposal/glowing',
         destination: '/proposal-glowing.html'
+      },
+      {
+        source: '/proposal/soarank',
+        destination: '/proposal-soarank.html'
       }
     ];
   },
