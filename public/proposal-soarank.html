@@ -654,6 +654,7 @@
         if (p < 1) requestAnimationFrame(step);
       }
       requestAnimationFrame(step);
+      setTimeout(function () { el.textContent = pre + fmt(to, dec) + suf; }, dur + 300);
     });
   }, { threshold: 0.6 }) : null;
   if (cio) document.querySelectorAll('[data-count]').forEach(function (el) { cio.observe(el); });
