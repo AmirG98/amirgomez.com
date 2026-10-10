@@ -193,7 +193,7 @@
   .sites.one { grid-template-columns: 1fr; }
   .site { display: block; text-decoration: none; color: inherit; border: 1px solid var(--hair); border-radius: 12px; overflow: hidden; background: var(--card); transition: transform .25s, box-shadow .25s; }
   .site:hover { transform: translateY(-3px); box-shadow: 0 24px 50px -24px rgba(20,18,15,.35); }
-  .site .frame { position: relative; height: 230px; overflow: hidden; background: var(--dark); border-bottom: 1px solid var(--hair); }
+  .site .frame { display: block; position: relative; height: 230px; overflow: hidden; background: var(--dark); border-bottom: 1px solid var(--hair); }
   .sites.one .site .frame { height: 380px; }
   .site .frame img { display: block; width: 100%; height: auto; transform: translateY(0); transition: transform 0s linear; will-change: transform; }
   .site .frame::after { content: 'Hover to scroll'; position: absolute; right: 10px; bottom: 10px; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: #fff; background: rgba(20,18,15,.6); padding: 3px 8px; border-radius: 999px; transition: opacity .3s; }
